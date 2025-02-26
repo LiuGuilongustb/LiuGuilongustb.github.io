@@ -14,7 +14,8 @@
         
         <guid>https://LiuGuilongustb.github.io/p/hugo--github-%E9%85%8D%E7%BD%AE%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%B9%E6%B3%95%E5%8F%8A%E9%97%AE%E9%A2%98/</guid>
         <description>&lt;h1 id=&#34;配置hugo&#34;&gt;配置Hugo
-&lt;/h1&gt;</description>
+&lt;/h1&gt;&lt;p&gt;注：有个特别奇葩的bug，就是在当你的github.io建立好了之后你想打开看看是否生效的时候，换个浏览器，不要用IE，IE浏览器由于存在大量缓存，导致他一直产生的是缓存的数据，让我以为一直没弄好，卡在这会纯浪费很长时间。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>安装Ubuntu的全流程及安装会遇到的问题</title>
