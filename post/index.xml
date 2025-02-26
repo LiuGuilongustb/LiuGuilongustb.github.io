@@ -195,22 +195,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;块级代码&#34;&gt;块级代码
-&lt;/h3&gt;&lt;p&gt;块级代码使用三个反引号 &lt;code&gt;```&lt;/code&gt; 或者缩进四个空格：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;这是一个块级代码块
-可以包含多行代码&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;或者：&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;块级代码缩进四个空格：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -281,46 +266,6 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;自定义内容&#34;&gt;自定义内容
-&lt;/h2&gt;&lt;h3 id=&#34;分隔线&#34;&gt;分隔线
-&lt;/h3&gt;&lt;p&gt;你可以使用三个或更多的星号 &lt;code&gt;*&lt;/code&gt;、减号 &lt;code&gt;-&lt;/code&gt; 或下划线 &lt;code&gt;_&lt;/code&gt; 来创建分隔线：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这是分隔线上方的内容
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这是分隔线下方的内容
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;引用样式&#34;&gt;引用样式
-&lt;/h3&gt;&lt;p&gt;在 Hugo 中，你还可以使用自定义的 &lt;code&gt;shortcodes&lt;/code&gt; 或 &lt;code&gt;layout&lt;/code&gt; 来定制页面的显示。通过 &lt;code&gt;content&lt;/code&gt; 文件夹中的 &lt;code&gt;shortcodes&lt;/code&gt; 文件，可以嵌入动态内容或外部资源。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;调用-shortcodes&#34;&gt;调用 Shortcodes
-&lt;/h3&gt;&lt;p&gt;例如，如果你要添加一个 YouTube 视频，可以通过以下方式使用 &lt;code&gt;shortcode&lt;/code&gt;：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;div class=&#34;video-wrapper&#34;&gt;
-    &lt;iframe loading=&#34;lazy&#34; 
-            src=&#34;https://www.youtube.com/embed/https://www.youtube.com/watch?v=dQw4w9WgXcQ&#34; 
-            allowfullscreen 
-            title=&#34;YouTube Video&#34;
-    &gt;
-    &lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Hugo 会自动渲染并嵌入你指定的视频。&lt;/p&gt;
-&lt;hr&gt;
 &lt;h2 id=&#34;更多-hugo-特性和配置&#34;&gt;更多 Hugo 特性和配置
 &lt;/h2&gt;&lt;h3 id=&#34;front-matter&#34;&gt;Front Matter
 &lt;/h3&gt;&lt;p&gt;在 Hugo 中，每个页面都有一个所谓的 &lt;strong&gt;Front Matter&lt;/strong&gt; 部分。它是页面的元数据，通常位于页面内容的顶部，用于定义页面的标题、日期、标签等。&lt;/p&gt;
@@ -352,7 +297,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Front Matter 使用 YAML 格式来描述页面的元数据，可以设置页面的标题、日期、作者、标签等。Hugo 会根据这些数据来生成相应的页面。&lt;/p&gt;
 &lt;h3 id=&#34;链接到其他页面&#34;&gt;链接到其他页面
-&lt;/h3&gt;&lt;p&gt;如果你想在页面中链接到其他页面，可以直接使用相对路径。例如：&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;如果你想在页面中链接到其他页面，可以直接使用相对路径。例如&lt;a class=&#34;link&#34; href=&#34;./content/_index.md&#34; &gt;去首页&lt;/a&gt;：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1

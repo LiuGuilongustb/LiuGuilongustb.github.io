@@ -350,13 +350,6 @@
     </li>
     <li><a href="#引用">引用</a></li>
     <li><a href="#表格">表格</a></li>
-    <li><a href="#自定义内容">自定义内容</a>
-      <ol>
-        <li><a href="#分隔线">分隔线</a></li>
-        <li><a href="#引用样式">引用样式</a></li>
-        <li><a href="#调用-shortcodes">调用 Shortcodes</a></li>
-      </ol>
-    </li>
     <li><a href="#更多-hugo-特性和配置">更多 Hugo 特性和配置</a>
       <ol>
         <li><a href="#front-matter">Front Matter</a></li>
@@ -430,7 +423,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 5 分钟
+                    阅读时长: 4 分钟
                 </time>
             </div>
         
@@ -605,22 +598,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="块级代码">块级代码
-</h3><p>块级代码使用三个反引号 <code>```</code> 或者缩进四个空格：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"></code></pre></td></tr></table>
-</div>
-</div><p>这是一个块级代码块
-可以包含多行代码</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></td></tr></table>
-</div>
-</div><p>或者：</p>
+</h3><p>块级代码缩进四个空格：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -691,46 +669,6 @@
   </tbody>
 </table></div>
 <hr>
-<h2 id="自定义内容">自定义内容
-</h2><h3 id="分隔线">分隔线
-</h3><p>你可以使用三个或更多的星号 <code>*</code>、减号 <code>-</code> 或下划线 <code>_</code> 来创建分隔线：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">这是分隔线上方的内容
-</span></span><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">这是分隔线下方的内容
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="引用样式">引用样式
-</h3><p>在 Hugo 中，你还可以使用自定义的 <code>shortcodes</code> 或 <code>layout</code> 来定制页面的显示。通过 <code>content</code> 文件夹中的 <code>shortcodes</code> 文件，可以嵌入动态内容或外部资源。</p>
-<hr>
-<h3 id="调用-shortcodes">调用 Shortcodes
-</h3><p>例如，如果你要添加一个 YouTube 视频，可以通过以下方式使用 <code>shortcode</code>：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><div class="video-wrapper">
-    <iframe loading="lazy" 
-            src="https://www.youtube.com/embed/https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
-            allowfullscreen 
-            title="YouTube Video"
-    >
-    </iframe>
-</div>
-
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Hugo 会自动渲染并嵌入你指定的视频。</p>
-<hr>
 <h2 id="更多-hugo-特性和配置">更多 Hugo 特性和配置
 </h2><h3 id="front-matter">Front Matter
 </h3><p>在 Hugo 中，每个页面都有一个所谓的 <strong>Front Matter</strong> 部分。它是页面的元数据，通常位于页面内容的顶部，用于定义页面的标题、日期、标签等。</p>
@@ -762,7 +700,7 @@
 </div>
 </div><p>Front Matter 使用 YAML 格式来描述页面的元数据，可以设置页面的标题、日期、作者、标签等。Hugo 会根据这些数据来生成相应的页面。</p>
 <h3 id="链接到其他页面">链接到其他页面
-</h3><p>如果你想在页面中链接到其他页面，可以直接使用相对路径。例如：</p>
+</h3><p>如果你想在页面中链接到其他页面，可以直接使用相对路径。例如<a class="link" href="./content/_index.md" >去首页</a>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
