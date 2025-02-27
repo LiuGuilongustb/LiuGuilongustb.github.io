@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="安装 Ubuntu 的方法 注：下载不同版本要依赖于你想要做的东西，例如最新版的 Ubuntu 已经不支持 ROS1 的使用了，所以如果你想要研究 ROS1 就必须安装对应的版本。\n下载 Ubuntu 的映像文件 首先到 Ubuntu 的官网（）下载你想要安装的版本。\n">
-<title>安装Ubuntu的全流程及安装会遇到的问题</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在 Hugo 上发布内容时常用的 Markdown 格式及其使用方法">
+<title>Hugo 搭建网站系列教程2：Markdown 格式介绍</title>
 
-<link rel='canonical' href='https://LiuGuilongustb.github.io/p/%E5%AE%89%E8%A3%85ubuntu%E7%9A%84%E5%85%A8%E6%B5%81%E7%A8%8B%E5%8F%8A%E5%AE%89%E8%A3%85%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/'>
+<link rel='canonical' href='https://LiuGuilongustb.github.io/p/hugo-%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B2markdown-%E6%A0%BC%E5%BC%8F%E4%BB%8B%E7%BB%8D/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="安装Ubuntu的全流程及安装会遇到的问题">
-<meta property='og:description' content="安装 Ubuntu 的方法 注：下载不同版本要依赖于你想要做的东西，例如最新版的 Ubuntu 已经不支持 ROS1 的使用了，所以如果你想要研究 ROS1 就必须安装对应的版本。\n下载 Ubuntu 的映像文件 首先到 Ubuntu 的官网（）下载你想要安装的版本。\n">
-<meta property='og:url' content='https://LiuGuilongustb.github.io/p/%E5%AE%89%E8%A3%85ubuntu%E7%9A%84%E5%85%A8%E6%B5%81%E7%A8%8B%E5%8F%8A%E5%AE%89%E8%A3%85%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/'>
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Hugo 搭建网站系列教程2：Markdown 格式介绍">
+<meta property='og:description' content="在 Hugo 上发布内容时常用的 Markdown 格式及其使用方法">
+<meta property='og:url' content='https://LiuGuilongustb.github.io/p/hugo-%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B2markdown-%E6%A0%BC%E5%BC%8F%E4%BB%8B%E7%BB%8D/'>
 <meta property='og:site_name' content='刘贵泷的个人网页'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-02-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-02-26T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="安装Ubuntu的全流程及安装会遇到的问题">
-<meta name="twitter:description" content="安装 Ubuntu 的方法 注：下载不同版本要依赖于你想要做的东西，例如最新版的 Ubuntu 已经不支持 ROS1 的使用了，所以如果你想要研究 ROS1 就必须安装对应的版本。\n下载 Ubuntu 的映像文件 首先到 Ubuntu 的官网（）下载你想要安装的版本。\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Hugo' /><meta property='article:tag' content='Markdown' /><meta property='article:tag' content='网站发布' /><meta property='article:published_time' content='2025-02-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-02-26T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Hugo 搭建网站系列教程2：Markdown 格式介绍">
+<meta name="twitter:description" content="在 Hugo 上发布内容时常用的 Markdown 格式及其使用方法">
     </head>
     <body class="
     article-page
@@ -308,7 +308,48 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#下载-ubuntu-的映像文件">下载 Ubuntu 的映像文件</a></li>
+    <li><a href="#目录">目录</a></li>
+    <li><a href="#标题">标题</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#二级标题">二级标题</a>
+      <ol>
+        <li><a href="#三级标题">三级标题</a>
+          <ol>
+            <li><a href="#四级标题">四级标题</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#段落和换行">段落和换行</a></li>
+    <li><a href="#列表">列表</a>
+      <ol>
+        <li><a href="#无序列表">无序列表</a></li>
+        <li><a href="#有序列表">有序列表</a></li>
+      </ol>
+    </li>
+    <li><a href="#链接和图片">链接和图片</a>
+      <ol>
+        <li><a href="#链接">链接</a></li>
+        <li><a href="#图片">图片</a></li>
+      </ol>
+    </li>
+    <li><a href="#强调和粗体">强调和粗体</a>
+      <ol>
+        <li><a href="#强调">强调</a></li>
+        <li><a href="#粗体">粗体</a></li>
+        <li><a href="#同时使用强调和粗体">同时使用强调和粗体</a></li>
+      </ol>
+    </li>
+    <li><a href="#代码块">代码块</a>
+      <ol>
+        <li><a href="#行内代码">行内代码</a></li>
+        <li><a href="#块级代码">块级代码</a></li>
+      </ol>
+    </li>
+    <li><a href="#引用">引用</a></li>
+    <li><a href="#表格">表格</a></li>
   </ol>
 </nav>
         </div>
@@ -328,9 +369,13 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E5%AE%89%E8%A3%85ubuntu%E7%9A%84%E5%85%A8%E6%B5%81%E7%A8%8B%E5%8F%8A%E5%AE%89%E8%A3%85%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">安装Ubuntu的全流程及安装会遇到的问题</a>
+            <a href="/p/hugo-%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B2markdown-%E6%A0%BC%E5%BC%8F%E4%BB%8B%E7%BB%8D/">Hugo 搭建网站系列教程2：Markdown 格式介绍</a>
         </h2>
     
+        
+        <h3 class="article-subtitle">
+            在 Hugo 上发布内容时常用的 Markdown 格式及其使用方法
+        </h3>
         
     </div>
 
@@ -365,7 +410,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -380,16 +425,253 @@
     <section class="article-content">
     
     
-    <h1 id="安装-ubuntu-的方法">安装 Ubuntu 的方法
-</h1><p><em>注</em>：下载不同版本要依赖于你想要做的东西，例如最新版的 Ubuntu 已经不支持 ROS1 的使用了，所以如果你想要研究 ROS1 就必须安装对应的版本。</p>
-<h2 id="下载-ubuntu-的映像文件">下载 Ubuntu 的映像文件
-</h2><p>首先到 Ubuntu 的官网（）下载你想要安装的版本。</p>
+    <h1 id="hugo-markdown-格式介绍">Hugo Markdown 格式介绍
+</h1><p>在使用 Hugo 构建静态网站时，Markdown 文件是最常用的内容格式。本文将介绍如何在 Hugo 中使用 Markdown 格式，并涵盖常见的排版技巧和功能。</p>
+<h2 id="目录">目录
+</h2><ol>
+<li><a class="link" href="#%e6%a0%87%e9%a2%98" >标题</a></li>
+<li><a class="link" href="#%e6%ae%b5%e8%90%bd%e5%92%8c%e6%8d%a2%e8%a1%8c" >段落和换行</a></li>
+<li><a class="link" href="#%e5%88%97%e8%a1%a8" >列表</a></li>
+<li><a class="link" href="#%e9%93%be%e6%8e%a5%e5%92%8c%e5%9b%be%e7%89%87" >链接和图片</a></li>
+<li><a class="link" href="#%e5%bc%ba%e8%b0%83%e5%92%8c%e7%b2%97%e4%bd%93" >强调和粗体</a></li>
+<li><a class="link" href="#%e4%bb%a3%e7%a0%81%e5%9d%97" >代码块</a></li>
+<li><a class="link" href="#%e5%bc%95%e7%94%a8" >引用</a></li>
+<li><a class="link" href="#%e8%a1%a8%e6%a0%bc" >表格</a></li>
+<li><a class="link" href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e5%86%85%e5%ae%b9" >自定义内容</a></li>
+</ol>
+<hr>
+<h2 id="标题">标题
+</h2><p>Markdown 使用 <code>#</code> 符号来定义标题，支持从一级标题到六级标题：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="gh"># 一级标题
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span><span class="gu">## 二级标题
+</span></span></span><span class="line"><span class="cl"><span class="gu">### 三级标题
+</span></span></span><span class="line"><span class="cl"><span class="gu">#### 四级标题
+</span></span></span><span class="line"><span class="cl"><span class="gu">##### 五级标题
+</span></span></span><span class="line"><span class="cl"><span class="gu">###### 六级标题
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这会渲染成：</p>
+<h1 id="一级标题">一级标题
+</h1><h2 id="二级标题">二级标题
+</h2><h3 id="三级标题">三级标题
+</h3><h4 id="四级标题">四级标题
+</h4><h5 id="五级标题">五级标题
+</h5><h6 id="六级标题">六级标题
+</h6><h2 id="段落和换行">段落和换行
+</h2><p>段落之间通过空行来分隔，换行可以使用两个空格加回车：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">这是第一段内容。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">这是第二段内容，后面紧跟着换行  
+</span></span><span class="line"><span class="cl">这是新的一行。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="列表">列表
+</h2><h3 id="无序列表">无序列表
+</h3><p>无序列表使用星号 <code>*</code> 或者减号 <code>-</code> 来表示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="k">-</span> 项目一
+</span></span><span class="line"><span class="cl"><span class="k">-</span> 项目二
+</span></span><span class="line"><span class="cl">  <span class="k">-</span> 子项目 1
+</span></span><span class="line"><span class="cl">  <span class="k">-</span> 子项目 2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="有序列表">有序列表
+</h3><p>有序列表使用数字和句点来表示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="k">1.</span> 第一项
+</span></span><span class="line"><span class="cl"><span class="k">2.</span> 第二项
+</span></span><span class="line"><span class="cl"><span class="k">3.</span> 第三项
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="链接和图片">链接和图片
+</h2><h3 id="链接">链接
+</h3><p>创建链接的语法为 <code>[链接文本](链接地址)</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">[<span class="nt">GitHub</span>](<span class="na">https://github.com</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="图片">图片
+</h3><p>图片的语法与链接相似，但前面有一个感叹号 <code>!</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">![<span class="nt">Hugo logo</span>](<span class="na">https://gohugo.io/images/hugo-logo-wide.svg</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="强调和粗体">强调和粗体
+</h2><h3 id="强调">强调
+</h3><p>使用单个星号 <code>*</code> 或下划线 <code>_</code> 来表示斜体（强调）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">*斜体文本*
+</span></span><span class="line"><span class="cl"><span class="ge">_斜体文本_</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="粗体">粗体
+</h3><p>使用双星号 <code>**</code> 或双下划线 <code>__</code> 来表示粗体：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">**粗体文本**
+</span></span><span class="line"><span class="cl"><span class="gs">__粗体文本__</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="同时使用强调和粗体">同时使用强调和粗体
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">***加粗和斜体***
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="代码块">代码块
+</h2><h3 id="行内代码">行内代码
+</h3><p>行内代码使用反引号 <code>`</code> 包围：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">这是 <span class="sb">`代码`</span> 示例。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="块级代码">块级代码
+</h3><p>块级代码缩进四个空格：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">    这是一个块级代码
+</span></span><span class="line"><span class="cl">    也可以通过缩进来表示
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="引用">引用
+</h2><p>引用文本使用 <code>&gt;</code> 符号：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">这是一个引用块。
+</span></span></span><span class="line"><span class="cl"><span class="ge"></span><span class="k">&gt; </span><span class="ge">你可以用它来引用他人的话。
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="表格">表格
+</h2><p>Markdown 支持简单的表格，使用管道符号 <code>|</code> 和减号 <code>-</code> 来构建：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">| 姓名   | 年龄 | 职业     |
+</span></span><span class="line"><span class="cl">|--------|------|----------|
+</span></span><span class="line"><span class="cl">| 张三   | 25   | 工程师   |
+</span></span><span class="line"><span class="cl">| 李四   | 30   | 设计师   |
+</span></span><span class="line"><span class="cl">| 王五   | 28   | 产品经理 |
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这会渲染成：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>姓名</th>
+          <th>年龄</th>
+          <th>职业</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>张三</td>
+          <td>25</td>
+          <td>工程师</td>
+      </tr>
+      <tr>
+          <td>李四</td>
+          <td>30</td>
+          <td>设计师</td>
+      </tr>
+      <tr>
+          <td>王五</td>
+          <td>28</td>
+          <td>产品经理</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
 
 </section>
 
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/hugo/">Hugo</a>
+        
+            <a href="/tags/markdown/">Markdown</a>
+        
+            <a href="/tags/%E7%BD%91%E7%AB%99%E5%8F%91%E5%B8%83/">网站发布</a>
+        
+    </section>
+
 
     
     <section class="article-copyright">
