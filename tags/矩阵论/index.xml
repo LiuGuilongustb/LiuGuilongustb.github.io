@@ -91,19 +91,19 @@ V =
 \nonumber
 \end{equation}&lt;/p&gt;
 &lt;p&gt;\begin{equation}
-V = \left{ \right}
+V =  \lbrace  \rbrace
 \nonumber
 \end{equation}&lt;/p&gt;
 &lt;p&gt;\begin{equation}
-V = \left{ {{{\left( {{a_{ij}}} \right)}_{m \times n}}} \right}
+V =  \lbrace {{{\left( {{a_{ij}}} \right)}_{m \times n}}}  \rbrace
 \nonumber
 \end{equation}&lt;/p&gt;
 &lt;p&gt;\begin{equation}
-V = \left{ {\left. {{\left( {{a_{ij}}} \right)}_{m \times n}}} \right| \right}
+V =  \lbrace {\left. {{\left( {{a_{ij}}} \right)}_{m \times n}}} \right|  \rbrace
 \nonumber
 \end{equation}&lt;/p&gt;
 &lt;p&gt;\begin{equation}
-V = \left{ {\left. {{{\left( {{a_{ij}}} \right)}&lt;em&gt;{m \times n}}} \right|{a&lt;/em&gt;{ij}} \in {\mathbb{C}}} \right}
+V =  \lbrace {\left. {{{\left( {{a_{ij}}} \right)}&lt;em&gt;{m \times n}}} \right|{a&lt;/em&gt;{ij}} \in {\mathbb{C}}}  \rbrace
 \nonumber
 \end{equation}&lt;/p&gt;
 &lt;h2 id=&#34;线性子空间&#34;&gt;线性子空间
