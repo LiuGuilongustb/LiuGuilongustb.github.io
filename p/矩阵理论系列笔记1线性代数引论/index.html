@@ -379,14 +379,10 @@
 </ol>
 <p><strong>定义 1（加群）</strong> 在非空集合 $V$ 上定义一种代数运算，称之为<strong>加法</strong>（记为“$+$”），使得 $\forall u,v \in V$ 都有 $V$ 中唯一元素 $u + v$ 与之对应，该元素称为 $u$ 与 $v$ 的<strong>和</strong>，且满足如下性质：</p>
 <ol>
-<li><strong>交换律</strong>：<br>
-$ u + v = v + u $</li>
-<li><strong>结合律</strong>：<br>
-$ (u + v) + w = u + (v + w) $</li>
-<li><strong>存在零元</strong> $\theta \in V$ 使得 $\forall u \in V$，有：<br>
-$ u + \theta = u $</li>
-<li><strong>存在负元</strong> $\forall u \in V$，存在负元素 $-u$ 使得：<br>
-$ u + (-u) = \theta $</li>
+<li><strong>交换律</strong>： $ u + v = v + u $</li>
+<li><strong>结合律</strong>： $ (u + v) + w = u + (v + w) $</li>
+<li><strong>存在零元</strong> $\theta \in V$ 使得 $\forall u \in V$，有：$ u + \theta = u $</li>
+<li><strong>存在负元</strong> $\forall u \in V$，存在负元素 $-u$ 使得：   $ u + (-u) = \theta $</li>
 </ol>
 <p>称 $V$ 在加法运算下构成一个<strong>加群</strong>，记为 $(V, +)$。</p>
 <p><mark> 关于上面的定义，我们要明白一个事情，这里的<strong>加法</strong>不是加法运算，而是任意一种代数运算！！！，这一点非常重要，因为我如果定义这种代数运算为乘法，那么在乘法的代数运算下，依旧能够构成加群。</mark></p>
@@ -394,6 +390,17 @@ $ u + (-u) = \theta $</li>
 <p>在数的加法运算下，<strong>整数集</strong>、<strong>有理数集</strong>、<strong>实数集</strong>、<strong>复数集</strong>分别构成加群，记作 $(\mathbb{Z}, +)$、$(\mathbb{Q}, +)$、$(\mathbb{R}, +)$、$(\mathbb{C}, +)$。</p>
 <p>在数的<strong>乘法</strong>运算下，<strong>非零有理数集</strong>构成加群 $(\mathbb{Q} \setminus {0}, \cdot)$。同样，$(\mathbb{R} \setminus {0}, \cdot)$、$(\mathbb{C} \setminus {0}, \cdot)$ 也构成加群；而 $(\mathbb{Z} \setminus {0}, \cdot)$ 不构成加群（不满足定义中的第四条，乘法运算下的加群，这里的$\theta$是1，而对于乘法来说，除了1和-1，没有其他整数，能够满足乘法运算等于1）。</p>
 <p><strong>定义 2（数域）</strong> 设 $F$ 是非空数集，若 $F$ 中任意两个数的<strong>和</strong>、<strong>差</strong>、<strong>积</strong>、<strong>商</strong>（除数不为 $0$）仍在该数集，即对四则运算封闭，称该数集 $F$ 为一个<strong>数域</strong>。</p>
+<p><strong>注</strong>：实数集 $\mathbb{R}$、复数集 $\mathbb{C}$、有理数集 $\mathbb{Q}$ 是<strong>数域</strong>；而自然数集 $\mathbb{N}$、整数集 $\mathbb{Z}$ 不是<strong>数域</strong>。</p>
+<p><strong>思考</strong>：集合 $\mathbb{Q}(i) = { a + bi \mid a, b \in \mathbb{Q} }$ 是数域吗？其中 $i$ 是虚数单位。</p>
+<p>接下来，我们思考另外一个事实：<strong>例 2</strong> 设集合 $V$ 是所有 $m \times n$ 实矩阵构成的集合，即$V = { (a_{ij})<em>{m \times n} \mid a</em>{ij} \in \mathbb{R} }$
+任选矩阵 $A, B \in V$，$k, l \in \mathbb{R}$ 满足：</p>
+<ol>
+<li>$k(A + B) = kA + kB$</li>
+<li>$(k + l)A = kA + lA$</li>
+<li>$k(lA) = (kl)A$</li>
+<li>$1 \cdot A = A$</li>
+</ol>
+<p>刚才我们从第一个事实给出了加群的定义，现在我们从第二个事实给出线性空间的定义</p>
 
 </section>
 
