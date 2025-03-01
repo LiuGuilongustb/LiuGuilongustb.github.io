@@ -421,15 +421,16 @@
 <li><strong>存在负元</strong> $\forall u \in V$，存在负元素 $-u$ 使得：   $ u + (-u) = \theta $</li>
 </ol>
 <p>称 $V$ 在加法运算下构成一个<strong>加群</strong>，记为 $(V, +)$。</p>
-<p><mark> 关于上面的定义，我们要明白一个事情，这里的<strong>加法</strong>不是加法运算，而是任意一种代数运算！！！，这一点非常重要，因为我如果定义这种代数运算为乘法，那么在乘法的代数运算下，依旧能够构成加群。</mark></p>
+<p><mark> 关于上面的定义，我们要明白一个事情，这里的<strong>加法</strong>不是加法运算，而是任意一种代数运算！这一点非常重要，因为我如果定义这种代数运算为乘法，那么在乘法的代数运算下，依旧能够构成加群。</mark></p>
 <p><strong>例如</strong>：</p>
 <p>在数的加法运算下，<strong>整数集</strong>、<strong>有理数集</strong>、<strong>实数集</strong>、<strong>复数集</strong>分别构成加群，记作 $(\mathbb{Z}, +)$、$(\mathbb{Q}, +)$、$(\mathbb{R}, +)$、$(\mathbb{C}, +)$。</p>
 <p>在数的<strong>乘法</strong>运算下，<strong>非零有理数集</strong>构成加群 $(\mathbb{Q} \setminus \lbrace0\rbrace, \cdot)$。同样，$(\mathbb{R} \setminus \lbrace0\rbrace, \cdot)$、$(\mathbb{C} \setminus \lbrace0\rbrace, \cdot)$ 也构成加群；而 $(\mathbb{Z} \setminus \lbrace0\rbrace, \cdot)$ 不构成加群（不满足定义中的第四条，乘法运算下的加群，这里的$\theta$是1，而对于乘法来说，除了1和-1，没有其他整数，能够满足乘法运算等于1）。</p>
 <p><strong>定义 2（数域）</strong> 设 $F$ 是非空数集，若 $F$ 中任意两个数的<strong>和</strong>、<strong>差</strong>、<strong>积</strong>、<strong>商</strong>（除数不为 $0$）仍在该数集，即对四则运算封闭，称该数集 $F$ 为一个<strong>数域</strong>。</p>
 <p><strong>注</strong>：实数集 $\mathbb{R}$、复数集 $\mathbb{C}$、有理数集 $\mathbb{Q}$ 是<strong>数域</strong>；而自然数集 $\mathbb{N}$、整数集 $\mathbb{Z}$ 不是<strong>数域</strong>。</p>
-<p><strong>思考</strong>：集合 $\mathbb{Q}(i) = \lbrace a + bi \mid a, b \in \mathbb{Q} \rbrace$ 是数域吗？其中 $i$ 是虚数单位。</p>
+<p><strong>思考</strong>：集合 ${\mathbb{Q}}(i) = { \left. {a + bi} \right|a,b \in \mathbb{Q}} $ 是数域吗？其中 $i$ 是虚数单位。</p>
+<p>接下来，我们思考另外一个事实：设集合 $V$ 是所有 $m \times n$ 实矩阵构成的集合，即 $V = \lbrace (a_{ij})<em>{m \times n} \mid a</em>{ij} \in \mathbb{R} \rbrace $。任选矩阵 $A, B \in V$, $k, l \in \mathbb{R}$ 满足：</p>
 <!-- 接下来，我们思考另外一个事实：设集合 $V$ 是所有 $m \times n$ 实矩阵构成的集合，即 $V = \lbrace (a_{ij})_{m \times n} \mid a_{ij} \in \mathbb{R} \rbrace $。任选矩阵 $A, B \in V$，$k, l \in \mathbb{R}$ 满足：
-
+\[\left. {} \right|\]
 1.  $k(A + B) = kA + kB$
 2.  $(k + l)A = kA + lA$
 3.  $k(lA) = (kl)A$
@@ -469,8 +470,9 @@
 $$
 \mathbb{R}^n = \lbrace x \mid (x_1, x_2, \dots, x_n)^T, x_i \in \mathbb{R}, i = 1, \dots, n \rbrace
 $$ -->
-$$V = \lbrace (a_{ij})_{m \times n} \mid a_{ij} \in \mathbb{C} \rbrace$$<p>
-$V$ 在矩阵的加法与数乘运算下构成 $\mathbb{C}$ 上的线性空间，称为<strong>复矩阵空间</strong>，记作 $\mathbb{C}^{m \times n}$。类似可定义<strong>实矩阵空间</strong> $\mathbb{R}^{m \times n}$。</p>
+<!-- **定义 5（复矩阵空间和实矩阵空间）** 集合 $V$ 是所有 $m \times n$ 复矩阵构成的集合，即  
+$$V = \lbrace (a_{ij})_{m \times n} \mid a_{ij} \in \mathbb{C} \rbrace$$
+$V$ 在矩阵的加法与数乘运算下构成 $\mathbb{C}$ 上的线性空间，称为**复矩阵空间**，记作 $\mathbb{C}^{m \times n}$。类似可定义**实矩阵空间** $\mathbb{R}^{m \times n}$。 -->
 <p><strong>定义 6 （核空间）</strong> 取定 $A \in \mathbb{C}^{m \times n}$，令 $W = \lbrace x \in \mathbb{C}^n \mid Ax = 0 \rbrace$，不难验证 $W$ 是 $\mathbb{C}$ 上的线性空间，称为<strong>矩阵 $A$ 的核空间</strong>，记作 $\text{N}(A)$。</p>
 <h2 id="线性子空间">线性子空间
 </h2><h2 id="基与坐标">基与坐标
