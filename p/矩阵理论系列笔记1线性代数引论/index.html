@@ -428,15 +428,14 @@
 <p><strong>定义 2（数域）</strong> 设 $F$ 是非空数集，若 $F$ 中任意两个数的<strong>和</strong>、<strong>差</strong>、<strong>积</strong>、<strong>商</strong>（除数不为 $0$）仍在该数集，即对四则运算封闭，称该数集 $F$ 为一个<strong>数域</strong>。</p>
 <p><strong>注</strong>：实数集 $\mathbb{R}$、复数集 $\mathbb{C}$、有理数集 $\mathbb{Q}$ 是<strong>数域</strong>；而自然数集 $\mathbb{N}$、整数集 $\mathbb{Z}$ 不是<strong>数域</strong>。</p>
 <p><strong>思考</strong>：集合 $\mathbb{Q}(i) = \lbrace a + bi \mid a, b \in \mathbb{Q} \rbrace$ 是数域吗？其中 $i$ 是虚数单位。</p>
-<p>接下来，我们思考另外一个事实：设集合 $V$ 是所有 $m \times n$ 实矩阵构成的集合，即 $V = \lbrace (a_{ij})<em>{m \times n} \mid a</em>{ij} \in \mathbb{R} \rbrace $。
-任选矩阵 $A, B \in V$，$k, l \in \mathbb{R}$ 满足：</p>
-<ol>
-<li>$k(A + B) = kA + kB$</li>
-<li>$(k + l)A = kA + lA$</li>
-<li>$k(lA) = (kl)A$</li>
-<li>$1 \cdot A = A$</li>
-</ol>
-<p>刚才我们从第一个事实给出了加群的定义，现在我们从第二个事实给出线性空间的定义。</p>
+<!-- 接下来，我们思考另外一个事实：设集合 $V$ 是所有 $m \times n$ 实矩阵构成的集合，即 $V = \lbrace (a_{ij})_{m \times n} \mid a_{ij} \in \mathbb{R} \rbrace $。任选矩阵 $A, B \in V$，$k, l \in \mathbb{R}$ 满足：
+
+1.  $k(A + B) = kA + kB$
+2.  $(k + l)A = kA + lA$
+3.  $k(lA) = (kl)A$
+4.  $1 \cdot A = A$
+
+刚才我们从第一个事实给出了加群的定义，现在我们从第二个事实给出线性空间的定义。 -->
 <p><strong>定义 3（线性空间）</strong> 设 $(V, +)$ 是一个加群，$F$ 是一个数域。定义了 $F$ 中的数与 $V$ 中元素的一种代数运算，称为<strong>数乘</strong>，使得 $\forall \lambda \in F, u \in V$，有 $V$ 中唯一元素 $\lambda u$ 与之对应，$\lambda u$ 称为 $\lambda$ 与 $u$ 的积，且满足以下性质：</p>
 <ol>
 <li>$\lambda (u + v) = \lambda u + \lambda v$</li>
@@ -466,9 +465,11 @@
 （证明：假设 $k \ne 0$，则 $\alpha = (k \cdot (\frac{1}{k}) \alpha)\alpha = k \alpha\cdot \frac{1}{k} = \theta \cdot \frac{1}{k} = \theta$。）</p>
 </li>
 </ol>
+<!-- **定义 4（几何空间）** 在通常向量的加法与数乘运算下构成 $\mathbb{R}$ 上的线性空间如下，称为**$n$ 维实向量空间**。类似可定义 $\mathbb{C}^n$。
 $$
 \mathbb{R}^n = \lbrace x \mid (x_1, x_2, \dots, x_n)^T, x_i \in \mathbb{R}, i = 1, \dots, n \rbrace
-$$$$V = \lbrace (a_{ij})_{m \times n} \mid a_{ij} \in \mathbb{C} \rbrace$$<p>
+$$ -->
+$$V = \lbrace (a_{ij})_{m \times n} \mid a_{ij} \in \mathbb{C} \rbrace$$<p>
 $V$ 在矩阵的加法与数乘运算下构成 $\mathbb{C}$ 上的线性空间，称为<strong>复矩阵空间</strong>，记作 $\mathbb{C}^{m \times n}$。类似可定义<strong>实矩阵空间</strong> $\mathbb{R}^{m \times n}$。</p>
 <p><strong>定义 6 （核空间）</strong> 取定 $A \in \mathbb{C}^{m \times n}$，令 $W = \lbrace x \in \mathbb{C}^n \mid Ax = 0 \rbrace$，不难验证 $W$ 是 $\mathbb{C}$ 上的线性空间，称为<strong>矩阵 $A$ 的核空间</strong>，记作 $\text{N}(A)$。</p>
 <h2 id="线性子空间">线性子空间
