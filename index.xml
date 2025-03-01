@@ -36,21 +36,14 @@
 &lt;p&gt;&lt;strong&gt;定义 2（数域）&lt;/strong&gt; 设 $F$ 是非空数集，若 $F$ 中任意两个数的&lt;strong&gt;和&lt;/strong&gt;、&lt;strong&gt;差&lt;/strong&gt;、&lt;strong&gt;积&lt;/strong&gt;、&lt;strong&gt;商&lt;/strong&gt;（除数不为 $0$）仍在该数集，即对四则运算封闭，称该数集 $F$ 为一个&lt;strong&gt;数域&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：实数集 $\mathbb{R}$、复数集 $\mathbb{C}$、有理数集 $\mathbb{Q}$ 是&lt;strong&gt;数域&lt;/strong&gt;；而自然数集 $\mathbb{N}$、整数集 $\mathbb{Z}$ 不是&lt;strong&gt;数域&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;思考&lt;/strong&gt;：集合 ${\mathbb{Q}}(i) = { \left. {a + bi} \right|a,b \in \mathbb{Q}}$ 是数域吗？其中 $i$ 是虚数单位。&lt;/p&gt;
-&lt;p&gt;接下来，我们思考另外一个事实：设集合 $V$ 是所有 $m \times n$ 实矩阵构成的集合，即 $V = \lbrace (a_{ij})&lt;em&gt;{m \times n} \mid a&lt;/em&gt;{ij} \in \mathbb{R} \rbrace$。&lt;/p&gt;
-&lt;p&gt;任选矩阵 $A, B \in V$, $k, l \in \mathbb{R}$ 满足：&lt;/p&gt;
+&lt;p&gt;接下来，我们思考另外一个事实：设集合 $V$ 是所有 $m \times n$ 实矩阵构成的集合,
+任选矩阵 $A, B \in V$, $k, l \in \mathbb{R}$ 满足：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;$k(A + B) = kA + kB$&lt;/li&gt;
 &lt;li&gt;$(k + l)A = kA + lA$&lt;/li&gt;
 &lt;li&gt;$k(lA) = (kl)A$&lt;/li&gt;
 &lt;li&gt;$1 \cdot A = A$&lt;/li&gt;
 &lt;/ol&gt;
-&lt;!-- 接下来，我们思考另外一个事实：设集合 $V$ 是所有 $m \times n$ 实矩阵构成的集合，即 $V = \lbrace (a_{ij})_{m \times n} \mid a_{ij} \in \mathbb{R} \rbrace $。任选矩阵 $A, B \in V$，$k, l \in \mathbb{R}$ 满足：
-\[\left. {} \right|\]
-1.  $k(A + B) = kA + kB$
-2.  $(k + l)A = kA + lA$
-3.  $k(lA) = (kl)A$
-4.  $1 \cdot A = A$
---&gt;
 &lt;p&gt;刚才我们从第一个事实给出了加群的定义，现在我们从第二个事实给出线性空间的定义。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;定义 3（线性空间）&lt;/strong&gt; 设 $(V, +)$ 是一个加群，$F$ 是一个数域。定义了 $F$ 中的数与 $V$ 中元素的一种代数运算，称为&lt;strong&gt;数乘&lt;/strong&gt;，使得 $\forall \lambda \in F, u \in V$，有 $V$ 中唯一元素 $\lambda u$ 与之对应，$\lambda u$ 称为 $\lambda$ 与 $u$ 的积，且满足以下性质：&lt;/p&gt;
 &lt;ol&gt;
@@ -76,25 +69,52 @@
 &lt;p&gt;&lt;strong&gt;对任意 $k \in F$ 和 $\alpha \in V$，有 $0 \alpha = \theta$，$(-1) \alpha = -\alpha$，$k \theta = \theta$&lt;/strong&gt;；（证明1：$0 \alpha = (0+0)\alpha = 0 \alpha + 0 \alpha$，对于这个式子，左右两边同时加上$0 \alpha$的负向量，即得 $0 \alpha = \theta$。）（证明2：解释原因之前，我们首先要明确 $(-1) \cdot \alpha$ 是一个数和一个向量的积，而 $- \alpha$ 是 $\alpha$ 的负元素，这是两个概念。$\alpha + (-1) \cdot \alpha = (1-1) \alpha = \theta$，根据定义，一个元素加上另一个元素得零元素，那么第二个元素是第一个元素的负元素。）
 （证明3：$k \theta = k (\theta + \theta) = k \theta + k \theta$，还是左右两次同时加$\theta$的负元素。）&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;若 $k \alpha = \theta$，则 $k = 0$ 或 $\alpha = \theta$。&lt;/strong&gt;
-（证明：假设 $k \ne 0$，则 $\alpha = (k \cdot (\frac{1}{k}) \alpha)\alpha = k \alpha\cdot \frac{1}{k} = \theta \cdot \frac{1}{k} = \theta$。）&lt;/p&gt;
-&lt;/li&gt;
 &lt;/ol&gt;
-&lt;!-- **定义 4（几何空间）** 在通常向量的加法与数乘运算下构成 $\mathbb{R}$ 上的线性空间如下，称为**$n$ 维实向量空间**。类似可定义 $\mathbb{C}^n$。
+&lt;!-- 4. **若 $k \alpha = \theta$，则 $k = 0$ 或 $\alpha = \theta$。**
+（证明：假设 $k \ne 0$，则 $\alpha = (k \cdot (\frac{1}{k}) \alpha)\alpha = k \alpha\cdot \frac{1}{k} = \theta \cdot \frac{1}{k} = \theta$。） --&gt;
 $$
 \mathbb{R}^n = \lbrace x \mid (x_1, x_2, \dots, x_n)^T, x_i \in \mathbb{R}, i = 1, \dots, n \rbrace
-$$ --&gt;
+$$&lt;p&gt; &amp;ndash;&amp;gt;&lt;/p&gt;
 &lt;!-- **定义 5（复矩阵空间和实矩阵空间）** 集合 $V$ 是所有 $m \times n$ 复矩阵构成的集合，即  
 $$V = \lbrace (a_{ij})_{m \times n} \mid a_{ij} \in \mathbb{C} \rbrace$$
-$V$ 在矩阵的加法与数乘运算下构成 $\mathbb{C}$ 上的线性空间，称为**复矩阵空间**，记作 $\mathbb{C}^{m \times n}$。类似可定义**实矩阵空间** $\mathbb{R}^{m \times n}$。 --&gt;
-&lt;p&gt;&lt;strong&gt;定义 6 （核空间）&lt;/strong&gt; 取定 $A \in \mathbb{C}^{m \times n}$，令 $W = \lbrace x \in \mathbb{C}^n \mid Ax = 0 \rbrace$，不难验证 $W$ 是 $\mathbb{C}$ 上的线性空间，称为&lt;strong&gt;矩阵 $A$ 的核空间&lt;/strong&gt;，记作 $\text{N}(A)$。&lt;/p&gt;
-&lt;h2 id=&#34;线性子空间&#34;&gt;线性子空间
-&lt;/h2&gt;&lt;h2 id=&#34;基与坐标&#34;&gt;基与坐标
-&lt;/h2&gt;&lt;h2 id=&#34;内积空间&#34;&gt;内积空间
-&lt;/h2&gt;&lt;h2 id=&#34;直和和投影&#34;&gt;直和和投影
-&lt;/h2&gt;&lt;h2 id=&#34;多项式插值&#34;&gt;多项式插值
-&lt;/h2&gt;</description>
+$V$ 在矩阵的加法与数乘运算下构成 $\mathbb{C}$ 上的线性空间，称为**复矩阵空间**，记作 $\mathbb{C}^{m \times n}$。类似可定义**实矩阵空间** $\mathbb{R}^{m \times n}$。
+
+**定义 6 （核空间）** 取定 $A \in \mathbb{C}^{m \times n}$，令 $W = \lbrace x \in \mathbb{C}^n \mid Ax = 0 \rbrace$，不难验证 $W$ 是 $\mathbb{C}$ 上的线性空间，称为**矩阵 $A$ 的核空间**，记作 $\text{N}(A)$。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 线性子空间
+
+## 基与坐标
+
+## 内积空间
+
+## 直和和投影
+
+## 多项式插值
+</description>
         </item>
         <item>
         <title>矩阵理论系列笔记2：线性映射与矩阵</title>
