@@ -59,18 +59,18 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;零向量是唯一的&lt;/strong&gt;；
-（证明：假设我们有两个零向量$\theta_1$和$\theta_2$,根据零向量的性质，任何一个向量加上零向量都等于它本身，那么我们就可以得到$\theta_1+\theta_2 = \theta_1 = \theta_2 $，所以$\theta_1$和$\theta_2$相等，即零向量是唯一的。）&lt;/p&gt;
+（证明：假设我们有两个零向量 $\theta_1$ 和 $\theta_2$,根据零向量的性质，任何一个向量加上零向量都等于它本身，那么我们就可以得到 $\theta_1+\theta_2 = \theta_1 = \theta_2 $，所以 $\theta_1$ 和 $\theta_2$ 相等，即零向量是唯一的。）&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;任一向量的负向量是唯一的&lt;/strong&gt;；（证明：首先我们定义一个向量u，假设他有两个负向量$v_1$和$v_2$，先根据零向量的定义$v_1=v_1 + \theta$，再根据负向量的定义$\theta = u +v_2$，所以$v_1 = v_1 + \theta = v_1 + ( u + v_2 ) = (v_1 + u ) + v_2 = \theta + v_2 = v_2$，即负向量唯一。）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;任一向量的负向量是唯一的&lt;/strong&gt;；（证明：首先我们定义一个向量u，假设他有两个负向量 $v_1$ 和 $v_2$，先根据零向量的定义 $v_1=v_1 + \theta$，再根据负向量的定义 $\theta = u +v_2$，所以 $v_1 = v_1 + \theta = v_1 + ( u + v_2 ) = (v_1 + u ) + v_2 = \theta + v_2 = v_2$，即负向量唯一。）&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;对任意 $k \in F$ 和 $\alpha \in V$，有 $0 \alpha = \theta$，$(-1) \alpha = -\alpha$，$k \theta = \theta$&lt;/strong&gt;；（证明1：$0 \alpha = (0+0)\alpha = 0 \alpha + 0 \alpha$，对于这个式子，左右两边同时加上$0 \alpha$的负向量，即得$0 \alpha = \theta$。）（证明2：解释原因之前，我们首先要明确$(-1) \cdot \alpha$是一个数和一个向量的积，而$- \alpha$是$\alpha$的负元素，这是两个概念。$\alpha + (-1) \cdot \alpha = (1-1) \alpha = \theta$，根据定义，一个元素加上另一个元素得零元素，那么第二个元素是第一个元素的负元素。）
+&lt;p&gt;&lt;strong&gt;对任意 $k \in F$ 和 $\alpha \in V$，有 $0 \alpha = \theta$，$(-1) \alpha = -\alpha$，$k \theta = \theta$&lt;/strong&gt;；（证明1：$0 \alpha = (0+0)\alpha = 0 \alpha + 0 \alpha$，对于这个式子，左右两边同时加上$0 \alpha$的负向量，即得 $0 \alpha = \theta$。）（证明2：解释原因之前，我们首先要明确 $(-1) \cdot \alpha$ 是一个数和一个向量的积，而 $- \alpha$ 是 $\alpha$ 的负元素，这是两个概念。$\alpha + (-1) \cdot \alpha = (1-1) \alpha = \theta$，根据定义，一个元素加上另一个元素得零元素，那么第二个元素是第一个元素的负元素。）
 （证明3：$k \theta = k (\theta + \theta) = k \theta + k \theta$，还是左右两次同时加$\theta$的负元素。）&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;若 $k \alpha = \theta$，则 $k = 0$ 或 $\alpha = \theta$。&lt;/strong&gt;
-(证明：假设 $k \ne 0$，则 $\alpha = (k \cdot (\frac{1}{k}) \alpha)\alpha = k \alpha\cdot \frac{1}{k} = \theta \cdot \frac{1}{k} = \theta$。）)&lt;/p&gt;
+（证明：假设 $k \ne 0$，则 $\alpha = (k \cdot (\frac{1}{k}) \alpha)\alpha = k \alpha\cdot \frac{1}{k} = \theta \cdot \frac{1}{k} = \theta$。）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 $$
