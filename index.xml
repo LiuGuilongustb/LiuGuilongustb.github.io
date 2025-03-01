@@ -77,8 +77,12 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-$$\mathbb{R}^n = \lbrace x \mid (x_1, x_2, \dots, x_n)^T, x_i \in \mathbb{R}, i = 1, \dots, n \rbrace,$$&lt;p&gt;
-称为 n 维实向量空间。类似可定义 $\mathbb{C}^n$ .&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定义 4 （几何空间）&lt;/strong&gt;
+在通常向量的加法和数乘运算下构成$上的线性空间为&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+\mathbb{R}^n = \lbrace x \mid (x_1, x_2, \dots, x_n)^T, x_i \in \mathbb{R}, i = 1, \dots, n \rbrace,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;称为 n 维实向量空间。类似可定义 $\mathbb{C}^n$ .&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;定义 6 （核空间）&lt;/strong&gt; 取定 $A \in \mathbb{C}^{m \times n}$，令 $W = \lbrace x \in \mathbb{C}^n \mid Ax = 0 \rbrace$，不难验证 $W$ 是 $\mathbb{C}$ 上的线性空间，称为&lt;strong&gt;矩阵 $A$ 的核空间&lt;/strong&gt;，记作 $\text{N}(A)$。&lt;/p&gt;
 &lt;h2 id=&#34;线性子空间&#34;&gt;线性子空间
 &lt;/h2&gt;&lt;h2 id=&#34;基与坐标&#34;&gt;基与坐标
