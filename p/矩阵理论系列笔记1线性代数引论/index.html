@@ -354,7 +354,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 5 分钟
                 </time>
             </div>
         
@@ -400,8 +400,47 @@
 <li>$k(lA) = (kl)A$</li>
 <li>$1 \cdot A = A$</li>
 </ol>
-<p>刚才我们从第一个事实给出了加群的定义，现在我们从第二个事实给出线性空间的定义</p>
-
+<p>刚才我们从第一个事实给出了加群的定义，现在我们从第二个事实给出线性空间的定义。</p>
+<p><strong>定义 3（线性空间）</strong> 设 $(V, +)$ 是一个加群，$F$ 是一个数域。定义了 $F$ 中的数与 $V$ 中元素的一种代数运算，称为<strong>数乘</strong>，使得 $\forall \lambda \in F, u \in V$，有 $V$ 中唯一元素 $\lambda u$ 与之对应，$\lambda u$ 称为 $\lambda$ 与 $u$ 的积，且满足以下性质：</p>
+<ol>
+<li>$\lambda (u + v) = \lambda u + \lambda v$</li>
+<li>$(\lambda + \mu)u = \lambda u + \mu u$</li>
+<li>$\lambda (\mu u) = (\lambda \mu) u$</li>
+<li>$1 \cdot u = u$</li>
+</ol>
+<p>由此，$V$ 称为数域 $F$ 上的<strong>线性空间</strong>，记为 $(V, +, \cdot)$。$V$ 中元素称为<strong>向量</strong>，$F$ 中元素称为<strong>标量</strong>。</p>
+<p><mark> 我们要明确线性空间的前提是他本身要是一个加群，所以他在满足定义3的4条性质之前要满足定义1的4条性质。 </mark></p>
+<p><strong>注</strong>：当 $F = \mathbb{R}$ 时，称为<strong>实线性空间</strong>；当 $F = \mathbb{C}$ 时，称为<strong>复线性空间</strong>。</p>
+<p>接下来，我们既然提出了线性空间的定义，我们肯定要分析一下他有哪些性质（下面的性质如果你不加以思考的话必定认为这是理所当然的，如果你能思考出原因，这才是性质的根本）。</p>
+<p><strong>简单性质</strong>：设 $V$ 是数域 $F$ 上的线性空间，有：</p>
+<ol>
+<li><strong>零向量是唯一的</strong>；
+（证明：假设我们有两个零向量$\theta_1$和$\theta_2$,根据零向量的性质，任何一个向量加上零向量都等于它本身，那么我们就可以得到$\theta_1+\theta_2 = \theta_1 = \theta_2 $，所以$\theta_1$和$\theta_2$相等，即零向量是唯一的。）</li>
+<li><strong>任一向量的负向量是唯一的</strong>；
+（证明：首先我们定义一个向量u，假设他有两个负向量$v_1$和$v_2$，先根据零向量的定义$v_1=v_1 + \theta$，再根据负向量的定义$\theta = u +v_2$，所以$v_1 = v_1 + theta = v_1 + ( u + v_2 ) = (v_1 + u ) + v_2 = \theta + v_2 = v_2$，即负向量唯一。）</li>
+<li>对任意 $k \in F$ 和 $\alpha \in V$，有 $0 \alpha = \theta$，$(-1) \alpha = -\alpha$，$k \theta = \theta$；
+（证明1：$0 \alpha = (0+0)\alpha = 0 \alpha + 0 \alpha$，对于这个式子，左右两边同时加上$0 \alpha$的负向量，即得$0 \alpha = \theta$。）
+（证明2：解释原因之前，我们首先要明确$(-1) \cdot \alpha$是一个数和一个向量的积，而$- \alpha$是$\alpha$的负元素，这是两个概念。$\alpha + (-1) \cdot \alpha = (1-1) \alpha = \theta$，根据定义，一个元素加上另一个元素得零元素，那么第二个元素是第一个元素的负元素。）
+（证明3：$k \theta = k (\theta + \theta) = k \theta + k \theta$，还是左右两次同时加$\theta$的负元素。）</li>
+<li>若 $k \alpha = \theta$，则 $k = 0$ 或 $\alpha = \theta$。
+（证明：假设$k \ne 0$，则$\alpha = (k \cdot (\frac{1}{k}) \alpha)\alpha = k \alpha\cdot \frac{1}{k} = \theta \cdot \frac{1}{k} = \theta$。）</li>
+</ol>
+\[
+\mathbb{R}^n = \{ x \mid (x_1, x_2, \dots, x_n)^T, x_i \in \mathbb{R}, i = 1, \dots, n \}
+\]<p>
+在通常向量的加法与数乘运算下构成 $\mathbb{R}$ 上的线性空间，称为**$n$ 维实向量空间**。类似可定义 $\mathbb{C}^n$。</p>
+<p><strong>定义 5 （复矩阵空间）<strong>集合 $V$ 是所有 $m \times n$ 复矩阵构成的集合，即<br>
+\[
+V = \{ (a_{ij})_{m \times n} \mid a_{ij} \in \mathbb{C} \}
+\]
+$V$ 在矩阵的加法与数乘运算下构成 $\mathbb{C}$ 上的线性空间，称为</strong>复矩阵空间</strong>，记作 $\mathbb{C}^{m \times n}$。类似可定义<strong>实矩阵空间</strong> $\mathbb{R}^{m \times n}$。</p>
+<p><strong>定义 6 （核空间）</strong> 取定 $A \in \mathbb{C}^{m \times n}$，令 $W = { x \in \mathbb{C}^n \mid Ax = 0 }$，不难验证 $W$ 是 $\mathbb{C}$ 上的线性空间，称为<strong>矩阵 $A$ 的核空间</strong>，记作 $\text{N}(A)$。</p>
+<h1 id="线性子空间">线性子空间
+</h1><h1 id="基与坐标">基与坐标
+</h1><h1 id="内积空间">内积空间
+</h1><h1 id="直和和投影">直和和投影
+</h1><h1 id="多项式插值">多项式插值
+</h1>
 </section>
 
 
