@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Wed, 26 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://LiuGuilongustb.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 28 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://LiuGuilongustb.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>矩阵论</title>
+        <link>https://LiuGuilongustb.github.io/tags/%E7%9F%A9%E9%98%B5%E8%AE%BA/</link>
+        <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://LiuGuilongustb.github.io/tags/%E7%9F%A9%E9%98%B5%E8%AE%BA/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>DQN</title>
         <link>https://LiuGuilongustb.github.io/tags/dqn/</link>
         <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
