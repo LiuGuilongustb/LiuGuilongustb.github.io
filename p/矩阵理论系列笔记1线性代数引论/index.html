@@ -392,7 +392,7 @@
 <p><strong>定义 2（数域）</strong> 设 $F$ 是非空数集，若 $F$ 中任意两个数的<strong>和</strong>、<strong>差</strong>、<strong>积</strong>、<strong>商</strong>（除数不为 $0$）仍在该数集，即对四则运算封闭，称该数集 $F$ 为一个<strong>数域</strong>。</p>
 <p><strong>注</strong>：实数集 $\mathbb{R}$、复数集 $\mathbb{C}$、有理数集 $\mathbb{Q}$ 是<strong>数域</strong>；而自然数集 $\mathbb{N}$、整数集 $\mathbb{Z}$ 不是<strong>数域</strong>。</p>
 <p><strong>思考</strong>：集合 $\mathbb{Q}(i) = { a + bi \mid a, b \in \mathbb{Q} }$ 是数域吗？其中 $i$ 是虚数单位。</p>
-<p>接下来，我们思考另外一个事实：<strong>例 2</strong> 设集合 $V$ 是所有 $m \times n$ 实矩阵构成的集合，即$V = { (a_{ij})<em>{m \times n} \mid a</em>{ij} \in \mathbb{R} }$
+<p>接下来，我们思考另外一个事实：设集合 $V$ 是所有 $m \times n$ 实矩阵构成的集合，即 $V = { (a_{ij})<em>{m \times n} \mid a</em>{ij} \in \mathbb{R} }$
 任选矩阵 $A, B \in V$，$k, l \in \mathbb{R}$ 满足：</p>
 <ol>
 <li>$k(A + B) = kA + kB$</li>
@@ -414,17 +414,22 @@
 <p>接下来，我们既然提出了线性空间的定义，我们肯定要分析一下他有哪些性质（下面的性质如果你不加以思考的话必定认为这是理所当然的，如果你能思考出原因，这才是性质的根本）。</p>
 <p><strong>简单性质</strong>：设 $V$ 是数域 $F$ 上的线性空间，有：</p>
 <ol>
-<li><strong>零向量是唯一的</strong>；
-（证明：假设我们有两个零向量$\theta_1$和$\theta_2$,根据零向量的性质，任何一个向量加上零向量都等于它本身，那么我们就可以得到$\theta_1+\theta_2 = \theta_1 = \theta_2 $，所以$\theta_1$和$\theta_2$相等，即零向量是唯一的。）</li>
-<li><strong>任一向量的负向量是唯一的</strong>；
-（证明：首先我们定义一个向量u，假设他有两个负向量$v_1$和$v_2$，先根据零向量的定义$v_1=v_1 + \theta$，再根据负向量的定义$\theta = u +v_2$，所以$v_1 = v_1 + theta = v_1 + ( u + v_2 ) = (v_1 + u ) + v_2 = \theta + v_2 = v_2$，即负向量唯一。）</li>
-<li>对任意 $k \in F$ 和 $\alpha \in V$，有 $0 \alpha = \theta$，$(-1) \alpha = -\alpha$，$k \theta = \theta$；
-（证明1：$0 \alpha = (0+0)\alpha = 0 \alpha + 0 \alpha$，对于这个式子，左右两边同时加上$0 \alpha$的负向量，即得$0 \alpha = \theta$。）
-（证明2：解释原因之前，我们首先要明确$(-1) \cdot \alpha$是一个数和一个向量的积，而$- \alpha$是$\alpha$的负元素，这是两个概念。$\alpha + (-1) \cdot \alpha = (1-1) \alpha = \theta$，根据定义，一个元素加上另一个元素得零元素，那么第二个元素是第一个元素的负元素。）
-（证明3：$k \theta = k (\theta + \theta) = k \theta + k \theta$，还是左右两次同时加$\theta$的负元素。）</li>
-<li>若 $k \alpha = \theta$，则 $k = 0$ 或 $\alpha = \theta$。
-（证明：假设$k \ne 0$，则$\alpha = (k \cdot (\frac{1}{k}) \alpha)\alpha = k \alpha\cdot \frac{1}{k} = \theta \cdot \frac{1}{k} = \theta$。）</li>
+<li>
+<p><strong>零向量是唯一的</strong>；
+（证明：假设我们有两个零向量$\theta_1$和$\theta_2$,根据零向量的性质，任何一个向量加上零向量都等于它本身，那么我们就可以得到$\theta_1+\theta_2 = \theta_1 = \theta_2 $，所以$\theta_1$和$\theta_2$相等，即零向量是唯一的。）</p>
+</li>
+<li>
+<p><strong>任一向量的负向量是唯一的</strong>；（证明：首先我们定义一个向量u，假设他有两个负向量$v_1$和$v_2$，先根据零向量的定义$v_1=v_1 + \theta$，再根据负向量的定义$\theta = u +v_2$，所以$v_1 = v_1 + \theta = v_1 + ( u + v_2 ) = (v_1 + u ) + v_2 = \theta + v_2 = v_2$，即负向量唯一。）</p>
+</li>
+<li>
+<p><strong>对任意 $k \in F$ 和 $\alpha \in V$，有 $0 \alpha = \theta$，$(-1) \alpha = -\alpha$，$k \theta = \theta$</strong>；（证明1：$0 \alpha = (0+0)\alpha = 0 \alpha + 0 \alpha$，对于这个式子，左右两边同时加上$0 \alpha$的负向量，即得$0 \alpha = \theta$。）（证明2：解释原因之前，我们首先要明确$(-1) \cdot \alpha$是一个数和一个向量的积，而$- \alpha$是$\alpha$的负元素，这是两个概念。$\alpha + (-1) \cdot \alpha = (1-1) \alpha = \theta$，根据定义，一个元素加上另一个元素得零元素，那么第二个元素是第一个元素的负元素。）
+（证明3：$k \theta = k (\theta + \theta) = k \theta + k \theta$，还是左右两次同时加$\theta$的负元素。）</p>
+</li>
+<li>
+<p><strong>若 $k \alpha = \theta$，则 $k = 0$ 或 $\alpha = \theta$。</strong></p>
+</li>
 </ol>
+<p>（证明：假设$k \ne 0$，则$\alpha = (k \cdot (\frac{1}{k}) \alpha)\alpha = k \alpha\cdot \frac{1}{k} = \theta \cdot \frac{1}{k} = \theta$。）</p>
 \[
 \mathbb{R}^n = \{ x \mid (x_1, x_2, \dots, x_n)^T, x_i \in \mathbb{R}, i = 1, \dots, n \}
 \]<p>
