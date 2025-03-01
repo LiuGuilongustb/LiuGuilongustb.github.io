@@ -73,15 +73,10 @@
 （证明：假设$k \ne 0$，则$\alpha = (k \cdot (\frac{1}{k}) \alpha)\alpha = k \alpha\cdot \frac{1}{k} = \theta \cdot \frac{1}{k} = \theta$。）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-\[
+$$
 \mathbb{R}^n = \{ x \mid (x_1, x_2, \dots, x_n)^T, x_i \in \mathbb{R}, i = 1, \dots, n \}
-\]&lt;p&gt;
-在通常向量的加法与数乘运算下构成 $\mathbb{R}$ 上的线性空间，称为**$n$ 维实向量空间**。类似可定义 $\mathbb{C}^n$。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定义 5 （复矩阵空间）&lt;strong&gt;集合 $V$ 是所有 $m \times n$ 复矩阵构成的集合，即&lt;br&gt;
-\[
-V = \{ (a_{ij})_{m \times n} \mid a_{ij} \in \mathbb{C} \}
-\]
-$V$ 在矩阵的加法与数乘运算下构成 $\mathbb{C}$ 上的线性空间，称为&lt;/strong&gt;复矩阵空间&lt;/strong&gt;，记作 $\mathbb{C}^{m \times n}$。类似可定义&lt;strong&gt;实矩阵空间&lt;/strong&gt; $\mathbb{R}^{m \times n}$。&lt;/p&gt;
+$$$$V = \{ (a_{ij})_{m \times n} \mid a_{ij} \in \mathbb{C} \}$$&lt;p&gt;
+$V$ 在矩阵的加法与数乘运算下构成 $\mathbb{C}$ 上的线性空间，称为&lt;strong&gt;复矩阵空间&lt;/strong&gt;，记作 $\mathbb{C}^{m \times n}$。类似可定义&lt;strong&gt;实矩阵空间&lt;/strong&gt; $\mathbb{R}^{m \times n}$。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;定义 6 （核空间）&lt;/strong&gt; 取定 $A \in \mathbb{C}^{m \times n}$，令 $W = { x \in \mathbb{C}^n \mid Ax = 0 }$，不难验证 $W$ 是 $\mathbb{C}$ 上的线性空间，称为&lt;strong&gt;矩阵 $A$ 的核空间&lt;/strong&gt;，记作 $\text{N}(A)$。&lt;/p&gt;
 &lt;h1 id=&#34;线性子空间&#34;&gt;线性子空间
 &lt;/h1&gt;&lt;h2 id=&#34;线性子空间-1&#34;&gt;线性子空间
