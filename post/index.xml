@@ -33,11 +33,6 @@ $ u + \theta = u $&lt;/li&gt;
 $ u + (-u) = \theta $&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;称 $V$ 在加法运算下构成一个&lt;strong&gt;加群&lt;/strong&gt;，记为 $(V, +)$。&lt;/p&gt;
-&lt;p&gt;&lt;mark&gt; 关于上面的定义，我们要明白一个事情，这里的&lt;strong&gt;加法&lt;/strong&gt;不是加法运算，而是任意一种代数运算！！！，这一点非常重要，因为我如果定义这种代数运算为乘法，那么在乘法的代数运算下，依旧能够构成加群。&lt;/mark&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;例如&lt;/strong&gt;：&lt;/p&gt;
-&lt;p&gt;在数的加法运算下，&lt;strong&gt;整数集&lt;/strong&gt;、&lt;strong&gt;有理数集&lt;/strong&gt;、&lt;strong&gt;实数集&lt;/strong&gt;、&lt;strong&gt;复数集&lt;/strong&gt;分别构成加群，记作 $(\mathbb{Z}, +)$、$(\mathbb{Q}, +)$、$(\mathbb{R}, +)$、$(\mathbb{C}, +)$。&lt;/p&gt;
-&lt;p&gt;在数的&lt;strong&gt;乘法&lt;/strong&gt;运算下，&lt;strong&gt;非零有理数集&lt;/strong&gt;构成加群 $(\mathbb{Q} \setminus {0}, \cdot)$。同样，$(\mathbb{R} \setminus {0}, \cdot)$、$(\mathbb{C} \setminus {0}, \cdot)$ 也构成加群；而 $(\mathbb{Z} \setminus {0}, \cdot)$ 不构成加群（不满足定义中的第四条，乘法运算下的加群，这里的$\theta$是1，而对于乘法来说，除了1和-1，没有其他整数，能够满足乘法运算等于1）。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定义 2（数域）&lt;/strong&gt; 设 $F$ 是非空数集，若 $F$ 中任意两个数的&lt;strong&gt;和&lt;/strong&gt;、&lt;strong&gt;差&lt;/strong&gt;、&lt;strong&gt;积&lt;/strong&gt;、&lt;strong&gt;商&lt;/strong&gt;（除数不为 $0$）仍在该数集，即对四则运算封闭，称该数集 $F$ 为一个&lt;strong&gt;数域&lt;/strong&gt;。&lt;/p&gt;
 </description>
         </item>
         <item>
