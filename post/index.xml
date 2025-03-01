@@ -74,47 +74,15 @@
 （证明：假设 $k \ne 0$，则 $\alpha = (k \cdot (\frac{1}{k}) \alpha)\alpha = k \alpha\cdot \frac{1}{k} = \theta \cdot \frac{1}{k} = \theta$。） --&gt;
 $$
 \mathbb{R}^n = \lbrace x \mid (x_1, x_2, \dots, x_n)^T, x_i \in \mathbb{R}, i = 1, \dots, n \rbrace
-$$&lt;p&gt; &amp;ndash;&amp;gt;&lt;/p&gt;
-&lt;!-- **定义 5（复矩阵空间和实矩阵空间）** 集合 $V$ 是所有 $m \times n$ 复矩阵构成的集合，即  
-$$V = \lbrace (a_{ij})_{m \times n} \mid a_{ij} \in \mathbb{C} \rbrace$$
-$V$ 在矩阵的加法与数乘运算下构成 $\mathbb{C}$ 上的线性空间，称为**复矩阵空间**，记作 $\mathbb{C}^{m \times n}$。类似可定义**实矩阵空间** $\mathbb{R}^{m \times n}$。
-
-**定义 6 （核空间）** 取定 $A \in \mathbb{C}^{m \times n}$，令 $W = \lbrace x \in \mathbb{C}^n \mid Ax = 0 \rbrace$，不难验证 $W$ 是 $\mathbb{C}$ 上的线性空间，称为**矩阵 $A$ 的核空间**，记作 $\text{N}(A)$。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 线性子空间
-
-## 基与坐标
-
-## 内积空间
-
-## 直和和投影
-
-## 多项式插值
-</description>
+$$$$V = \lbrace (a_{ij})_{m \times n} \mid a_{ij} \in \mathbb{C} \rbrace$$&lt;p&gt;
+$V$ 在矩阵的加法与数乘运算下构成 $\mathbb{C}$ 上的线性空间，称为&lt;strong&gt;复矩阵空间&lt;/strong&gt;，记作 $\mathbb{C}^{m \times n}$。类似可定义&lt;strong&gt;实矩阵空间&lt;/strong&gt; $\mathbb{R}^{m \times n}$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定义 6 （核空间）&lt;/strong&gt; 取定 $A \in \mathbb{C}^{m \times n}$，令 $W = \lbrace x \in \mathbb{C}^n \mid Ax = 0 \rbrace$，不难验证 $W$ 是 $\mathbb{C}$ 上的线性空间，称为&lt;strong&gt;矩阵 $A$ 的核空间&lt;/strong&gt;，记作 $\text{N}(A)$。&lt;/p&gt;
+&lt;h2 id=&#34;线性子空间&#34;&gt;线性子空间
+&lt;/h2&gt;&lt;h2 id=&#34;基与坐标&#34;&gt;基与坐标
+&lt;/h2&gt;&lt;h2 id=&#34;内积空间&#34;&gt;内积空间
+&lt;/h2&gt;&lt;h2 id=&#34;直和和投影&#34;&gt;直和和投影
+&lt;/h2&gt;&lt;h2 id=&#34;多项式插值&#34;&gt;多项式插值
+&lt;/h2&gt;</description>
         </item>
         <item>
         <title>矩阵理论系列笔记2：线性映射与矩阵</title>
