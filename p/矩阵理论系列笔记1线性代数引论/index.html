@@ -427,16 +427,23 @@
 <p>在数的<strong>乘法</strong>运算下，<strong>非零有理数集</strong>构成加群 $(\mathbb{Q} \setminus \lbrace0\rbrace, \cdot)$。同样，$(\mathbb{R} \setminus \lbrace0\rbrace, \cdot)$、$(\mathbb{C} \setminus \lbrace0\rbrace, \cdot)$ 也构成加群；而 $(\mathbb{Z} \setminus \lbrace0\rbrace, \cdot)$ 不构成加群（不满足定义中的第四条，乘法运算下的加群，这里的$\theta$是1，而对于乘法来说，除了1和-1，没有其他整数，能够满足乘法运算等于1）。</p>
 <p><strong>定义 2（数域）</strong> 设 $F$ 是非空数集，若 $F$ 中任意两个数的<strong>和</strong>、<strong>差</strong>、<strong>积</strong>、<strong>商</strong>（除数不为 $0$）仍在该数集，即对四则运算封闭，称该数集 $F$ 为一个<strong>数域</strong>。</p>
 <p><strong>注</strong>：实数集 $\mathbb{R}$、复数集 $\mathbb{C}$、有理数集 $\mathbb{Q}$ 是<strong>数域</strong>；而自然数集 $\mathbb{N}$、整数集 $\mathbb{Z}$ 不是<strong>数域</strong>。</p>
-<p><strong>思考</strong>：集合 ${\mathbb{Q}}(i) = { \left. {a + bi} \right|a,b \in \mathbb{Q}} $ 是数域吗？其中 $i$ 是虚数单位。</p>
-<p>接下来，我们思考另外一个事实：设集合 $V$ 是所有 $m \times n$ 实矩阵构成的集合，即 $V = \lbrace (a_{ij})<em>{m \times n} \mid a</em>{ij} \in \mathbb{R} \rbrace $。任选矩阵 $A, B \in V$, $k, l \in \mathbb{R}$ 满足：</p>
+<p><strong>思考</strong>：集合 ${\mathbb{Q}}(i) = { \left. {a + bi} \right|a,b \in \mathbb{Q}}$ 是数域吗？其中 $i$ 是虚数单位。</p>
+<p>接下来，我们思考另外一个事实：设集合 $V$ 是所有 $m \times n$ 实矩阵构成的集合，即 $V = \lbrace (a_{ij})<em>{m \times n} \mid a</em>{ij} \in \mathbb{R} \rbrace$。</p>
+<p>任选矩阵 $A, B \in V$, $k, l \in \mathbb{R}$ 满足：</p>
+<ol>
+<li>$k(A + B) = kA + kB$</li>
+<li>$(k + l)A = kA + lA$</li>
+<li>$k(lA) = (kl)A$</li>
+<li>$1 \cdot A = A$</li>
+</ol>
 <!-- 接下来，我们思考另外一个事实：设集合 $V$ 是所有 $m \times n$ 实矩阵构成的集合，即 $V = \lbrace (a_{ij})_{m \times n} \mid a_{ij} \in \mathbb{R} \rbrace $。任选矩阵 $A, B \in V$，$k, l \in \mathbb{R}$ 满足：
 \[\left. {} \right|\]
 1.  $k(A + B) = kA + kB$
 2.  $(k + l)A = kA + lA$
 3.  $k(lA) = (kl)A$
 4.  $1 \cdot A = A$
-
-刚才我们从第一个事实给出了加群的定义，现在我们从第二个事实给出线性空间的定义。 -->
+-->
+<p>刚才我们从第一个事实给出了加群的定义，现在我们从第二个事实给出线性空间的定义。</p>
 <p><strong>定义 3（线性空间）</strong> 设 $(V, +)$ 是一个加群，$F$ 是一个数域。定义了 $F$ 中的数与 $V$ 中元素的一种代数运算，称为<strong>数乘</strong>，使得 $\forall \lambda \in F, u \in V$，有 $V$ 中唯一元素 $\lambda u$ 与之对应，$\lambda u$ 称为 $\lambda$ 与 $u$ 的积，且满足以下性质：</p>
 <ol>
 <li>$\lambda (u + v) = \lambda u + \lambda v$</li>
