@@ -32,8 +32,9 @@
 &lt;p&gt;&lt;mark&gt; 关于上面的定义，我们要明白一个事情，这里的&lt;strong&gt;加法&lt;/strong&gt;不是加法运算，而是任意一种代数运算！这一点非常重要，因为我如果定义这种代数运算为乘法，那么在乘法的代数运算下，依旧能够构成加群。&lt;/mark&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;例如&lt;/strong&gt;：&lt;/p&gt;
 &lt;p&gt;在数的加法运算下，&lt;strong&gt;整数集&lt;/strong&gt;、&lt;strong&gt;有理数集&lt;/strong&gt;、&lt;strong&gt;实数集&lt;/strong&gt;、&lt;strong&gt;复数集&lt;/strong&gt;分别构成加群，记作 $(\mathbb{Z}, +)$、$(\mathbb{Q}, +)$、$(\mathbb{R}, +)$、$(\mathbb{C}, +)$。&lt;/p&gt;
-&lt;h2 id=&#34;在数的乘法运算下非零有理数集构成加群-mathbbq-setminus-lbrace0rbrace-cdot同样mathbbr-setminus-lbrace0rbrace-cdotmathbbc-setminus-lbrace0rbrace-cdot-也构成加群而-mathbbz-setminus-lbrace0rbrace-cdot-不构成加群不满足定义中的第四条乘法运算下的加群这里的theta是1而对于乘法来说除了1和-1没有其他整数能够满足乘法运算等于1&#34;&gt;在数的&lt;strong&gt;乘法&lt;/strong&gt;运算下，&lt;strong&gt;非零有理数集&lt;/strong&gt;构成加群 $(\mathbb{Q} \setminus \lbrace0\rbrace, \cdot)$。同样，$(\mathbb{R} \setminus \lbrace0\rbrace, \cdot)$、$(\mathbb{C} \setminus \lbrace0\rbrace, \cdot)$ 也构成加群；而 $(\mathbb{Z} \setminus \lbrace0\rbrace, \cdot)$ 不构成加群（不满足定义中的第四条，乘法运算下的加群，这里的$\theta$是1，而对于乘法来说，除了1和-1，没有其他整数，能够满足乘法运算等于1）。
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;定义 2（数域）&lt;/strong&gt; 设 $F$ 是非空数集，若 $F$ 中任意两个数的&lt;strong&gt;和&lt;/strong&gt;、&lt;strong&gt;差&lt;/strong&gt;、&lt;strong&gt;积&lt;/strong&gt;、&lt;strong&gt;商&lt;/strong&gt;（除数不为 $0$）仍在该数集，即对四则运算封闭，称该数集 $F$ 为一个&lt;strong&gt;数域&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;在数的&lt;strong&gt;乘法&lt;/strong&gt;运算下，&lt;strong&gt;非零有理数集&lt;/strong&gt;构成加群 $(\mathbb{Q} \setminus \lbrace0\rbrace, \cdot)$。同样，$(\mathbb{R} \setminus \lbrace0\rbrace, \cdot)$、$(\mathbb{C} \setminus \lbrace0\rbrace, \cdot)$ 也构成加群；而 $(\mathbb{Z} \setminus \lbrace0\rbrace, \cdot)$ 不构成加群（不满足定义中的第四条，乘法运算下的加群，这里的$\theta$是1，而对于乘法来说，除了1和-1，没有其他整数，能够满足乘法运算等于1）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;定义 2（数域）&lt;/strong&gt; 设 $F$ 是非空数集，若 $F$ 中任意两个数的&lt;strong&gt;和&lt;/strong&gt;、&lt;strong&gt;差&lt;/strong&gt;、&lt;strong&gt;积&lt;/strong&gt;、&lt;strong&gt;商&lt;/strong&gt;（除数不为 $0$）仍在该数集，即对四则运算封闭，称该数集 $F$ 为一个&lt;strong&gt;数域&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：实数集 $\mathbb{R}$、复数集 $\mathbb{C}$、有理数集 $\mathbb{Q}$ 是&lt;strong&gt;数域&lt;/strong&gt;；而自然数集 $\mathbb{N}$、整数集 $\mathbb{Z}$ 不是&lt;strong&gt;数域&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;思考&lt;/strong&gt;：集合 ${\mathbb{Q}}(i) = { \left. {a + bi} \right|a,b \in \mathbb{Q}}$ 是数域吗？其中 $i$ 是虚数单位。&lt;/p&gt;
 &lt;p&gt;接下来，我们思考另外一个事实：设集合 $V$ 是所有 $m \times n$ 实矩阵构成的集合,
@@ -54,8 +55,9 @@
 &lt;/ol&gt;
 &lt;p&gt;由此，$V$ 称为数域 $F$ 上的&lt;strong&gt;线性空间&lt;/strong&gt;，记为 $(V, +, \cdot)$。$V$ 中元素称为&lt;strong&gt;向量&lt;/strong&gt;，$F$ 中元素称为&lt;strong&gt;标量&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;mark&gt; 我们要明确线性空间的前提是他本身要是一个加群，所以他在满足定义3的4条性质之前要满足定义1的4条性质。 &lt;/mark&gt;&lt;/p&gt;
-&lt;h2 id=&#34;注当-f--mathbbr-时称为实线性空间当-f--mathbbc-时称为复线性空间&#34;&gt;&lt;strong&gt;注&lt;/strong&gt;：当 $F = \mathbb{R}$ 时，称为&lt;strong&gt;实线性空间&lt;/strong&gt;；当 $F = \mathbb{C}$ 时，称为&lt;strong&gt;复线性空间&lt;/strong&gt;。
-&lt;/h2&gt;&lt;p&gt;接下来，我们既然提出了线性空间的定义，我们肯定要分析一下他有哪些性质（下面的性质如果你不加以思考的话必定认为这是理所当然的，如果你能思考出原因，这才是性质的根本）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：当 $F = \mathbb{R}$ 时，称为&lt;strong&gt;实线性空间&lt;/strong&gt;；当 $F = \mathbb{C}$ 时，称为&lt;strong&gt;复线性空间&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;接下来，我们既然提出了线性空间的定义，我们肯定要分析一下他有哪些性质（下面的性质如果你不加以思考的话必定认为这是理所当然的，如果你能思考出原因，这才是性质的根本）。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;简单性质&lt;/strong&gt;：设 $V$ 是数域 $F$ 上的线性空间，有：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
