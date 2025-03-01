@@ -87,23 +87,23 @@
 &lt;p&gt;$V$ 在矩阵的加法与数乘运算下构成 $\mathbb{C}$ 上的线性空间，称为&lt;strong&gt;复矩阵空间&lt;/strong&gt;，记作 $\mathbb{C}^{m \times n}$。类似可定义&lt;strong&gt;实矩阵空间&lt;/strong&gt; $\mathbb{R}^{m \times n}$。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;定义 6 （核空间）&lt;/strong&gt; 取定 $A \in \mathbb{C}^{m \times n}$，令 $W = \lbrace x \in \mathbb{C}^n \mid Ax = 0 \rbrace$，不难验证 $W$ 是 $\mathbb{C}$ 上的线性空间，称为&lt;strong&gt;矩阵 $A$ 的核空间&lt;/strong&gt;，记作 $\text{N}(A)$。&lt;/p&gt;
 &lt;p&gt;\begin{equation}
-V =
-\nonumber
-\end{equation}&lt;/p&gt;
-&lt;p&gt;\begin{equation}
-V =  \lbrace  \rbrace
-\nonumber
-\end{equation}&lt;/p&gt;
-&lt;p&gt;\begin{equation}
 V =  \lbrace {{{\left( {{a_{ij}}} \right)}_{m \times n}}}  \rbrace
 \nonumber
 \end{equation}&lt;/p&gt;
 &lt;p&gt;\begin{equation}
-V =  \lbrace {\left. {{\left( {{a_{ij}}} \right)}_{m \times n}}} \right|  \rbrace
+V =  \lbrace {{{\left( {{a_{ij}}} \right)}_{m \times n}}} \mid  \rbrace
 \nonumber
 \end{equation}&lt;/p&gt;
 &lt;p&gt;\begin{equation}
-V =  \lbrace {\left. {{{\left( {{a_{ij}}} \right)}&lt;em&gt;{m \times n}}} \right|{a&lt;/em&gt;{ij}} \in {\mathbb{C}}}  \rbrace
+V =  \lbrace {{{\left( {{a_{ij}}} \right)}&lt;em&gt;{m \times n}}} \mid {a&lt;/em&gt;{ij}}  \rbrace
+\nonumber
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+V =  \lbrace {{{\left( {{a_{ij}}} \right)}&lt;em&gt;{m \times n}}} \mid {a&lt;/em&gt;{ij}} \in {\mathbb{C}} \rbrace
+\nonumber
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+V =  \lbrace {\left. {{{\left( {{a_{ij}}} \right)}&lt;em&gt;{m \times n}}} \right| {a&lt;/em&gt;{ij}} \in {\mathbb{C}}}  \rbrace
 \nonumber
 \end{equation}&lt;/p&gt;
 &lt;h2 id=&#34;线性子空间&#34;&gt;线性子空间
