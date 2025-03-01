@@ -70,7 +70,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;若 $k \alpha = \theta$，则 $k = 0$ 或 $\alpha = \theta$。&lt;/strong&gt;
-（证明：假设$k \ne 0$，则$\alpha = (k \cdot (\frac{1}{k}) \alpha)\alpha = k \alpha\cdot \frac{1}{k} = \theta \cdot \frac{1}{k} = \theta$。）&lt;/p&gt;
+(证明：假设 $k \ne 0$，则 $\alpha = (k \cdot (\frac{1}{k}) \alpha)\alpha = k \alpha\cdot \frac{1}{k} = \theta \cdot \frac{1}{k} = \theta$。）)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 $$
