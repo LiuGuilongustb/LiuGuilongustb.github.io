@@ -19,7 +19,10 @@
 &lt;li&gt;加法交换律&lt;/li&gt;
 &lt;li&gt;加法结合律&lt;/li&gt;
 &lt;li&gt;存在零矩阵&lt;/li&gt;
-&lt;li&gt;存在负矩阵&lt;/li&gt;
+&lt;li&gt;存在负矩阵
+\begin{equation}
+Ax+Bu=y
+\end{equation}&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         </item>
