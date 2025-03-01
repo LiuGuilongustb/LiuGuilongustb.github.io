@@ -70,10 +70,10 @@
 （证明3：$k \theta = k (\theta + \theta) = k \theta + k \theta$，还是左右两次同时加$\theta$的负元素。）&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;若 $k \alpha = \theta$，则 $k = 0$ 或 $\alpha = \theta$。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;若 $k \alpha = \theta$，则 $k = 0$ 或 $\alpha = \theta$。&lt;/strong&gt;
+（证明：假设$k \ne 0$，则$\alpha = (k \cdot (\frac{1}{k}) \alpha)\alpha = k \alpha\cdot \frac{1}{k} = \theta \cdot \frac{1}{k} = \theta$。）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;（证明：假设$k \ne 0$，则$\alpha = (k \cdot (\frac{1}{k}) \alpha)\alpha = k \alpha\cdot \frac{1}{k} = \theta \cdot \frac{1}{k} = \theta$。）&lt;/p&gt;
 \[
 \mathbb{R}^n = \{ x \mid (x_1, x_2, \dots, x_n)^T, x_i \in \mathbb{R}, i = 1, \dots, n \}
 \]&lt;p&gt;
