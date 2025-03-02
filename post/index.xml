@@ -189,7 +189,7 @@ k_1 x_1 + k_2 x_2 + \dots + k_r x_r = 0
 \end{equation}
 必有 $k_1 = k_2 = \dots = k_r = 0$。&lt;/p&gt;
 &lt;p&gt;&lt;mark&gt;线性无关组的&lt;strong&gt;任一子集&lt;/strong&gt;是线性无关的，线性相关组的&lt;strong&gt;任一扩展集&lt;/strong&gt;仍线性相关。&lt;/mark&gt;&lt;/p&gt;
-&lt;p&gt;证明：
+&lt;p&gt;&lt;em&gt;证明&lt;/em&gt;：
 &lt;strong&gt;命题 1：线性无关组的任一子集仍然是线性无关的&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;设向量组 $S = { v_1, v_2, \dots, v_n }$ 在向量空间 $V$ 中是&lt;strong&gt;线性无关&lt;/strong&gt;的，即对于任意的标量 $a_1, a_2, \dots, a_n$，若满足
 \begin{equation}
@@ -241,8 +241,43 @@ a_1 v_1 + \dots + a_n v_n + 0 \cdot w = 0,
 \begin{equation}
 \dim V = n \iff V 的任一基底的元素个数都是 n
 \end{equation}&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;推论 1&lt;/strong&gt; $n$ 维空间中的任意 $n$ 个线性无关的向量均为 $V$ 的一个&lt;strong&gt;基底&lt;/strong&gt;，且任一线性无关组 $x_1, x_2, \dots, x_r$ （$r \leq n$）可扩充为一组基。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;推论 2&lt;/strong&gt; 设 $x_1, x_2, \dots, x_n$ 是 $n$ 维空间 $V$ 的一个基，则 $\forall y \in V$，$y$ 可由 $x_1, x_2, \dots, x_n$ &lt;strong&gt;唯一表示&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;证明&lt;/em&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;（充分性）&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;设 $\dim V = n$，即 $V$ 存在一个 $n$ 元基底 ${ x_1, x_2, \dots, x_n }$，我们要证明 $V$ 中的任意基底的元素个数都等于 $n$。&lt;/p&gt;
+&lt;p&gt;假设 $V$ 存在另一组基底 ${ y_1, y_2, \dots, y_m }$，由于基底是极大线性无关组，因此 $y_1, y_2, \dots, y_m$ 必须是线性无关的，并且能生成整个 $V$，即：&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+\forall v \in V, \quad v = a_1 y_1 + a_2 y_2 + \dots + a_m y_m.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;又因为 $V$ 的维数为 $n$，所以 $V$ 中任何线性无关组至多含有 $n$ 个向量，因此 $m \leq n$。&lt;/p&gt;
+&lt;p&gt;另一方面，由于 ${ y_1, y_2, \dots, y_m }$ 是 $V$ 的一组基底，它必须是极大线性无关的，即不能再添加向量，否则就会线性相关。结合维数定义，基底中的向量数目必须等于维数，即 $m = n$。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;（必要性）&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;若 $V$ 的所有基底的元素个数都是 $n$，则 $V$ 的维数即为 $n$，符合维数的定义。因此 $\dim V = n$ 成立。&lt;/p&gt;
+&lt;p&gt;综上所述，定理 2.1 证明完毕。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;推论 2.1&lt;/strong&gt; $n$ 维空间中的任意 $n$ 个线性无关的向量均为 $V$ 的一个&lt;strong&gt;基底&lt;/strong&gt;，且任一线性无关组 $x_1, x_2, \dots, x_r$ （$r \leq n$）可扩充为一组基。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;证明&lt;/em&gt;：&lt;/p&gt;
+&lt;p&gt;（1）设 $V$ 是 $n$ 维空间，且 ${ x_1, x_2, \dots, x_n }$ 是 $V$ 中 $n$ 个线性无关的向量。由于 $V$ 的维数为 $n$，任意线性无关组的元素个数最多为 $n$，因此 ${ x_1, x_2, \dots, x_n }$ 已经是极大线性无关组，必然构成 $V$ 的一组基底。&lt;/p&gt;
+&lt;p&gt;（2）设 ${ x_1, x_2, \dots, x_r }$ 是 $V$ 中的一组线性无关组，其中 $r &amp;lt; n$。由于 $V$ 的维数为 $n$，$V$ 的基底包含 $n$ 个向量，因此可以在 ${ x_1, x_2, \dots, x_r }$ 的基础上添加 $n - r$ 个向量，使其扩展为一组基底。&lt;/p&gt;
+&lt;p&gt;综上，推论 1 证明完毕。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;推论 2.2&lt;/strong&gt; 设 $x_1, x_2, \dots, x_n$ 是 $n$ 维空间 $V$ 的一个基，则 $\forall y \in V$，$y$ 可由 $x_1, x_2, \dots, x_n$ &lt;strong&gt;唯一表示&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;证明&lt;/em&gt;：&lt;/p&gt;
+&lt;p&gt;由于 ${ x_1, x_2, \dots, x_n }$ 是 $V$ 的一组基底，依据基底的定义，$V$ 中的任意向量 $y$ 都可以由这组基底线性表示：
+\begin{equation}
+y = a_1 x_1 + a_2 x_2 + \dots + a_n x_n.
+\end{equation}
+我们需要证明这个表示是唯一的。假设 $y$ 还可以用另一组系数 $b_1, b_2, \dots, b_n$ 表示：
+\begin{equation}
+y = b_1 x_1 + b_2 x_2 + \dots + b_n x_n.
+\end{equation}
+则两式相减，得到：
+\begin{equation}
+(a_1 - b_1) x_1 + (a_2 - b_2) x_2 + \dots + (a_n - b_n) x_n = 0.
+\end{equation}
+由于 ${ x_1, x_2, \dots, x_n }$ 是线性无关的，唯一可能的情况是所有系数均为零：
+\begin{equation}
+a_1 - b_1 = a_2 - b_2 = \dots = a_n - b_n = 0.
+\end{equation}
+即 $a_i = b_i$，因此表示唯一。&lt;/p&gt;
+&lt;p&gt;推论 2 证明完毕。&lt;/p&gt;
 </description>
         </item>
         <item>
