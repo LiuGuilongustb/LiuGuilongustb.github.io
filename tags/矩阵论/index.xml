@@ -102,8 +102,8 @@ k \odot a = a^k, \quad \forall a \in \mathbb{R}^+, k \in \mathbb{R}
 证明 $(\mathbb{R}^+, \oplus, \odot)$ 是实线性空间。&lt;/p&gt;
 &lt;p&gt;这个例子定义了一个运算结构 \((\mathbb{R}^+, \oplus, \odot)\)，其中：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;加法（即向量加法）定义为 \( a \oplus b = ab \)，对所有 \( a, b \in \mathbb{R}^+ \)。&lt;/li&gt;
-&lt;li&gt;数乘（即标量乘法）定义为 \( k \odot a = a^k \)，对所有 \( a \in \mathbb{R}^+ \) 和 \( k \in \mathbb{R} \)。&lt;/li&gt;
+&lt;li&gt;加法（即向量加法）定义为 $a \oplus b = ab$，对所有 $a, b \in \mathbb{R}^+$。&lt;/li&gt;
+&lt;li&gt;数乘（即标量乘法）定义为 $k \odot a = a^k$，对所有 $a \in \mathbb{R}^+$ 和 $k \in \mathbb{R}$。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;目标：证明 \((\mathbb{R}^+, \oplus, \odot)\) 是实线性空间。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;要证明它是一个实线性空间，我们需要检查线性空间的八个公理是否成立：&lt;/p&gt;
@@ -111,53 +111,64 @@ k \odot a = a^k, \quad \forall a \in \mathbb{R}^+, k \in \mathbb{R}
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;封闭性&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;加法封闭：若 \( a, b \in \mathbb{R}^+ \)，则 \( a \oplus b = ab \) 仍在 \( \mathbb{R}^+ \) 内，满足封闭性。&lt;/li&gt;
-&lt;li&gt;数乘封闭：若 \( a \in \mathbb{R}^+ \)，则 \( k \odot a = a^k \) 仍然是正数，对所有实数 \( k \) 仍然成立。&lt;/li&gt;
+&lt;li&gt;加法封闭：若 $a, b \in \mathbb{R}^+$，则 $a \oplus b = ab$ 仍在 $\mathbb{R}^+$ 内，满足封闭性。&lt;/li&gt;
+&lt;li&gt;数乘封闭：若 $a \in \mathbb{R}^+$，则 $k \odot a = a^k$ 仍然是正数，对所有实数 $k$ 仍然成立。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-\[
-   a \oplus b = ab = ba = b \oplus a
-   \]&lt;p&gt;
+&lt;p&gt;&lt;strong&gt;加法交换律&lt;/strong&gt;：
+\begin{equation}
+a \oplus b = ab = ba = b \oplus a
+\end{equation}
 因此，加法是交换的。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-\[
-   (a \oplus b) \oplus c = (ab) \oplus c = (ab)c = a(bc) = a \oplus (b \oplus c)
-   \]&lt;p&gt;
+&lt;p&gt;&lt;strong&gt;加法结合律&lt;/strong&gt;：
+\begin{equation}
+(a \oplus b) \oplus c = (ab) \oplus c = (ab)c = a(bc) = a \oplus (b \oplus c)
+\end{equation}
 因此，加法是结合的。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-\[
-   a \oplus 1 = a \cdot 1 = a
-   \]&lt;p&gt;
+&lt;p&gt;&lt;strong&gt;加法单位元&lt;/strong&gt;：
+线性空间要求存在一个零元 $e$，使得 $a \oplus e = a$ 对所有 $a \in \mathbb{R}^+$ 成立。
+令 $e$ 为 1，则
+\begin{equation}
+a \oplus 1 = a \cdot 1 = a
+\end{equation}
 因此，1 是加法单位元。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;加法逆元&lt;/strong&gt;：
-线性空间要求对每个 \( a \) 存在一个逆元 \( b \)，使得 \( a \oplus b = e \)（即 \( ab = 1 \)）。
-取 \( b = a^{-1} \)，有 \( a \oplus b = a \cdot a^{-1} = 1 \)，因此每个元素都有加法逆元。&lt;/p&gt;
+线性空间要求对每个 $a$ 存在一个逆元 $b$，使得 $a \oplus b = e$（即 $ab = 1$）。
+取 $b = a^{-1}$，有 $a \oplus b = a \cdot a^{-1} = 1$，因此每个元素都有加法逆元。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-\[
-   (k_1 + k_2) \odot a = a^{(k_1 + k_2)}
-   \]\[
-   k_1 \odot (k_2 \odot a) = k_1 \odot (a^{k_2}) = (a^{k_2})^{k_1} = a^{(k_1 k_2)}
-   \]&lt;p&gt;
+&lt;p&gt;&lt;strong&gt;数乘分配律（对标量加法的分配律）&lt;/strong&gt;：
+\begin{equation}
+(k_1 + k_2) \odot a = a^{(k_1 + k_2)}
+\end{equation}
+以及
+\begin{equation}
+k_1 \odot (k_2 \odot a) = k_1 \odot (a^{k_2}) = (a^{k_2})^{k_1} = a^{(k_1 k_2)}
+\end{equation}
 这满足数乘的分配律。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-\[
-   k \odot (a \oplus b) = k \odot (ab) = (ab)^k = a^k b^k = (k \odot a) \oplus (k \odot b)
-   \]&lt;p&gt;
+&lt;p&gt;&lt;strong&gt;数乘分配律（对向量加法的分配律）&lt;/strong&gt;：
+\begin{equation}
+k \odot (a \oplus b) = k \odot (ab) = (ab)^k = a^k b^k = (k \odot a) \oplus (k \odot b)
+\end{equation}
 这也是成立的。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-\[
-   (k_1 k_2) \odot a = a^{(k_1 k_2)}
-   \]\[
-   k_1 \odot (k_2 \odot a) = k_1 \odot (a^{k_2}) = (a^{k_2})^{k_1} = a^{(k_1 k_2)}
-   \]&lt;p&gt;
+&lt;p&gt;&lt;strong&gt;数乘结合律&lt;/strong&gt;：
+\begin{equation}
+(k_1 k_2) \odot a = a^{(k_1 k_2)}
+\end{equation}
+\begin{equation}
+k_1 \odot (k_2 \odot a) = k_1 \odot (a^{k_2}) = (a^{k_2})^{k_1} = a^{(k_1 k_2)}
+\end{equation}
 也满足数乘结合律。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;

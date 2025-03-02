@@ -494,8 +494,8 @@ k \odot a = a^k, \quad \forall a \in \mathbb{R}^+, k \in \mathbb{R}
 证明 $(\mathbb{R}^+, \oplus, \odot)$ 是实线性空间。</p>
 <p>这个例子定义了一个运算结构 \((\mathbb{R}^+, \oplus, \odot)\)，其中：</p>
 <ul>
-<li>加法（即向量加法）定义为 \( a \oplus b = ab \)，对所有 \( a, b \in \mathbb{R}^+ \)。</li>
-<li>数乘（即标量乘法）定义为 \( k \odot a = a^k \)，对所有 \( a \in \mathbb{R}^+ \) 和 \( k \in \mathbb{R} \)。</li>
+<li>加法（即向量加法）定义为 $a \oplus b = ab$，对所有 $a, b \in \mathbb{R}^+$。</li>
+<li>数乘（即标量乘法）定义为 $k \odot a = a^k$，对所有 $a \in \mathbb{R}^+$ 和 $k \in \mathbb{R}$。</li>
 </ul>
 <p><strong>目标：证明 \((\mathbb{R}^+, \oplus, \odot)\) 是实线性空间。</strong></p>
 <p>要证明它是一个实线性空间，我们需要检查线性空间的八个公理是否成立：</p>
@@ -503,53 +503,64 @@ k \odot a = a^k, \quad \forall a \in \mathbb{R}^+, k \in \mathbb{R}
 <li>
 <p><strong>封闭性</strong>：</p>
 <ul>
-<li>加法封闭：若 \( a, b \in \mathbb{R}^+ \)，则 \( a \oplus b = ab \) 仍在 \( \mathbb{R}^+ \) 内，满足封闭性。</li>
-<li>数乘封闭：若 \( a \in \mathbb{R}^+ \)，则 \( k \odot a = a^k \) 仍然是正数，对所有实数 \( k \) 仍然成立。</li>
+<li>加法封闭：若 $a, b \in \mathbb{R}^+$，则 $a \oplus b = ab$ 仍在 $\mathbb{R}^+$ 内，满足封闭性。</li>
+<li>数乘封闭：若 $a \in \mathbb{R}^+$，则 $k \odot a = a^k$ 仍然是正数，对所有实数 $k$ 仍然成立。</li>
 </ul>
 </li>
 <li>
-\[
-   a \oplus b = ab = ba = b \oplus a
-   \]<p>
+<p><strong>加法交换律</strong>：
+\begin{equation}
+a \oplus b = ab = ba = b \oplus a
+\end{equation}
 因此，加法是交换的。</p>
 </li>
 <li>
-\[
-   (a \oplus b) \oplus c = (ab) \oplus c = (ab)c = a(bc) = a \oplus (b \oplus c)
-   \]<p>
+<p><strong>加法结合律</strong>：
+\begin{equation}
+(a \oplus b) \oplus c = (ab) \oplus c = (ab)c = a(bc) = a \oplus (b \oplus c)
+\end{equation}
 因此，加法是结合的。</p>
 </li>
 <li>
-\[
-   a \oplus 1 = a \cdot 1 = a
-   \]<p>
+<p><strong>加法单位元</strong>：
+线性空间要求存在一个零元 $e$，使得 $a \oplus e = a$ 对所有 $a \in \mathbb{R}^+$ 成立。
+令 $e$ 为 1，则
+\begin{equation}
+a \oplus 1 = a \cdot 1 = a
+\end{equation}
 因此，1 是加法单位元。</p>
 </li>
 <li>
 <p><strong>加法逆元</strong>：
-线性空间要求对每个 \( a \) 存在一个逆元 \( b \)，使得 \( a \oplus b = e \)（即 \( ab = 1 \)）。
-取 \( b = a^{-1} \)，有 \( a \oplus b = a \cdot a^{-1} = 1 \)，因此每个元素都有加法逆元。</p>
+线性空间要求对每个 $a$ 存在一个逆元 $b$，使得 $a \oplus b = e$（即 $ab = 1$）。
+取 $b = a^{-1}$，有 $a \oplus b = a \cdot a^{-1} = 1$，因此每个元素都有加法逆元。</p>
 </li>
 <li>
-\[
-   (k_1 + k_2) \odot a = a^{(k_1 + k_2)}
-   \]\[
-   k_1 \odot (k_2 \odot a) = k_1 \odot (a^{k_2}) = (a^{k_2})^{k_1} = a^{(k_1 k_2)}
-   \]<p>
+<p><strong>数乘分配律（对标量加法的分配律）</strong>：
+\begin{equation}
+(k_1 + k_2) \odot a = a^{(k_1 + k_2)}
+\end{equation}
+以及
+\begin{equation}
+k_1 \odot (k_2 \odot a) = k_1 \odot (a^{k_2}) = (a^{k_2})^{k_1} = a^{(k_1 k_2)}
+\end{equation}
 这满足数乘的分配律。</p>
 </li>
 <li>
-\[
-   k \odot (a \oplus b) = k \odot (ab) = (ab)^k = a^k b^k = (k \odot a) \oplus (k \odot b)
-   \]<p>
+<p><strong>数乘分配律（对向量加法的分配律）</strong>：
+\begin{equation}
+k \odot (a \oplus b) = k \odot (ab) = (ab)^k = a^k b^k = (k \odot a) \oplus (k \odot b)
+\end{equation}
 这也是成立的。</p>
 </li>
 <li>
-\[
-   (k_1 k_2) \odot a = a^{(k_1 k_2)}
-   \]\[
-   k_1 \odot (k_2 \odot a) = k_1 \odot (a^{k_2}) = (a^{k_2})^{k_1} = a^{(k_1 k_2)}
-   \]<p>
+<p><strong>数乘结合律</strong>：
+\begin{equation}
+(k_1 k_2) \odot a = a^{(k_1 k_2)}
+\end{equation}
+\begin{equation}
+k_1 \odot (k_2 \odot a) = k_1 \odot (a^{k_2}) = (a^{k_2})^{k_1} = a^{(k_1 k_2)}
+\end{equation}
 也满足数乘结合律。</p>
 </li>
 </ol>
