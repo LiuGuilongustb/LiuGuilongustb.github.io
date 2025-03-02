@@ -90,6 +90,78 @@ V =  \lbrace {{{\left( {{a_{ij}}} \right)}_{m \times n}}} \mid {a_{ij}} \in {\ma
 \end{equation}
 $V$ 在矩阵的加法与数乘运算下构成 $\mathbb{C}$ 上的线性空间，称为&lt;strong&gt;复矩阵空间&lt;/strong&gt;，记作 $\mathbb{C}^{m \times n}$。类似可定义&lt;strong&gt;实矩阵空间&lt;/strong&gt; $\mathbb{R}^{m \times n}$。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;定义 6 （核空间）&lt;/strong&gt; 取定 $A \in \mathbb{C}^{m \times n}$，令 $W = \lbrace x \in \mathbb{C}^n \mid Ax = 0 \rbrace$，不难验证 $W$ 是 $\mathbb{C}$ 上的线性空间，称为&lt;strong&gt;矩阵 $A$ 的核空间&lt;/strong&gt;，记作 $\text{N}(A)$。&lt;/p&gt;
+&lt;p&gt;（核空间的维数就等于$n-r$，这是线性代数的内容，不在这里展开讨论）&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;例 6&lt;/strong&gt; 设 $\mathbb{R}^+$ 表示所有正实数集合，在 $\mathbb{R}^+$ 中定义加法与数乘为&lt;br&gt;
+\begin{equation}
+a \oplus b = ab, \quad \forall a, b \in \mathbb{R}^+
+\end{equation}
+\begin{equation}
+k \odot a = a^k, \quad \forall a \in \mathbb{R}^+, k \in \mathbb{R}
+\end{equation}
+证明 $(\mathbb{R}^+, \oplus, \odot)$ 是实线性空间。&lt;/p&gt;
+&lt;p&gt;这个例子定义了一个运算结构 \((\mathbb{R}^+, \oplus, \odot)\)，其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;加法（即向量加法）定义为 \( a \oplus b = ab \)，对所有 \( a, b \in \mathbb{R}^+ \)。&lt;/li&gt;
+&lt;li&gt;数乘（即标量乘法）定义为 \( k \odot a = a^k \)，对所有 \( a \in \mathbb{R}^+ \) 和 \( k \in \mathbb{R} \)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;目标：证明 \((\mathbb{R}^+, \oplus, \odot)\) 是实线性空间。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;要证明它是一个实线性空间，我们需要检查线性空间的八个公理是否成立：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;封闭性&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;加法封闭：若 \( a, b \in \mathbb{R}^+ \)，则 \( a \oplus b = ab \) 仍在 \( \mathbb{R}^+ \) 内，满足封闭性。&lt;/li&gt;
+&lt;li&gt;数乘封闭：若 \( a \in \mathbb{R}^+ \)，则 \( k \odot a = a^k \) 仍然是正数，对所有实数 \( k \) 仍然成立。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+\[
+   a \oplus b = ab = ba = b \oplus a
+   \]&lt;p&gt;
+因此，加法是交换的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+\[
+   (a \oplus b) \oplus c = (ab) \oplus c = (ab)c = a(bc) = a \oplus (b \oplus c)
+   \]&lt;p&gt;
+因此，加法是结合的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+\[
+   a \oplus 1 = a \cdot 1 = a
+   \]&lt;p&gt;
+因此，1 是加法单位元。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;加法逆元&lt;/strong&gt;：
+线性空间要求对每个 \( a \) 存在一个逆元 \( b \)，使得 \( a \oplus b = e \)（即 \( ab = 1 \)）。
+取 \( b = a^{-1} \)，有 \( a \oplus b = a \cdot a^{-1} = 1 \)，因此每个元素都有加法逆元。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+\[
+   (k_1 + k_2) \odot a = a^{(k_1 + k_2)}
+   \]\[
+   k_1 \odot (k_2 \odot a) = k_1 \odot (a^{k_2}) = (a^{k_2})^{k_1} = a^{(k_1 k_2)}
+   \]&lt;p&gt;
+这满足数乘的分配律。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+\[
+   k \odot (a \oplus b) = k \odot (ab) = (ab)^k = a^k b^k = (k \odot a) \oplus (k \odot b)
+   \]&lt;p&gt;
+这也是成立的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+\[
+   (k_1 k_2) \odot a = a^{(k_1 k_2)}
+   \]\[
+   k_1 \odot (k_2 \odot a) = k_1 \odot (a^{k_2}) = (a^{k_2})^{k_1} = a^{(k_1 k_2)}
+   \]&lt;p&gt;
+也满足数乘结合律。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;结论：&lt;/strong&gt; 由于满足所有八个线性空间的公理，因此 \((\mathbb{R}^+, \oplus, \odot)\) 确实是一个实线性空间。&lt;/p&gt;
 &lt;h2 id=&#34;线性子空间&#34;&gt;线性子空间
 &lt;/h2&gt;&lt;h2 id=&#34;基与坐标&#34;&gt;基与坐标
 &lt;/h2&gt;&lt;h2 id=&#34;内积空间&#34;&gt;内积空间
