@@ -13,42 +13,27 @@
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-02-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-02-26T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="安装Ubuntu的全流程及安装会遇到的问题">
 <meta name="twitter:description" content="安装 Ubuntu 的方法 注：下载不同版本要依赖于你想要做的东西，例如最新版的 Ubuntu 已经不支持 ROS1 的使用了，所以如果你想要研究 ROS1 就必须安装对应的版本。\n下载 Ubuntu 的映像文件 首先到 Ubuntu 的官网（）下载你想要安装的版本。\n">
-        <script type="text/javascript"
-async
-src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-MathJax.Hub.Config({
-tex2jax: {
-tags: 'ams',  
-inlineMath: [['$','$'], ['\\(','\\)']],
-displayMath: [['$$','$$'], ['\[\[','\]\]']],
-processEscapes: true,
-processEnvironments: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-TeX: { equationNumbers: { autoNumber: "AMS" },
-extensions: ["AMSmath.js", "AMSsymbols.js"] }
-}
-});
-
-MathJax.Hub.Queue(function() {
+        
 
 
 
-var all = MathJax.Hub.getAllJax(), i;
-for(i = 0; i < all.length; i += 1) {
-all[i].SourceElement().parentNode.className += ' has-jax';
-}
-});
-</script>
+<script>
+    window.MathJax = {
+      tex: {
+        tags: 'ams',  
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        packages: ['base', 'ams']
+        
+      },
+      options: {
+        
+        
+      }
+    };
+    </script>
 
-<style>
-code.has-jax {
-font: inherit;
-font-size: 100%;
-background: inherit;
-border: inherit;
-color: #515151;
-}
-</style>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
     </head>
     <body class="
