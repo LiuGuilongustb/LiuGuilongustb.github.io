@@ -346,6 +346,7 @@ color: #515151;
   <ol>
     <li><a href="#线性空间">线性空间</a></li>
     <li><a href="#基维数与坐标">基、维数与坐标</a></li>
+    <li></li>
   </ol>
 </nav>
         </div>
@@ -402,7 +403,7 @@ color: #515151;
 
 
                 <time class="article-time--reading">
-                    阅读时长: 12 分钟
+                    阅读时长: 13 分钟
                 </time>
             </div>
         
@@ -941,6 +942,9 @@ x = (x_1, x_2, \dots, x_n)
 \end{bmatrix}
 \end{equation}
 </div>
+<mark>
+强调一点，旧基的坐标是新基坐标的A，而新基坐标是旧基坐标的$A^(-1)，这个千万不能记反了。
+</mark>
 <p><strong>思考</strong> 为什么就能由唯一性得到坐标变换的公式？</p>
 <p>其实很简单，只要移项相减就可以。虽然很简单，不能想当然。</p>
 <p><strong>例 4</strong> 在 $\mathbb{R}^4$ 中求由基 $\alpha_1, \alpha_2, \alpha_3, \alpha_4$ 到基 $\beta_1, \beta_2, \beta_3, \beta_4$ 的过渡矩阵，其中</p>
@@ -962,7 +966,41 @@ x = (x_1, x_2, \dots, x_n)
 \end{cases}
 \end{equation}
 </div>
-
+<p><strong>解</strong>：将 $\lbrace \alpha_1, \alpha_2, \alpha_3, \alpha_4 \mid \beta_1, \beta_2, \beta_3, \beta_4 \rbrace$ 做初等行变换，得到</p>
+<div>  
+\begin{equation} \nonumber
+\begin{bmatrix}  
+1 & 1 & -1 & -1 & 2 & 0 & -2 & 1 \\  
+2 & -1 & 2 & -1 & 1 & 1 & 1 & 3 \\  
+-1 & 1 & 1 & 0 & 0 & 2 & 1 & 1 \\  
+0 & 1 & 1 & 1 & 1 & 2 & 2 & 2  
+\end{bmatrix}  
+\to  
+\begin{bmatrix}  
+1 & 0 & 0 & 0 & 1 & 0 & 0 & 1 \\  
+0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\  
+0 & 0 & 1 & 0 & 1 & 1 & 1 & 1 \\  
+0 & 0 & 0 & 1 & 0 & 1 & 1 & 0  
+\end{bmatrix}  
+\end{equation}  
+</div>  
+所以过渡矩阵为  
+<div>  
+\begin{equation} \nonumber
+P =
+\begin{bmatrix}  
+1 & 0 & 0 & 1 \\  
+1 & 1 & 0 & 1 \\  
+1 & 1 & 1 & 1 \\  
+0 & 1 & 1 & 0  
+\end{bmatrix}
+\end{equation}  
+</div>
+<mark>
+这里一定要强调一件事，那就是在对坐标变换进行处理或者过渡矩阵进行处理的时候，只能进行行变换，不能进行列变换！行变换对应的是改变基的系数这是可以的，但是列变换相当于你在改变基底，这是错误的。
+</mark>
+<h2 id="">
+</h2>
 </section>
 
 

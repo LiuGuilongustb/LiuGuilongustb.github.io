@@ -537,6 +537,9 @@ x = (x_1, x_2, \dots, x_n)
 \end{bmatrix}
 \end{equation}
 &lt;/div&gt;
+&lt;mark&gt;
+强调一点，旧基的坐标是新基坐标的A，而新基坐标是旧基坐标的$A^(-1)，这个千万不能记反了。
+&lt;/mark&gt;
 &lt;p&gt;&lt;strong&gt;思考&lt;/strong&gt; 为什么就能由唯一性得到坐标变换的公式？&lt;/p&gt;
 &lt;p&gt;其实很简单，只要移项相减就可以。虽然很简单，不能想当然。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;例 4&lt;/strong&gt; 在 $\mathbb{R}^4$ 中求由基 $\alpha_1, \alpha_2, \alpha_3, \alpha_4$ 到基 $\beta_1, \beta_2, \beta_3, \beta_4$ 的过渡矩阵，其中&lt;/p&gt;
@@ -558,7 +561,41 @@ x = (x_1, x_2, \dots, x_n)
 \end{cases}
 \end{equation}
 &lt;/div&gt;
-</description>
+&lt;p&gt;&lt;strong&gt;解&lt;/strong&gt;：将 $\lbrace \alpha_1, \alpha_2, \alpha_3, \alpha_4 \mid \beta_1, \beta_2, \beta_3, \beta_4 \rbrace$ 做初等行变换，得到&lt;/p&gt;
+&lt;div&gt;  
+\begin{equation} \nonumber
+\begin{bmatrix}  
+1 &amp; 1 &amp; -1 &amp; -1 &amp; 2 &amp; 0 &amp; -2 &amp; 1 \\  
+2 &amp; -1 &amp; 2 &amp; -1 &amp; 1 &amp; 1 &amp; 1 &amp; 3 \\  
+-1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 2 &amp; 1 &amp; 1 \\  
+0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 2 &amp; 2 &amp; 2  
+\end{bmatrix}  
+\to  
+\begin{bmatrix}  
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\  
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 \\  
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\  
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0  
+\end{bmatrix}  
+\end{equation}  
+&lt;/div&gt;  
+所以过渡矩阵为  
+&lt;div&gt;  
+\begin{equation} \nonumber
+P =
+\begin{bmatrix}  
+1 &amp; 0 &amp; 0 &amp; 1 \\  
+1 &amp; 1 &amp; 0 &amp; 1 \\  
+1 &amp; 1 &amp; 1 &amp; 1 \\  
+0 &amp; 1 &amp; 1 &amp; 0  
+\end{bmatrix}
+\end{equation}  
+&lt;/div&gt;
+&lt;mark&gt;
+这里一定要强调一件事，那就是在对坐标变换进行处理或者过渡矩阵进行处理的时候，只能进行行变换，不能进行列变换！行变换对应的是改变基的系数这是可以的，但是列变换相当于你在改变基底，这是错误的。
+&lt;/mark&gt;
+&lt;h2 id=&#34;&#34;&gt;
+&lt;/h2&gt;</description>
         </item>
         <item>
         <title>矩阵理论系列笔记2：线性映射与矩阵</title>
