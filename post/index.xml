@@ -581,7 +581,8 @@ x = (x_1, x_2, \dots, x_n)
 &lt;/div&gt;  
 所以过渡矩阵为  
 &lt;div&gt;  
-\begin{equation} \nonumber
+\begin{equation}
+ \nonumber
 P =
 \begin{bmatrix}  
 1 &amp; 0 &amp; 0 &amp; 1 \\  
@@ -595,7 +596,131 @@ P =
 这里一定要强调一件事，那就是在对坐标变换进行处理或者过渡矩阵进行处理的时候，只能进行行变换，不能进行列变换！行变换对应的是改变基的系数这是可以的，但是列变换相当于你在改变基底，这是错误的。
 &lt;/mark&gt;
 &lt;h2 id=&#34;线性子空间&#34;&gt;线性子空间
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;定义 1（子空间）&lt;/strong&gt; 设 $V$ 是数域 $F$ 上的线性空间，$W$ 是 $V$ 的非空子集，如果 $W$ 关于 $V$ 上的加法和数乘也构成 $F$ 上的线性空间，则称 $W$ 是 $V$ 的&lt;strong&gt;线性子空间&lt;/strong&gt;或&lt;strong&gt;子空间&lt;/strong&gt;。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;定义 3.1（子空间）&lt;/strong&gt; 设 $V$ 是数域 $F$ 上的线性空间，$W$ 是 $V$ 的非空子集，如果 $W$ 关于 $V$ 上的加法和数乘也构成 $F$ 上的线性空间，则称 $W$ 是 $V$ 的&lt;strong&gt;线性子空间&lt;/strong&gt;或&lt;strong&gt;子空间&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：实际上，只要 $W$ 是关于加法和数乘封闭的，就一定是$V$ 的&lt;strong&gt;线性子空间&lt;/strong&gt;。
+&lt;mark&gt;
+任何空间 $V$ 都有两个平凡子空间 $V$ 和 ${ \theta }$ 。
+&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理 3.1&lt;/strong&gt; 设 $V$ 是数域 $F$ 上的线性空间，$W$ 是 $V$ 的非空子集，以下三个结论等价：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$W$ 是 $V$ 的子空间；&lt;/li&gt;
+&lt;li&gt;如果 $x, y \in W$，则 $x + y \in W$，如果 $x \in W, k \in F$，则 $kx \in W$；&lt;/li&gt;
+&lt;li&gt;如果 $x, y \in W, k, l \in F$，则 $kx + ly \in W$。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：向量的加法与数乘运算统称为线性运算，由定理3.1可知，子空间对线性运算封闭。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;线性子空间是线性空间，也有基、维数、坐标等概念。&lt;/li&gt;
+&lt;li&gt;$\dim W \leq \dim V$。&lt;/li&gt;
+&lt;li&gt;零子空间不含有线性无关的向量，维数是零。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;例如&lt;/strong&gt;：设 $A \in \mathbb{R}^{n \times n}$，则 $A$ 的核空间 $N(A)$ 是 &lt;strong&gt;$\mathbb{R}^n$&lt;/strong&gt; 的子空间。当 $A$ 可逆时，$N(A)$ 是&lt;strong&gt;零&lt;/strong&gt;子空间。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定义 3.2（列空间）&lt;/strong&gt; 设 $A \in \mathbb{R}^{m \times n}$，$a_1, a_2, \dots, a_n$ 是 $A$ 的 $n$ 个列，称子空间 $\text{span} \lbrace a_1, a_2, \dots, a_n \rbrace$ 为 $A$ 的&lt;strong&gt;像空间&lt;/strong&gt;或&lt;strong&gt;列空间&lt;/strong&gt;，记作&lt;br&gt;
+\begin{equation} \nonumber
+R(A) = \text{span} \lbrace a_1, a_2, \dots, a_n \rbrace
+\end{equation}&lt;br&gt;
+显然有 $R(A) \subseteq \mathbb{R}^m$，且 $\dim R(A) = \text{rank} A$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：任何空间 $V$ 都有两个平凡子空间 $V$ 与 $\lbrace \theta \rbrace$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：由定义 $R(A) = \sum_{i=1}^{n} k_i a_i$，即&lt;/p&gt;
+&lt;div&gt;  
+\begin{equation} \nonumber
+R(A) = (a_1, a_2, \dots, a_n)  
+\begin{bmatrix}  
+k_1 \\  
+k_2 \\  
+\vdots \\  
+k_n  
+\end{bmatrix}  
+= Ax
+\end{equation}  
+&lt;/div&gt;  
+&lt;p&gt;所以 $R(A) = \lbrace Ax \mid x \in \mathbb{R}^n \rbrace$。同理可以定义 $A^T$ 的值域（&lt;strong&gt;A 的行空间&lt;/strong&gt;）：&lt;/p&gt;
+&lt;p&gt;\begin{equation} \nonumber
+R(A^T) = \lbrace A^T x \mid x \in \mathbb{R}^m \rbrace \subseteq \mathbb{R}^n
+\end{equation}&lt;/p&gt;
+&lt;p&gt;并且有 $\dim R(A^T) = \text{rank} A = \dim R(A)$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定义 3.3（子空间的交与和）&lt;/strong&gt; 设 $W_1, W_2$ 是线性空间 $V$ 的两个子空间，令&lt;br&gt;
+\begin{equation} \nonumber
+W_1 \cap W_2 = \lbrace x \mid x \in W_1 \text{ 且 } x \in W_2 \rbrace
+\end{equation}&lt;br&gt;
+可以验证 $W_1 \cap W_2$ 是 $V$ 的子空间，称为 $W_1$ 与 $W_2$ 的&lt;strong&gt;交空间&lt;/strong&gt;。令&lt;br&gt;
+\begin{equation} \nonumber
+W_1 + W_2 = \lbrace x + y \mid x \in W_1, y \in W_2 \rbrace
+\end{equation}&lt;br&gt;
+可以验证 $W_1 + W_2$ 是 $V$ 的子空间，称为 $W_1$ 与 $W_2$ 的&lt;strong&gt;和空间&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;-1. 证明 $W_1 \cap W_2$ 是 $V$ 的子空间**
+我们需要验证 $W_1 \cap W_2$ 在加法和数乘下封闭。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;零向量封闭性&lt;/strong&gt;：&lt;br&gt;
+由于 $W_1, W_2$ 均为 $V$ 的子空间，它们都包含零向量 $0$，因此 $0 \in W_1 \cap W_2$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;加法封闭性&lt;/strong&gt;：&lt;br&gt;
+若 $u, v \in W_1 \cap W_2$，则 $u, v$ 同时属于 $W_1$ 和 $W_2$。由于 $W_1, W_2$ 都是子空间，故它们在加法下封闭，即&lt;br&gt;
+\begin{equation} \nonumber
+u + v \in W_1, \quad u + v \in W_2.
+\end{equation}&lt;br&gt;
+因此 $u + v \in W_1 \cap W_2$，即加法封闭。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;数乘封闭性&lt;/strong&gt;：&lt;br&gt;
+若 $u \in W_1 \cap W_2$，则 $u$ 同时属于 $W_1$ 和 $W_2$。由于 $W_1, W_2$ 是子空间，故对于任意标量 $\lambda$，有&lt;br&gt;
+\begin{equation} \nonumber
+\lambda u \in W_1, \quad \lambda u \in W_2.
+\end{equation}&lt;br&gt;
+因此 $\lambda u \in W_1 \cap W_2$，即数乘封闭。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;综上，$W_1 \cap W_2$ 在加法和数乘下封闭，故 $W_1 \cap W_2$ 是 $V$ 的子空间。&lt;/p&gt;
+&lt;p&gt;-2. 证明 $W_1 + W_2$ 是 $V$ 的子空间**
+同样，我们需验证 $W_1 + W_2$ 在加法和数乘下封闭。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;零向量封闭性&lt;/strong&gt;：&lt;br&gt;
+由于 $W_1$ 和 $W_2$ 都包含零向量 $0$，取 $x = 0 \in W_1$，$y = 0 \in W_2$，则&lt;br&gt;
+\begin{equation} \nonumber
+0 + 0 = 0 \in W_1 + W_2.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;加法封闭性&lt;/strong&gt;：&lt;br&gt;
+设 $u, v \in W_1 + W_2$，则存在 $x_1, x_2 \in W_1$ 和 $y_1, y_2 \in W_2$ 使得&lt;br&gt;
+\begin{equation} \nonumber
+u = x_1 + y_1, \quad v = x_2 + y_2.
+\end{equation}&lt;br&gt;
+则&lt;br&gt;
+\begin{equation} \nonumber
+u + v = (x_1 + y_1) + (x_2 + y_2) = (x_1 + x_2) + (y_1 + y_2).
+\end{equation}&lt;br&gt;
+由于 $W_1$ 和 $W_2$ 在加法下封闭，得 $x_1 + x_2 \in W_1$，$y_1 + y_2 \in W_2$，因此&lt;br&gt;
+\begin{equation} \nonumber
+u + v \in W_1 + W_2.
+\end{equation}&lt;br&gt;
+即加法封闭。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;数乘封闭性&lt;/strong&gt;：&lt;br&gt;
+设 $u \in W_1 + W_2$，则存在 $x \in W_1$，$y \in W_2$ 使得&lt;br&gt;
+\begin{equation}
+\ref{eq_1}
+u = x + y.
+\end{equation}&lt;br&gt;
+对任意标量 $\lambda$，有&lt;br&gt;
+\begin{equation}
+\lambda u = \lambda (x + y) = \lambda x + \lambda y.
+\end{equation}&lt;br&gt;
+由于 $W_1, W_2$ 在数乘下封闭，得 $\lambda x \in W_1$，$\lambda y \in W_2$，因此&lt;br&gt;
+\begin{equation}
+\lambda u \in W_1 + W_2.
+\end{equation}&lt;br&gt;
+即数乘封闭。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;综上，$W_1 + W_2$ 在加法和数乘下封闭，故 $W_1 + W_2$ 是 $V$ 的子空间。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;\eqref{eq_1}&lt;/p&gt;
 </description>
         </item>
         <item>
