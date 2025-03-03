@@ -704,7 +704,7 @@ u + v \in W_1 + W_2.
 &lt;p&gt;&lt;strong&gt;数乘封闭性&lt;/strong&gt;：&lt;br&gt;
 设 $u \in W_1 + W_2$，则存在 $x \in W_1$，$y \in W_2$ 使得&lt;br&gt;
 \begin{equation}
-\labe{eq_1}
+\label{eq_1}
 u = x + y.
 \end{equation}&lt;br&gt;
 对任意标量 $\lambda$，有&lt;br&gt;
