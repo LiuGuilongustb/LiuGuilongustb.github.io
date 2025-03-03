@@ -867,7 +867,7 @@ v = u + w, \quad u \in W_1, \quad w \in W_2.
 &lt;li&gt;$W_1 \cap W_2 = \lbrace 0 \rbrace$；&lt;/li&gt;
 &lt;li&gt;$\dim(W_1 + W_2) = \dim W_1 + \dim W_2$。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;例 2&lt;/strong&gt; 设 $V = \mathbb{R}^{n \times n}$，$W_1 = \lbrace A \in V \mid A^T = A \rbrace$，$W_2 = \lbrace A \in V \mid A^T = -A \rbrace$，验证 $V = W_1 \oplus W_2$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例 6&lt;/strong&gt; 设 $V = \mathbb{R}^{n \times n}$，$W_1 = \lbrace A \in V \mid A^T = A \rbrace$，$W_2 = \lbrace A \in V \mid A^T = -A \rbrace$，验证 $V = W_1 \oplus W_2$。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;分析：&lt;/strong&gt; 首先不难验证 $W_1$ 与 $W_2$ 是 $V$ 的子空间。
 任取 $A \in V$，则有：
 \begin{equation}
@@ -884,7 +884,7 @@ A = \frac{A + A^T}{2} + \frac{A - A^T}{2}
 V = W_1 + W_2
 \nonumber
 \end{equation}
-其次设 \( B \in W_1 \cap W_2 \) ，则：
+其次设 $B \in W_1 \cap W_2$ ，则：
 \begin{equation}\nonumber
 B^T = B = -B \Rightarrow B = 0.
 \end{equation}
@@ -901,6 +901,88 @@ B^T = B = -B \Rightarrow B = 0.
 \dim V = \dim W_1 + \dim W_2 \Rightarrow V = W_1 \oplus W_2.
 \end{equation}&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：上面的证明过程不知道读者是否了解，对称矩阵和反对称矩阵的性质，尤其反对称矩阵上对角线元素为0，如果不知道的同学可以自己写一下自己理解一下。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理 3.5&lt;/strong&gt; 设 $a_1, a_2, \dots, a_n$ 是 $W_1$ 的一组基，$\beta_1, \beta_2, \dots, \beta_m$ 是 $W_2$ 线性空间 $V$ 的两个子空间。则 $W_1 + W_2$ 是直和，当且仅当 $a_1, a_2, \dots, a_n, \beta_1, \beta_2, \dots, \beta_m$ 是 $W_1 + W_2$ 的一组基。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明：&lt;/strong&gt; 由定理 2 得：
+\begin{equation}\nonumber
+W_1 + W_2 = \text{span} \lbrace a_1, a_2, \dots, a_n, \beta_1, \beta_2, \dots, \beta_m \rbrace
+\end{equation}&lt;/p&gt;
+&lt;p&gt;如果 $W_1 + W_2$ 是直和，由定理 3.4 第 4 条得上式右端是一个线性无关向量组，所以是一组基，必要性得证。&lt;/p&gt;
+&lt;p&gt;以上过程可逆，可得充分性证明。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;线性变换及矩阵&#34;&gt;线性变换及矩阵
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;定义 4.1（线性变换）&lt;/strong&gt; 设 $V, W$ 是数域 $F$ 上的两个线性空间，$T$ 是 $V$ 到 $W$ 的一个映射，如果 $\forall x, y \in V, k, l \in F$，有：
+\begin{equation}\nonumber
+T(kx + ly) = kTx + lTy
+\end{equation}
+称 $T$ 是 $V$ 到 $W$ 的一个线性映射。如果 $W = V$，则称 $T$ 是 $V$ 上的一个线性变换。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定义 4.2（旋转变换）&lt;/strong&gt; $\mathbb{R}^2$ 中的向量绕原点按逆时针旋转 $\theta$ 角的变换 $T$ 定义如下：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{bmatrix} x_1 \\ y_1 \end{bmatrix}
+= T
+\begin{bmatrix} x \\ y \end{bmatrix}
+=
+\begin{bmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{bmatrix}
+\begin{bmatrix} x \\ y \end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;分析：&lt;/strong&gt;
+\begin{equation}\nonumber
+x_1 = r\cos(\alpha + \theta) = r\cos\alpha \cos\theta - r\sin\alpha \sin\theta = x\cos\theta - y\sin\theta
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;同理&lt;/strong&gt;
+\begin{equation}\nonumber
+y_1 = r\sin(\alpha + \theta) = r\sin\alpha \cos\theta + r\cos\alpha \sin\theta = y\cos\theta + x\sin\theta
+\end{equation}&lt;/p&gt;
+&lt;p&gt;$\forall x = (x_1, y_1)^T, y = (x_2, y_2)^T, k, l \in F$，有：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+T(kx + ly) =
+\begin{bmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{bmatrix}
+\begin{bmatrix} kx_1 + lx_2 \\ ky_1 + ly_2 \end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+= k
+\begin{bmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{bmatrix}
+\begin{bmatrix} x_1 \\ y_1 \end{bmatrix}
++ l
+\begin{bmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{bmatrix}
+\begin{bmatrix} x_2 \\ y_2 \end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= kTx + lTy.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;延伸一小点&lt;/strong&gt;：如果旋转变换看起来较为简单，但是旋转变换如果想要研究的话还是有很复杂的逻辑，尤其是关于姿态等的研究内容。如果需要旋转矩阵和旋转变换相关内容的同学，可能还需补充一些关于四元数的知识。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;线性映射的性质：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$T(0) = 0$。&lt;/li&gt;
+&lt;li&gt;\begin{equation}\nonumber
+T\left(\sum_{i=1}^{s} k_i \alpha_i \right) = \sum_{i=1}^{s} k_i T(\alpha_i)
+\end{equation}&lt;/li&gt;
+&lt;li&gt;若 $\alpha_1, \dots, \alpha_s$ 线性相关，则 $T(\alpha_1), \dots, T(\alpha_s)$ 也线性相关。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;mark&gt;
+若 $\alpha_1, \dots, \alpha_s$ 线性无关，则 $T(\alpha_1), \dots, T(\alpha_s)$ 不一定线性无关。
+&lt;/mark&gt;
+&lt;p&gt;&lt;strong&gt;定义4.3&lt;/strong&gt; 线性映射的矩阵表示
+设 $V$ 的维数是 $n$，$V$ 的一组基为 $a_1, \dots, a_n$；
+设 $W$ 的维数是 $m$，$W$ 的一组基为 $\beta_1, \dots, \beta_m$；
+$T$ 是 $V$ 到 $W$ 的一个线性映射，则：
+\begin{equation}\nonumber
+T a_j = a_{j1} \beta_1 + \dots + a_{jm} \beta_m, \quad 1 \leq j \leq n,
+\end{equation}
+采用矩阵记法：
+\begin{equation}\nonumber
+T(a_1, \dots, a_n) = (T a_1, \dots, T a_n) = (\beta_1, \dots, \beta_m) A,
+\end{equation}
+其中 $A = (a_{ij})_{m \times n}$，称矩阵 $A$ 为线性映射 $T$ &lt;strong&gt;在这两组基下的矩阵表示&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：矩阵表示是为了简化映射，可以有如下的理解
+\begin{equation}\nonumber
+R(T)={y = Tx \mid \forall x \in V} = span{ T\alpha_1, \cdots, T\alpha_n }
+\end{equation}&lt;/p&gt;
 </description>
         </item>
         <item>
