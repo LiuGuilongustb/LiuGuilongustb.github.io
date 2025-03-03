@@ -437,14 +437,14 @@ k_1 = \frac{5}{4}, \quad k_2 = \frac{1}{4}, \quad k_3 = -\frac{1}{4}, \quad k_4 
 \end{equation}
 在基&lt;br&gt;
 \begin{equation}
-\begin{array} 1 &amp;amp; 1 \ 1 &amp;amp; 1 \end{array}, \quad
-\begin{array} 1 &amp;amp; 1 \ 0 &amp;amp; 1 \end{array}
+\begin{bmatrix} 1 &amp;amp; 1 \ 1 &amp;amp; 1 \end{bmatrix}, \quad
+\begin{bmatrix} 1 &amp;amp; 1 \ 0 &amp;amp; 1 \end{bmatrix}
 \nonumber
 \end{equation}
 下的坐标。
 &lt;strong&gt;答案&lt;/strong&gt;：$(1,1,0,-1)^T$&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;定义 6（过渡矩阵）&lt;/strong&gt; 设 $x_1, x_2, \dots, x_n, y_1, y_2, \dots, y_n$ 是空间 $V$ 的两组基。当 $1 \leq i \leq n$ 时，令&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;定义 2.6（过渡矩阵）&lt;/strong&gt; 设 $x_1, x_2, \dots, x_n, y_1, y_2, \dots, y_n$ 是空间 $V$ 的两组基。当 $1 \leq i \leq n$ 时，令&lt;br&gt;
 \begin{equation}
 y_i = a_{i1}x_1 + a_{i2}x_2 + \dots + a_{in}x_n = (x_1, x_2, \dots, x_n)&lt;br&gt;
 \begin{bmatrix}&lt;br&gt;
@@ -454,7 +454,6 @@ a_{i2} \&lt;br&gt;
 a_{in}&lt;br&gt;
 \end{bmatrix}
 \nonumber
-\displaystyle
 \end{equation}
 引入矩阵表示：&lt;br&gt;
 \begin{equation}
@@ -464,6 +463,54 @@ a_{in}&lt;br&gt;
 其中 $A = (a_{ij})_{n \times n}$ 称为&lt;strong&gt;由基&lt;/strong&gt; $x_1, x_2, \dots, x_n$ &lt;strong&gt;到基&lt;/strong&gt; $y_1, y_2, \dots, y_n$ &lt;strong&gt;的过渡矩阵（变换矩阵）&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;思考&lt;/strong&gt; 矩阵A是否可逆？&lt;/p&gt;
 &lt;p&gt;如果A是不可逆的，那么A中的某列可以由其他列线性表示，那么某一个y一定会由一个其他的y线性表示，而y也是空间 $V$ 的一组基，所以y一定是线性无关的，这与假设不符，所以A一定是可逆的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定义 2.7（坐标变换公式）&lt;/strong&gt; 设 $x_1, x_2, \dots, x_n, y_1, y_2, \dots, y_n$ 是空间 $V$ 的两组基，任取 $x \in V$，设&lt;br&gt;
+\begin{equation} \nonumber
+x = (x_1, x_2, \dots, x_n)&lt;br&gt;
+\begin{bmatrix}&lt;br&gt;
+\xi_1 \&lt;br&gt;
+\xi_2 \&lt;br&gt;
+\vdots \&lt;br&gt;
+\xi_n&lt;br&gt;
+\end{bmatrix}
+= (y_1, y_2, \dots, y_n)&lt;br&gt;
+\begin{bmatrix}&lt;br&gt;
+\eta_1 \&lt;br&gt;
+\eta_2 \&lt;br&gt;
+\vdots \&lt;br&gt;
+\eta_n&lt;br&gt;
+\end{bmatrix}
+\end{equation}
+带入 $(y_1, y_2, \dots, y_n) = (x_1, x_2, \dots, x_n) A$，由唯一性得&lt;br&gt;
+\begin{equation} \nonumber
+\begin{bmatrix}&lt;br&gt;
+\xi_1 \&lt;br&gt;
+\xi_2 \&lt;br&gt;
+\vdots \&lt;br&gt;
+\xi_n&lt;br&gt;
+\end{bmatrix}&lt;br&gt;
+= A&lt;br&gt;
+\begin{bmatrix}&lt;br&gt;
+\eta_1 \&lt;br&gt;
+\eta_2 \&lt;br&gt;
+\vdots \&lt;br&gt;
+\eta_n&lt;br&gt;
+\end{bmatrix}&lt;br&gt;
+\quad \text{或} \quad
+\begin{bmatrix}&lt;br&gt;
+\eta_1 \&lt;br&gt;
+\eta_2 \&lt;br&gt;
+\vdots \&lt;br&gt;
+\eta_n&lt;br&gt;
+\end{bmatrix}&lt;br&gt;
+= A^{-1}&lt;br&gt;
+\begin{bmatrix}&lt;br&gt;
+\xi_1 \&lt;br&gt;
+\xi_2 \&lt;br&gt;
+\vdots \&lt;br&gt;
+\xi_n&lt;br&gt;
+\end{bmatrix}
+\end{equation}&lt;/p&gt;
+&lt;hr&gt;
 </description>
         </item>
         <item>
