@@ -95,9 +95,11 @@ $V$ 在矩阵的加法与数乘运算下构成 $\mathbb{C}$ 上的线性空间�
 &lt;p&gt;&lt;strong&gt;例 1&lt;/strong&gt; 设 $\mathbb{R}^+$ 表示所有正实数集合，在 $\mathbb{R}^+$ 中定义加法与数乘为&lt;br&gt;
 \begin{equation}
 a \oplus b = ab, \quad \forall a, b \in \mathbb{R}^+
+\nonumber
 \end{equation}
 \begin{equation}
 k \odot a = a^k, \quad \forall a \in \mathbb{R}^+, k \in \mathbb{R}
+\nonumber
 \end{equation}
 证明 $(\mathbb{R}^+, \oplus, \odot)$ 是实线性空间。&lt;/p&gt;
 &lt;p&gt;这个例子定义了一个运算结构 \((\mathbb{R}^+, \oplus, \odot)\)，其中：&lt;/p&gt;
@@ -119,6 +121,7 @@ k \odot a = a^k, \quad \forall a \in \mathbb{R}^+, k \in \mathbb{R}
 &lt;p&gt;&lt;strong&gt;加法交换律&lt;/strong&gt;：
 \begin{equation}
 a \oplus b = ab = ba = b \oplus a
+\nonumber
 \end{equation}
 因此，加法是交换的。&lt;/p&gt;
 &lt;/li&gt;
@@ -126,6 +129,7 @@ a \oplus b = ab = ba = b \oplus a
 &lt;p&gt;&lt;strong&gt;加法结合律&lt;/strong&gt;：
 \begin{equation}
 (a \oplus b) \oplus c = (ab) \oplus c = (ab)c = a(bc) = a \oplus (b \oplus c)
+\nonumber
 \end{equation}
 因此，加法是结合的。&lt;/p&gt;
 &lt;/li&gt;
@@ -135,6 +139,7 @@ a \oplus b = ab = ba = b \oplus a
 令 $e$ 为 1，则
 \begin{equation}
 a \oplus 1 = a \cdot 1 = a
+\nonumber
 \end{equation}
 因此，1 是加法单位元。&lt;/p&gt;
 &lt;/li&gt;
@@ -147,10 +152,12 @@ a \oplus 1 = a \cdot 1 = a
 &lt;p&gt;&lt;strong&gt;数乘分配律（对标量加法的分配律）&lt;/strong&gt;：
 \begin{equation}
 (k_1 + k_2) \odot a = a^{(k_1 + k_2)}
+\nonumber
 \end{equation}
 以及
 \begin{equation}
 k_1 \odot (k_2 \odot a) = k_1 \odot (a^{k_2}) = (a^{k_2})^{k_1} = a^{(k_1 k_2)}
+\nonumber
 \end{equation}
 这满足数乘的分配律。&lt;/p&gt;
 &lt;/li&gt;
@@ -158,6 +165,7 @@ k_1 \odot (k_2 \odot a) = k_1 \odot (a^{k_2}) = (a^{k_2})^{k_1} = a^{(k_1 k_2)}
 &lt;p&gt;&lt;strong&gt;数乘分配律（对向量加法的分配律）&lt;/strong&gt;：
 \begin{equation}
 k \odot (a \oplus b) = k \odot (ab) = (ab)^k = a^k b^k = (k \odot a) \oplus (k \odot b)
+\nonumber
 \end{equation}
 这也是成立的。&lt;/p&gt;
 &lt;/li&gt;
@@ -165,9 +173,11 @@ k \odot (a \oplus b) = k \odot (ab) = (ab)^k = a^k b^k = (k \odot a) \oplus (k \
 &lt;p&gt;&lt;strong&gt;数乘结合律&lt;/strong&gt;：
 \begin{equation}
 (k_1 k_2) \odot a = a^{(k_1 k_2)}
+\nonumber
 \end{equation}
 \begin{equation}
 k_1 \odot (k_2 \odot a) = k_1 \odot (a^{k_2}) = (a^{k_2})^{k_1} = a^{(k_1 k_2)}
+\nonumber
 \end{equation}
 也满足数乘结合律。&lt;/p&gt;
 &lt;/li&gt;
@@ -177,15 +187,18 @@ k_1 \odot (k_2 \odot a) = k_1 \odot (a^{k_2}) = (a^{k_2})^{k_1} = a^{(k_1 k_2)}
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;定义 2.1（线性组合）&lt;/strong&gt; 设 $V$ 是数域 $F$ 上的线性空间，$x_1, x_2, \dots, x_r \in V$，$k_1, k_2, \dots, k_r \in F$，其中 $r \geq 1$。若向量 $x$ 可以表示为&lt;br&gt;
 \begin{equation}
 x = k_1 x_1 + k_2 x_2 + \dots + k_r x_r
+\nonumber
 \end{equation}
 则称 $x$ 可由 $x_1, x_2, \dots, x_r$ &lt;strong&gt;线性表示&lt;/strong&gt;，或者 $x$ 是 $x_1, x_2, \dots, x_r$ 的&lt;strong&gt;线性组合&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;定义 2.2（线性相关）&lt;/strong&gt; 设 $V$ 是数域 $F$ 上的线性空间，$x_1, x_2, \dots, x_r \in V$，其中 $r \geq 1$。如果存在一组不全为零的数 $k_1, k_2, \dots, k_r \in F$，使得&lt;br&gt;
 \begin{equation}
 k_1 x_1 + k_2 x_2 + \dots + k_r x_r = 0
+\nonumber
 \end{equation}
 则称 $x_1, x_2, \dots, x_r$ &lt;strong&gt;线性相关&lt;/strong&gt;，否则就称 $x_1, x_2, \dots, x_r$ &lt;strong&gt;线性无关&lt;/strong&gt;，即若&lt;br&gt;
 \begin{equation}
 k_1 x_1 + k_2 x_2 + \dots + k_r x_r = 0
+\nonumber
 \end{equation}
 必有 $k_1 = k_2 = \dots = k_r = 0$。&lt;/p&gt;
 &lt;p&gt;&lt;mark&gt;线性无关组的&lt;strong&gt;任一子集&lt;/strong&gt;是线性无关的，线性相关组的&lt;strong&gt;任一扩展集&lt;/strong&gt;仍线性相关。&lt;/mark&gt;&lt;/p&gt;
@@ -194,22 +207,27 @@ k_1 x_1 + k_2 x_2 + \dots + k_r x_r = 0
 &lt;p&gt;设向量组 $S = { v_1, v_2, \dots, v_n }$ 在向量空间 $V$ 中是&lt;strong&gt;线性无关&lt;/strong&gt;的，即对于任意的标量 $a_1, a_2, \dots, a_n$，若满足
 \begin{equation}
 a_1 v_1 + a_2 v_2 + \dots + a_n v_n = 0,
+\nonumber
 \end{equation}
 则必有
 \begin{equation}
 a_1 = a_2 = \dots = a_n = 0.
+\nonumber
 \end{equation}
 现在，取 $S$ 的任意子集 $T \subseteq S$，设 $T = { v_{i_1}, v_{i_2}, \dots, v_{i_k} }$ 其中 $k \leq n$。假设存在一组标量 $b_1, b_2, \dots, b_k$ 使得：
 \begin{equation}
 b_1 v_{i_1} + b_2 v_{i_2} + \dots + b_k v_{i_k} = 0.
+\nonumber
 \end{equation}
 我们可以把这个方程扩展到整个集合 $S$ 中：
 \begin{equation}
 b_1 v_{i_1} + b_2 v_{i_2} + \dots + b_k v_{i_k} + 0 v_j + \dots + 0 v_m = 0.
+\nonumber
 \end{equation}
 由于 $S$ 是线性无关的，这意味着所有的系数必须为零，即：
 \begin{equation}
 b_1 = b_2 = \dots = b_k = 0.
+\nonumber
 \end{equation}
 因此，$T$ 也是线性无关的。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;结论：线性无关组的任一子集仍然是线性无关的。&lt;/strong&gt;&lt;/p&gt;
@@ -217,15 +235,18 @@ b_1 = b_2 = \dots = b_k = 0.
 设向量组 $S = { v_1, v_2, \dots, v_n }$ 在向量空间 $V$ 中是&lt;strong&gt;线性相关&lt;/strong&gt;的，即存在不全为零的标量 $a_1, a_2, \dots, a_n$，使得：
 \begin{equation}
 a_1 v_1 + a_2 v_2 + \dots + a_n v_n = 0, \quad \text{且} \quad \exists i, a_i \neq 0.
+\nonumber
 \end{equation}
 现在，取一个扩展集 $T = S \cup { w }$，即在 $S$ 的基础上加入一个新向量 $w$。我们要证明 $T$ 仍然是线性相关的。
 由于 $S$ 线性相关，意味着至少有一个向量可以用其他向量线性表示，例如，存在 $v_j$ 可以由 $S$ 中的其他向量线性表示：
 \begin{equation}
 v_j = c_1 v_1 + c_2 v_2 + \dots + c_{j-1} v_{j-1} + c_{j+1} v_{j+1} + \dots + c_n v_n.
+\nonumber
 \end{equation}
 那么对于 $T$，如果我们构造一个新的线性组合：
 \begin{equation}
 a_1 v_1 + \dots + a_n v_n + 0 \cdot w = 0,
+\nonumber
 \end{equation}
 因此，即使添加了 $w$，$T$ 仍然是线性相关的。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;结论：线性相关组的任一扩展集仍然是线性相关的。&lt;/strong&gt;&lt;/p&gt;
@@ -240,44 +261,206 @@ a_1 v_1 + \dots + a_n v_n + 0 \cdot w = 0,
 &lt;p&gt;&lt;strong&gt;定理 2.1&lt;/strong&gt; 设 $\dim V &amp;lt; \infty$，则&lt;br&gt;
 \begin{equation}
 \dim V = n \iff V 的任一基底的元素个数都是 n
+\nonumber
 \end{equation}&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;证明&lt;/em&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;（充分性）&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;设 $\dim V = n$，即 $V$ 存在一个 $n$ 元基底 ${ x_1, x_2, \dots, x_n }$，我们要证明 $V$ 中的任意基底的元素个数都等于 $n$。&lt;/p&gt;
-&lt;p&gt;假设 $V$ 存在另一组基底 ${ y_1, y_2, \dots, y_m }$，由于基底是极大线性无关组，因此 $y_1, y_2, \dots, y_m$ 必须是线性无关的，并且能生成整个 $V$，即：&lt;/p&gt;
-&lt;p&gt;\begin{equation}
-\forall v \in V, \quad v = a_1 y_1 + a_2 y_2 + \dots + a_m y_m.
-\end{equation}&lt;/p&gt;
-&lt;p&gt;又因为 $V$ 的维数为 $n$，所以 $V$ 中任何线性无关组至多含有 $n$ 个向量，因此 $m \leq n$。&lt;/p&gt;
-&lt;p&gt;另一方面，由于 ${ y_1, y_2, \dots, y_m }$ 是 $V$ 的一组基底，它必须是极大线性无关的，即不能再添加向量，否则就会线性相关。结合维数定义，基底中的向量数目必须等于维数，即 $m = n$。&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;（必要性）&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;若 $V$ 的所有基底的元素个数都是 $n$，则 $V$ 的维数即为 $n$，符合维数的定义。因此 $\dim V = n$ 成立。&lt;/p&gt;
-&lt;p&gt;综上所述，定理 2.1 证明完毕。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;必要性&lt;/em&gt;： 任取 $V$ 的一组基底 $x_1, x_2, \dots, x_r$，由维数定义知 $r \leq n$。若 $r &amp;lt; n$，则存在 $V$ 中最大线性无关组 $y_1, \dots, y_n$，所以对于每一个 $y_i \ (1 \leq i \leq n)$ 均可以由 $x_1, x_2, \dots, x_r$ 线性表示。即&lt;br&gt;
+\begin{equation}
+\begin{cases}
+y_1 = a_{11} x_1 + a_{12} x_2 + \dots + a_{1r} x_r \
+\vdots \
+y_n = a_{n1} x_1 + a_{n2} x_2 + \dots + a_{nr} x_r
+\end{cases}
+\nonumber
+\end{equation}
+考虑 $b_1 y_1 + \dots + b_n y_n = \theta$，带入上式得&lt;br&gt;
+\begin{equation}
+(b_1 a_{11} + b_2 a_{12} + \dots + b_n a_{1r}) x_1 + (b_1 a_{12} + b_2 a_{22} + \dots + b_n a_{2r}) x_2 + \dots = \theta
+\nonumber
+\end{equation}
+由于 $x_1, x_2, \dots, x_r$ 线性无关，因此&lt;br&gt;
+\begin{equation}
+\begin{cases}
+b_1 a_{11} + \dots + b_n a_{n1} = 0 \
+b_1 a_{12} + \dots + b_n a_{n2} = 0 \
+\vdots \
+b_1 a_{1r} + \dots + b_n a_{nr} = 0
+\end{cases}
+\nonumber
+\end{equation}
+此方程组有非零解，设为 $b_1^0, \dots, b_n^0$，使得&lt;br&gt;
+\begin{equation}
+b_1^0 y_1 + \dots + b_n^0 y_n = \theta
+\nonumber
+\end{equation}
+这与 $y_1, \dots, y_n$ 线性无关矛盾，所以 $r = n$。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;充分性&lt;/em&gt;： 设 $\dim V = m$，则存在 $x_1, x_2, \dots, x_m$ 是 $V$ 中线性无关的最大组，$\forall u \in V$，则 $u, x_1, x_2, \dots, x_m$ 线性相关，即存在不全为零的一组数 $b_j$，使得&lt;br&gt;
+\begin{equation}
+b_1 x_1 + \dots + b_m x_m + b_{m+1} u = \theta
+\nonumber
+\end{equation}
+而 $b_{m+1} \neq 0$，所以&lt;br&gt;
+\begin{equation}
+u = \sum_{i=1}^{m} -\frac{b_i}{b_{m+1}} x_i
+\nonumber
+\end{equation}
+即 $u$ 可由 $x_1, x_2, \dots, x_m$ 线性表示，从而 $x_1, x_2, \dots, x_m$ 是 $V$ 的一组基底，故 $\dim V = m$。&lt;/p&gt;
+&lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;推论 2.1&lt;/strong&gt; $n$ 维空间中的任意 $n$ 个线性无关的向量均为 $V$ 的一个&lt;strong&gt;基底&lt;/strong&gt;，且任一线性无关组 $x_1, x_2, \dots, x_r$ （$r \leq n$）可扩充为一组基。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;证明&lt;/em&gt;：&lt;/p&gt;
 &lt;p&gt;（1）设 $V$ 是 $n$ 维空间，且 ${ x_1, x_2, \dots, x_n }$ 是 $V$ 中 $n$ 个线性无关的向量。由于 $V$ 的维数为 $n$，任意线性无关组的元素个数最多为 $n$，因此 ${ x_1, x_2, \dots, x_n }$ 已经是极大线性无关组，必然构成 $V$ 的一组基底。&lt;/p&gt;
 &lt;p&gt;（2）设 ${ x_1, x_2, \dots, x_r }$ 是 $V$ 中的一组线性无关组，其中 $r &amp;lt; n$。由于 $V$ 的维数为 $n$，$V$ 的基底包含 $n$ 个向量，因此可以在 ${ x_1, x_2, \dots, x_r }$ 的基础上添加 $n - r$ 个向量，使其扩展为一组基底。&lt;/p&gt;
-&lt;p&gt;综上，推论 1 证明完毕。&lt;/p&gt;
+&lt;p&gt;综上，推论 2.1 证明完毕。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;推论 2.2&lt;/strong&gt; 设 $x_1, x_2, \dots, x_n$ 是 $n$ 维空间 $V$ 的一个基，则 $\forall y \in V$，$y$ 可由 $x_1, x_2, \dots, x_n$ &lt;strong&gt;唯一表示&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;证明&lt;/em&gt;：&lt;/p&gt;
 &lt;p&gt;由于 ${ x_1, x_2, \dots, x_n }$ 是 $V$ 的一组基底，依据基底的定义，$V$ 中的任意向量 $y$ 都可以由这组基底线性表示：
 \begin{equation}
 y = a_1 x_1 + a_2 x_2 + \dots + a_n x_n.
+\nonumber
 \end{equation}
 我们需要证明这个表示是唯一的。假设 $y$ 还可以用另一组系数 $b_1, b_2, \dots, b_n$ 表示：
 \begin{equation}
 y = b_1 x_1 + b_2 x_2 + \dots + b_n x_n.
+\nonumber
 \end{equation}
 则两式相减，得到：
 \begin{equation}
 (a_1 - b_1) x_1 + (a_2 - b_2) x_2 + \dots + (a_n - b_n) x_n = 0.
+\nonumber
 \end{equation}
 由于 ${ x_1, x_2, \dots, x_n }$ 是线性无关的，唯一可能的情况是所有系数均为零：
 \begin{equation}
 a_1 - b_1 = a_2 - b_2 = \dots = a_n - b_n = 0.
+\nonumber
 \end{equation}
 即 $a_i = b_i$，因此表示唯一。&lt;/p&gt;
-&lt;p&gt;推论 2 证明完毕。&lt;/p&gt;
+&lt;p&gt;推论 2.2 证明完毕。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;定义 5（坐标）&lt;/strong&gt; 设 $x_1, x_2, \dots, x_n$ 是 $n$ 维空间 $V$ 的一个基，$\forall y \in V$，令&lt;br&gt;
+\begin{equation}
+y = \sum_{i=1}^{n} a_i x_i
+\nonumber
+\end{equation}
+称有序数组&lt;br&gt;
+\begin{equation}
+(a_1, a_2, \dots, a_n)^T
+\nonumber
+\end{equation}
+为 $y$ 在基 $x_1, x_2, \dots, x_n$ 下的&lt;strong&gt;坐标&lt;/strong&gt;。
+\begin{equation}
+y = (x_1, x_2, \dots, x_n)&lt;br&gt;
+\begin{bmatrix}&lt;br&gt;
+a_1 \&lt;br&gt;
+a_2 \&lt;br&gt;
+\vdots \&lt;br&gt;
+a_n&lt;br&gt;
+\end{bmatrix}
+\nonumber
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：这里面每一个都是向量，所以y是一个矩阵乘向量的结果，所以y是一个向量。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;例 2&lt;/strong&gt; 设&lt;br&gt;
+\begin{equation}
+A =
+\begin{bmatrix}
+1 &amp;amp; 0 &amp;amp; 2 &amp;amp; 1 \
+-1 &amp;amp; 2 &amp;amp; 1 &amp;amp; 3 \
+1 &amp;amp; 2 &amp;amp; 5 &amp;amp; 5 \
+2 &amp;amp; -2 &amp;amp; 1 &amp;amp; -2
+\end{bmatrix}
+\nonumber
+\end{equation}
+求 $A$ 的核空间的两组基。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解&lt;/strong&gt;：$A$ 的核空间就是 $Ax = 0$ 的&lt;strong&gt;解空间&lt;/strong&gt;，$Ax = 0$ 的基础解系就是核空间的基。对 $A$ 进行初等行变换得到：&lt;br&gt;
+\begin{equation}
+A \to
+\begin{bmatrix}
+1 &amp;amp; 0 &amp;amp; 2 &amp;amp; 1 \
+0 &amp;amp; 1 &amp;amp; 3/2 &amp;amp; 2 \
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0
+\end{bmatrix}
+\nonumber
+\end{equation}
+则 $Ax = 0$ 的解为&lt;br&gt;
+\begin{equation}
+\begin{cases}
+x_1 = -2x_3 - x_4 \
+x_2 = -\frac{3}{2}x_3 - 2x_4
+\end{cases}
+\nonumber
+\end{equation}
+其中 $x_3, x_4$ 为自由变量。
+&lt;em&gt;基础解系取为&lt;/em&gt;
+\begin{equation}
+\alpha_1 = (-4, -3, 2, 0)^T, \quad \alpha_2 = (-1, -2, 0, 1)^T
+\nonumber
+\end{equation}
+或者&lt;br&gt;
+\begin{equation}
+\alpha_1 = (-4, -3, 2, 0)^T, \quad \alpha_2 = (-6, -7, 2, 2)^T
+\nonumber
+\end{equation}&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;例 3&lt;/strong&gt; 在 $\mathbb{R}^4$ 中求向量 $\alpha = (1,2,1,1)^T$ 在基&lt;br&gt;
+\begin{equation}
+\alpha_1 = \begin{bmatrix} 1 \ 1 \ 1 \ 1 \end{bmatrix}, \quad
+\alpha_2 = \begin{bmatrix} 1 \ 1 \ -1 \ -1 \end{bmatrix}, \quad
+\alpha_3 = \begin{bmatrix} 1 \ -1 \ 1 \ -1 \end{bmatrix}, \quad
+\alpha_4 = \begin{bmatrix} 1 \ -1 \ -1 \ 1 \end{bmatrix}
+\nonumber
+\end{equation}
+下的坐标。
+&lt;strong&gt;解&lt;/strong&gt;：设&lt;br&gt;
+\begin{equation}
+\alpha = k_1 \alpha_1 + k_2 \alpha_2 + k_3 \alpha_3 + k_4 \alpha_4
+\nonumber
+\end{equation}
+则&lt;br&gt;
+\begin{equation}
+\begin{bmatrix} 1 \ 2 \ 1 \ 1 \end{bmatrix} =
+k_1 \begin{bmatrix} 1 \ 1 \ 1 \ 1 \end{bmatrix} +
+k_2 \begin{bmatrix} 1 \ 1 \ -1 \ -1 \end{bmatrix} +
+k_3 \begin{bmatrix} 1 \ -1 \ 1 \ -1 \end{bmatrix} +
+k_4 \begin{bmatrix} 1 \ -1 \ -1 \ 1 \end{bmatrix}
+\nonumber
+\end{equation}
+求得&lt;br&gt;
+\begin{equation}
+k_1 = \frac{5}{4}, \quad k_2 = \frac{1}{4}, \quad k_3 = -\frac{1}{4}, \quad k_4 = -\frac{1}{4}
+\nonumber
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例 4&lt;/strong&gt; 在 $\mathbb{R}^{2 \times 2}$ 中求向量&lt;br&gt;
+\begin{equation}
+\begin{bmatrix} 1 &amp;amp; 2 \ 1 &amp;amp; 0 \end{bmatrix}
+\nonumber
+\end{equation}
+在基&lt;br&gt;
+\begin{equation}
+\begin{bmatrix} 1 &amp;amp; 1 \ 1 &amp;amp; 1 \end{bmatrix}, \quad
+\begin{bmatrix} 1 &amp;amp; 1 \ 0 &amp;amp; 1 \end{bmatrix}
+\nonumber
+\end{equation}
+下的坐标。
+&lt;strong&gt;答案&lt;/strong&gt;：$(1,1,0,-1)^T$&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;定义 6（过渡矩阵）&lt;/strong&gt; 设 $x_1, x_2, \dots, x_n, y_1, y_2, \dots, y_n$ 是空间 $V$ 的两组基。当 $1 \leq i \leq n$ 时，令&lt;br&gt;
+\begin{equation}
+y_i = a_{i1}x_1 + a_{i2}x_2 + \dots + a_{in}x_n = (x_1, x_2, \dots, x_n)&lt;br&gt;
+\begin{bmatrix}&lt;br&gt;
+a_{i1} \&lt;br&gt;
+a_{i2} \&lt;br&gt;
+\vdots \&lt;br&gt;
+a_{in}&lt;br&gt;
+\end{bmatrix}
+\nonumber
+\end{equation}
+引入矩阵表示：&lt;br&gt;
+\begin{equation}
+(y_1, y_2, \dots, y_n) = (x_1, x_2, \dots, x_n) A
+\nonumber
+\end{equation}
+其中 $A = (a_{ij})_{n \times n}$ 称为&lt;strong&gt;由基&lt;/strong&gt; $x_1, x_2, \dots, x_n$ &lt;strong&gt;到基&lt;/strong&gt; $y_1, y_2, \dots, y_n$ &lt;strong&gt;的过渡矩阵（变换矩阵）&lt;/strong&gt;。&lt;/p&gt;
 </description>
         </item>
         <item>
