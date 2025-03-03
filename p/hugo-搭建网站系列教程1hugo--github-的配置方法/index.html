@@ -13,26 +13,41 @@
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Hugo' /><meta property='article:published_time' content='2025-02-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-02-26T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="Hugo 搭建网站系列教程1：Hugo + Github 的配置方法">
 <meta name="twitter:description" content="Hugo + Github 的配置方法">
-        
+        <script type="text/javascript"
+async
+src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$','$'], ['\\(','\\)']],
+displayMath: [['$$','$$'], ['\[\[','\]\]']],
+processEscapes: true,
+processEnvironments: true,
+skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+TeX: { equationNumbers: { autoNumber: "AMS" },
+extensions: ["AMSmath.js", "AMSsymbols.js"] }
+}
+});
 
-<script>
-    window.MathJax = {
-      tex: {
-        tags: 'ams',  
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$','$$'], ['\\[','\\]']],
-        packages: ['base', 'ams']
-        
-      },
-      options: {
-        
-        
-      }
-    };
-    </script>
-    
-    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-    
+MathJax.Hub.Queue(function() {
+
+
+
+var all = MathJax.Hub.getAllJax(), i;
+for(i = 0; i < all.length; i += 1) {
+all[i].SourceElement().parentNode.className += ' has-jax';
+}
+});
+</script>
+
+<style>
+code.has-jax {
+font: inherit;
+font-size: 100%;
+background: inherit;
+border: inherit;
+color: #515151;
+}
+</style>
 
     </head>
     <body class="
