@@ -386,7 +386,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 11 分钟
+                    阅读时长: 12 分钟
                 </time>
             </div>
         
@@ -824,11 +824,11 @@ k_1 = \frac{5}{4}, \quad k_2 = \frac{1}{4}, \quad k_3 = -\frac{1}{4}, \quad k_4 
 \nonumber
 \end{equation}
 在基<br>
-\begin{align}
-\begin{bmatrix} 1 &amp; 1 \ 1 &amp; 1 \end{bmatrix}, \quad
-\begin{bmatrix} 1 &amp; 1 \ 0 &amp; 1 \end{bmatrix}
+\begin{equation}
+\begin{array} 1 &amp; 1 \ 1 &amp; 1 \end{array}, \quad
+\begin{array} 1 &amp; 1 \ 0 &amp; 1 \end{array}
 \nonumber
-\end{align}
+\end{equation}
 下的坐标。
 <strong>答案</strong>：$(1,1,0,-1)^T$</p>
 <hr>
@@ -842,6 +842,7 @@ a_{i2} \<br>
 a_{in}<br>
 \end{bmatrix}
 \nonumber
+\displaystyle
 \end{equation}
 引入矩阵表示：<br>
 \begin{equation}
@@ -849,6 +850,8 @@ a_{in}<br>
 \nonumber
 \end{equation}
 其中 $A = (a_{ij})_{n \times n}$ 称为<strong>由基</strong> $x_1, x_2, \dots, x_n$ <strong>到基</strong> $y_1, y_2, \dots, y_n$ <strong>的过渡矩阵（变换矩阵）</strong>。</p>
+<p><strong>思考</strong> 矩阵A是否可逆？</p>
+<p>如果A是不可逆的，那么A中的某列可以由其他列线性表示，那么某一个y一定会由一个其他的y线性表示，而y也是空间 $V$ 的一组基，所以y一定是线性无关的，这与假设不符，所以A一定是可逆的。</p>
 
 </section>
 
