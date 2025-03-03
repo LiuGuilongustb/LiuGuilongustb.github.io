@@ -436,11 +436,11 @@ k_1 = \frac{5}{4}, \quad k_2 = \frac{1}{4}, \quad k_3 = -\frac{1}{4}, \quad k_4 
 \nonumber
 \end{equation}
 在基&lt;br&gt;
-\begin{equation}
+\begin{align}
 \begin{bmatrix} 1 &amp;amp; 1 \ 1 &amp;amp; 1 \end{bmatrix}, \quad
 \begin{bmatrix} 1 &amp;amp; 1 \ 0 &amp;amp; 1 \end{bmatrix}
 \nonumber
-\end{equation}
+\end{align}
 下的坐标。
 &lt;strong&gt;答案&lt;/strong&gt;：$(1,1,0,-1)^T$&lt;/p&gt;
 &lt;hr&gt;
