@@ -594,8 +594,9 @@ P =
 &lt;mark&gt;
 这里一定要强调一件事，那就是在对坐标变换进行处理或者过渡矩阵进行处理的时候，只能进行行变换，不能进行列变换！行变换对应的是改变基的系数这是可以的，但是列变换相当于你在改变基底，这是错误的。
 &lt;/mark&gt;
-&lt;h2 id=&#34;&#34;&gt;
-&lt;/h2&gt;</description>
+&lt;h2 id=&#34;线性子空间&#34;&gt;线性子空间
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;定义 1（子空间）&lt;/strong&gt; 设 $V$ 是数域 $F$ 上的线性空间，$W$ 是 $V$ 的非空子集，如果 $W$ 关于 $V$ 上的加法和数乘也构成 $F$ 上的线性空间，则称 $W$ 是 $V$ 的&lt;strong&gt;线性子空间&lt;/strong&gt;或&lt;strong&gt;子空间&lt;/strong&gt;。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>矩阵理论系列笔记2：线性映射与矩阵</title>
