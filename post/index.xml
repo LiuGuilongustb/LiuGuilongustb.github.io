@@ -434,8 +434,8 @@ k_1 = \frac{5}{4}, \quad k_2 = \frac{1}{4}, \quad k_3 = -\frac{1}{4}, \quad k_4 
 \begin{equation}
 \begin{bmatrix} 1 &amp;amp; 2 \ 1 &amp;amp; 0 \end{bmatrix}
 \nonumber
-\end{equation}
-在基&lt;br&gt;
+\end{equation}&lt;/p&gt;
+$$\begin{bmatrix} 1 &amp; 2 \\ 1 &amp; 0 \end{bmatrix}$$&lt;p&gt;在基&lt;br&gt;
 \begin{equation}
 \begin{bmatrix} 1 &amp;amp; 1 \ 1 &amp;amp; 1 \end{bmatrix}, \quad
 \begin{bmatrix} 1 &amp;amp; 1 \ 0 &amp;amp; 1 \end{bmatrix}
@@ -510,7 +510,25 @@ x = (x_1, x_2, \dots, x_n)&lt;br&gt;
 \xi_n&lt;br&gt;
 \end{bmatrix}
 \end{equation}&lt;/p&gt;
-&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;思考&lt;/strong&gt; 为什么就能由唯一性得到坐标变换的公式？&lt;/p&gt;
+&lt;p&gt;其实很简单，只要移项相减就可以。虽然很简单，不能想当然。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例 4&lt;/strong&gt; 在 $\mathbb{R}^4$ 中求由基 $\alpha_1, \alpha_2, \alpha_3, \alpha_4$ 到基 $\beta_1, \beta_2, \beta_3, \beta_4$ 的过渡矩阵，其中&lt;/p&gt;
+&lt;p&gt;\begin{equation} \nonumber
+\begin{cases}
+\alpha_1 = (1,2,-1,0)^T \
+\alpha_2 = (1,-1,1,1)^T \
+\alpha_3 = (-1,2,1,1)^T \
+\alpha_4 = (-1,-1,0,1)^T
+\end{cases}
+\quad ,
+\quad
+\begin{cases}
+\beta_1 = (2,1,0,1)^T \
+\beta_2 = (0,1,2,2)^T \
+\beta_3 = (-2,1,1,2)^T \
+\beta_4 = (1,3,1,2)^T
+\end{cases}
+\end{equation}&lt;/p&gt;
 </description>
         </item>
         <item>
