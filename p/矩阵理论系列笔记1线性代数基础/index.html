@@ -390,7 +390,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 21 分钟
+                    阅读时长: 22 分钟
                 </time>
             </div>
         
@@ -1373,7 +1373,153 @@ T(a_1, \dots, a_n) = (T a_1, \dots, T a_n) = (\beta_1, \dots, \beta_m) A,
 其中 $A = (a_{ij})_{m \times n}$，称矩阵 $A$ 为线性映射 $T$ <strong>在这两组基下的矩阵表示</strong>。</p>
 <p><strong>注</strong>：矩阵表示是为了简化映射，可以有如下的理解
 \begin{equation}\nonumber
-R(T)={y = Tx \mid \forall x \in V} = span{ T\alpha_1, \cdots, T\alpha_n }
+R(T)=\lbrace y = Tx \mid \forall x \in V \rbrace = span \lbrace T\alpha_1, \cdots, T\alpha_n \rbrace
+\end{equation}</p>
+<p><strong>例 4：</strong> 设</p>
+<div>
+\begin{equation}\nonumber
+B =
+\begin{bmatrix} 
+1 & 2 \\ 
+1 & 1 \\ 
+0 & 1 
+\end{bmatrix},
+\end{equation}
+</div>
+映射 $T: \mathbb{R}^2 \to \mathbb{R}^3$ 定义如下：
+\begin{equation}\nonumber
+T(\alpha) = B \alpha, \quad \alpha \in \mathbb{R}^2
+\end{equation}
+求 $T$ 在基 $a_1 = (1,0)^T$，$a_2 = (0,1)^T$ 与基 $\beta_1 = (1,0,0)^T$，$\beta_2 = (0,1,0)^T$，$\beta_3 = (0,0,1)^T$ 下的矩阵表示 $A$。
+<p><strong>解：</strong><br>
+\begin{equation}\nonumber
+T(a_1) = (1,1,0)^T = \beta_1 + \beta_2,
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+T(a_2) = (2,1,1)^T = 2\beta_1 + \beta_2 + \beta_3,
+\end{equation}
+所以 $A = B$。</p>
+<p><strong>例 5：</strong> 线性映射 $D: P_n(x) \to P_{n-1}(x)$ 由下式子确定：
+\begin{equation}\nonumber
+D(f(x)) = f&rsquo;(x)
+\end{equation}
+求 $D$ 在基 $\lbrace 1, x, \dots, x^n \rbrace$ 与基 $\lbrace 1, x, \dots, x^{n-1} \rbrace$ 下的矩阵表示。</p>
+<p><strong>解：</strong><br>
+\begin{equation}\nonumber
+D(1) = 0, \quad D(x) = 1, \quad D(x^2) = 2x, \quad \dots, \quad D(x^n) = n x^{n-1},
+\end{equation}
+所以：</p>
+<div>
+\begin{equation}\nonumber
+D =
+\begin{bmatrix} 
+0 & 1 & 0 & \dots & 0 \\ 
+0 & 0 & 2 & \dots & 0 \\ 
+0 & 0 & 0 & \ddots & 0 \\ 
+0 & 0 & 0 & \dots & n 
+\end{bmatrix}
+\end{equation}
+</div>
+<p><strong>定义 2（核空间，像空间）</strong> 设 $V, W$ 为 $F$ 上线性空间，令 $L(V, W)$ 表示所有 $V$ 到 $W$ 的线性映射的集合，设 $T \in L(V, W)$，令：
+\begin{equation}\nonumber
+N(T) = \lbrace x \in V \mid Tx = 0 \rbrace,
+\end{equation}
+\begin{equation}\nonumber
+R(T) = \text{Im}(T) = \lbrace y \in W \mid y = Tx, \forall x \in V \rbrace.
+\end{equation}
+易验证 $N(T)$ 为 $V$ 的子空间，$R(T)$ 为 $W$ 的子空间，称 $N(T)$ 及 $R(T)$ 为 $T$ 的<strong>核空间</strong>和<strong>像空间</strong>。并称 $\dim N(T)$ 为 $T$ 的<strong>零度</strong>（或<strong>亏</strong>），$\dim R(T)$ 为 $T$ 的<strong>秩</strong>，一般有以下定理：</p>
+<hr>
+<p><strong>定理 1（秩加零度定理）</strong> 设 $T \in L(V, W)$，$V$ 为有限维，则 $N(T)$ 及 $R(T)$ 均为有限维，且：
+\begin{equation}\nonumber
+\dim N(T) + \dim R(T) = \dim V
+\end{equation}
+即 $T$ 的秩加零度等于其定义域的维数。</p>
+<p>这个的定理会用就行，不要求证明，该定理的证明过程已经超出矩阵理论的范畴了。</p>
+<p><strong>例 6：</strong> 映射 $T: \mathbb{R}^3 \to \mathbb{R}^2$，基
+\begin{equation}\nonumber
+a_1 = (-1,1,1)^T, \quad a_2 = (1,0,-1)^T, \quad a_3 = (0,1,1)^T
+\end{equation}
+与基
+\begin{equation}\nonumber
+\beta_1 = (1,1)^T, \quad \beta_2 = (0,2)^T
+\end{equation}
+下的矩阵表示：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+1 & 1 & -1 \\ 
+0 & 1 & 2 
+\end{bmatrix}.
+\end{equation}
+</div>
+<p>求：</p>
+<ol>
+<li>$T$ 的核子空间 $N(T)$ 的基与维数；</li>
+<li>$T$ 的值域 $R(T)$ 的基与维数。</li>
+</ol>
+<p><strong>解：</strong><br>
+\begin{equation}\nonumber
+T(a_1, a_2, a_3) = (T a_1, T a_2, T a_3) = (\beta_1, \beta_2) A
+\end{equation}</p>
+<p>(1) <strong>求 $N(T)$</strong> 即求满足 $T x = 0$ 的 $x \in \mathbb{R}^3$。</p>
+<p>设：
+\begin{equation}\nonumber
+x = k_1 a_1 + k_2 a_2 + k_3 a_3 = (a_1, a_2, a_3)
+\begin{bmatrix}
+k_1 \
+k_2 \
+k_3
+\end{bmatrix}
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+T x = T (a_1, a_2, a_3)
+\begin{bmatrix}
+k_1 \
+k_2 \
+k_3
+\end{bmatrix}
+= (\beta_1, \beta_2) A
+\begin{bmatrix}
+k_1 \
+k_2 \
+k_3
+\end{bmatrix}
+= 0
+\end{equation}</p>
+<p>只需求方程组：
+\begin{equation}\nonumber
+A
+\begin{bmatrix}
+k_1 \
+k_2 \
+k_3
+\end{bmatrix} = 0
+\end{equation}</p>
+<p>解得基础解系：
+\begin{equation}\nonumber
+k_1 = 3, \quad k_2 = -2, \quad k_3 = 1
+\end{equation}</p>
+<p>因此 $N(T)$ 的基为：
+\begin{equation}\nonumber
+k_1 a_1 + k_2 a_2 + k_3 a_3 = (-5, 4, 6)^T
+\end{equation}
+\begin{equation}\nonumber
+\dim N(T) = 1
+\end{equation}</p>
+<p><strong>注：</strong> 求 $N(T)$ 只需先求 $N(A)$ 的基础解系，再添加基底即可。</p>
+<p>(2) <strong>求 $R(T)$</strong><br>
+\begin{equation}\nonumber
+R(T) = \text{span} \lbrace T(a_1), T(a_2), T(a_3) \rbrace
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+= \text{span} \lbrace \beta_1, \beta_1 + \beta_2, -\beta_1 + 2\beta_2 \rbrace
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+= \text{span} \lbrace \beta_1, \beta_1 + \beta_2 \rbrace
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+= \text{span} \lbrace \beta_1, \beta_2 \rbrace = \mathbb{R}^2
 \end{equation}</p>
 
 </section>
