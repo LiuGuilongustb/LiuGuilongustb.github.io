@@ -1624,18 +1624,18 @@ T(X) = BX - XB, \quad \forall X \in \mathbb{R}^{2\times2}.
 <p><strong>解</strong>：设一般矩阵 $X$ 形如 $X = \begin{bmatrix} a &amp; b \ c &amp; d \end{bmatrix}$，计算</p>
 <div>
 \begin{equation} \nonumber
-BX = \begin{bmatrix} 1 & 2 \ 0 & 3 \end{bmatrix} \begin{bmatrix} a & b \ c & d \end{bmatrix} = \begin{bmatrix} a + 2c & b + 2d \ 3c & 3d \end{bmatrix},
+BX = \begin{bmatrix} 1 & 2 \\ 0 & 3 \end{bmatrix} \begin{bmatrix} a & b \\ c & d \end{bmatrix} = \begin{bmatrix} a + 2c & b + 2d \\ 3c & 3d \end{bmatrix},
 \end{equation}
 </div>
 <div>
 \begin{equation} \nonumber
-XB = \begin{bmatrix} a & b \ c & d \end{bmatrix} \begin{bmatrix} 1 & 2 \ 0 & 3 \end{bmatrix} = \begin{bmatrix} a & 2a + 3b \ c & 2c + 3d \end{bmatrix}.
+XB = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 0 & 3 \end{bmatrix} = \begin{bmatrix} a & 2a + 3b \\ c & 2c + 3d \end{bmatrix}.
 \end{equation}
 </div>
 因此，
 <div>
 \begin{equation} \nonumber
-T(X) = BX - XB = \begin{bmatrix} 2c & -2a - 2b + 2d \ 2c & -2c \end{bmatrix}.
+T(X) = BX - XB = \begin{bmatrix} 2c & -2a - 2b + 2d \\ 2c & -2c \end{bmatrix}.
 \end{equation}
 </div>
 核空间满足 $T(X) = 0$，解方程组：
@@ -1645,20 +1645,20 @@ T(X) = BX - XB = \begin{bmatrix} 2c & -2a - 2b + 2d \ 2c & -2c \end{bmatrix}.
 选取基底：
 <div>
 \begin{equation} \nonumber
-X_1 = \begin{bmatrix} -1 & 1 \ 0 & 0 \end{bmatrix}, \quad X\_2 = \begin{bmatrix} 1 & 0 \ 0 & 1 \end{bmatrix}.
+X_1 = \begin{bmatrix} -1 & 1 \\ 0 & 0 \end{bmatrix}, \quad X\_2 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}.
 \end{equation}
 </div>
 因此，$\dim N(T) = 2$。
 值域由方程
 <div>
 \begin{equation} \nonumber
-T(X) = \begin{bmatrix} 2c & -2a - 2b + 2d \ 2c & -2c \end{bmatrix}
+T(X) = \begin{bmatrix} 2c & -2a - 2b + 2d \\ 2c & -2c \end{bmatrix}
 \end{equation}
 </div>
 选取线性无关向量：
 <div>
 \begin{equation} \nonumber
-X_1 = \begin{bmatrix} 0 & -2 \ 0 & 0 \end{bmatrix}, \quad X\_2 = \begin{bmatrix} 2 & 0 \ 2 & -2 \end{bmatrix}.
+X_1 = \begin{bmatrix} 0 & -2 \\ 0 & 0 \end{bmatrix}, \quad X\_2 = \begin{bmatrix} 2 & 0 \\ 2 & -2 \end{bmatrix}.
 \end{equation}
 </div>
 因此，$\dim R(T) = 2$。
