@@ -1304,7 +1304,68 @@ T(\beta_1, \dots, \beta_n) = T(a_1, \dots, a_n) C = (a_1, \dots, a_n) A C
 C B = A C \Rightarrow B = C^{-1} A C
 \end{equation}&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt; 这里的&lt;/p&gt;
+&lt;h3 id=&#34;坐标变换公式&#34;&gt;坐标变换公式
+&lt;/h3&gt;&lt;p&gt;设 $\dim V = n$，$T \in L(V)$，$T$ 在基 $a_1, \dots, a_n$ 下的矩阵为 $A$。&lt;/p&gt;
+&lt;p&gt;设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\xi = (a_1, \dots, a_n) 
+\begin{bmatrix} 
+x_1 \\ 
+x_2 \\ 
+\vdots \\ 
+x_n 
+\end{bmatrix},
+\quad \text{且} \quad
+T\xi = (a_1, \dots, a_n) 
+\begin{bmatrix} 
+y_1 \\ 
+y_2 \\ 
+\vdots \\ 
+y_n 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;则：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+T\xi = T(a_1, \dots, a_n) 
+\begin{bmatrix} 
+x_1 \\ 
+x_2 \\ 
+\vdots \\ 
+x_n 
+\end{bmatrix}
+= (a_1, \dots, a_n) A 
+\begin{bmatrix} 
+x_1 \\ 
+x_2 \\ 
+\vdots \\ 
+x_n 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+因此：
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{bmatrix} 
+y_1 \\ 
+y_2 \\ 
+\vdots \\ 
+y_n 
+\end{bmatrix} 
+= A 
+\begin{bmatrix} 
+x_1 \\ 
+x_2 \\ 
+\vdots \\ 
+x_n 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;mark&gt;
+这里的坐标变换公式的形式与过度矩阵类似，但是这里不一样，一个是A矩阵，一个是A逆矩阵，这里一定要区分开，不要记混淆
+&lt;/mark&gt;
 </description>
         </item>
         <item>
