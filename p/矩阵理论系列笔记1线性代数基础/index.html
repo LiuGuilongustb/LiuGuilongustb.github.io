@@ -376,8 +376,11 @@
         <li><a href="#定理">定理</a></li>
         <li><a href="#定理-6">定理 6</a></li>
         <li><a href="#坐标变换公式">坐标变换公式</a></li>
+        <li><a href="#例-8">例 8</a></li>
+        <li><a href="#解">解：</a></li>
       </ol>
     </li>
+    <li><a href="#特征值与特征向量">特征值与特征向量</a></li>
   </ol>
 </nav>
         </div>
@@ -434,7 +437,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 25 分钟
+                    阅读时长: 26 分钟
                 </time>
             </div>
         
@@ -1802,7 +1805,118 @@ x_n
 <mark>
 这里的坐标变换公式的形式与过度矩阵类似，但是这里不一样，一个是A矩阵，一个是A逆矩阵，这里一定要区分开，不要记混淆
 </mark>
-
+<h3 id="例-8">例 8
+</h3><p>在 $\mathbb{R}^3$ 中，线性映射 $T$ 把基：
+\begin{equation}\nonumber
+a_1 = (1,1,-1)^T, \quad a_2 = (0,2,-1)^T, \quad a_3 = (1,0,-1)^T
+\end{equation}
+变为：
+\begin{equation}\nonumber
+T a_1 = (1,-1,0)^T, \quad T a_2 = (0,1,1)^T, \quad T a_3 = (0,3,-2)^T
+\end{equation}</p>
+<p>求：</p>
+<ol>
+<li>$T$ 在基 $a_1, a_2, a_3$ 下的矩阵表示 $A$；</li>
+<li>向量 $\xi = (1,2,3)^T$ 及 $T\xi$ 在基 $a_1, a_2, a_3$ 下的坐标；</li>
+<li>向量 $\xi$ 及 $T\xi$ 在基 $T a_1, T a_2, T a_3$ 下的坐标。</li>
+</ol>
+<h3 id="解">解：
+</h3><p>(1) 通过计算：
+\begin{equation}\nonumber
+T a_1 = a_1 - a_2
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+T a_2 = -a_1 + a_2 + a_3
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+T a_3 = -a_1 + 2a_2 + a_3
+\end{equation}</p>
+<p>$T$ 在基 $a_1, a_2, a_3$ 下的矩阵为：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+1 & -1 & -1 \\ 
+-1 & 1 & 2 \\ 
+0 & 1 & 1 
+\end{bmatrix}
+\end{equation}
+</div>
+<p>(2) 设：
+\begin{equation}\nonumber
+\xi = k_1 a_1 + k_2 a_2 + k_3 a_3 = (a_1, a_2, a_3)
+\begin{bmatrix}
+k_1 \
+k_2 \
+k_3
+\end{bmatrix}
+\end{equation}</p>
+<p>带入 $\xi = (1,2,3)^T$ 以及基坐标求解：
+\begin{equation}\nonumber
+k_1 = 10, \quad k_2 = -4, \quad k_3 = -9
+\end{equation}</p>
+<p>由坐标变换公式：</p>
+<div>
+\begin{equation}\nonumber
+T\xi =
+\begin{bmatrix} 
+1 & -1 & -1 \\ 
+-1 & 1 & 2 \\ 
+0 & 1 & 1 
+\end{bmatrix}
+\begin{bmatrix} 
+10 \\ 
+-4 \\ 
+-9 
+\end{bmatrix}
+=
+\begin{bmatrix} 
+23 \\ 
+-32 \\ 
+-13 
+\end{bmatrix}
+\end{equation}
+</div>
+<p>(3) 由已知：
+\begin{equation}\nonumber
+(T a_1, T a_2, T a_3) = (a_1, a_2, a_3) A
+\end{equation}
+$A$ 实际上是这两组基的过渡矩阵，因此向量 $\xi$ 在基 $T a_1, T a_2, T a_3$ 下的坐标为：</p>
+<div>
+\begin{equation}\nonumber
+A^{-1}
+\begin{bmatrix} 
+10 \\ 
+-4 \\ 
+-9 
+\end{bmatrix}
+=
+\begin{bmatrix} 
+1 \\ 
+-15 \\ 
+6 
+\end{bmatrix}
+\end{equation}
+</div>
+<p>同理，$T\xi$ 在基 $T a_1, T a_2, T a_3$ 下的坐标为：</p>
+<div>
+\begin{equation}\nonumber
+A^{-1}
+\begin{bmatrix} 
+23 \\ 
+-32 \\ 
+-13 
+\end{bmatrix}
+=
+\begin{bmatrix} 
+10 \\ 
+-4 \\ 
+-9 
+\end{bmatrix}
+\end{equation}
+</div>
+<h2 id="特征值与特征向量">特征值与特征向量
+</h2>
 </section>
 
 
