@@ -373,6 +373,8 @@
         <li><a href="#定义核空间像空间">定义（核空间，像空间）</a></li>
         <li><a href="#定理-41秩加零度定理">定理 4.1（秩加零度定理）</a></li>
         <li><a href="#线性变换的矩阵表示">线性变换的矩阵表示</a></li>
+        <li><a href="#定理">定理</a></li>
+        <li><a href="#定理-6">定理 6</a></li>
       </ol>
     </li>
   </ol>
@@ -431,7 +433,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 23 分钟
+                    阅读时长: 25 分钟
                 </time>
             </div>
         
@@ -1615,54 +1617,54 @@ T(X) = BX - XB, \quad \forall X \in \mathbb{R}^{2\times2}
 1. $T$ 的核子空间 $N(T)$ 的基与维数；
 2. $T$ 的值域 $R(T)$ 的基与维数。
 <p><strong>定理</strong>：设 $B = \begin{bmatrix} 1 &amp; 2 \ 0 &amp; 3 \end{bmatrix}$，定义线性变换 $T$ 如下：</p>
-<p>\begin{equation}
+<p>\begin{equation} \nonumber
 T(X) = BX - XB, \quad \forall X \in \mathbb{R}^{2\times2}.
 \end{equation}</p>
 <p>求 $T$ 的核空间 $N(T)$ 的基与维数，以及值域 $R(T)$ 的基与维数。</p>
 <p><strong>解</strong>：设一般矩阵 $X$ 形如 $X = \begin{bmatrix} a &amp; b \ c &amp; d \end{bmatrix}$，计算</p>
 <div>
-\begin{equation}
+\begin{equation} \nonumber
 BX = \begin{bmatrix} 1 & 2 \ 0 & 3 \end{bmatrix} \begin{bmatrix} a & b \ c & d \end{bmatrix} = \begin{bmatrix} a + 2c & b + 2d \ 3c & 3d \end{bmatrix},
 \end{equation}
 </div>
 <div>
-\begin{equation}
+\begin{equation} \nonumber
 XB = \begin{bmatrix} a & b \ c & d \end{bmatrix} \begin{bmatrix} 1 & 2 \ 0 & 3 \end{bmatrix} = \begin{bmatrix} a & 2a + 3b \ c & 2c + 3d \end{bmatrix}.
 \end{equation}
 </div>
 因此，
 <div>
-\begin{equation}
-T(X) = BX - XB = \begin{bmatrix} 2c & -2a - 2b + 2d \ 2c \begin{equation}& -2c \end{bmatrix}.
+\begin{equation} \nonumber
+T(X) = BX - XB = \begin{bmatrix} 2c & -2a - 2b + 2d \ 2c & -2c \end{bmatrix}.
 \end{equation}
 </div>
-核空间满足 \$T(X) = 0\$，解方程组：
-\begin{equation}
+核空间满足 $T(X) = 0$，解方程组：
+\begin{equation} \nonumber
 2c = 0 \Rightarrow c = 0, \quad -2a - 2b + 2d = 0 \Rightarrow a + b = d.
 \end{equation}
 选取基底：
 <div>
-\begin{equation}
-X\_1 = \begin{bmatrix} -1 & 1 \ 0 & 0 \end{bmatrix}, \quad X\_2 = \begin{bmatrix} 1 & 0 \ 0 & 1 \end{bmatrix}.
+\begin{equation} \nonumber
+X_1 = \begin{bmatrix} -1 & 1 \ 0 & 0 \end{bmatrix}, \quad X\_2 = \begin{bmatrix} 1 & 0 \ 0 & 1 \end{bmatrix}.
 \end{equation}
 </div>
-因此，\$\dim N(T) = 2\$。
+因此，$\dim N(T) = 2$。
 值域由方程
 <div>
-\begin{equation}
+\begin{equation} \nonumber
 T(X) = \begin{bmatrix} 2c & -2a - 2b + 2d \ 2c & -2c \end{bmatrix}
 \end{equation}
 </div>
 选取线性无关向量：
 <div>
-\begin{equation}
-X\_1 = \begin{bmatrix} 0 & -2 \ 0 & 0 \end{bmatrix}, \quad X\_2 = \begin{bmatrix} 2 & 0 \ 2 & -2 \end{bmatrix}.
+\begin{equation} \nonumber
+X_1 = \begin{bmatrix} 0 & -2 \ 0 & 0 \end{bmatrix}, \quad X\_2 = \begin{bmatrix} 2 & 0 \ 2 & -2 \end{bmatrix}.
 \end{equation}
 </div>
-因此，\$\dim R(T) = 2\$。
+因此，$\dim R(T) = 2$。
 <p>验证维数定理：</p>
 <div>
-\begin{equation}
+\begin{equation} \nonumber
 \dim N(T) + \dim R(T) = 2 + 2 = 4 = \dim \mathbb{R}^{2\times2}.
 \end{equation}
 </div>
@@ -1678,6 +1680,66 @@ T a_j = a_{j1} a_1 + \dots + a_{jn} a_n, \quad 1 \leq j \leq n
 T(a_1, \dots, a_n) = (T a_1, \dots, T a_n) = (a_1, \dots, a_n) A
 \end{equation}
 其中 $A = (a_{ij})_{n \times n} \in F^{n \times n}$，称矩阵 $A$ 为线性变换 $T$ <strong>在这组基下的矩阵表示</strong>。</p>
+<p><strong>注</strong> 上面那个叫线性映射的矩阵表示，这个叫线性变化的矩阵表示，定义相似，但不是一个。</p>
+<p>由空间结构和 $T$ 的线性性质，$T$ 由 $T a_1, \dots, T a_n$ 完全确定，故由 $T$ 唯一确定一个矩阵 $A$。</p>
+<p><strong>思考：</strong> 如果取定 $V$ 的一组基，对于任意的 $V$ 上的线性变换 $T$，则唯一确定一个矩阵 $A$，反之如何？</p>
+<p>下面这个定理就能回答这个问题</p>
+<h3 id="定理">定理
+</h3><p>设 $\dim V = n$，$a_1, \dots, a_n$ 为 $V$ 的一组基，任取：
+\begin{equation}\nonumber
+A = (a_{ij})_{n \times n} \in F^{n \times n}
+\end{equation}
+则有且仅有一个线性变换 $T \in L(V, V)$，使其矩阵恰为 $A$。</p>
+<p><strong>推论：</strong> $L(V, V)$ 与 $F^{n \times n}$ 之间存在一一对应关系。</p>
+<p><strong>例 如：</strong> 零变换对应零矩阵，恒等变换对应单位矩阵。</p>
+<hr>
+<p>矩阵理论课程从此处往后还有一部分内容，本篇并没有进行整理，因为该内容以科普了解为主，因此本篇不进行详细撰写，例如线性变换空间、同构及其推论，想了解的同学可自行查询相关内容。至于还有逆变换，这个也不要求掌握，但是我觉得这个应当在这里介绍一下，如下。</p>
+<p><strong>定义 3</strong> 设 $T_1, T_2 \in L(V)$，定义 $T_1$ 与 $T_2$ 的乘积 $T_1T_2$ 为：
+\begin{equation}\nonumber
+(T_1 T_2)x = T_1(T_2 x)
+\end{equation}</p>
+<p>可以验证 $T_1 T_2 \in L(V)$，并且线性变换的乘积满足结合律但不满足交换律（与矩阵的乘积类似）。</p>
+<p><strong>逆变换：</strong> 设 $T_1 \in L(V)$，如果存在 $T_2 \in L(V)$，使得：
+\begin{equation}\nonumber
+(T_1 T_2)x = (T_2 T_1)x = x, \quad \forall x \in V
+\end{equation}</p>
+<p>则称 $T_2$ 是 $T_1$ 的<strong>逆变换</strong>，记作 $T_2 = T_1^{-1}$，且有：
+\begin{equation}\nonumber
+T_1 T_2 = T_2 T_1 = T_e
+\end{equation}</p>
+<p><strong>定理 4</strong> 设 $\dim V = n$，$a_1, \dots, a_n$ 为 $V$ 的一组基，在这组基下线性变换 $T_1, T_2$ 的矩阵为 $A, B$，则：</p>
+<ol>
+<li>线性变换 $T_1 + T_2$ 的矩阵为 $A + B$；</li>
+<li>线性变换的数乘 $kT_1$ 的矩阵为 $kA$；</li>
+<li>线性变换的乘积 $T_1T_2$ 的矩阵为 $AB$；</li>
+<li>线性变换 $T_1$ 的逆变换（若存在）的矩阵为 $A^{-1}$。</li>
+</ol>
+<hr>
+<h3 id="定理-6">定理 6
+</h3><p>设 $T \in L(V)$，则在不同基下的矩阵相似。</p>
+<p><strong>证明：</strong> 设 $\dim V = n$，$a_1, \dots, a_n$ 与 $\beta_1, \dots, \beta_n$ 为 $V$ 的两组基，设：
+\begin{equation}\nonumber
+(\beta_1, \dots, \beta_n) = (a_1, \dots, a_n) C
+\end{equation}
+其中 $C$ 是过渡矩阵。
+设：
+\begin{equation}\nonumber
+T(a_1, \dots, a_n) = (a_1, \dots, a_n) A
+\end{equation}
+则：
+\begin{equation}\nonumber
+T(\beta_1, \dots, \beta_n) B = (\beta_1, \dots, \beta_n) B = (a_1, \dots, a_n) C B
+\end{equation}
+另一方面：
+\begin{equation}\nonumber
+T(\beta_1, \dots, \beta_n) = T(a_1, \dots, a_n) C = (a_1, \dots, a_n) A C
+\end{equation}
+所以：
+\begin{equation}\nonumber
+C B = A C \Rightarrow B = C^{-1} A C
+\end{equation}</p>
+<hr>
+<p><strong>注</strong> 这里的</p>
 
 </section>
 
