@@ -21,7 +21,8 @@
 &lt;li&gt;存在零矩阵&lt;/li&gt;
 &lt;li&gt;存在负矩阵&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;定义 1.1（加群）&lt;/strong&gt; 在非空集合 $V$ 上定义一种代数运算，称之为&lt;strong&gt;加法&lt;/strong&gt;（记为“$+$”），使得 $\forall u,v \in V$ 都有 $V$ 中唯一元素 $u + v$ 与之对应，该元素称为 $u$ 与 $v$ 的&lt;strong&gt;和&lt;/strong&gt;，且满足如下性质：&lt;/p&gt;
+&lt;h3 id=&#34;定义加群&#34;&gt;定义（加群）
+&lt;/h3&gt;&lt;p&gt;在非空集合 $V$ 上定义一种代数运算，称之为&lt;strong&gt;加法&lt;/strong&gt;（记为“$+$”），使得 $\forall u,v \in V$ 都有 $V$ 中唯一元素 $u + v$ 与之对应，该元素称为 $u$ 与 $v$ 的&lt;strong&gt;和&lt;/strong&gt;，且满足如下性质：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;交换律&lt;/strong&gt;： $ u + v = v + u $&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;结合律&lt;/strong&gt;： $ (u + v) + w = u + (v + w) $&lt;/li&gt;
@@ -34,7 +35,8 @@
 &lt;p&gt;在数的加法运算下，&lt;strong&gt;整数集&lt;/strong&gt;、&lt;strong&gt;有理数集&lt;/strong&gt;、&lt;strong&gt;实数集&lt;/strong&gt;、&lt;strong&gt;复数集&lt;/strong&gt;分别构成加群，记作 $(\mathbb{Z}, +)$、$(\mathbb{Q}, +)$、$(\mathbb{R}, +)$、$(\mathbb{C}, +)$。&lt;/p&gt;
 &lt;p&gt;在数的&lt;strong&gt;乘法&lt;/strong&gt;运算下，&lt;strong&gt;非零有理数集&lt;/strong&gt;构成加群 $(\mathbb{Q} \setminus \lbrace0\rbrace, \cdot)$。同样，$(\mathbb{R} \setminus \lbrace0\rbrace, \cdot)$、$(\mathbb{C} \setminus \lbrace0\rbrace, \cdot)$ 也构成加群；而 $(\mathbb{Z} \setminus \lbrace0\rbrace, \cdot)$ 不构成加群（不满足定义中的第四条，乘法运算下的加群，这里的$\theta$是1，而对于乘法来说，除了1和-1，没有其他整数，能够满足乘法运算等于1）。&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;定义 1.2（数域）&lt;/strong&gt; 设 $F$ 是非空数集，若 $F$ 中任意两个数的&lt;strong&gt;和&lt;/strong&gt;、&lt;strong&gt;差&lt;/strong&gt;、&lt;strong&gt;积&lt;/strong&gt;、&lt;strong&gt;商&lt;/strong&gt;（除数不为 $0$）仍在该数集，即对四则运算封闭，称该数集 $F$ 为一个&lt;strong&gt;数域&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;定义数域&#34;&gt;定义（数域）
+&lt;/h3&gt;&lt;p&gt;设 $F$ 是非空数集，若 $F$ 中任意两个数的&lt;strong&gt;和&lt;/strong&gt;、&lt;strong&gt;差&lt;/strong&gt;、&lt;strong&gt;积&lt;/strong&gt;、&lt;strong&gt;商&lt;/strong&gt;（除数不为 $0$）仍在该数集，即对四则运算封闭，称该数集 $F$ 为一个&lt;strong&gt;数域&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：实数集 $\mathbb{R}$、复数集 $\mathbb{C}$、有理数集 $\mathbb{Q}$ 是&lt;strong&gt;数域&lt;/strong&gt;；而自然数集 $\mathbb{N}$、整数集 $\mathbb{Z}$ 不是&lt;strong&gt;数域&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;思考&lt;/strong&gt;：集合 ${\mathbb{Q}}(i) = { \left. {a + bi} \right|a,b \in \mathbb{Q}}$ 是数域吗？其中 $i$ 是虚数单位。&lt;/p&gt;
 &lt;p&gt;接下来，我们思考另外一个事实：设集合 $V$ 是所有 $m \times n$ 实矩阵构成的集合,
@@ -46,7 +48,8 @@
 &lt;li&gt;$1 \cdot A = A$&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;刚才我们从第一个事实给出了加群的定义，现在我们从第二个事实给出线性空间的定义。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定义 1.3（线性空间）&lt;/strong&gt; 设 $(V, +)$ 是一个加群，$F$ 是一个数域。定义了 $F$ 中的数与 $V$ 中元素的一种代数运算，称为&lt;strong&gt;数乘&lt;/strong&gt;，使得 $\forall \lambda \in F, u \in V$，有 $V$ 中唯一元素 $\lambda u$ 与之对应，$\lambda u$ 称为 $\lambda$ 与 $u$ 的积，且满足以下性质：&lt;/p&gt;
+&lt;h3 id=&#34;定义-线性空间&#34;&gt;定义 （线性空间）
+&lt;/h3&gt;&lt;p&gt;设 $(V, +)$ 是一个加群，$F$ 是一个数域。定义了 $F$ 中的数与 $V$ 中元素的一种代数运算，称为&lt;strong&gt;数乘&lt;/strong&gt;，使得 $\forall \lambda \in F, u \in V$，有 $V$ 中唯一元素 $\lambda u$ 与之对应，$\lambda u$ 称为 $\lambda$ 与 $u$ 的积，且满足以下性质：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;$\lambda (u + v) = \lambda u + \lambda v$&lt;/li&gt;
 &lt;li&gt;$(\lambda + \mu)u = \lambda u + \mu u$&lt;/li&gt;
@@ -77,19 +80,22 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;定义 1.4（几何空间）&lt;/strong&gt; 在通常向量的加法和数乘运算下构成上的线性空间为
+&lt;h3 id=&#34;定义几何空间&#34;&gt;定义（几何空间）
+&lt;/h3&gt;&lt;p&gt;在通常向量的加法和数乘运算下构成上的线性空间为
 \begin{equation}
 \mathbb{R}^n = \lbrace x \mid (x_1, x_2, \dots, x_n)^T, x_i \in \mathbb{R}, i = 1, \dots, n \rbrace,
 \nonumber
 \end{equation}
 称为 n 维实向量空间。类似可定义 $\mathbb{C}^n$ .&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定义 1.5（复矩阵空间和实矩阵空间）&lt;/strong&gt; 由所有 $m \times n $ 复矩阵构成的集合$V$，即&lt;br&gt;
+&lt;h3 id=&#34;定义-复矩阵空间和实矩阵空间&#34;&gt;定义 （复矩阵空间和实矩阵空间）
+&lt;/h3&gt;&lt;p&gt;由所有 $m \times n $ 复矩阵构成的集合$V$，即&lt;br&gt;
 \begin{equation}
 V =  \lbrace {{{\left( {{a_{ij}}} \right)}_{m \times n}}} \mid {a_{ij}} \in {\mathbb{C}} \rbrace
 \nonumber
 \end{equation}
 $V$ 在矩阵的加法与数乘运算下构成 $\mathbb{C}$ 上的线性空间，称为&lt;strong&gt;复矩阵空间&lt;/strong&gt;，记作 $\mathbb{C}^{m \times n}$。类似可定义&lt;strong&gt;实矩阵空间&lt;/strong&gt; $\mathbb{R}^{m \times n}$。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定义 1.6 （核空间）&lt;/strong&gt; 取定 $A \in \mathbb{C}^{m \times n}$，令 $W = \lbrace x \in \mathbb{C}^n \mid Ax = 0 \rbrace$，不难验证 $W$ 是 $\mathbb{C}$ 上的线性空间，称为&lt;strong&gt;矩阵 $A$ 的核空间&lt;/strong&gt;，记作 $\text{N}(A)$。&lt;/p&gt;
+&lt;h3 id=&#34;定义核空间&#34;&gt;定义（核空间）
+&lt;/h3&gt;&lt;p&gt;取定 $A \in \mathbb{C}^{m \times n}$，令 $W = \lbrace x \in \mathbb{C}^n \mid Ax = 0 \rbrace$，不难验证 $W$ 是 $\mathbb{C}$ 上的线性空间，称为&lt;strong&gt;矩阵 $A$ 的核空间&lt;/strong&gt;，记作 $\text{N}(A)$。&lt;/p&gt;
 &lt;p&gt;（核空间的维数就等于$n-r$，这是线性代数的内容，不在这里展开讨论）&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;例 1&lt;/strong&gt; 设 $\mathbb{R}^+$ 表示所有正实数集合，在 $\mathbb{R}^+$ 中定义加法与数乘为&lt;br&gt;
@@ -184,13 +190,15 @@ k_1 \odot (k_2 \odot a) = k_1 \odot (a^{k_2}) = (a^{k_2})^{k_1} = a^{(k_1 k_2)}
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;结论：&lt;/strong&gt; 由于满足所有八个线性空间的公理，因此 $(\mathbb{R}^+, \oplus, \odot)$ 确实是一个实线性空间。&lt;/p&gt;
 &lt;h2 id=&#34;基维数与坐标&#34;&gt;基、维数与坐标
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;定义 2.1（线性组合）&lt;/strong&gt; 设 $V$ 是数域 $F$ 上的线性空间，$x_1, x_2, \dots, x_r \in V$，$k_1, k_2, \dots, k_r \in F$，其中 $r \geq 1$。若向量 $x$ 可以表示为&lt;br&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;定义线性组合&#34;&gt;定义（线性组合）
+&lt;/h3&gt;&lt;p&gt;设 $V$ 是数域 $F$ 上的线性空间，$x_1, x_2, \dots, x_r \in V$，$k_1, k_2, \dots, k_r \in F$，其中 $r \geq 1$。若向量 $x$ 可以表示为&lt;br&gt;
 \begin{equation}
 x = k_1 x_1 + k_2 x_2 + \dots + k_r x_r
 \nonumber
 \end{equation}
 则称 $x$ 可由 $x_1, x_2, \dots, x_r$ &lt;strong&gt;线性表示&lt;/strong&gt;，或者 $x$ 是 $x_1, x_2, \dots, x_r$ 的&lt;strong&gt;线性组合&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定义 2.2（线性相关）&lt;/strong&gt; 设 $V$ 是数域 $F$ 上的线性空间，$x_1, x_2, \dots, x_r \in V$，其中 $r \geq 1$。如果存在一组不全为零的数 $k_1, k_2, \dots, k_r \in F$，使得&lt;br&gt;
+&lt;h3 id=&#34;定义线性相关&#34;&gt;定义（线性相关）
+&lt;/h3&gt;&lt;p&gt;设 $V$ 是数域 $F$ 上的线性空间，$x_1, x_2, \dots, x_r \in V$，其中 $r \geq 1$。如果存在一组不全为零的数 $k_1, k_2, \dots, k_r \in F$，使得&lt;br&gt;
 \begin{equation}
 k_1 x_1 + k_2 x_2 + \dots + k_r x_r = 0
 \nonumber
@@ -202,7 +210,7 @@ k_1 x_1 + k_2 x_2 + \dots + k_r x_r = 0
 \end{equation}
 必有 $k_1 = k_2 = \dots = k_r = 0$。&lt;/p&gt;
 &lt;p&gt;&lt;mark&gt;线性无关组的&lt;strong&gt;任一子集&lt;/strong&gt;是线性无关的，线性相关组的&lt;strong&gt;任一扩展集&lt;/strong&gt;仍线性相关。&lt;/mark&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;证明&lt;/em&gt;：
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：
 &lt;strong&gt;命题 1：线性无关组的任一子集仍然是线性无关的&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;设向量组 $S = { v_1, v_2, \dots, v_n }$ 在向量空间 $V$ 中是&lt;strong&gt;线性无关&lt;/strong&gt;的，即对于任意的标量 $a_1, a_2, \dots, a_n$，若满足
 \begin{equation}
@@ -258,12 +266,13 @@ a_1 v_1 + \dots + a_n v_n + 0 \cdot w = 0,
 则称 $x_1, x_2, \dots, x_r$ 是 $V$ 的一个&lt;strong&gt;基&lt;/strong&gt;或&lt;strong&gt;基底&lt;/strong&gt;。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;定理 2.1&lt;/strong&gt; 设 $\dim V &amp;lt; \infty$，则&lt;br&gt;
+&lt;h3 id=&#34;定理-21&#34;&gt;定理 2.1
+&lt;/h3&gt;&lt;p&gt;设 $\dim V &amp;lt; \infty$，则&lt;br&gt;
 \begin{equation}
 \dim V = n \iff V 的任一基底的元素个数都是 n
 \nonumber
 \end{equation}&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;证明&lt;/em&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;必要性&lt;/em&gt;： 任取 $V$ 的一组基底 $x_1, x_2, \dots, x_r$，由维数定义知 $r \leq n$。若 $r &amp;lt; n$，则存在 $V$ 中最大线性无关组 $y_1, \dots, y_n$，所以对于每一个 $y_i \ (1 \leq i \leq n)$ 均可以由 $x_1, x_2, \dots, x_r$ 线性表示。即&lt;br&gt;
 \begin{equation}
 \begin{cases}
@@ -306,13 +315,15 @@ u = \sum_{i=1}^{m} -\frac{b_i}{b_{m+1}} x_i
 \end{equation}
 即 $u$ 可由 $x_1, x_2, \dots, x_m$ 线性表示，从而 $x_1, x_2, \dots, x_m$ 是 $V$ 的一组基底，故 $\dim V = m$。&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;推论 2.1&lt;/strong&gt; $n$ 维空间中的任意 $n$ 个线性无关的向量均为 $V$ 的一个&lt;strong&gt;基底&lt;/strong&gt;，且任一线性无关组 $x_1, x_2, \dots, x_r$ （$r \leq n$）可扩充为一组基。&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;证明&lt;/em&gt;：&lt;/p&gt;
+&lt;h3 id=&#34;推论-1&#34;&gt;推论 1
+&lt;/h3&gt;&lt;p&gt;$n$ 维空间中的任意 $n$ 个线性无关的向量均为 $V$ 的一个&lt;strong&gt;基底&lt;/strong&gt;，且任一线性无关组 $x_1, x_2, \dots, x_r$ （$r \leq n$）可扩充为一组基。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：&lt;/p&gt;
 &lt;p&gt;（1）设 $V$ 是 $n$ 维空间，且 ${ x_1, x_2, \dots, x_n }$ 是 $V$ 中 $n$ 个线性无关的向量。由于 $V$ 的维数为 $n$，任意线性无关组的元素个数最多为 $n$，因此 ${ x_1, x_2, \dots, x_n }$ 已经是极大线性无关组，必然构成 $V$ 的一组基底。&lt;/p&gt;
 &lt;p&gt;（2）设 ${ x_1, x_2, \dots, x_r }$ 是 $V$ 中的一组线性无关组，其中 $r &amp;lt; n$。由于 $V$ 的维数为 $n$，$V$ 的基底包含 $n$ 个向量，因此可以在 ${ x_1, x_2, \dots, x_r }$ 的基础上添加 $n - r$ 个向量，使其扩展为一组基底。&lt;/p&gt;
 &lt;p&gt;综上，推论 2.1 证明完毕。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;推论 2.2&lt;/strong&gt; 设 $x_1, x_2, \dots, x_n$ 是 $n$ 维空间 $V$ 的一个基，则 $\forall y \in V$，$y$ 可由 $x_1, x_2, \dots, x_n$ &lt;strong&gt;唯一表示&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;证明&lt;/em&gt;：&lt;/p&gt;
+&lt;h3 id=&#34;推论-2&#34;&gt;推论 2
+&lt;/h3&gt;&lt;p&gt;设 $x_1, x_2, \dots, x_n$ 是 $n$ 维空间 $V$ 的一个基，则 $\forall y \in V$，$y$ 可由 $x_1, x_2, \dots, x_n$ &lt;strong&gt;唯一表示&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;由于 ${ x_1, x_2, \dots, x_n }$ 是 $V$ 的一组基底，依据基底的定义，$V$ 中的任意向量 $y$ 都可以由这组基底线性表示：
 \begin{equation}
 y = a_1 x_1 + a_2 x_2 + \dots + a_n x_n.
@@ -336,7 +347,8 @@ a_1 - b_1 = a_2 - b_2 = \dots = a_n - b_n = 0.
 即 $a_i = b_i$，因此表示唯一。&lt;/p&gt;
 &lt;p&gt;推论 2.2 证明完毕。&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;定义 5（坐标）&lt;/strong&gt; 设 $x_1, x_2, \dots, x_n$ 是 $n$ 维空间 $V$ 的一个基，$\forall y \in V$，令&lt;br&gt;
+&lt;h3 id=&#34;定义坐标&#34;&gt;定义（坐标）
+&lt;/h3&gt;&lt;p&gt;设 $x_1, x_2, \dots, x_n$ 是 $n$ 维空间 $V$ 的一个基，$\forall y \in V$，令&lt;br&gt;
 \begin{equation}
 y = \sum_{i=1}^{n} a_i x_i
 \nonumber
@@ -463,7 +475,8 @@ $$\begin{bmatrix} 1 &amp; 2 \\ 1 &amp; 0 \end{bmatrix}$$
 下的坐标。
 **答案**：$(1,1,0,-1)^T$
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;定义 2.6（过渡矩阵）&lt;/strong&gt; 设 $x_1, x_2, \dots, x_n, y_1, y_2, \dots, y_n$ 是空间 $V$ 的两组基。当 $1 \leq i \leq n$ 时，令&lt;/p&gt;
+&lt;h3 id=&#34;定义过渡矩阵&#34;&gt;定义（过渡矩阵）
+&lt;/h3&gt;&lt;p&gt;设 $x_1, x_2, \dots, x_n, y_1, y_2, \dots, y_n$ 是空间 $V$ 的两组基。当 $1 \leq i \leq n$ 时，令&lt;/p&gt;
 &lt;div&gt;
 \begin{equation}
 y_i = a_{i1}x_1 + a_{i2}x_2 + \dots + a_{in}x_n = (x_1, x_2, \dots, x_n)  
@@ -486,7 +499,8 @@ a_{in}
 其中 $A = (a_{ij})_{n \times n}$ 称为**由基** $x_1, x_2, \dots, x_n$ **到基** $y_1, y_2, \dots, y_n$ **的过渡矩阵（变换矩阵）**。
 &lt;p&gt;&lt;strong&gt;思考&lt;/strong&gt; 矩阵A是否可逆？&lt;/p&gt;
 &lt;p&gt;如果A是不可逆的，那么A中的某列可以由其他列线性表示，那么某一个y一定会由一个其他的y线性表示，而y也是空间 $V$ 的一组基，所以y一定是线性无关的，这与假设不符，所以A一定是可逆的。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定义 2.7（坐标变换公式）&lt;/strong&gt; 设 $x_1, x_2, \dots, x_n, y_1, y_2, \dots, y_n$ 是空间 $V$ 的两组基，任取 $x \in V$，设&lt;/p&gt;
+&lt;h3 id=&#34;定义坐标变换公式&#34;&gt;定义（坐标变换公式）
+&lt;/h3&gt;&lt;p&gt;设 $x_1, x_2, \dots, x_n, y_1, y_2, \dots, y_n$ 是空间 $V$ 的两组基，任取 $x \in V$，设&lt;/p&gt;
 &lt;div&gt;
 \begin{equation} \nonumber
 x = (x_1, x_2, \dots, x_n)  
@@ -596,12 +610,14 @@ P =
 这里一定要强调一件事，那就是在对坐标变换进行处理或者过渡矩阵进行处理的时候，只能进行行变换，不能进行列变换！行变换对应的是改变基的系数这是可以的，但是列变换相当于你在改变基底，这是错误的。
 &lt;/mark&gt;
 &lt;h2 id=&#34;线性子空间&#34;&gt;线性子空间
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;定义 3.1（子空间）&lt;/strong&gt; 设 $V$ 是数域 $F$ 上的线性空间，$W$ 是 $V$ 的非空子集，如果 $W$ 关于 $V$ 上的加法和数乘也构成 $F$ 上的线性空间，则称 $W$ 是 $V$ 的&lt;strong&gt;线性子空间&lt;/strong&gt;或&lt;strong&gt;子空间&lt;/strong&gt;。&lt;/p&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;定义子空间&#34;&gt;定义（子空间）
+&lt;/h3&gt;&lt;p&gt;设 $V$ 是数域 $F$ 上的线性空间，$W$ 是 $V$ 的非空子集，如果 $W$ 关于 $V$ 上的加法和数乘也构成 $F$ 上的线性空间，则称 $W$ 是 $V$ 的&lt;strong&gt;线性子空间&lt;/strong&gt;或&lt;strong&gt;子空间&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：实际上，只要 $W$ 是关于加法和数乘封闭的，就一定是$V$ 的&lt;strong&gt;线性子空间&lt;/strong&gt;。
 &lt;mark&gt;
 任何空间 $V$ 都有两个平凡子空间 $V$ 和 ${ \theta }$ 。
 &lt;/mark&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定理 3.1&lt;/strong&gt; 设 $V$ 是数域 $F$ 上的线性空间，$W$ 是 $V$ 的非空子集，以下三个结论等价：&lt;/p&gt;
+&lt;h3 id=&#34;定理-31&#34;&gt;定理 3.1
+&lt;/h3&gt;&lt;p&gt;设 $V$ 是数域 $F$ 上的线性空间，$W$ 是 $V$ 的非空子集，以下三个结论等价：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;$W$ 是 $V$ 的子空间；&lt;/li&gt;
 &lt;li&gt;如果 $x, y \in W$，则 $x + y \in W$，如果 $x \in W, k \in F$，则 $kx \in W$；&lt;/li&gt;
@@ -615,7 +631,8 @@ P =
 &lt;li&gt;零子空间不含有线性无关的向量，维数是零。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;例如&lt;/strong&gt;：设 $A \in \mathbb{R}^{n \times n}$，则 $A$ 的核空间 $N(A)$ 是 &lt;strong&gt;$\mathbb{R}^n$&lt;/strong&gt; 的子空间。当 $A$ 可逆时，$N(A)$ 是&lt;strong&gt;零&lt;/strong&gt;子空间。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定义 3.2（列空间）&lt;/strong&gt; 设 $A \in \mathbb{R}^{m \times n}$，$a_1, a_2, \dots, a_n$ 是 $A$ 的 $n$ 个列，称子空间 $\text{span} \lbrace a_1, a_2, \dots, a_n \rbrace$ 为 $A$ 的&lt;strong&gt;像空间&lt;/strong&gt;或&lt;strong&gt;列空间&lt;/strong&gt;，记作&lt;br&gt;
+&lt;h3 id=&#34;定义列空间&#34;&gt;定义（列空间）
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{R}^{m \times n}$，$a_1, a_2, \dots, a_n$ 是 $A$ 的 $n$ 个列，称子空间 $\text{span} \lbrace a_1, a_2, \dots, a_n \rbrace$ 为 $A$ 的&lt;strong&gt;像空间&lt;/strong&gt;或&lt;strong&gt;列空间&lt;/strong&gt;，记作&lt;br&gt;
 \begin{equation} \nonumber
 R(A) = \text{span} \lbrace a_1, a_2, \dots, a_n \rbrace
 \end{equation}&lt;br&gt;
@@ -639,7 +656,8 @@ k_n
 R(A^T) = \lbrace A^T x \mid x \in \mathbb{R}^m \rbrace \subseteq \mathbb{R}^n
 \end{equation}&lt;/p&gt;
 &lt;p&gt;并且有 $\dim R(A^T) = \text{rank} A = \dim R(A)$。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定义 3.3（子空间的交与和）&lt;/strong&gt; 设 $W_1, W_2$ 是线性空间 $V$ 的两个子空间，令&lt;br&gt;
+&lt;h3 id=&#34;定义子空间的交与和&#34;&gt;定义（子空间的交与和）
+&lt;/h3&gt;&lt;p&gt;设 $W_1, W_2$ 是线性空间 $V$ 的两个子空间，令&lt;br&gt;
 \begin{equation} \nonumber
 W_1 \cap W_2 = \lbrace x \mid x \in W_1 \text{ 且 } x \in W_2 \rbrace
 \end{equation}&lt;br&gt;
@@ -722,7 +740,8 @@ u = x + y.
 &lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：两个子空间的加和两个子空间的并不是一个东西，两个子空间的&lt;strong&gt;不再是&lt;/strong&gt;子空间。&lt;/p&gt;
 &lt;p&gt;（例如在平面坐标系下，x轴和y轴就能构成一个子空间，我们取(0,1)和(1,0)，他们两个相加为(1,1)，不在x轴和y轴上，因此不满足对加法封闭，所以不是子空间）&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;定理 3.2&lt;/strong&gt; 设&lt;br&gt;
+&lt;h3 id=&#34;定理-32&#34;&gt;定理 3.2
+&lt;/h3&gt;&lt;p&gt;设&lt;br&gt;
 \begin{equation} \nonumber
 W_1 = \text{span} \lbrace a_1, a_2, \dots, a_n \rbrace,&lt;br&gt;
 \end{equation}&lt;br&gt;
@@ -791,7 +810,8 @@ $V_1 \cap V_2$ 的基是&lt;br&gt;
 \end{equation}&lt;br&gt;
 维数是 1。&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;定理 3.3（维数定理）&lt;/strong&gt; 设 $W_1, W_2$ 是线性空间 $V$ 的两个子空间，则&lt;br&gt;
+&lt;h3 id=&#34;定理-33维数定理&#34;&gt;定理 3.3（维数定理）
+&lt;/h3&gt;&lt;p&gt;设 $W_1, W_2$ 是线性空间 $V$ 的两个子空间，则&lt;br&gt;
 \begin{equation} \nonumber
 \dim (W_1 + W_2) = \dim W_1 + \dim W_2 - \dim (W_1 \cap W_2)
 \end{equation}&lt;/p&gt;
@@ -856,11 +876,13 @@ v = u + w, \quad u \in W_1, \quad w \in W_2.
 \dim(W_1 + W_2) = \dim W_1 + \dim W_2 - \dim(W_1 \cap W_2).
 \end{equation}&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;定义 3.4（直和）&lt;/strong&gt; 设 $W_1, W_2$ 是线性空间 $V$ 的两个子空间，如果和空间 $W_1 + W_2$ 中的任一向量可以唯一的表示成 $W_1$ 中的一个向量与 $W_2$ 中的一个向量之和，则称和空间 $W_1 + W_2$ 是&lt;strong&gt;直和&lt;/strong&gt;，记作 $W_1 \oplus W_2$。&lt;/p&gt;
+&lt;h3 id=&#34;定义直和&#34;&gt;定义（直和）
+&lt;/h3&gt;&lt;p&gt;设 $W_1, W_2$ 是线性空间 $V$ 的两个子空间，如果和空间 $W_1 + W_2$ 中的任一向量可以唯一的表示成 $W_1$ 中的一个向量与 $W_2$ 中的一个向量之和，则称和空间 $W_1 + W_2$ 是&lt;strong&gt;直和&lt;/strong&gt;，记作 $W_1 \oplus W_2$。&lt;/p&gt;
 &lt;p&gt;例如三维、二维坐标系都是直和。&lt;/p&gt;
 &lt;p&gt;同时，直和还有一个简单版本的定义方法如下：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定义 3.4（直和）&lt;/strong&gt; 设 $W_1, W_2$ 是线性空间 $V$ 的两个子空间，如果 $W_1 \cap W_2 = \lbrace 0 \rbrace$，则 $W_1$ 与 $W_2$ 的和空间 $W_1 + W_2$ 是&lt;strong&gt;直和&lt;/strong&gt;，记作 $W_1 \oplus W_2$。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定理 3.4（直和等价定理）&lt;/strong&gt; 设 $W_1, W_2$ 是线性空间 $V$ 的两个子空间，则下面命题等价：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定义（直和）&lt;/strong&gt; 设 $W_1, W_2$ 是线性空间 $V$ 的两个子空间，如果 $W_1 \cap W_2 = \lbrace 0 \rbrace$，则 $W_1$ 与 $W_2$ 的和空间 $W_1 + W_2$ 是&lt;strong&gt;直和&lt;/strong&gt;，记作 $W_1 \oplus W_2$。&lt;/p&gt;
+&lt;h3 id=&#34;定理-34直和等价定理&#34;&gt;定理 3.4（直和等价定理）
+&lt;/h3&gt;&lt;p&gt;设 $W_1, W_2$ 是线性空间 $V$ 的两个子空间，则下面命题等价：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;$W_1 + W_2$ 是直和；&lt;/li&gt;
 &lt;li&gt;零元素表示法唯一；&lt;/li&gt;
@@ -901,7 +923,8 @@ B^T = B = -B \Rightarrow B = 0.
 \dim V = \dim W_1 + \dim W_2 \Rightarrow V = W_1 \oplus W_2.
 \end{equation}&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：上面的证明过程不知道读者是否了解，对称矩阵和反对称矩阵的性质，尤其反对称矩阵上对角线元素为0，如果不知道的同学可以自己写一下自己理解一下。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定理 3.5&lt;/strong&gt; 设 $a_1, a_2, \dots, a_n$ 是 $W_1$ 的一组基，$\beta_1, \beta_2, \dots, \beta_m$ 是 $W_2$ 线性空间 $V$ 的两个子空间。则 $W_1 + W_2$ 是直和，当且仅当 $a_1, a_2, \dots, a_n, \beta_1, \beta_2, \dots, \beta_m$ 是 $W_1 + W_2$ 的一组基。&lt;/p&gt;
+&lt;h3 id=&#34;定理-35&#34;&gt;定理 3.5
+&lt;/h3&gt;&lt;p&gt;设 $a_1, a_2, \dots, a_n$ 是 $W_1$ 的一组基，$\beta_1, \beta_2, \dots, \beta_m$ 是 $W_2$ 线性空间 $V$ 的两个子空间。则 $W_1 + W_2$ 是直和，当且仅当 $a_1, a_2, \dots, a_n, \beta_1, \beta_2, \dots, \beta_m$ 是 $W_1 + W_2$ 的一组基。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;证明：&lt;/strong&gt; 由定理 2 得：
 \begin{equation}\nonumber
 W_1 + W_2 = \text{span} \lbrace a_1, a_2, \dots, a_n, \beta_1, \beta_2, \dots, \beta_m \rbrace
@@ -910,12 +933,14 @@ W_1 + W_2 = \text{span} \lbrace a_1, a_2, \dots, a_n, \beta_1, \beta_2, \dots, \
 &lt;p&gt;以上过程可逆，可得充分性证明。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;线性变换及矩阵&#34;&gt;线性变换及矩阵
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;定义 4.1（线性变换）&lt;/strong&gt; 设 $V, W$ 是数域 $F$ 上的两个线性空间，$T$ 是 $V$ 到 $W$ 的一个映射，如果 $\forall x, y \in V, k, l \in F$，有：
+&lt;/h2&gt;&lt;h3 id=&#34;定义线性变换&#34;&gt;定义（线性变换）
+&lt;/h3&gt;&lt;p&gt;设 $V, W$ 是数域 $F$ 上的两个线性空间，$T$ 是 $V$ 到 $W$ 的一个映射，如果 $\forall x, y \in V, k, l \in F$，有：
 \begin{equation}\nonumber
 T(kx + ly) = kTx + lTy
 \end{equation}
 称 $T$ 是 $V$ 到 $W$ 的一个线性映射。如果 $W = V$，则称 $T$ 是 $V$ 上的一个线性变换。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定义 4.2（旋转变换）&lt;/strong&gt; $\mathbb{R}^2$ 中的向量绕原点按逆时针旋转 $\theta$ 角的变换 $T$ 定义如下：&lt;/p&gt;
+&lt;h3 id=&#34;定义旋转变换&#34;&gt;定义（旋转变换）
+&lt;/h3&gt;&lt;p&gt;$\mathbb{R}^2$ 中的向量绕原点按逆时针旋转 $\theta$ 角的变换 $T$ 定义如下：&lt;/p&gt;
 &lt;div&gt;
 \begin{equation}\nonumber
 \begin{bmatrix} x_1 \\ y_1 \end{bmatrix}
@@ -956,19 +981,8 @@ T(kx + ly) =
 = kTx + lTy.
 \end{equation}&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;延伸一小点&lt;/strong&gt;：如果旋转变换看起来较为简单，但是旋转变换如果想要研究的话还是有很复杂的逻辑，尤其是关于姿态等的研究内容。如果需要旋转矩阵和旋转变换相关内容的同学，可能还需补充一些关于四元数的知识。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;线性映射的性质：&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;$T(0) = 0$。&lt;/li&gt;
-&lt;li&gt;\begin{equation}\nonumber
-T\left(\sum_{i=1}^{s} k_i \alpha_i \right) = \sum_{i=1}^{s} k_i T(\alpha_i)
-\end{equation}&lt;/li&gt;
-&lt;li&gt;若 $\alpha_1, \dots, \alpha_s$ 线性相关，则 $T(\alpha_1), \dots, T(\alpha_s)$ 也线性相关。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;mark&gt;
-若 $\alpha_1, \dots, \alpha_s$ 线性无关，则 $T(\alpha_1), \dots, T(\alpha_s)$ 不一定线性无关。
-&lt;/mark&gt;
-&lt;p&gt;&lt;strong&gt;定义4.3&lt;/strong&gt; 线性映射的矩阵表示
-设 $V$ 的维数是 $n$，$V$ 的一组基为 $a_1, \dots, a_n$；
+&lt;h3 id=&#34;定义-线性映射的矩阵表示&#34;&gt;定义 (线性映射的矩阵表示)
+&lt;/h3&gt;&lt;p&gt;设 $V$ 的维数是 $n$，$V$ 的一组基为 $a_1, \dots, a_n$；
 设 $W$ 的维数是 $m$，$W$ 的一组基为 $\beta_1, \dots, \beta_m$；
 $T$ 是 $V$ 到 $W$ 的一个线性映射，则：
 \begin{equation}\nonumber
@@ -983,6 +997,15 @@ T(a_1, \dots, a_n) = (T a_1, \dots, T a_n) = (\beta_1, \dots, \beta_m) A,
 \begin{equation}\nonumber
 R(T)=\lbrace y = Tx \mid \forall x \in V \rbrace = span \lbrace T\alpha_1, \cdots, T\alpha_n \rbrace
 \end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;线性映射的性质：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$T(0) = 0$。&lt;/li&gt;
+&lt;li&gt;$T\left(\sum_{i=1}^{s} k_i \alpha_i \right) = \sum_{i=1}^{s} k_i T(\alpha_i)$。&lt;/li&gt;
+&lt;li&gt;若 $\alpha_1, \dots, \alpha_s$ 线性相关，则 $T(\alpha_1), \dots, T(\alpha_s)$ 也线性相关。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;mark&gt;
+若 $\alpha_1, \dots, \alpha_s$ 线性无关，则 $T(\alpha_1), \dots, T(\alpha_s)$ 不一定线性无关。
+&lt;/mark&gt;
 &lt;p&gt;&lt;strong&gt;例 4：&lt;/strong&gt; 设&lt;/p&gt;
 &lt;div&gt;
 \begin{equation}\nonumber
@@ -1028,7 +1051,8 @@ D =
 \end{bmatrix}
 \end{equation}
 &lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;定义 2（核空间，像空间）&lt;/strong&gt; 设 $V, W$ 为 $F$ 上线性空间，令 $L(V, W)$ 表示所有 $V$ 到 $W$ 的线性映射的集合，设 $T \in L(V, W)$，令：
+&lt;h3 id=&#34;定义核空间像空间&#34;&gt;定义（核空间，像空间）
+&lt;/h3&gt;&lt;p&gt;设 $V, W$ 为 $F$ 上线性空间，令 $L(V, W)$ 表示所有 $V$ 到 $W$ 的线性映射的集合，设 $T \in L(V, W)$，令：
 \begin{equation}\nonumber
 N(T) = \lbrace x \in V \mid Tx = 0 \rbrace,
 \end{equation}
@@ -1037,7 +1061,8 @@ R(T) = \text{Im}(T) = \lbrace y \in W \mid y = Tx, \forall x \in V \rbrace.
 \end{equation}
 易验证 $N(T)$ 为 $V$ 的子空间，$R(T)$ 为 $W$ 的子空间，称 $N(T)$ 及 $R(T)$ 为 $T$ 的&lt;strong&gt;核空间&lt;/strong&gt;和&lt;strong&gt;像空间&lt;/strong&gt;。并称 $\dim N(T)$ 为 $T$ 的&lt;strong&gt;零度&lt;/strong&gt;（或&lt;strong&gt;亏&lt;/strong&gt;），$\dim R(T)$ 为 $T$ 的&lt;strong&gt;秩&lt;/strong&gt;，一般有以下定理：&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;定理 1（秩加零度定理）&lt;/strong&gt; 设 $T \in L(V, W)$，$V$ 为有限维，则 $N(T)$ 及 $R(T)$ 均为有限维，且：
+&lt;h3 id=&#34;定理-41秩加零度定理&#34;&gt;定理 4.1（秩加零度定理）
+&lt;/h3&gt;&lt;p&gt;设 $T \in L(V, W)$，$V$ 为有限维，则 $N(T)$ 及 $R(T)$ 均为有限维，且：
 \begin{equation}\nonumber
 \dim N(T) + \dim R(T) = \dim V
 \end{equation}
@@ -1071,50 +1096,60 @@ A =
 T(a_1, a_2, a_3) = (T a_1, T a_2, T a_3) = (\beta_1, \beta_2) A
 \end{equation}&lt;/p&gt;
 &lt;p&gt;(1) &lt;strong&gt;求 $N(T)$&lt;/strong&gt; 即求满足 $T x = 0$ 的 $x \in \mathbb{R}^3$。&lt;/p&gt;
-&lt;p&gt;设：
+&lt;p&gt;设：&lt;/p&gt;
+&lt;div&gt;
 \begin{equation}\nonumber
 x = k_1 a_1 + k_2 a_2 + k_3 a_3 = (a_1, a_2, a_3)
-\begin{bmatrix}
-k_1 \
-k_2 \
-k_3
+\begin{bmatrix} 
+k_1 \\ 
+k_2 \\ 
+k_3 
 \end{bmatrix}
-\end{equation}&lt;/p&gt;
-&lt;p&gt;\begin{equation}\nonumber
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
 T x = T (a_1, a_2, a_3)
-\begin{bmatrix}
-k_1 \
-k_2 \
-k_3
+\begin{bmatrix} 
+k_1 \\ 
+k_2 \\ 
+k_3 
 \end{bmatrix}
 = (\beta_1, \beta_2) A
-\begin{bmatrix}
-k_1 \
-k_2 \
-k_3
+\begin{bmatrix} 
+k_1 \\ 
+k_2 \\ 
+k_3 
 \end{bmatrix}
 = 0
-\end{equation}&lt;/p&gt;
-&lt;p&gt;只需求方程组：
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;只需求方程组：&lt;/p&gt;
+&lt;div&gt;
 \begin{equation}\nonumber
 A
-\begin{bmatrix}
-k_1 \
-k_2 \
-k_3
+\begin{bmatrix} 
+k_1 \\ 
+k_2 \\ 
+k_3 
 \end{bmatrix} = 0
-\end{equation}&lt;/p&gt;
+\end{equation}
+&lt;/div&gt;
 &lt;p&gt;解得基础解系：
 \begin{equation}\nonumber
 k_1 = 3, \quad k_2 = -2, \quad k_3 = 1
 \end{equation}&lt;/p&gt;
-&lt;p&gt;因此 $N(T)$ 的基为：
+&lt;p&gt;因此 $N(T)$ 的基为：&lt;/p&gt;
+&lt;div&gt;
 \begin{equation}\nonumber
 k_1 a_1 + k_2 a_2 + k_3 a_3 = (-5, 4, 6)^T
 \end{equation}
+&lt;/div&gt;
+&lt;div&gt;
 \begin{equation}\nonumber
 \dim N(T) = 1
-\end{equation}&lt;/p&gt;
+\end{equation}
+&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt; 求 $N(T)$ 只需先求 $N(A)$ 的基础解系，再添加基底即可。&lt;/p&gt;
 &lt;p&gt;(2) &lt;strong&gt;求 $R(T)$&lt;/strong&gt;&lt;br&gt;
 \begin{equation}\nonumber
@@ -1129,6 +1164,87 @@ R(T) = \text{span} \lbrace T(a_1), T(a_2), T(a_3) \rbrace
 &lt;p&gt;\begin{equation}\nonumber
 = \text{span} \lbrace \beta_1, \beta_2 \rbrace = \mathbb{R}^2
 \end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例 7：&lt;/strong&gt; 在矩阵空间 $\mathbb{R}^{2\times2}$ 中取定矩阵基：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B =
+\begin{bmatrix} 
+1 &amp; 2 \\ 
+0 &amp; 3 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+线性变换 $T$ 定义如下：
+\begin{equation}\nonumber
+T(X) = BX - XB, \quad \forall X \in \mathbb{R}^{2\times2}
+\end{equation}
+求：
+1. $T$ 的核子空间 $N(T)$ 的基与维数；
+2. $T$ 的值域 $R(T)$ 的基与维数。
+&lt;p&gt;&lt;strong&gt;定理&lt;/strong&gt;：设 $B = \begin{bmatrix} 1 &amp;amp; 2 \ 0 &amp;amp; 3 \end{bmatrix}$，定义线性变换 $T$ 如下：&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+T(X) = BX - XB, \quad \forall X \in \mathbb{R}^{2\times2}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;求 $T$ 的核空间 $N(T)$ 的基与维数，以及值域 $R(T)$ 的基与维数。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解&lt;/strong&gt;：设一般矩阵 $X$ 形如 $X = \begin{bmatrix} a &amp;amp; b \ c &amp;amp; d \end{bmatrix}$，计算&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}
+BX = \begin{bmatrix} 1 &amp; 2 \ 0 &amp; 3 \end{bmatrix} \begin{bmatrix} a &amp; b \ c &amp; d \end{bmatrix} = \begin{bmatrix} a + 2c &amp; b + 2d \ 3c &amp; 3d \end{bmatrix},
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}
+XB = \begin{bmatrix} a &amp; b \ c &amp; d \end{bmatrix} \begin{bmatrix} 1 &amp; 2 \ 0 &amp; 3 \end{bmatrix} = \begin{bmatrix} a &amp; 2a + 3b \ c &amp; 2c + 3d \end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+因此，
+&lt;div&gt;
+\begin{equation}
+T(X) = BX - XB = \begin{bmatrix} 2c &amp; -2a - 2b + 2d \ 2c \begin{equation}&amp; -2c \end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+核空间满足 \$T(X) = 0\$，解方程组：
+\begin{equation}
+2c = 0 \Rightarrow c = 0, \quad -2a - 2b + 2d = 0 \Rightarrow a + b = d.
+\end{equation}
+选取基底：
+&lt;div&gt;
+\begin{equation}
+X\_1 = \begin{bmatrix} -1 &amp; 1 \ 0 &amp; 0 \end{bmatrix}, \quad X\_2 = \begin{bmatrix} 1 &amp; 0 \ 0 &amp; 1 \end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+因此，\$\dim N(T) = 2\$。
+值域由方程
+&lt;div&gt;
+\begin{equation}
+T(X) = \begin{bmatrix} 2c &amp; -2a - 2b + 2d \ 2c &amp; -2c \end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+选取线性无关向量：
+&lt;div&gt;
+\begin{equation}
+X\_1 = \begin{bmatrix} 0 &amp; -2 \ 0 &amp; 0 \end{bmatrix}, \quad X\_2 = \begin{bmatrix} 2 &amp; 0 \ 2 &amp; -2 \end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+因此，\$\dim R(T) = 2\$。
+&lt;p&gt;验证维数定理：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}
+\dim N(T) + \dim R(T) = 2 + 2 = 4 = \dim \mathbb{R}^{2\times2}.
+\end{equation}
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;线性变换的矩阵表示&#34;&gt;线性变换的矩阵表示
+&lt;/h3&gt;&lt;p&gt;设 $V$ 的维数是 $n$，$V$ 的一组基为 $a_1, \dots, a_n$；
+$T$ 是 $V$ 上的一个线性变换，则：
+\begin{equation}\nonumber
+T a_j = a_{j1} a_1 + \dots + a_{jn} a_n, \quad 1 \leq j \leq n
+\end{equation}
+采用矩阵记法：
+\begin{equation}\nonumber
+T(a_1, \dots, a_n) = (T a_1, \dots, T a_n) = (a_1, \dots, a_n) A
+\end{equation}
+其中 $A = (a_{ij})_{n \times n} \in F^{n \times n}$，称矩阵 $A$ 为线性变换 $T$ &lt;strong&gt;在这组基下的矩阵表示&lt;/strong&gt;。&lt;/p&gt;
 </description>
         </item>
         <item>
