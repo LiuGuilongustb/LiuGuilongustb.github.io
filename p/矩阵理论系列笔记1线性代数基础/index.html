@@ -377,10 +377,27 @@
         <li><a href="#定理-6">定理 6</a></li>
         <li><a href="#坐标变换公式">坐标变换公式</a></li>
         <li><a href="#例-8">例 8</a></li>
-        <li><a href="#解">解：</a></li>
       </ol>
     </li>
-    <li><a href="#特征值与特征向量">特征值与特征向量</a></li>
+    <li><a href="#特征值与特征向量">特征值与特征向量</a>
+      <ol>
+        <li><a href="#定义特征值与特征向量">定义（特征值与特征向量）</a></li>
+        <li><a href="#定义-特征多项式">定义 （特征多项式）</a></li>
+        <li><a href="#求矩阵-a-的全部特征值及特征向量的步骤">求矩阵 $A$ 的全部特征值及特征向量的步骤：</a></li>
+        <li><a href="#代数重数与几何重数">代数重数与几何重数</a></li>
+        <li><a href="#定理-3"><strong>定理 3</strong></a></li>
+        <li><a href="#定理-4"><strong>定理 4</strong></a></li>
+        <li><a href="#定理-5">定理 5</a></li>
+        <li><a href="#定理换位公式">定理（换位公式）</a></li>
+        <li><a href="#定理-5schur-引理"><strong>定理 5（Schur 引理）</strong></a></li>
+        <li><a href="#推论"><strong>推论：</strong></a></li>
+        <li><a href="#定理-6hamilton-cayley-定理"><strong>定理 6（Hamilton-Cayley 定理）</strong></a></li>
+        <li><a href="#定义-3最小多项式"><strong>定义 3（最小多项式）</strong></a></li>
+        <li><a href="#定理-7"><strong>定理 7</strong></a></li>
+        <li><a href="#定理-8">定理 8</a></li>
+      </ol>
+    </li>
+    <li><a href="#不变子空间">不变子空间</a></li>
   </ol>
 </nav>
         </div>
@@ -437,7 +454,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 26 分钟
+                    阅读时长: 33 分钟
                 </time>
             </div>
         
@@ -547,12 +564,12 @@ k \odot a = a^k, \quad \forall a \in \mathbb{R}^+, k \in \mathbb{R}
 \nonumber
 \end{equation}
 证明 $(\mathbb{R}^+, \oplus, \odot)$ 是实线性空间。</p>
-<p>这个例子定义了一个运算结构 \((\mathbb{R}^+, \oplus, \odot)\)，其中：</p>
+<p>这个例子定义了一个运算结构 ((\mathbb{R}^+, \oplus, \odot)$，其中：</p>
 <ul>
 <li>加法（即向量加法）定义为 $a \oplus b = ab$，对所有 $a, b \in \mathbb{R}^+$。</li>
 <li>数乘（即标量乘法）定义为 $k \odot a = a^k$，对所有 $a \in \mathbb{R}^+$ 和 $k \in \mathbb{R}$。</li>
 </ul>
-<p><strong>目标：证明 \((\mathbb{R}^+, \oplus, \odot)\) 是实线性空间。</strong></p>
+<p><strong>目标：证明 ((\mathbb{R}^+, \oplus, \odot)$是实线性空间。</strong></p>
 <p>要证明它是一个实线性空间，我们需要检查线性空间的八个公理是否成立：</p>
 <ol>
 <li>
@@ -1820,8 +1837,8 @@ T a_1 = (1,-1,0)^T, \quad T a_2 = (0,1,1)^T, \quad T a_3 = (0,3,-2)^T
 <li>向量 $\xi = (1,2,3)^T$ 及 $T\xi$ 在基 $a_1, a_2, a_3$ 下的坐标；</li>
 <li>向量 $\xi$ 及 $T\xi$ 在基 $T a_1, T a_2, T a_3$ 下的坐标。</li>
 </ol>
-<h3 id="解">解：
-</h3><p>(1) 通过计算：
+<p><strong>解</strong>：
+(1) 通过计算：
 \begin{equation}\nonumber
 T a_1 = a_1 - a_2
 \end{equation}</p>
@@ -1916,6 +1933,552 @@ A^{-1}
 \end{equation}
 </div>
 <h2 id="特征值与特征向量">特征值与特征向量
+</h2><h3 id="定义特征值与特征向量">定义（特征值与特征向量）
+</h3><p><strong>注：</strong> 其实线性代数里面学过特征值和特征向量，回想一下当时的特征值是从矩阵角度出发，这里的特征值是从线性空间出发。继续往后看，特征值仍然是行列式的解。</p>
+<p>设 $V$ 是 $F$ 上的线性空间，$T \in L(V)$。若存在 $\lambda \in F$ 及 $V$ 的非零向量 $x$，使得：
+\begin{equation}\nonumber
+T x = \lambda x
+\end{equation}
+则称 $\lambda$ 为 $T$ 的一个<strong>特征值</strong>，而 $x$ 为属于特征值 $\lambda$ 的一个<strong>特征向量</strong>。</p>
+<p><strong>注：</strong> 特征向量在线性变换作用下保持方位不变（在同一直线上）。</p>
+<p>设 $a_1, a_2, \dots, a_n$ 是 $V$ 的一组基，$T$ 在这组基下的矩阵为 $A = (a_{ij}) \in F^{n \times n}$，即：
+\begin{equation}\nonumber
+T(a_1, \dots, a_n) = (a_1, \dots, a_n) A
+\end{equation}
+设 $\lambda_0$ 是 $T$ 的一个特征值，$x$ 为属于特征值 $\lambda_0$ 的一个特征向量，且：
+\begin{equation}\nonumber
+x = (a_1, \dots, a_n) X, \quad X \in F^n
+\end{equation}
+则：
+\begin{equation}\nonumber
+T x = \lambda_0 x \Rightarrow T (a_1, \dots, a_n) X = \lambda_0 (a_1, \dots, a_n) X
+\end{equation}
+即：
+\begin{equation}\nonumber
+(a_1, \dots, a_n) A X = \lambda_0 (a_1, \dots, a_n) X \Rightarrow A X = \lambda_0 X
+\end{equation}
+\begin{equation}\nonumber
+\Rightarrow (A - \lambda_0 I) X = 0 \quad (X \text{ 非零向量})
+\end{equation}
+所以行列式：
+\begin{equation}\nonumber
+|A - \lambda_0 I| = 0
+\end{equation}</p>
+<h3 id="定义-特征多项式">定义 （特征多项式）
+</h3><p>设 $A = (a_{ij}) \in F^{n \times n}$ 是一个参数矩阵。矩阵 $\lambda I - A$ 称为 $A$ 的<strong>特征矩阵</strong>，行列式：</p>
+<div>
+\begin{equation}\nonumber
+|\lambda I - A| =
+\begin{vmatrix} 
+\lambda - a_{11} & -a_{12} & \dots & -a_{1n} \\ 
+-a_{21} & \lambda - a_{22} & \dots & -a_{2n} \\ 
+\vdots & \vdots & \ddots & \vdots \\ 
+-a_{n1} & -a_{n2} & \dots & \lambda - a_{nn} 
+\end{vmatrix}
+\end{equation}
+</div>
+称为 $A$ 的**特征多项式**，展开后是一个 $n$ 次多项式。其根为 $A$ 的**特征值**，而相应于 $(\lambda_0 I - A)X = 0$ 的非零解向量 $X$ 称为 $A$ 的属于 $\lambda$ 的**特征向量**。
+<p>根据行列式展开，特征多项式 $p_A(\lambda) $是关于 $\lambda $的 $n $次多项式：</p>
+<p>\begin{equation} \nonumber
+p_A(\lambda) = \lambda^n + c_{n-1} \lambda^{n-1} + \dots + c_1 \lambda + c_0.
+\end{equation}</p>
+<p>其中各项系数如下：</p>
+<ol>
+<li>
+<p><strong>$\lambda^n $项的系数</strong><br>
+最高次项的系数总是 <strong>1</strong>，因为特征行列式的主对角线上的所有 $\lambda $贡献了 $\lambda^n $项。
+\begin{equation} \nonumber
+c_n = 1.
+\end{equation}</p>
+</li>
+<li>
+<p><strong>$\lambda^{n-1} $项的系数</strong><br>
+这一项的系数是矩阵 $A $的<strong>迹（trace）</strong> $\operatorname{tr}(A) $的 <strong>相反数</strong>：
+\begin{equation} \nonumber
+c_{n-1} = -\operatorname{tr}(A) = -(a_{11} + a_{22} + \dots + a_{nn}) =-\sum_{i=1}^{n} \lambda_i.
+\end{equation}</p>
+</li>
+<li>
+<p><strong>常数项 $c_0 $（$\lambda^0 $项的系数）</strong><br>
+这一项是矩阵 $A $的**行列式（determinant）**的 <strong>(-1)^{n}</strong> 倍：
+\begin{equation} \nonumber
+c_0 = (-1)^n \det(A)=(-1)^n \prod_{i=1}^{n} \lambda_i.
+\end{equation}</p>
+</li>
+</ol>
+<h3 id="求矩阵-a-的全部特征值及特征向量的步骤">求矩阵 $A$ 的全部特征值及特征向量的步骤：
+</h3><ol>
+<li>
+<p>计算行列式 $|\lambda I - A|$；</p>
+</li>
+<li>
+<p>求出多项式 $f(\lambda) = |\lambda I - A|$ 在数域 $F$ 中的全部根（即 $A$ 的特征值）；</p>
+</li>
+<li>
+<p>对 $A$ 的每个特征值 $\lambda$，解<strong>齐次线性方程组</strong>：
+\begin{equation}\nonumber
+(\lambda I - A)X = 0
+\end{equation}
+求出它的一组<strong>基础解系</strong> $X_1, \dots, X_t$，则 $A$ 的属于 $\lambda$ 的全部特征向量为：
+\begin{equation}\nonumber
+k_1 X_1 + \dots + k_t X_t, \quad k_i \text{ 不全为零}
+\end{equation}</p>
+</li>
+<li>
+<p>$T$ 的属于 $\lambda$ 的<strong>特征向量</strong>为：
+\begin{equation}\nonumber
+\xi_i = (a_1, \dots, a_n) X_i, \quad (1 \leq i \leq t)
+\end{equation}</p>
+<p>从而 $T$ 的属于 $\lambda$ 的<strong>全部特征向量</strong>为：
+\begin{equation}\nonumber
+k_1 \xi_1 + \dots + k_t \xi_t, \quad k_i \text{ 不全为零}
+\end{equation}</p>
+</li>
+</ol>
+<p><strong>注：</strong></p>
+<ol>
+<li>
+<p><strong>特征值与特征向量的存在性依赖于数域 $F$</strong>。<br>
+例如，矩阵：</p>
+<div>
+\begin{equation}\nonumber
+\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}
+\end{equation}
+</div>
+的**特征多项式**为：
+\begin{equation}\nonumber
+f(\lambda) = \lambda^2 + 1
+\end{equation}
+在实数域 $\mathbb{R}$ 中没有实特征值。
+</li>
+<li>
+<p>当 $\dim V = n$ 很大时，上述方法较繁琐，可借助计算机。</p>
+</li>
+<li>
+<p><strong>特征子空间 $E(\lambda)$</strong>：
+\begin{equation}\nonumber
+E(\lambda) = \lbrace X \in F^n \mid (\lambda I - A)X = 0 \rbrace = N(\lambda I - A)
+\end{equation}
+（即<strong>解空间</strong>）。由<strong>秩-零度定理</strong>：
+\begin{equation}\nonumber
+r(\lambda I - A) + \dim N(\lambda I - A) = n
+\end{equation}</p>
+<p>所以 $E(\lambda)$ 的维数：
+\begin{equation}\nonumber
+\dim E(\lambda) = n - r(\lambda I - A)
+\end{equation}
+称为 $\lambda$ 的<strong>几何重数</strong>。</p>
+</li>
+</ol>
+<hr>
+<h3 id="代数重数与几何重数">代数重数与几何重数
+</h3><p>这里不属于矩阵理论的内容，纯线性代数的内容了，帮助读者会议一下代数重数和几何重数的定义以及关系。</p>
+<p>在特征值理论中，<strong>代数重数</strong>和<strong>几何重数</strong>都是衡量矩阵特征值的重要概念，它们描述了特征值的不同性质：</p>
+<ol>
+<li>
+<p><strong>代数重数（Algebraic Multiplicity, AM）</strong></p>
+<ul>
+<li>代数重数是 <strong>特征值</strong> 作为 <strong>特征多项式的根</strong> 的 <strong>重数</strong>。</li>
+<li>设矩阵 $A $ 的特征多项式为：
+\begin{equation} \nonumber
+p_A(\lambda) = (\lambda - \lambda_1)^{m_1} (\lambda - \lambda_2)^{m_2} \dots (\lambda - \lambda_k)^{m_k}
+\end{equation}
+其中，每个 $m_i $ 称为对应特征值 $\lambda_i $ 的<strong>代数重数</strong>。</li>
+<li>代数重数 $AM(\lambda) $ 是一个标量，反映了特征多项式中该特征值的次数。</li>
+</ul>
+</li>
+<li>
+<p><strong>几何重数（Geometric Multiplicity, GM）</strong></p>
+<ul>
+<li>几何重数是 <strong>特征子空间</strong> $E(\lambda) $（即 $(\lambda I - A)X = 0 $ 的解空间）的维数：
+\begin{equation} \nonumber
+GM(\lambda) = \dim E(\lambda) = \dim N(\lambda I - A) = n - r(\lambda I - A).
+\end{equation}</li>
+<li>几何重数表示该特征值对应的线性无关<strong>特征向量</strong>的个数。</li>
+<li><strong>几何重数不会超过代数重数</strong>，即：
+\begin{equation} \nonumber
+1 \leq GM(\lambda) \leq AM(\lambda).
+\end{equation}</li>
+</ul>
+</li>
+</ol>
+<p><strong>代数重数和几何重数的关系</strong></p>
+<p>代数重数 $AM(\lambda) $ 和几何重数 $GM(\lambda) $ 的关系如下：</p>
+<ul>
+<li><strong>总是有</strong>：
+\begin{equation} \nonumber
+1 \leq GM(\lambda) \leq AM(\lambda).
+\end{equation}</li>
+<li><strong>当 $GM(\lambda) = AM(\lambda) $ 时，矩阵 $A $ 在该特征值对应的特征子空间是完备的，即 $A $ 可以对角化</strong>。</li>
+<li><strong>当 $GM(\lambda) &lt; AM(\lambda) $ 时，矩阵 $A $ 不可对角化，可能只有若尔当标准形</strong>。</li>
+</ul>
+<p><strong>示例说明</strong>
+<strong>(1) 代数重数等于几何重数（可对角化）</strong>
+设：
+\begin{equation} \nonumber
+A = \begin{bmatrix} 2 &amp; 0 \ 0 &amp; 3 \end{bmatrix}.
+\end{equation}
+特征多项式：
+\begin{equation} \nonumber
+p_A(\lambda) = (\lambda - 2)(\lambda - 3).
+\end{equation}
+特征值 $\lambda = 2, 3 $ 的代数重数均为 1，计算：
+\begin{equation} \nonumber
+\dim E(2) = 1, \quad \dim E(3) = 1.
+\end{equation}
+因此，$GM(2) = AM(2) = 1 $ 且 $GM(3) = AM(3) = 1 $，矩阵 $A $ 可对角化。</p>
+<p><strong>(2) 代数重数大于几何重数（不可对角化）</strong>
+设：
+\begin{equation} \nonumber
+A = \begin{bmatrix} 2 &amp; 1 \ 0 &amp; 2 \end{bmatrix}.
+\end{equation}
+特征多项式：
+\begin{equation} \nonumber
+p_A(\lambda) = (\lambda - 2)^2.
+\end{equation}
+所以 $\lambda = 2 $ 的代数重数 $AM(2) = 2 $。</p>
+<p>求解 $(2I - A)X = 0 $：
+\begin{equation} \nonumber
+\begin{bmatrix} 0 &amp; 1 \ 0 &amp; 0 \end{bmatrix} \begin{bmatrix} x \ y \end{bmatrix} = \begin{bmatrix} 0 \ 0 \end{bmatrix}.
+\end{equation}
+解得 $x $ 可以任意，$y = 0 $，因此特征子空间的基只有：
+\begin{equation} \nonumber
+\begin{bmatrix} 1 \ 0 \end{bmatrix}.
+\end{equation}
+所以 $GM(2) = 1 &lt; AM(2) = 2 $，矩阵 <strong>不可对角化</strong>，但可以化为若尔当标准形：
+\begin{equation} \nonumber
+J = \begin{bmatrix} 2 &amp; 1 \ 0 &amp; 2 \end{bmatrix}.
+\end{equation}</p>
+<hr>
+<p><strong>例 1</strong>
+设 $T \in L(\mathbb{R}^3)$ 在基 $a_1, a_2, a_3$ 下矩阵为：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+-2 & -2 & 4 \\ 
+-2 & -2 & 4 \\ 
+-2 & -2 & 4 
+\end{bmatrix}
+\end{equation}
+</div>
+求 $T$ 的全部特征值与全部特征向量。
+<p><strong>解：</strong>
+<strong>特征多项式</strong>：
+\begin{equation}\nonumber
+f(\lambda) = | \lambda I - A | = (\lambda - 3)^2 (\lambda + 6)
+\end{equation}
+解得：
+\begin{equation}\nonumber
+\lambda_1 = 3 \quad (\text{重数}2), \quad \lambda_2 = -6.
+\end{equation}
+对于 <strong>$\lambda_1 = 3$</strong>，求解<strong>齐次方程组</strong>：
+\begin{equation}\nonumber
+(3I - A)X = 0
+\end{equation}
+得基础解系：
+\begin{equation}\nonumber
+X_1 = (-2,1,0)^T, \quad X_2 = (2,0,1)^T.
+\end{equation}
+所以 $T$ 的属于 $\lambda_1 = 3$ 的特征向量：
+\begin{equation}\nonumber
+\xi_1 = (a_1, a_2, a_3)X_1 = -2a_1 + a_2.
+\end{equation}
+\begin{equation}\nonumber
+\xi_2 = (a_1, a_2, a_3) X_2 = 2a_1 + a_3
+\end{equation}
+所以 $T$ 的属于 $\lambda_1 = 3$ 的<strong>全部特征向量</strong>为：
+\begin{equation}\nonumber
+k_1 \xi_1 + k_2 \xi_2, \quad k_1, k_2 \text{ 不同时为零}.
+\end{equation}
+对于 <strong>$\lambda_2 = -6$</strong>，求解<strong>齐次方程组</strong>：
+\begin{equation}\nonumber
+(-6I - A)X = 0
+\end{equation}
+得基础解系：
+\begin{equation}\nonumber
+X_3 = (1, 2, -2)^T.
+\end{equation}
+所以 $T$ 的属于 $\lambda_2 = -6$ 的<strong>特征向量</strong>为：
+\begin{equation}\nonumber
+\xi_3 = (a_1, a_2, a_3) X_3 = a_1 + 2a_2 -2a_3.
+\end{equation}
+所以 $T$ 的属于 $\lambda_2 = -6$ 的<strong>全部特征向量</strong>为：
+\begin{equation}\nonumber
+k_3 \xi_3, \quad k_3 \neq 0.
+\end{equation}</p>
+<hr>
+<h3 id="定理-3"><strong>定理 3</strong>
+</h3><p>相似矩阵有相同的特征多项式及特征值，反之不然。</p>
+<p><strong>证明：</strong>
+设 $P^{-1} A P = B$，则：</p>
+<div>
+\begin{equation}\nonumber
+|\lambda I - B| = |\lambda I - P^{-1} A P|
+\end{equation}
+\begin{equation}\nonumber
+= |P^{-1} (\lambda I - A) P| = |P^{-1}| |\lambda I - A| |P|
+\end{equation}
+\begin{equation}\nonumber
+= |P^{-1} P| |\lambda I - A| = |\lambda I - A|.
+\end{equation}
+</div>
+<p><strong>反例：</strong>
+设：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+0 & 1 \\ 
+0 & 0 
+\end{bmatrix},
+\quad
+I_2 =
+\begin{bmatrix} 
+1 & 0 \\ 
+0 & 1 
+\end{bmatrix}
+\end{equation}
+</div>
+$A$ 与 $I_2$ 的特征多项式均为：
+\begin{equation}\nonumber
+(\lambda - 1)^2,
+\end{equation}
+但它们**不相似**。
+<p><strong>注：</strong>
+定理表明，线性变换的矩阵的特征多项式与基的选取无关，而直接由线性变换决定，故可称之为<strong>线性变换的特征多项式</strong>。</p>
+<hr>
+<h3 id="定理-4"><strong>定理 4</strong>
+</h3><p>设 $A = (a_{ij}) \in F^{m \times n}$，$B = (b_{ij}) \in F^{n \times m}$，则：
+\begin{equation}\nonumber
+\text{tr}(AB) = \text{tr}(BA)
+\end{equation}</p>
+<p><strong>证明：</strong>
+令：
+\begin{equation}\nonumber
+AB = (c_{ij}) \in F^{m \times m}, \quad BA = (d_{ij}) \in F^{n \times n}.
+\end{equation}
+所以：
+\begin{equation}\nonumber
+c_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}, \quad d_{ij} = \sum_{l=1}^{m} b_{il} a_{lj}.
+\end{equation}
+矩阵的迹：
+\begin{equation}\nonumber
+\text{tr}(AB) = \sum_{i=1}^{m} c_{ii} = \sum_{i=1}^{m} \sum_{k=1}^{n} a_{ik} b_{ki}.
+\end{equation}
+\begin{equation}\nonumber
+\text{tr}(BA) = \sum_{j=1}^{n} d_{jj} = \sum_{j=1}^{n} \sum_{l=1}^{m} b_{jl} a_{lj}.
+\end{equation}
+由于求和顺序可以交换：
+\begin{equation}\nonumber
+\sum_{i=1}^{m} \sum_{k=1}^{n} a_{ik} b_{ki} = \sum_{l=1}^{m} \sum_{j=1}^{n} a_{lj} b_{jl}.
+\end{equation}
+<strong>结论成立</strong>。</p>
+<h3 id="定理-5">定理 5
+</h3><p><strong>相似的矩阵有相同的迹。</strong></p>
+<h3 id="定理换位公式">定理（换位公式）
+</h3><p>设 $A \in \mathbb{C}^{m \times n}$，$B \in \mathbb{C}^{n \times m}$，则：
+\begin{equation}\nonumber
+\lambda^m |I_m - AB| = \lambda^n |I_n - BA|.
+\end{equation}</p>
+<p><strong>证明</strong>（可以不用掌握）
+容易验证：</p>
+<div>
+\begin{equation}\nonumber
+\begin{bmatrix} 
+I_m & -A \\ 
+I_n & B 
+\end{bmatrix}
+\begin{bmatrix} 
+AB & 0 \\ 
+B & 0 
+\end{bmatrix}
+=
+\begin{bmatrix} 
+0 & 0 \\ 
+B & BA 
+\end{bmatrix}
+\begin{bmatrix} 
+I_m & -A \\ 
+I_n & B 
+\end{bmatrix}
+\end{equation}
+</div>
+由于：
+<div>
+\begin{equation}\nonumber
+\begin{bmatrix} 
+I_m & -A \\ 
+I_n & B 
+\end{bmatrix}
+\end{equation}
+</div>
+是可逆矩阵，因此：
+<div>
+\begin{equation}\nonumber
+\begin{bmatrix} 
+AB & 0 \\ 
+B & 0 
+\end{bmatrix}
+\sim
+\begin{bmatrix} 
+0 & 0 \\ 
+B & BA 
+\end{bmatrix}
+\end{equation}
+</div>
+故：
+<div>
+\begin{equation}\nonumber
+\begin{bmatrix} 
+AB & 0 \\ 
+B & 0 
+\end{bmatrix}
+\end{equation}
+</div>
+的特征多项式相等。
+因此：
+\begin{equation}\nonumber
+|\lambda I_{m+n} - \begin{bmatrix} AB & 0 \\ B & 0 \end{bmatrix}|
+= |\lambda I_{m+n} - \begin{bmatrix} 0 & 0 \\ B & BA \end{bmatrix}|
+\end{equation}
+<p>\begin{equation}\nonumber
+= \begin{vmatrix}
+\lambda I_m - AB &amp; 0 \
+-\lambda B &amp; \lambda I_n
+\end{vmatrix}
+= \lambda^m |\lambda I_n - BA|
+\end{equation}
+从而：
+\begin{equation}\nonumber
+\lambda^m |\lambda I_m - AB| = \lambda^n |\lambda I_n - BA|.
+\end{equation}</p>
+<p><strong>注：</strong>
+<strong>此例表明 $AB$ 与 $BA$ 具有相同的非零特征值，因此</strong>：
+\begin{equation}\nonumber
+\text{tr}(AB) = \text{tr}(BA).
+\end{equation}</p>
+<hr>
+<h3 id="定理-5schur-引理"><strong>定理 5（Schur 引理）</strong>
+</h3><p>任意的 $A \in \mathbb{C}^{n \times n}$ 都相似于一个<strong>上三角矩阵</strong>，即存在满秩矩阵 $P$，使 $P^{-1} A P$ 为上三角矩阵，其对角线元素为 $A$ 的全部特征值。</p>
+<h3 id="推论"><strong>推论：</strong>
+</h3><p>设 $A$ 的 $n$ 个特征值为 $\lambda_1, \dots, \lambda_n$，$\varphi(x)$ 为任意多项式，则矩阵多项式 $\varphi(A)$ 的 $n$ 个特征值为：
+\begin{equation}\nonumber
+\varphi(\lambda_1), \dots, \varphi(\lambda_n).
+\end{equation}
+<strong>特别地</strong>，$kA$ 的特征值为：
+\begin{equation}\nonumber
+k \lambda_1, \dots, k \lambda_n.
+\end{equation}
+$A^m$ 的特征值为：
+\begin{equation}\nonumber
+\lambda_1^m, \dots, \lambda_n^m.
+\end{equation}</p>
+<h3 id="定理-6hamilton-cayley-定理"><strong>定理 6（Hamilton-Cayley 定理）</strong>
+</h3><p>任意的 $A \in \mathbb{C}^{n \times n}$，其<strong>特征多项式</strong>为：
+\begin{equation}\nonumber
+f(\lambda) = |\lambda I - A|,
+\end{equation}
+则必有：
+\begin{equation}\nonumber
+f(A) = 0
+\end{equation}
+（即 $A$ 使 $f(A)$ 变为<strong>零矩阵</strong>）。</p>
+<p>由 <strong>Hamilton-Cayley 定理</strong> 可知，任取矩阵 $A$，必有使其<strong>零化</strong>的多项式。</p>
+<h3 id="定义-3最小多项式"><strong>定义 3（最小多项式）</strong>
+</h3><p>设 $A \in F^{n \times n}$，使 $A$ <strong>零化的最小次数</strong>的首 1 多项式称为 $A$ 的<strong>最小多项式</strong>，记为：
+\begin{equation}\nonumber
+m_A(\lambda).
+\end{equation}</p>
+<p><strong>注：</strong>
+$m_A(\lambda)$ 是<strong>唯一的</strong>，并且可整除任何 $A$ 的零化多项式。特别地，有：
+\begin{equation}\nonumber
+m_A(\lambda) \mid f(A).
+\end{equation}</p>
+<h3 id="定理-7"><strong>定理 7</strong>
+</h3><p>矩阵 $A$ 的<strong>特征多项式</strong> $f_A(\lambda)$ 与<strong>最小多项式</strong> $m_A(\lambda)$ <strong>有相同的根（不计重数）</strong>。</p>
+<p><strong>证明</strong>
+由于 $m_A(A) \mid f(A)$，所以最小多项式 $m_A(A)$ 的根是 $f(A)$ 的<strong>特征根</strong>。</p>
+<p>反之，若 $f(\lambda_0) = 0$，设 $\xi$ 是属于 $\lambda_0$ 的特征向量，即：
+\begin{equation}\nonumber
+A \xi = \lambda_0 \xi.
+\end{equation}</p>
+<p>从而：
+\begin{equation}\nonumber
+0 = m_A(A) \xi = m_A(\lambda_0) \xi.
+\end{equation}</p>
+<p>由于 $\xi \neq 0$，所以：
+\begin{equation}\nonumber
+m_A(\lambda_0) = 0.
+\end{equation}</p>
+<p><strong>例 3</strong>
+<strong>求矩阵 $A$ 的最小多项式</strong>：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+7 & 4 & -1 \\ 
+4 & 7 & -1 \\ 
+-4 & -4 & 4 
+\end{bmatrix}
+\end{equation}
+</div>
+<p><strong>解</strong>
+<strong>特征多项式</strong>：
+\begin{equation}\nonumber
+f(\lambda) = | \lambda I - A | = (\lambda - 3)^2 (\lambda - 12).
+\end{equation}</p>
+<p>由 <strong>定理 7</strong>，$m_A(\lambda)$ 与 $f(\lambda)$ <strong>有相同的根</strong>，所以：
+\begin{equation}\nonumber
+m_A(\lambda) = f(\lambda) \quad \text{或} \quad m_A(\lambda) = (\lambda - 3)(\lambda - 12).
+\end{equation}</p>
+<p>经验证：
+\begin{equation}\nonumber
+(A - 3I)(A - 12I) = 0.
+\end{equation}</p>
+<p>所以：
+\begin{equation}\nonumber
+m_A(\lambda) = (\lambda - 3)(\lambda - 12).
+\end{equation}</p>
+<h3 id="定理-8">定理 8
+</h3><p>矩阵A的属于不同特征值的特征向量线性无关</p>
+<p><strong>证明</strong>
+设 $\lambda_1, \dots, \lambda_k$ 是 $A$ 的 $k$ 个互异特征值，$\xi_1, \dots, \xi_k$ 为它们对应的<strong>特征向量</strong>，即：
+\begin{equation}\nonumber
+A \xi_i = \lambda_i \xi_i, \quad (\xi_i \neq 0).
+\end{equation}</p>
+<p>令：
+\begin{equation}\nonumber
+c_1 \xi_1 + c_2 \xi_2 + \dots + c_k \xi_k = 0.
+\end{equation}</p>
+<p>将 $A$ <strong>左乘 $k-1$ 次</strong>，得到：</p>
+<div>
+\begin{equation}\nonumber
+\begin{cases}
+c_1 \xi_1 + c_2 \xi_2 + \dots + c_k \xi_k = 0, \\
+\lambda_1 c_1 \xi_1 + \lambda_2 c_2 \xi_2 + \dots + \lambda_k c_k \xi_k = 0, \\
+\vdots \\
+\lambda_1^{k-1} c_1 \xi_1 + \lambda_2^{k-1} c_2 \xi_2 + \dots + \lambda_k^{k-1} c_k \xi_k = 0.
+\end{cases}
+\end{equation}
+</div>
+将 $c_i$ 看成未知变量，系统行列式为：
+<div>
+\begin{equation}\nonumber
+\begin{vmatrix} 
+1 & 1 & \dots & 1 \\ 
+\lambda_1 & \lambda_2 & \dots & \lambda_k \\ 
+\vdots & \vdots & \ddots & \vdots \\ 
+\lambda_1^{k-1} & \lambda_2^{k-1} & \dots & \lambda_k^{k-1}
+\end{vmatrix}
+= \prod_{1 \leq i < j \leq k} (\lambda_j - \lambda_i) \neq 0.
+\end{equation}
+</div>
+由于行列式非零，该齐次方程组 **只有零解**：
+\begin{equation}\nonumber
+c_1 \xi_1 = 0, \quad \text{而} \quad \xi_i \neq 0 \Rightarrow c_i = 0, \quad 1 \leq i \leq k.
+\end{equation}
+<h2 id="不变子空间">不变子空间
 </h2>
 </section>
 
