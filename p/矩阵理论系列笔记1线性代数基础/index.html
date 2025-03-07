@@ -397,7 +397,14 @@
         <li><a href="#定理-8">定理 8</a></li>
       </ol>
     </li>
-    <li><a href="#不变子空间">不变子空间</a></li>
+    <li><a href="#不变子空间">不变子空间</a>
+      <ol>
+        <li><a href="#定义-1不变子空间"><strong>定义 1（不变子空间）</strong></a></li>
+        <li><a href="#定义-可对角化矩阵"><strong>定义 （可对角化矩阵）</strong></a></li>
+        <li><a href="#定理-可对角化矩阵"><strong>定理 （可对角化矩阵）</strong></a></li>
+        <li><a href="#定理-2"><strong>定理 2</strong></a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -454,7 +461,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 33 分钟
+                    阅读时长: 37 分钟
                 </time>
             </div>
         
@@ -2114,10 +2121,12 @@ GM(\lambda) = \dim E(\lambda) = \dim N(\lambda I - A) = n - r(\lambda I - A).
 </ul>
 <p><strong>示例说明</strong>
 <strong>(1) 代数重数等于几何重数（可对角化）</strong>
-设：
+设：</p>
+<div>
 \begin{equation} \nonumber
-A = \begin{bmatrix} 2 &amp; 0 \ 0 &amp; 3 \end{bmatrix}.
+A = \begin{bmatrix} 2 & 0 \\ 0 & 3 \end{bmatrix}.
 \end{equation}
+</div>
 特征多项式：
 \begin{equation} \nonumber
 p_A(\lambda) = (\lambda - 2)(\lambda - 3).
@@ -2126,29 +2135,35 @@ p_A(\lambda) = (\lambda - 2)(\lambda - 3).
 \begin{equation} \nonumber
 \dim E(2) = 1, \quad \dim E(3) = 1.
 \end{equation}
-因此，$GM(2) = AM(2) = 1 $ 且 $GM(3) = AM(3) = 1 $，矩阵 $A $ 可对角化。</p>
+因此，$GM(2) = AM(2) = 1 $ 且 $GM(3) = AM(3) = 1 $，矩阵 $A $ 可对角化。
 <p><strong>(2) 代数重数大于几何重数（不可对角化）</strong>
-设：
+设：</p>
+<div>
 \begin{equation} \nonumber
-A = \begin{bmatrix} 2 &amp; 1 \ 0 &amp; 2 \end{bmatrix}.
+A = \begin{bmatrix} 2 & 1 \\ 0 & 2 \end{bmatrix}.
 \end{equation}
+</div>
 特征多项式：
 \begin{equation} \nonumber
 p_A(\lambda) = (\lambda - 2)^2.
 \end{equation}
-所以 $\lambda = 2 $ 的代数重数 $AM(2) = 2 $。</p>
-<p>求解 $(2I - A)X = 0 $：
+所以 $\lambda = 2 $ 的代数重数 $AM(2) = 2 $。
+<p>求解 $(2I - A)X = 0 $：</p>
+<div>
 \begin{equation} \nonumber
-\begin{bmatrix} 0 &amp; 1 \ 0 &amp; 0 \end{bmatrix} \begin{bmatrix} x \ y \end{bmatrix} = \begin{bmatrix} 0 \ 0 \end{bmatrix}.
+\begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}.
 \end{equation}
+</div>
 解得 $x $ 可以任意，$y = 0 $，因此特征子空间的基只有：
+<div>
 \begin{equation} \nonumber
-\begin{bmatrix} 1 \ 0 \end{bmatrix}.
+\begin{bmatrix} 1 \\ 0 \end{bmatrix}.
 \end{equation}
-所以 $GM(2) = 1 &lt; AM(2) = 2 $，矩阵 <strong>不可对角化</strong>，但可以化为若尔当标准形：
+</div>
+所以 $GM(2) = 1 < AM(2) = 2 $，矩阵 **不可对角化**，但可以化为若尔当标准形：
 \begin{equation} \nonumber
-J = \begin{bmatrix} 2 &amp; 1 \ 0 &amp; 2 \end{bmatrix}.
-\end{equation}</p>
+J = \begin{bmatrix} 2 & 1 \\ 0 & 2 \end{bmatrix}.
+\end{equation}
 <hr>
 <p><strong>例 1</strong>
 设 $T \in L(\mathbb{R}^3)$ 在基 $a_1, a_2, a_3$ 下矩阵为：</p>
@@ -2474,12 +2489,274 @@ c_1 \xi_1 + c_2 \xi_2 + \dots + c_k \xi_k = 0, \\
 = \prod_{1 \leq i < j \leq k} (\lambda_j - \lambda_i) \neq 0.
 \end{equation}
 </div>
-由于行列式非零，该齐次方程组 **只有零解**：
+由于行列式非零，该齐次方程组**只有零解**：
 \begin{equation}\nonumber
 c_1 \xi_1 = 0, \quad \text{而} \quad \xi_i \neq 0 \Rightarrow c_i = 0, \quad 1 \leq i \leq k.
 \end{equation}
 <h2 id="不变子空间">不变子空间
-</h2>
+</h2><h3 id="定义-1不变子空间"><strong>定义 1（不变子空间）</strong>
+</h3><p>设 $V$ 是数域 $F$ 上的线性空间，$W$ 是 $V$ 的一个子空间，$T \in L(V)$。如果：
+\begin{equation}\nonumber
+\forall x \in W, \quad \text{都有} \quad T(x) \in W,
+\end{equation}
+则称 $W$ 是 $T$ 的一个<strong>不变子空间</strong>。</p>
+<p><strong>不变子空间的性质</strong></p>
+<ol>
+<li>
+<p>线性空间 $V$ 的<strong>任意一个子空间</strong>都是<strong>数乘变换</strong>的不变子空间。</p>
+</li>
+<li>
+<p>对于 $\forall T \in L(V)$，<strong>整个空间</strong> $V$ 和 <strong>零子空间</strong> ${ 0 }$ <strong>都是</strong> $T$ <strong>的不变子空间</strong>，称为<strong>平凡不变子空间</strong>。</p>
+</li>
+<li>
+<p><strong>不变子空间的交与和也是不变子空间</strong>。</p>
+</li>
+</ol>
+<p><strong>例 1</strong>
+设 $V$ 是数域 $F$ 上的线性空间，$T \in L(V)$，则<strong>像空间</strong> $R(T)$ 与<strong>核空间</strong> $N(T)$ <strong>都是</strong> $T$ <strong>的不变子空间</strong>。</p>
+<p><strong>证明</strong>
+设 $a \in R(T)$，则显然：
+\begin{equation}\nonumber
+T a \in R(T),
+\end{equation}
+所以 $R(T)$ 是 $T$ <strong>的不变子空间</strong>。
+设 $\beta \in N(T)$，则：
+\begin{equation}\nonumber
+T \beta = 0 \in N(T),
+\end{equation}
+所以 $N(T)$ 也是 $T$ <strong>的不变子空间</strong>。</p>
+<hr>
+<p>下面的定理有兴趣的同学可以自己再研究一下，不需要掌握</p>
+<p><strong>定理 1</strong>
+设 $V$ 是数域 $F$ 上的线性空间，$T \in L(V)$，则 $V$ <strong>可以分解成</strong> $T$ <strong>的不变子空间的直和</strong>：
+\begin{equation}\nonumber
+V = W_1 \oplus W_2 \oplus \dots \oplus W_s.
+\end{equation}
+其<strong>充要条件</strong>是 $T$ <strong>在某组基下的矩阵是准对角矩阵</strong>：
+\begin{equation}\nonumber
+\text{diag}(A_1, A_2, \dots, A_s),
+\end{equation}
+其中 $A_i$ 是 $T|_{W_i}$ 在对应<strong>基</strong>下的矩阵。</p>
+<hr>
+<h3 id="定义-可对角化矩阵"><strong>定义 （可对角化矩阵）</strong>
+</h3><p>$n$ 阶方阵 $A$ 若<strong>相似</strong>于一个<strong>对角矩阵</strong>，则称 $A$ 为<strong>可对角化矩阵</strong>（或称<strong>单纯矩阵</strong>）。</p>
+<p><strong>注：</strong></p>
+<ol>
+<li>
+<p><strong>对角矩阵的和、积、逆（若存在）仍是对角矩阵</strong>，其<strong>对角线元素</strong>就是它的<strong>特征值</strong>。</p>
+</li>
+<li>
+<p><strong>若线性变换 $T$ 的矩阵可对角化</strong>，等价于 $T$ <strong>在某组基下的矩阵为对角矩阵</strong>。</p>
+</li>
+</ol>
+<h3 id="定理-可对角化矩阵"><strong>定理 （可对角化矩阵）</strong>
+</h3><p>设 $A \in \mathbb{C}^{n \times n}$，$A$ 的全部<strong>互异特征根</strong>为 $\lambda_1, \dots, \lambda_m$，则以下命题<strong>等价</strong>：</p>
+<ol>
+<li>$A$ <strong>可对角化</strong>；</li>
+<li>$A$ <strong>有 $n$ 个线性无关的特征向量</strong>；</li>
+<li>\begin{equation}\nonumber
+\sum_{i=1}^{m} \dim E(\lambda_i) = n.
+\end{equation}</li>
+</ol>
+<p><strong>证明</strong></p>
+<p><strong>(1) $\Rightarrow$ (2)</strong>
+设<strong>可逆矩阵</strong> $P$，使得：
+\begin{equation}\nonumber
+P^{-1} A P = \text{diag}(\delta_1, \dots, \delta_n).
+\end{equation}</p>
+<p>令：
+\begin{equation}\nonumber
+P = (\alpha_1, \dots, \alpha_n),
+\end{equation}
+则：</p>
+<div>
+\begin{equation}\nonumber
+A (\alpha_1, \dots, \alpha_n) = (\alpha_1, \dots, \alpha_n) \text{diag}(\delta_1, \dots, \delta_n).
+\end{equation}
+</div>
+<p>即：
+\begin{equation}\nonumber
+A \alpha_i = \delta_i \alpha_i, \quad (i = 1, \dots, n).
+\end{equation}
+所以 $\alpha_i$ <strong>是属于特征值</strong> $\delta_i$ <strong>的特征向量</strong>。</p>
+<p>由于 $P$ <strong>可逆</strong>，则 $\alpha_1, \dots, \alpha_n$ <strong>线性无关</strong>。</p>
+<p><strong>(1) $\Rightarrow$ (3)</strong>
+设：</p>
+<div>
+\begin{equation}\nonumber
+f(\lambda) = | \lambda I - A | = (\lambda - \lambda_1)^{d_1} \dots (\lambda - \lambda_m)^{d_m},
+\end{equation}
+</div>
+其中 $d_i$ **是** $\lambda_i$ **的代数重数**，显然：
+\begin{equation}\nonumber
+d_1 + \dots + d_m = n.
+\end{equation}
+<p>不妨设：</p>
+<div>
+\begin{equation}\nonumber
+P^{-1} A P = \text{diag} \left(
+\underbrace{\lambda_1, \dots, \lambda_1}_{d_1},
+\underbrace{\lambda_m, \dots, \lambda_m}_{d_m}
+\right) = D.
+\end{equation}
+</div>
+<p>特征子空间：
+\begin{equation}\nonumber
+E(\lambda_i) = { x \in \mathbb{C}^n \mid A x = \lambda_i x }
+= { x \in \mathbb{C}^n \mid (A - \lambda_i I) x = 0 }.
+\end{equation}</p>
+<p>由<strong>秩-零度定理</strong>：
+\begin{equation}\nonumber
+\dim E(\lambda_i) = n - r(A - \lambda_i I) = n - r(P^{-1} (A - \lambda_i I) P).
+\end{equation}</p>
+<p>由于：
+\begin{equation}\nonumber
+r(D - \lambda_i I) = n - d_i,
+\end{equation}
+所以：
+\begin{equation}\nonumber
+\dim E(\lambda_i) = n - (n - d_i) = d_i.
+\end{equation}</p>
+<p><strong>(3) $\Rightarrow$ (1)</strong>
+在 $E(\lambda_i)$ $(1 \leq i \leq m)$ <strong>中各取一组基</strong>，合起来构成 $n$ 个向量。</p>
+<p>这些向量 <strong>线性无关</strong>，因此 $A$ <strong>可对角化</strong>。</p>
+<p><strong>推论</strong>
+若 $n$ 阶方阵 $A$ <strong>恰有</strong> $n$ <strong>个互异特征值</strong>，则它<strong>必可对角化</strong>，反之不然。</p>
+<p><strong>例 1</strong>
+设：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+2 & 1 \\ 
+2 & 3 
+\end{bmatrix}
+\end{equation}
+</div>
+求 $A^{100}$。
+<p><strong>解：</strong>
+计算<strong>特征方程</strong>：</p>
+<div>
+\begin{equation}\nonumber
+|A - \lambda I| = (\lambda - 1)(\lambda - 4),
+\end{equation}
+</div>
+得：
+\begin{equation}\nonumber
+\lambda_1 = 1, \quad \lambda_2 = 4.
+\end{equation}
+<p>它们对应的<strong>特征向量</strong>：</p>
+<div>
+\begin{equation}\nonumber
+\alpha_1 = (1, -1)^T, \quad \alpha_2 = (1,2)^T.
+\end{equation}
+</div>
+构造矩阵：
+<div>
+\begin{equation}\nonumber
+P = (\alpha_1, \alpha_2) =
+\begin{bmatrix} 
+1 & 1 \\ 
+-1 & 2 
+\end{bmatrix}
+\end{equation}
+</div>
+可对角化：
+<div>
+\begin{equation}\nonumber
+P^{-1} A P =
+\begin{bmatrix} 
+1 & 0 \\ 
+0 & 4 
+\end{bmatrix}
+\Rightarrow
+A = P
+\begin{bmatrix} 
+1 & 0 \\ 
+0 & 4 
+\end{bmatrix}
+P^{-1}.
+\end{equation}
+</div>
+计算 $A^{100}$：
+<div>
+\begin{equation}\nonumber
+A^{100} = P
+\begin{bmatrix} 
+1 & 0 \\ 
+0 & 4^{100} 
+\end{bmatrix}
+P^{-1}.
+\end{equation}
+</div>
+<p><strong>例 2</strong>
+设 $T \in L(\mathbb{R}^3, \mathbb{R}^3)$，在基 $\alpha_1, \alpha_2, \alpha_3$ 下的矩阵表示为：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+1 & 0 & -2 \\ 
+0 & 0 & 0 \\ 
+-2 & 0 & 4 
+\end{bmatrix}
+\end{equation}
+</div>
+<p><strong>问题</strong></p>
+<ol>
+<li>$T$ 可否对角化？</li>
+<li>若可对角化，试求满秩矩阵 $P$，使得 $P^{-1} A P$ 为对角矩阵。</li>
+</ol>
+<p><strong>解</strong>
+我们只需要检查 $A$ 可否对角化。</p>
+<p>计算特征方程：</p>
+<div>
+\begin{equation}\nonumber
+|A - \lambda I| = \lambda^2 (\lambda - 5).
+\end{equation}
+</div>
+得到特征值：
+\begin{equation}\nonumber
+\lambda_1 = 0, \quad (\text{重数 } 2), \quad \lambda_2 = 5.
+\end{equation}
+<p><strong>计算特征向量</strong>
+对于 $\lambda_1 = 0$，解方程 $(0I - A)X = 0$，取两个线性无关的特征向量：</p>
+<div>
+\begin{equation}\nonumber
+\eta_1 = (2, 0, 1)^T, \quad \eta_2 = (0, 1, 0)^T.
+\end{equation}
+</div>
+<p>对于 $\lambda_2 = 5$，解方程 $(5I - A)X = 0$，取特征向量：</p>
+<div>
+\begin{equation}\nonumber
+\eta_3 = (1, 0, -2)^T.
+\end{equation}
+</div>
+<p><strong>构造对角化矩阵</strong>
+由于 $A$ <strong>有三个线性无关特征向量</strong>，因此 $A$ <strong>可对角化</strong>。</p>
+<p>定义：</p>
+<div>
+\begin{equation}\nonumber
+P = (\eta_1, \eta_2, \eta_3).
+\end{equation}
+</div>
+<p>则：</p>
+<div>
+\begin{equation}\nonumber
+P^{-1} A P =
+\begin{bmatrix} 
+0 & 0 & 0 \\ 
+0 & 0 & 0 \\ 
+0 & 0 & 5 
+\end{bmatrix}.
+\end{equation}
+</div>
+<h3 id="定理-2"><strong>定理 2</strong>
+</h3><p>设 $A \in \mathbb{C}^{n \times n}$，$A$ <strong>可对角化当且仅当</strong> $A$ <strong>的最小多项式没有重根</strong>。</p>
+<p><strong>例 3</strong>
+设 $A \in F^{n \times n}$ 满足 $A^2 = A$（幂等矩阵），则 $A$ 可对角化。</p>
+<p><strong>证明</strong>
+设 $\varphi(\lambda) = \lambda (\lambda - 1)$，则 $\varphi(A) = 0$。$A$ 的最小多项式可整除 $\varphi(\lambda)$，故 $A$ 的最小多项式没有重根，结论成立。</p>
+
 </section>
 
 

@@ -1658,10 +1658,12 @@ GM(\lambda) = \dim E(\lambda) = \dim N(\lambda I - A) = n - r(\lambda I - A).
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;示例说明&lt;/strong&gt;
 &lt;strong&gt;(1) 代数重数等于几何重数（可对角化）&lt;/strong&gt;
-设：
+设：&lt;/p&gt;
+&lt;div&gt;
 \begin{equation} \nonumber
-A = \begin{bmatrix} 2 &amp;amp; 0 \ 0 &amp;amp; 3 \end{bmatrix}.
+A = \begin{bmatrix} 2 &amp; 0 \\ 0 &amp; 3 \end{bmatrix}.
 \end{equation}
+&lt;/div&gt;
 特征多项式：
 \begin{equation} \nonumber
 p_A(\lambda) = (\lambda - 2)(\lambda - 3).
@@ -1670,29 +1672,35 @@ p_A(\lambda) = (\lambda - 2)(\lambda - 3).
 \begin{equation} \nonumber
 \dim E(2) = 1, \quad \dim E(3) = 1.
 \end{equation}
-因此，$GM(2) = AM(2) = 1 $ 且 $GM(3) = AM(3) = 1 $，矩阵 $A $ 可对角化。&lt;/p&gt;
+因此，$GM(2) = AM(2) = 1 $ 且 $GM(3) = AM(3) = 1 $，矩阵 $A $ 可对角化。
 &lt;p&gt;&lt;strong&gt;(2) 代数重数大于几何重数（不可对角化）&lt;/strong&gt;
-设：
+设：&lt;/p&gt;
+&lt;div&gt;
 \begin{equation} \nonumber
-A = \begin{bmatrix} 2 &amp;amp; 1 \ 0 &amp;amp; 2 \end{bmatrix}.
+A = \begin{bmatrix} 2 &amp; 1 \\ 0 &amp; 2 \end{bmatrix}.
 \end{equation}
+&lt;/div&gt;
 特征多项式：
 \begin{equation} \nonumber
 p_A(\lambda) = (\lambda - 2)^2.
 \end{equation}
-所以 $\lambda = 2 $ 的代数重数 $AM(2) = 2 $。&lt;/p&gt;
-&lt;p&gt;求解 $(2I - A)X = 0 $：
+所以 $\lambda = 2 $ 的代数重数 $AM(2) = 2 $。
+&lt;p&gt;求解 $(2I - A)X = 0 $：&lt;/p&gt;
+&lt;div&gt;
 \begin{equation} \nonumber
-\begin{bmatrix} 0 &amp;amp; 1 \ 0 &amp;amp; 0 \end{bmatrix} \begin{bmatrix} x \ y \end{bmatrix} = \begin{bmatrix} 0 \ 0 \end{bmatrix}.
+\begin{bmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}.
 \end{equation}
+&lt;/div&gt;
 解得 $x $ 可以任意，$y = 0 $，因此特征子空间的基只有：
+&lt;div&gt;
 \begin{equation} \nonumber
-\begin{bmatrix} 1 \ 0 \end{bmatrix}.
+\begin{bmatrix} 1 \\ 0 \end{bmatrix}.
 \end{equation}
-所以 $GM(2) = 1 &amp;lt; AM(2) = 2 $，矩阵 &lt;strong&gt;不可对角化&lt;/strong&gt;，但可以化为若尔当标准形：
+&lt;/div&gt;
+所以 $GM(2) = 1 &lt; AM(2) = 2 $，矩阵 **不可对角化**，但可以化为若尔当标准形：
 \begin{equation} \nonumber
-J = \begin{bmatrix} 2 &amp;amp; 1 \ 0 &amp;amp; 2 \end{bmatrix}.
-\end{equation}&lt;/p&gt;
+J = \begin{bmatrix} 2 &amp; 1 \\ 0 &amp; 2 \end{bmatrix}.
+\end{equation}
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;例 1&lt;/strong&gt;
 设 $T \in L(\mathbb{R}^3)$ 在基 $a_1, a_2, a_3$ 下矩阵为：&lt;/p&gt;
@@ -2018,12 +2026,274 @@ c_1 \xi_1 + c_2 \xi_2 + \dots + c_k \xi_k = 0, \\
 = \prod_{1 \leq i &lt; j \leq k} (\lambda_j - \lambda_i) \neq 0.
 \end{equation}
 &lt;/div&gt;
-由于行列式非零，该齐次方程组 **只有零解**：
+由于行列式非零，该齐次方程组**只有零解**：
 \begin{equation}\nonumber
 c_1 \xi_1 = 0, \quad \text{而} \quad \xi_i \neq 0 \Rightarrow c_i = 0, \quad 1 \leq i \leq k.
 \end{equation}
 &lt;h2 id=&#34;不变子空间&#34;&gt;不变子空间
-&lt;/h2&gt;</description>
+&lt;/h2&gt;&lt;h3 id=&#34;定义-1不变子空间&#34;&gt;&lt;strong&gt;定义 1（不变子空间）&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $V$ 是数域 $F$ 上的线性空间，$W$ 是 $V$ 的一个子空间，$T \in L(V)$。如果：
+\begin{equation}\nonumber
+\forall x \in W, \quad \text{都有} \quad T(x) \in W,
+\end{equation}
+则称 $W$ 是 $T$ 的一个&lt;strong&gt;不变子空间&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不变子空间的性质&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;线性空间 $V$ 的&lt;strong&gt;任意一个子空间&lt;/strong&gt;都是&lt;strong&gt;数乘变换&lt;/strong&gt;的不变子空间。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对于 $\forall T \in L(V)$，&lt;strong&gt;整个空间&lt;/strong&gt; $V$ 和 &lt;strong&gt;零子空间&lt;/strong&gt; ${ 0 }$ &lt;strong&gt;都是&lt;/strong&gt; $T$ &lt;strong&gt;的不变子空间&lt;/strong&gt;，称为&lt;strong&gt;平凡不变子空间&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;不变子空间的交与和也是不变子空间&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;例 1&lt;/strong&gt;
+设 $V$ 是数域 $F$ 上的线性空间，$T \in L(V)$，则&lt;strong&gt;像空间&lt;/strong&gt; $R(T)$ 与&lt;strong&gt;核空间&lt;/strong&gt; $N(T)$ &lt;strong&gt;都是&lt;/strong&gt; $T$ &lt;strong&gt;的不变子空间&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;
+设 $a \in R(T)$，则显然：
+\begin{equation}\nonumber
+T a \in R(T),
+\end{equation}
+所以 $R(T)$ 是 $T$ &lt;strong&gt;的不变子空间&lt;/strong&gt;。
+设 $\beta \in N(T)$，则：
+\begin{equation}\nonumber
+T \beta = 0 \in N(T),
+\end{equation}
+所以 $N(T)$ 也是 $T$ &lt;strong&gt;的不变子空间&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;下面的定理有兴趣的同学可以自己再研究一下，不需要掌握&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理 1&lt;/strong&gt;
+设 $V$ 是数域 $F$ 上的线性空间，$T \in L(V)$，则 $V$ &lt;strong&gt;可以分解成&lt;/strong&gt; $T$ &lt;strong&gt;的不变子空间的直和&lt;/strong&gt;：
+\begin{equation}\nonumber
+V = W_1 \oplus W_2 \oplus \dots \oplus W_s.
+\end{equation}
+其&lt;strong&gt;充要条件&lt;/strong&gt;是 $T$ &lt;strong&gt;在某组基下的矩阵是准对角矩阵&lt;/strong&gt;：
+\begin{equation}\nonumber
+\text{diag}(A_1, A_2, \dots, A_s),
+\end{equation}
+其中 $A_i$ 是 $T|_{W_i}$ 在对应&lt;strong&gt;基&lt;/strong&gt;下的矩阵。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定义-可对角化矩阵&#34;&gt;&lt;strong&gt;定义 （可对角化矩阵）&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;$n$ 阶方阵 $A$ 若&lt;strong&gt;相似&lt;/strong&gt;于一个&lt;strong&gt;对角矩阵&lt;/strong&gt;，则称 $A$ 为&lt;strong&gt;可对角化矩阵&lt;/strong&gt;（或称&lt;strong&gt;单纯矩阵&lt;/strong&gt;）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;对角矩阵的和、积、逆（若存在）仍是对角矩阵&lt;/strong&gt;，其&lt;strong&gt;对角线元素&lt;/strong&gt;就是它的&lt;strong&gt;特征值&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;若线性变换 $T$ 的矩阵可对角化&lt;/strong&gt;，等价于 $T$ &lt;strong&gt;在某组基下的矩阵为对角矩阵&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;定理-可对角化矩阵&#34;&gt;&lt;strong&gt;定理 （可对角化矩阵）&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，$A$ 的全部&lt;strong&gt;互异特征根&lt;/strong&gt;为 $\lambda_1, \dots, \lambda_m$，则以下命题&lt;strong&gt;等价&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$A$ &lt;strong&gt;可对角化&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;$A$ &lt;strong&gt;有 $n$ 个线性无关的特征向量&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;\begin{equation}\nonumber
+\sum_{i=1}^{m} \dim E(\lambda_i) = n.
+\end{equation}&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(1) $\Rightarrow$ (2)&lt;/strong&gt;
+设&lt;strong&gt;可逆矩阵&lt;/strong&gt; $P$，使得：
+\begin{equation}\nonumber
+P^{-1} A P = \text{diag}(\delta_1, \dots, \delta_n).
+\end{equation}&lt;/p&gt;
+&lt;p&gt;令：
+\begin{equation}\nonumber
+P = (\alpha_1, \dots, \alpha_n),
+\end{equation}
+则：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A (\alpha_1, \dots, \alpha_n) = (\alpha_1, \dots, \alpha_n) \text{diag}(\delta_1, \dots, \delta_n).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;即：
+\begin{equation}\nonumber
+A \alpha_i = \delta_i \alpha_i, \quad (i = 1, \dots, n).
+\end{equation}
+所以 $\alpha_i$ &lt;strong&gt;是属于特征值&lt;/strong&gt; $\delta_i$ &lt;strong&gt;的特征向量&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;由于 $P$ &lt;strong&gt;可逆&lt;/strong&gt;，则 $\alpha_1, \dots, \alpha_n$ &lt;strong&gt;线性无关&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(1) $\Rightarrow$ (3)&lt;/strong&gt;
+设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+f(\lambda) = | \lambda I - A | = (\lambda - \lambda_1)^{d_1} \dots (\lambda - \lambda_m)^{d_m},
+\end{equation}
+&lt;/div&gt;
+其中 $d_i$ **是** $\lambda_i$ **的代数重数**，显然：
+\begin{equation}\nonumber
+d_1 + \dots + d_m = n.
+\end{equation}
+&lt;p&gt;不妨设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+P^{-1} A P = \text{diag} \left(
+\underbrace{\lambda_1, \dots, \lambda_1}_{d_1},
+\underbrace{\lambda_m, \dots, \lambda_m}_{d_m}
+\right) = D.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;特征子空间：
+\begin{equation}\nonumber
+E(\lambda_i) = { x \in \mathbb{C}^n \mid A x = \lambda_i x }
+= { x \in \mathbb{C}^n \mid (A - \lambda_i I) x = 0 }.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由&lt;strong&gt;秩-零度定理&lt;/strong&gt;：
+\begin{equation}\nonumber
+\dim E(\lambda_i) = n - r(A - \lambda_i I) = n - r(P^{-1} (A - \lambda_i I) P).
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由于：
+\begin{equation}\nonumber
+r(D - \lambda_i I) = n - d_i,
+\end{equation}
+所以：
+\begin{equation}\nonumber
+\dim E(\lambda_i) = n - (n - d_i) = d_i.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(3) $\Rightarrow$ (1)&lt;/strong&gt;
+在 $E(\lambda_i)$ $(1 \leq i \leq m)$ &lt;strong&gt;中各取一组基&lt;/strong&gt;，合起来构成 $n$ 个向量。&lt;/p&gt;
+&lt;p&gt;这些向量 &lt;strong&gt;线性无关&lt;/strong&gt;，因此 $A$ &lt;strong&gt;可对角化&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;推论&lt;/strong&gt;
+若 $n$ 阶方阵 $A$ &lt;strong&gt;恰有&lt;/strong&gt; $n$ &lt;strong&gt;个互异特征值&lt;/strong&gt;，则它&lt;strong&gt;必可对角化&lt;/strong&gt;，反之不然。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例 1&lt;/strong&gt;
+设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+2 &amp; 1 \\ 
+2 &amp; 3 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+求 $A^{100}$。
+&lt;p&gt;&lt;strong&gt;解：&lt;/strong&gt;
+计算&lt;strong&gt;特征方程&lt;/strong&gt;：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+|A - \lambda I| = (\lambda - 1)(\lambda - 4),
+\end{equation}
+&lt;/div&gt;
+得：
+\begin{equation}\nonumber
+\lambda_1 = 1, \quad \lambda_2 = 4.
+\end{equation}
+&lt;p&gt;它们对应的&lt;strong&gt;特征向量&lt;/strong&gt;：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\alpha_1 = (1, -1)^T, \quad \alpha_2 = (1,2)^T.
+\end{equation}
+&lt;/div&gt;
+构造矩阵：
+&lt;div&gt;
+\begin{equation}\nonumber
+P = (\alpha_1, \alpha_2) =
+\begin{bmatrix} 
+1 &amp; 1 \\ 
+-1 &amp; 2 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+可对角化：
+&lt;div&gt;
+\begin{equation}\nonumber
+P^{-1} A P =
+\begin{bmatrix} 
+1 &amp; 0 \\ 
+0 &amp; 4 
+\end{bmatrix}
+\Rightarrow
+A = P
+\begin{bmatrix} 
+1 &amp; 0 \\ 
+0 &amp; 4 
+\end{bmatrix}
+P^{-1}.
+\end{equation}
+&lt;/div&gt;
+计算 $A^{100}$：
+&lt;div&gt;
+\begin{equation}\nonumber
+A^{100} = P
+\begin{bmatrix} 
+1 &amp; 0 \\ 
+0 &amp; 4^{100} 
+\end{bmatrix}
+P^{-1}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;例 2&lt;/strong&gt;
+设 $T \in L(\mathbb{R}^3, \mathbb{R}^3)$，在基 $\alpha_1, \alpha_2, \alpha_3$ 下的矩阵表示为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+1 &amp; 0 &amp; -2 \\ 
+0 &amp; 0 &amp; 0 \\ 
+-2 &amp; 0 &amp; 4 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;问题&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$T$ 可否对角化？&lt;/li&gt;
+&lt;li&gt;若可对角化，试求满秩矩阵 $P$，使得 $P^{-1} A P$ 为对角矩阵。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;解&lt;/strong&gt;
+我们只需要检查 $A$ 可否对角化。&lt;/p&gt;
+&lt;p&gt;计算特征方程：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+|A - \lambda I| = \lambda^2 (\lambda - 5).
+\end{equation}
+&lt;/div&gt;
+得到特征值：
+\begin{equation}\nonumber
+\lambda_1 = 0, \quad (\text{重数 } 2), \quad \lambda_2 = 5.
+\end{equation}
+&lt;p&gt;&lt;strong&gt;计算特征向量&lt;/strong&gt;
+对于 $\lambda_1 = 0$，解方程 $(0I - A)X = 0$，取两个线性无关的特征向量：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\eta_1 = (2, 0, 1)^T, \quad \eta_2 = (0, 1, 0)^T.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;对于 $\lambda_2 = 5$，解方程 $(5I - A)X = 0$，取特征向量：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\eta_3 = (1, 0, -2)^T.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;构造对角化矩阵&lt;/strong&gt;
+由于 $A$ &lt;strong&gt;有三个线性无关特征向量&lt;/strong&gt;，因此 $A$ &lt;strong&gt;可对角化&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;定义：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+P = (\eta_1, \eta_2, \eta_3).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;则：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+P^{-1} A P =
+\begin{bmatrix} 
+0 &amp; 0 &amp; 0 \\ 
+0 &amp; 0 &amp; 0 \\ 
+0 &amp; 0 &amp; 5 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;h3 id=&#34;定理-2&#34;&gt;&lt;strong&gt;定理 2&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，$A$ &lt;strong&gt;可对角化当且仅当&lt;/strong&gt; $A$ &lt;strong&gt;的最小多项式没有重根&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例 3&lt;/strong&gt;
+设 $A \in F^{n \times n}$ 满足 $A^2 = A$（幂等矩阵），则 $A$ 可对角化。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;
+设 $\varphi(\lambda) = \lambda (\lambda - 1)$，则 $\varphi(A) = 0$。$A$ 的最小多项式可整除 $\varphi(\lambda)$，故 $A$ 的最小多项式没有重根，结论成立。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>矩阵理论系列笔记2：线性映射与矩阵</title>
