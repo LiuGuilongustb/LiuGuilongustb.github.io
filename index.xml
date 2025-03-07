@@ -2293,6 +2293,131 @@ P^{-1} A P =
 设 $A \in F^{n \times n}$ 满足 $A^2 = A$（幂等矩阵），则 $A$ 可对角化。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;
 设 $\varphi(\lambda) = \lambda (\lambda - 1)$，则 $\varphi(A) = 0$。$A$ 的最小多项式可整除 $\varphi(\lambda)$，故 $A$ 的最小多项式没有重根，结论成立。&lt;/p&gt;
+&lt;h2 id=&#34;lambda矩阵与jordan标准形&#34;&gt;$\lambda$矩阵与Jordan标准形
+&lt;/h2&gt;&lt;h3 id=&#34;定义-1&#34;&gt;&lt;strong&gt;定义 1&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;以多项式为元素的矩阵称为 $\lambda$-矩阵，记为 $A(\lambda)$，即
+$A(\lambda) = (a_{ij}(\lambda))&lt;em&gt;{m \times n}$
+其中 $a&lt;/em&gt;{ij}$ 是多项式。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注 1&lt;/strong&gt;
+数字矩阵是特殊的 $\lambda$-矩阵，特征矩阵 $\lambda I - A$ 为 $\lambda$-矩阵。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注 2&lt;/strong&gt;
+$\lambda$-矩阵和通常数字矩阵一样有各种运算（加、减、乘等）且有相同的运算规律，可定义正规 $\lambda$-矩阵的行列式、余子式、代数余子式、逆元等，进而定义秩。&lt;/p&gt;
+&lt;h3 id=&#34;定义-2&#34;&gt;&lt;strong&gt;定义 2&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;$A(\lambda)$ 中不等于零的子式的最高阶数称为 $A$ 的秩，记为
+$\text{rank} A(\lambda) = r$.&lt;/p&gt;
+&lt;h3 id=&#34;定义-3&#34;&gt;&lt;strong&gt;定义 3&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;$\lambda$-矩阵初等变换指一下三类变换：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;任意两行（列）互换；&lt;/li&gt;
+&lt;li&gt;用数 $k$（不为零）乘某行（列）；&lt;/li&gt;
+&lt;li&gt;用一个多项式 $\varphi$ 乘某行（列）并加到另一行（列）上去。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;易见三种初等变换的行列式均为非零常数，故 &lt;strong&gt;矩阵的秩&lt;/strong&gt; 不变，所以它们 &lt;strong&gt;左右（右）乘不改变&lt;/strong&gt; $\lambda$-矩阵的秩。&lt;/p&gt;
+&lt;h3 id=&#34;定义-4&#34;&gt;&lt;strong&gt;定义 4&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;若 $A(\lambda)$ 经过有限次初等变换化成 $B(\lambda)$，则称 $A(\lambda)$ 与 $B(\lambda)$ &lt;strong&gt;等价&lt;/strong&gt;，记为 $A(\lambda) \equiv B(\lambda)$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;
+$\lambda$-矩阵 &lt;strong&gt;等价&lt;/strong&gt; 则秩相同，反之不然。这与 &lt;strong&gt;数字矩阵&lt;/strong&gt; 有区别，例如：&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+A(\lambda) =
+\begin{bmatrix}
+\lambda &amp;amp; 0 \
+0 &amp;amp; A
+\end{bmatrix},
+\quad
+B(\lambda) =
+\begin{bmatrix}
+\lambda &amp;amp; 0 \
+0 &amp;amp; 1
+\end{bmatrix}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;问题&lt;/strong&gt;
+两个 $\lambda$-矩阵何时等价？&lt;/p&gt;
+&lt;h3 id=&#34;定理-1&#34;&gt;&lt;strong&gt;定理 1&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $\lambda$-矩阵 $A(\lambda)$ 的秩是 $r$，则&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+A(\lambda) \equiv
+\begin{bmatrix}
+D(\lambda) &amp;amp; 0 \
+0 &amp;amp; 0
+\end{bmatrix}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;其中：
+\begin{equation}
+D(\lambda) =
+\begin{bmatrix}
+d_1(\lambda) &amp;amp;  &amp;amp;  \
+&amp;amp; \ddots &amp;amp;  \
+&amp;amp;  &amp;amp; d_r(\lambda)
+\end{bmatrix}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;$d_i(\lambda)$ 是首 1 多项式，且满足：
+\begin{equation}
+d_i(\lambda) | d_{i+1}(\lambda), \quad 1 \leq i \leq r-1.
+\end{equation}
+称此标准形为 $A(\lambda)$ 的 &lt;strong&gt;Smith 标准形&lt;/strong&gt;，称 $d_i(\lambda)$ 为 &lt;strong&gt;不变因子&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例 1&lt;/strong&gt;：求 $A(\lambda)$ 的 Smith 标准形&lt;/p&gt;
+&lt;p&gt;已知：
+\begin{equation}
+A(\lambda) =
+\begin{bmatrix}
+1 - \lambda &amp;amp; \lambda^2 &amp;amp; \lambda \
+\lambda &amp;amp; \lambda^2 &amp;amp; -\lambda \
+1 + \lambda^2 &amp;amp; \lambda^2 &amp;amp; -\lambda^2
+\end{bmatrix}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解&lt;/strong&gt;
+通过初等变换，将矩阵化为 Smith 标准形：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;先对第一列和第一行进行变换，使其变为标准形：
+\begin{equation}
+\begin{bmatrix}
+1 - \lambda &amp;amp; \lambda^2 &amp;amp; \lambda \
+\lambda &amp;amp; \lambda^2 &amp;amp; -\lambda \
+1 + \lambda^2 &amp;amp; \lambda^2 &amp;amp; -\lambda^2
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+1 &amp;amp; \lambda^2 &amp;amp; \lambda \
+0 &amp;amp; \lambda^2 &amp;amp; -\lambda \
+0 &amp;amp; 0 &amp;amp; -\lambda^2
+\end{bmatrix}
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过行列变换，消去非对角线元素：
+\begin{equation}
+\begin{bmatrix}
+1 &amp;amp; 0 &amp;amp; 0 \
+0 &amp;amp; \lambda &amp;amp; 0 \
+0 &amp;amp; 0 &amp;amp; -\lambda - \lambda^2
+\end{bmatrix}
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最终得到：
+\begin{equation}
+\text{Smith 标准形} =
+\begin{bmatrix}
+1 &amp;amp; 0 &amp;amp; 0 \
+0 &amp;amp; \lambda &amp;amp; 0 \
+0 &amp;amp; 0 &amp;amp; \lambda + \lambda^2
+\end{bmatrix}
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;定理-2-1&#34;&gt;&lt;strong&gt;定理 2&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;$A(\lambda) \equiv B(\lambda) \Leftrightarrow A(\lambda)$ 与 $B(\lambda)$ 有完全一致的不变因子。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定义-5&#34;&gt;&lt;strong&gt;定义 5&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;$C$ 上多项式可分解成一次因子的幂的乘积，设 $A(\lambda)$ 的不变因子 $d_1(\lambda), \dots, d_m(\lambda)$ 的分解为：
+\begin{equation}\nonumber
+\begin{cases}
+d_1(\lambda) = (\lambda - \lambda_1)^{e_{11}} (\lambda - \lambda_2)^{e_{12}} \dots (\lambda - \lambda_s)^{e_{1s}} \
+d_2(\lambda) = (\lambda - \lambda_1)^{e_{21}} (\lambda - \lambda_2)^{e_{22}} \dots (\lambda - \lambda_s)^{e_{2s}} \
+\vdots \
+d_m(\lambda) = (\lambda - \lambda_1)^{e_{m1}} (\lambda - \lambda_2)^{e_{m2}} \dots (\lambda - \lambda_s)^{e_{ms}}
+\end{cases}
+\end{equation}
+其中 $\lambda_1, \dots, \lambda_s$ 互异，因为 $d_i(\lambda) \mid d_{i+1}(\lambda)$ 指数递增且 $e_{m1}, \dots, e_{ms}$ 全不为零。上述指数大于零的全部因子，统称为 $A(\lambda)$ 的初等因子（组）。&lt;/p&gt;
 </description>
         </item>
         <item>
