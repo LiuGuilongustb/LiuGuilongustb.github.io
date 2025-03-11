@@ -343,6 +343,8 @@
         <li><a href="#定理qr分解的存在于唯一性"><strong>定理</strong>：QR分解的存在于唯一性</a></li>
         <li><a href="#推论-1"><strong>推论 1</strong>：</a></li>
         <li><a href="#推论-2"><strong>推论 2</strong>：</a></li>
+        <li><a href="#定义-初等反射矩阵与初等反射变换">定义 :初等反射矩阵与初等反射变换</a></li>
+        <li><a href="#householder-矩阵的性质">Householder 矩阵的性质</a></li>
       </ol>
     </li>
   </ol>
@@ -401,7 +403,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 8 分钟
+                    阅读时长: 9 分钟
                 </time>
             </div>
         
@@ -1081,6 +1083,102 @@ R =
 \begin{equation}\nonumber
 A = QR。
 \end{equation}</p>
+<hr>
+<h3 id="定义-初等反射矩阵与初等反射变换">定义 :初等反射矩阵与初等反射变换
+</h3><p>设 $u \in \mathbb{C}^n$ 是单位向量，即 $u^H u = 1$，称
+\begin{equation}\nonumber
+H = I - 2u u^H
+\end{equation}\nonumber
+为 Householder 矩阵或初等反射矩阵。
+称由 Householder 矩阵确定的变换
+\begin{equation}\nonumber
+y = Hx
+\end{equation}\nonumber
+为 Householder 变换或初等反射变换。</p>
+<h3 id="householder-矩阵的性质">Householder 矩阵的性质
+</h3><p>设 $H \in \mathbb{C}^{n \times n}$ 是 Householder 矩阵，则：</p>
+<ol>
+<li>$H^H = H$，$H^H H = I = H^2$ （Hermite，酉，对合矩阵）；</li>
+<li>$H^{-1} = H$；</li>
+<li>
+<div>
+\begin{equation}\nonumber
+\begin{bmatrix}
+I_r & 0 \\
+0 & H
+\end{bmatrix}
+\end{equation}
+</div>
+是 $n+r$ 阶 Householder 矩阵；
+</li>
+<li>$\det H = -1$。</li>
+</ol>
+<p>证明：（3）</p>
+<div>
+\begin{equation}\nonumber
+\begin{bmatrix}
+I_r & 0 \\
+0 & H
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_r & 0 \\
+0 & I - 2uu^H
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_r & 0 \\
+0 & I_n
+\end{bmatrix}
+- 2
+\begin{bmatrix}
+0 \\ u
+\end{bmatrix}
+\begin{bmatrix}
+0^T, u^H
+\end{bmatrix}
+= I_{r+n} - 2\tilde{u} \tilde{u}^H,
+\end{equation}
+</div>
+其中 $\tilde{u} = \begin{bmatrix} 0 \\ u \end{bmatrix}$ 是单位向量。
+<p>证明：（4）</p>
+<div>
+\begin{equation}\nonumber
+\begin{bmatrix}
+I - 2uu^H & 0 \\
+2u^H & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+I & -u \\
+0^T & 1
+\end{bmatrix}
+\begin{bmatrix}
+I & 0 \\
+2u^H & 1
+\end{bmatrix}
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+\begin{bmatrix}
+I - 2uu^H & 0 \\
+2u^H & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+I & -u \\
+0^T & 1
+\end{bmatrix}
+\begin{bmatrix}
+I & 0 \\
+1 & -2u^H u
+\end{bmatrix}
+\end{equation}
+</div>
+<p>所以 $\det H = \det \begin{bmatrix} I &amp; 0 \ 2u^H &amp; 1 \end{bmatrix} = 1 - 2u^H u = -1$。</p>
+<p>还要说明一件事，（4）的证明其实还可以用前文的换位公式来分析，具体方法待作者补充。</p>
+<hr>
 
 </section>
 
