@@ -3710,12 +3710,12 @@ A = QR。
 &lt;/h3&gt;&lt;p&gt;设 $u \in \mathbb{C}^n$ 是单位向量，即 $u^H u = 1$，称
 \begin{equation}\nonumber
 H = I - 2u u^H
-\end{equation}\nonumber
+\end{equation}
 为 Householder 矩阵或初等反射矩阵。
 称由 Householder 矩阵确定的变换
 \begin{equation}\nonumber
 y = Hx
-\end{equation}\nonumber
+\end{equation}
 为 Householder 变换或初等反射变换。&lt;/p&gt;
 &lt;h3 id=&#34;householder-矩阵的性质&#34;&gt;Householder 矩阵的性质
 &lt;/h3&gt;&lt;p&gt;设 $H \in \mathbb{C}^{n \times n}$ 是 Householder 矩阵，则：&lt;/p&gt;
@@ -3784,23 +3784,332 @@ I &amp; 0 \\
 &lt;div&gt;
 \begin{equation}\nonumber
 \begin{bmatrix}
-I - 2uu^H &amp; 0 \\
+I &amp; 0 \\
+- 2u^H &amp; 1
+\end{bmatrix}\
+begin{bmatrix}
+I &amp; u \\
 2u^H &amp; 1
 \end{bmatrix}
 =
 \begin{bmatrix}
-I &amp; -u \\
-0^T &amp; 1
-\end{bmatrix}
-\begin{bmatrix}
-I &amp; 0 \\
-1 &amp; -2u^H u
+I &amp; u \\
+0^T &amp; 1-2u^Hu
 \end{bmatrix}
 \end{equation}
 &lt;/div&gt;
-&lt;p&gt;所以 $\det H = \det \begin{bmatrix} I &amp;amp; 0 \ 2u^H &amp;amp; 1 \end{bmatrix} = 1 - 2u^H u = -1$。&lt;/p&gt;
+&lt;p&gt;所以&lt;/p&gt;
+&lt;div&gt;$\det H = \det \begin{bmatrix} I &amp; 0 \\ 2u^H &amp; 1 \end{bmatrix} = 1 - 2u^H u = -1$&lt;/div&gt;。
 &lt;p&gt;还要说明一件事，（4）的证明其实还可以用前文的换位公式来分析，具体方法待作者补充。&lt;/p&gt;
 &lt;hr&gt;
+&lt;h3 id=&#34;定理-hxrho-e&#34;&gt;定理 $Hx=\rho e$
+&lt;/h3&gt;&lt;p&gt;设 $x$ 是单位向量，$\forall x \in \mathbb{C}^n$，存在 Householder 矩阵 $H$，使得 $Hx = \rho e$，其中 $|\rho| = |x|_2$，且 $\rho x^H e$ 是实数。&lt;/p&gt;
+&lt;p&gt;证明：
+当 $x = 0$ 时，任选单位向量 $u$，则&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+Hx = (I - 2uu^H) 0 = 0 = 0e
+\end{equation}
+&lt;/div&gt;
+当 $x = \rho e$ 时，取单位向量 $u$ 满足 $u^H x = 0$，则有
+&lt;div&gt;
+\begin{equation}\nonumber
+Hx = (I - 2uu^H)x = x - 0 = x = \rho e
+\end{equation}
+&lt;/div&gt;
+当 $x \neq \rho e$ 时，取
+&lt;div&gt;
+\begin{equation}\nonumber
+u = \frac{x - \rho e}{\|x - \rho e\|_2}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;则有&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+Hx = \left( I - 2 \frac{(x - \rho e)(x - \rho e)^H}{\|x - \rho e\|_2^2} \right) x
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+= x - 2 \frac{(x - \rho e)(x - \rho e)^H}{(x - \rho e)^H (x - \rho e)} x
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+= x - 2 \frac{(x - \rho e)^H x}{(x - \rho e)^H (x - \rho e)} (x - \rho e)
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+= x - 2 \frac{x^H x - \rho e^H x}{2(x^H x - \rho e^H x)} (x - \rho e)
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+= \rho e
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;推论 3:
+$\forall x \in \mathbb{C}^n$，存在 Householder 矩阵&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+H = I - 2uu^H
+\end{equation}
+&lt;/div&gt;
+使得 $Hx = \rho e_1$，其中 $|\rho| = \|x\|_2$，且 $\rho x^H e_1$ 是实数。
+&lt;p&gt;推论 4:
+$\forall x \in \mathbb{R}^n$，存在 Householder 矩阵&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+H = I - 2uu^T,
+\end{equation}
+&lt;/div&gt;
+其中 $u \in \mathbb{R}^n$，$u^T u = 1$，使得 $Hx = \rho e_1$，其中 $\rho = \pm \|x\|_2$。
+&lt;p&gt;例：用 Householder 变换使下列向量与 $e_1$ 共线。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$x = (1,2,2)^T$&lt;/li&gt;
+&lt;li&gt;$x = (-2i, i, 2)^T$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;解&lt;/strong&gt;：
+&lt;strong&gt;(1)&lt;/strong&gt;
+取 $\rho = |x|_2 = 3$，&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+u = \frac{x - \rho e_1}{\|x - \rho e_1\|_2} = \frac{1}{\sqrt{12}}
+\begin{bmatrix} -2 \\ 2 \\ 2 \end{bmatrix}
+= \frac{1}{\sqrt{3}}
+\begin{bmatrix} -1 \\ 1 \\ 1 \end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+H = I - 2uu^T = \frac{1}{3}
+\begin{bmatrix} 1 &amp; 2 &amp; 2 \\ 2 &amp; -1 &amp; 2 \\ 2 &amp; 2 &amp; -1 \end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+Hx = 3 e_1
+\end{equation}
+&lt;/div&gt;
+**(2)**
+$\|x\|_2 = 3$，为使 $|\rho| = \|x\|_2 = 3$ 且 $\rho x^H e_1$ 是实数，可取 $\rho = 3i$，所以：
+&lt;div&gt;
+\begin{equation}\nonumber
+u = \frac{x - \rho e_1}{\|x - \rho e_1\|_2} = \frac{1}{\sqrt{30}}
+\begin{bmatrix} -5i \\ i \\ 2 \end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;那上面讨论了这么多到底有什么用呢？&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定理qr分解的推广&#34;&gt;定理：QR分解的推广
+&lt;/h3&gt;&lt;p&gt;任意 $A \in \mathbb{C}^{n \times n}$ 都可以做 QR 分解。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：
+将 $A$ 进行列分块，$A = (a_1, a_2, \dots, a_n)$。由定理 2，存在 $n$ 阶 Householder 矩阵 $H_1$，使得 $H_1 a_1 = \rho_1 e_1$。于是：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+H_1 A = (H_1 a_1, H_1 a_2, \dots, H_1 a_n) = 
+\begin{bmatrix} 
+\rho_1 &amp; B_n^* \\ 
+0 &amp; B_{n-1} 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+其中 $B_{n-1} \in \mathbb{C}^{(n-1) \times (n-1)}$，令 $B_{n-1} = (b_2, b_3, \dots, b_n)$。
+则存在 $(n-1)$ 阶 Householder 矩阵 $H_2$，使得 $H_2 b_2 = \rho_2 e_1$，这里 $e_1 = (1,0,\dots,0)^T \in \mathbb{C}^{(n-1)}$。
+&lt;p&gt;例：求矩阵 $A$ 的 QR 分解&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+0 &amp; 3 &amp; 1 \\ 
+0 &amp; 4 &amp; -2 \\ 
+2 &amp; 1 &amp; 2 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;解&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;已知 $a_1 = (0,0,2)^T$，取 $\rho_1 = |a_1|_2 = 2$。令&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+u_1 = \frac{a_1 - \rho_1 e_1}{\|a_1 - \rho_1 e_1\|_2} = \frac{1}{\sqrt{2}}
+\begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+H_1 = I - 2 u_1 u_1^T =
+\begin{bmatrix} 
+0 &amp; 0 &amp; 1 \\ 
+0 &amp; 1 &amp; 0 \\ 
+1 &amp; 0 &amp; 0 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算 $H_1 A$：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+H_1 A =
+\begin{bmatrix} 
+2 &amp; 1 &amp; 2 \\ 
+0 &amp; 4 &amp; -2 \\ 
+0 &amp; 3 &amp; 1 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+已知 $b_2 = (4,3)^T$，取 $\rho_2 = \|b_2\|_2 = 5$。令
+&lt;div&gt;
+\begin{equation}\nonumber
+\tilde{u}_1 = \frac{b_2 - \rho_2 e_1}{\|b_2 - \rho_2 e_1\|_2} = \frac{1}{\sqrt{10}}
+\begin{bmatrix} -1 \\ 3 \end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\tilde{H}_2 = I - 2 \tilde{u}_1 \tilde{u}_1^T = \frac{1}{5}
+\begin{bmatrix} 4 &amp; 3 \\ 3 &amp; -4 \end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+令
+&lt;div&gt;
+\begin{equation}\nonumber
+H_2 =
+\begin{bmatrix} 
+1 &amp; 0 \\ 
+0 &amp; \tilde{H}_2 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+计算 $H_2 H_1 A$：
+&lt;div&gt;
+\begin{equation}\nonumber
+H_2 H_1 A =
+\begin{bmatrix} 
+2 &amp; 1 &amp; 2 \\ 
+0 &amp; 5 &amp; -1 \\ 
+0 &amp; 0 &amp; -2 
+\end{bmatrix}
+= R
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;QR 分解结果&lt;/strong&gt;：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = H_1 H_2 R =
+\begin{bmatrix} 
+0 &amp; \frac{3}{5} &amp; -\frac{4}{5} \\ 
+0 &amp; \frac{4}{5} &amp; \frac{3}{5} \\ 
+1 &amp; 0 &amp; 0 
+\end{bmatrix}
+\begin{bmatrix} 
+2 &amp; 1 &amp; 2 \\ 
+0 &amp; 5 &amp; -1 \\ 
+0 &amp; 0 &amp; -2 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;h3 id=&#34;定理-1schur-引理&#34;&gt;&lt;strong&gt;定理 1（Schur 引理）&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，则存在酉矩阵 $U$，使得&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+U^H A U =
+\begin{bmatrix} 
+\lambda_1 &amp; * &amp; * \\ 
+0 &amp; \ddots &amp; * \\ 
+0 &amp; 0 &amp; \lambda_n 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;即任一复方阵相似于一个上三角矩阵，其对角元为 $A$ 的特征值。&lt;/p&gt;
+&lt;h3 id=&#34;实方阵-schur-引理&#34;&gt;&lt;strong&gt;（实方阵 Schur 引理）&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{R}^{n \times n}$，且 $A$ 的特征值均为实数，则存在正交矩阵 $Q$，使得&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+Q^T A Q = Q^{-1} A Q =
+\begin{bmatrix} 
+\lambda_1 &amp; * &amp; * \\ 
+0 &amp; \ddots &amp; * \\ 
+0 &amp; 0 &amp; \lambda_n 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;其中 $\lambda_1, \dots, \lambda_n$ 为 $A$ 的特征值。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;正规矩阵与schur分解&#34;&gt;正规矩阵与Schur分解
+&lt;/h3&gt;&lt;h3 id=&#34;定义&#34;&gt;&lt;strong&gt;定义&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，若 $A^H A = A A^H$，则称 $A$ 为 &lt;strong&gt;正规矩阵&lt;/strong&gt;（规范阵）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;正规矩阵分类&lt;/strong&gt;&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\left\{
+\begin{array}{ll}
+\text{实对称矩阵} &amp; (A^T = A, A \in \mathbb{R}^{n \times n}) \\ 
+\text{实反对称矩阵} &amp; (A^T = -A, A \in \mathbb{R}^{n \times n}) \\ 
+\text{Hermite 矩阵} &amp; (A^H = A, A \in \mathbb{C}^{n \times n}) \\ 
+\text{反 Hermite 矩阵} &amp; (A^H = -A, A \in \mathbb{C}^{n \times n}) \\ 
+\text{正交矩阵} &amp; (A^T = A^{-1}, A \in \mathbb{R}^{n \times n}) \\ 
+\text{酉矩阵} &amp; (A^H = A^{-1}, A \in \mathbb{C}^{n \times n}) 
+\end{array}
+\right.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;那么是否还有其他的正规矩阵呢？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例题&lt;/strong&gt;&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B = U^H 
+\begin{bmatrix} 
+3 + 5i &amp; 0 \\ 
+0 &amp; 2 - i 
+\end{bmatrix}
+U,
+\end{equation}
+&lt;/div&gt;
+其中 $U$ 为任一二阶酉矩阵。
+由
+&lt;div&gt;
+\begin{equation}\nonumber
+B^H = U^H 
+\begin{bmatrix} 
+3 - 5i &amp; 0 \\ 
+0 &amp; 2 + i 
+\end{bmatrix}
+U
+\end{equation}
+&lt;/div&gt;
+易得
+&lt;div&gt;
+\begin{equation}\nonumber
+B^H B = B B^H.
+\end{equation}
+&lt;/div&gt;
+&lt;h3 id=&#34;引理&#34;&gt;&lt;strong&gt;引理&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;正规三角矩阵是对角矩阵。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;&lt;br&gt;
+设&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ 
+0 &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ 
+0 &amp; 0 &amp; \ddots &amp; \vdots \\ 
+0 &amp; 0 &amp; \cdots &amp; a_{nn} 
+\end{bmatrix},
+\end{equation}
+&lt;/div&gt;
+则
+&lt;div&gt;
+\begin{equation}\nonumber
+A^H =
+\begin{bmatrix} 
+\overline{a_{11}} &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\ 
+\overline{a_{12}} &amp; \overline{a_{22}} &amp; 0 &amp; \cdots &amp; 0 \\ 
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\ 
+\overline{a_{1n}} &amp; \overline{a_{2n}} &amp; \cdots &amp; \overline{a_{nn}}
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
 </description>
         </item>
         <item>

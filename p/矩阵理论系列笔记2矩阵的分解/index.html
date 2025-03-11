@@ -345,6 +345,13 @@
         <li><a href="#推论-2"><strong>推论 2</strong>：</a></li>
         <li><a href="#定义-初等反射矩阵与初等反射变换">定义 :初等反射矩阵与初等反射变换</a></li>
         <li><a href="#householder-矩阵的性质">Householder 矩阵的性质</a></li>
+        <li><a href="#定理-hxrho-e">定理 $Hx=\rho e$</a></li>
+        <li><a href="#定理qr分解的推广">定理：QR分解的推广</a></li>
+        <li><a href="#定理-1schur-引理"><strong>定理 1（Schur 引理）</strong></a></li>
+        <li><a href="#实方阵-schur-引理"><strong>（实方阵 Schur 引理）</strong></a></li>
+        <li><a href="#正规矩阵与schur分解">正规矩阵与Schur分解</a></li>
+        <li><a href="#定义"><strong>定义</strong></a></li>
+        <li><a href="#引理"><strong>引理</strong></a></li>
       </ol>
     </li>
   </ol>
@@ -403,7 +410,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 9 分钟
+                    阅读时长: 12 分钟
                 </time>
             </div>
         
@@ -1088,12 +1095,12 @@ A = QR。
 </h3><p>设 $u \in \mathbb{C}^n$ 是单位向量，即 $u^H u = 1$，称
 \begin{equation}\nonumber
 H = I - 2u u^H
-\end{equation}\nonumber
+\end{equation}
 为 Householder 矩阵或初等反射矩阵。
 称由 Householder 矩阵确定的变换
 \begin{equation}\nonumber
 y = Hx
-\end{equation}\nonumber
+\end{equation}
 为 Householder 变换或初等反射变换。</p>
 <h3 id="householder-矩阵的性质">Householder 矩阵的性质
 </h3><p>设 $H \in \mathbb{C}^{n \times n}$ 是 Householder 矩阵，则：</p>
@@ -1162,23 +1169,332 @@ I & 0 \\
 <div>
 \begin{equation}\nonumber
 \begin{bmatrix}
-I - 2uu^H & 0 \\
+I & 0 \\
+- 2u^H & 1
+\end{bmatrix}\
+begin{bmatrix}
+I & u \\
 2u^H & 1
 \end{bmatrix}
 =
 \begin{bmatrix}
-I & -u \\
-0^T & 1
-\end{bmatrix}
-\begin{bmatrix}
-I & 0 \\
-1 & -2u^H u
+I & u \\
+0^T & 1-2u^Hu
 \end{bmatrix}
 \end{equation}
 </div>
-<p>所以 $\det H = \det \begin{bmatrix} I &amp; 0 \ 2u^H &amp; 1 \end{bmatrix} = 1 - 2u^H u = -1$。</p>
+<p>所以</p>
+<div>$\det H = \det \begin{bmatrix} I & 0 \\ 2u^H & 1 \end{bmatrix} = 1 - 2u^H u = -1$</div>。
 <p>还要说明一件事，（4）的证明其实还可以用前文的换位公式来分析，具体方法待作者补充。</p>
 <hr>
+<h3 id="定理-hxrho-e">定理 $Hx=\rho e$
+</h3><p>设 $x$ 是单位向量，$\forall x \in \mathbb{C}^n$，存在 Householder 矩阵 $H$，使得 $Hx = \rho e$，其中 $|\rho| = |x|_2$，且 $\rho x^H e$ 是实数。</p>
+<p>证明：
+当 $x = 0$ 时，任选单位向量 $u$，则</p>
+<div>
+\begin{equation}\nonumber
+Hx = (I - 2uu^H) 0 = 0 = 0e
+\end{equation}
+</div>
+当 $x = \rho e$ 时，取单位向量 $u$ 满足 $u^H x = 0$，则有
+<div>
+\begin{equation}\nonumber
+Hx = (I - 2uu^H)x = x - 0 = x = \rho e
+\end{equation}
+</div>
+当 $x \neq \rho e$ 时，取
+<div>
+\begin{equation}\nonumber
+u = \frac{x - \rho e}{\|x - \rho e\|_2}
+\end{equation}
+</div>
+<p>则有</p>
+<div>
+\begin{equation}\nonumber
+Hx = \left( I - 2 \frac{(x - \rho e)(x - \rho e)^H}{\|x - \rho e\|_2^2} \right) x
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+= x - 2 \frac{(x - \rho e)(x - \rho e)^H}{(x - \rho e)^H (x - \rho e)} x
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+= x - 2 \frac{(x - \rho e)^H x}{(x - \rho e)^H (x - \rho e)} (x - \rho e)
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+= x - 2 \frac{x^H x - \rho e^H x}{2(x^H x - \rho e^H x)} (x - \rho e)
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+= \rho e
+\end{equation}
+</div>
+<p>推论 3:
+$\forall x \in \mathbb{C}^n$，存在 Householder 矩阵</p>
+<div>
+\begin{equation}\nonumber
+H = I - 2uu^H
+\end{equation}
+</div>
+使得 $Hx = \rho e_1$，其中 $|\rho| = \|x\|_2$，且 $\rho x^H e_1$ 是实数。
+<p>推论 4:
+$\forall x \in \mathbb{R}^n$，存在 Householder 矩阵</p>
+<div>
+\begin{equation}\nonumber
+H = I - 2uu^T,
+\end{equation}
+</div>
+其中 $u \in \mathbb{R}^n$，$u^T u = 1$，使得 $Hx = \rho e_1$，其中 $\rho = \pm \|x\|_2$。
+<p>例：用 Householder 变换使下列向量与 $e_1$ 共线。</p>
+<ol>
+<li>$x = (1,2,2)^T$</li>
+<li>$x = (-2i, i, 2)^T$</li>
+</ol>
+<p><strong>解</strong>：
+<strong>(1)</strong>
+取 $\rho = |x|_2 = 3$，</p>
+<div>
+\begin{equation}\nonumber
+u = \frac{x - \rho e_1}{\|x - \rho e_1\|_2} = \frac{1}{\sqrt{12}}
+\begin{bmatrix} -2 \\ 2 \\ 2 \end{bmatrix}
+= \frac{1}{\sqrt{3}}
+\begin{bmatrix} -1 \\ 1 \\ 1 \end{bmatrix}
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+H = I - 2uu^T = \frac{1}{3}
+\begin{bmatrix} 1 & 2 & 2 \\ 2 & -1 & 2 \\ 2 & 2 & -1 \end{bmatrix}
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+Hx = 3 e_1
+\end{equation}
+</div>
+**(2)**
+$\|x\|_2 = 3$，为使 $|\rho| = \|x\|_2 = 3$ 且 $\rho x^H e_1$ 是实数，可取 $\rho = 3i$，所以：
+<div>
+\begin{equation}\nonumber
+u = \frac{x - \rho e_1}{\|x - \rho e_1\|_2} = \frac{1}{\sqrt{30}}
+\begin{bmatrix} -5i \\ i \\ 2 \end{bmatrix}
+\end{equation}
+</div>
+<p>那上面讨论了这么多到底有什么用呢？</p>
+<hr>
+<h3 id="定理qr分解的推广">定理：QR分解的推广
+</h3><p>任意 $A \in \mathbb{C}^{n \times n}$ 都可以做 QR 分解。</p>
+<p><strong>证明</strong>：
+将 $A$ 进行列分块，$A = (a_1, a_2, \dots, a_n)$。由定理 2，存在 $n$ 阶 Householder 矩阵 $H_1$，使得 $H_1 a_1 = \rho_1 e_1$。于是：</p>
+<div>
+\begin{equation}\nonumber
+H_1 A = (H_1 a_1, H_1 a_2, \dots, H_1 a_n) = 
+\begin{bmatrix} 
+\rho_1 & B_n^* \\ 
+0 & B_{n-1} 
+\end{bmatrix}
+\end{equation}
+</div>
+其中 $B_{n-1} \in \mathbb{C}^{(n-1) \times (n-1)}$，令 $B_{n-1} = (b_2, b_3, \dots, b_n)$。
+则存在 $(n-1)$ 阶 Householder 矩阵 $H_2$，使得 $H_2 b_2 = \rho_2 e_1$，这里 $e_1 = (1,0,\dots,0)^T \in \mathbb{C}^{(n-1)}$。
+<p>例：求矩阵 $A$ 的 QR 分解</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+0 & 3 & 1 \\ 
+0 & 4 & -2 \\ 
+2 & 1 & 2 
+\end{bmatrix}
+\end{equation}
+</div>
+<p><strong>解</strong>：</p>
+<p>已知 $a_1 = (0,0,2)^T$，取 $\rho_1 = |a_1|_2 = 2$。令</p>
+<div>
+\begin{equation}\nonumber
+u_1 = \frac{a_1 - \rho_1 e_1}{\|a_1 - \rho_1 e_1\|_2} = \frac{1}{\sqrt{2}}
+\begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+H_1 = I - 2 u_1 u_1^T =
+\begin{bmatrix} 
+0 & 0 & 1 \\ 
+0 & 1 & 0 \\ 
+1 & 0 & 0 
+\end{bmatrix}
+\end{equation}
+</div>
+<p>计算 $H_1 A$：</p>
+<div>
+\begin{equation}\nonumber
+H_1 A =
+\begin{bmatrix} 
+2 & 1 & 2 \\ 
+0 & 4 & -2 \\ 
+0 & 3 & 1 
+\end{bmatrix}
+\end{equation}
+</div>
+已知 $b_2 = (4,3)^T$，取 $\rho_2 = \|b_2\|_2 = 5$。令
+<div>
+\begin{equation}\nonumber
+\tilde{u}_1 = \frac{b_2 - \rho_2 e_1}{\|b_2 - \rho_2 e_1\|_2} = \frac{1}{\sqrt{10}}
+\begin{bmatrix} -1 \\ 3 \end{bmatrix}
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+\tilde{H}_2 = I - 2 \tilde{u}_1 \tilde{u}_1^T = \frac{1}{5}
+\begin{bmatrix} 4 & 3 \\ 3 & -4 \end{bmatrix}
+\end{equation}
+</div>
+令
+<div>
+\begin{equation}\nonumber
+H_2 =
+\begin{bmatrix} 
+1 & 0 \\ 
+0 & \tilde{H}_2 
+\end{bmatrix}
+\end{equation}
+</div>
+计算 $H_2 H_1 A$：
+<div>
+\begin{equation}\nonumber
+H_2 H_1 A =
+\begin{bmatrix} 
+2 & 1 & 2 \\ 
+0 & 5 & -1 \\ 
+0 & 0 & -2 
+\end{bmatrix}
+= R
+\end{equation}
+</div>
+<p><strong>QR 分解结果</strong>：</p>
+<div>
+\begin{equation}\nonumber
+A = H_1 H_2 R =
+\begin{bmatrix} 
+0 & \frac{3}{5} & -\frac{4}{5} \\ 
+0 & \frac{4}{5} & \frac{3}{5} \\ 
+1 & 0 & 0 
+\end{bmatrix}
+\begin{bmatrix} 
+2 & 1 & 2 \\ 
+0 & 5 & -1 \\ 
+0 & 0 & -2 
+\end{bmatrix}
+\end{equation}
+</div>
+<h3 id="定理-1schur-引理"><strong>定理 1（Schur 引理）</strong>
+</h3><p>设 $A \in \mathbb{C}^{n \times n}$，则存在酉矩阵 $U$，使得</p>
+<div>
+\begin{equation}\nonumber
+U^H A U =
+\begin{bmatrix} 
+\lambda_1 & * & * \\ 
+0 & \ddots & * \\ 
+0 & 0 & \lambda_n 
+\end{bmatrix}
+\end{equation}
+</div>
+<p>即任一复方阵相似于一个上三角矩阵，其对角元为 $A$ 的特征值。</p>
+<h3 id="实方阵-schur-引理"><strong>（实方阵 Schur 引理）</strong>
+</h3><p>设 $A \in \mathbb{R}^{n \times n}$，且 $A$ 的特征值均为实数，则存在正交矩阵 $Q$，使得</p>
+<div>
+\begin{equation}\nonumber
+Q^T A Q = Q^{-1} A Q =
+\begin{bmatrix} 
+\lambda_1 & * & * \\ 
+0 & \ddots & * \\ 
+0 & 0 & \lambda_n 
+\end{bmatrix}
+\end{equation}
+</div>
+<p>其中 $\lambda_1, \dots, \lambda_n$ 为 $A$ 的特征值。</p>
+<hr>
+<h3 id="正规矩阵与schur分解">正规矩阵与Schur分解
+</h3><h3 id="定义"><strong>定义</strong>
+</h3><p>设 $A \in \mathbb{C}^{n \times n}$，若 $A^H A = A A^H$，则称 $A$ 为 <strong>正规矩阵</strong>（规范阵）。</p>
+<p><strong>正规矩阵分类</strong></p>
+<div>
+\begin{equation}\nonumber
+\left\{
+\begin{array}{ll}
+\text{实对称矩阵} & (A^T = A, A \in \mathbb{R}^{n \times n}) \\ 
+\text{实反对称矩阵} & (A^T = -A, A \in \mathbb{R}^{n \times n}) \\ 
+\text{Hermite 矩阵} & (A^H = A, A \in \mathbb{C}^{n \times n}) \\ 
+\text{反 Hermite 矩阵} & (A^H = -A, A \in \mathbb{C}^{n \times n}) \\ 
+\text{正交矩阵} & (A^T = A^{-1}, A \in \mathbb{R}^{n \times n}) \\ 
+\text{酉矩阵} & (A^H = A^{-1}, A \in \mathbb{C}^{n \times n}) 
+\end{array}
+\right.
+\end{equation}
+</div>
+<p>那么是否还有其他的正规矩阵呢？</p>
+<p><strong>例题</strong></p>
+<div>
+\begin{equation}\nonumber
+B = U^H 
+\begin{bmatrix} 
+3 + 5i & 0 \\ 
+0 & 2 - i 
+\end{bmatrix}
+U,
+\end{equation}
+</div>
+其中 $U$ 为任一二阶酉矩阵。
+由
+<div>
+\begin{equation}\nonumber
+B^H = U^H 
+\begin{bmatrix} 
+3 - 5i & 0 \\ 
+0 & 2 + i 
+\end{bmatrix}
+U
+\end{equation}
+</div>
+易得
+<div>
+\begin{equation}\nonumber
+B^H B = B B^H.
+\end{equation}
+</div>
+<h3 id="引理"><strong>引理</strong>
+</h3><p><strong>正规三角矩阵是对角矩阵。</strong></p>
+<p><strong>证明</strong><br>
+设</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+a_{11} & a_{12} & \cdots & a_{1n} \\ 
+0 & a_{22} & \cdots & a_{2n} \\ 
+0 & 0 & \ddots & \vdots \\ 
+0 & 0 & \cdots & a_{nn} 
+\end{bmatrix},
+\end{equation}
+</div>
+则
+<div>
+\begin{equation}\nonumber
+A^H =
+\begin{bmatrix} 
+\overline{a_{11}} & 0 & 0 & \cdots & 0 \\ 
+\overline{a_{12}} & \overline{a_{22}} & 0 & \cdots & 0 \\ 
+\vdots & \vdots & \ddots & \vdots & \vdots \\ 
+\overline{a_{1n}} & \overline{a_{2n}} & \cdots & \overline{a_{nn}}
+\end{bmatrix}.
+\end{equation}
+</div>
 
 </section>
 
