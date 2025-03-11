@@ -10,7 +10,7 @@
 <meta property='og:description' content="三角分解 定义：单位三角矩阵 如果上（下）三角矩阵 $A \\in \\mathbb{C}^{n \\times n}$ 的对角线全为 1，则称 $A$ 为单位上（下）三角矩阵。\n注：\n两个单位上（下）三角矩阵的乘积仍然是单位上（下）三角矩阵。 单位上（下）三角矩阵的逆也是单位上（下）三角矩阵。 定理：LR三角分解的充要条件 设 $A \\in \\mathbb{C}^{n \\times n}$ 是非奇异矩阵，则存在唯一的单位下三角矩阵 $L$ 和上三角矩阵 $R$ 使得：\n">
 <meta property='og:url' content='https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B02%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%86%E8%A7%A3/'>
 <meta property='og:site_name' content='刘贵泷的个人网页'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='矩阵论' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='矩阵论' /><meta property='article:published_time' content='2025-02-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-02-28T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="矩阵理论系列笔记2：矩阵的分解">
 <meta name="twitter:description" content="三角分解 定义：单位三角矩阵 如果上（下）三角矩阵 $A \\in \\mathbb{C}^{n \\times n}$ 的对角线全为 1，则称 $A$ 为单位上（下）三角矩阵。\n注：\n两个单位上（下）三角矩阵的乘积仍然是单位上（下）三角矩阵。 单位上（下）三角矩阵的逆也是单位上（下）三角矩阵。 定理：LR三角分解的充要条件 设 $A \\in \\mathbb{C}^{n \\times n}$ 是非奇异矩阵，则存在唯一的单位下三角矩阵 $L$ 和上三角矩阵 $R$ 使得：\n">
         
@@ -334,10 +334,6 @@
       <ol>
         <li><a href="#定义单位三角矩阵">定义：单位三角矩阵</a></li>
         <li><a href="#定理lr三角分解的充要条件">定理：LR三角分解的充要条件</a></li>
-      </ol>
-    </li>
-    <li><a href="#注也可以用初等行变换求三角分解但是方法用的不多就不介绍了">**注：**也可以用初等行变换求三角分解，但是方法用的不多就不介绍了。</a>
-      <ol>
         <li><a href="#定理-ldr-分解"><strong>定理 ：LDR 分解</strong></a></li>
         <li><a href="#定理-3cholesky乔列斯基分解"><strong>定理 3（Cholesky（乔列斯基）分解）</strong></a></li>
       </ol>
@@ -379,6 +375,19 @@
     
     
     <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-02-28</time>
+            </div>
         
 
         
@@ -706,8 +715,9 @@ LU =
 \begin{bmatrix} 2 & -1 & 3 \\ 1 & 2 & 1 \\ 2 & 4 & 3 \end{bmatrix} = A.
 \end{equation} 
 </div>
-<h2 id="注也可以用初等行变换求三角分解但是方法用的不多就不介绍了">**注：**也可以用初等行变换求三角分解，但是方法用的不多就不介绍了。
-</h2><h3 id="定理-ldr-分解"><strong>定理 ：LDR 分解</strong>
+<p>**注：**也可以用初等行变换求三角分解，但是方法用的不多就不介绍了。</p>
+<hr>
+<h3 id="定理-ldr-分解"><strong>定理 ：LDR 分解</strong>
 </h3><p>设 $A \in \mathbb{C}^{n \times n}$ 是<strong>非奇异矩阵</strong>，则存在<strong>唯一的</strong>单位下三角矩阵 $L$，对角矩阵：
 \begin{equation}\nonumber
 D = \text{diag}(d_1, d_2, \dots, d_n)
@@ -751,15 +761,15 @@ A
 如果<strong>线性方程组</strong> $Ax = b$ 的系数矩阵 $A$ 可以进行<strong>LR 分解</strong>：
 \begin{equation}\nonumber
 A = L R，
-\end{equation}\nonumber
+\end{equation}
 则方程组：
 \begin{equation}\nonumber
 Ax = b
-\end{equation}\nonumber
+\end{equation}
 等价于以下两个方程：
 \begin{equation}\nonumber
 Ly = b, \quad Rx = y。
-\end{equation}\nonumber</p>
+\end{equation}</p>
 <p><strong>例 2</strong>：
 设：</p>
 <div>
@@ -776,12 +786,12 @@ b =
 4 \\
 7
 \end{bmatrix}。
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>求解方程组：
 \begin{equation}\nonumber
 Ax = b。
-\end{equation}\nonumber</p>
+\end{equation}</p>
 <p><strong>解</strong>：
 <strong>由例 1 可知</strong>：</p>
 <div>
@@ -797,83 +807,83 @@ A = L R =
 0 & \frac{5}{2} & -\frac{1}{2} \\
 0 & 0 & 1
 \end{bmatrix}。
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>由<strong>前向代入</strong>求解：
 \begin{equation}\nonumber
 Ly = b：
-\end{equation}\nonumber
+\end{equation}
 \begin{equation}\nonumber
 y_1 = b_1 = -3,
-\end{equation}\nonumber
+\end{equation}
 \begin{equation}\nonumber
 y_2 = b_2 - l_{21} y_1 = 4 - \frac{1}{2} (-3) = \frac{11}{2}，
-\end{equation}\nonumber
+\end{equation}
 \begin{equation}\nonumber
 y_3 = b_3 - l_{31} y_1 - l_{32} y_2 = 7 - (1)(-3) - (2) \times \frac{11}{2} = -1。
-\end{equation}\nonumber</p>
+\end{equation}</p>
 <p>由<strong>后向代入</strong>求解：
 \begin{equation}\nonumber
 Rx = y：
-\end{equation}\nonumber
+\end{equation}
 \begin{equation}\nonumber
 x_3 = \frac{y_3}{r_{33}} = \frac{-1}{1} = -1，
-\end{equation}\nonumber
+\end{equation}
 \begin{equation}\nonumber
 x_2 = \frac{1}{r_{22}} (y_2 - r_{23} x_3) = \frac{1}{\frac{5}{2}} \left(\frac{11}{2} - (-\frac{1}{2}) (-1) \right) = 2，
-\end{equation}\nonumber
+\end{equation}
 \begin{equation}\nonumber
 x_1 = \frac{1}{r_{11}} (y_1 - r_{12} x_2 - r_{13} x_3) = \frac{1}{2} (-3 - (-1)(2) - (3)(-1)) = 1。
-\end{equation}\nonumber</p>
+\end{equation}</p>
 <hr>
 <h3 id="定理-3cholesky乔列斯基分解"><strong>定理 3（Cholesky（乔列斯基）分解）</strong>
 </h3><p>设 $A \in \mathbb{C}^{n \times n}$ 是 <strong>Hermite 正定矩阵</strong>，则存在<strong>下三角矩阵</strong> $G$ 使得：
 \begin{equation}\nonumber
 A = G G^H。
-\end{equation}\nonumber</p>
+\end{equation}</p>
 <p><strong>证明</strong>：
 因为 $A$ <strong>正定</strong>，所以<strong>顺序主子式均大于零</strong>。<br>
 由<strong>定理 2（LDR 分解）</strong>，$A$ 具有<strong>唯一的 LDR 分解</strong>。<br>
 又因 $A$ <strong>是 Hermite 矩阵</strong>，由<strong>LDR 分解的唯一性</strong>，可得：
 \begin{equation}\nonumber
 R = L^H，
-\end{equation}\nonumber
+\end{equation}
 因此：
 \begin{equation}\nonumber
 A = L D L^H。
-\end{equation}\nonumber</p>
+\end{equation}</p>
 <p>设：
 \begin{equation}\nonumber
 D = \text{diag}(d_1, d_2, \dots, d_n)，
-\end{equation}\nonumber
+\end{equation}
 令：
 \begin{equation}\nonumber
 G = L \text{diag}(\sqrt{d_1}, \sqrt{d_2}, \dots, \sqrt{d_n})，
-\end{equation}\nonumber
+\end{equation}
 则：
 \begin{equation}\nonumber
 A = G G^H。
-\end{equation}\nonumber</p>
+\end{equation}</p>
 <h2 id="qr分解">QR分解
 </h2><h3 id="定理qr分解的存在于唯一性"><strong>定理</strong>：QR分解的存在于唯一性
 </h3><p>设<strong>满秩方阵</strong> $A \in \mathbb{R}^{n \times n}$，则存在<strong>正交矩阵</strong> $Q$ 及<strong>正线性上三角矩阵</strong> $R$，满足：
 \begin{equation}\nonumber
 A = QR，
-\end{equation}\nonumber
+\end{equation}
 且<strong>分解唯一</strong>。</p>
 <p><strong>证明</strong>：
 由于：
 \begin{equation}\nonumber
 r(A) = n，
-\end{equation}\nonumber
+\end{equation}
 故 $A$ 的 $n$ 个<strong>列向量</strong> $x_1, x_2, \dots, x_n$ 线性无关，即：
 \begin{equation}\nonumber
 A = (x_1, x_2, \dots, x_n)。
-\end{equation}\nonumber</p>
+\end{equation}</p>
 <p>由<strong>正交化过程</strong>，可得 $\mathbb{R}^n$ <strong>的一组标准正交基</strong>：
 \begin{equation}\nonumber
 (x_1, x_2, \dots, x_n) = (z_1, z_2, \dots, z_n)，
-\end{equation}\nonumber
+\end{equation}
 且：</p>
 <div>
 \begin{equation}\nonumber
@@ -887,55 +897,55 @@ A = (x_1, x_2, \dots, x_n)。
 \begin{bmatrix}
 z_1 & z_2 & \dots & z_n
 \end{bmatrix}。
-\end{equation}\nonumber
+\end{equation}
 </div>
 令：
 \begin{equation}\nonumber
 Q = (z_1, z_2, \dots, z_n)，
-\end{equation}\nonumber
+\end{equation}
 $R$ 为另外一个因子，则：
 \begin{equation}\nonumber
 A = Q R。
-\end{equation}\nonumber
+\end{equation}
 <p>由于：
 \begin{equation}\nonumber
 Q^T Q = (z_1, z_2, \dots, z_n)^T (z_1, z_2, \dots, z_n) = (z_i^T z_j)_{n \times n} = I_n，
-\end{equation}\nonumber
+\end{equation}
 故 $Q$ <strong>为正交矩阵</strong>。</p>
 <p><strong>唯一性证明</strong>：
 设：
 \begin{equation}\nonumber
 A = Q_1 R_1 = Q_2 R_2，
-\end{equation}\nonumber
+\end{equation}
 则：
 \begin{equation}\nonumber
 Q_1 = Q_2 R_2 R_1^{-1} = Q_2 D，
-\end{equation}\nonumber
+\end{equation}
 其中：
 \begin{equation}\nonumber
 D = R_2 R_1^{-1}。
-\end{equation}\nonumber
+\end{equation}
 由于 $D$ <strong>仍然是正线性上三角矩阵</strong>，且：
 \begin{equation}\nonumber
 I = Q_1^T Q_1 = (Q_2 D)^T (Q_2 D) = D^T Q_2^T Q_2 D = D^T D，
-\end{equation}\nonumber
+\end{equation}
 因此 $D$ <strong>为正交矩阵</strong>。但 $D$ <strong>又是正线性上三角矩阵</strong>，故：
 \begin{equation}\nonumber
 D = I，
-\end{equation}\nonumber
+\end{equation}
 因此：
 \begin{equation}\nonumber
 R_1 = R_2，
-\end{equation}\nonumber
+\end{equation}
 进而：
 \begin{equation}\nonumber
 Q_1 = Q_2。
-\end{equation}\nonumber</p>
+\end{equation}</p>
 <h3 id="推论-1"><strong>推论 1</strong>：
 </h3><p>设<strong>满秩方阵</strong> $A \in \mathbb{C}^{n \times n}$，则存在 <strong>酉矩阵</strong> $U$ 及<strong>正线性上三角矩阵</strong> $R$，满足：
 \begin{equation}\nonumber
 A = UR，
-\end{equation}\nonumber
+\end{equation}
 且<strong>分解唯一</strong>。</p>
 <hr>
 <h3 id="推论-2"><strong>推论 2</strong>：
@@ -944,7 +954,7 @@ A = UR，
 使得：
 \begin{equation}\nonumber
 A = Q R = U R，
-\end{equation}\nonumber
+\end{equation}
 其中：</p>
 <div>
 \begin{equation}\nonumber
@@ -953,37 +963,37 @@ R =
 R_1 \\
 0
 \end{bmatrix}_{m \times n}, \quad (n \leq m)。
-\end{equation}\nonumber
+\end{equation}
 </div>
 ### **证明**：
 由于：
 \begin{equation}\nonumber
 r(A) = n，
-\end{equation}\nonumber
+\end{equation}
 其 $n$ 个列向量 $x_1, x_2, \dots, x_n$ 线性无关，故可**扩充为** $\mathbb{R}^m$ **的一组基**：
 \begin{equation}\nonumber
 (x_1, x_2, \dots, x_n, x_{n+1}, \dots, x_m)。
-\end{equation}\nonumber
+\end{equation}
 <p>定义：
 \begin{equation}\nonumber
 B = (x_1, x_2, \dots, x_n, x_{n+1}, \dots, x_m) = (A, K)。
-\end{equation}\nonumber
+\end{equation}
 由于 $B$ <strong>为 $m \times m$ 满秩方阵</strong>，根据 <strong>定理 1</strong>，存在<strong>正交矩阵</strong> $Q \in \mathbb{R}^{m \times m}$ 及<strong>正线性上三角矩阵</strong> $S \in \mathbb{R}^{m \times m}$，使得：
 \begin{equation}\nonumber
 B = Q S。
-\end{equation}\nonumber</p>
+\end{equation}</p>
 <p>令：
 \begin{equation}\nonumber
 S = (R, S_1)，
-\end{equation}\nonumber
+\end{equation}
 其中 $R$ <strong>为 $m \times n$ 矩阵（列满秩）</strong>，因此：
 \begin{equation}\nonumber
 B = (A, K) = Q S = Q (R, S_1) = (QR, QS_1)。
-\end{equation}\nonumber</p>
+\end{equation}</p>
 <p>最终得到：
 \begin{equation}\nonumber
 A = Q R，
-\end{equation}\nonumber
+\end{equation}
 其中：</p>
 <div>
 \begin{equation}\nonumber
@@ -992,7 +1002,7 @@ R =
 R_1 \\
 0
 \end{bmatrix}，
-\end{equation}\nonumber
+\end{equation}
 </div>
 且 $R_1$ **为正线性上三角矩阵**。
 <p><strong>注</strong>：
@@ -1000,7 +1010,7 @@ R_1 \\
 则：
 \begin{equation}\nonumber
 A = U_1 R_1，
-\end{equation}\nonumber
+\end{equation}
 其中 $R_1$ <strong>为正线性上三角矩阵</strong>。</p>
 <p><strong>例</strong>：
 设：</p>
@@ -1012,31 +1022,31 @@ A =
 2 & 1 & 2 \\
 1 & 2 & 1
 \end{bmatrix}，
-\end{equation}\nonumber
+\end{equation}
 </div>
 求**QR 分解**。
 <p><strong>解</strong>：
 设：
 \begin{equation}\nonumber
 A = (x_1, x_2, x_3)，
-\end{equation}\nonumber
+\end{equation}
 其中：
 \begin{equation}\nonumber
 x_1 = (1,2,1)^T, \quad
 x_2 = (2,1,2)^T, \quad
 x_3 = (3,2,1)^T。
-\end{equation}\nonumber</p>
+\end{equation}</p>
 <p>可以验证：
 \begin{equation}\nonumber
 r(A) = 3，
-\end{equation}\nonumber
+\end{equation}
 所以 $A$ <strong>满秩</strong>。</p>
 <p><strong>正交化</strong>：
 \begin{equation}\nonumber
 y_1 = (1,2,1)^T, \quad
 y_2 = (1,-1,1)^T, \quad
 y_3 = \left( \frac{1}{2}, 0, -\frac{1}{2} \right)^T。
-\end{equation}\nonumber</p>
+\end{equation}</p>
 <p><strong>单位化</strong>：
 \begin{equation}\nonumber
 z_1 = \left( \frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}} \right)^T，
@@ -1044,12 +1054,12 @@ z_1 = \left( \frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}} \right)^
 z_2 = \left( \frac{-1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}} \right)^T，
 \quad
 z_3 = \left( \frac{1}{\sqrt{2}}, 0, -\frac{1}{\sqrt{2}} \right)^T。
-\end{equation}\nonumber
+\end{equation}
 <strong>QR 分解</strong>：
 令：
 \begin{equation}\nonumber
 Q = (z_1, z_2, z_3)，
-\end{equation}\nonumber
+\end{equation}
 则：</p>
 <div>
 \begin{equation}\nonumber
@@ -1065,12 +1075,12 @@ R =
 0 & \sqrt{3} & \frac{1}{\sqrt{3}} \\
 0 & 0 & \frac{1}{\sqrt{2}}
 \end{bmatrix}。
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>因此：
 \begin{equation}\nonumber
 A = QR。
-\end{equation}\nonumber</p>
+\end{equation}</p>
 
 </section>
 

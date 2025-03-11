@@ -3035,6 +3035,679 @@ A^H A = I_n。
 </description>
         </item>
         <item>
+        <title>矩阵理论系列笔记2：矩阵的分解</title>
+        <link>https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B02%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%86%E8%A7%A3/</link>
+        <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B02%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%86%E8%A7%A3/</guid>
+        <description>&lt;h2 id=&#34;三角分解&#34;&gt;三角分解
+&lt;/h2&gt;&lt;h3 id=&#34;定义单位三角矩阵&#34;&gt;定义：单位三角矩阵
+&lt;/h3&gt;&lt;p&gt;如果上（下）三角矩阵 $A \in \mathbb{C}^{n \times n}$ 的对角线&lt;strong&gt;全为 1&lt;/strong&gt;，则称 $A$ 为&lt;strong&gt;单位上（下）三角矩阵&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;两个单位上（下）三角矩阵的乘积仍然是单位上（下）三角矩阵&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;单位上（下）三角矩阵的逆也是单位上（下）三角矩阵&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;定理lr三角分解的充要条件&#34;&gt;定理：LR三角分解的充要条件
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$ 是&lt;strong&gt;非奇异矩阵&lt;/strong&gt;，则存在&lt;strong&gt;唯一的&lt;/strong&gt;单位下三角矩阵 $L$ 和上三角矩阵 $R$ 使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = L R。
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;该分解成立的&lt;strong&gt;充要条件&lt;/strong&gt;是 $A$ 的&lt;strong&gt;顺序主子式均非零&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;必要性&lt;/strong&gt;：
+如果存在&lt;strong&gt;单位下三角矩阵&lt;/strong&gt; $L$ 和&lt;strong&gt;上三角矩阵&lt;/strong&gt; $R$ 使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = L R，
+\end{equation}
+&lt;/div&gt;
+则：
+&lt;div&gt;
+\begin{equation}\nonumber
+|A| = r_{11} r_{22} \dots r_{nn}，
+\end{equation}
+&lt;/div&gt;
+其中 $r_{ii}$ 是 $R$ 的对角线元素。由于 $A$ **非奇异**，所以 $r_{ii} \neq 0$。
+&lt;p&gt;将 $A = L R$ &lt;strong&gt;作矩阵分块&lt;/strong&gt;：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{bmatrix}
+A_{11} &amp; A_{12} \\
+A_{21} &amp; A_{22}
+\end{bmatrix}
+=
+\begin{bmatrix}
+L_{11} &amp; 0 \\
+L_{21} &amp; L_{22}
+\end{bmatrix}
+\begin{bmatrix}
+R_{11} &amp; R_{12} \\
+0 &amp; R_{22}
+\end{bmatrix}。
+\end{equation}
+&lt;/div&gt;
+其中 $A_{11}, L_{11}, R_{11}$ 分别是 $A, L, R$ 的 $k$ 阶**顺序主子式**。
+于是：
+&lt;div&gt;
+\begin{equation}\nonumber
+|A_{11}| = |L_{11} R_{11}| = |R_{11}| = r_{11} r_{22} \dots r_{kk} \neq 0。
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;充分性&lt;/strong&gt;：
+用&lt;strong&gt;数学归纳法&lt;/strong&gt;证明。&lt;/p&gt;
+&lt;p&gt;当 $A$ 的阶数为 1 时，显然成立。&lt;/p&gt;
+&lt;p&gt;假设分解式当 $A$ 的阶数为 $n$ 时成立，考虑当阶数为 $n+1$ 时&amp;hellip;&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\Lambda_{n+1} =
+\begin{bmatrix}
+A_n &amp; a_n \\
+\beta_n &amp; a_{n+1,n+1}
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+=
+\begin{bmatrix}
+L_n &amp; 0 \\
+\beta_n R_n^{-1} &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+R_n &amp; L_n^{-1} a_n \\
+0 &amp; a_{n+1,n+1} - \beta_n R_n^{-1} L_n^{-1} a_n
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}
+\nonumber
+a_n = 
+\begin{bmatrix}
+a_{1,n+1}, a_{2,n+1}, \dots, a_{n,n+1}
+\end{bmatrix}^T，
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\beta_n = 
+\begin{bmatrix}
+a_{n+1,1}, a_{n+1,2}, \dots, a_{n+1,n}
+\end{bmatrix}。
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;唯一性&lt;/strong&gt;：
+设 $A = L R = L_1 R_1$，其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$L, L_1$ 是&lt;strong&gt;单位下三角矩阵&lt;/strong&gt;，&lt;/li&gt;
+&lt;li&gt;$R, R_1$ 是&lt;strong&gt;可逆上三角矩阵&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;则：
+\begin{equation}\nonumber
+L_1^{-1} L = R_1 R^{-1}。
+\end{equation}&lt;/p&gt;
+&lt;p&gt;上式左边是&lt;strong&gt;单位下三角矩阵&lt;/strong&gt;，右边是&lt;strong&gt;上三角矩阵&lt;/strong&gt;，因此：
+\begin{equation}\nonumber
+L_1^{-1} L = R_1 R^{-1} = I，
+\end{equation}
+所以：
+\begin{equation}\nonumber
+L_1 = L, \quad R_1 = R。
+\end{equation}
+定理得证。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;定理 1 中若将 $L$ 改为&lt;/strong&gt; &lt;strong&gt;下三角矩阵&lt;/strong&gt;，$R$ &lt;strong&gt;改为单位上三角矩阵&lt;/strong&gt;，结论仍然成立。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;下面我们将要介绍如何计算矩阵的三角分解，首先我们会给出一个公式，公式当然可以套用，但是任何阅读本博客的同学都不建议记这个公式，如果阶数小，就一个一个自己算，如果阶数高就直接用公式扔matlab里面算，考试等本身绝不会考到n阶矩阵的三角分解，所以下面的公式有个印象，如果需要能到这里找到就行，不要浪费脑细胞。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分解方法&lt;/strong&gt;：
+由：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation} \nonumber
+\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn}
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
+l_{21} &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+l_{n1} &amp; l_{n2} &amp; \cdots &amp; l_{nn}
+\end{bmatrix}
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; \cdots &amp; r_{1n} \\
+0 &amp; r_{22} &amp; \cdots &amp; r_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \cdots &amp; r_{nn}
+\end{bmatrix}
+\end{equation} 
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;得：&lt;/strong&gt;
+\begin{equation}\nonumber
+\begin{cases}
+r_{jj} = a_{jj}, &amp;amp; j = 1, \dots, n, \
+l_{ij} = \frac{a_{ij}}{r_{jj}}, &amp;amp; j = 2, \dots, n, \
+r_{ik} = a_{ik} - \sum_{s=1}^{k-1} l_{is} r_{sk}, &amp;amp; k = 2, \dots, n, \quad i = k+1, \dots, n, \
+l_{ik} = \frac{1}{r_{kk}} \left( a_{ik} - \sum_{s=1}^{k-1} l_{is} r_{sk} \right), &amp;amp; k = 2, \dots, n, \quad i = k+1, \dots, n。
+\end{cases}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;那么不用上面的公式如何计算矩阵的三角分解请看下面的例题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例子&lt;/strong&gt; 求矩阵 $A $ 的 &lt;strong&gt;LU 分解&lt;/strong&gt;，即找到一个&lt;strong&gt;下三角矩阵&lt;/strong&gt; $L $ 和一个&lt;strong&gt;上三角矩阵&lt;/strong&gt; $U $，使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation} \nonumber
+A = LU.
+\end{equation} 
+&lt;/div&gt;
+其中：
+&lt;div&gt;
+\begin{equation} \nonumber
+A = \begin{bmatrix} 2 &amp; -1 &amp; 3 \\ 1 &amp; 2 &amp; 1 \\ 2 &amp; 4 &amp; 3 \end{bmatrix}.
+\end{equation} 
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;步骤 1：初始化 $L $ 和 $U $&lt;/strong&gt;
+设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation} \nonumber
+L = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ l_{21} &amp; 1 &amp; 0 \\ l_{31} &amp; l_{32} &amp; 1 \end{bmatrix},
+\quad
+U = \begin{bmatrix} u_{11} &amp; u_{12} &amp; u_{13} \\ 0 &amp; u_{22} &amp; u_{23} \\ 0 &amp; 0 &amp; u_{33} \end{bmatrix}.
+\end{equation} 
+&lt;/div&gt;
+要求解 $A = LU $，即：
+&lt;div&gt;
+\begin{equation} \nonumber
+\begin{bmatrix} 2 &amp; -1 &amp; 3 \\ 1 &amp; 2 &amp; 1 \\ 2 &amp; 4 &amp; 3 \end{bmatrix}
+=
+\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ l_{21} &amp; 1 &amp; 0 \\ l_{31} &amp; l_{32} &amp; 1 \end{bmatrix}
+\begin{bmatrix} u_{11} &amp; u_{12} &amp; u_{13} \\ 0 &amp; u_{22} &amp; u_{23} \\ 0 &amp; 0 &amp; u_{33} \end{bmatrix}.
+\end{equation} 
+&lt;/div&gt;
+**步骤 2：求 $U $ 的第一行**
+从矩阵乘法的第一行展开：
+&lt;div&gt;
+\begin{equation} \nonumber
+\begin{bmatrix} u_{11} &amp; u_{12} &amp; u_{13} \\ l_{21} u_{11} &amp; l_{21} u_{12} + u_{22} &amp; l_{21} u_{13} + u_{23} \\ l_{31} u_{11} &amp; l_{31} u_{12} + l_{32} u_{22} &amp; l_{31} u_{13} + l_{32} u_{23} + u_{33} \end{bmatrix}
+=
+\begin{bmatrix} 2 &amp; -1 &amp; 3 \\ 1 &amp; 2 &amp; 1 \\ 2 &amp; 4 &amp; 3 \end{bmatrix}.
+\end{equation} 
+&lt;/div&gt;
+比较第一行的系数：
+&lt;div&gt;
+\begin{equation} \nonumber
+u_{11} = 2, \quad u_{12} = -1, \quad u_{13} = 3.
+\end{equation} 
+&lt;/div&gt;
+**步骤 3：求 $L $ 的第一列**
+比较第二行第一列的元素：
+&lt;div&gt;
+\begin{equation} \nonumber
+l_{21} u_{11} = 1 \Rightarrow l_{21} = \frac{1}{2}.
+\end{equation} 
+&lt;/div&gt;
+比较第三行第一列的元素：
+&lt;div&gt;
+\begin{equation} \nonumber
+l_{31} u_{11} = 2 \Rightarrow l_{31} = \frac{2}{2} = 1.
+\end{equation} 
+&lt;/div&gt;
+**步骤 4：求 $U $ 的第二行**
+比较第二行第二列：
+&lt;div&gt;
+\begin{equation} \nonumber
+l_{21} u_{12} + u_{22} = 2.
+\end{equation} 
+&lt;/div&gt;
+代入 $l_{21} = \frac{1}{2}, u_{12} = -1 $：
+&lt;div&gt;
+\begin{equation} \nonumber
+\frac{1}{2}(-1) + u_{22} = 2 \Rightarrow u_{22} = 2 + \frac{1}{2} = \frac{5}{2}.
+\end{equation} 
+&lt;/div&gt;
+比较第二行第三列：
+&lt;div&gt;
+\begin{equation} \nonumber
+l_{21} u_{13} + u_{23} = 1.
+\end{equation} 
+&lt;/div&gt;
+代入 $u_{13} = 3 $：
+&lt;div&gt;
+\begin{equation} \nonumber
+\frac{1}{2}(3) + u_{23} = 1 \Rightarrow \frac{3}{2} + u_{23} = 1 \Rightarrow u_{23} = -\frac{1}{2}.
+\end{equation} 
+&lt;/div&gt;
+**步骤 5：求 $L $ 的第二列**
+比较第三行第二列：
+&lt;div&gt;
+\begin{equation} \nonumber
+l_{31} u_{12} + l_{32} u_{22} = 4.
+\end{equation} 
+&lt;/div&gt;
+代入 $l_{31} = 1, u_{12} = -1, u_{22} = \frac{5}{2} $：
+&lt;div&gt;
+\begin{equation} \nonumber
+1(-1) + l_{32} \cdot \frac{5}{2} = 4.
+\end{equation} 
+&lt;/div&gt;
+解得：
+&lt;div&gt;
+\begin{equation} \nonumber
+l_{32} = \frac{4 + 1}{5/2} = \frac{5}{5/2} = 2.
+\end{equation} 
+&lt;/div&gt;
+**步骤 6：求 $U $ 的第三行**
+比较第三行第三列：
+&lt;div&gt;
+\begin{equation} \nonumber
+l_{31} u_{13} + l_{32} u_{23} + u_{33} = 3.
+\end{equation} 
+&lt;/div&gt;
+代入 $l_{31} = 1, u_{13} = 3, l_{32} = 2, u_{23} = -\frac{1}{2} $：
+&lt;div&gt;
+\begin{equation} \nonumber
+1(3) + 2 \left(-\frac{1}{2} \right) + u_{33} = 3.
+\end{equation} 
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation} \nonumber
+3 - 1 + u_{33} = 3 \Rightarrow u_{33} = 1.
+\end{equation} 
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;最终结果&lt;/strong&gt;&lt;/p&gt;
+&lt;div&gt;
+\begin{equation} \nonumber
+L = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ \frac{1}{2} &amp; 1 &amp; 0 \\ 1 &amp; 2 &amp; 1 \end{bmatrix},
+\quad
+U = \begin{bmatrix} 2 &amp; -1 &amp; 3 \\ 0 &amp; \frac{5}{2} &amp; -\frac{1}{2} \\ 0 &amp; 0 &amp; 1 \end{bmatrix}.
+\end{equation} 
+&lt;/div&gt;
+验证：
+&lt;div&gt;
+\begin{equation} \nonumber
+LU =
+\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ \frac{1}{2} &amp; 1 &amp; 0 \\ 1 &amp; 2 &amp; 1 \end{bmatrix}
+\begin{bmatrix} 2 &amp; -1 &amp; 3 \\ 0 &amp; \frac{5}{2} &amp; -\frac{1}{2} \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+=
+\begin{bmatrix} 2 &amp; -1 &amp; 3 \\ 1 &amp; 2 &amp; 1 \\ 2 &amp; 4 &amp; 3 \end{bmatrix} = A.
+\end{equation} 
+&lt;/div&gt;
+&lt;p&gt;**注：**也可以用初等行变换求三角分解，但是方法用的不多就不介绍了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定理-ldr-分解&#34;&gt;&lt;strong&gt;定理 ：LDR 分解&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$ 是&lt;strong&gt;非奇异矩阵&lt;/strong&gt;，则存在&lt;strong&gt;唯一的&lt;/strong&gt;单位下三角矩阵 $L$，对角矩阵：
+\begin{equation}\nonumber
+D = \text{diag}(d_1, d_2, \dots, d_n)
+\end{equation}
+和单位上三角矩阵 $R$ 使得：
+\begin{equation}\nonumber
+A = L D R。
+\end{equation}&lt;/p&gt;
+&lt;p&gt;该分解成立的&lt;strong&gt;充要条件&lt;/strong&gt;是 $A$ 的&lt;strong&gt;顺序主子式均非零&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分析&lt;/strong&gt;：
+因为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
+l_{21} &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \\
+l_{31} &amp; l_{32} &amp; 1 &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+l_{n1} &amp; l_{n2} &amp; l_{n3} &amp; \cdots &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+d_1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; d_2 &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; 0 &amp; d_3 &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; d_n
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; r_{12} &amp; r_{13} &amp; \cdots &amp; r_{1n} \\
+0 &amp; 1 &amp; r_{23} &amp; \cdots &amp; r_{2n} \\
+0 &amp; 0 &amp; 1 &amp; \cdots &amp; r_{3n} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1
+\end{bmatrix}
+=
+A
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;那么为什么要进行三角分解呢？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;应用&lt;/strong&gt;：
+如果&lt;strong&gt;线性方程组&lt;/strong&gt; $Ax = b$ 的系数矩阵 $A$ 可以进行&lt;strong&gt;LR 分解&lt;/strong&gt;：
+\begin{equation}\nonumber
+A = L R，
+\end{equation}
+则方程组：
+\begin{equation}\nonumber
+Ax = b
+\end{equation}
+等价于以下两个方程：
+\begin{equation}\nonumber
+Ly = b, \quad Rx = y。
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例 2&lt;/strong&gt;：
+设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+2 &amp; -1 &amp; 3 \\
+1 &amp; 2 &amp; 1 \\
+2 &amp; 4 &amp; 3
+\end{bmatrix}, \quad
+b =
+\begin{bmatrix}
+-3 \\
+4 \\
+7
+\end{bmatrix}。
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;求解方程组：
+\begin{equation}\nonumber
+Ax = b。
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解&lt;/strong&gt;：
+&lt;strong&gt;由例 1 可知&lt;/strong&gt;：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = L R =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+\frac{1}{2} &amp; 1 &amp; 0 \\
+1 &amp; 2 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+2 &amp; -1 &amp; 3 \\
+0 &amp; \frac{5}{2} &amp; -\frac{1}{2} \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}。
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由&lt;strong&gt;前向代入&lt;/strong&gt;求解：
+\begin{equation}\nonumber
+Ly = b：
+\end{equation}
+\begin{equation}\nonumber
+y_1 = b_1 = -3,
+\end{equation}
+\begin{equation}\nonumber
+y_2 = b_2 - l_{21} y_1 = 4 - \frac{1}{2} (-3) = \frac{11}{2}，
+\end{equation}
+\begin{equation}\nonumber
+y_3 = b_3 - l_{31} y_1 - l_{32} y_2 = 7 - (1)(-3) - (2) \times \frac{11}{2} = -1。
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由&lt;strong&gt;后向代入&lt;/strong&gt;求解：
+\begin{equation}\nonumber
+Rx = y：
+\end{equation}
+\begin{equation}\nonumber
+x_3 = \frac{y_3}{r_{33}} = \frac{-1}{1} = -1，
+\end{equation}
+\begin{equation}\nonumber
+x_2 = \frac{1}{r_{22}} (y_2 - r_{23} x_3) = \frac{1}{\frac{5}{2}} \left(\frac{11}{2} - (-\frac{1}{2}) (-1) \right) = 2，
+\end{equation}
+\begin{equation}\nonumber
+x_1 = \frac{1}{r_{11}} (y_1 - r_{12} x_2 - r_{13} x_3) = \frac{1}{2} (-3 - (-1)(2) - (3)(-1)) = 1。
+\end{equation}&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定理-3cholesky乔列斯基分解&#34;&gt;&lt;strong&gt;定理 3（Cholesky（乔列斯基）分解）&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$ 是 &lt;strong&gt;Hermite 正定矩阵&lt;/strong&gt;，则存在&lt;strong&gt;下三角矩阵&lt;/strong&gt; $G$ 使得：
+\begin{equation}\nonumber
+A = G G^H。
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：
+因为 $A$ &lt;strong&gt;正定&lt;/strong&gt;，所以&lt;strong&gt;顺序主子式均大于零&lt;/strong&gt;。&lt;br&gt;
+由&lt;strong&gt;定理 2（LDR 分解）&lt;/strong&gt;，$A$ 具有&lt;strong&gt;唯一的 LDR 分解&lt;/strong&gt;。&lt;br&gt;
+又因 $A$ &lt;strong&gt;是 Hermite 矩阵&lt;/strong&gt;，由&lt;strong&gt;LDR 分解的唯一性&lt;/strong&gt;，可得：
+\begin{equation}\nonumber
+R = L^H，
+\end{equation}
+因此：
+\begin{equation}\nonumber
+A = L D L^H。
+\end{equation}&lt;/p&gt;
+&lt;p&gt;设：
+\begin{equation}\nonumber
+D = \text{diag}(d_1, d_2, \dots, d_n)，
+\end{equation}
+令：
+\begin{equation}\nonumber
+G = L \text{diag}(\sqrt{d_1}, \sqrt{d_2}, \dots, \sqrt{d_n})，
+\end{equation}
+则：
+\begin{equation}\nonumber
+A = G G^H。
+\end{equation}&lt;/p&gt;
+&lt;h2 id=&#34;qr分解&#34;&gt;QR分解
+&lt;/h2&gt;&lt;h3 id=&#34;定理qr分解的存在于唯一性&#34;&gt;&lt;strong&gt;定理&lt;/strong&gt;：QR分解的存在于唯一性
+&lt;/h3&gt;&lt;p&gt;设&lt;strong&gt;满秩方阵&lt;/strong&gt; $A \in \mathbb{R}^{n \times n}$，则存在&lt;strong&gt;正交矩阵&lt;/strong&gt; $Q$ 及&lt;strong&gt;正线性上三角矩阵&lt;/strong&gt; $R$，满足：
+\begin{equation}\nonumber
+A = QR，
+\end{equation}
+且&lt;strong&gt;分解唯一&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：
+由于：
+\begin{equation}\nonumber
+r(A) = n，
+\end{equation}
+故 $A$ 的 $n$ 个&lt;strong&gt;列向量&lt;/strong&gt; $x_1, x_2, \dots, x_n$ 线性无关，即：
+\begin{equation}\nonumber
+A = (x_1, x_2, \dots, x_n)。
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由&lt;strong&gt;正交化过程&lt;/strong&gt;，可得 $\mathbb{R}^n$ &lt;strong&gt;的一组标准正交基&lt;/strong&gt;：
+\begin{equation}\nonumber
+(x_1, x_2, \dots, x_n) = (z_1, z_2, \dots, z_n)，
+\end{equation}
+且：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+(x_1, x_2, \dots, x_n) =
+\begin{bmatrix}
+\| y_1 \| &amp; (x_2, z_1) &amp; \dots &amp; (x_n, z_1) \\
+0 &amp; \| y_2 \| &amp; \dots &amp; (x_n, z_2) \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \dots &amp; \| y_n \|
+\end{bmatrix}
+\begin{bmatrix}
+z_1 &amp; z_2 &amp; \dots &amp; z_n
+\end{bmatrix}。
+\end{equation}
+&lt;/div&gt;
+令：
+\begin{equation}\nonumber
+Q = (z_1, z_2, \dots, z_n)，
+\end{equation}
+$R$ 为另外一个因子，则：
+\begin{equation}\nonumber
+A = Q R。
+\end{equation}
+&lt;p&gt;由于：
+\begin{equation}\nonumber
+Q^T Q = (z_1, z_2, \dots, z_n)^T (z_1, z_2, \dots, z_n) = (z_i^T z_j)_{n \times n} = I_n，
+\end{equation}
+故 $Q$ &lt;strong&gt;为正交矩阵&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;唯一性证明&lt;/strong&gt;：
+设：
+\begin{equation}\nonumber
+A = Q_1 R_1 = Q_2 R_2，
+\end{equation}
+则：
+\begin{equation}\nonumber
+Q_1 = Q_2 R_2 R_1^{-1} = Q_2 D，
+\end{equation}
+其中：
+\begin{equation}\nonumber
+D = R_2 R_1^{-1}。
+\end{equation}
+由于 $D$ &lt;strong&gt;仍然是正线性上三角矩阵&lt;/strong&gt;，且：
+\begin{equation}\nonumber
+I = Q_1^T Q_1 = (Q_2 D)^T (Q_2 D) = D^T Q_2^T Q_2 D = D^T D，
+\end{equation}
+因此 $D$ &lt;strong&gt;为正交矩阵&lt;/strong&gt;。但 $D$ &lt;strong&gt;又是正线性上三角矩阵&lt;/strong&gt;，故：
+\begin{equation}\nonumber
+D = I，
+\end{equation}
+因此：
+\begin{equation}\nonumber
+R_1 = R_2，
+\end{equation}
+进而：
+\begin{equation}\nonumber
+Q_1 = Q_2。
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;推论-1&#34;&gt;&lt;strong&gt;推论 1&lt;/strong&gt;：
+&lt;/h3&gt;&lt;p&gt;设&lt;strong&gt;满秩方阵&lt;/strong&gt; $A \in \mathbb{C}^{n \times n}$，则存在 &lt;strong&gt;酉矩阵&lt;/strong&gt; $U$ 及&lt;strong&gt;正线性上三角矩阵&lt;/strong&gt; $R$，满足：
+\begin{equation}\nonumber
+A = UR，
+\end{equation}
+且&lt;strong&gt;分解唯一&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;推论-2&#34;&gt;&lt;strong&gt;推论 2&lt;/strong&gt;：
+&lt;/h3&gt;&lt;p&gt;设&lt;strong&gt;列满秩矩阵&lt;/strong&gt; $A \in \mathbb{R}^{m \times n}$ （或 $\mathbb{C}^{m \times n}$），&lt;br&gt;
+则存在&lt;strong&gt;正交矩阵&lt;/strong&gt; $Q$ （或&lt;strong&gt;酉矩阵&lt;/strong&gt; $U$） $\in \mathbb{R}^{m \times m}$ （或 $\mathbb{C}^{m \times m}$），&lt;br&gt;
+使得：
+\begin{equation}\nonumber
+A = Q R = U R，
+\end{equation}
+其中：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+R =
+\begin{bmatrix}
+R_1 \\
+0
+\end{bmatrix}_{m \times n}, \quad (n \leq m)。
+\end{equation}
+&lt;/div&gt;
+### **证明**：
+由于：
+\begin{equation}\nonumber
+r(A) = n，
+\end{equation}
+其 $n$ 个列向量 $x_1, x_2, \dots, x_n$ 线性无关，故可**扩充为** $\mathbb{R}^m$ **的一组基**：
+\begin{equation}\nonumber
+(x_1, x_2, \dots, x_n, x_{n+1}, \dots, x_m)。
+\end{equation}
+&lt;p&gt;定义：
+\begin{equation}\nonumber
+B = (x_1, x_2, \dots, x_n, x_{n+1}, \dots, x_m) = (A, K)。
+\end{equation}
+由于 $B$ &lt;strong&gt;为 $m \times m$ 满秩方阵&lt;/strong&gt;，根据 &lt;strong&gt;定理 1&lt;/strong&gt;，存在&lt;strong&gt;正交矩阵&lt;/strong&gt; $Q \in \mathbb{R}^{m \times m}$ 及&lt;strong&gt;正线性上三角矩阵&lt;/strong&gt; $S \in \mathbb{R}^{m \times m}$，使得：
+\begin{equation}\nonumber
+B = Q S。
+\end{equation}&lt;/p&gt;
+&lt;p&gt;令：
+\begin{equation}\nonumber
+S = (R, S_1)，
+\end{equation}
+其中 $R$ &lt;strong&gt;为 $m \times n$ 矩阵（列满秩）&lt;/strong&gt;，因此：
+\begin{equation}\nonumber
+B = (A, K) = Q S = Q (R, S_1) = (QR, QS_1)。
+\end{equation}&lt;/p&gt;
+&lt;p&gt;最终得到：
+\begin{equation}\nonumber
+A = Q R，
+\end{equation}
+其中：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+R =
+\begin{bmatrix}
+R_1 \\
+0
+\end{bmatrix}，
+\end{equation}
+&lt;/div&gt;
+且 $R_1$ **为正线性上三角矩阵**。
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：
+在上述定理中，如果令 $U_1$ &lt;strong&gt;是&lt;/strong&gt; $U$ &lt;strong&gt;的前&lt;/strong&gt; $n$ &lt;strong&gt;列&lt;/strong&gt;，&lt;br&gt;
+则：
+\begin{equation}\nonumber
+A = U_1 R_1，
+\end{equation}
+其中 $R_1$ &lt;strong&gt;为正线性上三角矩阵&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;：
+设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 &amp; 2 &amp; 2 \\
+2 &amp; 1 &amp; 2 \\
+1 &amp; 2 &amp; 1
+\end{bmatrix}，
+\end{equation}
+&lt;/div&gt;
+求**QR 分解**。
+&lt;p&gt;&lt;strong&gt;解&lt;/strong&gt;：
+设：
+\begin{equation}\nonumber
+A = (x_1, x_2, x_3)，
+\end{equation}
+其中：
+\begin{equation}\nonumber
+x_1 = (1,2,1)^T, \quad
+x_2 = (2,1,2)^T, \quad
+x_3 = (3,2,1)^T。
+\end{equation}&lt;/p&gt;
+&lt;p&gt;可以验证：
+\begin{equation}\nonumber
+r(A) = 3，
+\end{equation}
+所以 $A$ &lt;strong&gt;满秩&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;正交化&lt;/strong&gt;：
+\begin{equation}\nonumber
+y_1 = (1,2,1)^T, \quad
+y_2 = (1,-1,1)^T, \quad
+y_3 = \left( \frac{1}{2}, 0, -\frac{1}{2} \right)^T。
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;单位化&lt;/strong&gt;：
+\begin{equation}\nonumber
+z_1 = \left( \frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}} \right)^T，
+\quad
+z_2 = \left( \frac{-1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}} \right)^T，
+\quad
+z_3 = \left( \frac{1}{\sqrt{2}}, 0, -\frac{1}{\sqrt{2}} \right)^T。
+\end{equation}
+&lt;strong&gt;QR 分解&lt;/strong&gt;：
+令：
+\begin{equation}\nonumber
+Q = (z_1, z_2, z_3)，
+\end{equation}
+则：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+R =
+\begin{bmatrix}
+\| y_1 \| &amp; (x_2, z_1) &amp; (x_3, z_1) \\
+0 &amp; \| y_2 \| &amp; (x_3, z_2) \\
+0 &amp; 0 &amp; \| y_3 \|
+\end{bmatrix}
+=
+\begin{bmatrix}
+\sqrt{6} &amp; \sqrt{6} &amp; \frac{7}{\sqrt{6}} \\
+0 &amp; \sqrt{3} &amp; \frac{1}{\sqrt{3}} \\
+0 &amp; 0 &amp; \frac{1}{\sqrt{2}}
+\end{bmatrix}。
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;因此：
+\begin{equation}\nonumber
+A = QR。
+\end{equation}&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>矩阵理论系列笔记3：矩阵分解</title>
         <link>https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B03%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/</link>
         <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
@@ -4059,678 +4732,6 @@ Go 安装说明见官网: &lt;a class=&#34;link&#34; href=&#34;https://go.dev/do
         
         <guid>https://LiuGuilongustb.github.io/p/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B2dqn%E7%AE%97%E6%B3%95%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/</guid>
         <description></description>
-        </item>
-        <item>
-        <title>矩阵理论系列笔记2：矩阵的分解</title>
-        <link>https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B02%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%86%E8%A7%A3/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B02%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%86%E8%A7%A3/</guid>
-        <description>&lt;h2 id=&#34;三角分解&#34;&gt;三角分解
-&lt;/h2&gt;&lt;h3 id=&#34;定义单位三角矩阵&#34;&gt;定义：单位三角矩阵
-&lt;/h3&gt;&lt;p&gt;如果上（下）三角矩阵 $A \in \mathbb{C}^{n \times n}$ 的对角线&lt;strong&gt;全为 1&lt;/strong&gt;，则称 $A$ 为&lt;strong&gt;单位上（下）三角矩阵&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;两个单位上（下）三角矩阵的乘积仍然是单位上（下）三角矩阵&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;单位上（下）三角矩阵的逆也是单位上（下）三角矩阵&lt;/strong&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;定理lr三角分解的充要条件&#34;&gt;定理：LR三角分解的充要条件
-&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$ 是&lt;strong&gt;非奇异矩阵&lt;/strong&gt;，则存在&lt;strong&gt;唯一的&lt;/strong&gt;单位下三角矩阵 $L$ 和上三角矩阵 $R$ 使得：&lt;/p&gt;
-&lt;div&gt;
-\begin{equation}\nonumber
-A = L R。
-\end{equation}
-&lt;/div&gt;
-&lt;p&gt;该分解成立的&lt;strong&gt;充要条件&lt;/strong&gt;是 $A$ 的&lt;strong&gt;顺序主子式均非零&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;必要性&lt;/strong&gt;：
-如果存在&lt;strong&gt;单位下三角矩阵&lt;/strong&gt; $L$ 和&lt;strong&gt;上三角矩阵&lt;/strong&gt; $R$ 使得：&lt;/p&gt;
-&lt;div&gt;
-\begin{equation}\nonumber
-A = L R，
-\end{equation}
-&lt;/div&gt;
-则：
-&lt;div&gt;
-\begin{equation}\nonumber
-|A| = r_{11} r_{22} \dots r_{nn}，
-\end{equation}
-&lt;/div&gt;
-其中 $r_{ii}$ 是 $R$ 的对角线元素。由于 $A$ **非奇异**，所以 $r_{ii} \neq 0$。
-&lt;p&gt;将 $A = L R$ &lt;strong&gt;作矩阵分块&lt;/strong&gt;：&lt;/p&gt;
-&lt;div&gt;
-\begin{equation}\nonumber
-\begin{bmatrix}
-A_{11} &amp; A_{12} \\
-A_{21} &amp; A_{22}
-\end{bmatrix}
-=
-\begin{bmatrix}
-L_{11} &amp; 0 \\
-L_{21} &amp; L_{22}
-\end{bmatrix}
-\begin{bmatrix}
-R_{11} &amp; R_{12} \\
-0 &amp; R_{22}
-\end{bmatrix}。
-\end{equation}
-&lt;/div&gt;
-其中 $A_{11}, L_{11}, R_{11}$ 分别是 $A, L, R$ 的 $k$ 阶**顺序主子式**。
-于是：
-&lt;div&gt;
-\begin{equation}\nonumber
-|A_{11}| = |L_{11} R_{11}| = |R_{11}| = r_{11} r_{22} \dots r_{kk} \neq 0。
-\end{equation}
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;充分性&lt;/strong&gt;：
-用&lt;strong&gt;数学归纳法&lt;/strong&gt;证明。&lt;/p&gt;
-&lt;p&gt;当 $A$ 的阶数为 1 时，显然成立。&lt;/p&gt;
-&lt;p&gt;假设分解式当 $A$ 的阶数为 $n$ 时成立，考虑当阶数为 $n+1$ 时&amp;hellip;&lt;/p&gt;
-&lt;div&gt;
-\begin{equation}\nonumber
-\Lambda_{n+1} =
-\begin{bmatrix}
-A_n &amp; a_n \\
-\beta_n &amp; a_{n+1,n+1}
-\end{bmatrix}
-\end{equation}
-&lt;/div&gt;
-&lt;div&gt;
-\begin{equation}\nonumber
-=
-\begin{bmatrix}
-L_n &amp; 0 \\
-\beta_n R_n^{-1} &amp; 1
-\end{bmatrix}
-\begin{bmatrix}
-R_n &amp; L_n^{-1} a_n \\
-0 &amp; a_{n+1,n+1} - \beta_n R_n^{-1} L_n^{-1} a_n
-\end{bmatrix}
-\end{equation}
-&lt;/div&gt;
-&lt;p&gt;其中：&lt;/p&gt;
-&lt;div&gt;
-\begin{equation}
-\nonumber
-a_n = 
-\begin{bmatrix}
-a_{1,n+1}, a_{2,n+1}, \dots, a_{n,n+1}
-\end{bmatrix}^T，
-\end{equation}
-&lt;/div&gt;
-&lt;div&gt;
-\begin{equation}\nonumber
-\beta_n = 
-\begin{bmatrix}
-a_{n+1,1}, a_{n+1,2}, \dots, a_{n+1,n}
-\end{bmatrix}。
-\end{equation}
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;唯一性&lt;/strong&gt;：
-设 $A = L R = L_1 R_1$，其中：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;$L, L_1$ 是&lt;strong&gt;单位下三角矩阵&lt;/strong&gt;，&lt;/li&gt;
-&lt;li&gt;$R, R_1$ 是&lt;strong&gt;可逆上三角矩阵&lt;/strong&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;则：
-\begin{equation}\nonumber
-L_1^{-1} L = R_1 R^{-1}。
-\end{equation}&lt;/p&gt;
-&lt;p&gt;上式左边是&lt;strong&gt;单位下三角矩阵&lt;/strong&gt;，右边是&lt;strong&gt;上三角矩阵&lt;/strong&gt;，因此：
-\begin{equation}\nonumber
-L_1^{-1} L = R_1 R^{-1} = I，
-\end{equation}
-所以：
-\begin{equation}\nonumber
-L_1 = L, \quad R_1 = R。
-\end{equation}
-定理得证。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;定理 1 中若将 $L$ 改为&lt;/strong&gt; &lt;strong&gt;下三角矩阵&lt;/strong&gt;，$R$ &lt;strong&gt;改为单位上三角矩阵&lt;/strong&gt;，结论仍然成立。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;下面我们将要介绍如何计算矩阵的三角分解，首先我们会给出一个公式，公式当然可以套用，但是任何阅读本博客的同学都不建议记这个公式，如果阶数小，就一个一个自己算，如果阶数高就直接用公式扔matlab里面算，考试等本身绝不会考到n阶矩阵的三角分解，所以下面的公式有个印象，如果需要能到这里找到就行，不要浪费脑细胞。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;分解方法&lt;/strong&gt;：
-由：&lt;/p&gt;
-&lt;div&gt;
-\begin{equation} \nonumber
-\begin{bmatrix}
-a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
-a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn}
-\end{bmatrix}
-=
-\begin{bmatrix}
-1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
-l_{21} &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \\
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
-l_{n1} &amp; l_{n2} &amp; \cdots &amp; l_{nn}
-\end{bmatrix}
-\begin{bmatrix}
-r_{11} &amp; r_{12} &amp; \cdots &amp; r_{1n} \\
-0 &amp; r_{22} &amp; \cdots &amp; r_{2n} \\
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-0 &amp; 0 &amp; \cdots &amp; r_{nn}
-\end{bmatrix}
-\end{equation} 
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;得：&lt;/strong&gt;
-\begin{equation}\nonumber
-\begin{cases}
-r_{jj} = a_{jj}, &amp;amp; j = 1, \dots, n, \
-l_{ij} = \frac{a_{ij}}{r_{jj}}, &amp;amp; j = 2, \dots, n, \
-r_{ik} = a_{ik} - \sum_{s=1}^{k-1} l_{is} r_{sk}, &amp;amp; k = 2, \dots, n, \quad i = k+1, \dots, n, \
-l_{ik} = \frac{1}{r_{kk}} \left( a_{ik} - \sum_{s=1}^{k-1} l_{is} r_{sk} \right), &amp;amp; k = 2, \dots, n, \quad i = k+1, \dots, n。
-\end{cases}
-\end{equation}&lt;/p&gt;
-&lt;p&gt;那么不用上面的公式如何计算矩阵的三角分解请看下面的例题。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;例子&lt;/strong&gt; 求矩阵 $A $ 的 &lt;strong&gt;LU 分解&lt;/strong&gt;，即找到一个&lt;strong&gt;下三角矩阵&lt;/strong&gt; $L $ 和一个&lt;strong&gt;上三角矩阵&lt;/strong&gt; $U $，使得：&lt;/p&gt;
-&lt;div&gt;
-\begin{equation} \nonumber
-A = LU.
-\end{equation} 
-&lt;/div&gt;
-其中：
-&lt;div&gt;
-\begin{equation} \nonumber
-A = \begin{bmatrix} 2 &amp; -1 &amp; 3 \\ 1 &amp; 2 &amp; 1 \\ 2 &amp; 4 &amp; 3 \end{bmatrix}.
-\end{equation} 
-&lt;/div&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;步骤 1：初始化 $L $ 和 $U $&lt;/strong&gt;
-设：&lt;/p&gt;
-&lt;div&gt;
-\begin{equation} \nonumber
-L = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ l_{21} &amp; 1 &amp; 0 \\ l_{31} &amp; l_{32} &amp; 1 \end{bmatrix},
-\quad
-U = \begin{bmatrix} u_{11} &amp; u_{12} &amp; u_{13} \\ 0 &amp; u_{22} &amp; u_{23} \\ 0 &amp; 0 &amp; u_{33} \end{bmatrix}.
-\end{equation} 
-&lt;/div&gt;
-要求解 $A = LU $，即：
-&lt;div&gt;
-\begin{equation} \nonumber
-\begin{bmatrix} 2 &amp; -1 &amp; 3 \\ 1 &amp; 2 &amp; 1 \\ 2 &amp; 4 &amp; 3 \end{bmatrix}
-=
-\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ l_{21} &amp; 1 &amp; 0 \\ l_{31} &amp; l_{32} &amp; 1 \end{bmatrix}
-\begin{bmatrix} u_{11} &amp; u_{12} &amp; u_{13} \\ 0 &amp; u_{22} &amp; u_{23} \\ 0 &amp; 0 &amp; u_{33} \end{bmatrix}.
-\end{equation} 
-&lt;/div&gt;
-**步骤 2：求 $U $ 的第一行**
-从矩阵乘法的第一行展开：
-&lt;div&gt;
-\begin{equation} \nonumber
-\begin{bmatrix} u_{11} &amp; u_{12} &amp; u_{13} \\ l_{21} u_{11} &amp; l_{21} u_{12} + u_{22} &amp; l_{21} u_{13} + u_{23} \\ l_{31} u_{11} &amp; l_{31} u_{12} + l_{32} u_{22} &amp; l_{31} u_{13} + l_{32} u_{23} + u_{33} \end{bmatrix}
-=
-\begin{bmatrix} 2 &amp; -1 &amp; 3 \\ 1 &amp; 2 &amp; 1 \\ 2 &amp; 4 &amp; 3 \end{bmatrix}.
-\end{equation} 
-&lt;/div&gt;
-比较第一行的系数：
-&lt;div&gt;
-\begin{equation} \nonumber
-u_{11} = 2, \quad u_{12} = -1, \quad u_{13} = 3.
-\end{equation} 
-&lt;/div&gt;
-**步骤 3：求 $L $ 的第一列**
-比较第二行第一列的元素：
-&lt;div&gt;
-\begin{equation} \nonumber
-l_{21} u_{11} = 1 \Rightarrow l_{21} = \frac{1}{2}.
-\end{equation} 
-&lt;/div&gt;
-比较第三行第一列的元素：
-&lt;div&gt;
-\begin{equation} \nonumber
-l_{31} u_{11} = 2 \Rightarrow l_{31} = \frac{2}{2} = 1.
-\end{equation} 
-&lt;/div&gt;
-**步骤 4：求 $U $ 的第二行**
-比较第二行第二列：
-&lt;div&gt;
-\begin{equation} \nonumber
-l_{21} u_{12} + u_{22} = 2.
-\end{equation} 
-&lt;/div&gt;
-代入 $l_{21} = \frac{1}{2}, u_{12} = -1 $：
-&lt;div&gt;
-\begin{equation} \nonumber
-\frac{1}{2}(-1) + u_{22} = 2 \Rightarrow u_{22} = 2 + \frac{1}{2} = \frac{5}{2}.
-\end{equation} 
-&lt;/div&gt;
-比较第二行第三列：
-&lt;div&gt;
-\begin{equation} \nonumber
-l_{21} u_{13} + u_{23} = 1.
-\end{equation} 
-&lt;/div&gt;
-代入 $u_{13} = 3 $：
-&lt;div&gt;
-\begin{equation} \nonumber
-\frac{1}{2}(3) + u_{23} = 1 \Rightarrow \frac{3}{2} + u_{23} = 1 \Rightarrow u_{23} = -\frac{1}{2}.
-\end{equation} 
-&lt;/div&gt;
-**步骤 5：求 $L $ 的第二列**
-比较第三行第二列：
-&lt;div&gt;
-\begin{equation} \nonumber
-l_{31} u_{12} + l_{32} u_{22} = 4.
-\end{equation} 
-&lt;/div&gt;
-代入 $l_{31} = 1, u_{12} = -1, u_{22} = \frac{5}{2} $：
-&lt;div&gt;
-\begin{equation} \nonumber
-1(-1) + l_{32} \cdot \frac{5}{2} = 4.
-\end{equation} 
-&lt;/div&gt;
-解得：
-&lt;div&gt;
-\begin{equation} \nonumber
-l_{32} = \frac{4 + 1}{5/2} = \frac{5}{5/2} = 2.
-\end{equation} 
-&lt;/div&gt;
-**步骤 6：求 $U $ 的第三行**
-比较第三行第三列：
-&lt;div&gt;
-\begin{equation} \nonumber
-l_{31} u_{13} + l_{32} u_{23} + u_{33} = 3.
-\end{equation} 
-&lt;/div&gt;
-代入 $l_{31} = 1, u_{13} = 3, l_{32} = 2, u_{23} = -\frac{1}{2} $：
-&lt;div&gt;
-\begin{equation} \nonumber
-1(3) + 2 \left(-\frac{1}{2} \right) + u_{33} = 3.
-\end{equation} 
-&lt;/div&gt;
-&lt;div&gt;
-\begin{equation} \nonumber
-3 - 1 + u_{33} = 3 \Rightarrow u_{33} = 1.
-\end{equation} 
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;最终结果&lt;/strong&gt;&lt;/p&gt;
-&lt;div&gt;
-\begin{equation} \nonumber
-L = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ \frac{1}{2} &amp; 1 &amp; 0 \\ 1 &amp; 2 &amp; 1 \end{bmatrix},
-\quad
-U = \begin{bmatrix} 2 &amp; -1 &amp; 3 \\ 0 &amp; \frac{5}{2} &amp; -\frac{1}{2} \\ 0 &amp; 0 &amp; 1 \end{bmatrix}.
-\end{equation} 
-&lt;/div&gt;
-验证：
-&lt;div&gt;
-\begin{equation} \nonumber
-LU =
-\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ \frac{1}{2} &amp; 1 &amp; 0 \\ 1 &amp; 2 &amp; 1 \end{bmatrix}
-\begin{bmatrix} 2 &amp; -1 &amp; 3 \\ 0 &amp; \frac{5}{2} &amp; -\frac{1}{2} \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
-=
-\begin{bmatrix} 2 &amp; -1 &amp; 3 \\ 1 &amp; 2 &amp; 1 \\ 2 &amp; 4 &amp; 3 \end{bmatrix} = A.
-\end{equation} 
-&lt;/div&gt;
-&lt;h2 id=&#34;注也可以用初等行变换求三角分解但是方法用的不多就不介绍了&#34;&gt;**注：**也可以用初等行变换求三角分解，但是方法用的不多就不介绍了。
-&lt;/h2&gt;&lt;h3 id=&#34;定理-ldr-分解&#34;&gt;&lt;strong&gt;定理 ：LDR 分解&lt;/strong&gt;
-&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$ 是&lt;strong&gt;非奇异矩阵&lt;/strong&gt;，则存在&lt;strong&gt;唯一的&lt;/strong&gt;单位下三角矩阵 $L$，对角矩阵：
-\begin{equation}\nonumber
-D = \text{diag}(d_1, d_2, \dots, d_n)
-\end{equation}
-和单位上三角矩阵 $R$ 使得：
-\begin{equation}\nonumber
-A = L D R。
-\end{equation}&lt;/p&gt;
-&lt;p&gt;该分解成立的&lt;strong&gt;充要条件&lt;/strong&gt;是 $A$ 的&lt;strong&gt;顺序主子式均非零&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;分析&lt;/strong&gt;：
-因为：&lt;/p&gt;
-&lt;div&gt;
-\begin{equation}
-\begin{bmatrix}
-1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
-l_{21} &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \\
-l_{31} &amp; l_{32} &amp; 1 &amp; \cdots &amp; 0 \\
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-l_{n1} &amp; l_{n2} &amp; l_{n3} &amp; \cdots &amp; 1
-\end{bmatrix}
-\begin{bmatrix}
-d_1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
-0 &amp; d_2 &amp; 0 &amp; \cdots &amp; 0 \\
-0 &amp; 0 &amp; d_3 &amp; \cdots &amp; 0 \\
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-0 &amp; 0 &amp; 0 &amp; \cdots &amp; d_n
-\end{bmatrix}
-\begin{bmatrix}
-1 &amp; r_{12} &amp; r_{13} &amp; \cdots &amp; r_{1n} \\
-0 &amp; 1 &amp; r_{23} &amp; \cdots &amp; r_{2n} \\
-0 &amp; 0 &amp; 1 &amp; \cdots &amp; r_{3n} \\
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1
-\end{bmatrix}
-=
-A
-\end{equation}
-&lt;/div&gt;
-&lt;p&gt;那么为什么要进行三角分解呢？&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;应用&lt;/strong&gt;：
-如果&lt;strong&gt;线性方程组&lt;/strong&gt; $Ax = b$ 的系数矩阵 $A$ 可以进行&lt;strong&gt;LR 分解&lt;/strong&gt;：
-\begin{equation}\nonumber
-A = L R，
-\end{equation}\nonumber
-则方程组：
-\begin{equation}\nonumber
-Ax = b
-\end{equation}\nonumber
-等价于以下两个方程：
-\begin{equation}\nonumber
-Ly = b, \quad Rx = y。
-\end{equation}\nonumber&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;例 2&lt;/strong&gt;：
-设：&lt;/p&gt;
-&lt;div&gt;
-\begin{equation}\nonumber
-A =
-\begin{bmatrix}
-2 &amp; -1 &amp; 3 \\
-1 &amp; 2 &amp; 1 \\
-2 &amp; 4 &amp; 3
-\end{bmatrix}, \quad
-b =
-\begin{bmatrix}
--3 \\
-4 \\
-7
-\end{bmatrix}。
-\end{equation}\nonumber
-&lt;/div&gt;
-&lt;p&gt;求解方程组：
-\begin{equation}\nonumber
-Ax = b。
-\end{equation}\nonumber&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;解&lt;/strong&gt;：
-&lt;strong&gt;由例 1 可知&lt;/strong&gt;：&lt;/p&gt;
-&lt;div&gt;
-\begin{equation}\nonumber
-A = L R =
-\begin{bmatrix}
-1 &amp; 0 &amp; 0 \\
-\frac{1}{2} &amp; 1 &amp; 0 \\
-1 &amp; 2 &amp; 1
-\end{bmatrix}
-\begin{bmatrix}
-2 &amp; -1 &amp; 3 \\
-0 &amp; \frac{5}{2} &amp; -\frac{1}{2} \\
-0 &amp; 0 &amp; 1
-\end{bmatrix}。
-\end{equation}\nonumber
-&lt;/div&gt;
-&lt;p&gt;由&lt;strong&gt;前向代入&lt;/strong&gt;求解：
-\begin{equation}\nonumber
-Ly = b：
-\end{equation}\nonumber
-\begin{equation}\nonumber
-y_1 = b_1 = -3,
-\end{equation}\nonumber
-\begin{equation}\nonumber
-y_2 = b_2 - l_{21} y_1 = 4 - \frac{1}{2} (-3) = \frac{11}{2}，
-\end{equation}\nonumber
-\begin{equation}\nonumber
-y_3 = b_3 - l_{31} y_1 - l_{32} y_2 = 7 - (1)(-3) - (2) \times \frac{11}{2} = -1。
-\end{equation}\nonumber&lt;/p&gt;
-&lt;p&gt;由&lt;strong&gt;后向代入&lt;/strong&gt;求解：
-\begin{equation}\nonumber
-Rx = y：
-\end{equation}\nonumber
-\begin{equation}\nonumber
-x_3 = \frac{y_3}{r_{33}} = \frac{-1}{1} = -1，
-\end{equation}\nonumber
-\begin{equation}\nonumber
-x_2 = \frac{1}{r_{22}} (y_2 - r_{23} x_3) = \frac{1}{\frac{5}{2}} \left(\frac{11}{2} - (-\frac{1}{2}) (-1) \right) = 2，
-\end{equation}\nonumber
-\begin{equation}\nonumber
-x_1 = \frac{1}{r_{11}} (y_1 - r_{12} x_2 - r_{13} x_3) = \frac{1}{2} (-3 - (-1)(2) - (3)(-1)) = 1。
-\end{equation}\nonumber&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;定理-3cholesky乔列斯基分解&#34;&gt;&lt;strong&gt;定理 3（Cholesky（乔列斯基）分解）&lt;/strong&gt;
-&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$ 是 &lt;strong&gt;Hermite 正定矩阵&lt;/strong&gt;，则存在&lt;strong&gt;下三角矩阵&lt;/strong&gt; $G$ 使得：
-\begin{equation}\nonumber
-A = G G^H。
-\end{equation}\nonumber&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：
-因为 $A$ &lt;strong&gt;正定&lt;/strong&gt;，所以&lt;strong&gt;顺序主子式均大于零&lt;/strong&gt;。&lt;br&gt;
-由&lt;strong&gt;定理 2（LDR 分解）&lt;/strong&gt;，$A$ 具有&lt;strong&gt;唯一的 LDR 分解&lt;/strong&gt;。&lt;br&gt;
-又因 $A$ &lt;strong&gt;是 Hermite 矩阵&lt;/strong&gt;，由&lt;strong&gt;LDR 分解的唯一性&lt;/strong&gt;，可得：
-\begin{equation}\nonumber
-R = L^H，
-\end{equation}\nonumber
-因此：
-\begin{equation}\nonumber
-A = L D L^H。
-\end{equation}\nonumber&lt;/p&gt;
-&lt;p&gt;设：
-\begin{equation}\nonumber
-D = \text{diag}(d_1, d_2, \dots, d_n)，
-\end{equation}\nonumber
-令：
-\begin{equation}\nonumber
-G = L \text{diag}(\sqrt{d_1}, \sqrt{d_2}, \dots, \sqrt{d_n})，
-\end{equation}\nonumber
-则：
-\begin{equation}\nonumber
-A = G G^H。
-\end{equation}\nonumber&lt;/p&gt;
-&lt;h2 id=&#34;qr分解&#34;&gt;QR分解
-&lt;/h2&gt;&lt;h3 id=&#34;定理qr分解的存在于唯一性&#34;&gt;&lt;strong&gt;定理&lt;/strong&gt;：QR分解的存在于唯一性
-&lt;/h3&gt;&lt;p&gt;设&lt;strong&gt;满秩方阵&lt;/strong&gt; $A \in \mathbb{R}^{n \times n}$，则存在&lt;strong&gt;正交矩阵&lt;/strong&gt; $Q$ 及&lt;strong&gt;正线性上三角矩阵&lt;/strong&gt; $R$，满足：
-\begin{equation}\nonumber
-A = QR，
-\end{equation}\nonumber
-且&lt;strong&gt;分解唯一&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：
-由于：
-\begin{equation}\nonumber
-r(A) = n，
-\end{equation}\nonumber
-故 $A$ 的 $n$ 个&lt;strong&gt;列向量&lt;/strong&gt; $x_1, x_2, \dots, x_n$ 线性无关，即：
-\begin{equation}\nonumber
-A = (x_1, x_2, \dots, x_n)。
-\end{equation}\nonumber&lt;/p&gt;
-&lt;p&gt;由&lt;strong&gt;正交化过程&lt;/strong&gt;，可得 $\mathbb{R}^n$ &lt;strong&gt;的一组标准正交基&lt;/strong&gt;：
-\begin{equation}\nonumber
-(x_1, x_2, \dots, x_n) = (z_1, z_2, \dots, z_n)，
-\end{equation}\nonumber
-且：&lt;/p&gt;
-&lt;div&gt;
-\begin{equation}\nonumber
-(x_1, x_2, \dots, x_n) =
-\begin{bmatrix}
-\| y_1 \| &amp; (x_2, z_1) &amp; \dots &amp; (x_n, z_1) \\
-0 &amp; \| y_2 \| &amp; \dots &amp; (x_n, z_2) \\
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-0 &amp; 0 &amp; \dots &amp; \| y_n \|
-\end{bmatrix}
-\begin{bmatrix}
-z_1 &amp; z_2 &amp; \dots &amp; z_n
-\end{bmatrix}。
-\end{equation}\nonumber
-&lt;/div&gt;
-令：
-\begin{equation}\nonumber
-Q = (z_1, z_2, \dots, z_n)，
-\end{equation}\nonumber
-$R$ 为另外一个因子，则：
-\begin{equation}\nonumber
-A = Q R。
-\end{equation}\nonumber
-&lt;p&gt;由于：
-\begin{equation}\nonumber
-Q^T Q = (z_1, z_2, \dots, z_n)^T (z_1, z_2, \dots, z_n) = (z_i^T z_j)_{n \times n} = I_n，
-\end{equation}\nonumber
-故 $Q$ &lt;strong&gt;为正交矩阵&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;唯一性证明&lt;/strong&gt;：
-设：
-\begin{equation}\nonumber
-A = Q_1 R_1 = Q_2 R_2，
-\end{equation}\nonumber
-则：
-\begin{equation}\nonumber
-Q_1 = Q_2 R_2 R_1^{-1} = Q_2 D，
-\end{equation}\nonumber
-其中：
-\begin{equation}\nonumber
-D = R_2 R_1^{-1}。
-\end{equation}\nonumber
-由于 $D$ &lt;strong&gt;仍然是正线性上三角矩阵&lt;/strong&gt;，且：
-\begin{equation}\nonumber
-I = Q_1^T Q_1 = (Q_2 D)^T (Q_2 D) = D^T Q_2^T Q_2 D = D^T D，
-\end{equation}\nonumber
-因此 $D$ &lt;strong&gt;为正交矩阵&lt;/strong&gt;。但 $D$ &lt;strong&gt;又是正线性上三角矩阵&lt;/strong&gt;，故：
-\begin{equation}\nonumber
-D = I，
-\end{equation}\nonumber
-因此：
-\begin{equation}\nonumber
-R_1 = R_2，
-\end{equation}\nonumber
-进而：
-\begin{equation}\nonumber
-Q_1 = Q_2。
-\end{equation}\nonumber&lt;/p&gt;
-&lt;h3 id=&#34;推论-1&#34;&gt;&lt;strong&gt;推论 1&lt;/strong&gt;：
-&lt;/h3&gt;&lt;p&gt;设&lt;strong&gt;满秩方阵&lt;/strong&gt; $A \in \mathbb{C}^{n \times n}$，则存在 &lt;strong&gt;酉矩阵&lt;/strong&gt; $U$ 及&lt;strong&gt;正线性上三角矩阵&lt;/strong&gt; $R$，满足：
-\begin{equation}\nonumber
-A = UR，
-\end{equation}\nonumber
-且&lt;strong&gt;分解唯一&lt;/strong&gt;。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;推论-2&#34;&gt;&lt;strong&gt;推论 2&lt;/strong&gt;：
-&lt;/h3&gt;&lt;p&gt;设&lt;strong&gt;列满秩矩阵&lt;/strong&gt; $A \in \mathbb{R}^{m \times n}$ （或 $\mathbb{C}^{m \times n}$），&lt;br&gt;
-则存在&lt;strong&gt;正交矩阵&lt;/strong&gt; $Q$ （或&lt;strong&gt;酉矩阵&lt;/strong&gt; $U$） $\in \mathbb{R}^{m \times m}$ （或 $\mathbb{C}^{m \times m}$），&lt;br&gt;
-使得：
-\begin{equation}\nonumber
-A = Q R = U R，
-\end{equation}\nonumber
-其中：&lt;/p&gt;
-&lt;div&gt;
-\begin{equation}\nonumber
-R =
-\begin{bmatrix}
-R_1 \\
-0
-\end{bmatrix}_{m \times n}, \quad (n \leq m)。
-\end{equation}\nonumber
-&lt;/div&gt;
-### **证明**：
-由于：
-\begin{equation}\nonumber
-r(A) = n，
-\end{equation}\nonumber
-其 $n$ 个列向量 $x_1, x_2, \dots, x_n$ 线性无关，故可**扩充为** $\mathbb{R}^m$ **的一组基**：
-\begin{equation}\nonumber
-(x_1, x_2, \dots, x_n, x_{n+1}, \dots, x_m)。
-\end{equation}\nonumber
-&lt;p&gt;定义：
-\begin{equation}\nonumber
-B = (x_1, x_2, \dots, x_n, x_{n+1}, \dots, x_m) = (A, K)。
-\end{equation}\nonumber
-由于 $B$ &lt;strong&gt;为 $m \times m$ 满秩方阵&lt;/strong&gt;，根据 &lt;strong&gt;定理 1&lt;/strong&gt;，存在&lt;strong&gt;正交矩阵&lt;/strong&gt; $Q \in \mathbb{R}^{m \times m}$ 及&lt;strong&gt;正线性上三角矩阵&lt;/strong&gt; $S \in \mathbb{R}^{m \times m}$，使得：
-\begin{equation}\nonumber
-B = Q S。
-\end{equation}\nonumber&lt;/p&gt;
-&lt;p&gt;令：
-\begin{equation}\nonumber
-S = (R, S_1)，
-\end{equation}\nonumber
-其中 $R$ &lt;strong&gt;为 $m \times n$ 矩阵（列满秩）&lt;/strong&gt;，因此：
-\begin{equation}\nonumber
-B = (A, K) = Q S = Q (R, S_1) = (QR, QS_1)。
-\end{equation}\nonumber&lt;/p&gt;
-&lt;p&gt;最终得到：
-\begin{equation}\nonumber
-A = Q R，
-\end{equation}\nonumber
-其中：&lt;/p&gt;
-&lt;div&gt;
-\begin{equation}\nonumber
-R =
-\begin{bmatrix}
-R_1 \\
-0
-\end{bmatrix}，
-\end{equation}\nonumber
-&lt;/div&gt;
-且 $R_1$ **为正线性上三角矩阵**。
-&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：
-在上述定理中，如果令 $U_1$ &lt;strong&gt;是&lt;/strong&gt; $U$ &lt;strong&gt;的前&lt;/strong&gt; $n$ &lt;strong&gt;列&lt;/strong&gt;，&lt;br&gt;
-则：
-\begin{equation}\nonumber
-A = U_1 R_1，
-\end{equation}\nonumber
-其中 $R_1$ &lt;strong&gt;为正线性上三角矩阵&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;：
-设：&lt;/p&gt;
-&lt;div&gt;
-\begin{equation}\nonumber
-A =
-\begin{bmatrix}
-1 &amp; 2 &amp; 2 \\
-2 &amp; 1 &amp; 2 \\
-1 &amp; 2 &amp; 1
-\end{bmatrix}，
-\end{equation}\nonumber
-&lt;/div&gt;
-求**QR 分解**。
-&lt;p&gt;&lt;strong&gt;解&lt;/strong&gt;：
-设：
-\begin{equation}\nonumber
-A = (x_1, x_2, x_3)，
-\end{equation}\nonumber
-其中：
-\begin{equation}\nonumber
-x_1 = (1,2,1)^T, \quad
-x_2 = (2,1,2)^T, \quad
-x_3 = (3,2,1)^T。
-\end{equation}\nonumber&lt;/p&gt;
-&lt;p&gt;可以验证：
-\begin{equation}\nonumber
-r(A) = 3，
-\end{equation}\nonumber
-所以 $A$ &lt;strong&gt;满秩&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;正交化&lt;/strong&gt;：
-\begin{equation}\nonumber
-y_1 = (1,2,1)^T, \quad
-y_2 = (1,-1,1)^T, \quad
-y_3 = \left( \frac{1}{2}, 0, -\frac{1}{2} \right)^T。
-\end{equation}\nonumber&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;单位化&lt;/strong&gt;：
-\begin{equation}\nonumber
-z_1 = \left( \frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}} \right)^T，
-\quad
-z_2 = \left( \frac{-1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}} \right)^T，
-\quad
-z_3 = \left( \frac{1}{\sqrt{2}}, 0, -\frac{1}{\sqrt{2}} \right)^T。
-\end{equation}\nonumber
-&lt;strong&gt;QR 分解&lt;/strong&gt;：
-令：
-\begin{equation}\nonumber
-Q = (z_1, z_2, z_3)，
-\end{equation}\nonumber
-则：&lt;/p&gt;
-&lt;div&gt;
-\begin{equation}\nonumber
-R =
-\begin{bmatrix}
-\| y_1 \| &amp; (x_2, z_1) &amp; (x_3, z_1) \\
-0 &amp; \| y_2 \| &amp; (x_3, z_2) \\
-0 &amp; 0 &amp; \| y_3 \|
-\end{bmatrix}
-=
-\begin{bmatrix}
-\sqrt{6} &amp; \sqrt{6} &amp; \frac{7}{\sqrt{6}} \\
-0 &amp; \sqrt{3} &amp; \frac{1}{\sqrt{3}} \\
-0 &amp; 0 &amp; \frac{1}{\sqrt{2}}
-\end{bmatrix}。
-\end{equation}\nonumber
-&lt;/div&gt;
-&lt;p&gt;因此：
-\begin{equation}\nonumber
-A = QR。
-\end{equation}\nonumber&lt;/p&gt;
-</description>
         </item>
         
     </channel>
