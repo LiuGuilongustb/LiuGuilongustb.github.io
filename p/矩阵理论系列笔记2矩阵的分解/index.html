@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="三角分解 定义：单位三角矩阵 如果上（下）三角矩阵 $A \\in \\mathbb{C}^{n \\times n}$ 的对角线全为 1，则称 $A$ 为单位上（下）三角矩阵。\n注：\n两个单位上（下）三角矩阵的乘积仍然是单位上（下）三角矩阵。 单位上（下）三角矩阵的逆也是单位上（下）三角矩阵。 定理：LR三角分解的充要条件 设 $A \\in \\mathbb{C}^{n \\times n}$ 是非奇异矩阵，则存在唯一的单位下三角矩阵 $L$ 和上三角矩阵 $R$ 使得：\n">
+<title>矩阵理论系列笔记2：矩阵的分解</title>
+
+<link rel='canonical' href='https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B02%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%86%E8%A7%A3/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="矩阵理论系列笔记2：矩阵的分解">
+<meta property='og:description' content="三角分解 定义：单位三角矩阵 如果上（下）三角矩阵 $A \\in \\mathbb{C}^{n \\times n}$ 的对角线全为 1，则称 $A$ 为单位上（下）三角矩阵。\n注：\n两个单位上（下）三角矩阵的乘积仍然是单位上（下）三角矩阵。 单位上（下）三角矩阵的逆也是单位上（下）三角矩阵。 定理：LR三角分解的充要条件 设 $A \\in \\mathbb{C}^{n \\times n}$ 是非奇异矩阵，则存在唯一的单位下三角矩阵 $L$ 和上三角矩阵 $R$ 使得：\n">
+<meta property='og:url' content='https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B02%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%86%E8%A7%A3/'>
+<meta property='og:site_name' content='刘贵泷的个人网页'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='矩阵论' />
+<meta name="twitter:title" content="矩阵理论系列笔记2：矩阵的分解">
+<meta name="twitter:description" content="三角分解 定义：单位三角矩阵 如果上（下）三角矩阵 $A \\in \\mathbb{C}^{n \\times n}$ 的对角线全为 1，则称 $A$ 为单位上（下）三角矩阵。\n注：\n两个单位上（下）三角矩阵的乘积仍然是单位上（下）三角矩阵。 单位上（下）三角矩阵的逆也是单位上（下）三角矩阵。 定理：LR三角分解的充要条件 设 $A \\in \\mathbb{C}^{n \\times n}$ 是非奇异矩阵，则存在唯一的单位下三角矩阵 $L$ 和上三角矩阵 $R$ 使得：\n">
+        
+
+
+
+<script>
+    window.MathJax = {
+      tex: {
+        tags: 'ams',  
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        packages: ['base', 'ams']
+        
+      },
+      options: {
+        
+        
+      }
+    };
+    </script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/image/avatar_hu_5fc70999b694beba.png" width="300"
+                            height="294" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">刘贵泷的个人网页</a></h1>
+            <h2 class="site-description">个人主页</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://bilibili.com'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://LiuGuilongustb.github.io/en/" >English</option>
+                                
+                                    <option value="https://LiuGuilongustb.github.io/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#三角分解">三角分解</a>
+      <ol>
+        <li><a href="#定义单位三角矩阵">定义：单位三角矩阵</a></li>
+        <li><a href="#定理lr三角分解的充要条件">定理：LR三角分解的充要条件</a></li>
+      </ol>
+    </li>
+    <li><a href="#注也可以用初等行变换求三角分解但是方法用的不多就不介绍了">**注：**也可以用初等行变换求三角分解，但是方法用的不多就不介绍了。</a>
+      <ol>
+        <li><a href="#定理-ldr-分解"><strong>定理 ：LDR 分解</strong></a></li>
+        <li><a href="#定理-3cholesky乔列斯基分解"><strong>定理 3（Cholesky（乔列斯基）分解）</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#qr分解">QR分解</a>
+      <ol>
+        <li><a href="#定理qr分解的存在于唯一性"><strong>定理</strong>：QR分解的存在于唯一性</a></li>
+        <li><a href="#推论-1"><strong>推论 1</strong>：</a></li>
+        <li><a href="#推论-2"><strong>推论 2</strong>：</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B02%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%86%E8%A7%A3/">矩阵理论系列笔记2：矩阵的分解</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 8 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="三角分解">三角分解
+</h2><h3 id="定义单位三角矩阵">定义：单位三角矩阵
+</h3><p>如果上（下）三角矩阵 $A \in \mathbb{C}^{n \times n}$ 的对角线<strong>全为 1</strong>，则称 $A$ 为<strong>单位上（下）三角矩阵</strong>。</p>
+<p><strong>注</strong>：</p>
+<ul>
+<li><strong>两个单位上（下）三角矩阵的乘积仍然是单位上（下）三角矩阵</strong>。</li>
+<li><strong>单位上（下）三角矩阵的逆也是单位上（下）三角矩阵</strong>。</li>
+</ul>
+<h3 id="定理lr三角分解的充要条件">定理：LR三角分解的充要条件
+</h3><p>设 $A \in \mathbb{C}^{n \times n}$ 是<strong>非奇异矩阵</strong>，则存在<strong>唯一的</strong>单位下三角矩阵 $L$ 和上三角矩阵 $R$ 使得：</p>
+<div>
+\begin{equation}\nonumber
+A = L R。
+\end{equation}
+</div>
+<p>该分解成立的<strong>充要条件</strong>是 $A$ 的<strong>顺序主子式均非零</strong>。</p>
+<p><strong>证明</strong>：</p>
+<p><strong>必要性</strong>：
+如果存在<strong>单位下三角矩阵</strong> $L$ 和<strong>上三角矩阵</strong> $R$ 使得：</p>
+<div>
+\begin{equation}\nonumber
+A = L R，
+\end{equation}
+</div>
+则：
+<div>
+\begin{equation}\nonumber
+|A| = r_{11} r_{22} \dots r_{nn}，
+\end{equation}
+</div>
+其中 $r_{ii}$ 是 $R$ 的对角线元素。由于 $A$ **非奇异**，所以 $r_{ii} \neq 0$。
+<p>将 $A = L R$ <strong>作矩阵分块</strong>：</p>
+<div>
+\begin{equation}\nonumber
+\begin{bmatrix}
+A_{11} & A_{12} \\
+A_{21} & A_{22}
+\end{bmatrix}
+=
+\begin{bmatrix}
+L_{11} & 0 \\
+L_{21} & L_{22}
+\end{bmatrix}
+\begin{bmatrix}
+R_{11} & R_{12} \\
+0 & R_{22}
+\end{bmatrix}。
+\end{equation}
+</div>
+其中 $A_{11}, L_{11}, R_{11}$ 分别是 $A, L, R$ 的 $k$ 阶**顺序主子式**。
+于是：
+<div>
+\begin{equation}\nonumber
+|A_{11}| = |L_{11} R_{11}| = |R_{11}| = r_{11} r_{22} \dots r_{kk} \neq 0。
+\end{equation}
+</div>
+<p><strong>充分性</strong>：
+用<strong>数学归纳法</strong>证明。</p>
+<p>当 $A$ 的阶数为 1 时，显然成立。</p>
+<p>假设分解式当 $A$ 的阶数为 $n$ 时成立，考虑当阶数为 $n+1$ 时&hellip;</p>
+<div>
+\begin{equation}\nonumber
+\Lambda_{n+1} =
+\begin{bmatrix}
+A_n & a_n \\
+\beta_n & a_{n+1,n+1}
+\end{bmatrix}
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+=
+\begin{bmatrix}
+L_n & 0 \\
+\beta_n R_n^{-1} & 1
+\end{bmatrix}
+\begin{bmatrix}
+R_n & L_n^{-1} a_n \\
+0 & a_{n+1,n+1} - \beta_n R_n^{-1} L_n^{-1} a_n
+\end{bmatrix}
+\end{equation}
+</div>
+<p>其中：</p>
+<div>
+\begin{equation}
+\nonumber
+a_n = 
+\begin{bmatrix}
+a_{1,n+1}, a_{2,n+1}, \dots, a_{n,n+1}
+\end{bmatrix}^T，
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+\beta_n = 
+\begin{bmatrix}
+a_{n+1,1}, a_{n+1,2}, \dots, a_{n+1,n}
+\end{bmatrix}。
+\end{equation}
+</div>
+<p><strong>唯一性</strong>：
+设 $A = L R = L_1 R_1$，其中：</p>
+<ul>
+<li>$L, L_1$ 是<strong>单位下三角矩阵</strong>，</li>
+<li>$R, R_1$ 是<strong>可逆上三角矩阵</strong>。</li>
+</ul>
+<p>则：
+\begin{equation}\nonumber
+L_1^{-1} L = R_1 R^{-1}。
+\end{equation}</p>
+<p>上式左边是<strong>单位下三角矩阵</strong>，右边是<strong>上三角矩阵</strong>，因此：
+\begin{equation}\nonumber
+L_1^{-1} L = R_1 R^{-1} = I，
+\end{equation}
+所以：
+\begin{equation}\nonumber
+L_1 = L, \quad R_1 = R。
+\end{equation}
+定理得证。</p>
+<p><strong>注</strong>：</p>
+<ul>
+<li><strong>定理 1 中若将 $L$ 改为</strong> <strong>下三角矩阵</strong>，$R$ <strong>改为单位上三角矩阵</strong>，结论仍然成立。</li>
+</ul>
+<hr>
+<p>下面我们将要介绍如何计算矩阵的三角分解，首先我们会给出一个公式，公式当然可以套用，但是任何阅读本博客的同学都不建议记这个公式，如果阶数小，就一个一个自己算，如果阶数高就直接用公式扔matlab里面算，考试等本身绝不会考到n阶矩阵的三角分解，所以下面的公式有个印象，如果需要能到这里找到就行，不要浪费脑细胞。</p>
+<p><strong>分解方法</strong>：
+由：</p>
+<div>
+\begin{equation} \nonumber
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 & 0 & \cdots & 0 \\
+l_{21} & 1 & 0 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\
+l_{n1} & l_{n2} & \cdots & l_{nn}
+\end{bmatrix}
+\begin{bmatrix}
+r_{11} & r_{12} & \cdots & r_{1n} \\
+0 & r_{22} & \cdots & r_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & r_{nn}
+\end{bmatrix}
+\end{equation} 
+</div>
+<p><strong>得：</strong>
+\begin{equation}\nonumber
+\begin{cases}
+r_{jj} = a_{jj}, &amp; j = 1, \dots, n, \
+l_{ij} = \frac{a_{ij}}{r_{jj}}, &amp; j = 2, \dots, n, \
+r_{ik} = a_{ik} - \sum_{s=1}^{k-1} l_{is} r_{sk}, &amp; k = 2, \dots, n, \quad i = k+1, \dots, n, \
+l_{ik} = \frac{1}{r_{kk}} \left( a_{ik} - \sum_{s=1}^{k-1} l_{is} r_{sk} \right), &amp; k = 2, \dots, n, \quad i = k+1, \dots, n。
+\end{cases}
+\end{equation}</p>
+<p>那么不用上面的公式如何计算矩阵的三角分解请看下面的例题。</p>
+<p><strong>例子</strong> 求矩阵 $A $ 的 <strong>LU 分解</strong>，即找到一个<strong>下三角矩阵</strong> $L $ 和一个<strong>上三角矩阵</strong> $U $，使得：</p>
+<div>
+\begin{equation} \nonumber
+A = LU.
+\end{equation} 
+</div>
+其中：
+<div>
+\begin{equation} \nonumber
+A = \begin{bmatrix} 2 & -1 & 3 \\ 1 & 2 & 1 \\ 2 & 4 & 3 \end{bmatrix}.
+\end{equation} 
+</div>
+<hr>
+<p><strong>步骤 1：初始化 $L $ 和 $U $</strong>
+设：</p>
+<div>
+\begin{equation} \nonumber
+L = \begin{bmatrix} 1 & 0 & 0 \\ l_{21} & 1 & 0 \\ l_{31} & l_{32} & 1 \end{bmatrix},
+\quad
+U = \begin{bmatrix} u_{11} & u_{12} & u_{13} \\ 0 & u_{22} & u_{23} \\ 0 & 0 & u_{33} \end{bmatrix}.
+\end{equation} 
+</div>
+要求解 $A = LU $，即：
+<div>
+\begin{equation} \nonumber
+\begin{bmatrix} 2 & -1 & 3 \\ 1 & 2 & 1 \\ 2 & 4 & 3 \end{bmatrix}
+=
+\begin{bmatrix} 1 & 0 & 0 \\ l_{21} & 1 & 0 \\ l_{31} & l_{32} & 1 \end{bmatrix}
+\begin{bmatrix} u_{11} & u_{12} & u_{13} \\ 0 & u_{22} & u_{23} \\ 0 & 0 & u_{33} \end{bmatrix}.
+\end{equation} 
+</div>
+**步骤 2：求 $U $ 的第一行**
+从矩阵乘法的第一行展开：
+<div>
+\begin{equation} \nonumber
+\begin{bmatrix} u_{11} & u_{12} & u_{13} \\ l_{21} u_{11} & l_{21} u_{12} + u_{22} & l_{21} u_{13} + u_{23} \\ l_{31} u_{11} & l_{31} u_{12} + l_{32} u_{22} & l_{31} u_{13} + l_{32} u_{23} + u_{33} \end{bmatrix}
+=
+\begin{bmatrix} 2 & -1 & 3 \\ 1 & 2 & 1 \\ 2 & 4 & 3 \end{bmatrix}.
+\end{equation} 
+</div>
+比较第一行的系数：
+<div>
+\begin{equation} \nonumber
+u_{11} = 2, \quad u_{12} = -1, \quad u_{13} = 3.
+\end{equation} 
+</div>
+**步骤 3：求 $L $ 的第一列**
+比较第二行第一列的元素：
+<div>
+\begin{equation} \nonumber
+l_{21} u_{11} = 1 \Rightarrow l_{21} = \frac{1}{2}.
+\end{equation} 
+</div>
+比较第三行第一列的元素：
+<div>
+\begin{equation} \nonumber
+l_{31} u_{11} = 2 \Rightarrow l_{31} = \frac{2}{2} = 1.
+\end{equation} 
+</div>
+**步骤 4：求 $U $ 的第二行**
+比较第二行第二列：
+<div>
+\begin{equation} \nonumber
+l_{21} u_{12} + u_{22} = 2.
+\end{equation} 
+</div>
+代入 $l_{21} = \frac{1}{2}, u_{12} = -1 $：
+<div>
+\begin{equation} \nonumber
+\frac{1}{2}(-1) + u_{22} = 2 \Rightarrow u_{22} = 2 + \frac{1}{2} = \frac{5}{2}.
+\end{equation} 
+</div>
+比较第二行第三列：
+<div>
+\begin{equation} \nonumber
+l_{21} u_{13} + u_{23} = 1.
+\end{equation} 
+</div>
+代入 $u_{13} = 3 $：
+<div>
+\begin{equation} \nonumber
+\frac{1}{2}(3) + u_{23} = 1 \Rightarrow \frac{3}{2} + u_{23} = 1 \Rightarrow u_{23} = -\frac{1}{2}.
+\end{equation} 
+</div>
+**步骤 5：求 $L $ 的第二列**
+比较第三行第二列：
+<div>
+\begin{equation} \nonumber
+l_{31} u_{12} + l_{32} u_{22} = 4.
+\end{equation} 
+</div>
+代入 $l_{31} = 1, u_{12} = -1, u_{22} = \frac{5}{2} $：
+<div>
+\begin{equation} \nonumber
+1(-1) + l_{32} \cdot \frac{5}{2} = 4.
+\end{equation} 
+</div>
+解得：
+<div>
+\begin{equation} \nonumber
+l_{32} = \frac{4 + 1}{5/2} = \frac{5}{5/2} = 2.
+\end{equation} 
+</div>
+**步骤 6：求 $U $ 的第三行**
+比较第三行第三列：
+<div>
+\begin{equation} \nonumber
+l_{31} u_{13} + l_{32} u_{23} + u_{33} = 3.
+\end{equation} 
+</div>
+代入 $l_{31} = 1, u_{13} = 3, l_{32} = 2, u_{23} = -\frac{1}{2} $：
+<div>
+\begin{equation} \nonumber
+1(3) + 2 \left(-\frac{1}{2} \right) + u_{33} = 3.
+\end{equation} 
+</div>
+<div>
+\begin{equation} \nonumber
+3 - 1 + u_{33} = 3 \Rightarrow u_{33} = 1.
+\end{equation} 
+</div>
+<p><strong>最终结果</strong></p>
+<div>
+\begin{equation} \nonumber
+L = \begin{bmatrix} 1 & 0 & 0 \\ \frac{1}{2} & 1 & 0 \\ 1 & 2 & 1 \end{bmatrix},
+\quad
+U = \begin{bmatrix} 2 & -1 & 3 \\ 0 & \frac{5}{2} & -\frac{1}{2} \\ 0 & 0 & 1 \end{bmatrix}.
+\end{equation} 
+</div>
+验证：
+<div>
+\begin{equation} \nonumber
+LU =
+\begin{bmatrix} 1 & 0 & 0 \\ \frac{1}{2} & 1 & 0 \\ 1 & 2 & 1 \end{bmatrix}
+\begin{bmatrix} 2 & -1 & 3 \\ 0 & \frac{5}{2} & -\frac{1}{2} \\ 0 & 0 & 1 \end{bmatrix}
+=
+\begin{bmatrix} 2 & -1 & 3 \\ 1 & 2 & 1 \\ 2 & 4 & 3 \end{bmatrix} = A.
+\end{equation} 
+</div>
+<h2 id="注也可以用初等行变换求三角分解但是方法用的不多就不介绍了">**注：**也可以用初等行变换求三角分解，但是方法用的不多就不介绍了。
+</h2><h3 id="定理-ldr-分解"><strong>定理 ：LDR 分解</strong>
+</h3><p>设 $A \in \mathbb{C}^{n \times n}$ 是<strong>非奇异矩阵</strong>，则存在<strong>唯一的</strong>单位下三角矩阵 $L$，对角矩阵：
+\begin{equation}\nonumber
+D = \text{diag}(d_1, d_2, \dots, d_n)
+\end{equation}
+和单位上三角矩阵 $R$ 使得：
+\begin{equation}\nonumber
+A = L D R。
+\end{equation}</p>
+<p>该分解成立的<strong>充要条件</strong>是 $A$ 的<strong>顺序主子式均非零</strong>。</p>
+<p><strong>分析</strong>：
+因为：</p>
+<div>
+\begin{equation}
+\begin{bmatrix}
+1 & 0 & 0 & \cdots & 0 \\
+l_{21} & 1 & 0 & \cdots & 0 \\
+l_{31} & l_{32} & 1 & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+l_{n1} & l_{n2} & l_{n3} & \cdots & 1
+\end{bmatrix}
+\begin{bmatrix}
+d_1 & 0 & 0 & \cdots & 0 \\
+0 & d_2 & 0 & \cdots & 0 \\
+0 & 0 & d_3 & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & \cdots & d_n
+\end{bmatrix}
+\begin{bmatrix}
+1 & r_{12} & r_{13} & \cdots & r_{1n} \\
+0 & 1 & r_{23} & \cdots & r_{2n} \\
+0 & 0 & 1 & \cdots & r_{3n} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & \cdots & 1
+\end{bmatrix}
+=
+A
+\end{equation}
+</div>
+<p>那么为什么要进行三角分解呢？</p>
+<p><strong>应用</strong>：
+如果<strong>线性方程组</strong> $Ax = b$ 的系数矩阵 $A$ 可以进行<strong>LR 分解</strong>：
+\begin{equation}\nonumber
+A = L R，
+\end{equation}\nonumber
+则方程组：
+\begin{equation}\nonumber
+Ax = b
+\end{equation}\nonumber
+等价于以下两个方程：
+\begin{equation}\nonumber
+Ly = b, \quad Rx = y。
+\end{equation}\nonumber</p>
+<p><strong>例 2</strong>：
+设：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+2 & -1 & 3 \\
+1 & 2 & 1 \\
+2 & 4 & 3
+\end{bmatrix}, \quad
+b =
+\begin{bmatrix}
+-3 \\
+4 \\
+7
+\end{bmatrix}。
+\end{equation}\nonumber
+</div>
+<p>求解方程组：
+\begin{equation}\nonumber
+Ax = b。
+\end{equation}\nonumber</p>
+<p><strong>解</strong>：
+<strong>由例 1 可知</strong>：</p>
+<div>
+\begin{equation}\nonumber
+A = L R =
+\begin{bmatrix}
+1 & 0 & 0 \\
+\frac{1}{2} & 1 & 0 \\
+1 & 2 & 1
+\end{bmatrix}
+\begin{bmatrix}
+2 & -1 & 3 \\
+0 & \frac{5}{2} & -\frac{1}{2} \\
+0 & 0 & 1
+\end{bmatrix}。
+\end{equation}\nonumber
+</div>
+<p>由<strong>前向代入</strong>求解：
+\begin{equation}\nonumber
+Ly = b：
+\end{equation}\nonumber
+\begin{equation}\nonumber
+y_1 = b_1 = -3,
+\end{equation}\nonumber
+\begin{equation}\nonumber
+y_2 = b_2 - l_{21} y_1 = 4 - \frac{1}{2} (-3) = \frac{11}{2}，
+\end{equation}\nonumber
+\begin{equation}\nonumber
+y_3 = b_3 - l_{31} y_1 - l_{32} y_2 = 7 - (1)(-3) - (2) \times \frac{11}{2} = -1。
+\end{equation}\nonumber</p>
+<p>由<strong>后向代入</strong>求解：
+\begin{equation}\nonumber
+Rx = y：
+\end{equation}\nonumber
+\begin{equation}\nonumber
+x_3 = \frac{y_3}{r_{33}} = \frac{-1}{1} = -1，
+\end{equation}\nonumber
+\begin{equation}\nonumber
+x_2 = \frac{1}{r_{22}} (y_2 - r_{23} x_3) = \frac{1}{\frac{5}{2}} \left(\frac{11}{2} - (-\frac{1}{2}) (-1) \right) = 2，
+\end{equation}\nonumber
+\begin{equation}\nonumber
+x_1 = \frac{1}{r_{11}} (y_1 - r_{12} x_2 - r_{13} x_3) = \frac{1}{2} (-3 - (-1)(2) - (3)(-1)) = 1。
+\end{equation}\nonumber</p>
+<hr>
+<h3 id="定理-3cholesky乔列斯基分解"><strong>定理 3（Cholesky（乔列斯基）分解）</strong>
+</h3><p>设 $A \in \mathbb{C}^{n \times n}$ 是 <strong>Hermite 正定矩阵</strong>，则存在<strong>下三角矩阵</strong> $G$ 使得：
+\begin{equation}\nonumber
+A = G G^H。
+\end{equation}\nonumber</p>
+<p><strong>证明</strong>：
+因为 $A$ <strong>正定</strong>，所以<strong>顺序主子式均大于零</strong>。<br>
+由<strong>定理 2（LDR 分解）</strong>，$A$ 具有<strong>唯一的 LDR 分解</strong>。<br>
+又因 $A$ <strong>是 Hermite 矩阵</strong>，由<strong>LDR 分解的唯一性</strong>，可得：
+\begin{equation}\nonumber
+R = L^H，
+\end{equation}\nonumber
+因此：
+\begin{equation}\nonumber
+A = L D L^H。
+\end{equation}\nonumber</p>
+<p>设：
+\begin{equation}\nonumber
+D = \text{diag}(d_1, d_2, \dots, d_n)，
+\end{equation}\nonumber
+令：
+\begin{equation}\nonumber
+G = L \text{diag}(\sqrt{d_1}, \sqrt{d_2}, \dots, \sqrt{d_n})，
+\end{equation}\nonumber
+则：
+\begin{equation}\nonumber
+A = G G^H。
+\end{equation}\nonumber</p>
+<h2 id="qr分解">QR分解
+</h2><h3 id="定理qr分解的存在于唯一性"><strong>定理</strong>：QR分解的存在于唯一性
+</h3><p>设<strong>满秩方阵</strong> $A \in \mathbb{R}^{n \times n}$，则存在<strong>正交矩阵</strong> $Q$ 及<strong>正线性上三角矩阵</strong> $R$，满足：
+\begin{equation}\nonumber
+A = QR，
+\end{equation}\nonumber
+且<strong>分解唯一</strong>。</p>
+<p><strong>证明</strong>：
+由于：
+\begin{equation}\nonumber
+r(A) = n，
+\end{equation}\nonumber
+故 $A$ 的 $n$ 个<strong>列向量</strong> $x_1, x_2, \dots, x_n$ 线性无关，即：
+\begin{equation}\nonumber
+A = (x_1, x_2, \dots, x_n)。
+\end{equation}\nonumber</p>
+<p>由<strong>正交化过程</strong>，可得 $\mathbb{R}^n$ <strong>的一组标准正交基</strong>：
+\begin{equation}\nonumber
+(x_1, x_2, \dots, x_n) = (z_1, z_2, \dots, z_n)，
+\end{equation}\nonumber
+且：</p>
+<div>
+\begin{equation}\nonumber
+(x_1, x_2, \dots, x_n) =
+\begin{bmatrix}
+\| y_1 \| & (x_2, z_1) & \dots & (x_n, z_1) \\
+0 & \| y_2 \| & \dots & (x_n, z_2) \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \dots & \| y_n \|
+\end{bmatrix}
+\begin{bmatrix}
+z_1 & z_2 & \dots & z_n
+\end{bmatrix}。
+\end{equation}\nonumber
+</div>
+令：
+\begin{equation}\nonumber
+Q = (z_1, z_2, \dots, z_n)，
+\end{equation}\nonumber
+$R$ 为另外一个因子，则：
+\begin{equation}\nonumber
+A = Q R。
+\end{equation}\nonumber
+<p>由于：
+\begin{equation}\nonumber
+Q^T Q = (z_1, z_2, \dots, z_n)^T (z_1, z_2, \dots, z_n) = (z_i^T z_j)_{n \times n} = I_n，
+\end{equation}\nonumber
+故 $Q$ <strong>为正交矩阵</strong>。</p>
+<p><strong>唯一性证明</strong>：
+设：
+\begin{equation}\nonumber
+A = Q_1 R_1 = Q_2 R_2，
+\end{equation}\nonumber
+则：
+\begin{equation}\nonumber
+Q_1 = Q_2 R_2 R_1^{-1} = Q_2 D，
+\end{equation}\nonumber
+其中：
+\begin{equation}\nonumber
+D = R_2 R_1^{-1}。
+\end{equation}\nonumber
+由于 $D$ <strong>仍然是正线性上三角矩阵</strong>，且：
+\begin{equation}\nonumber
+I = Q_1^T Q_1 = (Q_2 D)^T (Q_2 D) = D^T Q_2^T Q_2 D = D^T D，
+\end{equation}\nonumber
+因此 $D$ <strong>为正交矩阵</strong>。但 $D$ <strong>又是正线性上三角矩阵</strong>，故：
+\begin{equation}\nonumber
+D = I，
+\end{equation}\nonumber
+因此：
+\begin{equation}\nonumber
+R_1 = R_2，
+\end{equation}\nonumber
+进而：
+\begin{equation}\nonumber
+Q_1 = Q_2。
+\end{equation}\nonumber</p>
+<h3 id="推论-1"><strong>推论 1</strong>：
+</h3><p>设<strong>满秩方阵</strong> $A \in \mathbb{C}^{n \times n}$，则存在 <strong>酉矩阵</strong> $U$ 及<strong>正线性上三角矩阵</strong> $R$，满足：
+\begin{equation}\nonumber
+A = UR，
+\end{equation}\nonumber
+且<strong>分解唯一</strong>。</p>
+<hr>
+<h3 id="推论-2"><strong>推论 2</strong>：
+</h3><p>设<strong>列满秩矩阵</strong> $A \in \mathbb{R}^{m \times n}$ （或 $\mathbb{C}^{m \times n}$），<br>
+则存在<strong>正交矩阵</strong> $Q$ （或<strong>酉矩阵</strong> $U$） $\in \mathbb{R}^{m \times m}$ （或 $\mathbb{C}^{m \times m}$），<br>
+使得：
+\begin{equation}\nonumber
+A = Q R = U R，
+\end{equation}\nonumber
+其中：</p>
+<div>
+\begin{equation}\nonumber
+R =
+\begin{bmatrix}
+R_1 \\
+0
+\end{bmatrix}_{m \times n}, \quad (n \leq m)。
+\end{equation}\nonumber
+</div>
+### **证明**：
+由于：
+\begin{equation}\nonumber
+r(A) = n，
+\end{equation}\nonumber
+其 $n$ 个列向量 $x_1, x_2, \dots, x_n$ 线性无关，故可**扩充为** $\mathbb{R}^m$ **的一组基**：
+\begin{equation}\nonumber
+(x_1, x_2, \dots, x_n, x_{n+1}, \dots, x_m)。
+\end{equation}\nonumber
+<p>定义：
+\begin{equation}\nonumber
+B = (x_1, x_2, \dots, x_n, x_{n+1}, \dots, x_m) = (A, K)。
+\end{equation}\nonumber
+由于 $B$ <strong>为 $m \times m$ 满秩方阵</strong>，根据 <strong>定理 1</strong>，存在<strong>正交矩阵</strong> $Q \in \mathbb{R}^{m \times m}$ 及<strong>正线性上三角矩阵</strong> $S \in \mathbb{R}^{m \times m}$，使得：
+\begin{equation}\nonumber
+B = Q S。
+\end{equation}\nonumber</p>
+<p>令：
+\begin{equation}\nonumber
+S = (R, S_1)，
+\end{equation}\nonumber
+其中 $R$ <strong>为 $m \times n$ 矩阵（列满秩）</strong>，因此：
+\begin{equation}\nonumber
+B = (A, K) = Q S = Q (R, S_1) = (QR, QS_1)。
+\end{equation}\nonumber</p>
+<p>最终得到：
+\begin{equation}\nonumber
+A = Q R，
+\end{equation}\nonumber
+其中：</p>
+<div>
+\begin{equation}\nonumber
+R =
+\begin{bmatrix}
+R_1 \\
+0
+\end{bmatrix}，
+\end{equation}\nonumber
+</div>
+且 $R_1$ **为正线性上三角矩阵**。
+<p><strong>注</strong>：
+在上述定理中，如果令 $U_1$ <strong>是</strong> $U$ <strong>的前</strong> $n$ <strong>列</strong>，<br>
+则：
+\begin{equation}\nonumber
+A = U_1 R_1，
+\end{equation}\nonumber
+其中 $R_1$ <strong>为正线性上三角矩阵</strong>。</p>
+<p><strong>例</strong>：
+设：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 & 2 & 2 \\
+2 & 1 & 2 \\
+1 & 2 & 1
+\end{bmatrix}，
+\end{equation}\nonumber
+</div>
+求**QR 分解**。
+<p><strong>解</strong>：
+设：
+\begin{equation}\nonumber
+A = (x_1, x_2, x_3)，
+\end{equation}\nonumber
+其中：
+\begin{equation}\nonumber
+x_1 = (1,2,1)^T, \quad
+x_2 = (2,1,2)^T, \quad
+x_3 = (3,2,1)^T。
+\end{equation}\nonumber</p>
+<p>可以验证：
+\begin{equation}\nonumber
+r(A) = 3，
+\end{equation}\nonumber
+所以 $A$ <strong>满秩</strong>。</p>
+<p><strong>正交化</strong>：
+\begin{equation}\nonumber
+y_1 = (1,2,1)^T, \quad
+y_2 = (1,-1,1)^T, \quad
+y_3 = \left( \frac{1}{2}, 0, -\frac{1}{2} \right)^T。
+\end{equation}\nonumber</p>
+<p><strong>单位化</strong>：
+\begin{equation}\nonumber
+z_1 = \left( \frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}} \right)^T，
+\quad
+z_2 = \left( \frac{-1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}} \right)^T，
+\quad
+z_3 = \left( \frac{1}{\sqrt{2}}, 0, -\frac{1}{\sqrt{2}} \right)^T。
+\end{equation}\nonumber
+<strong>QR 分解</strong>：
+令：
+\begin{equation}\nonumber
+Q = (z_1, z_2, z_3)，
+\end{equation}\nonumber
+则：</p>
+<div>
+\begin{equation}\nonumber
+R =
+\begin{bmatrix}
+\| y_1 \| & (x_2, z_1) & (x_3, z_1) \\
+0 & \| y_2 \| & (x_3, z_2) \\
+0 & 0 & \| y_3 \|
+\end{bmatrix}
+=
+\begin{bmatrix}
+\sqrt{6} & \sqrt{6} & \frac{7}{\sqrt{6}} \\
+0 & \sqrt{3} & \frac{1}{\sqrt{3}} \\
+0 & 0 & \frac{1}{\sqrt{2}}
+\end{bmatrix}。
+\end{equation}\nonumber
+</div>
+<p>因此：
+\begin{equation}\nonumber
+A = QR。
+\end{equation}\nonumber</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%9F%A9%E9%98%B5%E8%AE%BA/">矩阵论</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 Example Person
+    </section>
+    
+    <section class="powerby">
+        
+            guilonglgl@gmail.com <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<style>
+    body {
+      background: url(https://LiuGuilongustb.github.io/background/background.jpg) no-repeat center top;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  </style>
+  
+    </body>
+</html>

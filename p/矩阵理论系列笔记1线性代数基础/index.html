@@ -436,8 +436,9 @@
         <li><a href="#定义-7正交变换"><strong>定义 7（正交变换）</strong></a></li>
         <li><a href="#定理-5-1"><strong>定理 5</strong></a></li>
         <li><a href="#定义酉空间">定义：酉空间</a></li>
-        <li><a href="#希尔伯特空间的性质">希尔伯特空间的性质：</a></li>
+        <li><a href="#酉空间的性质">酉空间的性质：</a></li>
         <li><a href="#酉矩阵的结构性质"><strong>酉矩阵的结构性质</strong></a></li>
+        <li><a href="#定理酉矩阵的等价条件">定理：酉矩阵的等价条件</a></li>
       </ol>
     </li>
   </ol>
@@ -3338,8 +3339,8 @@ y^H = (\overline{y_1}, \dots, \overline{y_n})。
 \begin{equation}\nonumber
 (x, y) = y^H x = x_1 \overline{y_1} + x_2 \overline{y_2} + \dots + x_n \overline{y_n}。
 \end{equation}</p>
-<p>易验证满足<strong>内积四个条件</strong>，故为<strong>希尔伯特空间</strong>，仍记为 $\mathbb{C}^n$。</p>
-<h3 id="希尔伯特空间的性质">希尔伯特空间的性质：
+<p>易验证满足<strong>内积四个条件</strong>，故为<strong>酉空间</strong>，仍记为 $\mathbb{C}^n$。</p>
+<h3 id="酉空间的性质">酉空间的性质：
 </h3><ol>
 <li><strong>线性性质</strong>：
 \begin{equation}\nonumber
@@ -3360,13 +3361,12 @@ y^H = (\overline{y_1}, \dots, \overline{y_n})。
 \end{equation}</li>
 <li>当 $(x, y) = 0$ 时，称 $x$ 与 $y$ <strong>正交（垂直）</strong>，记为 $x \perp y$。</li>
 </ul>
-<p>(3) 在希尔伯特空间中同样可定义<strong>正交基</strong>和<strong>标准正交基</strong>。关于正交基，我们有：</p>
+<p>(3) 在酉空间中同样可定义<strong>正交基</strong>和<strong>标准正交基</strong>。关于正交基，我们有：</p>
 <ul>
 <li>任一组线性无关的向量，我们可以用<strong>施密特过程</strong>正交化，并扩为一组<strong>标准正交基</strong>。</li>
 </ul>
 <p>(4) 若 $T(x, y) = (Tx, Ty) = (x, y)$ 保持向量的内积不变，则称 $T$ 为<strong>酉变换</strong>。酉变换在标准正交基下的矩阵为<strong>酉矩阵</strong>。</p>
-<hr>
-<p><strong>(5) 定义</strong>：若 $A^H = \overline{A}^T$（共轭转置），且 $A^H A = A A^H = I$，则称 $A$ 为<strong>酉矩阵</strong>，其满足：</p>
+<p>(5) 定义 $A^H = \overline{A}^T$（共轭转置），且 $A^H A = A A^H = I$，则称 $A$ 为<strong>酉矩阵</strong>，其满足：</p>
 <ul>
 <li>$|A| = \pm 1$。</li>
 <li>两组标准基的过渡矩阵为酉矩阵。</li>
@@ -3387,7 +3387,7 @@ y^H = (\overline{y_1}, \dots, \overline{y_n})。
 \begin{equation}\nonumber
 (A^H)^H = A。
 \end{equation}</p>
-<p>(6) <strong>希尔伯特空间也有正交直和分解</strong>。</p>
+<p>(6) <strong>酉空间也有正交直和分解</strong>。</p>
 <p>(7) 若 $A^H = A$，则称 $A$ 为<strong>Hermite 矩阵</strong>；若 $A^H = -A$，则称 $A$ 为<strong>反 Hermite 矩阵</strong>。</p>
 <hr>
 <h3 id="酉矩阵的结构性质"><strong>酉矩阵的结构性质</strong>
@@ -3413,6 +3413,124 @@ A^H A =
 \alpha_i^H \alpha_j = \delta_{ij}，
 \end{equation}
 即 $\alpha_1, \alpha_2, \dots, \alpha_n$ 都是<strong>单位向量</strong>，且<strong>两两正交</strong>。</p>
+<h3 id="定理酉矩阵的等价条件">定理：酉矩阵的等价条件
+</h3><p>设 $A = (\alpha_1, \alpha_2, \dots, \alpha_n)$，则以下命题等价：</p>
+<ol>
+<li>$A$ 为<strong>酉矩阵</strong>，即 $A^H A = A A^H = I$；</li>
+<li>$A^{-1} = A^H$；</li>
+<li>$A$ 的列向量 $\alpha_1, \alpha_2, \dots, \alpha_n$ 都是单位向量，且<strong>两两正交</strong>；</li>
+<li>$A(x, y) = (Ax, Ay)$，$\forall x, y \in \mathbb{C}^n$；</li>
+<li>$|Ax|^2 = |x|^2$，或等价地 $(Ax, Ax) = (x, x)$。</li>
+</ol>
+<p><strong>证明</strong>：</p>
+<ul>
+<li><strong>(1) $\Rightarrow$ (4)</strong>：
+\begin{equation}\nonumber
+A(x, y) = (Ax, Ay) = y^H A^H Ax = y^H x = (x, y)。
+\end{equation}</li>
+<li><strong>(4) $\Rightarrow$ (1)</strong>：
+在上述等式中选取 $x, y$ 为标准基，即得 $A^H A = I$。
+<strong>4) $\Rightarrow$ 5) 显然</strong>：</li>
+</ul>
+<p><strong>(5) $\Rightarrow$ (4)</strong>：
+由于：
+\begin{equation}\nonumber
+(A(x + y), A(x + y)) = (Ax + Ay, Ax + Ay)
+\end{equation}
+\begin{equation}\nonumber
+= (x, x) + (Ax, Ay) + (Ay, Ax) + (y, y)。
+\end{equation}
+又因为：
+\begin{equation}\nonumber
+(x + y, x + y) = (x, x) + (x, y) + (y, x) + (y, y)。
+\end{equation}
+所以：
+\begin{equation}\nonumber
+(Ax, Ay) + (Ay, Ax) = (x, y) + (y, x) \quad \text{(1)}
+\end{equation}</p>
+<p>同理，由：
+\begin{equation}\nonumber
+A(x + iy, x + iy) = (x + iy, x + iy)
+\end{equation}</p>
+<p>可得：
+\begin{equation}\nonumber
+(Ax, Ay) - (Ay, Ax) = (x, y) - (y, x) \quad \text{(2)}
+\end{equation}</p>
+<p>联立 (1) 式与 (2) 式，即得：
+\begin{equation}\nonumber
+(Ax, Ay) = (x, y)。
+\end{equation}</p>
+<p><strong>注 1</strong> 实空间的酉矩阵是正交矩阵。</p>
+<p><strong>注 2</strong> 若 $A = (\alpha_1, \alpha_2, \dots, \alpha_n)$ 是 $n$ 阶酉矩阵，$(\beta_1, \beta_2, \dots, \beta_n)$ 是 $\alpha_1, \alpha_2, \dots, \alpha_n$ <strong>任一排列</strong>，则：
+\begin{equation}\nonumber
+B = (\beta_1, \beta_2, \dots, \beta_n)
+\end{equation}
+也是酉矩阵。</p>
+<p>此外，矩阵：
+\begin{equation}\nonumber
+C = (k_1 \alpha_1, k_2 \alpha_2, \dots, k_n \alpha_n)
+\end{equation}
+也是酉矩阵，其中：
+\begin{equation}\nonumber
+|k_1| = \dots = |k_n| = 1。
+\end{equation}</p>
+<p><strong>例 5</strong> 在 $\mathbb{C}^2$ 中，验证：
+\begin{equation}\nonumber
+A = \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+i &amp; 1 \
+1 &amp; i
+\end{bmatrix}
+\end{equation}
+是酉矩阵。</p>
+<p><strong>证明</strong>：
+设：
+\begin{equation}\nonumber
+\alpha_1 = \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+i \
+1
+\end{bmatrix}, \quad
+\alpha_2 = \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1 \
+i
+\end{bmatrix}。
+\end{equation}</p>
+<p>则：
+\begin{equation}\nonumber
+|\alpha_1| = |\alpha_2| = 1。
+\end{equation}</p>
+<p>且：
+\begin{equation}\nonumber
+(\alpha_1, \alpha_2) = \alpha_2^H \alpha_1
+= \frac{1}{\sqrt{2}} [1, -i] \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+i \
+1
+\end{bmatrix} = 0。
+\end{equation}</p>
+<p><strong>例 6</strong> 设 $x \in \mathbb{C}^n$ 是非零向量，证明：
+\begin{equation}\nonumber
+A = I_n - \frac{2xx^H}{|x|^2}
+\end{equation}
+是酉矩阵。</p>
+<p><strong>证明</strong>：
+\begin{equation}\nonumber
+A^H A = \left( I_n - \frac{2xx^H}{|x|^2} \right)^H
+\left( I_n - \frac{2xx^H}{|x|^2} \right)
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+= I_n - \frac{4xx^H x x^H}{|x|^4}。
+\end{equation}</p>
+<p>由于：
+\begin{equation}\nonumber
+\frac{4xx^H x x^H}{|x|^4} = I_n，
+\end{equation}
+所以：
+\begin{equation}\nonumber
+A^H A = I_n。
+\end{equation}</p>
 
 </section>
 
