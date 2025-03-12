@@ -4110,6 +4110,261 @@ A^H =
 \end{bmatrix}.
 \end{equation}
 &lt;/div&gt;
+**计算 $A^H A$**
+&lt;div&gt;
+\begin{equation}\nonumber
+A^H A =
+\begin{bmatrix} 
+\overline{a_{11}} &amp; 0 &amp; \cdots &amp; 0 \\ 
+\overline{a_{12}} &amp; \overline{a_{22}} &amp; \cdots &amp; 0 \\ 
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 
+\overline{a_{1n}} &amp; \overline{a_{2n}} &amp; \cdots &amp; \overline{a_{nn}}
+\end{bmatrix}
+\begin{bmatrix} 
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ 
+0 &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ 
+0 &amp; 0 &amp; \ddots &amp; \vdots \\ 
+0 &amp; 0 &amp; \cdots &amp; a_{nn}
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;设 $(c_{ij})_{n \times n}$ 为计算结果，则&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+c_{11} = \overline{a_{11}} a_{11} = |a_{11}|^2.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;计算 $A A^H$&lt;/strong&gt;&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A A^H =
+\begin{bmatrix} 
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ 
+0 &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ 
+0 &amp; 0 &amp; \ddots &amp; \vdots \\ 
+0 &amp; 0 &amp; \cdots &amp; a_{nn}
+\end{bmatrix}
+\begin{bmatrix} 
+\overline{a_{11}} &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\ 
+\overline{a_{12}} &amp; \overline{a_{22}} &amp; 0 &amp; \cdots &amp; 0 \\ 
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\ 
+\overline{a_{1n}} &amp; \overline{a_{2n}} &amp; \cdots &amp; \overline{a_{nn}}
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算第一个元素：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+c_{11} = a_{11} \overline{a_{11}} + a_{12} \overline{a_{12}} + \dots + a_{1n} \overline{a_{1n}} = |a_{11}|^2 + |a_{12}|^2 + \dots + |a_{1n}|^2.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由于 $A$ 为正规矩阵，满足 $A^H A = A A^H$，所以&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+|a_{11}|^2 = |a_{11}|^2 + |a_{12}|^2 + \dots + |a_{1n}|^2 \Rightarrow a_{12} = a_{13} = \dots = a_{1n} = 0.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;同理可证 $a_{ij} = 0$（$i \neq j$），即 $A$ 为对角矩阵。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定理-2正规矩阵相似对角矩阵&#34;&gt;&lt;strong&gt;定理 2&lt;/strong&gt;:正规矩阵相似对角矩阵
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，则 $A$ 是正规矩阵当且仅当 $A$ 酉相似于一个对角矩阵，即&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^H A = A A^H \iff \exists \text{酉矩阵 } U \text{ 使得 } U^H A U = \operatorname{diag}(\lambda_1, \dots, \lambda_n).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;正规矩阵是单纯矩阵（可对角化的矩阵），反之不然。例如设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+1 &amp; 2 \\ 
+1 &amp; 1 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;其共轭转置为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^H =
+\begin{bmatrix} 
+1 &amp; 1 \\ 
+2 &amp; 1 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;可知 $|A - AI|$ 无重根，因此 $A$ 为单纯矩阵。&lt;/p&gt;
+&lt;p&gt;但：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A A^H \neq A^H A.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;推论 1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$A$ 为正规矩阵 $\iff$ $A$ 有 $n$ 个特征向量构成 $\mathbb{C}^n$ 的一组标准基，且 $A$ 的不同特征值的特征向量正交。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$A$ 正规 $\Rightarrow$ 存在酉矩阵 $U$ 使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+U^H A U = \operatorname{diag}(\lambda_1, \dots, \lambda_n),
+\end{equation}
+&lt;/div&gt;
+则
+&lt;div&gt;
+\begin{equation}\nonumber
+A U = U \operatorname{diag}(\lambda_1, \dots, \lambda_n).
+\end{equation}
+&lt;/div&gt;
+令：
+&lt;div&gt;
+\begin{equation}\nonumber
+U = (x_1, \dots, x_n),
+\end{equation}
+&lt;/div&gt;
+则 $A x_i = \lambda_i x_i$，即 $x_i (i = 1, \dots, n)$ 是 $A$ 的 $n$ 个正交的特征向量（$U$ 是酉矩阵）。它们构成 $\mathbb{C}^n$ 的一组标准基。
+以上过程可逆。
+&lt;p&gt;&lt;strong&gt;推论 2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设 $A \in \mathbb{R}^{n \times n}$，则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$A$ 为 &lt;strong&gt;实对称矩阵&lt;/strong&gt; $\iff$ $A$ 的特征值 $\lambda_1, \dots, \lambda_n$ 为实数，且存在 $Q \in \mathbb{R}^{n \times n}$ 使得：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+Q^T A Q = Q^{-1} A Q = \operatorname{diag}(\lambda_1, \dots, \lambda_n).
+\end{equation}
+&lt;/div&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;$A$ 为 &lt;strong&gt;正交矩阵&lt;/strong&gt; $\iff$ $A$ 的每个特征值 $\lambda_i$ 的模 $|\lambda_i| = 1$，且存在酉矩阵 $U$ 使得：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+U^H A U = \operatorname{diag}(\lambda_1, \dots, \lambda_n).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;由定理 2 知，存在酉矩阵 $U$ 使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+U^H A U = \operatorname{diag}(\lambda_1, \dots, \lambda_n).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;共轭转置得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+U^H A^H U = (U^H A U)^H = \operatorname{diag}(\overline{\lambda_1}, \dots, \overline{\lambda_n}).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;因此 $\lambda_i = \overline{\lambda_i}$，即 $\lambda_i$ 为实数。&lt;/p&gt;
+&lt;p&gt;再由 &lt;strong&gt;实数 Schur 引理&lt;/strong&gt; 知，存在正交矩阵 $Q$ 使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+Q^T A Q = Q^{-1} A Q =
+\begin{bmatrix} 
+\lambda_1 &amp; * \\ 
+0 &amp; \ddots &amp; * \\ 
+0 &amp; 0 &amp; \lambda_n 
+\end{bmatrix} = K.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;因此：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^T = Q K Q^T.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;从而：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+K^T = K,
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;即 $K$ 为对角矩阵，也就是说：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+Q^T A Q = \operatorname{diag}(\lambda_1, \dots, \lambda_n).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;2)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设 $A x = \lambda x$，共轭转置得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+x^H A^H = \lambda^H x^H.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;两边左乘 $x$：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+x^H A^H A x = |\lambda|^2 x^H x.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由于 $A^H A = I$，即 $|\lambda|^2 = 1$（因为 $|x|^2 &amp;gt; 0$）。&lt;/p&gt;
+&lt;p&gt;由 &lt;strong&gt;Schur 定理&lt;/strong&gt; 知，存在酉矩阵 $U$ 使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+U^H A U = \operatorname{diag}(\lambda_1, \dots, \lambda_n).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;共轭转置得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+U^H A^H U = \operatorname{diag}(\overline{\lambda_1}, \dots, \overline{\lambda_n}).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;因此：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+U^H A^H A U = \operatorname{diag}(|\lambda_1|^2, \dots, |\lambda_n|^2) = I_n,
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;即：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A A^T = I_n.
+\end{equation}
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;注 1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$A$ 为 &lt;strong&gt;Hermite 矩阵&lt;/strong&gt; $\iff$ $A$ 的特征值 $\lambda_1, \dots, \lambda_n$ 为实数，且酉相似于 $\operatorname{diag}(\lambda_1, \dots, \lambda_n)$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$A$ 为 &lt;strong&gt;酉矩阵&lt;/strong&gt; $\iff$ $A$ 的每个特征值 $\lambda_i$ 的模 $|\lambda_i| = 1$，且酉相似于对角矩阵。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;注 2&lt;/strong&gt;（实对称矩阵正交相似于对角矩阵）&lt;/p&gt;
+&lt;p&gt;求正交矩阵步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;求出 $A$ 的全部互异特征值 $\lambda_1, \dots, \lambda_s$，其重数为 $r_j$，满足：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\sum_{i=1}^{s} r_i = n.
+\end{equation}
+&lt;/div&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;对每个 $\lambda_i$，求 $(\lambda_i I - A)X = 0$ 的一组基础解系，并将其标准化为 $\eta_1, \dots, \eta_{r_i}$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;令：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+Q = (\eta_1, \dots, \eta_{r_1}, \eta_{r_1+1}, \dots, \eta_{r_s}),
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;显然 $Q$ 为正交矩阵，且满足：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+Q^T A Q = \operatorname{diag} \left( \underbrace{\lambda_1, \dots, \lambda_1}_{r_1}, \dots, \underbrace{\lambda_s, \dots, \lambda_s}_{r_s} \right).
+\end{equation}
+&lt;/div&gt;
 </description>
         </item>
         <item>
