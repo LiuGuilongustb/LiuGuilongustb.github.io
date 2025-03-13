@@ -4365,6 +4365,1088 @@ Q = (\eta_1, \dots, \eta_{r_1}, \eta_{r_1+1}, \dots, \eta_{r_s}),
 Q^T A Q = \operatorname{diag} \left( \underbrace{\lambda_1, \dots, \lambda_1}_{r_1}, \dots, \underbrace{\lambda_s, \dots, \lambda_s}_{r_s} \right).
 \end{equation}
 &lt;/div&gt;
+&lt;h3 id=&#34;例题&#34;&gt;&lt;strong&gt;例题&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B =
+\begin{bmatrix} 
+-1 &amp; -3 &amp; -3 &amp; -3 \\ 
+-3 &amp; -1 &amp; -3 &amp; -3 \\ 
+-3 &amp; -3 &amp; -1 &amp; -3 \\ 
+-3 &amp; -3 &amp; -3 &amp; -1 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;求正交矩阵 $Q$，使得 $Q^T B Q$ 为对角矩阵。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;解&#34;&gt;&lt;strong&gt;解：&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;计算特征值：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+| \lambda I - B | = (\lambda - 8)(\lambda + 4)^3,
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;所以 $\lambda = 8, -4$，其中 $-4$ 为三重特征值。&lt;/p&gt;
+&lt;h4 id=&#34;特征向量计算&#34;&gt;&lt;strong&gt;特征向量计算：&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;对于 $\lambda = 8$，求解 $(B - 8I)x = 0$，得特征向量：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+q_1 = (-1,1,1,1)^T.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;对于 $\lambda = -4$，求解 $(B + 4I)x = 0$，得特征向量：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+q_2 = (1,1,0,0)^T, \quad
+q_3 = (1,0,0,0)^T, \quad
+q_4 = (0,0,0,1)^T.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;因此，特征子空间的基为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+E(8) = \operatorname{span} \{ q_1 \}, \quad
+E(-4) = \operatorname{span} \{ q_2, q_3, q_4 \}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;例题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B =
+\begin{bmatrix} 
+-1 &amp; -3 &amp; -3 &amp; -3 \\ 
+-3 &amp; -1 &amp; -3 &amp; -3 \\ 
+-3 &amp; -3 &amp; -1 &amp; -3 \\ 
+-3 &amp; -3 &amp; -3 &amp; -1 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;求正交矩阵 $Q$，使得 $Q^T B Q$ 为对角矩阵。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;计算特征值：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+| \lambda I - B | = (\lambda - 8)(\lambda + 4)^3,
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;所以 $\lambda = 8, -4$，其中 $-4$ 为三重特征值。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;特征向量计算：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;对于 $\lambda = 8$，求解 $(B - 8I)x = 0$，得特征向量：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+q_1 = (-1,1,1,1)^T.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;对于 $\lambda = -4$，求解 $(B + 4I)x = 0$，得特征向量：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+q_2 = (-1,1,0,0)^T, \quad
+q_3 = (1,0,0,0)^T, \quad
+q_4 = (0,0,0,1)^T.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;因此，特征子空间的基为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+E(8) = \operatorname{span} \{ q_1 \}, \quad
+E(-4) = \operatorname{span} \{ q_2, q_3, q_4 \}.
+\end{equation}
+&lt;/div&gt;
+&lt;h3 id=&#34;标准正交化&#34;&gt;&lt;strong&gt;标准正交化&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;由于 $E(8) \perp E(-4)$，对特征向量进行标准化，得到：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\eta_1 = (-\frac{1}{2}, \frac{1}{2}, \frac{1}{2}, \frac{1}{2})^T,
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\eta_2 = (\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}, 0, 0)^T,
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\eta_3 = (-\frac{1}{\sqrt{6}}, \frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, 0)^T,
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\eta_4 = (\frac{1}{\sqrt{12}}, -\frac{1}{\sqrt{12}}, \frac{1}{\sqrt{12}}, \frac{3}{\sqrt{12}})^T.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;令&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+Q = (\eta_1, \eta_2, \eta_3, \eta_4),
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;则&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+Q^T B Q = \operatorname{diag}(8, -4, -4, -4).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;例题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+f(x) = c_0 + c_1 x + \dots + c_m x^m,
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;$A$ 是正规矩阵，则 $f(A)$ 也正规。特别地，$c I \pm A$ 亦正规。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;利用公式：若 $AB = BA$，则有：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+f(A) g(B) = g(B) f(A).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+f(A) = c_0 I + c_1 A + \dots + c_m A^m,
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;则共轭转置为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+(f(A))^H = \overline{c_0} I + \overline{c_1} A^H + \dots + \overline{c_m} (A^H)^m.
+\end{equation}
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;满秩分解&#34;&gt;满秩分解
+&lt;/h2&gt;&lt;h3 id=&#34;满秩分解是矩阵的一种基本分解&#34;&gt;&lt;strong&gt;满秩分解是矩阵的一种基本分解&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;记号：$A \in \mathbb{C}_r^{m \times n}$ 表示 $\operatorname{rank}(A) = r$，其中 $A \in \mathbb{C}^{m \times n}$。&lt;/p&gt;
+&lt;h3 id=&#34;定理-满秩分解&#34;&gt;&lt;strong&gt;定理&lt;/strong&gt;: 满秩分解
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}_r^{m \times n}$，则存在 $B \in \mathbb{C}^{m \times r}$，$C \in \mathbb{C}^{r \times n}$，使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = B C.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设 $A$ 的前 $r$ 个列向量线性无关，对矩阵 $A$ 作初等行变换变为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{bmatrix} 
+I_r &amp; 0 \\ 
+0 &amp; D 
+\end{bmatrix},
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;即存在 $P \in \mathbb{C}^{m \times m}$，使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+P A =
+\begin{bmatrix} 
+I_r &amp; 0 \\ 
+0 &amp; D 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;或等价地：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = P^{-1} 
+\begin{bmatrix} 
+I_r &amp; 0 \\ 
+0 &amp; D 
+\end{bmatrix}
+= P^{-1} 
+\begin{bmatrix} 
+I_r &amp; 0 
+\end{bmatrix}
+\begin{bmatrix} 
+I_r &amp; D 
+\end{bmatrix}
+= B C.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B = P^{-1} 
+\begin{bmatrix} 
+I_r \\ 
+0 
+\end{bmatrix} 
+\in \mathbb{C}^{m \times r}, \quad 
+C =
+\begin{bmatrix} 
+I_r &amp; D 
+\end{bmatrix}
+\in \mathbb{C}^{r \times n}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;若 $A$ 的前 $r$ 个列向量线性相关，只需先对列做变换，使其线性无关。&lt;/p&gt;
+&lt;p&gt;因此，存在 $P \in \mathbb{C}_m^{m \times m}$，$Q \in \mathbb{C}_n^{n \times n}$，使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+P A Q =
+\begin{bmatrix} 
+I_r &amp; 0 \\ 
+0 &amp; D 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;或等价地：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = P^{-1} 
+\begin{bmatrix} 
+I_r &amp; 0 \\ 
+0 &amp; D 
+\end{bmatrix}
+Q^{-1}
+= P^{-1} 
+\begin{bmatrix} 
+I_r &amp; 0 
+\end{bmatrix}
+\begin{bmatrix} 
+I_r &amp; D 
+\end{bmatrix}
+Q^{-1}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;于是：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = B C,
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B = P^{-1} 
+\begin{bmatrix} 
+I_r \\ 
+0 
+\end{bmatrix} 
+\in \mathbb{C}^{m \times r}, \quad 
+C =
+\begin{bmatrix} 
+I_r &amp; D 
+\end{bmatrix}
+Q^{-1}
+\in \mathbb{C}^{r \times n}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt; 满秩分解不唯一，因为P、Q不唯一&lt;/p&gt;
+&lt;h3 id=&#34;推论&#34;&gt;&lt;strong&gt;推论&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}_1^{m \times n}$，则存在列向量 $\alpha$ 与行向量 $\beta$，使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = \alpha \beta.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;例题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+-1 &amp; 3 \\ 
+-1 &amp; 3 \\ 
+-1 &amp; 3 \\ 
+-2 &amp; 6 
+\end{bmatrix}
+=
+\begin{bmatrix} 
+1 \\ 1 \\ 1 \\ 2 
+\end{bmatrix}
+(1, -1, 3).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;例题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;求矩阵 $A$ 的满秩分解，其中：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+0 &amp; 2i &amp; i &amp; 0 &amp; 4 + 2i &amp; 1 \\ 
+0 &amp; 0 &amp; 0 &amp; -3 &amp; -6 &amp; -3 - 3i \\ 
+0 &amp; 2 &amp; 1 &amp; 1 &amp; 4 - 4i &amp; 1 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;解：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;对矩阵 $A$ 进行初等变换，化简为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{bmatrix} 
+0 &amp; 2i &amp; i &amp; 0 &amp; 4 + 2i &amp; 1 \\ 
+0 &amp; 0 &amp; 0 &amp; -3 &amp; -6 &amp; -3 - 3i \\ 
+0 &amp; 2 &amp; 1 &amp; 1 &amp; 4 - 4i &amp; 1 
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix} 
+0 &amp; 1 &amp; 1/2 &amp; 0 &amp; 1 - 2i &amp; -i/2 \\ 
+0 &amp; 0 &amp; 0 &amp; -3 &amp; -6 &amp; -3 - 3i \\ 
+0 &amp; 2 &amp; 1 &amp; 1 &amp; 4 - 4i &amp; 1 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;继续对矩阵 $A$ 进行初等变换，化简为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{bmatrix} 
+0 &amp; 1 &amp; 1/2 &amp; 0 &amp; 1 - 2i &amp; -i/2 \\ 
+0 &amp; 0 &amp; 0 &amp; -3 &amp; -6 &amp; -3 - 3i \\ 
+0 &amp; 0 &amp; 1 &amp; 2 &amp; 1 + i &amp; 0 
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix} 
+0 &amp; 1 &amp; 1/2 &amp; 0 &amp; 1 - 2i &amp; -i/2 \\ 
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 
+0 &amp; 0 &amp; 1 &amp; 2 &amp; 1 + i &amp; 0 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;取：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B =
+\begin{bmatrix} 
+2i &amp; 0 \\ 
+-3 &amp; 0 \\ 
+2 &amp; 1 
+\end{bmatrix},
+\quad
+C =
+\begin{bmatrix} 
+0 &amp; 1 &amp; 1/2 &amp; 0 &amp; 1 - 2i &amp; -i/2 \\ 
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 2 &amp; 1 + i 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;满秩分解方法&#34;&gt;&lt;strong&gt;满秩分解方法：&lt;/strong&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;只做行变换&lt;/strong&gt;，将 $A$ 变成书上 &lt;strong&gt;Hermite 标准型&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;令 $C$ 为前 $r$ 行&lt;/strong&gt;（非零行）；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;取 $A$ 中对应 Hermite 标准型中 1 对应的列，组成 $B$&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Hermite 标准型：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;前 $r$ 行为非零行&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;每一行第一个非零元素为 1&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;该列中其他元素全为零&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;例题-1&#34;&gt;&lt;strong&gt;例题&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;求矩阵 $A$ 的满秩分解，其中：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+1 &amp; 3 &amp; 2 &amp; 1 &amp; 4 \\ 
+2 &amp; 6 &amp; 1 &amp; 0 &amp; 7 \\ 
+3 &amp; 9 &amp; 3 &amp; 1 &amp; 11 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;解-1&#34;&gt;&lt;strong&gt;解：&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;对矩阵 $A$ 进行初等变换，化简为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{bmatrix} 
+1 &amp; 3 &amp; 2 &amp; 1 &amp; 4 \\ 
+0 &amp; 0 &amp; -3 &amp; -2 &amp; -1 \\ 
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix} 
+1 &amp; 3 &amp; 0 &amp; -1/3 &amp; 10/3 \\ 
+0 &amp; 0 &amp; 1 &amp; 2/3 &amp; 1/3 \\ 
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;p&gt;令：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B =
+\begin{bmatrix} 
+1 &amp; 2 \\ 
+2 &amp; 1 \\ 
+3 &amp; 3 
+\end{bmatrix},
+\quad
+C =
+\begin{bmatrix} 
+1 &amp; 3 &amp; 0 &amp; -1/3 &amp; 10/3 \\ 
+0 &amp; 0 &amp; 1 &amp; 2/3 &amp; 1/3 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;或者取：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B =
+\begin{bmatrix} 
+3 &amp; 2 \\ 
+6 &amp; 1 \\ 
+9 &amp; 3 
+\end{bmatrix},
+\quad
+C =
+\begin{bmatrix} 
+1/3 &amp; 1 &amp; 0 &amp; -1/9 &amp; 10/9 \\ 
+0 &amp; 0 &amp; 1 &amp; 2/3 &amp; 1/3 
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;易证 $A = B C$。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;满秩分解的不唯一性&#34;&gt;&lt;strong&gt;满秩分解的不唯一性&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;满秩分解不唯一，但有如下定理：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理 2&lt;/strong&gt;：若 $A = BC = B_1 C_1$ 均为 $A$ 的满秩分解，则存在 $D \in \mathbb{C}^{r \times r}$，使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B = B_1 D, \quad C = D^{-1} C_1.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;由 $BC = B_1 C_1$，得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+BC C^H = B_1 C_1 C^H.
+\end{equation}
+&lt;/div&gt;
+注意到 $\operatorname{rank}(C C^H) = \operatorname{rank}(C) = r$，因此：
+&lt;div&gt;
+\begin{equation}\nonumber
+B = B_1 C_1 (C C^H)^{-1}.
+\end{equation}
+&lt;/div&gt;
+同理，由 $BC = B_1 C_1$，得：
+&lt;div&gt;
+\begin{equation}\nonumber
+B^H BC = B^H B_1 C_1.
+\end{equation}
+&lt;/div&gt;
+从而：
+&lt;div&gt;
+\begin{equation}\nonumber
+C = (B^H B)^{-1} B^H B_1 C_1.
+\end{equation}
+&lt;/div&gt;
+令：
+&lt;div&gt;
+\begin{equation}\nonumber
+D = C_1 (C C^H)^{-1},
+\end{equation}
+&lt;/div&gt;
+代入上式，得：
+&lt;div&gt;
+\begin{equation}\nonumber
+B = B_1 D, \quad C = D^{-1} C_1.
+\end{equation}
+&lt;/div&gt;
+&lt;h2 id=&#34;奇异值分解&#34;&gt;奇异值分解
+&lt;/h2&gt;&lt;h3 id=&#34;引理-1&#34;&gt;&lt;strong&gt;引理 1&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，则：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+r(A^H A) = r(A A^H) = r(A).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果 $x \in \mathbb{C}^n$ 是齐次线性方程组 $A x = 0$ 的解，则 $x$ 也是 $A^H A x = 0$ 的解。&lt;/p&gt;
+&lt;p&gt;反之，如果 $x$ 是 $A^H A x = 0$ 的解，则：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+x^H A^H A x = 0.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;即：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+(A x)^H A x = 0.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;于是 $A x = 0$，这表明 $x$ 也是 $A x = 0$ 的解。因此，$A x = 0$ 与 $A^H A x = 0$ 同解，从而：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+r(A^H A) = r(A).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;同理可得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+r(A A^H) = r(A^H) = r(A).
+\end{equation}
+&lt;/div&gt;
+&lt;h3 id=&#34;引理-2&#34;&gt;&lt;strong&gt;引理 2&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$A^H A$ 与 $A A^H$ 的特征值均为&lt;strong&gt;非负实数&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;$A^H A$ 与 $A A^H$ 的&lt;strong&gt;非零特征值相同&lt;/strong&gt;，且非零特征值的个数为 $r(A)$。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;设 $\lambda$ 为 $A^H A$ 的任一特征值，$x \neq 0$ 为相应的特征向量，则：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^H A x = \lambda x.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由于 $A^H A$ 是 Hermite 矩阵，因此 $\lambda$ 为实数。&lt;/p&gt;
+&lt;p&gt;且：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\lambda x^H x = x^H A^H A x = (A x)^H A x \geq 0.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由于 $x^H x &amp;gt; 0$，可得 $\lambda \geq 0$。&lt;/p&gt;
+&lt;p&gt;同理，$A A^H$ 的特征值均为&lt;strong&gt;非负实数&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;设 $r(A) = r$，$\lambda_i$ 为 $A A^H$ 的特征值，$\mu_i$ 为 $A^H A$ 的特征值，且均为实数。&lt;/p&gt;
+&lt;p&gt;定义如下特征值排序：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\lambda_1 \geq \lambda_2 \geq \dots \geq \lambda_r &gt; \lambda_{r+1} = \dots = \lambda_m = 0,
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\mu_1 \geq \mu_2 \geq \dots \geq \mu_r &gt; \mu_{r+1} = \dots = \mu_n = 0.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;证明 $\lambda_i = \mu_i &amp;gt; 0, \quad (i = 1, \dots, r)$&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;由 $A A^H x_i = \lambda_i x_i$，左乘 $A^H$，得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^H A A^H x_i = \lambda_i A^H x_i.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;这表明，$\lambda_i$ 既是 $A A^H$ 的特征值，也是 $A^H A$ 的特征值。&lt;/p&gt;
+&lt;p&gt;同理，$\mu_i$ 也是 $A A^H$ 的特征值。&lt;/p&gt;
+&lt;p&gt;但&lt;strong&gt;不能认为&lt;/strong&gt; $\lambda_i = \mu_i$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明 $A^H x_1, \dots, A^H x_p$ 线性无关&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设 $x_1, \dots, x_p$ 为 $A A^H$ 对应于 $\lambda_i \neq 0$ 的线性无关特征向量。&lt;/p&gt;
+&lt;p&gt;由上述推导，$A^H x_1, \dots, A^H x_p$ 归属于 $\lambda_i \neq 0$ 的特征向量。&lt;/p&gt;
+&lt;p&gt;只需证明 $A^H x_1, \dots, A^H x_p$ 线性无关，即可说明 $A A^H$ 的 $p$ 重特征值也是 $A^H A$ 的 $p$ 重特征值。&lt;/p&gt;
+&lt;p&gt;假设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+k_1 A^H x_1 + \dots + k_p A^H x_p = 0.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;左乘 $A$，得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+k_1 \lambda_1 x_1 + \dots + k_p \lambda_p x_p = 0.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由于 $\lambda_i \neq 0$，可得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+k_1 x_1 + \dots + k_p x_p = 0.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由于 $x_1, \dots, x_p$ 线性无关，必有：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+k_i = 0.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;从而 $A^H x_1, \dots, A^H x_p$ 线性无关，证毕。&lt;/p&gt;
+&lt;h3 id=&#34;引理-3&#34;&gt;&lt;strong&gt;引理 3&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，则 $A^H A$ 与 $A A^H$ 都是&lt;strong&gt;半正定的 Hermite 矩阵&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;显然 $A^H A$ 与 $A A^H$ 都是 &lt;strong&gt;Hermite 矩阵&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;对于任意 $x \in \mathbb{C}^n$，$y \in \mathbb{C}^m$，有：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+x^H A^H A x = (A x)^H A x \geq 0.
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+y^H A A^H y = (A^H y)^H (A^H y) \geq 0.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;因此，$A^H A$ 与 $A A^H$ 均为&lt;strong&gt;半正定矩阵&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定义--正奇异值&#34;&gt;&lt;strong&gt;定义&lt;/strong&gt;  ：正奇异值
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}_r^{m \times n}$，$A^H A$ 的特征值满足：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\lambda_1 \geq \lambda_2 \geq \dots \geq \lambda_r &gt; 0, \quad
+\lambda_{r+1} = \lambda_{r+2} = \dots = \lambda_n = 0.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;称：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\sigma_i = \sqrt{\lambda_i}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;为 $A$ 的&lt;strong&gt;奇异值&lt;/strong&gt;。若 $\sigma_i &amp;gt; 0$，则称 $\sigma_i$ 为 $A$ 的&lt;strong&gt;正奇异值&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+1 &amp; 0 \\ 
+0 &amp; 1 \\ 
+0 &amp; 2 
+\end{bmatrix},
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;则：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^H A =
+\begin{bmatrix} 
+5 &amp; 0 \\ 
+0 &amp; 1 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;其奇异值为 $\sqrt{5}, 1$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;计算 $A A^H$ 的特征值&lt;/strong&gt;&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A A^H =
+\begin{bmatrix} 
+1 &amp; 0 &amp; 0 \\ 
+0 &amp; 1 &amp; 0 \\ 
+0 &amp; 2 &amp; 4 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;求其行列式：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+| \lambda I - A A^H | = \lambda (\lambda - 1)(\lambda - 5).
+\end{equation}
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定理-1&#34;&gt;&lt;strong&gt;定理 1&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;若 $A$ 与 $B$ &lt;strong&gt;酉相抵&lt;/strong&gt;，则 $A$ 与 $B$ 具有&lt;strong&gt;相同的奇异值&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;由于 $A$ 与 $B$ &lt;strong&gt;酉相抵&lt;/strong&gt;，则存在酉矩阵 $U$ 与 $V$ 使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B = U A V.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;因此：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B^H B = (U A V)^H (U A V) = V^H A^H U^H U A V.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由于 $U$ 为酉矩阵，满足 $U^H U = I$，故上式化简为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B^H B = V^H A^H A V.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;这表明 $B^H B$ &lt;strong&gt;与&lt;/strong&gt; $A^H A$ &lt;strong&gt;相似&lt;/strong&gt;，因此它们的特征值相同。&lt;/p&gt;
+&lt;p&gt;所以 $A$ 与 $B$ 具有&lt;strong&gt;相同的奇异值&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;定理-2奇异值分解&#34;&gt;&lt;strong&gt;定理 2（奇异值分解）&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}_r^{m \times n}$，则存在&lt;strong&gt;酉矩阵&lt;/strong&gt; $U \in \mathbb{C}^{m \times m}$ 与 &lt;strong&gt;酉矩阵&lt;/strong&gt; $V \in \mathbb{C}^{n \times n}$ 使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = U 
+\begin{bmatrix} 
+\sigma_1 &amp; &amp; &amp; 0 \\ 
+&amp; \ddots &amp; &amp; \\ 
+&amp; &amp; \sigma_r &amp; \\ 
+0 &amp; &amp; &amp; 0 
+\end{bmatrix}
+V^H.
+\end{equation}
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;奇异值分解的步骤&#34;&gt;&lt;strong&gt;奇异值分解的步骤&lt;/strong&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;计算 $A^H A$ 的特征值 $\lambda_1, \lambda_2, \dots, \lambda_r$，其中：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\lambda_{r+1} = \lambda_{r+2} = \dots = \lambda_n = 0.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;得出 $A$ 的&lt;strong&gt;正奇异值&lt;/strong&gt;：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\sigma_1 = \sqrt{\lambda_1}, \dots, \sigma_r = \sqrt{\lambda_r}.
+\end{equation}
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;计算 $A^H A$ 的特征向量 $x_1, x_2, \dots, x_n$，将其&lt;strong&gt;标准化&lt;/strong&gt;，构成&lt;strong&gt;矩阵&lt;/strong&gt; $V$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;计算 $A x_1, \dots, A x_r$，它们是&lt;strong&gt;非零特征值&lt;/strong&gt;对应的特征向量。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;由于 $A x_{r+1} = \dots = A x_n = 0$，将其扩充为 $\mathbb{C}^m$ 的&lt;strong&gt;一组标准正交基&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;标准化&lt;/strong&gt;后，构成矩阵 $U$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最终得出：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = U 
+\begin{bmatrix}
+\sqrt{\lambda_1} &amp; &amp; &amp; 0 \\ 
+&amp; \ddots &amp; &amp; \\ 
+&amp; &amp; \sqrt{\lambda_r} &amp; \\ 
+0 &amp; &amp; &amp; 0 
+\end{bmatrix}
+V^H.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;例题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;求矩阵 $A$ 的奇异值分解&lt;/strong&gt;，其中：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+2 &amp; 3 \\ 
+0 &amp; 0 \\ 
+0 &amp; 0 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;解：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;计算 $A^H A$：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^H A =
+\begin{bmatrix} 
+2 &amp; 0 &amp; 0 \\ 
+3 &amp; 0 &amp; 0 
+\end{bmatrix}
+\begin{bmatrix} 
+2 &amp; 3 \\ 
+0 &amp; 0 \\ 
+0 &amp; 0 
+\end{bmatrix}
+=
+\begin{bmatrix} 
+4 &amp; 6 \\ 
+6 &amp; 9 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算特征值：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+|\lambda I - A^H A| =
+\begin{vmatrix} 
+\lambda - 4 &amp; -6 \\ 
+-6 &amp; \lambda - 9 
+\end{vmatrix}
+= \lambda (\lambda - 13).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;故 $\lambda = 13, 0$，奇异值为 $\sqrt{13}$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;计算 $V$ 矩阵&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$A^H A$ 对应 $\lambda = 13$ 的特征向量为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+x_1 = 
+\begin{bmatrix} 
+2 \\ 
+3 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;对应 $\lambda = 0$ 的特征向量为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+x_2 = 
+\begin{bmatrix} 
+-3 \\ 
+2 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;标准化得到：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+z_1 = 
+\begin{bmatrix} 
+\frac{2}{\sqrt{13}} \\ 
+\frac{3}{\sqrt{13}} 
+\end{bmatrix},
+\quad
+z_2 = 
+\begin{bmatrix} 
+\frac{3}{\sqrt{13}} \\ 
+\frac{-2}{\sqrt{13}} 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;于是：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+V = (z_1, z_2).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;计算 $U$ 矩阵&lt;/strong&gt;&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A x_1 =
+\begin{bmatrix} 
+2 &amp; 3 \\ 
+0 &amp; 0 \\ 
+0 &amp; 0 
+\end{bmatrix}
+\begin{bmatrix} 
+2 \\ 
+3 
+\end{bmatrix}
+=
+\begin{bmatrix} 
+13 \\ 
+0 \\ 
+0 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;扩充为 $\mathbb{C}^3$ 的标准正交基，并标准化，得到：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+U = I_3.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;最终得出 $A$ 的奇异值分解：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = U 
+\begin{bmatrix}
+\sqrt{13} &amp; 0 \\ 
+0 &amp; 0 \\ 
+0 &amp; 0 
+\end{bmatrix}
+V^H.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;最终奇异值分解结果&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;根据计算，矩阵 $A$ 的奇异值分解如下：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = U 
+\begin{bmatrix}
+\sqrt{13} &amp; 0 \\ 
+0 &amp; 0 \\ 
+0 &amp; 0 
+\end{bmatrix}
+V^H.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;具体计算展开：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+U =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\ 
+0 &amp; 1 &amp; 0 \\ 
+0 &amp; 0 &amp; 1
+\end{bmatrix},
+\quad
+\Sigma =
+\begin{bmatrix}
+\sqrt{13} &amp; 0 \\ 
+0 &amp; 0 \\ 
+0 &amp; 0
+\end{bmatrix},
+\quad
+V^H =
+\begin{bmatrix}
+\frac{2}{\sqrt{13}} &amp; \frac{3}{\sqrt{13}} \\ 
+\frac{3}{\sqrt{13}} &amp; \frac{-2}{\sqrt{13}}
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;因此，$A$ 的奇异值分解表达式为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\ 
+0 &amp; 1 &amp; 0 \\ 
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{13} &amp; 0 \\ 
+0 &amp; 0 \\ 
+0 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+\frac{2}{\sqrt{13}} &amp; \frac{3}{\sqrt{13}} \\ 
+\frac{3}{\sqrt{13}} &amp; \frac{-2}{\sqrt{13}}
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;例题：奇异值分解&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;求矩阵 $A$ 的奇异值分解，其中：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix} 
+-1 &amp; 0 &amp; 1 \\ 
+2 &amp; 0 &amp; -2 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;解：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设 $B = A^H$，则：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B =
+\begin{bmatrix} 
+-1 &amp; 2 \\ 
+0 &amp; 0 \\ 
+1 &amp; -2 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算 $B^H B$：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B^H B =
+\begin{bmatrix} 
+2 &amp; -4 \\ 
+-4 &amp; 8 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算特征值：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+|\lambda I - B^H B| =
+\begin{vmatrix} 
+\lambda - 2 &amp; -4 \\ 
+-4 &amp; \lambda - 8 
+\end{vmatrix}
+= \lambda (\lambda - 10).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;解得 $\lambda = 10, 0$，因此 $B$ 的奇异值为 $\sqrt{10}$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;计算 $V$ 矩阵&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$B^H B$ 对应 $\lambda = 10$ 的特征向量为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+x_1 =
+\begin{bmatrix} 
+1 \\ 
+-2 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;对应 $\lambda = 0$ 的特征向量为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+x_2 =
+\begin{bmatrix} 
+2 \\ 
+1 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;标准化得到：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+z_1 =
+\begin{bmatrix} 
+\frac{1}{\sqrt{5}} \\ 
+\frac{2}{\sqrt{5}} 
+\end{bmatrix},
+\quad
+z_2 =
+\begin{bmatrix} 
+\frac{2}{\sqrt{5}} \\ 
+\frac{1}{\sqrt{5}} 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;于是：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+V =
+\begin{bmatrix}
+\frac{1}{\sqrt{5}} &amp; \frac{2}{\sqrt{5}} \\ 
+\frac{-2}{\sqrt{5}} &amp; \frac{1}{\sqrt{5}}
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;计算 $U$ 矩阵&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;计算：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B x_1 =
+\begin{bmatrix} 
+-1 &amp; 2 \\ 
+0 &amp; 0 \\ 
+1 &amp; -2 
+\end{bmatrix}
+\begin{bmatrix} 
+1 \\ 
+-2 
+\end{bmatrix}
+=
+\begin{bmatrix} 
+-5 \\ 
+0 \\ 
+5 
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;扩充为 $\mathbb{C}^3$ 的标准正交基，并标准化，得到：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+U =
+\begin{bmatrix}
+\frac{-1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} &amp; 0 \\ 
+0 &amp; 0 &amp; 1 \\ 
+\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} &amp; 0
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;最终得出 $B$ 的奇异值分解：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B = U 
+\begin{bmatrix}
+\sqrt{10} &amp; 0 \\ 
+0 &amp; 0 \\ 
+0 &amp; 0
+\end{bmatrix}
+V^H.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;最终结果&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;由 $A = V \Sigma U^H$，我们得到：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+\frac{1}{\sqrt{5}} &amp; \frac{2}{\sqrt{5}} \\ 
+\frac{-2}{\sqrt{5}} &amp; \frac{1}{\sqrt{5}}
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{10} &amp; 0 \\ 
+0 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+\frac{-1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} &amp; 0 \\ 
+0 &amp; 0 &amp; 1 \\ 
+\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} &amp; 0
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
 </description>
         </item>
         <item>
