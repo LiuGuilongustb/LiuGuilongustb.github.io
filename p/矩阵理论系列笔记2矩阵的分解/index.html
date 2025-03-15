@@ -382,6 +382,17 @@
         <li><a href="#定理-1"><strong>定理 1</strong></a></li>
         <li><a href="#定理-2奇异值分解"><strong>定理 2（奇异值分解）</strong></a></li>
         <li><a href="#奇异值分解的步骤"><strong>奇异值分解的步骤</strong></a></li>
+        <li><a href="#简化奇异值分解"><strong>简化奇异值分解</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#谱分解">谱分解</a>
+      <ol>
+        <li><a href="#定理-1正规矩阵的投影矩阵分解"><strong>定理 1：正规矩阵的投影矩阵分解</strong></a></li>
+        <li><a href="#正规矩阵的谱分解步骤"><strong>正规矩阵的谱分解步骤</strong></a>
+          <ol>
+            <li><a href="#4-计算-sum_"><strong>(4) 计算 $\sum_{i=1}^{100} A^i$</strong></a></li>
+          </ol>
+        </li>
       </ol>
     </li>
   </ol>
@@ -440,7 +451,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 23 分钟
+                    阅读时长: 25 分钟
                 </time>
             </div>
         
@@ -2860,6 +2871,384 @@ A =
 0 & 0 & 1 \\ 
 \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0
 \end{bmatrix}.
+\end{equation}
+</div>
+<hr>
+<h3 id="简化奇异值分解"><strong>简化奇异值分解</strong>
+</h3><p>设 $A \in \mathbb{C}^{m \times n}_r$，则可以表示为：</p>
+<div>
+\begin{equation}\nonumber
+A = U_1
+\begin{bmatrix}
+\sigma_1 & & 0 \\ 
+& \ddots & \\ 
+0 & & \sigma_r
+\end{bmatrix}
+V_1^H.
+\end{equation}
+</div>
+<p>其中：</p>
+<div>
+\begin{equation}\nonumber
+U_1 = (y_1, \dots, y_r) \in \mathbb{C}^{m \times r}, \quad
+V_1 = (x_1, \dots, x_r) \in \mathbb{C}^{n \times r}
+\end{equation}
+</div>
+<p>均为<strong>列酉矩阵</strong>。</p>
+<p><strong>证明</strong></p>
+<p>由<strong>奇异值分解</strong>可得：</p>
+<div>
+\begin{equation}\nonumber
+U
+\begin{bmatrix}
+\sigma_1 & & 0 & 0 \\ 
+& \ddots & & \\ 
+0 & & \sigma_r & 0 \\ 
+0 & & 0 & 0
+\end{bmatrix}
+V^H.
+\end{equation}
+</div>
+<p>设 $U$ 和 $V$ 分别拆分为：</p>
+<div>
+\begin{equation}\nonumber
+U = (U_1, U_2), \quad
+V = (V_1, V_2),
+\end{equation}
+</div>
+<p>其中 $U_1, U_2$ 以及 $V_1, V_2$ 满足酉矩阵的正交分解性质。</p>
+<p>因此：</p>
+<div>
+\begin{equation}\nonumber
+A = (U_1, U_2)
+\begin{bmatrix}
+\Delta & 0 \\ 
+0 & 0
+\end{bmatrix}
+\begin{bmatrix}
+V_1^H \\ 
+V_2^H
+\end{bmatrix}
+= U_1 \Delta V_1^H.
+\end{equation}
+</div>
+<p><strong>从而得出简化的奇异值分解形式</strong>。</p>
+<hr>
+<p>下面给个定义，一个不常用的分解方式：极分解，这个东西是英文直译过来的，因为这个东西最可能用到的地方是极坐标。</p>
+<p>该方法同前文类似的一些地方相同，不需要完全掌握，如果有用到的一天，回来找就行</p>
+<p><strong>极分解</strong></p>
+<p>设 $A \in \mathbb{C}^{n \times n}_r$，则 $A$ 具有以下分解形式：</p>
+<div>
+\begin{equation}\nonumber
+A = G U,
+\end{equation}
+</div>
+<p>其中：</p>
+<ul>
+<li>$G$ 为<strong>半正定 Hermite 矩阵</strong>，</li>
+<li>$U$ 为<strong>酉矩阵</strong>。</li>
+</ul>
+<p>特别地，当 $A$ <strong>满秩</strong>时，$G$ 为<strong>正定 Hermite 矩阵</strong>，且分解<strong>唯一</strong>。</p>
+<hr>
+<h2 id="谱分解">谱分解
+</h2><h3 id="定理-1正规矩阵的投影矩阵分解"><strong>定理 1：正规矩阵的投影矩阵分解</strong>
+</h3><p>设 $n$ 阶矩阵 $A$ 具有 $r$ 个<strong>互异特征值</strong> $\lambda_1, &hellip;, \lambda_r$，其中：</p>
+<ul>
+<li><strong>特征值</strong> $\lambda_j$ 的<strong>代数重数</strong>为 $n_j$。</li>
+</ul>
+<p>则 $A$ 为<strong>正规矩阵</strong> $\Longleftrightarrow$ 存在 $n$ 阶矩阵 $E_1, &hellip;, E_r$，满足：</p>
+<ol>
+<li>
+<p><strong>谱分解形式</strong>：</p>
+<div>
+\begin{equation}\nonumber
+A = \sum_{j=1}^{r} \lambda_j E_j.
+\end{equation}
+</div>
+</li>
+<li>
+<p><strong>Hermite 性质</strong>：</p>
+<div>
+\begin{equation}\nonumber
+E_j^H = E_j.
+\end{equation}
+</div>
+</li>
+<li>
+<p><strong>投影矩阵性质</strong>：</p>
+<div>
+\begin{equation}\nonumber
+E_j^2 = E_j.
+\end{equation}
+</div>
+</li>
+<li>
+<p><strong>互斥性</strong>（正交分解）：</p>
+<div>
+\begin{equation}\nonumber
+E_i E_j = 0, \quad (i \neq j).
+\end{equation}
+</div>
+</li>
+<li>
+<p><strong>单位分解</strong>：</p>
+<div>
+\begin{equation}\nonumber
+\sum_{j=1}^{r} E_j = I.
+\end{equation}
+</div>
+</li>
+<li>
+<p><strong>秩条件</strong>：</p>
+<div>
+\begin{equation}\nonumber
+r(E_j) = n_j.
+\end{equation}
+</div>
+</li>
+</ol>
+<p>且满足<strong>上述性质的分解是唯一的</strong>。</p>
+<p><strong>证明：</strong></p>
+<ul>
+<li><strong>性质 1-3</strong> 已证明。</li>
+</ul>
+<p>令：</p>
+<div>
+\begin{equation}\nonumber
+U_j = (\alpha^1_j, ..., \alpha^{n_j}_j),
+\end{equation}
+</div>
+<p>则：</p>
+<div>
+\begin{equation}\nonumber
+E_j = U_j U_j^H.
+\end{equation}
+</div>
+<p><strong>进一步推导：</strong>
+由 $A$ 的投影矩阵 $E_j$ 满足：</p>
+<div>
+\begin{equation}\nonumber
+E_j (A G_i - \lambda_j E_j) G_i = E_j A G_i - E_j \lambda_j G_i = 0.
+\end{equation}
+</div>
+<p>由于 $\lambda_i \neq \lambda_j$，可得：</p>
+<div>
+\begin{equation}\nonumber
+E_j E_i G_i = 0.
+\end{equation}
+</div>
+<p>进而推出：</p>
+<div>
+\begin{equation}\nonumber
+E_j = E_j E_j \sum_{i=1}^{r} G_i = E_j G_j = (\sum_{i=1}^{r} E_j E_i) G_j = G_j.
+\end{equation}
+</div>
+<p>由于：</p>
+<div>
+\begin{equation}\nonumber
+E_j = U_j U_j^H,
+\end{equation}
+</div>
+<p>且由前述定理知：</p>
+<div>
+\begin{equation}\nonumber
+r(E_j) = r(U_j) = n_j.
+\end{equation}
+</div>
+<p><strong>结论：</strong>
+此外，由<strong>正规矩阵的特性</strong>可得：</p>
+<div>
+\begin{equation}\nonumber
+AA^H = \left(\sum_{j=1}^{r} \lambda_j E_j\right) \left(\sum_{j=1}^{r} \bar{\lambda_j} E_j^H\right).
+\end{equation}
+</div>
+<p>展开后得：</p>
+<div>
+\begin{equation}\nonumber
+\sum_{j=1}^{r} \lambda_j \bar{\lambda_j} E_j^H = \sum_{j=1}^{r} \lambda_j \bar{\lambda_j} E_j.
+\end{equation}
+</div>
+<p>由 $A^H A = \sum_{j=1}^{r} \bar{\lambda_j} \lambda_j E_j$，最终可得：</p>
+<div>
+\begin{equation}\nonumber
+AA^H = A^H A.
+\end{equation}
+</div>
+<p><strong>总结</strong></p>
+<ul>
+<li><strong>正规矩阵</strong>可通过<strong>投影矩阵</strong> $E_j$ 进行分解。</li>
+<li>其投影矩阵 $E_j$ 满足：
+<ul>
+<li><strong>Hermite</strong> 性质： $E_j^H = E_j$；</li>
+<li><strong>投影矩阵</strong> 性质：$E_j^2 = E_j$；</li>
+<li><strong>正交性</strong>： $E_i E_j = 0, (i \neq j)$；</li>
+<li><strong>秩约束</strong>： $r(E_j) = n_j$。</li>
+</ul>
+</li>
+<li><strong>单位矩阵分解</strong>：
+<div>
+\begin{equation}\nonumber
+\sum_{j=1}^{r} E_j = I.
+\end{equation}
+</div>
+</li>
+<li>该分解是<strong>唯一的</strong>，并保证 $AA^H = A^H A$。</li>
+</ul>
+<hr>
+<h3 id="正规矩阵的谱分解步骤"><strong>正规矩阵的谱分解步骤</strong>
+</h3><ol>
+<li><strong>求特征值</strong>：求出矩阵 $A$ 的 $r$ 个互异特征值 $\lambda_1, &hellip;, \lambda_r$。</li>
+<li><strong>求特征向量</strong>：
+<ul>
+<li>对于每个特征值 $\lambda_j$，求其对应的<strong>特征子空间</strong> $E(\lambda_j)$。</li>
+<li>在 $E(\lambda_j)$ 中，选取一组<strong>标准正交基</strong> $\alpha^1_j, &hellip;, \alpha^{n_j}_j$。</li>
+</ul>
+</li>
+<li><strong>构造投影矩阵</strong>：
+<ul>
+<li>定义 $E_j$ 为：
+<div>
+\begin{equation}\nonumber
+E_j = \sum_{j=1}^{n_j} \alpha^i_j (\alpha^i_j)^H.
+\end{equation}
+</div>
+</li>
+<li>最终，矩阵 $A$ 可分解为：
+<div>
+\begin{equation}\nonumber
+A = \sum_{j=1}^{r} \lambda_j E_j.
+\end{equation}
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>例题</strong>
+设矩阵 $A$ 为：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 & 0 & -2 \\
+0 & 0 & 0 \\
+-2 & 0 & 4
+\end{bmatrix}
+\end{equation}
+</div>
+求 $A$ 的**谱分解**，并计算 $\sum_{i=1}^{100} A^i$。
+<p><strong>解答</strong>
+<strong>(1) 计算特征值</strong>
+矩阵 $A$ 为对称矩阵，因此是<strong>正规矩阵</strong>，可进行谱分解。</p>
+<p>特征方程：</p>
+<div>
+\begin{equation}\nonumber
+| \lambda I - A | = \lambda^2 (\lambda - 5) = 0
+\end{equation}
+</div>
+解得：
+- **特征值** $\lambda_1 = 0$（二重）
+- **特征值** $\lambda_2 = 5$
+<p><strong>(2) 求特征向量</strong>
+对于 $\lambda_1 = 0$：</p>
+<div>
+\begin{equation}\nonumber
+E(0) 的标准基：
+x_1 =
+\begin{bmatrix}
+\frac{2}{\sqrt{5}} \\ 0 \\ \frac{1}{\sqrt{5}}
+\end{bmatrix}, \quad
+x_2 =
+\begin{bmatrix}
+0 \\ 1 \\ 0
+\end{bmatrix}
+\end{equation}
+</div>
+<p>对于 $\lambda_2 = 5$：</p>
+<div>
+\begin{equation}\nonumber
+E(5) 的标准基：
+x_3 =
+\begin{bmatrix}
+\frac{1}{\sqrt{5}} \\ 0 \\ -\frac{2}{\sqrt{5}}
+\end{bmatrix}
+\end{equation}
+</div>
+<p><strong>(3) 构造投影矩阵</strong></p>
+<div>
+\begin{equation}\nonumber
+E_1 = x_1 x_1^T + x_2 x_2^T =
+\begin{bmatrix}
+\frac{4}{5} & 0 & \frac{2}{5} \\
+0 & 1 & 0 \\
+\frac{2}{5} & 0 & \frac{1}{5}
+\end{bmatrix}
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+E_2 = x_3 x_3^T =
+\begin{bmatrix}
+\frac{1}{5} & 0 & -\frac{2}{5} \\
+0 & 0 & 0 \\
+-\frac{2}{5} & 0 & \frac{4}{5}
+\end{bmatrix}
+\end{equation}
+</div>
+<p>因此：</p>
+<div>
+\begin{equation}\nonumber
+A = \lambda_1 E_1 + \lambda_2 E_2
+\end{equation}
+</div>
+<hr>
+<h4 id="4-计算-sum_"><strong>(4) 计算 $\sum_{i=1}^{100} A^i$</strong>
+</h4><p>根据谱分解公式：</p>
+<div>
+\begin{equation}\nonumber
+A^i = \lambda_1^i E_1 + \lambda_2^i E_2
+\end{equation}
+</div>
+所以：
+<div>
+\begin{equation}\nonumber
+\sum_{i=1}^{100} A^i =
+\sum_{i=1}^{100} \lambda_1^i E_1 + \sum_{i=1}^{100} \lambda_2^i E_2
+\end{equation}
+</div>
+<p>由于 $\lambda_1 = 0$，则：</p>
+<div>
+\begin{equation}\nonumber
+\sum_{i=1}^{100} \lambda_1^i E_1 = 0
+\end{equation}
+</div>
+<p>而：</p>
+<div>
+\begin{equation}\nonumber
+\sum_{i=1}^{100} \lambda_2^i E_2 =
+\left( \sum_{i=1}^{100} 5^i \right) E_2
+\end{equation}
+</div>
+<p>利用等比数列求和：</p>
+<div>
+\begin{equation}\nonumber
+\sum_{i=1}^{100} 5^i = \frac{5^{101} - 5}{4}
+\end{equation}
+</div>
+<p>最终结果：</p>
+<div>
+\begin{equation}\nonumber
+\sum_{i=1}^{100} A^i = \frac{5^{101} - 5}{4} E_2
+\end{equation}
+</div>
+<p>展开后：</p>
+<div>
+\begin{equation}\nonumber
+\sum_{i=1}^{100} A^i = \frac{5^{100} - 1}{4}
+\begin{bmatrix}
+1 & 0 & -2 \\
+0 & 0 & 0 \\
+-2 & 0 & 4
+\end{bmatrix}
 \end{equation}
 </div>
 

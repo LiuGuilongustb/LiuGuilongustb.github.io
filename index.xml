@@ -5447,6 +5447,384 @@ A =
 \end{bmatrix}.
 \end{equation}
 &lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;简化奇异值分解&#34;&gt;&lt;strong&gt;简化奇异值分解&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}_r$，则可以表示为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = U_1
+\begin{bmatrix}
+\sigma_1 &amp; &amp; 0 \\ 
+&amp; \ddots &amp; \\ 
+0 &amp; &amp; \sigma_r
+\end{bmatrix}
+V_1^H.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+U_1 = (y_1, \dots, y_r) \in \mathbb{C}^{m \times r}, \quad
+V_1 = (x_1, \dots, x_r) \in \mathbb{C}^{n \times r}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;均为&lt;strong&gt;列酉矩阵&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;由&lt;strong&gt;奇异值分解&lt;/strong&gt;可得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+U
+\begin{bmatrix}
+\sigma_1 &amp; &amp; 0 &amp; 0 \\ 
+&amp; \ddots &amp; &amp; \\ 
+0 &amp; &amp; \sigma_r &amp; 0 \\ 
+0 &amp; &amp; 0 &amp; 0
+\end{bmatrix}
+V^H.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;设 $U$ 和 $V$ 分别拆分为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+U = (U_1, U_2), \quad
+V = (V_1, V_2),
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;其中 $U_1, U_2$ 以及 $V_1, V_2$ 满足酉矩阵的正交分解性质。&lt;/p&gt;
+&lt;p&gt;因此：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = (U_1, U_2)
+\begin{bmatrix}
+\Delta &amp; 0 \\ 
+0 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+V_1^H \\ 
+V_2^H
+\end{bmatrix}
+= U_1 \Delta V_1^H.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;从而得出简化的奇异值分解形式&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;下面给个定义，一个不常用的分解方式：极分解，这个东西是英文直译过来的，因为这个东西最可能用到的地方是极坐标。&lt;/p&gt;
+&lt;p&gt;该方法同前文类似的一些地方相同，不需要完全掌握，如果有用到的一天，回来找就行&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;极分解&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}_r$，则 $A$ 具有以下分解形式：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = G U,
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$G$ 为&lt;strong&gt;半正定 Hermite 矩阵&lt;/strong&gt;，&lt;/li&gt;
+&lt;li&gt;$U$ 为&lt;strong&gt;酉矩阵&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;特别地，当 $A$ &lt;strong&gt;满秩&lt;/strong&gt;时，$G$ 为&lt;strong&gt;正定 Hermite 矩阵&lt;/strong&gt;，且分解&lt;strong&gt;唯一&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;谱分解&#34;&gt;谱分解
+&lt;/h2&gt;&lt;h3 id=&#34;定理-1正规矩阵的投影矩阵分解&#34;&gt;&lt;strong&gt;定理 1：正规矩阵的投影矩阵分解&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $n$ 阶矩阵 $A$ 具有 $r$ 个&lt;strong&gt;互异特征值&lt;/strong&gt; $\lambda_1, &amp;hellip;, \lambda_r$，其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;特征值&lt;/strong&gt; $\lambda_j$ 的&lt;strong&gt;代数重数&lt;/strong&gt;为 $n_j$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;则 $A$ 为&lt;strong&gt;正规矩阵&lt;/strong&gt; $\Longleftrightarrow$ 存在 $n$ 阶矩阵 $E_1, &amp;hellip;, E_r$，满足：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;谱分解形式&lt;/strong&gt;：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = \sum_{j=1}^{r} \lambda_j E_j.
+\end{equation}
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Hermite 性质&lt;/strong&gt;：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+E_j^H = E_j.
+\end{equation}
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;投影矩阵性质&lt;/strong&gt;：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+E_j^2 = E_j.
+\end{equation}
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;互斥性&lt;/strong&gt;（正交分解）：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+E_i E_j = 0, \quad (i \neq j).
+\end{equation}
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;单位分解&lt;/strong&gt;：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\sum_{j=1}^{r} E_j = I.
+\end{equation}
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;秩条件&lt;/strong&gt;：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+r(E_j) = n_j.
+\end{equation}
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;且满足&lt;strong&gt;上述性质的分解是唯一的&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;性质 1-3&lt;/strong&gt; 已证明。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;令：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+U_j = (\alpha^1_j, ..., \alpha^{n_j}_j),
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;则：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+E_j = U_j U_j^H.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;进一步推导：&lt;/strong&gt;
+由 $A$ 的投影矩阵 $E_j$ 满足：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+E_j (A G_i - \lambda_j E_j) G_i = E_j A G_i - E_j \lambda_j G_i = 0.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由于 $\lambda_i \neq \lambda_j$，可得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+E_j E_i G_i = 0.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;进而推出：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+E_j = E_j E_j \sum_{i=1}^{r} G_i = E_j G_j = (\sum_{i=1}^{r} E_j E_i) G_j = G_j.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由于：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+E_j = U_j U_j^H,
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;且由前述定理知：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+r(E_j) = r(U_j) = n_j.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;结论：&lt;/strong&gt;
+此外，由&lt;strong&gt;正规矩阵的特性&lt;/strong&gt;可得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+AA^H = \left(\sum_{j=1}^{r} \lambda_j E_j\right) \left(\sum_{j=1}^{r} \bar{\lambda_j} E_j^H\right).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;展开后得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\sum_{j=1}^{r} \lambda_j \bar{\lambda_j} E_j^H = \sum_{j=1}^{r} \lambda_j \bar{\lambda_j} E_j.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由 $A^H A = \sum_{j=1}^{r} \bar{\lambda_j} \lambda_j E_j$，最终可得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+AA^H = A^H A.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;总结&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;正规矩阵&lt;/strong&gt;可通过&lt;strong&gt;投影矩阵&lt;/strong&gt; $E_j$ 进行分解。&lt;/li&gt;
+&lt;li&gt;其投影矩阵 $E_j$ 满足：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hermite&lt;/strong&gt; 性质： $E_j^H = E_j$；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;投影矩阵&lt;/strong&gt; 性质：$E_j^2 = E_j$；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;正交性&lt;/strong&gt;： $E_i E_j = 0, (i \neq j)$；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;秩约束&lt;/strong&gt;： $r(E_j) = n_j$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;单位矩阵分解&lt;/strong&gt;：
+&lt;div&gt;
+\begin{equation}\nonumber
+\sum_{j=1}^{r} E_j = I.
+\end{equation}
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;该分解是&lt;strong&gt;唯一的&lt;/strong&gt;，并保证 $AA^H = A^H A$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;正规矩阵的谱分解步骤&#34;&gt;&lt;strong&gt;正规矩阵的谱分解步骤&lt;/strong&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;求特征值&lt;/strong&gt;：求出矩阵 $A$ 的 $r$ 个互异特征值 $\lambda_1, &amp;hellip;, \lambda_r$。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;求特征向量&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;对于每个特征值 $\lambda_j$，求其对应的&lt;strong&gt;特征子空间&lt;/strong&gt; $E(\lambda_j)$。&lt;/li&gt;
+&lt;li&gt;在 $E(\lambda_j)$ 中，选取一组&lt;strong&gt;标准正交基&lt;/strong&gt; $\alpha^1_j, &amp;hellip;, \alpha^{n_j}_j$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;构造投影矩阵&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;定义 $E_j$ 为：
+&lt;div&gt;
+\begin{equation}\nonumber
+E_j = \sum_{j=1}^{n_j} \alpha^i_j (\alpha^i_j)^H.
+\end{equation}
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;最终，矩阵 $A$ 可分解为：
+&lt;div&gt;
+\begin{equation}\nonumber
+A = \sum_{j=1}^{r} \lambda_j E_j.
+\end{equation}
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;例题&lt;/strong&gt;
+设矩阵 $A$ 为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 &amp; 0 &amp; -2 \\
+0 &amp; 0 &amp; 0 \\
+-2 &amp; 0 &amp; 4
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+求 $A$ 的**谱分解**，并计算 $\sum_{i=1}^{100} A^i$。
+&lt;p&gt;&lt;strong&gt;解答&lt;/strong&gt;
+&lt;strong&gt;(1) 计算特征值&lt;/strong&gt;
+矩阵 $A$ 为对称矩阵，因此是&lt;strong&gt;正规矩阵&lt;/strong&gt;，可进行谱分解。&lt;/p&gt;
+&lt;p&gt;特征方程：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+| \lambda I - A | = \lambda^2 (\lambda - 5) = 0
+\end{equation}
+&lt;/div&gt;
+解得：
+- **特征值** $\lambda_1 = 0$（二重）
+- **特征值** $\lambda_2 = 5$
+&lt;p&gt;&lt;strong&gt;(2) 求特征向量&lt;/strong&gt;
+对于 $\lambda_1 = 0$：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+E(0) 的标准基：
+x_1 =
+\begin{bmatrix}
+\frac{2}{\sqrt{5}} \\ 0 \\ \frac{1}{\sqrt{5}}
+\end{bmatrix}, \quad
+x_2 =
+\begin{bmatrix}
+0 \\ 1 \\ 0
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;对于 $\lambda_2 = 5$：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+E(5) 的标准基：
+x_3 =
+\begin{bmatrix}
+\frac{1}{\sqrt{5}} \\ 0 \\ -\frac{2}{\sqrt{5}}
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;(3) 构造投影矩阵&lt;/strong&gt;&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+E_1 = x_1 x_1^T + x_2 x_2^T =
+\begin{bmatrix}
+\frac{4}{5} &amp; 0 &amp; \frac{2}{5} \\
+0 &amp; 1 &amp; 0 \\
+\frac{2}{5} &amp; 0 &amp; \frac{1}{5}
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+E_2 = x_3 x_3^T =
+\begin{bmatrix}
+\frac{1}{5} &amp; 0 &amp; -\frac{2}{5} \\
+0 &amp; 0 &amp; 0 \\
+-\frac{2}{5} &amp; 0 &amp; \frac{4}{5}
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;因此：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = \lambda_1 E_1 + \lambda_2 E_2
+\end{equation}
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;4-计算-sum_&#34;&gt;&lt;strong&gt;(4) 计算 $\sum_{i=1}^{100} A^i$&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;根据谱分解公式：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^i = \lambda_1^i E_1 + \lambda_2^i E_2
+\end{equation}
+&lt;/div&gt;
+所以：
+&lt;div&gt;
+\begin{equation}\nonumber
+\sum_{i=1}^{100} A^i =
+\sum_{i=1}^{100} \lambda_1^i E_1 + \sum_{i=1}^{100} \lambda_2^i E_2
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由于 $\lambda_1 = 0$，则：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\sum_{i=1}^{100} \lambda_1^i E_1 = 0
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;而：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\sum_{i=1}^{100} \lambda_2^i E_2 =
+\left( \sum_{i=1}^{100} 5^i \right) E_2
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;利用等比数列求和：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\sum_{i=1}^{100} 5^i = \frac{5^{101} - 5}{4}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;最终结果：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\sum_{i=1}^{100} A^i = \frac{5^{101} - 5}{4} E_2
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;展开后：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\sum_{i=1}^{100} A^i = \frac{5^{100} - 1}{4}
+\begin{bmatrix}
+1 &amp; 0 &amp; -2 \\
+0 &amp; 0 &amp; 0 \\
+-2 &amp; 0 &amp; 4
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
 </description>
         </item>
         <item>
