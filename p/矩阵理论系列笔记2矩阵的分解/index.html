@@ -388,13 +388,15 @@
     <li><a href="#谱分解">谱分解</a>
       <ol>
         <li><a href="#定理-1正规矩阵的投影矩阵分解"><strong>定理 1：正规矩阵的投影矩阵分解</strong></a></li>
-        <li><a href="#正规矩阵的谱分解步骤"><strong>正规矩阵的谱分解步骤</strong></a>
-          <ol>
-            <li><a href="#4-计算-sum_"><strong>(4) 计算 $\sum_{i=1}^{100} A^i$</strong></a></li>
-          </ol>
-        </li>
+        <li><a href="#正规矩阵的谱分解步骤"><strong>正规矩阵的谱分解步骤</strong></a></li>
       </ol>
     </li>
+  </ol>
+
+  <ol>
+    <li><a href="#2-单纯矩阵的谱分解">2. 单纯矩阵的谱分解</a></li>
+    <li><a href="#定理-2">定理 2</a></li>
+    <li><a href="#单纯矩阵谱分解步骤">单纯矩阵谱分解步骤</a></li>
   </ol>
 </nav>
         </div>
@@ -451,7 +453,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 25 分钟
+                    阅读时长: 27 分钟
                 </time>
             </div>
         
@@ -3200,9 +3202,8 @@ E_2 = x_3 x_3^T =
 A = \lambda_1 E_1 + \lambda_2 E_2
 \end{equation}
 </div>
-<hr>
-<h4 id="4-计算-sum_"><strong>(4) 计算 $\sum_{i=1}^{100} A^i$</strong>
-</h4><p>根据谱分解公式：</p>
+<p><strong>(4) 计算 $\sum_{i=1}^{100} A^i$</strong>
+根据谱分解公式：</p>
 <div>
 \begin{equation}\nonumber
 A^i = \lambda_1^i E_1 + \lambda_2^i E_2
@@ -3251,6 +3252,196 @@ A^i = \lambda_1^i E_1 + \lambda_2^i E_2
 \end{bmatrix}
 \end{equation}
 </div>
+<hr>
+<h1 id="单纯矩阵的谱分解">单纯矩阵的谱分解
+</h1><h2 id="2-单纯矩阵的谱分解">2. 单纯矩阵的谱分解
+</h2><p>设 $A$ 是 $n$ 阶单纯矩阵（可对角化），特征值为 $\lambda_1, \dots, \lambda_n$，对应特征向量为 $\alpha_1, \dots, \alpha_n$。若令</p>
+\[
+P = (\alpha_1, \dots, \alpha_n)
+\]<p>则有：</p>
+<p>\begin{equation}\nonumber
+A = P \operatorname{diag}(\lambda_1, \dots, \lambda_n) P^{-1}
+\end{equation}</p>
+<p>进一步展开：</p>
+<div>
+\begin{equation}\nonumber
+A = (\alpha_1, \dots, \alpha_n)
+\begin{bmatrix}
+\lambda_1 & 0 & \dots & 0 \\
+0 & \lambda_2 & \dots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \dots & \lambda_n
+\end{bmatrix}
+\begin{bmatrix}
+\beta_1 \\
+\beta_2 \\
+\vdots \\
+\beta_n
+\end{bmatrix}
+\end{equation}
+</div>
+<p>\begin{equation}\nonumber
+= \lambda_1 \alpha_1 \beta_1 + \dots + \lambda_n \alpha_n \beta_n
+\end{equation}</p>
+<p>其中，$\beta_i$ 是 $P^{-1}$ 的第 $i$ 个行向量，$\alpha_i \beta_i$ 是阶矩阵。</p>
+<p>由于 $PP^{-1} = I$，故 $\alpha_1 \beta_1 + \dots + \alpha_n \beta_n = I$，又因为 $P^{-1} P = I$，则有 $\beta_i \alpha_j = \delta_{ij}$。</p>
+<p>由于 $\lambda_i$ 可能是重根，因此可以进一步化简：</p>
+<p>\begin{equation}\nonumber
+A = \lambda_1 (\alpha_{11} \beta_{11} + \dots + \alpha_{1n} \beta_{1n})</p>
+<ul>
+<li>\lambda_2 (\alpha_{21} \beta_{21} + \dots + \alpha_{2n} \beta_{2n})</li>
+<li>\dots + \lambda_r (\alpha_{r1} \beta_{r1} + \dots + \alpha_{rn} \beta_{rn})
+\end{equation}</li>
+</ul>
+<p>最终表达为：</p>
+<p>\begin{equation}\nonumber
+A = \lambda_1 E_1 + \lambda_2 E_2 + \dots + \lambda_r E_r
+\end{equation}</p>
+<h2 id="定理-2">定理 2
+</h2><p>设 $n$ 阶单纯矩阵 $A$ 有 $r$ 个互异特征值 $\lambda_1, \dots, \lambda_r$，特征值 $\lambda_i$ 的代数重数是 $n_i$，则存在 $n$ 阶矩阵 $E_1, \dots, E_r$，使得：</p>
+<ol>
+<li>$A = \sum_{i=1}^{r} \lambda_i E_i$；</li>
+<li>$(E_i)^2 = E_i$；</li>
+<li>$E_i E_j = 0, i \neq j$；</li>
+<li>$\sum_{i=1}^{r} E_i = I$；</li>
+<li>满足上述性质的 $E_i$ 唯一；</li>
+<li>$\operatorname{tr}(E_i) = n_i$。</li>
+</ol>
+<h2 id="单纯矩阵谱分解步骤">单纯矩阵谱分解步骤
+</h2><ol>
+<li>求 $r$ 个互异特征值 $\lambda_1, \dots, \lambda_r$；</li>
+<li>对每个 $\lambda_i$，求特征子空间 $E(\lambda_i)$ 的一组基 $\alpha_1^{i}, \dots, \alpha_{n_i}^{i}$；</li>
+<li>将所有基组成矩阵 $P$，求 $P^{-1}$，令 $P^{-1}$ 的行向量为 $\beta_1, \dots, \beta_n$；</li>
+<li>按照 $\lambda_i$ 的重数计算：
+\begin{equation}\nonumber
+E_i = \sum_{j=1}^{n_i} \alpha_j^{i} \beta_j^{i}
+\end{equation}
+则 $A$ 的谱分解为：
+\begin{equation}\nonumber
+A = \sum_{i=1}^{r} \lambda_i E_i
+\end{equation}</li>
+</ol>
+<p>例题：矩阵的谱分解与幂次计算</p>
+<p>求矩阵 $A$ 的谱分解并计算 $A^{100}$，其中</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 & 4 & 2 \\
+0 & -3 & 4 \\
+0 & 4 & 3
+\end{bmatrix}
+\end{equation}
+</div>
+<p>解：
+首先，特征方程为：</p>
+<p>\begin{equation}\nonumber
+f_A(\lambda) = | \lambda I - A | = (\lambda - 1)(\lambda - 5)(\lambda + 5)
+\end{equation}</p>
+<p>因此，$A$ 的特征值为：</p>
+<p>\begin{equation}\nonumber
+\lambda_1 = 1, \quad \lambda_2 = 5, \quad \lambda_3 = -5
+\end{equation}</p>
+<p>特征值互异，故 $A$ 是单纯矩阵。</p>
+<p>取对应的特征向量：
+\begin{equation}\nonumber
+a_1 = (1,0,0)^T, \quad
+a_2 = (2,1,2)^T, \quad
+a_3 = (1,-2,1)^T
+\end{equation}</p>
+<p>构造矩阵 $P$：</p>
+<div>
+\begin{equation}\nonumber
+P =
+\begin{bmatrix}
+1 & 2 & 1 \\
+0 & 1 & -2 \\
+0 & 2 & 1
+\end{bmatrix}
+\end{equation}
+</div>
+<p>求 $P^{-1}$：</p>
+<div>
+\begin{equation}\nonumber
+P^{-1} =
+\begin{bmatrix}
+1 & 0 & -1 \\
+0 & \frac{1}{5} & \frac{2}{5} \\
+0 & -\frac{2}{5} & \frac{1}{5}
+\end{bmatrix}
+\end{equation}
+</div>
+<p>定义 $\beta_i$ 为 $P^{-1}$ 的行向量：
+\begin{equation}\nonumber
+\beta_1 = (1,0,-1), \quad
+\beta_2 = (0,\frac{1}{5},\frac{2}{5}), \quad
+\beta_3 = (0,-\frac{2}{5},\frac{1}{5})
+\end{equation}</p>
+<p>计算投影矩阵 $E_i$：</p>
+<div>
+\begin{equation}\nonumber
+E_1 = a_1 \beta_1 =
+\begin{bmatrix}
+1 \\ 0 \\ 0
+\end{bmatrix}
+(1,0,-1) =
+\begin{bmatrix}
+1 & 0 & -1 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+E_2 = a_2 \beta_2 =
+\begin{bmatrix}
+2 \\ 1 \\ 2
+\end{bmatrix}
+(0,\frac{1}{5},\frac{2}{5}) =
+\begin{bmatrix}
+0 & \frac{2}{5} & \frac{4}{5} \\
+0 & \frac{1}{5} & \frac{2}{5} \\
+0 & \frac{2}{5} & \frac{4}{5}
+\end{bmatrix}
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+E_3 = a_3 \beta_3 =
+\begin{bmatrix}
+1 \\ -2 \\ 1
+\end{bmatrix}
+(0,-\frac{2}{5},\frac{1}{5}) =
+\begin{bmatrix}
+0 & -\frac{2}{5} & \frac{1}{5} \\
+0 & \frac{4}{5} & -\frac{2}{5} \\
+0 & -\frac{2}{5} & \frac{1}{5}
+\end{bmatrix}
+\end{equation}
+</div>
+<p>因此，$A$ 的谱分解为：
+\begin{equation}\nonumber
+A = \lambda_1 E_1 + \lambda_2 E_2 + \lambda_3 E_3
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+A = E_1 + 5E_2 - 5E_3
+\end{equation}</p>
+<p>计算 $A^{100}$</p>
+<p>由于 $E_i$ 互相正交，且满足 $E_i^2 = E_i$，则有：
+\begin{equation}\nonumber
+A^{100} = \lambda_1^{100} E_1 + \lambda_2^{100} E_2 + \lambda_3^{100} E_3
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+A^{100} = 1^{100}E_1 + 5^{100}E_2 + (-5)^{100}E_3
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+A^{100} = E_1 + 5^{100}E_2 + 5^{100}E_3
+\end{equation}</p>
+<p>最终，$A^{100}$ 的表达式为：
+\begin{equation}\nonumber
+A^{100} = E_1 + 5^{100} (E_2 + E_3)
+\end{equation}</p>
 
 </section>
 
