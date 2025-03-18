@@ -391,12 +391,19 @@
         <li><a href="#正规矩阵的谱分解步骤"><strong>正规矩阵的谱分解步骤</strong></a></li>
       </ol>
     </li>
-  </ol>
-
-  <ol>
-    <li><a href="#2-单纯矩阵的谱分解">2. 单纯矩阵的谱分解</a></li>
-    <li><a href="#定理-2">定理 2</a></li>
-    <li><a href="#单纯矩阵谱分解步骤">单纯矩阵谱分解步骤</a></li>
+    <li><a href="#单纯矩阵的谱分解">单纯矩阵的谱分解</a>
+      <ol>
+        <li><a href="#2-单纯矩阵的谱分解">2. 单纯矩阵的谱分解</a></li>
+        <li><a href="#定理-2">定理 2</a></li>
+        <li><a href="#单纯矩阵谱分解步骤">单纯矩阵谱分解步骤</a></li>
+        <li><a href="#推论-3">推论</a></li>
+        <li><a href="#命题">命题</a></li>
+        <li><a href="#定义投影变换">定义:投影变换</a></li>
+        <li><a href="#单纯矩阵谱分解的另外一种方法">单纯矩阵谱分解的另外一种方法</a></li>
+        <li><a href="#秩-1-公式">秩 1 公式</a></li>
+        <li><a href="#特征值观察法">特征值观察法</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -453,7 +460,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 27 分钟
+                    阅读时长: 32 分钟
                 </time>
             </div>
         
@@ -3253,9 +3260,9 @@ A^i = \lambda_1^i E_1 + \lambda_2^i E_2
 \end{equation}
 </div>
 <hr>
-<h1 id="单纯矩阵的谱分解">单纯矩阵的谱分解
-</h1><h2 id="2-单纯矩阵的谱分解">2. 单纯矩阵的谱分解
-</h2><p>设 $A$ 是 $n$ 阶单纯矩阵（可对角化），特征值为 $\lambda_1, \dots, \lambda_n$，对应特征向量为 $\alpha_1, \dots, \alpha_n$。若令</p>
+<h2 id="单纯矩阵的谱分解">单纯矩阵的谱分解
+</h2><h3 id="2-单纯矩阵的谱分解">2. 单纯矩阵的谱分解
+</h3><p>设 $A$ 是 $n$ 阶单纯矩阵（可对角化），特征值为 $\lambda_1, \dots, \lambda_n$，对应特征向量为 $\alpha_1, \dots, \alpha_n$。若令</p>
 \[
 P = (\alpha_1, \dots, \alpha_n)
 \]<p>则有：</p>
@@ -3297,8 +3304,8 @@ A = \lambda_1 (\alpha_{11} \beta_{11} + \dots + \alpha_{1n} \beta_{1n})</p>
 <p>\begin{equation}\nonumber
 A = \lambda_1 E_1 + \lambda_2 E_2 + \dots + \lambda_r E_r
 \end{equation}</p>
-<h2 id="定理-2">定理 2
-</h2><p>设 $n$ 阶单纯矩阵 $A$ 有 $r$ 个互异特征值 $\lambda_1, \dots, \lambda_r$，特征值 $\lambda_i$ 的代数重数是 $n_i$，则存在 $n$ 阶矩阵 $E_1, \dots, E_r$，使得：</p>
+<h3 id="定理-2">定理 2
+</h3><p>设 $n$ 阶单纯矩阵 $A$ 有 $r$ 个互异特征值 $\lambda_1, \dots, \lambda_r$，特征值 $\lambda_i$ 的代数重数是 $n_i$，则存在 $n$ 阶矩阵 $E_1, \dots, E_r$，使得：</p>
 <ol>
 <li>$A = \sum_{i=1}^{r} \lambda_i E_i$；</li>
 <li>$(E_i)^2 = E_i$；</li>
@@ -3307,8 +3314,8 @@ A = \lambda_1 E_1 + \lambda_2 E_2 + \dots + \lambda_r E_r
 <li>满足上述性质的 $E_i$ 唯一；</li>
 <li>$\operatorname{tr}(E_i) = n_i$。</li>
 </ol>
-<h2 id="单纯矩阵谱分解步骤">单纯矩阵谱分解步骤
-</h2><ol>
+<h3 id="单纯矩阵谱分解步骤">单纯矩阵谱分解步骤
+</h3><ol>
 <li>求 $r$ 个互异特征值 $\lambda_1, \dots, \lambda_r$；</li>
 <li>对每个 $\lambda_i$，求特征子空间 $E(\lambda_i)$ 的一组基 $\alpha_1^{i}, \dots, \alpha_{n_i}^{i}$；</li>
 <li>将所有基组成矩阵 $P$，求 $P^{-1}$，令 $P^{-1}$ 的行向量为 $\beta_1, \dots, \beta_n$；</li>
@@ -3441,6 +3448,480 @@ A^{100} = E_1 + 5^{100}E_2 + 5^{100}E_3
 <p>最终，$A^{100}$ 的表达式为：
 \begin{equation}\nonumber
 A^{100} = E_1 + 5^{100} (E_2 + E_3)
+\end{equation}</p>
+<hr>
+<h3 id="推论-3">推论
+</h3><p>在 <strong>定理 2</strong> 的条件下，设 $A$ 的谱阵为 $E_i$，$1 \leq i \leq r$，则：</p>
+<ol>
+<li>
+<p>\begin{equation}\nonumber
+E_i = \frac{1}{\varphi_i(A)} \varphi_i(A), \quad i = 1, \dots, r.
+\end{equation}</p>
+<p>其中：
+\begin{equation}\nonumber
+\varphi_i(A) = \prod_{j=1, j \neq i}^{r} (\lambda - \lambda_i).
+\end{equation}</p>
+</li>
+<li>
+<p>若 $f(\lambda)$ 为任意多项式，则：
+\begin{equation}\nonumber
+f(A) = f(\lambda_1) E_1 + f(\lambda_2) E_2 + \dots + f(\lambda_r) E_r.
+\end{equation}</p>
+</li>
+</ol>
+<p>特别地，有：
+\begin{equation}\nonumber
+A^m = \lambda_1^m E_1 + \lambda_2^m E_2 + \dots + \lambda_r^m E_r.
+\end{equation}</p>
+<hr>
+<h3 id="命题">命题
+</h3><p>设 $E \in \mathbb{C}^{n \times n}$ 为幂等矩阵，则：</p>
+<ol>
+<li>
+<p>$E$ 为单纯矩阵且其 Jordan 标准型为：</p>
+<div>
+\begin{equation}\nonumber
+\begin{bmatrix}
+I_r & 0 \\
+0 & 0
+\end{bmatrix}
+\end{equation}
+</div>
+</li>
+<li>
+<p>$E$ 的特征值只能是 $1$ 或 $0$；</p>
+</li>
+<li>
+<p>$\operatorname{rank}(E) = \operatorname{tr}(E)$；</p>
+</li>
+<li>
+<p>$Ex = x \iff x \in R(E)$。</p>
+</li>
+</ol>
+<p>证明</p>
+<p>由于 $E^2 = E$，可得其特征方程为：
+\begin{equation}\nonumber
+\varphi(\lambda) = \lambda^2 - \lambda = \lambda (\lambda - 1).
+\end{equation}</p>
+<p>将 $\varphi(\lambda)$ 零化，则 $m_E(\lambda) | \lambda (\lambda -1)$，故 $m_E(\lambda)$ 无重根，且其根只能是 $1$ 或 $0$，因此存在可逆矩阵 $P$ 使得：
+\begin{equation}\nonumber
+P^{-1} E P = \operatorname{diag}(1, 1, 0, \dots, 0).
+\end{equation}</p>
+<p>由此可得 1)、2)、3) 成立。</p>
+<p>对于 4)：</p>
+<ul>
+<li>若 $x = Ex$，则 $x \in R(E)$；</li>
+<li>反之，若 $x \in R(E)$，则存在 $y$ 使得 $x = Ey$，从而：
+\begin{equation}\nonumber
+Ex = E(Ey) = E^2 y = Ey = x.
+\end{equation}</li>
+</ul>
+<p>证毕。</p>
+<hr>
+<h3 id="定义投影变换">定义:投影变换
+</h3><p>设 $\mathbb{C}^n = V_1 \oplus V_2$，则对任意 $x \in \mathbb{C}^n$，可以唯一地分解为：
+\begin{equation}\nonumber
+x = y + z,
+\end{equation}
+其中 $y \in V_1$，$z \in V_2$。此时称 $y$ 为 $x$ 在 $V_1$ 上的投影。</p>
+<p>令 $E \in L(\mathbb{C}^n, \mathbb{C}^n)$，若满足：
+\begin{equation}\nonumber
+Ex = y,
+\end{equation}
+则称 $E$ 为 <strong>投影变换</strong>。</p>
+<p>命题: $E$ 是投影变换 $\iff E$ 是幂等矩阵。</p>
+<p>证明</p>
+<p><strong>$\Rightarrow$：</strong><br>
+若 $E$ 是投影变换，则对任意 $x \in \mathbb{C}^n$，由定义可得：
+\begin{equation}\nonumber
+x = y + z,
+\end{equation}
+其中 $y \in V_1, z \in V_2$，且 $Ex = y$。因此：
+\begin{equation}\nonumber
+E^2 x = E(Ex) = E y = y = Ex,
+\end{equation}
+即：
+\begin{equation}\nonumber
+E^2 = E.
+\end{equation}</p>
+<p><strong>$\Leftarrow$：</strong><br>
+若 $E^2 = E$，定义：
+\begin{equation}\nonumber
+V_1 = { y \mid y = Ex, x \in \mathbb{C}^n } = R(E),
+\end{equation}
+\begin{equation}\nonumber
+V_2 = { x \mid Ex = 0 } = N(E).
+\end{equation}</p>
+<p>若能证明 $\mathbb{C}^n = V_1 \oplus V_2$，则可得 $Ex$ 是 $x$ 在 $R(E)$ 上的投影变换。</p>
+<p>因此，接下来证明：
+\begin{equation}\nonumber
+\mathbb{C}^n = V_1 \oplus V_2.
+\end{equation}</p>
+<p>继续证明 $\mathbb{C}^n = V_1 \oplus V_2$：</p>
+<p>任取 $x \in V_1 \cap V_2$，则有：
+\begin{equation}\nonumber
+z = Ex, \quad Ez = \theta.
+\end{equation}
+其中，$\theta$ 为原点对应的向量。</p>
+<p>则：
+\begin{equation}\nonumber
+\theta = Ez = E^2 x = Ex = z.
+\end{equation}
+因此：
+\begin{equation}\nonumber
+V_1 \cap V_2 = { \theta }.
+\end{equation}</p>
+<p>对任意 $x \in \mathbb{C}^n$，可表示为：
+\begin{equation}\nonumber
+x = Ex + (I - E)x,
+\end{equation}
+其中：
+\begin{equation}\nonumber
+Ex \in V_1, \quad (I - E)x \in V_2.
+\end{equation}</p>
+<p>因此：
+\begin{equation}\nonumber
+\mathbb{C}^n = V_1 \oplus V_2.
+\end{equation}</p>
+<hr>
+<h3 id="单纯矩阵谱分解的另外一种方法">单纯矩阵谱分解的另外一种方法
+</h3><p>设矩阵 $A \in \mathbb{C}^{n \times n}$，其互异的特征值为 $\lambda_1, \dots, \lambda_k$，定义：</p>
+<p>\begin{equation}\nonumber
+m(\lambda) = (\lambda - \lambda_1) \cdots (\lambda - \lambda_k).
+\end{equation}</p>
+<p>如果 $m(A) = (A - \lambda_1 I) \cdots (A - \lambda_k I) = 0$，则 $A$ 是单纯矩阵。</p>
+<p>由推论可得：</p>
+<p>\begin{equation}\nonumber
+E_i = \frac{(A - \lambda_1 I) \cdots (A - \lambda_{i-1} I)(A - \lambda_{i+1} I) \cdots (A - \lambda_k I)}
+{(\lambda_i - \lambda_1) \cdots (\lambda_i - \lambda_{i-1})(\lambda_i - \lambda_{i+1}) \cdots (\lambda_i - \lambda_k)},
+\end{equation}</p>
+<p>其中 $i = 1, 2, \dots, k$。</p>
+<p>因此，矩阵 $A$ 的谱分解为：
+\begin{equation}\nonumber
+A = \lambda_1 E_1 + \dots + \lambda_k E_k.
+\end{equation}</p>
+<p>例题：矩阵的谱分解</p>
+<p>例 1</p>
+<p>给定矩阵：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 & 1 & 1 \\
+0 & 2 & 1 \\
+0 & 0 & 3
+\end{bmatrix}
+\end{equation}
+</div>
+<p>容易看出其特征值为：
+\begin{equation}\nonumber
+\lambda_1 = 1, \quad \lambda_2 = 2, \quad \lambda_3 = 3.
+\end{equation}</p>
+<p>矩阵 $A$ 的谱分解：
+\begin{equation}\nonumber
+A = \lambda_1 E_1 + \lambda_2 E_2 + \lambda_3 E_3.
+\end{equation}</p>
+<p>对任意函数 $f(A)$：
+\begin{equation}\nonumber
+f(A) = f(\lambda_1) E_1 + f(\lambda_2) E_2 + f(\lambda_3) E_3.
+\end{equation}</p>
+<p>其中：
+\begin{equation}\nonumber
+E_1 = \frac{(A - 2I)(A - 3I)}{(1-2)(1-3)}, \quad
+E_2 = \frac{(A - I)(A - 3I)}{(2-1)(2-3)}.
+\end{equation}</p>
+<p>进一步计算：
+\begin{equation}\nonumber
+E_3 = \frac{(A - I)(A - 2I)}{(3-1)(3-2)} = I - E_1 - E_2.
+\end{equation}</p>
+<p>例 2</p>
+<p>给定矩阵：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+4 & 6 & 0 \\
+-3 & -5 & 0 \\
+-3 & -6 & 1
+\end{bmatrix}
+\end{equation}
+</div>
+<p>通过计算得：
+\begin{equation}\nonumber
+\lambda_1 = 1, \quad (\text{二重}), \quad \lambda_2 = -2.
+\end{equation}</p>
+<p>由于：
+\begin{equation}\nonumber
+r(\lambda_1 I - A) = 1 = n - 2,
+\end{equation}
+所以代数重数等于几何重数，$\Rightarrow A$ 是单纯矩阵。</p>
+<p>因此：
+\begin{equation}\nonumber
+A^{100} = 1^{100} E_1 + (-2)^{100} E_2.
+\end{equation}</p>
+<hr>
+<h3 id="秩-1-公式">秩 1 公式
+</h3><p>若 $\operatorname{r}(A) = 1$，则：
+\begin{equation}\nonumber
+A = \alpha \beta =
+\begin{bmatrix}
+a_1 \
+\vdots \
+a_n
+\end{bmatrix}
+(b_1, \dots, b_n).
+\end{equation}</p>
+<p>并且：
+\begin{equation}\nonumber
+\lambda(A) = \left{ (\beta \alpha), 0, \dots, 0 \right}
+\end{equation}
+其中 $0$ 出现 $n-1$ 次。</p>
+<p>另外：
+\begin{equation}\nonumber
+\lambda(A) = \left{ \operatorname{tr}(A), 0, \dots, 0 \right}
+\end{equation}
+其中 $0$ 出现 $n-1$ 次。</p>
+<p>同时，$\alpha$ 满足：
+\begin{equation}\nonumber
+\begin{bmatrix}
+a_1 \
+\vdots \
+a_n
+\end{bmatrix}
+\end{equation}
+是一个特征向量，且：
+\begin{equation}\nonumber
+A \alpha = \lambda_1 \alpha, \quad \lambda_1 = \beta \alpha.
+\end{equation}</p>
+<p>证明</p>
+<p>由已知：
+\begin{equation}\nonumber
+A \alpha = \alpha (\beta \alpha) = \lambda_1 \alpha.
+\end{equation}</p>
+<p>可见 $\alpha$ 是特征向量，$\lambda_1 = \beta \alpha$ 是特征根。</p>
+<p>由 <strong>换位公式</strong>：
+\begin{equation}\nonumber
+|\lambda I_m - AB| = \lambda^{m-n} |\lambda I_n - BA|, \quad (m \geq n).
+\end{equation}</p>
+<p>其中：
+\begin{equation}\nonumber
+A = A_{m \times n}, \quad B = B_{n \times m}.
+\end{equation}</p>
+<p>因此可得：
+\begin{equation}\nonumber
+|\lambda I_n - \alpha \beta| = \lambda^{n-1} |\lambda I_1 - \beta \alpha|.
+\end{equation}</p>
+<p>例题：矩阵的特征值与谱分解</p>
+<p>例 1</p>
+<p>给定矩阵：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 & \dots & 1 \\
+\vdots & \ddots & \vdots \\
+1 & \dots & 1
+\end{bmatrix}_{n \times n}
+=
+\begin{bmatrix}
+1 \\
+\vdots \\
+1
+\end{bmatrix}
+(1, \dots, 1) = \alpha \beta.
+\end{equation}
+</div>
+<p>其特征值为：
+\begin{equation}\nonumber
+\lambda(A) = { \operatorname{tr}(A), 0, \dots, 0 } = { n, 0, \dots, 0 }.
+\end{equation}</p>
+<p>例 2</p>
+<p>给定矩阵：</p>
+<div>
+\begin{equation}\nonumber
+B =
+\begin{bmatrix}
+3 & 1 & \dots & 1 \\
+1 & 3 & \dots & 1 \\
+\vdots & \vdots & \ddots & \vdots \\
+1 & 1 & \dots & 3
+\end{bmatrix}_{n \times n},
+\quad
+C =
+\begin{bmatrix}
+2 & -1 & \dots & -1 \\
+-1 & 2 & \dots & -1 \\
+\vdots & \vdots & \ddots & \vdots \\
+-1 & -1 & \dots & 2
+\end{bmatrix}_{n \times n}.
+\end{equation}
+</div>
+<p>由于：
+\begin{equation}\nonumber
+B = A + 2I, \quad \Rightarrow \quad \lambda(B) = { n + 2, 2, \dots, 2 }.
+\end{equation}</p>
+<p>同理：
+\begin{equation}\nonumber
+C = 3I - A, \quad \Rightarrow \quad \lambda(C) = { 3 - n, 3, \dots, 3 }.
+\end{equation}</p>
+<p>例 3</p>
+<p>给定矩阵：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+0 & 1 & 1 & -1 \\
+1 & 0 & -1 & 1 \\
+1 & -1 & 0 & 1 \\
+-1 & 1 & 1 & 0
+\end{bmatrix},
+\end{equation}
+</div>
+求 $\lambda(A)$。
+<p>解</p>
+<p>令：</p>
+<div>
+\begin{equation}\nonumber
+B = A - I =
+\begin{bmatrix}
+-1 & 1 & 1 & -1 \\
+1 & -1 & -1 & 1 \\
+1 & -1 & -1 & 1 \\
+-1 & 1 & 1 & -1
+\end{bmatrix}.
+\end{equation}
+</div>
+<p>矩阵 $B$ 具有特征向量：
+\begin{equation}\nonumber
+(1, -1, -1, 1),
+\end{equation}
+其特征值为：
+\begin{equation}\nonumber
+\lambda(B) = { \operatorname{tr}(B), 0, 0, 0 } = { -4, 0, 0, 0 }.
+\end{equation}</p>
+<p>由于：
+\begin{equation}\nonumber
+A = B + I,
+\end{equation}
+因此：
+\begin{equation}\nonumber
+\lambda(A) = { -4 + 1, 1, 1, 1 } = { -3, 1, 1, 1 }.
+\end{equation}</p>
+<p>例 4</p>
+<p>给定矩阵：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+7 & 4 & -1 \\
+4 & 7 & -1 \\
+-4 & -4 & 4
+\end{bmatrix},
+\end{equation}
+</div>
+求谱分解。
+<p>解</p>
+<p>令：</p>
+<div>
+\begin{equation}\nonumber
+B = A - 3I =
+\begin{bmatrix}
+4 & 4 & -1 \\
+4 & 4 & -1 \\
+-4 & -4 & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 \\
+1 \\
+-1
+\end{bmatrix}
+(4, 4, -1).
+\end{equation}
+</div>
+<p>其特征值：
+\begin{equation}\nonumber
+\lambda(B) = { \operatorname{tr}(B), 0, 0 } = { 9, 0, 0 }.
+\end{equation}</p>
+<p>因此：
+\begin{equation}\nonumber
+\lambda(A) = { 9 + 3, 3, 3 } = { 12, 3, 3 }.
+\end{equation}</p>
+<hr>
+<h3 id="特征值观察法">特征值观察法
+</h3><ol>
+<li>
+<p>若 $A = (a_{ij})_{n \times n}$ 的<strong>行和</strong>等于常数 $a$，则 $\lambda = a$ 是 $A$ 的一个特征值，并且 $A$ 必有特征向量：
+\begin{equation}\nonumber
+x = (1, \dots, 1)^T
+\end{equation}
+使得：
+\begin{equation}\nonumber
+Ax = ax.
+\end{equation}</p>
+</li>
+<li>
+<p>若 $A = (a_{ij})_{n \times n}$ 的<strong>列和</strong>等于常数 $a$，则 $\lambda = a$ 是 $A$ 的一个特征值。</p>
+</li>
+<li>
+<p>矩阵 $A$ 的特征值之和等于 $A$ 的迹：
+\begin{equation}\nonumber
+\lambda_1 + \dots + \lambda_n = \operatorname{tr}(A) = a_{11} + \dots + a_{nn}.
+\end{equation}</p>
+<p><strong>特别地，当 $n = 2$ 时</strong>：
+\begin{equation}\nonumber
+\lambda_1 + \lambda_2 = \operatorname{tr}(A) \quad \Rightarrow \quad \lambda_2 = \operatorname{tr}(A) - \lambda_1.
+\end{equation}</p>
+</li>
+</ol>
+<p>例题：矩阵的谱分解</p>
+<p>例 1</p>
+<p>给定矩阵：</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+2 & 2 \\
+1 & 3
+\end{bmatrix},
+\quad
+B = A^T =
+\begin{bmatrix}
+2 & 1 \\
+2 & 3
+\end{bmatrix}.
+\end{equation}
+</div>
+<p>求矩阵 $A$ 的谱分解。</p>
+<p>解</p>
+<p>由 <strong>引理 1</strong> 可知：</p>
+<ul>
+<li>行和等于 $4$，因此 $\lambda_1 = 4$；</li>
+<li>由于 $\operatorname{tr}(A) = 5$，则：
+\begin{equation}\nonumber
+\lambda_2 = \operatorname{tr}(A) - \lambda_1 = 5 - 4 = 1.
+\end{equation}</li>
+</ul>
+<p>因为 $\lambda_1 \neq \lambda_2$，所以 $A$ 是单纯矩阵。</p>
+<p>因此，$A$ 的谱分解为：
+\begin{equation}\nonumber
+A = \lambda_1 E_1 + \lambda_2 E_2.
+\end{equation}</p>
+<p>对于任意函数 $f(A)$：
+\begin{equation}\nonumber
+f(A) = f(\lambda_1) E_1 + f(\lambda_2) E_2.
+\end{equation}</p>
+<p>例如，若取：
+\begin{equation}\nonumber
+f(x) = e^{tx} = 1 + tx + \frac{(tx)^2}{2!} + \frac{(tx)^3}{3!} + \dots
+\end{equation}
+则：
+\begin{equation}\nonumber
+f(A) = e^{tA} = 1 + tA + \frac{(tA)^2}{2!} + \frac{(tA)^3}{3!} + \dots
+\end{equation}</p>
+<p>在本例中，有：
+\begin{equation}\nonumber
+f(A) = e^{4t} E_1 + e^{t} E_2.
 \end{equation}</p>
 
 </section>
