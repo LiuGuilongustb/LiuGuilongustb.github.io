@@ -6752,8 +6752,600 @@ A^H (A^H)^+ = A^H (A^H)^+ A^+ = (A^+)^H A^+ = A^+ A A^+ = A^+.
 \begin{equation}\nonumber
 \operatorname{R}(A^+) = \operatorname{R}(A^H).
 \end{equation}&lt;/p&gt;
+&lt;p&gt;由&lt;strong&gt;秩-加-核定理&lt;/strong&gt;知：
+\begin{equation}\nonumber
+\dim N(A^+) + \dim R(A^+) = \dim N(A^H) + \dim R(A^H).
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因此：
+\begin{equation}\nonumber
+\dim N(A^+) = \dim N(A^H).
+\end{equation}&lt;/p&gt;
+&lt;p&gt;另一方面：
+\begin{equation}\nonumber
+N(A^+) = N(A^+ AA^+) = N(A^+ (A^+)^H A^H).
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由于：
+\begin{equation}\nonumber
+N(A^+ (A^+)^H A^H) \supseteq N(A^H),
+\end{equation}
+可得：
+\begin{equation}\nonumber
+N(A^+) = N(A^H).
+\end{equation}&lt;/p&gt;
 &lt;hr&gt;
-</description>
+&lt;p&gt;注 1&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;标量情况下的伪逆&lt;/strong&gt;：
+\begin{equation}\nonumber
+(AA)^+ = \lambda^+ A^+,
+\end{equation}
+其中：
+\begin{equation}\nonumber
+\lambda^+ =
+\begin{cases}
+\frac{1}{\lambda}, &amp;amp; \lambda \neq 0, \
+0, &amp;amp; \lambda = 0.
+\end{cases}
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;对角矩阵的伪逆&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;若：
+\begin{equation}\nonumber
+D = \operatorname{diag}(d_1, \dots, d_n),
+\end{equation}
+则：
+\begin{equation}\nonumber
+D^+ = \operatorname{diag}(d_1^+, \dots, d_n^+),
+\end{equation}
+且：
+\begin{equation}\nonumber
+D^+ D = D D^+.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;分块矩阵的伪逆&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+A_1 &amp; 0 \\
+0 &amp; A_2
+\end{bmatrix}_{m \times n},
+\end{equation}
+&lt;/div&gt;
+则：
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ =
+\begin{bmatrix}
+A_1^+ &amp; 0 \\
+0 &amp; A_2^+
+\end{bmatrix}_{n \times m}.
+\end{equation}
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;若 &lt;strong&gt;列西矩阵&lt;/strong&gt; $A$ 满足：
+\begin{equation}\nonumber
+A^H A = I,
+\end{equation}
+则：
+\begin{equation}\nonumber
+A^+ = A^H.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;示例：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设：&lt;/p&gt;
+  &lt;div&gt;
+  \begin{equation}\nonumber
+  A =
+  \begin{bmatrix}
+  \frac{1}{\sqrt{2}} &amp; 0 \\
+  0 &amp; 1 \\
+  \frac{1}{\sqrt{2}} &amp; 0
+  \end{bmatrix},
+  \end{equation}
+  &lt;/div&gt;
+  则：
+  &lt;div&gt;
+  \begin{equation}\nonumber
+  A^+ = A^H =
+  \begin{bmatrix}
+  \frac{1}{\sqrt{2}} &amp; 0 &amp; \frac{1}{\sqrt{2}} \\
+  0 &amp; 1 &amp; 0
+  \end{bmatrix}.
+  \end{equation}
+  &lt;/div&gt;
+&lt;h2 id=&#34;a-矩阵的几种求法&#34;&gt;$A^+$ 矩阵的几种求法
+&lt;/h2&gt;&lt;h3 id=&#34;满秩分解求a&#34;&gt;满秩分解求$A^+$
+&lt;/h3&gt;&lt;h3 id=&#34;定理-1&#34;&gt;定理 1
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，满足&lt;strong&gt;秩分解&lt;/strong&gt;：
+\begin{equation}\nonumber
+A = BC,
+\end{equation}
+其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$B \in \mathbb{C}^{m \times r}$，&lt;/li&gt;
+&lt;li&gt;$C \in \mathbb{C}^{r \times n}$，&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;则：
+\begin{equation}\nonumber
+A^+ = C^H (CC^H)^{-1} (B^H B)^{-1} B^H.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;等价地：
+\begin{equation}\nonumber
+A^+ = C^H (B^H A C^H)^{-1} B^H.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;证明&lt;/p&gt;
+&lt;p&gt;由于：
+\begin{equation}\nonumber
+\operatorname{r}(CC^H) = \operatorname{r}(B^H B) = r,
+\end{equation}
+所以矩阵 $CC^H$ 与 $B^H B$ &lt;strong&gt;均可逆&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;因此，仅需验证上述 $A^+$ &lt;strong&gt;满足 Penrose 四个方程&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;证明方程 1：
+\begin{equation}\nonumber
+AXA = BCC^H (CC^H)^{-1} (B^H B)^{-1} B^H A.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由于：
+\begin{equation}\nonumber
+CC^H (CC^H)^{-1} = I, \quad (B^H B)^{-1} B^H B = I,
+\end{equation}
+则：
+\begin{equation}\nonumber
+AXA = BC = A.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;证明方程 3：
+\begin{equation}\nonumber
+AX = BCC^H (CC^H)^{-1} (B^H B)^{-1} B^H.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;化简得：
+\begin{equation}\nonumber
+AX = B (B^H B)^{-1} B^H.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因此：
+\begin{equation}\nonumber
+(AX)^H = AX.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;类似地，可证&lt;strong&gt;其余两个方程&lt;/strong&gt;，从而证得 $A^+$ &lt;strong&gt;满足 Penrose 方程&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;推论-1&#34;&gt;推论 1
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;当 $r = n$（&lt;strong&gt;列满秩&lt;/strong&gt;）时：
+\begin{equation}\nonumber
+A^+ = (A^H A)^{-1} A^H.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;当 $r = m$（&lt;strong&gt;行满秩&lt;/strong&gt;）时：
+\begin{equation}\nonumber
+A^+ = A^H (A A^H)^{-1}.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;证明：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;当 $r = n$，则 $A = AI_n = BC$ 为 $A$ &lt;strong&gt;的秩分解&lt;/strong&gt;，由&lt;strong&gt;定理 1&lt;/strong&gt; 可得：
+\begin{equation}\nonumber
+A^+ = (A^H A)^{-1} A^H.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;当 $r = m$，则 $A = I_m A = BC$，同理可证。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;例 1 求伪逆&lt;/p&gt;
+&lt;p&gt;给定矩阵：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 &amp; 2 &amp; 1 &amp; 5 \\
+2 &amp; 5 &amp; 1 &amp; 14 \\
+4 &amp; 9 &amp; 3 &amp; 24
+\end{bmatrix},
+\quad
+B =
+\begin{bmatrix}
+1 \\
+3
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;解&lt;/p&gt;
+&lt;p&gt;对 $A$ 进行行变换：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A \to
+\begin{bmatrix}
+1 &amp; 2 &amp; 1 &amp; 5 \\
+0 &amp; 1 &amp; -1 &amp; 4 \\
+0 &amp; 1 &amp; -1 &amp; 4
+\end{bmatrix}
+\to
+\begin{bmatrix}
+1 &amp; 0 &amp; 3 &amp; -3 \\
+0 &amp; 1 &amp; -1 &amp; 4 \\
+0 &amp; 1 &amp; -1 &amp; 0
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;令：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B =
+\begin{bmatrix}
+1 &amp; 2 \\
+2 &amp; 5 \\
+4 &amp; 9
+\end{bmatrix},
+\quad
+C =
+\begin{bmatrix}
+1 &amp; 0 &amp; 3 &amp; -3 \\
+0 &amp; 1 &amp; -1 &amp; 4
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算伪逆&lt;/p&gt;
+&lt;p&gt;由&lt;strong&gt;定理 1&lt;/strong&gt;：
+\begin{equation}\nonumber
+A^+ = C^H (CC^H)^{-1} (B^H B)^{-1} B^H.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;计算得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ =
+\frac{1}{234}
+\begin{bmatrix}
+54 &amp; -75 &amp; 32 \\
+-43 &amp; 21 &amp; 130 \\
+-180 &amp; -182 &amp; -34 \\
+53 &amp; -15 &amp; -5
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算 $B$ 的伪逆&lt;/p&gt;
+&lt;p&gt;由于 $B$ &lt;strong&gt;列满秩&lt;/strong&gt;，可用：
+\begin{equation}\nonumber
+B^+ = (B^H B)^{-1} B^H.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;计算：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B^+ = 
+\left(
+\begin{bmatrix}
+1 \\
+3
+\end{bmatrix}^H
+\begin{bmatrix}
+1 \\
+3
+\end{bmatrix}
+\right)^{-1}
+\begin{bmatrix}
+1 \\
+3
+\end{bmatrix}^H
+= \frac{1}{10}
+\begin{bmatrix}
+1 &amp; 3
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;奇异值分解求a&#34;&gt;奇异值分解求$A^+$
+&lt;/h3&gt;&lt;h3 id=&#34;定理-2-1&#34;&gt;定理 2
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}_r^{m \times n}$，其&lt;strong&gt;奇异值分解&lt;/strong&gt;为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = U
+\begin{bmatrix}
+S_r &amp; 0 \\
+0 &amp; 0
+\end{bmatrix}
+V^H,
+\end{equation}
+&lt;/div&gt;
+其中：
+- $S_r = \operatorname{diag}(\sigma_1, \dots, \sigma_r)$，且 $\sigma_i &gt; 0$，$1 \leq i \leq r$。
+&lt;p&gt;则 $A^+$ 为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ = V
+\begin{bmatrix}
+S_r^{-1} &amp; 0 \\
+0 &amp; 0
+\end{bmatrix}
+U^H.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+S_r^{-1} = \operatorname{diag}(\sigma_1^{-1}, \dots, \sigma_r^{-1}).
+\end{equation}
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;简化奇异值分解求-a&#34;&gt;简化奇异值分解求 $A^+$
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}_r^{m \times n}$，则：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = U_1
+\begin{bmatrix}
+\sigma_1 &amp;  &amp;  \\
+ &amp; \ddots &amp;  \\
+ &amp;  &amp; \sigma_r
+\end{bmatrix}
+V_1^H.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$U_1 = (y_1, \dots, y_r)_{m \times r}$，&lt;/li&gt;
+&lt;li&gt;$V_1 = (x_1, \dots, x_r)_{n \times r}$ 为&lt;strong&gt;列酉矩阵&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;则 $A^+$ 由下式给出：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ = V_1
+\begin{bmatrix}
+\sigma_1^{-1} &amp;  &amp;  \\
+ &amp; \ddots &amp;  \\
+ &amp;  &amp; \sigma_r^{-1}
+\end{bmatrix}
+U_1^H.
+\end{equation}
+&lt;/div&gt;
+&lt;h3 id=&#34;定理-3&#34;&gt;定理 3
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}_r^{m \times n}$，则 $A$ 的&lt;strong&gt;简化奇异值分解&lt;/strong&gt;为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = U_1 S_r V_1^H.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;则 $A^+$ 由下式给出：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ = V_1
+\begin{bmatrix}
+\lambda_1^{-1} &amp;  &amp;  \\
+ &amp; \ddots &amp;  \\
+ &amp;  &amp; \lambda_r^{-1}
+\end{bmatrix}
+V_1^H A^H.
+\end{equation}
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;利用奇异值分解求-a-的简化步骤&#34;&gt;利用奇异值分解求 $A^+$ 的简化步骤
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;求出 $A^H A$ 的 $r$ 个非零特征值&lt;/strong&gt; $\lambda_1, \dots, \lambda_r$，其中 $\lambda_i &amp;gt; 0$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;求出 $A^H A$ 对应于特征值&lt;/strong&gt; $\lambda_1, \dots, \lambda_r$ &lt;strong&gt;的标准正交特征向量&lt;/strong&gt; $a_1, \dots, a_r$，令：
+\begin{equation}\nonumber
+V_1 = (a_1, \dots, a_r).
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;则 $A^+$ 由下式给出&lt;/strong&gt;：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ = V_1
+\begin{bmatrix}
+\lambda_1^{-1} &amp;  &amp;  \\
+&amp; \ddots &amp;  \\
+&amp;  &amp; \lambda_r^{-1}
+\end{bmatrix}
+V_1^H A^H.
+\end{equation}
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注：当 $\operatorname{r}(A) = 1$ 时的伪逆计算&lt;/p&gt;
+&lt;p&gt;当 $\operatorname{r}(A) = 1$ 时，非零特征值&lt;strong&gt;只有 1 个&lt;/strong&gt;，则：
+\begin{equation}\nonumber
+A^+ = \frac{1}{\lambda_1} A^H.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;此时，设：
+\begin{equation}\nonumber
+A = (a_{ij})_{m \times n},
+\end{equation}
+且：
+\begin{equation}\nonumber
+\operatorname{r}(A^H A) = \operatorname{r}(A) = 1.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由此可知：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\lambda_1 = \operatorname{tr}
+\begin{bmatrix}
+\lambda_1 &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; 0 &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \cdots &amp; 0
+\end{bmatrix}
+= \operatorname{tr}(A^H A).
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算：
+\begin{equation}\nonumber
+\lambda_1 = \sum_{j=1}^{n} \sum_{i=1}^{m} |a_{ij}|^2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;有核 1 公式&lt;/strong&gt;：
+若 $\operatorname{r}(A) = 1$，则：
+\begin{equation}\nonumber
+A^+ = \frac{1}{\sum_{i,j} |a_{ij}|^2} A^H.
+\end{equation}&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;例 2 用各种方法求伪逆&lt;/p&gt;
+&lt;p&gt;给定矩阵：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 &amp; 2 \\
+0 &amp; 0 \\
+2 &amp; 4
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;解 (1) 用 SVD 计算 $A^+$&lt;/p&gt;
+&lt;p&gt;计算：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^H A =
+\begin{bmatrix}
+1 &amp; 0 &amp; 2 \\
+2 &amp; 0 &amp; 4
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; 2 \\
+0 &amp; 0 \\
+2 &amp; 4
+\end{bmatrix}
+=
+\begin{bmatrix}
+5 &amp; 10 \\
+10 &amp; 20
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算特征值：
+\begin{equation}\nonumber
+| \lambda I - A^H A | = \lambda (\lambda - 25) = 0,
+\end{equation}
+得 $\lambda_1 = 25$。&lt;/p&gt;
+&lt;p&gt;对应特征向量：
+\begin{equation}\nonumber
+x_1 = (1,2)^T, \quad Ax_1 = (5,0,10)^T.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;单位化：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+V_1 =
+\begin{bmatrix}
+\frac{1}{\sqrt{5}} \\
+\frac{2}{\sqrt{5}}
+\end{bmatrix},
+\quad
+U_1 =
+\begin{bmatrix}
+\frac{1}{\sqrt{5}} &amp; 0 \\
+0 &amp; 2/\sqrt{5}
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算 $A^+$：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ = V_1 (5)^{-1} U_1^H = V_1 (5)^{-1} U_1^H A^H.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;最终：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ = \frac{1}{25}
+\begin{bmatrix}
+1 &amp; 0 &amp; 2 \\
+2 &amp; 0 &amp; 4
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;解 (2) 用定理 3 计算 $A^+$&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+V_1 =
+\begin{bmatrix}
+\frac{1}{\sqrt{5}} \\
+\frac{2}{\sqrt{5}}
+\end{bmatrix},
+\quad
+A^+ = V_1 (25)^{-1} V_1^H A^H.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;最终：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ = \frac{1}{25}
+\begin{bmatrix}
+1 &amp; 0 &amp; 2 \\
+2 &amp; 0 &amp; 4
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;解 (3) 用满秩分解计算 $A^+$&lt;/p&gt;
+&lt;p&gt;令：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = BC =
+\begin{bmatrix}
+1 \\
+0 \\
+2
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; 2
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B^+ = (B^H B)^{-1} B^H = \frac{1}{5}
+\begin{bmatrix}
+1 &amp; 0 &amp; 2
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+C^+ = C^H (CC^H)^{-1} = \frac{1}{5}
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ = C^+ B^+ = \frac{1}{25}
+\begin{bmatrix}
+1 &amp; 0 &amp; 2 \\
+2 &amp; 0 &amp; 4
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;解 (4) 用秩 1 公式计算 $A^+$&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ = \frac{1}{25} A^H.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;最终：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ = \frac{1}{25}
+\begin{bmatrix}
+1 &amp; 0 &amp; 2 \\
+2 &amp; 0 &amp; 4
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;广义逆与线性方程组&#34;&gt;广义逆与线性方程组
+&lt;/h2&gt;</description>
         </item>
         <item>
         <title>矩阵理论系列笔记4：</title>
