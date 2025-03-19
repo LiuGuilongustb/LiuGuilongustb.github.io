@@ -7345,7 +7345,647 @@ A^+ = \frac{1}{25}
 &lt;/div&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;广义逆与线性方程组&#34;&gt;广义逆与线性方程组
-&lt;/h2&gt;</description>
+&lt;/h2&gt;&lt;h3 id=&#34;考察非齐次线性方程组&#34;&gt;考察非齐次线性方程组
+&lt;/h3&gt;&lt;p&gt;\begin{equation}\nonumber
+Ax = b \quad (1)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$A \in \mathbb{C}^{m \times n}$，&lt;/li&gt;
+&lt;li&gt;$b \in \mathbb{C}^{m}$ 给定，&lt;/li&gt;
+&lt;li&gt;$x \in \mathbb{C}^{n}$ 待定。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;若存在 $x \in \mathbb{C}^{n}$ 使得 $(1)$ 式成立，则称此方程组&lt;strong&gt;相容&lt;/strong&gt;，否则称为&lt;strong&gt;不相容&lt;/strong&gt;或&lt;strong&gt;矛盾&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;关于方程组 $(1)$ 的几个问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;方程组 $(1)$ 相容的条件是什么？&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;相容时，如何求其通解？&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;方程组相容时，如何求其通解中极小范数解？&lt;/strong&gt;&lt;br&gt;
+即求 $x_0$ 使得：
+\begin{equation}\nonumber
+|x_0| = \min_{Ax = b} |x|,
+\end{equation}
+其中 $|\cdot|$ 为 $\mathbb{C}^n$ 中&lt;strong&gt;内积诱导的范数&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;方程组不相容时&lt;/strong&gt;，需要求出这样的 $x_0$，满足：
+\begin{equation}\nonumber
+|Ax_0 - b| = \min_{x \in \mathbb{C}^n} |Ax - b|.
+\end{equation}
+此时，称 $x_0$ 为方程组的&lt;strong&gt;最小二乘解&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;一般而言，矛盾的方程组的最小二乘解并不唯一&lt;/strong&gt;，需要求出具有&lt;strong&gt;极小范数&lt;/strong&gt;的向量 $x_0$，即 $x_0$ 满足：
+\begin{equation}\nonumber
+|x_0| = \min_{|Ax - b|} |x|.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;这一条件可证明 $x_0$ 是&lt;strong&gt;唯一&lt;/strong&gt;的，称为&lt;strong&gt;极小范数最小二乘解&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;线性方程组的相容性通解与-a1&#34;&gt;线性方程组的相容性、通解与 $A{1}$
+&lt;/h3&gt;&lt;p&gt;在方程组 $(1)$：
+\begin{equation}\nonumber
+Ax = b
+\end{equation}
+中，若 $A$ &lt;strong&gt;可逆&lt;/strong&gt;，则唯一解为：
+\begin{equation}\nonumber
+x = A^{-1} b.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;当 $A$ &lt;strong&gt;不可逆，或不是方阵&lt;/strong&gt; 时，如何处理？&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定理-1penrose-定理&#34;&gt;定理 1（Penrose 定理）
+&lt;/h3&gt;&lt;p&gt;设：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$A \in \mathbb{C}^{m \times n}$，&lt;/li&gt;
+&lt;li&gt;$B \in \mathbb{C}^{p \times q}$，&lt;/li&gt;
+&lt;li&gt;$C \in \mathbb{C}^{m \times q}$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;则矩阵方程：
+\begin{equation}\nonumber
+AXB = D
+\end{equation}
+&lt;strong&gt;相容的充要条件&lt;/strong&gt;是：
+\begin{equation}\nonumber
+AA^{(1)} D B^{(1)} B = D.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$A^{(1)} \in A{1}$，&lt;/li&gt;
+&lt;li&gt;$B^{(1)} \in B{1}$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;此时，该方程组的&lt;strong&gt;通解&lt;/strong&gt;为：
+\begin{equation}\nonumber
+X = A^{(1)} D B^{(1)} + Y - A^{(1)} A Y B B^{(1)}.
+\end{equation}
+其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$Y \in \mathbb{C}^{n \times p}$ 为&lt;strong&gt;任意矩阵&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;证明：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;充要性：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;$\Rightarrow$ 方向&lt;/strong&gt;：若 $AA^{(1)} D B^{(1)} B = D$，令：
+\begin{equation}\nonumber
+X = A^{(1)} D B^{(1)},
+\end{equation}
+则满足：
+\begin{equation}\nonumber
+AXB = D.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;$\Leftarrow$ 方向&lt;/strong&gt;：若 $AXB = D$ 有解，则：
+\begin{equation}\nonumber
+D = AXB = AA^{(1)} AXB B^{(1)} B = AA^{(1)} D B^{(1)} B.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;证明通解公式：&lt;/p&gt;
+&lt;p&gt;首先易证 $(2)$ 满足 $AXB = D$。&lt;/p&gt;
+&lt;p&gt;其次，设 $X$ 是 $AXB = D$ 的任意解，则可表为：
+\begin{equation}\nonumber
+X = A^{(1)} D B^{(1)} + X - A^{(1)} A X B B^{(1)}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;故 $X$ 仍为 $(2)$ 的形式，从而 $(2)$ 为 $AXB = D$ 的通解。&lt;/p&gt;
+&lt;h3 id=&#34;推论-1-1&#34;&gt;推论 1
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，$A^{(1)} \in A{1}$，则：
+\begin{equation}\nonumber
+A{1} = { A^{(1)} + Z - A^{(1)} A Z A A^{(1)} \mid Z \in \mathbb{C}^{n \times m} \text{ 任意} }.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;证明：
+在 &lt;strong&gt;定理 1&lt;/strong&gt; 中，取 $D = A$，则 $AXA = A$ 的通解为：
+\begin{equation}\nonumber
+X = A^{(1)} A A^{(1)} + Y - A^{(1)} A Y A A^{(1)},
+\end{equation}
+其中 $Y \in \mathbb{C}^{n \times m}$。&lt;/p&gt;
+&lt;p&gt;令：
+\begin{equation}\nonumber
+Y = A^{(1)} + Z,
+\end{equation}
+即得证。&lt;/p&gt;
+&lt;h3 id=&#34;推论-2&#34;&gt;&lt;strong&gt;推论 2&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;方程组：
+\begin{equation}\nonumber
+Ax = b
+\end{equation}
+&lt;strong&gt;相容的充要条件&lt;/strong&gt;是：
+\begin{equation}\nonumber
+AA^{(1)} b = b.
+\end{equation}
+其&lt;strong&gt;通解&lt;/strong&gt;为：
+\begin{equation}\nonumber
+x = A^{(1)} b + (I - A^{(1)} A) y, \quad y \in \mathbb{C}^{n} \text{ 任意}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明：&lt;/strong&gt;
+在 &lt;strong&gt;定理 1&lt;/strong&gt; 中，取：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$D = b \in \mathbb{C}^{m}$，&lt;/li&gt;
+&lt;li&gt;$B = I$，&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;即得证。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;注 1&lt;/strong&gt;：因为 $A^+ \in A{1}$，故当 $Ax = b$ &lt;strong&gt;相容&lt;/strong&gt;时，通解可写为：
+\begin{equation}\nonumber
+x = A^+ b + (I - A^+ A) y, \quad y \in \mathbb{C}^{n}.
+\end{equation}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;由此可断言：
+\begin{equation}\nonumber
+\text{相容方程组 } Ax = b \text{ 的解唯一} \quad \Longleftrightarrow \quad A \text{ 列满秩}.
+\end{equation}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;注 2：
+当 $b = 0$ 时，齐次方程：
+\begin{equation}\nonumber
+Ax = 0
+\end{equation}
+&lt;strong&gt;总有解&lt;/strong&gt;，其通解为：
+\begin{equation}\nonumber
+x = (I - A^+ A) y, \quad y \in \mathbb{C}^n \text{ 任意}.
+\end{equation}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;初等等解法&#34;&gt;初等等解法：
+&lt;/h3&gt;&lt;p&gt;下面给出 $A{1}$ 的一个初等等解法：&lt;/p&gt;
+&lt;h3 id=&#34;定理-2-2&#34;&gt;定理 2
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，$P, Q$ 分别是 $m$ 阶和 $n$ 阶&lt;strong&gt;可逆矩阵&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;若 $PAQ$ 具有如下分块形式：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+PAQ =
+\begin{bmatrix}
+I_r &amp; 0 \\
+0 &amp; 0
+\end{bmatrix},
+\end{equation}
+&lt;/div&gt;
+则：
+&lt;div&gt;
+\begin{equation}\nonumber
+A\{1\} = \left\{ Q
+\begin{bmatrix}
+I_r &amp; X_{12} \\
+X_{21} &amp; X_{22}
+\end{bmatrix}
+P \mid X_{ij} \text{ 为适当阶数的任意矩阵} \right\}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;注 1：
+&lt;strong&gt;特别地&lt;/strong&gt;，当 $A$ 为 &lt;strong&gt;$n$ 阶可逆矩阵&lt;/strong&gt; 时，$PAQ = I_n$，此时：
+\begin{equation}\nonumber
+A{1} = {Q I_n P} = {QP} = {A^{-1}}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;即 $A{1}$ &lt;strong&gt;中只有唯一的逆矩阵&lt;/strong&gt; $A^{-1}$。&lt;/p&gt;
+&lt;p&gt;注 2：
+&lt;strong&gt;由定理 2 知&lt;/strong&gt;，对于：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{bmatrix}
+A &amp; I_m \\
+I_n &amp;
+\end{bmatrix}
+\quad \xrightarrow{\text{初等变换}} \quad
+\begin{bmatrix}
+PAQ &amp; P \\
+Q &amp; 
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_r &amp; 0 &amp; P \\
+0 &amp; 0 &amp; 0 \\
+&amp; &amp; Q
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;例 1：
+设：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 &amp; 0 &amp; -1 &amp; 1 \\
+0 &amp; 2 &amp; 2 &amp; 2 \\
+-1 &amp; 4 &amp; 5 &amp; 3
+\end{bmatrix},
+\end{equation}
+&lt;/div&gt;
+求 $A\{1\}$。
+&lt;p&gt;&lt;strong&gt;解：&lt;/strong&gt;
+由初等变换：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{bmatrix} A &amp; I_4 \\ I_4 &amp; 0 \end{bmatrix}
+\quad \xrightarrow{\text{初等变换}} \quad
+\begin{bmatrix} I_2 &amp; 0 &amp; P \\ 0 &amp; 0 &amp; 0 \\ &amp; &amp; Q \end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+其中：
+&lt;div&gt;
+\begin{equation}\nonumber
+P =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+1 &amp; 1/2 &amp; 0 \\
+1 &amp; -2 &amp; 1
+\end{bmatrix},
+\quad
+Q =
+\begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; -1 \\
+0 &amp; 1 &amp; -1 &amp; -1 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;因此，$PAQ = \begin{bmatrix} I_2 &amp;amp; 0 \ 0 &amp;amp; 0 \end{bmatrix}$，所以：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A\{1\} = \left\{ Q
+\begin{bmatrix}
+I_2 &amp; X_{12} \\
+X_{21} &amp; X_{22}
+\end{bmatrix}
+P \mid X_{ij} \text{ 为适当阶数的任意矩阵} \right\}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;取 $X_{ij} = 0$，得 $A$ 的一个 ${1}$ 逆：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^{(1)} = Q
+\begin{bmatrix} I_2 &amp; 0 \\ 0 &amp; 0 \end{bmatrix} P
+=
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1/2 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{bmatrix}
+\in A\{1\}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;例 2：
+求解线性方程组：
+\begin{equation}\nonumber
+\begin{cases}
+x_1 + 2x_2 - x_3 = 1, \&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;x_2 + 2x_3 = 2.
+\end{cases}
+\end{equation}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;解：&lt;/strong&gt;
+方程组 $Ax = b$，其中：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 &amp; 2 &amp; -1 \\
+0 &amp; -1 &amp; 2
+\end{bmatrix},
+\quad
+b =
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由于：
+\begin{equation}\nonumber
+r(A) = r(A, b) = 2,
+\end{equation}
+故方程组 &lt;strong&gt;相容&lt;/strong&gt;，通解为：
+\begin{equation}\nonumber
+x = A^+ b + (I - A^+ A) y, \quad y \in \mathbb{C}^3.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因为 $A$ &lt;strong&gt;行满秩&lt;/strong&gt;，所以：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ = A^H (AA^H)^{-1}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^H A =
+\begin{bmatrix}
+1 &amp; 2 &amp; -1 \\
+0 &amp; -1 &amp; 2
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; 0 \\
+2 &amp; -1 \\
+-1 &amp; 2
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 &amp; 2 &amp; -1 \\
+2 &amp; 4 &amp; -2 \\
+-1 &amp; -2 &amp; 1
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;取逆：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+(A^H A)^{-1} =
+\frac{1}{14}
+\begin{bmatrix}
+5 &amp; 4 \\
+6 &amp; 2 \\
+3 &amp; 8
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;所以：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ =
+\frac{1}{14}
+\begin{bmatrix}
+5 &amp; 4 \\
+6 &amp; 2 \\
+3 &amp; 8
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;通解表达式：&lt;/strong&gt;&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+x = A^+ b + (I - A^+ A) y.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ b =
+\frac{1}{14}
+\begin{bmatrix}
+13 \\
+10 \\
+19
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;而：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+I - A^+ A =
+\frac{1}{14}
+\begin{bmatrix}
+9 &amp; -6 &amp; -3 \\
+-6 &amp; 4 &amp; 2 \\
+-3 &amp; 2 &amp; 1
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;因此：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+x =
+\frac{1}{14}
+\begin{bmatrix}
+13 \\
+10 \\
+19
+\end{bmatrix}
++
+\frac{1}{14}
+\begin{bmatrix}
+9 &amp; -6 &amp; -3 \\
+-6 &amp; 4 &amp; 2 \\
+-3 &amp; 2 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+c_1 \\
+c_2 \\
+c_3
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;其中 $c_i$ 为 &lt;strong&gt;任意常数&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;二相容线性方程组的极小范数解与-a14&#34;&gt;&lt;strong&gt;二、相容线性方程组的极小范数解与 $A^{(1,4)}$&lt;/strong&gt;
+&lt;/h2&gt;&lt;p&gt;我们先来确定集合 $A^{(1,4)}$：&lt;/p&gt;
+&lt;h3 id=&#34;引理-1&#34;&gt;&lt;strong&gt;引理 1&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，则：
+\begin{equation}\nonumber
+A^{(1,4)} = \lbrace X \in \mathbb{C}^{m \times n} \mid XA = A^{(1,4)} A \rbrace,
+\end{equation}
+即 $A^{(1,4)}$ 是由矩阵方程 $XA = A^{(1,4)} A$ 的所有解构成，其中 $A^{(1,4)} \in A^{(1,4)}$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;
+设 $X$ 满足方程：
+\begin{equation}\nonumber
+XA = A^{(1,4)} A.
+\end{equation}
+则：
+\begin{equation}\nonumber
+AXA = AA^{(1,4)} A = A.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;又因：
+\begin{equation}\nonumber
+(XA)^{H} = (A^{(1,4)} A)^{H} = A^{(1,4)} A = XA,
+\end{equation}
+所以：
+\begin{equation}\nonumber
+X \in A^{(1,4)}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;反之&lt;/strong&gt;，若：
+\begin{equation}\nonumber
+X \in A^{(1,4)},
+\end{equation}
+则：
+\begin{equation}\nonumber
+A^{(1,4)} A = A^{(1,4)} (AXA) = (A^{(1,4)} A)^{H} (XA)^{H}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;进一步推导：
+\begin{equation}\nonumber
+(A^{(1,4)} A)^{H} X^{H} = A^{H} X^{H} = (XA)^{H} = XA.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由 &lt;strong&gt;引理 1&lt;/strong&gt; 和 &lt;strong&gt;上一节定理 1&lt;/strong&gt;，可得 $A^{(1,4)}$ 的通式。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定理-3-1&#34;&gt;&lt;strong&gt;定理 3&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，$A^{(1,4)} \in A^{(1,4)}$，则：
+\begin{equation}\nonumber
+A^{(1,4)} = \lbrace A^{(1,4)} + Z(I - AA^{(1,4)}) \mid Z \in \mathbb{C}^{n \times m} \rbrace.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;
+在 &lt;strong&gt;定理 1&lt;/strong&gt; 中，取：
+\begin{equation}\nonumber
+D = A^{(1,4)} A, \quad B = A, \quad A = I,
+\end{equation}
+则方程：
+\begin{equation}\nonumber
+XA = A^{(1,4)} A
+\end{equation}
+的通解为：
+\begin{equation}\nonumber
+X = A^{(1,4)} AA^{(1,4)} + Y - YAA^{(1,4)},
+\end{equation}
+其中 $Y \in \mathbb{C}^{m \times n}$。&lt;/p&gt;
+&lt;p&gt;令：
+\begin{equation}\nonumber
+Y = A^{(1,4)} + Z,
+\end{equation}
+即得所求结论。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定理-4&#34;&gt;&lt;strong&gt;定理 4&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A^{(1,4)} \in A^{(1,4)}$，则 $A^{(1,4)} b$ 都是相容方程组：
+\begin{equation}\nonumber
+Ax = b
+\end{equation}
+的极小范数解，且 $Ax = b$ 的极小范数解是唯一的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;
+线性方程组 $Ax = b$ 的任意解 $x$ 可表示为：
+\begin{equation}\nonumber
+x = A^{(1,4)} b + (I - A^{(1,4)} A) y.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;令 $b = Ax_0$（总存在这样的 $x_0$，因为 $Ax = b$ 有解），则：
+\begin{equation}\nonumber
+\left( (I - A^{(1,4)} A) y, A^{(1,4)} b \right)
+= (A^{(1,4)} b)^{H} (I - A^{(1,4)} A) y
+= (A^{(1,4)} A x_0)^{H} (I - A^{(1,4)} A) y
+= x_0^{H} (A^{(1,4)} A)^{H} (I - A^{(1,4)} A) y.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= x_0^{H} (A^{(1,4)} A) (I - A^{(1,4)} A) y
+= x_0^{H} A^{(1,4)} A - A^{(1,4)} A A^{(1,4)} A) y
+= x_0^{H} A^{(1,4)} A - A^{(1,4)} A) y = 0.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因此 $A^{(1,4)} b \perp (I - A^{(1,4)} A) y$，从而：
+\begin{equation}\nonumber
+|x|^2 = | A^{(1,4)} b |^2 + |(I - A^{(1,4)} A) y|^2 \geq |A^{(1,4)} b|^2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由此得出 $A^{(1,4)} b$ 为 $Ax = b$ 的极小范数解。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;唯一性证明&lt;/strong&gt;
+设 $x_1$ 也是 $Ax = b$ 的极小范数解，则：
+\begin{equation}\nonumber
+|x_1|^2 = |A^{(1,4)} b|^2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由通解定义可知，存在 $y_1$ 使得：
+\begin{equation}\nonumber
+x_1 = A^{(1,4)} b + (I - A^{(1,4)} A) y_1.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|x_1|^2 = |A^{(1,4)} b|^2 + |(I - A^{(1,4)} A) y_1|^2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;故有：
+\begin{equation}\nonumber
+(I - A^{(1,4)} A) y_1 = 0,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;从而：
+\begin{equation}\nonumber
+x_1 = A^{(1,4)} b.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;
+此结论说明，对相容方程 $Ax = b$，$A^{(1,4)}$ 可能有无穷多个，但其中任一 $A^{(1,4)}$，$A^{(1,4)} b$ 总是不变的，且为 $Ax = b$ 的唯一极小范数解。&lt;/p&gt;
+&lt;h3 id=&#34;定理-5&#34;&gt;&lt;strong&gt;定理 5&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $X \in \mathbb{C}^{n \times m}$，对任意的 $b \in \mathbb{C}^{m}$，$Xb$ 都为相容方程组 $Ax = b$ 的极小范数解，则必有 $X \in A^{(1,4)}$。&lt;/p&gt;
+&lt;h3 id=&#34;证明&#34;&gt;&lt;strong&gt;证明&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;由&lt;strong&gt;定理 4&lt;/strong&gt; 证明知：
+\begin{equation}\nonumber
+Xb = A^{(1,4)} b, \quad \forall b \in \mathbb{C}^{m}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;取 $X$ 为 $A$ 的各列，得：
+\begin{equation}\nonumber
+XA = A^{(1,4)} A.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由&lt;strong&gt;引理 1&lt;/strong&gt; 知：
+\begin{equation}\nonumber
+X \in A^{(1,4)}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例 3&lt;/strong&gt;
+求 $Ax = b$ 的极小范数解，其中：
+\begin{equation}\nonumber
+A =
+\begin{pmatrix}
+1 &amp;amp; 2 &amp;amp; -1 \
+0 &amp;amp; -1 &amp;amp; 2
+\end{pmatrix}, \quad
+b =
+\begin{pmatrix}
+1 \
+2
+\end{pmatrix}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解&lt;/strong&gt;
+由 $\operatorname{rank}(A) = \operatorname{rank}(A, b) = 2$，知方程组相容。由&lt;strong&gt;例 2&lt;/strong&gt; 知：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A^{+} = \frac{1}{14}
+\begin{pmatrix}
+5 &amp;amp; 4 \
+6 &amp;amp; 2 \
+3 &amp;amp; 8
+\end{pmatrix}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;从而极小范数解为：
+\begin{equation}\nonumber
+x = A^{+} b = \frac{1}{14}
+\begin{pmatrix}
+5 &amp;amp; 4 \
+6 &amp;amp; 2 \
+3 &amp;amp; 8
+\end{pmatrix}
+\begin{pmatrix}
+1 \
+2
+\end{pmatrix}
+= \frac{1}{14}
+\begin{pmatrix}
+13 \
+10 \
+19
+\end{pmatrix}.
+\end{equation}&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;三不相容线性方程组的最小二乘解与-a13&#34;&gt;&lt;strong&gt;三、不相容线性方程组的最小二乘解与 $A^{(1,3)}$&lt;/strong&gt;
+&lt;/h2&gt;&lt;p&gt;当 $Ax = b$ 不相容时，即没有通常意义下的解，此时我们需要求出 $x$ 使 $|Ax - b|$ 为极小，称满足此要求的 $x$ 为不相容方程组 $Ax = b$ 的&lt;strong&gt;最小二乘解&lt;/strong&gt;。我们将看到此类解与 $A^{(1,3)}$ 有密切关系，我们先介绍一个引理。&lt;/p&gt;
+&lt;h3 id=&#34;引理-2&#34;&gt;&lt;strong&gt;引理 2&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，$A^{(1,3)} \in A^{(1,3)}$，则：
+\begin{equation}\nonumber
+A^{(1,3)} = {X \in \mathbb{C}^{m \times n} \mid AX = AA^{(1,3)}},
+\end{equation}
+即 $A^{(1,3)}$ 由矩阵方程 $AX = AA^{(1,3)}$ 的所有解构成。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;
+设 $X$ 满足方程 $AX = AA^{(1,3)}$，则
+\begin{equation}\nonumber
+AXA = AA^{(1,3)} A = A,
+\end{equation}
+\begin{equation}\nonumber
+(AX)^H = (AA^{(1,3)})^H = AA^{(1,3)} = AX,
+\end{equation}
+所以 $X \in A^{(1,3)}$。&lt;/p&gt;
+&lt;p&gt;反之，若 $X \in A^{(1,3)}$，则
+\begin{equation}\nonumber
+AA^{(1,3)} = (AXA)A^{(1,3)} = (AX)^H (AA^{(1,3)})^H,
+\end{equation}
+\begin{equation}\nonumber
+= X^H A^H (AA^{(1,3)})^H = X^H (AA^{(1,3)})^H = X^H A^H = (AX)^H = AX。
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;定理-6&#34;&gt;定理 6
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，$A^{(1,3)} \in A^{\lbrace1,3\rbrace}$，则&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A^{\lbrace1,3\rbrace} = \lbrace A^{(1,3)} + (I - A^{(1,3)}A)Z \mid Z \in \mathbb{C}^{n \times m} \rbrace.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;证明&lt;/p&gt;
+&lt;p&gt;定理 1 中，取 $D = AA^{(1,3)}$，$B = I$，则方程&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+AX = AA^{(1,3)}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;的通解为&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+X = A^{(1,3)}AA^{(1,3)} + Y - A^{(1,3)}AY, \quad Y \in \mathbb{C}^{n \times m}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;令 $Y = A^{(1,3)} + Z$ 即可。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;下面我们将建立不相容方程组 $Ax = b$ 的最小二乘解与 $A^{(1,3)}$ 的关系。&lt;/p&gt;
+&lt;h3 id=&#34;定理-7&#34;&gt;定理 7
+&lt;/h3&gt;&lt;p&gt;设 $A^{(1,3)} \in A^{\lbrace1,3\rbrace}$，则 $A^{(1,3)} b$ 都是不相容方程组 $Ax = b$ 的最小二乘解。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>矩阵理论系列笔记4：</title>
