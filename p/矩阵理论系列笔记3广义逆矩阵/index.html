@@ -378,6 +378,20 @@
         <li><a href="#引理-2"><strong>引理 2</strong></a></li>
         <li><a href="#定理-6">定理 6</a></li>
         <li><a href="#定理-7">定理 7</a></li>
+        <li><a href="#定理-8">定理 8</a></li>
+        <li><a href="#定理-9">定理 9</a></li>
+        <li><a href="#推论">推论</a></li>
+      </ol>
+    </li>
+    <li><a href="#四不相容方程组的极小范数最小二乘解与-a">四、不相容方程组的极小范数最小二乘解与 $A^+$</a>
+      <ol>
+        <li><a href="#引理-3">引理 3</a></li>
+        <li><a href="#定理-10">定理 10</a></li>
+      </ol>
+    </li>
+    <li><a href="#总结">总结</a>
+      <ol>
+        <li><a href="#例-5">例 5</a></li>
       </ol>
     </li>
   </ol>
@@ -436,7 +450,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 13 分钟
+                    阅读时长: 18 分钟
                 </time>
             </div>
         
@@ -1940,6 +1954,475 @@ X = A^{(1,3)}AA^{(1,3)} + Y - A^{(1,3)}AY, \quad Y \in \mathbb{C}^{n \times m}.
 <p>下面我们将建立不相容方程组 $Ax = b$ 的最小二乘解与 $A^{(1,3)}$ 的关系。</p>
 <h3 id="定理-7">定理 7
 </h3><p>设 $A^{(1,3)} \in A^{\lbrace1,3\rbrace}$，则 $A^{(1,3)} b$ 都是不相容方程组 $Ax = b$ 的最小二乘解。</p>
+<p>证明</p>
+<p>由
+\begin{equation}\nonumber
+Ax - b = (Ax - AA^{(1,3)}b) + (AA^{(1,3)}b - b),
+\end{equation}
+而
+\begin{equation}\nonumber
+(Ax - AA^{(1,3)}b, AA^{(1,3)}b - b)
+\end{equation}
+\begin{equation}\nonumber
+= (AA^{(1,3)}b - b)^H (Ax - AA^{(1,3)}b)
+\end{equation}
+\begin{equation}\nonumber
+= (b^H (AA^{(1,3)})^H - b^H)(Ax - AA^{(1,3)}b)
+\end{equation}
+\begin{equation}\nonumber
+= (b^H AA^{(1,3)} - b^H)(Ax - AA^{(1,3)}b)
+\end{equation}
+\begin{equation}\nonumber
+= b^H AA^{(1,3)} Ax - b^H AA^{(1,3)} b - b^H Ax + b^H AA^{(1,3)} b
+\end{equation}
+\begin{equation}\nonumber
+= b^H Ax - b^H AA^{(1,3)} b - b^H Ax + b^H AA^{(1,3)} b = 0.
+\end{equation}</p>
+<p>所以 $Ax - AA^{(1,3)}b \perp AA^{(1,3)}b - b$，因此</p>
+<p>\begin{equation}\nonumber
+|Ax - b|^2 = |Ax - AA^{(1,3)}b|^2 + |AA^{(1,3)}b - b|^2
+\end{equation}
+\begin{equation}\nonumber
+\geq |AA^{(1,3)}b - b|^2, \quad \forall x \in \mathbb{C}^n.
+\end{equation}</p>
+<p>从而 $A^{(1,3)}b$ 为不相容方程 $Ax = b$ 的最小二乘解。</p>
+<p>一般来说，不相容方程 $Ax = b$ 的最小二乘解并不唯一，可进一步证明以下定理：</p>
+<h3 id="定理-8">定理 8
+</h3><p>$x \in \mathbb{C}^n$ 是不相容方程组 $Ax = b$ 的最小二乘解 $\Leftrightarrow$ $x$ 是方程组 $Ax = AA^{(1,3)}b$ 的解。</p>
+<p>证明
+由定理 7 的证明知</p>
+<p>\begin{equation}\nonumber
+|Ax - b|^2 = |Ax - AA^{(1,3)}b|^2 + |AA^{(1,3)}b - b|^2
+\end{equation}
+\begin{equation}\nonumber
+\geq |AA^{(1,3)}b - b|^2, \quad \forall x \in \mathbb{C}^n.
+\end{equation}</p>
+<p>故若 $x_0$ 是 $Ax = b$ 的最小二乘解，则有</p>
+<p>\begin{equation}\nonumber
+|Ax_0 - b|^2 = |AA^{(1,3)}b - b|^2.
+\end{equation}</p>
+<p>从而</p>
+<p>\begin{equation}\nonumber
+|Ax_0 - AA^{(1,3)}b|^2 = 0,
+\end{equation}</p>
+<p>所以 $Ax_0 = AA^{(1,3)}b$，即 $x_0$ 是方程 $Ax = AA^{(1,3)}b$ 的解。从反之亦然。</p>
+<h3 id="定理-9">定理 9
+</h3><p>不相容方程组 $Ax = b$ 的最小二乘解的通式为：</p>
+<p>\begin{equation}\nonumber
+x = A^{(1,3)}b + (I - A^{(1,3)}A)y, \quad \forall y \in \mathbb{C}^n.
+\end{equation}</p>
+<p>证明
+由定理 8 知，$x$ 是不相容方程 $Ax = b$ 的最小二乘解 $\Leftrightarrow$ $x$ 是方程组</p>
+<p>\begin{equation}\nonumber
+Ax = AA^{(1,3)}b
+\end{equation}</p>
+<p>的解 $\Leftrightarrow$ $x$ 是方程组</p>
+<p>\begin{equation}\nonumber
+A(x - A^{(1,3)}b) = 0
+\end{equation}</p>
+<p>的解。</p>
+<p>由定理 1 的推论 2 知，该方程的通解为</p>
+<p>\begin{equation}\nonumber
+x - A^{(1,3)}b = (I - A^{(1,3)}A)y,
+\end{equation}</p>
+<p>即</p>
+<p>\begin{equation}\nonumber
+x = A^{(1,3)}b + (I - A^{(1,3)}A)y, \quad \forall y \in \mathbb{C}^n.
+\end{equation}</p>
+<h3 id="推论">推论
+</h3><p>对于不相容方程组 $Ax = b$ 的最小二乘解是唯一的 $\Leftrightarrow$ $A$ 是列满秩的。</p>
+<p>证明
+最小二乘解的通解公式为：</p>
+<p>\begin{equation}\nonumber
+x = A^{(1,3)}b + (I - A^{(1,3)}A)y, \quad \forall y \in \mathbb{C}^n.
+\end{equation}</p>
+<p>当 $A$ 列满秩时，存在 $K$ 使得</p>
+<p>\begin{equation}\nonumber
+KA = I_n.
+\end{equation}</p>
+<p>（可取 $K = (A^H A)^{-1} A^H = A^{(1,3)}$）</p>
+<p>则有</p>
+<p>\begin{equation}\nonumber
+A^{(1,3)} A = I_n,
+\end{equation}</p>
+<p>所以 $x = A^{(1,3)}b$ 唯一。</p>
+<p>反之，由通式知，若最小二乘解唯一，必有</p>
+<p>\begin{equation}\nonumber
+A^{(1,3)} A = I_n.
+\end{equation}</p>
+<p>故 $n = r(A^{(1,3)} A) \leq r(A) \leq n$，所以 $r(A) = n$，即 $A$ 列满秩。</p>
+<p>注：
+若 $A$ 列满秩，则 $A^{(1,3)} = A^+$。若 $A$ 行满秩，则 $A^{(1,4)} = A^+$。</p>
+<p>由于 $A^+$ 是唯一的，所以 $x = A^+ b$ 是唯一的最小二乘解。</p>
+<p>例 4
+求不相容方程组</p>
+<p>\begin{equation}\nonumber
+\begin{cases}
+x_1 + 2x_2 = 1 \
+2x_1 + x_2 = 0 \
+x_1 + x_2 = 0
+\end{cases}
+\end{equation}</p>
+<p>的最小二乘解。</p>
+<p>解：
+设方程组为 $Ax = b$，其中</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 & 2 \\
+2 & 1 \\
+1 & 1
+\end{bmatrix}, \quad
+b =
+\begin{bmatrix}
+1 \\
+0 \\
+0
+\end{bmatrix}, \quad
+x =
+\begin{bmatrix}
+x_1 \\
+x_2
+\end{bmatrix}.
+\end{equation}
+</div>
+<p>由于 $r(A) = 2, r(A, b) = 3$，故不相容。因 $A$ 是列满秩的，所以</p>
+<p>计算广义逆矩阵：</p>
+<div>
+\begin{equation}\nonumber
+A^+ = (A^H A)^{-1} A^H =
+\left(
+\begin{bmatrix}
+1 & 2 \\
+2 & 1 \\
+1 & 1
+\end{bmatrix}^T
+\begin{bmatrix}
+1 & 2 \\
+2 & 1 \\
+1 & 1
+\end{bmatrix}
+\right)^{-1}
+\begin{bmatrix}
+1 & 2 \\
+2 & 1 \\
+1 & 1
+\end{bmatrix}^T.
+\end{equation}
+</div>
+<p>计算 $(A^H A)$：</p>
+<div>
+\begin{equation}\nonumber
+A^H A =
+\begin{bmatrix}
+6 & 5 \\
+5 & 6
+\end{bmatrix}.
+\end{equation}
+</div>
+<p>求逆：</p>
+<div>
+\begin{equation}\nonumber
+(A^H A)^{-1} =
+\frac{1}{11}
+\begin{bmatrix}
+-4 & 7 \\
+7 & -4
+\end{bmatrix}.
+\end{equation}
+</div>
+<p>计算 $A^+$：</p>
+<div>
+\begin{equation}\nonumber
+A^+ =
+\frac{1}{11}
+\begin{bmatrix}
+-4 & 7 \\
+7 & -4
+\end{bmatrix}
+\begin{bmatrix}
+1 & 2 \\
+2 & 1 \\
+1 & 1
+\end{bmatrix}.
+\end{equation}
+</div>
+<p>因此，唯一的最小二乘解为</p>
+<div>
+\begin{equation}\nonumber
+x = A^+ b =
+\frac{1}{11}
+\begin{bmatrix}
+-4 & 7 \\
+7 & -4
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+=
+\frac{1}{11}
+\begin{bmatrix}
+-4 \\
+7
+\end{bmatrix}.
+\end{equation}
+</div>
+<p>即</p>
+<p>\begin{equation}\nonumber
+x_1 = \frac{-4}{11}, \quad x_2 = \frac{7}{11}.
+\end{equation}</p>
+<h2 id="四不相容方程组的极小范数最小二乘解与-a">四、不相容方程组的极小范数最小二乘解与 $A^+$
+</h2><p>一般的，最小二乘解并不唯一，通常把范数最小的一个称为 $Ax = b$ 的<strong>极小范数最小二乘解</strong>（最佳逼近解）。我们将看到，这样的解不仅唯一，且可由 $A^+$ 表出。</p>
+<p>我们先介绍一个引理：</p>
+<h3 id="引理-3">引理 3
+</h3><p>设 $A \in \mathbb{C}^{m \times n}$，则</p>
+<p>\begin{equation}\nonumber
+A^+ = A^{(1,4)} AA^{(1,3)}.
+\end{equation}</p>
+<p>（Urquhart）</p>
+<p>证明
+直接验证其满足四个 <strong>Penrose 方程</strong>。</p>
+<h3 id="定理-10">定理 10
+</h3><p>设 $A \in \mathbb{C}^{m \times n}$，$b \in \mathbb{C}^{m}$，则 $x = A^+ b$ 是不相容方程组 $Ax = b$ 的<strong>唯一极小最小二乘解</strong>。</p>
+<p>反之，设 $X \in \mathbb{C}^{n \times m}$，若 $\forall b \in \mathbb{C}^{m}$，$x = Xb$ 为不相容方程组 $Ax = b$ 的<strong>唯一极小最小二乘解</strong>，则 $X = A^+$。</p>
+<p>证明
+取 $A^{(1,3)} \in A^{\lbrace 1,3 \rbrace}$，由定理 8 知 $Ax = b$ 的唯一<strong>极小最小二乘解</strong>就是 $Ax = AA^{(1,3)}b$ 的<strong>极小范数解</strong>。</p>
+<p>从而又由定理 4 知其唯一的极小范数解为：</p>
+<p>\begin{equation}\nonumber
+x = A^{(1,4)} AA^{(1,3)} b = A^+ b.
+\end{equation}
+（引理 3）</p>
+<p>反之，若 $\forall b \in \mathbb{C}^{m}$，$x = Xb$ 为不相容方程组 $Ax = b$ 的唯一极小最小二乘解，由唯一性知：</p>
+<p>\begin{equation}\nonumber
+Xb = A^+ b.
+\end{equation}</p>
+<p>取 $b_i = \varepsilon_i, (1 \leq i \leq m)$，则：</p>
+<p>\begin{equation}\nonumber
+X \varepsilon_i = A^+ \varepsilon_i.
+\end{equation}</p>
+<p>所以：</p>
+<p>\begin{equation}\nonumber
+X = A^+.
+\end{equation}</p>
+<hr>
+<h2 id="总结">总结
+</h2><p>由于 $A^+ \in A^{\lbrace 1 \rbrace}$，$A^+ \in A^{\lbrace 1,3 \rbrace}$，$A^+ \in A^{\lbrace 1,4 \rbrace}$，故总结有下表：</p>
+<p>\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$Ax = b$ 相容 &amp; $Ax = b$ 不相容 \
+\hline
+$AA^+ b = b$ &amp; $AA^+ b \neq b$ \
+\hline
+解唯一 $\Leftrightarrow A$ 列满秩 &amp; 最小二乘解唯一 $\Leftrightarrow A$ 列满秩 \
+\hline
+解的通式： &amp; 最小二乘解的通式： \
+$x = A^+ b + (I - A^+ A)y$ &amp; $x = A^+ b + (I - A^+ A)y$ \
+\hline
+唯一的极小范数解： &amp; 唯一的极小最小二乘解： \
+$x = A^+ b$ &amp; $x = A^+ b$ \
+\hline
+\end{tabular}
+\end{center}</p>
+<p>关于 $x = A^+ b$ 的唯一性有表：</p>
+<p>\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$Ax = b$ &amp; 相容 &amp; 不相容 \
+\hline
+$A$ 列满秩 &amp; 唯一解 &amp; 唯一最小二乘解 \
+\hline
+$A$ 非列满秩 &amp; 唯一极小范数解 &amp; 唯一极小最小二乘解 \
+\hline
+\end{tabular}
+\end{center}</p>
+<p><strong>注：</strong> 给定方程 $Ax = b$，只要计算 $A^+$，则 $A^+ b$ 便给出方程的各种意义下的解。</p>
+<h3 id="例-5">例 5
+</h3><p>设</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 & 0 & -1 & 1 \\
+0 & 2 & 2 & 2 \\
+-1 & 4 & 5 & 3
+\end{bmatrix}, \quad
+b =
+\begin{bmatrix}
+4 \\
+-2 \\
+-2
+\end{bmatrix}.
+\end{equation}
+</div>
+<ol>
+<li>用广义逆矩阵方法判断方程组 $Ax = b$ 是否相容。</li>
+<li>求 $Ax = b$ 的极小范数解或极小最小二乘解。</li>
+</ol>
+<p>解
+$A$ 的满秩分解为：</p>
+<div>
+\begin{equation}\nonumber
+A = BC =
+\begin{bmatrix}
+1 & 0 \\
+0 & 2 \\
+-1 & 4
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & -1 & 1 \\
+0 & 1 & 1 & 1
+\end{bmatrix}.
+\end{equation}
+</div>
+<p>故</p>
+<div>
+\begin{equation}\nonumber
+A^+ = C^H (CC^H)^{-1} (B^H B)^{-1} B^H =
+\frac{1}{18}
+\begin{bmatrix}
+5 & 2 & -1 \\
+1 & 1 & 1 \\
+-4 & -1 & 2 \\
+6 & 3 & 0
+\end{bmatrix}.
+\end{equation}
+</div>
+<p>由于</p>
+<div>
+\begin{equation}\nonumber
+A A^+ b =
+\begin{bmatrix}
+3 \\
+0 \\
+-3
+\end{bmatrix}
+\neq b,
+\end{equation}
+</div>
+<p>所以 $Ax = b$ <strong>不相容</strong>，因此它的极小最小二乘解为</p>
+<div>
+\begin{equation}\nonumber
+x_0 = A^+ b =
+\begin{bmatrix}
+0 \\
+1 \\
+0 \\
+-1
+\end{bmatrix}.
+\end{equation}
+</div>
+<p>例 6：证明下列等式</p>
+<p>(1) 证明 $AX = AA^+ \iff A^H AX = A^H$。</p>
+<p>(2) 证明 $XA = A^+ A \iff XAA^H = A^H$。</p>
+<p>证明：
+(1) 由于 $AX = AA^+$，两边取共轭转置得：</p>
+<p>\begin{equation}\nonumber
+(AH AX)^H = (AA^+)^H = A^H (AA^+)^H = A^H.
+\end{equation}</p>
+<p>又因为：</p>
+<p>\begin{equation}\nonumber
+(AA^+)^H = (AA^+)^H = A^H,
+\end{equation}</p>
+<p>所以有 $A^H AX = A^H$。</p>
+<p>再由 $A^H AX = A^H$，可得：</p>
+<p>\begin{equation}\nonumber
+AX = A^H A X = A^H A A^+ = A^H A^H AX = A^+ A^H A X.
+\end{equation}</p>
+<p>又因：</p>
+<p>\begin{equation}\nonumber
+(AA^+)^H = AA^+,
+\end{equation}</p>
+<p>所以 $AX = AA^+$。</p>
+<p>同理可证 (2)。</p>
+<p>例 7：唯一广义逆的条件</p>
+<p>(1) 若 $A$ <strong>列满秩</strong>，则 $A^{(1,3)} = A^+$（唯一）。</p>
+<p>(2) 若 $A^T$ <strong>行满秩</strong>，则 $A^{(1,4)} = A^+$（唯一）。</p>
+<p>证明：
+(1) 由于 $A$ 列满秩，满足：</p>
+<p>\begin{equation}\nonumber
+A^H A = I.
+\end{equation}</p>
+<p>（因为 $A^+ = (A^H A)^{-1} A^H$）</p>
+<p>设 $X \in A^{(1,3)}$，则：</p>
+<p>\begin{equation}\nonumber
+AXA = A.
+\end{equation}</p>
+<p>两边左乘 $A^+$ 得：</p>
+<p>\begin{equation}\nonumber
+A^+ (AXA) = A^+ A.
+\end{equation}</p>
+<p>因为：</p>
+<p>\begin{equation}\nonumber
+A^+ A = I,
+\end{equation}</p>
+<p>所以：</p>
+<p>\begin{equation}\nonumber
+XA = I.
+\end{equation}</p>
+<p>又因为：</p>
+<p>\begin{equation}\nonumber
+(XA)^H = XA, \quad \text{且} \quad XAX = X,
+\end{equation}</p>
+<p>所以 $X$ 满足四个 <strong>Penrose 方程</strong>，即 $X = A^+$。</p>
+<p>证明：
+(2) 由于 $A$ <strong>行满秩</strong>，满足：</p>
+<p>\begin{equation}\nonumber
+AA^+ = I.
+\end{equation}</p>
+<p>（因为 $A^+ = A^H (AA^H)^{-1}$）</p>
+<p>设 $X \in A^{(1,4)}$，则：</p>
+<p>\begin{equation}\nonumber
+AXA = A.
+\end{equation}</p>
+<p>两边右乘 $A^+$ 得：</p>
+<p>\begin{equation}\nonumber
+(AXA) A^+ = AA^+.
+\end{equation}</p>
+<p>因为：</p>
+<p>\begin{equation}\nonumber
+AA^+ = I,
+\end{equation}</p>
+<p>所以：</p>
+<p>\begin{equation}\nonumber
+AX = I.
+\end{equation}</p>
+<p>又因为：</p>
+<p>\begin{equation}\nonumber
+(AX)^H = AX, \quad \text{且} \quad XAX = X,
+\end{equation}</p>
+<p>所以 $X$ 满足四个 <strong>Penrose 方程</strong>，即 $X = A^+$。</p>
+<p>例 8</p>
+<ol>
+<li>$X = (A^H A)^{-A^H} \in A\lbrace 1,3 \rbrace$。</li>
+<li>$X = A^H (AA^H)^{-} \in A\lbrace 1,4 \rbrace$。</li>
+</ol>
+<p>明：
+(1) 因为
+\begin{equation}\nonumber
+A\lbrace 1,3 \rbrace = \lbrace X | A^H A X = A^H \rbrace
+\end{equation}
+且 $A^H A X = A^H$ 相容（因为 $A^H$ 是特解），
+\begin{equation}\nonumber
+\Rightarrow \text{必存在特解 } X = (A^H A)^{-} A^H \text{ 使得 } A^H A X = A^H
+\end{equation}
+\begin{equation}\nonumber
+\Rightarrow X = (A^H A)^{-} A^H \in \lbrace X | A^H A X = A^H \rbrace = A\lbrace 1,3 \rbrace
+\end{equation}</p>
+<p>回顾定理（Penrose 定理）
+设 $A \in \mathbb{C}^{m \times n}$，$B \in \mathbb{C}^{p \times q}$，$D \in \mathbb{C}^{m \times q}$，则矩阵方程 $AXB = D$ 相容的充要条件是：
+\begin{equation}\nonumber
+A A^{(1)} D B^{(1)} B = D
+\end{equation}
+其中 $A^{(1)} \in A\lbrace 1 \rbrace$，$B^{(1)} \in B\lbrace 1 \rbrace$。</p>
+<p>此时方程组的通解为：
+\begin{equation}\nonumber
+X = A^{(1)} D B^{(1)} + Y - A^{(1)} A Y B B^{(1)}
+\end{equation}
+其中 $Y \in \mathbb{C}^{n \times q}$ 为任意。</p>
+<p>同理可证 (2)。</p>
 
 </section>
 

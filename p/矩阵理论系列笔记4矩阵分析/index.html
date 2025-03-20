@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="向量与矩阵范数 定义 1（向量范数） 设 $V$ 是数域 $F$（实数域或复数域）上的线性空间，若 $\\forall x \\in V$，均对应一个数，记为 $|x|$，满足以下三条性质：\n正定性：$|x| \\geq 0$，且 $|x| = 0 \\Leftrightarrow x = \\theta$；\n">
+<title>矩阵理论系列笔记4：矩阵分析</title>
+
+<link rel='canonical' href='https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B04%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="矩阵理论系列笔记4：矩阵分析">
+<meta property='og:description' content="向量与矩阵范数 定义 1（向量范数） 设 $V$ 是数域 $F$（实数域或复数域）上的线性空间，若 $\\forall x \\in V$，均对应一个数，记为 $|x|$，满足以下三条性质：\n正定性：$|x| \\geq 0$，且 $|x| = 0 \\Leftrightarrow x = \\theta$；\n">
+<meta property='og:url' content='https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B04%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90/'>
+<meta property='og:site_name' content='刘贵泷的个人网页'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='矩阵论' /><meta property='article:published_time' content='2025-02-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-02-28T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="矩阵理论系列笔记4：矩阵分析">
+<meta name="twitter:description" content="向量与矩阵范数 定义 1（向量范数） 设 $V$ 是数域 $F$（实数域或复数域）上的线性空间，若 $\\forall x \\in V$，均对应一个数，记为 $|x|$，满足以下三条性质：\n正定性：$|x| \\geq 0$，且 $|x| = 0 \\Leftrightarrow x = \\theta$；\n">
+        
+
+
+
+<script>
+    window.MathJax = {
+      tex: {
+        tags: 'ams',  
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        packages: ['base', 'ams']
+        
+      },
+      options: {
+        
+        
+      }
+    };
+    </script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/image/avatar_hu_5fc70999b694beba.png" width="300"
+                            height="294" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">刘贵泷的个人网页</a></h1>
+            <h2 class="site-description">个人主页</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://bilibili.com'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://LiuGuilongustb.github.io/en/" >English</option>
+                                
+                                    <option value="https://LiuGuilongustb.github.io/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#向量与矩阵范数">向量与矩阵范数</a>
+      <ol>
+        <li><a href="#定义-1向量范数">定义 1（向量范数）</a></li>
+        <li><a href="#定理-1">定理 1</a></li>
+        <li><a href="#定义1范数2范数无穷范数">定义：1范数、2范数、无穷范数</a></li>
+        <li><a href="#定义p范数">定义：p范数</a></li>
+        <li><a href="#命题">命题</a></li>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#定义-2">定义 2</a></li>
+        <li><a href="#定理-1-1">定理 1</a></li>
+        <li><a href="#定义-3极限">定义 3（极限）</a></li>
+        <li><a href="#定理-2">定理 2</a></li>
+        <li><a href="#定义-4">定义 4</a></li>
+        <li><a href="#定义-1">定义：</a></li>
+        <li><a href="#定理-3">定理 3</a></li>
+        <li><a href="#例-4">例 4</a></li>
+        <li><a href="#定理-4">定理 4</a></li>
+        <li><a href="#定义-6">定义 6</a></li>
+        <li><a href="#定理-5">定理 5</a></li>
+        <li><a href="#定理-6">定理 6</a></li>
+        <li><a href="#定理-7">定理 7</a></li>
+        <li><a href="#定理-8">定理 8</a></li>
+        <li><a href="#定义-7谱半径">定义 7（谱半径）</a></li>
+        <li><a href="#定理-9">定理 9</a></li>
+        <li><a href="#定理-10">定理 10</a></li>
+      </ol>
+    </li>
+    <li><a href="#特征值的估计">特征值的估计</a>
+      <ol>
+        <li><a href="#定理-11">定理 11</a></li>
+        <li><a href="#定义盖尔圆盘">定义（盖尔圆盘）</a></li>
+        <li><a href="#定理-12盖尔圆盘定理">定理 12（盖尔圆盘定理）</a></li>
+      </ol>
+    </li>
+    <li><a href="#矩阵级数">矩阵级数</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B04%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90/">矩阵理论系列笔记4：矩阵分析</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-02-28</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 12 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="向量与矩阵范数">向量与矩阵范数
+</h2><h3 id="定义-1向量范数">定义 1（向量范数）
+</h3><p>设 $V$ 是数域 $F$（实数域或复数域）上的线性空间，若 $\forall x \in V$，均对应一个数，记为 $|x|$，满足以下三条性质：</p>
+<ol>
+<li>
+<p><strong>正定性</strong>：$|x| \geq 0$，且 $|x| = 0 \Leftrightarrow x = \theta$；</p>
+</li>
+<li>
+<p><strong>齐次性</strong>：$\forall k \in F, x \in V$，有 $|kx| = |k| \cdot |x|$；</p>
+</li>
+<li>
+<p><strong>三角不等式</strong>：$\forall x, y \in V$，有 $|x + y| \leq |x| + |y|$。</p>
+</li>
+</ol>
+<p>则称 $V$ 为<strong>赋范线性空间</strong>，$|x|$ 是 $x$ 的<strong>范数</strong>。</p>
+<p><strong>注：</strong> 上面三条性质称为<strong>范数的三条公理</strong>，即只要满足范数公理的实值函数均为向量的范数。</p>
+<h3 id="定理-1">定理 1
+</h3><ol>
+<li>
+<p>当 $x \neq \theta$ 时，$\frac{x}{|x|}$ 是范数为 $1$ 的向量（单位化）；</p>
+</li>
+<li>
+<p>$|-x| = |x|$；</p>
+</li>
+<li>
+<p>$\forall x, y \in V$，有 $\big||x| - |y|\big| \leq |x - y|$。</p>
+</li>
+</ol>
+<h3 id="定义1范数2范数无穷范数">定义：1范数、2范数、无穷范数
+</h3><p>$\forall x = (\xi_1, \xi_2, \dots, \xi_n)^T \in \mathbb{C}^n$，定义</p>
+<p>\begin{equation}\nonumber
+|x|<em>1 = \sum</em>{i=1}^{n} |\xi_i|, \quad |x|<em>\infty = \max</em>{1 \leq i \leq n} |\xi_i|.
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+|x|<em>2 = \left( \sum</em>{i=1}^{n} |\xi_i|^2 \right)^{\frac{1}{2}}.
+\end{equation}</p>
+<p>则 $|x|<em>1, |x|</em>\infty$ 及 $|x|_2$ 均是 $\mathbb{C}^n$ 中的范数。</p>
+<p>证明：
+不难验证 $|x|<em>1, |x|</em>\infty$ 均是范数。对于 $|x|_2$，正定性和齐次性显然满足，下面证明它满足三角不等式。</p>
+<p>设</p>
+<p>\begin{equation}\nonumber
+x = (\xi_1, \xi_2, \dots, \xi_n)^T, \quad y = (\eta_1, \eta_2, \dots, \eta_n)^T \in \mathbb{C}^n.
+\end{equation}</p>
+<p>注意到</p>
+<p>\begin{equation}\nonumber
+|x|<em>2 = \left( \sum</em>{i=1}^{n} |\xi_i|^2 \right)^{\frac{1}{2}} = \sqrt{x^H x} = \sqrt{(x, x)},
+\end{equation}</p>
+<p>即 $|x|_2$ 是<strong>赋范空间</strong> $\mathbb{C}^n$ 中由<strong>内积</strong>导出的范数。</p>
+<p>由 <strong>Cauchy 不等式</strong> 得：</p>
+<p>\begin{equation}\nonumber
+|x + y|_2^2 = (x + y, x + y)
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+= (x, x) + (x, y) + (y, x) + (y, y)
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+= |x|_2^2 + 2 \operatorname{Re} (x, y) + |y|_2^2
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+\leq |x|_2^2 + 2 |(x, y)| + |y|_2^2
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+\leq |x|_2^2 + 2 |x|_2 |y|_2 + |y|_2^2 = (|x|_2 + |y|_2)^2
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+\Rightarrow |x + y|_2 \leq |x|_2 + |y|_2.
+\end{equation}</p>
+<h3 id="定义p范数">定义：p范数
+</h3><p>设 $1 \leq p &lt; \infty$，$\forall x = (\xi_1, \xi_2, \dots, \xi_n)^T \in \mathbb{C}^n$，定义</p>
+<p>\begin{equation}\nonumber
+|x|<em>p = \left( \sum</em>{i=1}^{n} |\xi_i|^p \right)^{\frac{1}{p}}.
+\end{equation}</p>
+<p>则 $|x|_p$ 是 $\mathbb{C}^n$ 中的范数，称为**$p$-范数**。</p>
+<ul>
+<li>当 $p = 1$ 时，称为 <strong>1-范数</strong>；</li>
+<li>当 $p = 2$ 时，称为 <strong>2-范数</strong>；</li>
+<li>当令 $p \to \infty$ 时，得到 <strong>$\infty$-范数</strong>。</li>
+</ul>
+<p>这三种范数为常见范数。</p>
+<h3 id="命题">命题
+</h3><p>设 $A \in \mathbb{C}^{m \times n}$，$|\cdot|_\alpha$ 是 $\mathbb{C}^m$ 中的一个向量范数。$\forall x \in \mathbb{C}^n$，定义：</p>
+<p>\begin{equation}\nonumber
+|x|<em>\beta = |Ax|</em>\alpha.
+\end{equation}</p>
+<p>则 $|x|_\beta$ 是 $\mathbb{C}^n$ 中的一个向量范数。</p>
+<hr>
+<h3 id="定义">定义
+</h3><p>设 $A$ 是 $n$ 阶 Hermite 矩阵，$\forall x \in \mathbb{C}^n$，定义：</p>
+<p>\begin{equation}\nonumber
+|x|_A = \sqrt{x^H A x}.
+\end{equation}</p>
+<p>则 $|x|_A$ 是一个向量范数，称为<strong>加权范数</strong>或者<strong>椭圆范数</strong>。</p>
+<h3 id="定义-2">定义 2
+</h3><p>设 $V$ 是有限维线性空间，$|\cdot|<em>\alpha, |\cdot|</em>\beta$ 是 $V$ 中任意两种范数。若存在正数 $k_1$ 及 $k_2$，使得 $\forall x \in V$，都有：</p>
+<p>\begin{equation}\nonumber
+k_1 |x|<em>\beta \leq |x|</em>\alpha \leq k_2 |x|_\beta,
+\end{equation}</p>
+<p>则称 $|\cdot|<em>\alpha$ 与 $|\cdot|</em>\beta$ <strong>是等价的</strong>。</p>
+<hr>
+<h3 id="定理-1-1">定理 1
+</h3><p>有限维线性空间中任意两种范数都是等价的。</p>
+<h3 id="定义-3极限">定义 3（极限）
+</h3><p>设 $x_1, x_2, \dots, x_m, \dots$ 是线性空间 $V$ 中的元素序列，若 $x \in V$，使得：</p>
+<p>\begin{equation}\nonumber
+\lim\limits_{m \to \infty} |x_m - x|_\alpha = 0,
+\end{equation}</p>
+<p>则称序列 ${x_m}$ 按 <strong>$\alpha$-范数收敛</strong> 于 $x$，记为：</p>
+<p>\begin{equation}\nonumber
+\lim\limits_{m \to \infty} x_m^{\alpha} = x.
+\end{equation}</p>
+<hr>
+<p>线性空间可定义多种范数收敛，如 <strong>1-范数收敛</strong>、<strong>2-范数收敛</strong>，它们之间有什么关系呢？</p>
+<h3 id="定理-2">定理 2
+</h3><p>设 $V$ 是有限维线性空间，则：</p>
+<ol>
+<li>
+<p>序列 ${x_m}$ 按某种范数收敛于 $x_0$，则 ${x_m}$ 按任何范数收敛于 $x_0$。即<strong>在有限维线性空间中按范数收敛是等价的</strong>。</p>
+</li>
+<li>
+<p>${x_m}$ 按范数收敛于 $x_0$ $\Leftrightarrow$ <strong>按坐标收敛于 $x_0$</strong>。</p>
+</li>
+</ol>
+<p>证明：</p>
+<ol>
+<li>按范数收敛的等价性
+设 $|\cdot|<em>\alpha, |\cdot|</em>\beta$ 是 $V$ 中任意两种范数，则存在正数 $k_1$ 及 $k_2$，使得 $\forall x \in V$，都有：</li>
+</ol>
+<p>\begin{equation}\nonumber
+k_1 |x|<em>\beta \leq |x|</em>\alpha \leq k_2 |x|_\beta.
+\end{equation}</p>
+<p>若 $\lim\limits_{m \to \infty} |x_m - x_0|_\alpha = 0$，则有：</p>
+<p>\begin{equation}\nonumber
+0 \leq |x_m - x_0|<em>\beta \leq \frac{1}{k_1} |x_m - x_0|</em>\alpha.
+\end{equation}</p>
+<p>所以 $\lim\limits_{m \to \infty} |x_m - x_0|_\beta = 0$，即 ${x_m}$ 按 $\beta$-范数收敛于 $x_0$。反之亦然。</p>
+<ol start="2">
+<li>按范数收敛与按坐标收敛的等价性
+取 $V$ 的一组基底 ${e_1, \dots, e_n}$，令</li>
+</ol>
+<p>\begin{equation}\nonumber
+x_m = \xi_1^{(m)} e_1 + \dots + \xi_n^{(m)} e_n, \quad m = 1,2, \dots
+\end{equation}</p>
+<p>即</p>
+<p>\begin{equation}\nonumber
+x_m =
+\begin{bmatrix}
+\xi_1^{(m)} \
+\vdots \
+\xi_n^{(m)}
+\end{bmatrix}.
+\end{equation}</p>
+<p>我们回忆 <strong>2-范数</strong> 的定义，$\forall x = (\xi_1, \xi_2, \dots, \xi_n)^T \in \mathbb{C}^n$：</p>
+<p>\begin{equation}\nonumber
+|x|<em>2 = \left( \sum</em>{i=1}^{n} |\xi_i|^2 \right)^{\frac{1}{2}}.
+\end{equation}</p>
+<p>由于按范数收敛是等价的，所以有：</p>
+<p>\begin{equation}\nonumber
+\lim\limits_{m \to \infty} |x_m - x_0| = 0 \Leftrightarrow \lim\limits_{m \to \infty} |x_m - x_0|_2 = 0.
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+\Rightarrow \lim\limits_{m \to \infty} \left( \sum_{i=1}^{n} |\xi_i^{(m)} - \xi_i^{(0)}|^2 \right)^{\frac{1}{2}} = 0.
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+\Rightarrow \lim\limits_{m \to \infty} \xi_i^{(m)} = \xi_i^{(0)}, \quad i = 1, \dots, n.
+\end{equation}</p>
+<p>注：
+在<strong>有限维线性空间</strong>中，按<strong>任一种范数收敛</strong>均等价于<strong>按坐标收敛</strong>。</p>
+<hr>
+<p>任意 $m \times n$ 的矩阵均可看做 $mn$ 维向量，故可将向量范数直接移植到矩阵上来。</p>
+<h3 id="定义-4">定义 4
+</h3><p>若 $\forall A \in \mathbb{C}^{m \times n}$，均对应一个实数，记作 $|A|$，满足：</p>
+<ol>
+<li>
+<p><strong>正定性</strong>：
+\begin{equation}\nonumber
+|A| \geq 0, \quad \text{且} \quad |A| = 0 \Leftrightarrow A = 0;
+\end{equation}</p>
+</li>
+<li>
+<p><strong>齐次性</strong>：
+\begin{equation}\nonumber
+\forall \lambda \in \mathbb{C}, \quad |\lambda A| = |\lambda| |A|;
+\end{equation}</p>
+</li>
+<li>
+<p><strong>三角不等式</strong>：
+\begin{equation}\nonumber
+|A + B| \leq |A| + |B|.
+\end{equation}</p>
+</li>
+</ol>
+<p>则称 $|A|$ 是矩阵 $A$ 的<strong>向量范数</strong>（广义矩阵范数）。</p>
+<h3 id="定义-1">定义：
+</h3><p>设 $A \in \mathbb{C}^{m \times n}$，则</p>
+<p>\begin{equation}\nonumber
+|A|<em>{V_1} = \sum</em>{i,j=1}^{m,n} |a_{ij}|,
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+|A|<em>{V</em>\infty} = \max_{i,j} |a_{ij}|,
+\end{equation}</p>
+<p>以及</p>
+<p>\begin{equation}\nonumber
+|A|<em>{V_p} = \left( \sum</em>{i,j=1}^{m,n} |a_{ij}|^p \right)^{\frac{1}{p}}, \quad (p \geq 1)
+\end{equation}</p>
+<p>均是 $A$ 的范数。</p>
+<h3 id="定理-3">定理 3
+</h3><ol>
+<li>
+<p>$A \in \mathbb{C}^{m \times n}$ 的任一种范数均是 $A$ 的元素的<strong>连续函数</strong>；</p>
+</li>
+<li>
+<p>$\mathbb{C}^{m \times n}$ 的任意两种范数都是等价的，即对于 $|A|<em>\alpha, |B|</em>\beta$，存在正数 $k_1$ 及 $k_2$，使得：</p>
+</li>
+</ol>
+<p>\begin{equation}\nonumber
+k_1 |A|<em>\beta \leq |A|</em>\alpha \leq k_2 |A|_\beta, \quad \forall A \in \mathbb{C}^{m \times n};
+\end{equation}</p>
+<ol start="3">
+<li><strong>矩阵序列</strong> ${A_k}$ 按任一范数收敛于 $A_0$：</li>
+</ol>
+<p>\begin{equation}\nonumber
+\lim\limits_{k \to \infty} A_k = A_0
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+\Leftrightarrow \lim\limits_{k \to \infty} a_{ij}^k = a_{ij}^0, \quad \forall i, j.
+\end{equation}</p>
+<h3 id="例-4">例 4
+</h3><p>设 $A \in \mathbb{C}^{n \times n}$，则</p>
+<p>\begin{equation}\nonumber
+|A|<em>{V_2} = \left( \sum</em>{i,j=1}^{n} |a_{ij}|^2 \right)^{\frac{1}{2}} = \left( \operatorname{tr} (A^H A) \right)^{\frac{1}{2}}
+\end{equation}</p>
+<p>是 $A$ 的矩阵范数。</p>
+<p>证明：
+只需验证<strong>相容性</strong>。设：</p>
+<p>\begin{equation}\nonumber
+A = (a_{ij})<em>{n \times n}, \quad B = (b</em>{ij})_{n \times n}.
+\end{equation}</p>
+<p>则：</p>
+<p>\begin{equation}\nonumber
+|AB|<em>{V_2}^2 = \sum</em>{i,j=1}^{n} |c_{ij}|^2.
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+= \sum_{i,j=1}^{n} |a_{i1} b_{1j} + a_{i2} b_{2j} + \dots + a_{in} b_{nj}|^2.
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+\leq \sum_{i,j=1}^{n} \left( (|a_{i1}|^2 + \dots + |a_{in}|^2) (|b_{1j}|^2 + \dots + |b_{nj}|^2) \right) \quad \text{(柯西不等式)}
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+= \sum_{i=1}^{n} \left( |a_{i1}|^2 + \dots + |a_{in}|^2 \right) \sum_{j=1}^{n} \left( |b_{1j}|^2 + \dots + |b_{nj}|^2 \right) \quad \text{(提取公因式)}
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+= |A|<em>{V_2}^2 |B|</em>{V_2}^2.
+\end{equation}</p>
+<p>因此，</p>
+<p>\begin{equation}\nonumber
+|AB|<em>{V_2} \leq |A|</em>{V_2} |B|_{V_2}.
+\end{equation}</p>
+<p>此范数称为 <strong>Frobenius 范数</strong>，简称 <strong>F-范数</strong>，常记为 $|A|_F$。它具有良好的性质。</p>
+<hr>
+<h3 id="定理-4">定理 4
+</h3><ol>
+<li>若 $A \in \mathbb{C}^{n \times n}, x \in \mathbb{C}^n$，则</li>
+</ol>
+<p>\begin{equation}\nonumber
+|Ax|_2 \leq |A|_F |x|_2.
+\end{equation}</p>
+<ol start="2">
+<li>设 $U, V$ 为酉矩阵，有</li>
+</ol>
+<p>\begin{equation}\nonumber
+|UA|_F = |AV|_F = |UAV|_F = |A|_F = \left( \operatorname{tr} (A^H A) \right)^{\frac{1}{2}}.
+\end{equation}</p>
+<p>证明 1)
+记 $A = (a_{ij})_{n \times n}$，第 $i$ 行表示为 $A_i$，即</p>
+<p>\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+A_1 \
+\vdots \
+A_n
+\end{bmatrix}.
+\end{equation}</p>
+<p>设</p>
+<p>\begin{equation}\nonumber
+x =
+\begin{bmatrix}
+\xi_1 \
+\vdots \
+\xi_n
+\end{bmatrix},
+\end{equation}</p>
+<p>则</p>
+<p>\begin{equation}\nonumber
+Ax =
+\begin{bmatrix}
+A_1 x \
+\vdots \
+A_n x
+\end{bmatrix}.
+\end{equation}</p>
+<p>由柯西不等式得：</p>
+<p>\begin{equation}\nonumber
+|A_i x|^2 = |a_{i1} \xi_1 + \dots + a_{in} \xi_n|^2 = \left| \sum_{k=1}^{n} a_{ik} \xi_k \right|^2.
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+\leq \sum_{k=1}^{n} |a_{ik}|^2 \sum_{k=1}^{n} |\xi_k|^2 = |A_i^T|_2^2 |x|_2^2, \quad i = 1, 2, \dots, n.
+\end{equation}</p>
+<p>因此，</p>
+<p>\begin{equation}\nonumber
+|Ax|<em>2^2 = \sum</em>{i=1}^{n} |A_i x|^2 \leq \sum_{i=1}^{n} \left( |A_i^T|_2^2 |x|_2^2 \right).
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+= \left( \sum_{i=1}^{n} |A_i^T|_2^2 \right) |x|_2^2 = (|A|_F |x|_2)^2.
+\end{equation}</p>
+<p>因此，</p>
+<p>\begin{equation}\nonumber
+|Ax|_2 \leq |A|_F |x|_2.
+\end{equation}</p>
+<p>证明 2)
+显然有：</p>
+<p>\begin{equation}\nonumber
+|UA|_F^2 = \operatorname{tr}((UA)^H (UA)) = \operatorname{tr}(A^H U^H UA) = \operatorname{tr}(A^H A) = |A|_F^2.
+\end{equation}</p>
+<p>所以</p>
+<p>\begin{equation}\nonumber
+|UA|_F = |A|_F.
+\end{equation}</p>
+<p>注意到 $|A|_F = |A^H|_F$，$V^H$ 为酉矩阵，我们有：</p>
+<p>\begin{equation}\nonumber
+|AV|_F = |(AV)^H|_F = |V^H A^H|_F = |A^H|_F = |A|_F.
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+|UAV|_F = |UA|_F = |A|_F.
+\end{equation}</p>
+<hr>
+<p>向量范数与矩阵范数在运算中会同时出现，故建立它们之间的关系。因此我们引入定义：</p>
+<h3 id="定义-6">定义 6
+</h3><p>若 $\forall A \in \mathbb{C}^{n \times n}, x \in \mathbb{C}^n$，向量范数 $|\cdot|_v$ 与矩阵范数 $|\cdot|_m$ 满足不等式：</p>
+<p>\begin{equation}\nonumber
+|Ax|_v \leq |A|_m |x|_v,
+\end{equation}</p>
+<p>则称 <strong>向量范数</strong> $|\cdot|_v$ <strong>与矩阵范数</strong> $|\cdot|_m$ <strong>相容</strong>。</p>
+<hr>
+<p>我们知道<strong>任何两种矩阵范数是等价的，任何两种向量范数也等价</strong>，故我们要问：</p>
+<p>给定矩阵范数，是否<strong>一定存在</strong>与之相容的<strong>向量范数</strong>？<br>
+反之，给定向量范数，又如何确定一个与之相容的<strong>矩阵范数</strong>？</p>
+<p>答案是肯定的。</p>
+<h3 id="定理-5">定理 5
+</h3><p>设 $|A|$ 是 $\mathbb{C}^{n \times n}$ 上的一个矩阵范数，则必存在 $\mathbb{C}^n$ 上与之相容的<strong>向量范数</strong>。</p>
+<p>证明：
+取定 $a (\neq 0) \in \mathbb{C}^n$，则 $\forall x \in \mathbb{C}^n$，定义：</p>
+<p>\begin{equation}\nonumber
+|x|_v = |x a^T|.
+\end{equation}</p>
+<p>则不难验证，它是一种向量范数，且与给定的矩阵范数相容。</p>
+<ol>
+<li><strong>正定性</strong>
+当 $x \neq 0$ 时，一定有 $x a^T$ 是<strong>非零矩阵</strong>，所以：</li>
+</ol>
+<p>\begin{equation}\nonumber
+|x a^T| &gt; 0.
+\end{equation}</p>
+<ol start="2">
+<li>
+<p><strong>齐次性</strong>
+\begin{equation}\nonumber
+|\lambda x|_v = |\lambda x a^T| = |\lambda| |x a^T| = |\lambda| |x|_v.
+\end{equation}</p>
+</li>
+<li>
+<p><strong>三角不等式</strong>
+\begin{equation}\nonumber
+|x + y|_v = |(x + y) a^T| = |x a^T + y a^T| \leq |x a^T| + |y a^T| = |x|_v + |y|_v.
+\end{equation}</p>
+</li>
+<li>
+<p><strong>相容性</strong>
+\begin{equation}\nonumber
+|Ax|_v = |Ax a^T| \leq |A| |x a^T| = |A| |x|_v.
+\end{equation}</p>
+</li>
+</ol>
+<p>给定向量范数，如何确定一个与之相容的矩阵范数？<br>
+我们有如下定理：</p>
+<h3 id="定理-6">定理 6
+</h3><p>若设 $|\cdot|_v$ 是 $\mathbb{C}^n$ 上的一个<strong>向量范数</strong>，则 $\forall A \in \mathbb{C}^{n \times n}$，定义：</p>
+<p>\begin{equation}\nonumber
+|A| = \max_{|x|_v = 1} |Ax|_v.
+\end{equation}</p>
+<p>则 $|A|$ 是一个与 $|\cdot|_v$ <strong>相容的矩阵范数</strong>，称此矩阵范数为<strong>从属于向量范数</strong> $|\cdot|_v$ 的<strong>算子范数</strong>。</p>
+<p>证明：</p>
+<ol>
+<li><strong>正定性</strong>
+若 $A \neq 0$，则存在 $x_1 \neq 0$ 使得 $Ax_1 \neq 0$。令：</li>
+</ol>
+<p>\begin{equation}\nonumber
+x_0 = \frac{x_1}{|x_1|_v},
+\end{equation}</p>
+<p>则 $|x_0|_v = 1$，故：</p>
+<p>\begin{equation}\nonumber
+|Ax_0|_v = \frac{|Ax_1|_v}{|x_1|_v} &gt; 0.
+\end{equation}</p>
+<p>因此：</p>
+<p>\begin{equation}\nonumber
+|A| = \max_{|x|_v = 1} |Ax|_v &gt; 0.
+\end{equation}</p>
+<ol start="2">
+<li><strong>齐次性</strong>
+$\forall \lambda \in \mathbb{C}$，有：</li>
+</ol>
+<p>\begin{equation}\nonumber
+|A| = \max_{|x|_v = 1} |Ax|<em>v = \max</em>{|x|_v = 1} |\lambda| |Ax|<em>v = |\lambda| \max</em>{|x|_v = 1} |Ax|_v = |\lambda| |A|.
+\end{equation}</p>
+<ol start="3">
+<li><strong>三角不等式</strong>
+$\forall A, B \in \mathbb{C}^{n \times n}$，存在 $x_0 \in \mathbb{C}^n$ 使得 $|x_0|_v = 1$，则：</li>
+</ol>
+<p>\begin{equation}\nonumber
+|(A + B)x_0|_v \leq |Ax_0|_v + |Bx_0|_v.
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+\Rightarrow \max_{|x|_v = 1} |(A + B)x|<em>v \leq \max</em>{|x|_v = 1} |Ax|<em>v + \max</em>{|x|_v = 1} |Bx|_v.
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+\Rightarrow |A + B| \leq |A| + |B|.
+\end{equation}</p>
+<ol start="4">
+<li><strong>相容性</strong>
+存在 $y_0 \in \mathbb{C}^n$（$|y_0|_v = 1$）使得：</li>
+</ol>
+<p>\begin{equation}\nonumber
+|AB| = |(AB)y_0|_v = |A (By_0)|_v.
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+= \left| A \left( \frac{By_0}{|By_0|_v} \right) \right|_v |By_0|_v.
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+\leq |A| |By_0|_v \leq |A| |B|.
+\end{equation}</p>
+<p>因此 $|A|$ 为矩阵范数。</p>
+<ol start="5">
+<li><strong>最终推导</strong>
+$\forall x (\neq 0) \in \mathbb{C}^n$，我们有：</li>
+</ol>
+<p>\begin{equation}\nonumber
+|Ax|_v = \left| A \left( \frac{x}{|x|_v} \right) \right|_v |x|_v.
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+\leq \left( \max_{|x|_v = 1} |Ax|_v \right) |x|_v.
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+\leq |A| |x|_v.
+\end{equation}</p>
+<hr>
+<p>我们常见的<strong>向量范数</strong>有 $|x|_1, |x|<em>2$ 及 $|x|</em>\infty$。<br>
+则从属于它们的<strong>算子范数</strong>记为 $|A|_1, |A|<em>2$ 及 $|A|</em>\infty$。<br>
+我们有如下定理：</p>
+<h3 id="定理-7">定理 7
+</h3><p>设 $A \in \mathbb{C}^{n \times n}$，$A = (a_{ij})_{n \times n}$，$x \in \mathbb{C}^n$，<br>
+则从属于向量范数 $|x|_1, |x|<em>2$ 及 $|x|</em>\infty$ 的<strong>算子范数</strong>为：</p>
+<ol>
+<li>
+<p><strong>列范数</strong>：
+\begin{equation}\nonumber
+|A|<em>1 = \max</em>{1 \leq j \leq n} \sum_{i=1}^{n} |a_{ij}|.
+\end{equation}</p>
+</li>
+<li>
+<p><strong>谱范数</strong>（谱模范数）：
+\begin{equation}\nonumber
+|A|_2 = \sqrt{\lambda_1}, \quad \lambda_1 \text{ 为 } A^H A \text{ 的最大特征值}.
+\end{equation}</p>
+</li>
+<li>
+<p><strong>行范数</strong>：
+\begin{equation}\nonumber
+|A|<em>\infty = \max</em>{1 \leq i \leq n} \sum_{j=1}^{n} |a_{ij}|.
+\end{equation}</p>
+</li>
+</ol>
+<h3 id="定理-8">定理 8
+</h3><p>设 $A \in \mathbb{C}^{n \times n}$，$|A|$ 是矩阵范数，若 $|A| &lt; 1$，则 $I - A$ <strong>非奇异</strong>，且：</p>
+<p>\begin{equation}\nonumber
+|(I - A)^{-1}| \leq \frac{|I|}{1 - |A|}.
+\end{equation}</p>
+<p>证明：
+若 $I - A$ <strong>奇异</strong>，则 $(I - A)x = 0$ 存在<strong>非零解</strong> $x_0 \neq 0$。<br>
+故有 $Ax_0 = I x_0 = x_0$，从而：</p>
+<p>\begin{equation}\nonumber
+|x_0| = |Ax_0| \leq |A| |x_0|.
+\end{equation}</p>
+<p>由于 $|x_0| &gt; 0$，则 $|A| \geq 1$，<strong>矛盾</strong>，所以 $I - A$ <strong>非奇异</strong>。</p>
+<p>令 $B = (I - A)^{-1}$，满足：</p>
+<p>\begin{equation}\nonumber
+B(I - A) = I.
+\end{equation}</p>
+<p>有：</p>
+<p>\begin{equation}\nonumber
+B = I + BA.
+\end{equation}</p>
+<p>因此，</p>
+<p>\begin{equation}\nonumber
+|B| = |I + BA| \leq |I| + |BA| \leq |I| + |B| |A|.
+\end{equation}</p>
+<p>故：</p>
+<p>\begin{equation}\nonumber
+|B| \leq \frac{|I|}{1 - |A|}.
+\end{equation}</p>
+<p>特别地，<strong>若 $|\cdot|$ 是算子范数</strong>，则：</p>
+<p>\begin{equation}\nonumber
+|I| = \max_{|x|=1} |Ix| = 1.
+\end{equation}</p>
+<p>此时：</p>
+<p>\begin{equation}\nonumber
+|(I - A)^{-1}| \leq \frac{1}{1 - |A|}.
+\end{equation}</p>
+<h3 id="定义-7谱半径">定义 7（谱半径）
+</h3><p>设 $A \in \mathbb{C}^{n \times n}$，称 $A$ 的 $n$ 个特征值的模的最大者为 <strong>$A$ 的谱半径</strong>，记为 $\rho(A)$，即：</p>
+<p>\begin{equation}\nonumber
+\rho(A) = \max_i |\lambda_i|, \quad \lambda_i \text{ 为 } A \text{ 的特征值}.
+\end{equation}</p>
+<hr>
+<h3 id="定理-9">定理 9
+</h3><p>设 $A \in \mathbb{C}^{n \times n}$，则 $\rho(A)$ <strong>不大于 $A$ 的任何一种矩阵范数</strong>，即：</p>
+<p>\begin{equation}\nonumber
+\rho(A) \leq |A|.
+\end{equation}</p>
+<p>证明：
+任取 $A$ 的特征值 $\lambda$，则存在<strong>非零向量</strong> $x$ 使得：</p>
+<p>\begin{equation}\nonumber
+Ax = \lambda x.
+\end{equation}</p>
+<p>取向量范数，得：</p>
+<p>\begin{equation}\nonumber
+|\lambda| |x| = |\lambda x| = |Ax| \leq |A| |x|.
+\end{equation}</p>
+<p>由于 $x \neq 0$，故 $|x| &gt; 0$，两边同除 $|x|$，得：</p>
+<p>\begin{equation}\nonumber
+|\lambda| \leq |A|.
+\end{equation}</p>
+<p>对所有特征值 $\lambda_i$ 取<strong>最大值</strong>，即得：</p>
+<p>\begin{equation}\nonumber
+\rho(A) = \max_i |\lambda_i| \leq |A|.
+\end{equation}</p>
+<h3 id="定理-10">定理 10
+</h3><p>设 $A \in \mathbb{C}^{n \times n}$，$\forall \varepsilon &gt; 0$，<br>
+存在某种 <strong>矩阵范数</strong> $|\cdot|$，使得：</p>
+<p>\begin{equation}\nonumber
+|A| \leq \rho(A) + \varepsilon.
+\end{equation}</p>
+<p>证明：
+由 <strong>Schur 定理</strong>，存在酉矩阵 $P$ 使得：</p>
+<p>\begin{equation}\nonumber
+P^{-1} A P = B =
+\begin{bmatrix}
+b_{11} &amp; b_{12} &amp; \cdots &amp; b_{1n} \
+0 &amp; b_{22} &amp; \cdots &amp; b_{2n} \
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \
+0 &amp; 0 &amp; \cdots &amp; b_{nn}
+\end{bmatrix}.
+\end{equation}</p>
+<p>其中<strong>对角线上的元素</strong>为 $A$ 的特征值。</p>
+<hr>
+<h2 id="特征值的估计">特征值的估计
+</h2><p>我们知道，对角矩阵和上、下三角矩阵的特征值为其对角线上元素；<br>
+幂等矩阵的特征值为 $0$ 或 $1$；<br>
+正交矩阵和酉矩阵的特征值在<strong>单位圆上</strong>；<br>
+<strong>实对称矩阵</strong>和<strong>Hermite 矩阵</strong>的特征值在<strong>实轴上</strong>；<br>
+<strong>反对称矩阵</strong>和<strong>反 Hermite 矩阵</strong>的特征值在<strong>虚轴上</strong>。</p>
+<p>那么，对一般矩阵的特征值是怎样分布的呢？</p>
+<h3 id="定理-11">定理 11
+</h3><p>设 $A = (a_{ij}) \in \mathbb{C}^{n \times n}$ 的特征值为 $\lambda_1, \dots, \lambda_n$，则：</p>
+<ol>
+<li>
+<p>最大列范数：
+\begin{equation}\nonumber
+|\lambda_i| \leq \max_{1 \leq j \leq n} \sum_{i=1}^{n} |a_{ij}| = |A|_1.
+\end{equation}</p>
+</li>
+<li>
+<p>最大行范数：
+\begin{equation}\nonumber
+|\lambda_i| \leq \max_{1 \leq i \leq n} \sum_{j=1}^{n} |a_{ij}| = |A|_\infty.
+\end{equation}</p>
+<p>以上两个结论中 $i = 1, \dots, n$。</p>
+</li>
+<li>
+<p><strong>Schur 不等式</strong>：
+\begin{equation}\nonumber
+\sum_{i=1}^{n} |\lambda_i|^2 \leq \sum_{i=1}^{n} \sum_{j=1}^{n} |a_{ij}|^2.
+\end{equation}</p>
+<p>等号成立 $\Leftrightarrow A$ <strong>正规矩阵</strong>。</p>
+</li>
+</ol>
+<p>证明：
+由于 $\rho(A) \leq A$ 的任何一个矩阵范数，取矩阵范数 $|\cdot|_1$ 和 $|\cdot|_2$ 即可得 (1) 和 (2)。</p>
+<p>对于 (3)，由 <strong>Schur 定理</strong>，知存在<strong>酉矩阵</strong> $U$ 使得：</p>
+<p>\begin{equation}\nonumber
+U^H A U = T,
+\end{equation}</p>
+<p>其中 $T$ 是<strong>上三角矩阵</strong>，即：</p>
+<p>\begin{equation}\nonumber
+T = (t_{ij})_{n \times n}.
+\end{equation}</p>
+<p>故 $T$ 的<strong>对角元</strong>为 $A$ 的特征值，因此：</p>
+<p>\begin{equation}\nonumber
+\sum_{i=1}^{n} |\lambda_i|^2 = \sum_{i=1}^{n} |t_{ii}|^2 \leq \sum_{i=1}^{n} \sum_{j=1}^{n} |t_{ij}|^2.
+\end{equation}</p>
+<p>由 $A = UTU^H$，得：</p>
+<p>\begin{equation}\nonumber
+A^H A = U T^H T U^H.
+\end{equation}</p>
+<p>由于<strong>相似矩阵有相同的迹</strong>，故：</p>
+<p>\begin{equation}\nonumber
+\sum_{i=1}^{n} |\lambda_i|^2 \leq \sum_{i=1}^{n} |t_{ii}|^2 = \text{tr}(T^H T) = \text{tr}(A^H A) = \sum_{i=1}^{n} \sum_{j=1}^{n} |a_{ij}|^2.
+\end{equation}</p>
+<p>易见等号成立 $\Leftrightarrow T$ <strong>的非对角线元素为零</strong>，即 $T$ <strong>是对角矩阵</strong>。<br>
+从而等号成立 $\Leftrightarrow A$ <strong>酉相似于一个对角矩阵</strong>，即 $A$ <strong>是正规矩阵</strong>。</p>
+<p><strong>注</strong>：<br>
+上述定理中的 (1)、(2) 通过<strong>列范数</strong>和<strong>行范数</strong>，将 $A$ 的特征值限定在复平面的某<strong>圆盘</strong>内，<br>
+但此界较粗略。因此，我们引入：</p>
+<h3 id="定义盖尔圆盘">定义（盖尔圆盘）
+</h3><p>设 $A = (a_{ij}) \in \mathbb{C}^{n \times n}$，定义：</p>
+<p>\begin{equation}\nonumber
+\delta_i = \sum_{j=1, j \neq i}^{n} |a_{ij}|,
+\end{equation}</p>
+<p>即<strong>第 $i$ 行非对角线元素的模的和</strong>，其中 $i = 1, \dots, n$。</p>
+<p>令：</p>
+<p>\begin{equation}\nonumber
+G_i = { z \in \mathbb{C} \mid |z - a_{ii}| \leq \delta_i }, \quad i = 1, \dots, n.
+\end{equation}</p>
+<p>即 $G_i$ 为复平面上<strong>以 $a_{ii}$ 为圆心，$\delta_i$ 为半径</strong>的闭圆盘，<br>
+称之为 $A$ 的<strong>一个盖尔圆</strong>。$A$ 有 $n$ 个盖尔圆。</p>
+<h3 id="定理-12盖尔圆盘定理">定理 12（盖尔圆盘定理）
+</h3><p>设 $A = (a_{ij}) \in \mathbb{C}^{n \times n}$ 的 $n$ 个<strong>盖尔圆</strong>为 $G_1, \dots, G_n$，则：</p>
+<ol>
+<li>
+<p>$A$ 的<strong>任一特征值</strong> $\lambda$ <strong>必属于</strong> $G_1 \cup G_2 \cup \dots \cup G_n$，即：</p>
+<p>\begin{equation}\nonumber
+\lambda \in \bigcup_{i=1}^{n} G_i.
+\end{equation}</p>
+</li>
+<li>
+<p>若 $A$ 的 $n$ 个盖尔圆中<strong>有 $k$ 个并形成一个连通的区域</strong>，<br>
+且与其余 $n-k$ 个盖尔圆<strong>都不相交</strong>，则<strong>此连通区域内必包含 $A$ 的 $k$ 个特征值</strong>。</p>
+<p>特别地，若<strong>某个盖尔圆是孤立的</strong>，则该圆内<strong>仅有且只有一个特征值</strong>。</p>
+</li>
+</ol>
+<p>例 1
+估计矩阵 $A$ 的特征值分布范围，其中：</p>
+<p>\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+2 &amp; -1 &amp; -2 &amp; 0 \
+-1 &amp; 3 &amp; 2i &amp; 0 \
+0 &amp; -i &amp; 10 &amp; i \
+-2 &amp; 0 &amp; 0 &amp; 6i
+\end{bmatrix}.
+\end{equation}</p>
+<p>解：
+$A$ 的<strong>四个盖尔圆</strong>为：</p>
+<p>\begin{equation}\nonumber
+G_1: |z - 2| \leq 3, \quad G_2: |z - 3| \leq 3.
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+G_3: |z - 10| \leq 2, \quad G_4: |z - 6i| \leq 2.
+\end{equation}</p>
+<hr>
+<p>推论 1
+对于 $A \in \mathbb{C}^{n \times n}$，其 $n$ 个<strong>盖尔圆</strong>为 $G_1, \dots, G_n$，<br>
+若原点 $0 \in \bigcup_{i=1}^{n} G_i$，则 $A$ <strong>为非奇异矩阵</strong>。</p>
+<p>推论 2
+对于矩阵 $A = (a_{ij}) \in \mathbb{C}^{n \times n}$，若 $A$ <strong>对角占优</strong>，则 $A$ <strong>为非奇异矩阵</strong>。</p>
+<p>即：</p>
+<ul>
+<li>
+<p><strong>行对角占优</strong>：
+\begin{equation}\nonumber
+|a_{ii}| &gt; \sum_{j=1, j \neq i}^{n} |a_{ij}|, \quad i = 1, \dots, n.
+\end{equation}</p>
+</li>
+<li>
+<p><strong>列对角占优</strong>：
+\begin{equation}\nonumber
+|a_{jj}| &gt; \sum_{i=1, i \neq j}^{n} |a_{ij}|, \quad j = 1, \dots, n.
+\end{equation}</p>
+</li>
+</ul>
+<p>则 $A$ <strong>为非奇异矩阵</strong>。</p>
+<p>推论 3：
+对于 $A \in \mathbb{C}^{n \times n}$，若其 $n$ 个<strong>盖尔圆</strong>中有 $k$ 个<strong>孤立圆</strong>，<br>
+则 $A$ <strong>至少有 $k$ 个互异特征值</strong>。</p>
+<p>特别地，若 $A$ 的 $n$ 个<strong>盖尔圆两两不相交</strong>，则 $A$ <strong>有 $n$ 个互异的特征值</strong>，从而 $A$ <strong>可对角化</strong>。</p>
+<p>推论 4：
+对于 $A \in \mathbb{R}^{n \times n}$，若其 $n$ 个<strong>盖尔圆</strong>中有 $k$ 个<strong>孤立圆</strong>，<br>
+则 $A$ <strong>至少有 $k$ 个互异的实特征值</strong>。</p>
+<p>特别地，若 $A$ 的 $n$ 个<strong>盖尔圆两两不相交</strong>，则 $A$ <strong>有 $n$ 个互异的实特征值</strong>。</p>
+<p>推论 4 证明
+实矩阵 $A$ 的盖尔圆的<strong>圆心都在实轴上</strong>，且<strong>若有复特征值，则共轭出现</strong>。</p>
+<p>因此，<strong>孤立的盖尔圆中只能有一个特征值</strong>，故该特征值必为实数。</p>
+<p>例 2
+证明矩阵 $A$ 至少有两个实特征值，其中：</p>
+<p>\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+9 &amp; -1 &amp; -2 &amp; 1 \
+0 &amp; 8 &amp; 1 &amp; 0 \
+-1 &amp; 0 &amp; 4 &amp; 1 \
+1 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix}.
+\end{equation}</p>
+<p>解：
+$A$ 的<strong>四个盖尔圆</strong>为：</p>
+<p>\begin{equation}\nonumber
+G_1: |z - 9| \leq 4, \quad G_2: |z - 8| \leq 2,
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+G_3: |z - 4| \leq 1, \quad G_4: |z - 1| \leq 1.
+\end{equation}</p>
+<p>其中，$G_4$ <strong>为孤立圆</strong>，故其<strong>包含一个实特征值</strong>。</p>
+<p>同时，$G_1 \cup G_2 \cup G_3$ <strong>包含 3 个特征值</strong>，其中<strong>至少有一个为实值</strong>，<br>
+否则 $G_1 \cup G_2 \cup G_3$ 中将含有 <strong>4 个特征值</strong>，矛盾。</p>
+<p>因此，$A$ 至少有两个实特征值。</p>
+<hr>
+<p>在使用<strong>盖尔圆</strong>估计 $A$ 的特征值时，我们往往希望有更多的<strong>孤立圆</strong>，<br>
+可采用以下方法：</p>
+<p>方法 1：对 $A^T$ 使用盖尔圆定理
+由于 $A$ 与 $A^T$ 具有相同的特征值，我们可以对 $A^T$ 计算盖尔圆。</p>
+<p>设 $A^T$ 的盖尔圆为 $G_1&rsquo;, \dots, G_n&rsquo;$，则 $G_i$ 与 $G_i&rsquo;$ <strong>具有相同的圆心</strong>，<br>
+因此 $A$ 的特征值 $\lambda_i$ 必满足：</p>
+<p>\begin{equation}\nonumber
+\lambda_i \in \left( \bigcup_{i=1}^{n} G_i \right) \cap \left( \bigcup_{i=1}^{n} G_i&rsquo; \right).
+\end{equation}</p>
+<p>方法 2：选取合适的矩阵 $D$ 进行变换
+取适当的<strong>正数</strong> $d_1, d_2, \dots, d_n$，定义对角矩阵：</p>
+<p>\begin{equation}\nonumber
+D = \operatorname{diag} (d_1, d_2, \dots, d_n),
+\end{equation}</p>
+<p>构造矩阵：</p>
+<p>\begin{equation}\nonumber
+B = D A D^{-1} = (b_{ij}), \quad b_{ij} = \frac{a_{ij} d_i}{d_j}.
+\end{equation}</p>
+<p>$B$ 的盖尔圆的圆心<strong>仍为</strong> $a_{ii} \ (1 \leq i \leq n)$，<br>
+由于 $A$ 与 $B$ <strong>相似，因此它们具有相同的特征值</strong>。</p>
+<p><strong>通常的选取 $d_i$ 的方法：</strong></p>
+<ul>
+<li>若选择 $d_i &lt; 1$，其余 $d_j = 1$，则使<strong>第 $i$ 个盖尔圆</strong> $G_i$ <strong>缩小</strong>，其余盖尔圆扩大。</li>
+<li>若选择 $d_i &gt; 1$，其余 $d_j = 1$，则使<strong>第 $i$ 个盖尔圆</strong> $G_i$ <strong>扩大</strong>，其余盖尔圆缩小。</li>
+</ul>
+<p>例 3
+估计矩阵 $A$ 的特征值分布范围，其中：</p>
+<p>\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+9 &amp; 1 &amp; 1 \
+1 &amp; i &amp; 1 \
+1 &amp; 1 &amp; 3
+\end{bmatrix}.
+\end{equation}</p>
+<p>解：
+$A$ 的<strong>三个盖尔圆</strong>为：</p>
+<p>\begin{equation}\nonumber
+G_1: |z - 9| \leq 2, \quad G_2: |z - i| \leq 2, \quad G_3: |z - 3| \leq 2.
+\end{equation}</p>
+<p>由于希望 <strong>$G_2$ 和 $G_3$ 变小且不相交</strong>，<br>
+因此选取对角矩阵：</p>
+<p>\begin{equation}\nonumber
+D = \operatorname{diag} (2,1,1).
+\end{equation}</p>
+<p>则相似矩阵：</p>
+<p>\begin{equation}\nonumber
+B = D A D^{-1} =
+\begin{bmatrix}
+9 &amp; 2 &amp; 2 \
+0.5 &amp; i &amp; 1 \
+0.5 &amp; 1 &amp; 3
+\end{bmatrix}.
+\end{equation}</p>
+<p>$B$ 的<strong>三个盖尔圆</strong>为：</p>
+<p>\begin{equation}\nonumber
+G_1&rsquo;: |z - 9| \leq 4, \quad G_2&rsquo;: |z - i| \leq 1.5, \quad G_3&rsquo;: |z - 3| \leq 1.5.
+\end{equation}</p>
+<hr>
+<h2 id="矩阵级数">矩阵级数
+</h2>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%9F%A9%E9%98%B5%E8%AE%BA/">矩阵论</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 Example Person
+    </section>
+    
+    <section class="powerby">
+        
+            guilonglgl@gmail.com <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<style>
+    body {
+      background: url(https://LiuGuilongustb.github.io/background/background.jpg) no-repeat center top;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  </style>
+  
+    </body>
+</html>

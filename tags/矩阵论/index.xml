@@ -7985,15 +7985,1268 @@ X = A^{(1,3)}AA^{(1,3)} + Y - A^{(1,3)}AY, \quad Y \in \mathbb{C}^{n \times m}.
 &lt;p&gt;下面我们将建立不相容方程组 $Ax = b$ 的最小二乘解与 $A^{(1,3)}$ 的关系。&lt;/p&gt;
 &lt;h3 id=&#34;定理-7&#34;&gt;定理 7
 &lt;/h3&gt;&lt;p&gt;设 $A^{(1,3)} \in A^{\lbrace1,3\rbrace}$，则 $A^{(1,3)} b$ 都是不相容方程组 $Ax = b$ 的最小二乘解。&lt;/p&gt;
+&lt;p&gt;证明&lt;/p&gt;
+&lt;p&gt;由
+\begin{equation}\nonumber
+Ax - b = (Ax - AA^{(1,3)}b) + (AA^{(1,3)}b - b),
+\end{equation}
+而
+\begin{equation}\nonumber
+(Ax - AA^{(1,3)}b, AA^{(1,3)}b - b)
+\end{equation}
+\begin{equation}\nonumber
+= (AA^{(1,3)}b - b)^H (Ax - AA^{(1,3)}b)
+\end{equation}
+\begin{equation}\nonumber
+= (b^H (AA^{(1,3)})^H - b^H)(Ax - AA^{(1,3)}b)
+\end{equation}
+\begin{equation}\nonumber
+= (b^H AA^{(1,3)} - b^H)(Ax - AA^{(1,3)}b)
+\end{equation}
+\begin{equation}\nonumber
+= b^H AA^{(1,3)} Ax - b^H AA^{(1,3)} b - b^H Ax + b^H AA^{(1,3)} b
+\end{equation}
+\begin{equation}\nonumber
+= b^H Ax - b^H AA^{(1,3)} b - b^H Ax + b^H AA^{(1,3)} b = 0.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;所以 $Ax - AA^{(1,3)}b \perp AA^{(1,3)}b - b$，因此&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|Ax - b|^2 = |Ax - AA^{(1,3)}b|^2 + |AA^{(1,3)}b - b|^2
+\end{equation}
+\begin{equation}\nonumber
+\geq |AA^{(1,3)}b - b|^2, \quad \forall x \in \mathbb{C}^n.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;从而 $A^{(1,3)}b$ 为不相容方程 $Ax = b$ 的最小二乘解。&lt;/p&gt;
+&lt;p&gt;一般来说，不相容方程 $Ax = b$ 的最小二乘解并不唯一，可进一步证明以下定理：&lt;/p&gt;
+&lt;h3 id=&#34;定理-8&#34;&gt;定理 8
+&lt;/h3&gt;&lt;p&gt;$x \in \mathbb{C}^n$ 是不相容方程组 $Ax = b$ 的最小二乘解 $\Leftrightarrow$ $x$ 是方程组 $Ax = AA^{(1,3)}b$ 的解。&lt;/p&gt;
+&lt;p&gt;证明
+由定理 7 的证明知&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|Ax - b|^2 = |Ax - AA^{(1,3)}b|^2 + |AA^{(1,3)}b - b|^2
+\end{equation}
+\begin{equation}\nonumber
+\geq |AA^{(1,3)}b - b|^2, \quad \forall x \in \mathbb{C}^n.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;故若 $x_0$ 是 $Ax = b$ 的最小二乘解，则有&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|Ax_0 - b|^2 = |AA^{(1,3)}b - b|^2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;从而&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|Ax_0 - AA^{(1,3)}b|^2 = 0,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;所以 $Ax_0 = AA^{(1,3)}b$，即 $x_0$ 是方程 $Ax = AA^{(1,3)}b$ 的解。从反之亦然。&lt;/p&gt;
+&lt;h3 id=&#34;定理-9&#34;&gt;定理 9
+&lt;/h3&gt;&lt;p&gt;不相容方程组 $Ax = b$ 的最小二乘解的通式为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+x = A^{(1,3)}b + (I - A^{(1,3)}A)y, \quad \forall y \in \mathbb{C}^n.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;证明
+由定理 8 知，$x$ 是不相容方程 $Ax = b$ 的最小二乘解 $\Leftrightarrow$ $x$ 是方程组&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+Ax = AA^{(1,3)}b
+\end{equation}&lt;/p&gt;
+&lt;p&gt;的解 $\Leftrightarrow$ $x$ 是方程组&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A(x - A^{(1,3)}b) = 0
+\end{equation}&lt;/p&gt;
+&lt;p&gt;的解。&lt;/p&gt;
+&lt;p&gt;由定理 1 的推论 2 知，该方程的通解为&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+x - A^{(1,3)}b = (I - A^{(1,3)}A)y,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;即&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+x = A^{(1,3)}b + (I - A^{(1,3)}A)y, \quad \forall y \in \mathbb{C}^n.
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;推论&#34;&gt;推论
+&lt;/h3&gt;&lt;p&gt;对于不相容方程组 $Ax = b$ 的最小二乘解是唯一的 $\Leftrightarrow$ $A$ 是列满秩的。&lt;/p&gt;
+&lt;p&gt;证明
+最小二乘解的通解公式为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+x = A^{(1,3)}b + (I - A^{(1,3)}A)y, \quad \forall y \in \mathbb{C}^n.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;当 $A$ 列满秩时，存在 $K$ 使得&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+KA = I_n.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;（可取 $K = (A^H A)^{-1} A^H = A^{(1,3)}$）&lt;/p&gt;
+&lt;p&gt;则有&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A^{(1,3)} A = I_n,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;所以 $x = A^{(1,3)}b$ 唯一。&lt;/p&gt;
+&lt;p&gt;反之，由通式知，若最小二乘解唯一，必有&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A^{(1,3)} A = I_n.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;故 $n = r(A^{(1,3)} A) \leq r(A) \leq n$，所以 $r(A) = n$，即 $A$ 列满秩。&lt;/p&gt;
+&lt;p&gt;注：
+若 $A$ 列满秩，则 $A^{(1,3)} = A^+$。若 $A$ 行满秩，则 $A^{(1,4)} = A^+$。&lt;/p&gt;
+&lt;p&gt;由于 $A^+$ 是唯一的，所以 $x = A^+ b$ 是唯一的最小二乘解。&lt;/p&gt;
+&lt;p&gt;例 4
+求不相容方程组&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\begin{cases}
+x_1 + 2x_2 = 1 \
+2x_1 + x_2 = 0 \
+x_1 + x_2 = 0
+\end{cases}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;的最小二乘解。&lt;/p&gt;
+&lt;p&gt;解：
+设方程组为 $Ax = b$，其中&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 &amp; 2 \\
+2 &amp; 1 \\
+1 &amp; 1
+\end{bmatrix}, \quad
+b =
+\begin{bmatrix}
+1 \\
+0 \\
+0
+\end{bmatrix}, \quad
+x =
+\begin{bmatrix}
+x_1 \\
+x_2
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由于 $r(A) = 2, r(A, b) = 3$，故不相容。因 $A$ 是列满秩的，所以&lt;/p&gt;
+&lt;p&gt;计算广义逆矩阵：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ = (A^H A)^{-1} A^H =
+\left(
+\begin{bmatrix}
+1 &amp; 2 \\
+2 &amp; 1 \\
+1 &amp; 1
+\end{bmatrix}^T
+\begin{bmatrix}
+1 &amp; 2 \\
+2 &amp; 1 \\
+1 &amp; 1
+\end{bmatrix}
+\right)^{-1}
+\begin{bmatrix}
+1 &amp; 2 \\
+2 &amp; 1 \\
+1 &amp; 1
+\end{bmatrix}^T.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算 $(A^H A)$：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^H A =
+\begin{bmatrix}
+6 &amp; 5 \\
+5 &amp; 6
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;求逆：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+(A^H A)^{-1} =
+\frac{1}{11}
+\begin{bmatrix}
+-4 &amp; 7 \\
+7 &amp; -4
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算 $A^+$：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ =
+\frac{1}{11}
+\begin{bmatrix}
+-4 &amp; 7 \\
+7 &amp; -4
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; 2 \\
+2 &amp; 1 \\
+1 &amp; 1
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;因此，唯一的最小二乘解为&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+x = A^+ b =
+\frac{1}{11}
+\begin{bmatrix}
+-4 &amp; 7 \\
+7 &amp; -4
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+=
+\frac{1}{11}
+\begin{bmatrix}
+-4 \\
+7
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;即&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+x_1 = \frac{-4}{11}, \quad x_2 = \frac{7}{11}.
+\end{equation}&lt;/p&gt;
+&lt;h2 id=&#34;四不相容方程组的极小范数最小二乘解与-a&#34;&gt;四、不相容方程组的极小范数最小二乘解与 $A^+$
+&lt;/h2&gt;&lt;p&gt;一般的，最小二乘解并不唯一，通常把范数最小的一个称为 $Ax = b$ 的&lt;strong&gt;极小范数最小二乘解&lt;/strong&gt;（最佳逼近解）。我们将看到，这样的解不仅唯一，且可由 $A^+$ 表出。&lt;/p&gt;
+&lt;p&gt;我们先介绍一个引理：&lt;/p&gt;
+&lt;h3 id=&#34;引理-3&#34;&gt;引理 3
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，则&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A^+ = A^{(1,4)} AA^{(1,3)}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;（Urquhart）&lt;/p&gt;
+&lt;p&gt;证明
+直接验证其满足四个 &lt;strong&gt;Penrose 方程&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;定理-10&#34;&gt;定理 10
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，$b \in \mathbb{C}^{m}$，则 $x = A^+ b$ 是不相容方程组 $Ax = b$ 的&lt;strong&gt;唯一极小最小二乘解&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;反之，设 $X \in \mathbb{C}^{n \times m}$，若 $\forall b \in \mathbb{C}^{m}$，$x = Xb$ 为不相容方程组 $Ax = b$ 的&lt;strong&gt;唯一极小最小二乘解&lt;/strong&gt;，则 $X = A^+$。&lt;/p&gt;
+&lt;p&gt;证明
+取 $A^{(1,3)} \in A^{\lbrace 1,3 \rbrace}$，由定理 8 知 $Ax = b$ 的唯一&lt;strong&gt;极小最小二乘解&lt;/strong&gt;就是 $Ax = AA^{(1,3)}b$ 的&lt;strong&gt;极小范数解&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;从而又由定理 4 知其唯一的极小范数解为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+x = A^{(1,4)} AA^{(1,3)} b = A^+ b.
+\end{equation}
+（引理 3）&lt;/p&gt;
+&lt;p&gt;反之，若 $\forall b \in \mathbb{C}^{m}$，$x = Xb$ 为不相容方程组 $Ax = b$ 的唯一极小最小二乘解，由唯一性知：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+Xb = A^+ b.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;取 $b_i = \varepsilon_i, (1 \leq i \leq m)$，则：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+X \varepsilon_i = A^+ \varepsilon_i.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;所以：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+X = A^+.
+\end{equation}&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结
+&lt;/h2&gt;&lt;p&gt;由于 $A^+ \in A^{\lbrace 1 \rbrace}$，$A^+ \in A^{\lbrace 1,3 \rbrace}$，$A^+ \in A^{\lbrace 1,4 \rbrace}$，故总结有下表：&lt;/p&gt;
+&lt;p&gt;\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$Ax = b$ 相容 &amp;amp; $Ax = b$ 不相容 \
+\hline
+$AA^+ b = b$ &amp;amp; $AA^+ b \neq b$ \
+\hline
+解唯一 $\Leftrightarrow A$ 列满秩 &amp;amp; 最小二乘解唯一 $\Leftrightarrow A$ 列满秩 \
+\hline
+解的通式： &amp;amp; 最小二乘解的通式： \
+$x = A^+ b + (I - A^+ A)y$ &amp;amp; $x = A^+ b + (I - A^+ A)y$ \
+\hline
+唯一的极小范数解： &amp;amp; 唯一的极小最小二乘解： \
+$x = A^+ b$ &amp;amp; $x = A^+ b$ \
+\hline
+\end{tabular}
+\end{center}&lt;/p&gt;
+&lt;p&gt;关于 $x = A^+ b$ 的唯一性有表：&lt;/p&gt;
+&lt;p&gt;\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$Ax = b$ &amp;amp; 相容 &amp;amp; 不相容 \
+\hline
+$A$ 列满秩 &amp;amp; 唯一解 &amp;amp; 唯一最小二乘解 \
+\hline
+$A$ 非列满秩 &amp;amp; 唯一极小范数解 &amp;amp; 唯一极小最小二乘解 \
+\hline
+\end{tabular}
+\end{center}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt; 给定方程 $Ax = b$，只要计算 $A^+$，则 $A^+ b$ 便给出方程的各种意义下的解。&lt;/p&gt;
+&lt;h3 id=&#34;例-5&#34;&gt;例 5
+&lt;/h3&gt;&lt;p&gt;设&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 &amp; 0 &amp; -1 &amp; 1 \\
+0 &amp; 2 &amp; 2 &amp; 2 \\
+-1 &amp; 4 &amp; 5 &amp; 3
+\end{bmatrix}, \quad
+b =
+\begin{bmatrix}
+4 \\
+-2 \\
+-2
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;用广义逆矩阵方法判断方程组 $Ax = b$ 是否相容。&lt;/li&gt;
+&lt;li&gt;求 $Ax = b$ 的极小范数解或极小最小二乘解。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;解
+$A$ 的满秩分解为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = BC =
+\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 2 \\
+-1 &amp; 4
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; 0 &amp; -1 &amp; 1 \\
+0 &amp; 1 &amp; 1 &amp; 1
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;故&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^+ = C^H (CC^H)^{-1} (B^H B)^{-1} B^H =
+\frac{1}{18}
+\begin{bmatrix}
+5 &amp; 2 &amp; -1 \\
+1 &amp; 1 &amp; 1 \\
+-4 &amp; -1 &amp; 2 \\
+6 &amp; 3 &amp; 0
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由于&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A A^+ b =
+\begin{bmatrix}
+3 \\
+0 \\
+-3
+\end{bmatrix}
+\neq b,
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;所以 $Ax = b$ &lt;strong&gt;不相容&lt;/strong&gt;，因此它的极小最小二乘解为&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+x_0 = A^+ b =
+\begin{bmatrix}
+0 \\
+1 \\
+0 \\
+-1
+\end{bmatrix}.
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;例 6：证明下列等式&lt;/p&gt;
+&lt;p&gt;(1) 证明 $AX = AA^+ \iff A^H AX = A^H$。&lt;/p&gt;
+&lt;p&gt;(2) 证明 $XA = A^+ A \iff XAA^H = A^H$。&lt;/p&gt;
+&lt;p&gt;证明：
+(1) 由于 $AX = AA^+$，两边取共轭转置得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+(AH AX)^H = (AA^+)^H = A^H (AA^+)^H = A^H.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;又因为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+(AA^+)^H = (AA^+)^H = A^H,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;所以有 $A^H AX = A^H$。&lt;/p&gt;
+&lt;p&gt;再由 $A^H AX = A^H$，可得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+AX = A^H A X = A^H A A^+ = A^H A^H AX = A^+ A^H A X.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;又因：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+(AA^+)^H = AA^+,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;所以 $AX = AA^+$。&lt;/p&gt;
+&lt;p&gt;同理可证 (2)。&lt;/p&gt;
+&lt;p&gt;例 7：唯一广义逆的条件&lt;/p&gt;
+&lt;p&gt;(1) 若 $A$ &lt;strong&gt;列满秩&lt;/strong&gt;，则 $A^{(1,3)} = A^+$（唯一）。&lt;/p&gt;
+&lt;p&gt;(2) 若 $A^T$ &lt;strong&gt;行满秩&lt;/strong&gt;，则 $A^{(1,4)} = A^+$（唯一）。&lt;/p&gt;
+&lt;p&gt;证明：
+(1) 由于 $A$ 列满秩，满足：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A^H A = I.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;（因为 $A^+ = (A^H A)^{-1} A^H$）&lt;/p&gt;
+&lt;p&gt;设 $X \in A^{(1,3)}$，则：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+AXA = A.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;两边左乘 $A^+$ 得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A^+ (AXA) = A^+ A.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A^+ A = I,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;所以：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+XA = I.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;又因为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+(XA)^H = XA, \quad \text{且} \quad XAX = X,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;所以 $X$ 满足四个 &lt;strong&gt;Penrose 方程&lt;/strong&gt;，即 $X = A^+$。&lt;/p&gt;
+&lt;p&gt;证明：
+(2) 由于 $A$ &lt;strong&gt;行满秩&lt;/strong&gt;，满足：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+AA^+ = I.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;（因为 $A^+ = A^H (AA^H)^{-1}$）&lt;/p&gt;
+&lt;p&gt;设 $X \in A^{(1,4)}$，则：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+AXA = A.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;两边右乘 $A^+$ 得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+(AXA) A^+ = AA^+.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+AA^+ = I,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;所以：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+AX = I.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;又因为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+(AX)^H = AX, \quad \text{且} \quad XAX = X,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;所以 $X$ 满足四个 &lt;strong&gt;Penrose 方程&lt;/strong&gt;，即 $X = A^+$。&lt;/p&gt;
+&lt;p&gt;例 8&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$X = (A^H A)^{-A^H} \in A\lbrace 1,3 \rbrace$。&lt;/li&gt;
+&lt;li&gt;$X = A^H (AA^H)^{-} \in A\lbrace 1,4 \rbrace$。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;明：
+(1) 因为
+\begin{equation}\nonumber
+A\lbrace 1,3 \rbrace = \lbrace X | A^H A X = A^H \rbrace
+\end{equation}
+且 $A^H A X = A^H$ 相容（因为 $A^H$ 是特解），
+\begin{equation}\nonumber
+\Rightarrow \text{必存在特解 } X = (A^H A)^{-} A^H \text{ 使得 } A^H A X = A^H
+\end{equation}
+\begin{equation}\nonumber
+\Rightarrow X = (A^H A)^{-} A^H \in \lbrace X | A^H A X = A^H \rbrace = A\lbrace 1,3 \rbrace
+\end{equation}&lt;/p&gt;
+&lt;p&gt;回顾定理（Penrose 定理）
+设 $A \in \mathbb{C}^{m \times n}$，$B \in \mathbb{C}^{p \times q}$，$D \in \mathbb{C}^{m \times q}$，则矩阵方程 $AXB = D$ 相容的充要条件是：
+\begin{equation}\nonumber
+A A^{(1)} D B^{(1)} B = D
+\end{equation}
+其中 $A^{(1)} \in A\lbrace 1 \rbrace$，$B^{(1)} \in B\lbrace 1 \rbrace$。&lt;/p&gt;
+&lt;p&gt;此时方程组的通解为：
+\begin{equation}\nonumber
+X = A^{(1)} D B^{(1)} + Y - A^{(1)} A Y B B^{(1)}
+\end{equation}
+其中 $Y \in \mathbb{C}^{n \times q}$ 为任意。&lt;/p&gt;
+&lt;p&gt;同理可证 (2)。&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>矩阵理论系列笔记4：</title>
-        <link>https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B04/</link>
+        <title>矩阵理论系列笔记4：矩阵分析</title>
+        <link>https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B04%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90/</link>
         <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B04/</guid>
-        <description></description>
+        <guid>https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B04%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90/</guid>
+        <description>&lt;h2 id=&#34;向量与矩阵范数&#34;&gt;向量与矩阵范数
+&lt;/h2&gt;&lt;h3 id=&#34;定义-1向量范数&#34;&gt;定义 1（向量范数）
+&lt;/h3&gt;&lt;p&gt;设 $V$ 是数域 $F$（实数域或复数域）上的线性空间，若 $\forall x \in V$，均对应一个数，记为 $|x|$，满足以下三条性质：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;正定性&lt;/strong&gt;：$|x| \geq 0$，且 $|x| = 0 \Leftrightarrow x = \theta$；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;齐次性&lt;/strong&gt;：$\forall k \in F, x \in V$，有 $|kx| = |k| \cdot |x|$；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;三角不等式&lt;/strong&gt;：$\forall x, y \in V$，有 $|x + y| \leq |x| + |y|$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;则称 $V$ 为&lt;strong&gt;赋范线性空间&lt;/strong&gt;，$|x|$ 是 $x$ 的&lt;strong&gt;范数&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt; 上面三条性质称为&lt;strong&gt;范数的三条公理&lt;/strong&gt;，即只要满足范数公理的实值函数均为向量的范数。&lt;/p&gt;
+&lt;h3 id=&#34;定理-1&#34;&gt;定理 1
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;当 $x \neq \theta$ 时，$\frac{x}{|x|}$ 是范数为 $1$ 的向量（单位化）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$|-x| = |x|$；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$\forall x, y \in V$，有 $\big||x| - |y|\big| \leq |x - y|$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;定义1范数2范数无穷范数&#34;&gt;定义：1范数、2范数、无穷范数
+&lt;/h3&gt;&lt;p&gt;$\forall x = (\xi_1, \xi_2, \dots, \xi_n)^T \in \mathbb{C}^n$，定义&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|x|&lt;em&gt;1 = \sum&lt;/em&gt;{i=1}^{n} |\xi_i|, \quad |x|&lt;em&gt;\infty = \max&lt;/em&gt;{1 \leq i \leq n} |\xi_i|.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|x|&lt;em&gt;2 = \left( \sum&lt;/em&gt;{i=1}^{n} |\xi_i|^2 \right)^{\frac{1}{2}}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;则 $|x|&lt;em&gt;1, |x|&lt;/em&gt;\infty$ 及 $|x|_2$ 均是 $\mathbb{C}^n$ 中的范数。&lt;/p&gt;
+&lt;p&gt;证明：
+不难验证 $|x|&lt;em&gt;1, |x|&lt;/em&gt;\infty$ 均是范数。对于 $|x|_2$，正定性和齐次性显然满足，下面证明它满足三角不等式。&lt;/p&gt;
+&lt;p&gt;设&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+x = (\xi_1, \xi_2, \dots, \xi_n)^T, \quad y = (\eta_1, \eta_2, \dots, \eta_n)^T \in \mathbb{C}^n.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;注意到&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|x|&lt;em&gt;2 = \left( \sum&lt;/em&gt;{i=1}^{n} |\xi_i|^2 \right)^{\frac{1}{2}} = \sqrt{x^H x} = \sqrt{(x, x)},
+\end{equation}&lt;/p&gt;
+&lt;p&gt;即 $|x|_2$ 是&lt;strong&gt;赋范空间&lt;/strong&gt; $\mathbb{C}^n$ 中由&lt;strong&gt;内积&lt;/strong&gt;导出的范数。&lt;/p&gt;
+&lt;p&gt;由 &lt;strong&gt;Cauchy 不等式&lt;/strong&gt; 得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|x + y|_2^2 = (x + y, x + y)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= (x, x) + (x, y) + (y, x) + (y, y)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= |x|_2^2 + 2 \operatorname{Re} (x, y) + |y|_2^2
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\leq |x|_2^2 + 2 |(x, y)| + |y|_2^2
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\leq |x|_2^2 + 2 |x|_2 |y|_2 + |y|_2^2 = (|x|_2 + |y|_2)^2
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\Rightarrow |x + y|_2 \leq |x|_2 + |y|_2.
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;定义p范数&#34;&gt;定义：p范数
+&lt;/h3&gt;&lt;p&gt;设 $1 \leq p &amp;lt; \infty$，$\forall x = (\xi_1, \xi_2, \dots, \xi_n)^T \in \mathbb{C}^n$，定义&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|x|&lt;em&gt;p = \left( \sum&lt;/em&gt;{i=1}^{n} |\xi_i|^p \right)^{\frac{1}{p}}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;则 $|x|_p$ 是 $\mathbb{C}^n$ 中的范数，称为**$p$-范数**。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当 $p = 1$ 时，称为 &lt;strong&gt;1-范数&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;当 $p = 2$ 时，称为 &lt;strong&gt;2-范数&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;当令 $p \to \infty$ 时，得到 &lt;strong&gt;$\infty$-范数&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这三种范数为常见范数。&lt;/p&gt;
+&lt;h3 id=&#34;命题&#34;&gt;命题
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，$|\cdot|_\alpha$ 是 $\mathbb{C}^m$ 中的一个向量范数。$\forall x \in \mathbb{C}^n$，定义：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|x|&lt;em&gt;\beta = |Ax|&lt;/em&gt;\alpha.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;则 $|x|_\beta$ 是 $\mathbb{C}^n$ 中的一个向量范数。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定义&#34;&gt;定义
+&lt;/h3&gt;&lt;p&gt;设 $A$ 是 $n$ 阶 Hermite 矩阵，$\forall x \in \mathbb{C}^n$，定义：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|x|_A = \sqrt{x^H A x}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;则 $|x|_A$ 是一个向量范数，称为&lt;strong&gt;加权范数&lt;/strong&gt;或者&lt;strong&gt;椭圆范数&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;定义-2&#34;&gt;定义 2
+&lt;/h3&gt;&lt;p&gt;设 $V$ 是有限维线性空间，$|\cdot|&lt;em&gt;\alpha, |\cdot|&lt;/em&gt;\beta$ 是 $V$ 中任意两种范数。若存在正数 $k_1$ 及 $k_2$，使得 $\forall x \in V$，都有：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+k_1 |x|&lt;em&gt;\beta \leq |x|&lt;/em&gt;\alpha \leq k_2 |x|_\beta,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;则称 $|\cdot|&lt;em&gt;\alpha$ 与 $|\cdot|&lt;/em&gt;\beta$ &lt;strong&gt;是等价的&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定理-1-1&#34;&gt;定理 1
+&lt;/h3&gt;&lt;p&gt;有限维线性空间中任意两种范数都是等价的。&lt;/p&gt;
+&lt;h3 id=&#34;定义-3极限&#34;&gt;定义 3（极限）
+&lt;/h3&gt;&lt;p&gt;设 $x_1, x_2, \dots, x_m, \dots$ 是线性空间 $V$ 中的元素序列，若 $x \in V$，使得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\lim\limits_{m \to \infty} |x_m - x|_\alpha = 0,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;则称序列 ${x_m}$ 按 &lt;strong&gt;$\alpha$-范数收敛&lt;/strong&gt; 于 $x$，记为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\lim\limits_{m \to \infty} x_m^{\alpha} = x.
+\end{equation}&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;线性空间可定义多种范数收敛，如 &lt;strong&gt;1-范数收敛&lt;/strong&gt;、&lt;strong&gt;2-范数收敛&lt;/strong&gt;，它们之间有什么关系呢？&lt;/p&gt;
+&lt;h3 id=&#34;定理-2&#34;&gt;定理 2
+&lt;/h3&gt;&lt;p&gt;设 $V$ 是有限维线性空间，则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;序列 ${x_m}$ 按某种范数收敛于 $x_0$，则 ${x_m}$ 按任何范数收敛于 $x_0$。即&lt;strong&gt;在有限维线性空间中按范数收敛是等价的&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;${x_m}$ 按范数收敛于 $x_0$ $\Leftrightarrow$ &lt;strong&gt;按坐标收敛于 $x_0$&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;证明：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;按范数收敛的等价性
+设 $|\cdot|&lt;em&gt;\alpha, |\cdot|&lt;/em&gt;\beta$ 是 $V$ 中任意两种范数，则存在正数 $k_1$ 及 $k_2$，使得 $\forall x \in V$，都有：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+k_1 |x|&lt;em&gt;\beta \leq |x|&lt;/em&gt;\alpha \leq k_2 |x|_\beta.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;若 $\lim\limits_{m \to \infty} |x_m - x_0|_\alpha = 0$，则有：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+0 \leq |x_m - x_0|&lt;em&gt;\beta \leq \frac{1}{k_1} |x_m - x_0|&lt;/em&gt;\alpha.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;所以 $\lim\limits_{m \to \infty} |x_m - x_0|_\beta = 0$，即 ${x_m}$ 按 $\beta$-范数收敛于 $x_0$。反之亦然。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;按范数收敛与按坐标收敛的等价性
+取 $V$ 的一组基底 ${e_1, \dots, e_n}$，令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+x_m = \xi_1^{(m)} e_1 + \dots + \xi_n^{(m)} e_n, \quad m = 1,2, \dots
+\end{equation}&lt;/p&gt;
+&lt;p&gt;即&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+x_m =
+\begin{bmatrix}
+\xi_1^{(m)} \
+\vdots \
+\xi_n^{(m)}
+\end{bmatrix}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;我们回忆 &lt;strong&gt;2-范数&lt;/strong&gt; 的定义，$\forall x = (\xi_1, \xi_2, \dots, \xi_n)^T \in \mathbb{C}^n$：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|x|&lt;em&gt;2 = \left( \sum&lt;/em&gt;{i=1}^{n} |\xi_i|^2 \right)^{\frac{1}{2}}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由于按范数收敛是等价的，所以有：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\lim\limits_{m \to \infty} |x_m - x_0| = 0 \Leftrightarrow \lim\limits_{m \to \infty} |x_m - x_0|_2 = 0.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\Rightarrow \lim\limits_{m \to \infty} \left( \sum_{i=1}^{n} |\xi_i^{(m)} - \xi_i^{(0)}|^2 \right)^{\frac{1}{2}} = 0.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\Rightarrow \lim\limits_{m \to \infty} \xi_i^{(m)} = \xi_i^{(0)}, \quad i = 1, \dots, n.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;注：
+在&lt;strong&gt;有限维线性空间&lt;/strong&gt;中，按&lt;strong&gt;任一种范数收敛&lt;/strong&gt;均等价于&lt;strong&gt;按坐标收敛&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;任意 $m \times n$ 的矩阵均可看做 $mn$ 维向量，故可将向量范数直接移植到矩阵上来。&lt;/p&gt;
+&lt;h3 id=&#34;定义-4&#34;&gt;定义 4
+&lt;/h3&gt;&lt;p&gt;若 $\forall A \in \mathbb{C}^{m \times n}$，均对应一个实数，记作 $|A|$，满足：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;正定性&lt;/strong&gt;：
+\begin{equation}\nonumber
+|A| \geq 0, \quad \text{且} \quad |A| = 0 \Leftrightarrow A = 0;
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;齐次性&lt;/strong&gt;：
+\begin{equation}\nonumber
+\forall \lambda \in \mathbb{C}, \quad |\lambda A| = |\lambda| |A|;
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;三角不等式&lt;/strong&gt;：
+\begin{equation}\nonumber
+|A + B| \leq |A| + |B|.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;则称 $|A|$ 是矩阵 $A$ 的&lt;strong&gt;向量范数&lt;/strong&gt;（广义矩阵范数）。&lt;/p&gt;
+&lt;h3 id=&#34;定义-1&#34;&gt;定义：
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，则&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|A|&lt;em&gt;{V_1} = \sum&lt;/em&gt;{i,j=1}^{m,n} |a_{ij}|,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|A|&lt;em&gt;{V&lt;/em&gt;\infty} = \max_{i,j} |a_{ij}|,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;以及&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|A|&lt;em&gt;{V_p} = \left( \sum&lt;/em&gt;{i,j=1}^{m,n} |a_{ij}|^p \right)^{\frac{1}{p}}, \quad (p \geq 1)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;均是 $A$ 的范数。&lt;/p&gt;
+&lt;h3 id=&#34;定理-3&#34;&gt;定理 3
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$A \in \mathbb{C}^{m \times n}$ 的任一种范数均是 $A$ 的元素的&lt;strong&gt;连续函数&lt;/strong&gt;；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$\mathbb{C}^{m \times n}$ 的任意两种范数都是等价的，即对于 $|A|&lt;em&gt;\alpha, |B|&lt;/em&gt;\beta$，存在正数 $k_1$ 及 $k_2$，使得：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+k_1 |A|&lt;em&gt;\beta \leq |A|&lt;/em&gt;\alpha \leq k_2 |A|_\beta, \quad \forall A \in \mathbb{C}^{m \times n};
+\end{equation}&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;矩阵序列&lt;/strong&gt; ${A_k}$ 按任一范数收敛于 $A_0$：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\lim\limits_{k \to \infty} A_k = A_0
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\Leftrightarrow \lim\limits_{k \to \infty} a_{ij}^k = a_{ij}^0, \quad \forall i, j.
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;例-4&#34;&gt;例 4
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，则&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|A|&lt;em&gt;{V_2} = \left( \sum&lt;/em&gt;{i,j=1}^{n} |a_{ij}|^2 \right)^{\frac{1}{2}} = \left( \operatorname{tr} (A^H A) \right)^{\frac{1}{2}}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;是 $A$ 的矩阵范数。&lt;/p&gt;
+&lt;p&gt;证明：
+只需验证&lt;strong&gt;相容性&lt;/strong&gt;。设：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A = (a_{ij})&lt;em&gt;{n \times n}, \quad B = (b&lt;/em&gt;{ij})_{n \times n}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;则：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|AB|&lt;em&gt;{V_2}^2 = \sum&lt;/em&gt;{i,j=1}^{n} |c_{ij}|^2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= \sum_{i,j=1}^{n} |a_{i1} b_{1j} + a_{i2} b_{2j} + \dots + a_{in} b_{nj}|^2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\leq \sum_{i,j=1}^{n} \left( (|a_{i1}|^2 + \dots + |a_{in}|^2) (|b_{1j}|^2 + \dots + |b_{nj}|^2) \right) \quad \text{(柯西不等式)}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= \sum_{i=1}^{n} \left( |a_{i1}|^2 + \dots + |a_{in}|^2 \right) \sum_{j=1}^{n} \left( |b_{1j}|^2 + \dots + |b_{nj}|^2 \right) \quad \text{(提取公因式)}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= |A|&lt;em&gt;{V_2}^2 |B|&lt;/em&gt;{V_2}^2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因此，&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|AB|&lt;em&gt;{V_2} \leq |A|&lt;/em&gt;{V_2} |B|_{V_2}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;此范数称为 &lt;strong&gt;Frobenius 范数&lt;/strong&gt;，简称 &lt;strong&gt;F-范数&lt;/strong&gt;，常记为 $|A|_F$。它具有良好的性质。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定理-4&#34;&gt;定理 4
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;若 $A \in \mathbb{C}^{n \times n}, x \in \mathbb{C}^n$，则&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|Ax|_2 \leq |A|_F |x|_2.
+\end{equation}&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;设 $U, V$ 为酉矩阵，有&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|UA|_F = |AV|_F = |UAV|_F = |A|_F = \left( \operatorname{tr} (A^H A) \right)^{\frac{1}{2}}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;证明 1)
+记 $A = (a_{ij})_{n \times n}$，第 $i$ 行表示为 $A_i$，即&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+A_1 \
+\vdots \
+A_n
+\end{bmatrix}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;设&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+x =
+\begin{bmatrix}
+\xi_1 \
+\vdots \
+\xi_n
+\end{bmatrix},
+\end{equation}&lt;/p&gt;
+&lt;p&gt;则&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+Ax =
+\begin{bmatrix}
+A_1 x \
+\vdots \
+A_n x
+\end{bmatrix}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由柯西不等式得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|A_i x|^2 = |a_{i1} \xi_1 + \dots + a_{in} \xi_n|^2 = \left| \sum_{k=1}^{n} a_{ik} \xi_k \right|^2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\leq \sum_{k=1}^{n} |a_{ik}|^2 \sum_{k=1}^{n} |\xi_k|^2 = |A_i^T|_2^2 |x|_2^2, \quad i = 1, 2, \dots, n.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因此，&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|Ax|&lt;em&gt;2^2 = \sum&lt;/em&gt;{i=1}^{n} |A_i x|^2 \leq \sum_{i=1}^{n} \left( |A_i^T|_2^2 |x|_2^2 \right).
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= \left( \sum_{i=1}^{n} |A_i^T|_2^2 \right) |x|_2^2 = (|A|_F |x|_2)^2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因此，&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|Ax|_2 \leq |A|_F |x|_2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;证明 2)
+显然有：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|UA|_F^2 = \operatorname{tr}((UA)^H (UA)) = \operatorname{tr}(A^H U^H UA) = \operatorname{tr}(A^H A) = |A|_F^2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;所以&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|UA|_F = |A|_F.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;注意到 $|A|_F = |A^H|_F$，$V^H$ 为酉矩阵，我们有：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|AV|_F = |(AV)^H|_F = |V^H A^H|_F = |A^H|_F = |A|_F.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|UAV|_F = |UA|_F = |A|_F.
+\end{equation}&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;向量范数与矩阵范数在运算中会同时出现，故建立它们之间的关系。因此我们引入定义：&lt;/p&gt;
+&lt;h3 id=&#34;定义-6&#34;&gt;定义 6
+&lt;/h3&gt;&lt;p&gt;若 $\forall A \in \mathbb{C}^{n \times n}, x \in \mathbb{C}^n$，向量范数 $|\cdot|_v$ 与矩阵范数 $|\cdot|_m$ 满足不等式：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|Ax|_v \leq |A|_m |x|_v,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;则称 &lt;strong&gt;向量范数&lt;/strong&gt; $|\cdot|_v$ &lt;strong&gt;与矩阵范数&lt;/strong&gt; $|\cdot|_m$ &lt;strong&gt;相容&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;我们知道&lt;strong&gt;任何两种矩阵范数是等价的，任何两种向量范数也等价&lt;/strong&gt;，故我们要问：&lt;/p&gt;
+&lt;p&gt;给定矩阵范数，是否&lt;strong&gt;一定存在&lt;/strong&gt;与之相容的&lt;strong&gt;向量范数&lt;/strong&gt;？&lt;br&gt;
+反之，给定向量范数，又如何确定一个与之相容的&lt;strong&gt;矩阵范数&lt;/strong&gt;？&lt;/p&gt;
+&lt;p&gt;答案是肯定的。&lt;/p&gt;
+&lt;h3 id=&#34;定理-5&#34;&gt;定理 5
+&lt;/h3&gt;&lt;p&gt;设 $|A|$ 是 $\mathbb{C}^{n \times n}$ 上的一个矩阵范数，则必存在 $\mathbb{C}^n$ 上与之相容的&lt;strong&gt;向量范数&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;证明：
+取定 $a (\neq 0) \in \mathbb{C}^n$，则 $\forall x \in \mathbb{C}^n$，定义：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|x|_v = |x a^T|.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;则不难验证，它是一种向量范数，且与给定的矩阵范数相容。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;正定性&lt;/strong&gt;
+当 $x \neq 0$ 时，一定有 $x a^T$ 是&lt;strong&gt;非零矩阵&lt;/strong&gt;，所以：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|x a^T| &amp;gt; 0.
+\end{equation}&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;齐次性&lt;/strong&gt;
+\begin{equation}\nonumber
+|\lambda x|_v = |\lambda x a^T| = |\lambda| |x a^T| = |\lambda| |x|_v.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;三角不等式&lt;/strong&gt;
+\begin{equation}\nonumber
+|x + y|_v = |(x + y) a^T| = |x a^T + y a^T| \leq |x a^T| + |y a^T| = |x|_v + |y|_v.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;相容性&lt;/strong&gt;
+\begin{equation}\nonumber
+|Ax|_v = |Ax a^T| \leq |A| |x a^T| = |A| |x|_v.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;给定向量范数，如何确定一个与之相容的矩阵范数？&lt;br&gt;
+我们有如下定理：&lt;/p&gt;
+&lt;h3 id=&#34;定理-6&#34;&gt;定理 6
+&lt;/h3&gt;&lt;p&gt;若设 $|\cdot|_v$ 是 $\mathbb{C}^n$ 上的一个&lt;strong&gt;向量范数&lt;/strong&gt;，则 $\forall A \in \mathbb{C}^{n \times n}$，定义：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|A| = \max_{|x|_v = 1} |Ax|_v.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;则 $|A|$ 是一个与 $|\cdot|_v$ &lt;strong&gt;相容的矩阵范数&lt;/strong&gt;，称此矩阵范数为&lt;strong&gt;从属于向量范数&lt;/strong&gt; $|\cdot|_v$ 的&lt;strong&gt;算子范数&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;证明：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;正定性&lt;/strong&gt;
+若 $A \neq 0$，则存在 $x_1 \neq 0$ 使得 $Ax_1 \neq 0$。令：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+x_0 = \frac{x_1}{|x_1|_v},
+\end{equation}&lt;/p&gt;
+&lt;p&gt;则 $|x_0|_v = 1$，故：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|Ax_0|_v = \frac{|Ax_1|_v}{|x_1|_v} &amp;gt; 0.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因此：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|A| = \max_{|x|_v = 1} |Ax|_v &amp;gt; 0.
+\end{equation}&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;齐次性&lt;/strong&gt;
+$\forall \lambda \in \mathbb{C}$，有：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|A| = \max_{|x|_v = 1} |Ax|&lt;em&gt;v = \max&lt;/em&gt;{|x|_v = 1} |\lambda| |Ax|&lt;em&gt;v = |\lambda| \max&lt;/em&gt;{|x|_v = 1} |Ax|_v = |\lambda| |A|.
+\end{equation}&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;三角不等式&lt;/strong&gt;
+$\forall A, B \in \mathbb{C}^{n \times n}$，存在 $x_0 \in \mathbb{C}^n$ 使得 $|x_0|_v = 1$，则：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|(A + B)x_0|_v \leq |Ax_0|_v + |Bx_0|_v.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\Rightarrow \max_{|x|_v = 1} |(A + B)x|&lt;em&gt;v \leq \max&lt;/em&gt;{|x|_v = 1} |Ax|&lt;em&gt;v + \max&lt;/em&gt;{|x|_v = 1} |Bx|_v.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\Rightarrow |A + B| \leq |A| + |B|.
+\end{equation}&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;相容性&lt;/strong&gt;
+存在 $y_0 \in \mathbb{C}^n$（$|y_0|_v = 1$）使得：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|AB| = |(AB)y_0|_v = |A (By_0)|_v.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= \left| A \left( \frac{By_0}{|By_0|_v} \right) \right|_v |By_0|_v.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\leq |A| |By_0|_v \leq |A| |B|.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因此 $|A|$ 为矩阵范数。&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;strong&gt;最终推导&lt;/strong&gt;
+$\forall x (\neq 0) \in \mathbb{C}^n$，我们有：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|Ax|_v = \left| A \left( \frac{x}{|x|_v} \right) \right|_v |x|_v.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\leq \left( \max_{|x|_v = 1} |Ax|_v \right) |x|_v.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\leq |A| |x|_v.
+\end{equation}&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;我们常见的&lt;strong&gt;向量范数&lt;/strong&gt;有 $|x|_1, |x|&lt;em&gt;2$ 及 $|x|&lt;/em&gt;\infty$。&lt;br&gt;
+则从属于它们的&lt;strong&gt;算子范数&lt;/strong&gt;记为 $|A|_1, |A|&lt;em&gt;2$ 及 $|A|&lt;/em&gt;\infty$。&lt;br&gt;
+我们有如下定理：&lt;/p&gt;
+&lt;h3 id=&#34;定理-7&#34;&gt;定理 7
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，$A = (a_{ij})_{n \times n}$，$x \in \mathbb{C}^n$，&lt;br&gt;
+则从属于向量范数 $|x|_1, |x|&lt;em&gt;2$ 及 $|x|&lt;/em&gt;\infty$ 的&lt;strong&gt;算子范数&lt;/strong&gt;为：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;列范数&lt;/strong&gt;：
+\begin{equation}\nonumber
+|A|&lt;em&gt;1 = \max&lt;/em&gt;{1 \leq j \leq n} \sum_{i=1}^{n} |a_{ij}|.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;谱范数&lt;/strong&gt;（谱模范数）：
+\begin{equation}\nonumber
+|A|_2 = \sqrt{\lambda_1}, \quad \lambda_1 \text{ 为 } A^H A \text{ 的最大特征值}.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;行范数&lt;/strong&gt;：
+\begin{equation}\nonumber
+|A|&lt;em&gt;\infty = \max&lt;/em&gt;{1 \leq i \leq n} \sum_{j=1}^{n} |a_{ij}|.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;定理-8&#34;&gt;定理 8
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，$|A|$ 是矩阵范数，若 $|A| &amp;lt; 1$，则 $I - A$ &lt;strong&gt;非奇异&lt;/strong&gt;，且：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|(I - A)^{-1}| \leq \frac{|I|}{1 - |A|}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;证明：
+若 $I - A$ &lt;strong&gt;奇异&lt;/strong&gt;，则 $(I - A)x = 0$ 存在&lt;strong&gt;非零解&lt;/strong&gt; $x_0 \neq 0$。&lt;br&gt;
+故有 $Ax_0 = I x_0 = x_0$，从而：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|x_0| = |Ax_0| \leq |A| |x_0|.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由于 $|x_0| &amp;gt; 0$，则 $|A| \geq 1$，&lt;strong&gt;矛盾&lt;/strong&gt;，所以 $I - A$ &lt;strong&gt;非奇异&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;令 $B = (I - A)^{-1}$，满足：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+B(I - A) = I.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;有：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+B = I + BA.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因此，&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|B| = |I + BA| \leq |I| + |BA| \leq |I| + |B| |A|.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;故：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|B| \leq \frac{|I|}{1 - |A|}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;特别地，&lt;strong&gt;若 $|\cdot|$ 是算子范数&lt;/strong&gt;，则：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|I| = \max_{|x|=1} |Ix| = 1.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;此时：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|(I - A)^{-1}| \leq \frac{1}{1 - |A|}.
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;定义-7谱半径&#34;&gt;定义 7（谱半径）
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，称 $A$ 的 $n$ 个特征值的模的最大者为 &lt;strong&gt;$A$ 的谱半径&lt;/strong&gt;，记为 $\rho(A)$，即：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\rho(A) = \max_i |\lambda_i|, \quad \lambda_i \text{ 为 } A \text{ 的特征值}.
+\end{equation}&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定理-9&#34;&gt;定理 9
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，则 $\rho(A)$ &lt;strong&gt;不大于 $A$ 的任何一种矩阵范数&lt;/strong&gt;，即：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\rho(A) \leq |A|.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;证明：
+任取 $A$ 的特征值 $\lambda$，则存在&lt;strong&gt;非零向量&lt;/strong&gt; $x$ 使得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+Ax = \lambda x.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;取向量范数，得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|\lambda| |x| = |\lambda x| = |Ax| \leq |A| |x|.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由于 $x \neq 0$，故 $|x| &amp;gt; 0$，两边同除 $|x|$，得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|\lambda| \leq |A|.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;对所有特征值 $\lambda_i$ 取&lt;strong&gt;最大值&lt;/strong&gt;，即得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\rho(A) = \max_i |\lambda_i| \leq |A|.
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;定理-10&#34;&gt;定理 10
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，$\forall \varepsilon &amp;gt; 0$，&lt;br&gt;
+存在某种 &lt;strong&gt;矩阵范数&lt;/strong&gt; $|\cdot|$，使得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+|A| \leq \rho(A) + \varepsilon.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;证明：
+由 &lt;strong&gt;Schur 定理&lt;/strong&gt;，存在酉矩阵 $P$ 使得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+P^{-1} A P = B =
+\begin{bmatrix}
+b_{11} &amp;amp; b_{12} &amp;amp; \cdots &amp;amp; b_{1n} \
+0 &amp;amp; b_{22} &amp;amp; \cdots &amp;amp; b_{2n} \
+\vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \
+0 &amp;amp; 0 &amp;amp; \cdots &amp;amp; b_{nn}
+\end{bmatrix}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;其中&lt;strong&gt;对角线上的元素&lt;/strong&gt;为 $A$ 的特征值。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;特征值的估计&#34;&gt;特征值的估计
+&lt;/h2&gt;&lt;p&gt;我们知道，对角矩阵和上、下三角矩阵的特征值为其对角线上元素；&lt;br&gt;
+幂等矩阵的特征值为 $0$ 或 $1$；&lt;br&gt;
+正交矩阵和酉矩阵的特征值在&lt;strong&gt;单位圆上&lt;/strong&gt;；&lt;br&gt;
+&lt;strong&gt;实对称矩阵&lt;/strong&gt;和&lt;strong&gt;Hermite 矩阵&lt;/strong&gt;的特征值在&lt;strong&gt;实轴上&lt;/strong&gt;；&lt;br&gt;
+&lt;strong&gt;反对称矩阵&lt;/strong&gt;和&lt;strong&gt;反 Hermite 矩阵&lt;/strong&gt;的特征值在&lt;strong&gt;虚轴上&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;那么，对一般矩阵的特征值是怎样分布的呢？&lt;/p&gt;
+&lt;h3 id=&#34;定理-11&#34;&gt;定理 11
+&lt;/h3&gt;&lt;p&gt;设 $A = (a_{ij}) \in \mathbb{C}^{n \times n}$ 的特征值为 $\lambda_1, \dots, \lambda_n$，则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;最大列范数：
+\begin{equation}\nonumber
+|\lambda_i| \leq \max_{1 \leq j \leq n} \sum_{i=1}^{n} |a_{ij}| = |A|_1.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最大行范数：
+\begin{equation}\nonumber
+|\lambda_i| \leq \max_{1 \leq i \leq n} \sum_{j=1}^{n} |a_{ij}| = |A|_\infty.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;以上两个结论中 $i = 1, \dots, n$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Schur 不等式&lt;/strong&gt;：
+\begin{equation}\nonumber
+\sum_{i=1}^{n} |\lambda_i|^2 \leq \sum_{i=1}^{n} \sum_{j=1}^{n} |a_{ij}|^2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;等号成立 $\Leftrightarrow A$ &lt;strong&gt;正规矩阵&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;证明：
+由于 $\rho(A) \leq A$ 的任何一个矩阵范数，取矩阵范数 $|\cdot|_1$ 和 $|\cdot|_2$ 即可得 (1) 和 (2)。&lt;/p&gt;
+&lt;p&gt;对于 (3)，由 &lt;strong&gt;Schur 定理&lt;/strong&gt;，知存在&lt;strong&gt;酉矩阵&lt;/strong&gt; $U$ 使得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+U^H A U = T,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;其中 $T$ 是&lt;strong&gt;上三角矩阵&lt;/strong&gt;，即：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+T = (t_{ij})_{n \times n}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;故 $T$ 的&lt;strong&gt;对角元&lt;/strong&gt;为 $A$ 的特征值，因此：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\sum_{i=1}^{n} |\lambda_i|^2 = \sum_{i=1}^{n} |t_{ii}|^2 \leq \sum_{i=1}^{n} \sum_{j=1}^{n} |t_{ij}|^2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由 $A = UTU^H$，得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A^H A = U T^H T U^H.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由于&lt;strong&gt;相似矩阵有相同的迹&lt;/strong&gt;，故：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\sum_{i=1}^{n} |\lambda_i|^2 \leq \sum_{i=1}^{n} |t_{ii}|^2 = \text{tr}(T^H T) = \text{tr}(A^H A) = \sum_{i=1}^{n} \sum_{j=1}^{n} |a_{ij}|^2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;易见等号成立 $\Leftrightarrow T$ &lt;strong&gt;的非对角线元素为零&lt;/strong&gt;，即 $T$ &lt;strong&gt;是对角矩阵&lt;/strong&gt;。&lt;br&gt;
+从而等号成立 $\Leftrightarrow A$ &lt;strong&gt;酉相似于一个对角矩阵&lt;/strong&gt;，即 $A$ &lt;strong&gt;是正规矩阵&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：&lt;br&gt;
+上述定理中的 (1)、(2) 通过&lt;strong&gt;列范数&lt;/strong&gt;和&lt;strong&gt;行范数&lt;/strong&gt;，将 $A$ 的特征值限定在复平面的某&lt;strong&gt;圆盘&lt;/strong&gt;内，&lt;br&gt;
+但此界较粗略。因此，我们引入：&lt;/p&gt;
+&lt;h3 id=&#34;定义盖尔圆盘&#34;&gt;定义（盖尔圆盘）
+&lt;/h3&gt;&lt;p&gt;设 $A = (a_{ij}) \in \mathbb{C}^{n \times n}$，定义：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\delta_i = \sum_{j=1, j \neq i}^{n} |a_{ij}|,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;即&lt;strong&gt;第 $i$ 行非对角线元素的模的和&lt;/strong&gt;，其中 $i = 1, \dots, n$。&lt;/p&gt;
+&lt;p&gt;令：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+G_i = { z \in \mathbb{C} \mid |z - a_{ii}| \leq \delta_i }, \quad i = 1, \dots, n.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;即 $G_i$ 为复平面上&lt;strong&gt;以 $a_{ii}$ 为圆心，$\delta_i$ 为半径&lt;/strong&gt;的闭圆盘，&lt;br&gt;
+称之为 $A$ 的&lt;strong&gt;一个盖尔圆&lt;/strong&gt;。$A$ 有 $n$ 个盖尔圆。&lt;/p&gt;
+&lt;h3 id=&#34;定理-12盖尔圆盘定理&#34;&gt;定理 12（盖尔圆盘定理）
+&lt;/h3&gt;&lt;p&gt;设 $A = (a_{ij}) \in \mathbb{C}^{n \times n}$ 的 $n$ 个&lt;strong&gt;盖尔圆&lt;/strong&gt;为 $G_1, \dots, G_n$，则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$A$ 的&lt;strong&gt;任一特征值&lt;/strong&gt; $\lambda$ &lt;strong&gt;必属于&lt;/strong&gt; $G_1 \cup G_2 \cup \dots \cup G_n$，即：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\lambda \in \bigcup_{i=1}^{n} G_i.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;若 $A$ 的 $n$ 个盖尔圆中&lt;strong&gt;有 $k$ 个并形成一个连通的区域&lt;/strong&gt;，&lt;br&gt;
+且与其余 $n-k$ 个盖尔圆&lt;strong&gt;都不相交&lt;/strong&gt;，则&lt;strong&gt;此连通区域内必包含 $A$ 的 $k$ 个特征值&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;特别地，若&lt;strong&gt;某个盖尔圆是孤立的&lt;/strong&gt;，则该圆内&lt;strong&gt;仅有且只有一个特征值&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;例 1
+估计矩阵 $A$ 的特征值分布范围，其中：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+2 &amp;amp; -1 &amp;amp; -2 &amp;amp; 0 \
+-1 &amp;amp; 3 &amp;amp; 2i &amp;amp; 0 \
+0 &amp;amp; -i &amp;amp; 10 &amp;amp; i \
+-2 &amp;amp; 0 &amp;amp; 0 &amp;amp; 6i
+\end{bmatrix}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;解：
+$A$ 的&lt;strong&gt;四个盖尔圆&lt;/strong&gt;为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+G_1: |z - 2| \leq 3, \quad G_2: |z - 3| \leq 3.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+G_3: |z - 10| \leq 2, \quad G_4: |z - 6i| \leq 2.
+\end{equation}&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;推论 1
+对于 $A \in \mathbb{C}^{n \times n}$，其 $n$ 个&lt;strong&gt;盖尔圆&lt;/strong&gt;为 $G_1, \dots, G_n$，&lt;br&gt;
+若原点 $0 \in \bigcup_{i=1}^{n} G_i$，则 $A$ &lt;strong&gt;为非奇异矩阵&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;推论 2
+对于矩阵 $A = (a_{ij}) \in \mathbb{C}^{n \times n}$，若 $A$ &lt;strong&gt;对角占优&lt;/strong&gt;，则 $A$ &lt;strong&gt;为非奇异矩阵&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;即：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;行对角占优&lt;/strong&gt;：
+\begin{equation}\nonumber
+|a_{ii}| &amp;gt; \sum_{j=1, j \neq i}^{n} |a_{ij}|, \quad i = 1, \dots, n.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;列对角占优&lt;/strong&gt;：
+\begin{equation}\nonumber
+|a_{jj}| &amp;gt; \sum_{i=1, i \neq j}^{n} |a_{ij}|, \quad j = 1, \dots, n.
+\end{equation}&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;则 $A$ &lt;strong&gt;为非奇异矩阵&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;推论 3：
+对于 $A \in \mathbb{C}^{n \times n}$，若其 $n$ 个&lt;strong&gt;盖尔圆&lt;/strong&gt;中有 $k$ 个&lt;strong&gt;孤立圆&lt;/strong&gt;，&lt;br&gt;
+则 $A$ &lt;strong&gt;至少有 $k$ 个互异特征值&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;特别地，若 $A$ 的 $n$ 个&lt;strong&gt;盖尔圆两两不相交&lt;/strong&gt;，则 $A$ &lt;strong&gt;有 $n$ 个互异的特征值&lt;/strong&gt;，从而 $A$ &lt;strong&gt;可对角化&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;推论 4：
+对于 $A \in \mathbb{R}^{n \times n}$，若其 $n$ 个&lt;strong&gt;盖尔圆&lt;/strong&gt;中有 $k$ 个&lt;strong&gt;孤立圆&lt;/strong&gt;，&lt;br&gt;
+则 $A$ &lt;strong&gt;至少有 $k$ 个互异的实特征值&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;特别地，若 $A$ 的 $n$ 个&lt;strong&gt;盖尔圆两两不相交&lt;/strong&gt;，则 $A$ &lt;strong&gt;有 $n$ 个互异的实特征值&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;推论 4 证明
+实矩阵 $A$ 的盖尔圆的&lt;strong&gt;圆心都在实轴上&lt;/strong&gt;，且&lt;strong&gt;若有复特征值，则共轭出现&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;因此，&lt;strong&gt;孤立的盖尔圆中只能有一个特征值&lt;/strong&gt;，故该特征值必为实数。&lt;/p&gt;
+&lt;p&gt;例 2
+证明矩阵 $A$ 至少有两个实特征值，其中：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+9 &amp;amp; -1 &amp;amp; -2 &amp;amp; 1 \
+0 &amp;amp; 8 &amp;amp; 1 &amp;amp; 0 \
+-1 &amp;amp; 0 &amp;amp; 4 &amp;amp; 1 \
+1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0
+\end{bmatrix}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;解：
+$A$ 的&lt;strong&gt;四个盖尔圆&lt;/strong&gt;为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+G_1: |z - 9| \leq 4, \quad G_2: |z - 8| \leq 2,
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+G_3: |z - 4| \leq 1, \quad G_4: |z - 1| \leq 1.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;其中，$G_4$ &lt;strong&gt;为孤立圆&lt;/strong&gt;，故其&lt;strong&gt;包含一个实特征值&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;同时，$G_1 \cup G_2 \cup G_3$ &lt;strong&gt;包含 3 个特征值&lt;/strong&gt;，其中&lt;strong&gt;至少有一个为实值&lt;/strong&gt;，&lt;br&gt;
+否则 $G_1 \cup G_2 \cup G_3$ 中将含有 &lt;strong&gt;4 个特征值&lt;/strong&gt;，矛盾。&lt;/p&gt;
+&lt;p&gt;因此，$A$ 至少有两个实特征值。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;在使用&lt;strong&gt;盖尔圆&lt;/strong&gt;估计 $A$ 的特征值时，我们往往希望有更多的&lt;strong&gt;孤立圆&lt;/strong&gt;，&lt;br&gt;
+可采用以下方法：&lt;/p&gt;
+&lt;p&gt;方法 1：对 $A^T$ 使用盖尔圆定理
+由于 $A$ 与 $A^T$ 具有相同的特征值，我们可以对 $A^T$ 计算盖尔圆。&lt;/p&gt;
+&lt;p&gt;设 $A^T$ 的盖尔圆为 $G_1&amp;rsquo;, \dots, G_n&amp;rsquo;$，则 $G_i$ 与 $G_i&amp;rsquo;$ &lt;strong&gt;具有相同的圆心&lt;/strong&gt;，&lt;br&gt;
+因此 $A$ 的特征值 $\lambda_i$ 必满足：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\lambda_i \in \left( \bigcup_{i=1}^{n} G_i \right) \cap \left( \bigcup_{i=1}^{n} G_i&amp;rsquo; \right).
+\end{equation}&lt;/p&gt;
+&lt;p&gt;方法 2：选取合适的矩阵 $D$ 进行变换
+取适当的&lt;strong&gt;正数&lt;/strong&gt; $d_1, d_2, \dots, d_n$，定义对角矩阵：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+D = \operatorname{diag} (d_1, d_2, \dots, d_n),
+\end{equation}&lt;/p&gt;
+&lt;p&gt;构造矩阵：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+B = D A D^{-1} = (b_{ij}), \quad b_{ij} = \frac{a_{ij} d_i}{d_j}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;$B$ 的盖尔圆的圆心&lt;strong&gt;仍为&lt;/strong&gt; $a_{ii} \ (1 \leq i \leq n)$，&lt;br&gt;
+由于 $A$ 与 $B$ &lt;strong&gt;相似，因此它们具有相同的特征值&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;通常的选取 $d_i$ 的方法：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;若选择 $d_i &amp;lt; 1$，其余 $d_j = 1$，则使&lt;strong&gt;第 $i$ 个盖尔圆&lt;/strong&gt; $G_i$ &lt;strong&gt;缩小&lt;/strong&gt;，其余盖尔圆扩大。&lt;/li&gt;
+&lt;li&gt;若选择 $d_i &amp;gt; 1$，其余 $d_j = 1$，则使&lt;strong&gt;第 $i$ 个盖尔圆&lt;/strong&gt; $G_i$ &lt;strong&gt;扩大&lt;/strong&gt;，其余盖尔圆缩小。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例 3
+估计矩阵 $A$ 的特征值分布范围，其中：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+9 &amp;amp; 1 &amp;amp; 1 \
+1 &amp;amp; i &amp;amp; 1 \
+1 &amp;amp; 1 &amp;amp; 3
+\end{bmatrix}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;解：
+$A$ 的&lt;strong&gt;三个盖尔圆&lt;/strong&gt;为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+G_1: |z - 9| \leq 2, \quad G_2: |z - i| \leq 2, \quad G_3: |z - 3| \leq 2.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由于希望 &lt;strong&gt;$G_2$ 和 $G_3$ 变小且不相交&lt;/strong&gt;，&lt;br&gt;
+因此选取对角矩阵：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+D = \operatorname{diag} (2,1,1).
+\end{equation}&lt;/p&gt;
+&lt;p&gt;则相似矩阵：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+B = D A D^{-1} =
+\begin{bmatrix}
+9 &amp;amp; 2 &amp;amp; 2 \
+0.5 &amp;amp; i &amp;amp; 1 \
+0.5 &amp;amp; 1 &amp;amp; 3
+\end{bmatrix}.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;$B$ 的&lt;strong&gt;三个盖尔圆&lt;/strong&gt;为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+G_1&amp;rsquo;: |z - 9| \leq 4, \quad G_2&amp;rsquo;: |z - i| \leq 1.5, \quad G_3&amp;rsquo;: |z - 3| \leq 1.5.
+\end{equation}&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;矩阵级数&#34;&gt;矩阵级数
+&lt;/h2&gt;</description>
         </item>
         <item>
         <title>矩阵理论系列笔记5：</title>
