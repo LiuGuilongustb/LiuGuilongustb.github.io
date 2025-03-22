@@ -7,7 +7,54 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Fri, 28 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://LiuGuilongustb.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://LiuGuilongustb.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>装机必备所有软件</title>
+        <link>https://LiuGuilongustb.github.io/p/%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87%E6%89%80%E6%9C%89%E8%BD%AF%E4%BB%B6/</link>
+        <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://LiuGuilongustb.github.io/p/%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87%E6%89%80%E6%9C%89%E8%BD%AF%E4%BB%B6/</guid>
+        <description>&lt;p&gt;由于我们在电脑的日常使用以及更换电脑等诸多问题上，不可避免的一定要做的事情就是要重装系统，因此本博客的目的是记录下我现有电脑中的全部软件及安装方法，以方便未来更换电脑或者重装系统时不会因为缺失某些文件而导致无法正常工作。&lt;/p&gt;
+&lt;p&gt;博客中的所有软件均为作者本人常用的软件及设置，有兴趣的可以保存以后自己装电脑的时候避免遗忘。&lt;/p&gt;
+&lt;h2 id=&#34;重装windows系统&#34;&gt;重装windows系统
+&lt;/h2&gt;&lt;h2 id=&#34;更改桌面文件存储路径&#34;&gt;更改桌面文件存储路径
+&lt;/h2&gt;&lt;p&gt;这一步其实算作必备操作，但是由于后续安装软件会导入大量的桌面快捷方式，建议先把这一步做了。&lt;/p&gt;
+&lt;h2 id=&#34;必备软件&#34;&gt;必备软件
+&lt;/h2&gt;&lt;h3 id=&#34;微信&#34;&gt;微信
+&lt;/h3&gt;&lt;h3 id=&#34;谷歌浏览器&#34;&gt;谷歌浏览器
+&lt;/h3&gt;&lt;h3 id=&#34;adobe-pdf阅读器&#34;&gt;Adobe PDF阅读器
+&lt;/h3&gt;&lt;h3 id=&#34;bandizip压缩软件&#34;&gt;bandizip压缩软件
+&lt;/h3&gt;&lt;h3 id=&#34;火绒安全&#34;&gt;火绒安全
+&lt;/h3&gt;&lt;h3 id=&#34;matlab&#34;&gt;matlab
+&lt;/h3&gt;&lt;h3 id=&#34;zotero&#34;&gt;zotero
+&lt;/h3&gt;&lt;h3 id=&#34;clash&#34;&gt;clash
+&lt;/h3&gt;&lt;h3 id=&#34;mathtype&#34;&gt;mathtype
+&lt;/h3&gt;&lt;h3 id=&#34;texlive--texstudio&#34;&gt;Texlive + Texstudio
+&lt;/h3&gt;&lt;h3 id=&#34;向日葵远程控制或todesk&#34;&gt;向日葵远程控制或ToDesk
+&lt;/h3&gt;&lt;h3 id=&#34;网易邮箱大师网易有道翻译&#34;&gt;网易邮箱大师、网易有道翻译
+&lt;/h3&gt;&lt;h3 id=&#34;pycharm-和-anaconda&#34;&gt;PYcharm 和 Anaconda
+&lt;/h3&gt;&lt;h3 id=&#34;vscode&#34;&gt;Vscode
+&lt;/h3&gt;&lt;h3 id=&#34;utorrent&#34;&gt;utorrent
+&lt;/h3&gt;&lt;h3 id=&#34;office-全家桶&#34;&gt;Office 全家桶
+&lt;/h3&gt;&lt;h3 id=&#34;wps&#34;&gt;WPS
+&lt;/h3&gt;&lt;h3 id=&#34;腾讯会议&#34;&gt;腾讯会议
+&lt;/h3&gt;&lt;h3 id=&#34;其他系列网盘&#34;&gt;其他系列网盘
+&lt;/h3&gt;&lt;h4 id=&#34;百度网盘&#34;&gt;百度网盘
+&lt;/h4&gt;&lt;h4 id=&#34;中国移动云盘&#34;&gt;中国移动云盘
+&lt;/h4&gt;&lt;h4 id=&#34;阿里云盘&#34;&gt;阿里云盘
+&lt;/h4&gt;&lt;h4 id=&#34;夸克网盘&#34;&gt;夸克网盘
+&lt;/h4&gt;&lt;h3 id=&#34;ev录屏&#34;&gt;EV录屏
+&lt;/h3&gt;&lt;h3 id=&#34;git--go&#34;&gt;GIt + GO
+&lt;/h3&gt;&lt;h2 id=&#34;必备设置&#34;&gt;必备设置
+&lt;/h2&gt;&lt;h3 id=&#34;右键选项添加通过vscode打开文件或文件夹&#34;&gt;右键选项添加通过VSCode打开文件或文件夹
+&lt;/h3&gt;&lt;h3 id=&#34;anaconda-添加常用环境&#34;&gt;Anaconda 添加常用环境
+&lt;/h3&gt;&lt;h3 id=&#34;更改微信文件存储位置要不c盘迟早有一天要炸&#34;&gt;更改微信文件存储位置（要不C盘迟早有一天要炸）
+&lt;/h3&gt;&lt;h3 id=&#34;github-配置电脑适配&#34;&gt;Github 配置电脑适配
+&lt;/h3&gt;&lt;h3 id=&#34;vscode-添加copilot&#34;&gt;VSCode 添加Copilot
+&lt;/h3&gt;&lt;h3 id=&#34;ie浏览器和google-浏览器登录账号同步账号内的所有内容&#34;&gt;IE浏览器和Google 浏览器登录账号，同步账号内的所有内容
+&lt;/h3&gt;&lt;h3 id=&#34;&#34;&gt;
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>矩阵理论系列笔记1：线性代数基础</title>
         <link>https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B01%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
@@ -8454,6 +8501,51 @@ X = A^{(1)} D B^{(1)} + Y - A^{(1)} A Y B B^{(1)}
 \end{equation}
 其中 $Y \in \mathbb{C}^{n \times q}$ 为任意。&lt;/p&gt;
 &lt;p&gt;同理可证 (2)。&lt;/p&gt;
+&lt;p&gt;例 9：
+若值域 $R(A) = R(B)$，则存在 $P, Q$ 使得：
+\begin{equation}\nonumber
+B = AP, \quad A = BQ
+\end{equation}&lt;/p&gt;
+&lt;p&gt;证明：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;法一&lt;/strong&gt;：由条件知 $B$ 中各列都可由 $A$ 中的列表出，$\Rightarrow B = AP$，同理 $A = BQ$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;法二&lt;/strong&gt;：
+\begin{equation}\nonumber
+R(A) = \lbrace AX | X \in \mathbb{C}^n \rbrace, \quad R(B) = \lbrace BX | X \in \mathbb{C}^n \rbrace
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因为 $R(A) = R(B)$，所以 $\forall x \in \mathbb{C}^n$，存在 $y \in \mathbb{C}^n$ 使得 $AX = By$。&lt;/p&gt;
+&lt;p&gt;取 $\mathbb{C}^n$ 中的标准正交基 $e_1, \ldots, e_n$，存在 $y_1, \ldots, y_n$ 使得：
+\begin{equation}\nonumber
+Ae_k = B y_k \Rightarrow A(e_1, \ldots, e_n) = B(y_1, \ldots, y_n) \Rightarrow A I = B Q
+\end{equation}&lt;/p&gt;
+&lt;p&gt;注：
+若核空间 $N(A) = N(B)$，则存在 $P, Q$ 使得：
+\begin{equation}\nonumber
+B = P A, \quad A = Q B
+\end{equation}&lt;/p&gt;
+&lt;p&gt;注：
+(1) $r(A^+) = r(A) = r(A^+ A) = r(A A^+)$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：因为 $A = AA^+ A$，所以：
+\begin{equation}\nonumber
+r(A) = r(AA^+) \leq r(A^+ A) \leq r(A)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;故相等成立。&lt;/p&gt;
+&lt;p&gt;注：
+(2) $R(A) = R(AA^+)$，$R(A^+) = R(A^+ A)$&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;例 10：
+若：
+\begin{equation}\nonumber
+A^+ = A \iff (A^2)^H = A^2, \quad (A^2)^2 = A^2, \quad \text{且 } r(A^2) = r(A)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;证明：
+只需证明充分性，我们只需证明四个 Penrose 方程成立。&lt;/p&gt;
+&lt;p&gt;由 $A^2 x = A (A x) \in R(A) \Rightarrow R(A^2) \subseteq R(A)$；&lt;/p&gt;
+&lt;p&gt;又因为 $r(A^2) = r(A) = r(R(A)) = R(A) \Rightarrow R(A^2) = R(A)$&lt;/p&gt;
+&lt;p&gt;由 $A^2 = A^4$ 得：
+\begin{equation}\nonumber
+A^2 Q = A^2 (A^2 Q) = A^3 = A A^2
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由 $(A^2)^H = A^2$，则第三、四个方程成立。&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -9246,7 +9338,467 @@ G_1&amp;rsquo;: |z - 9| \leq 4, \quad G_2&amp;rsquo;: |z - i| \leq 1.5, \quad G_
 \end{equation}&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;矩阵级数&#34;&gt;矩阵级数
-&lt;/h2&gt;</description>
+&lt;/h2&gt;&lt;p&gt;在数学分析中，我们以数列极限来讨论级数理论，现在我们以矩阵序列理论为基础来引入矩阵级数。在 4.1 节中我们知道：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\lim\limits_{k \to \infty} A_k = A_0 \iff \lim\limits_{k \to \infty} a_{ij}^{(k)} = a_{ij}^{(0)}, \quad \forall 1 \leq j \leq n, 1 \leq i \leq m
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;定义-1-1&#34;&gt;定义 1
+&lt;/h3&gt;&lt;p&gt;设 $\lbrace A_k \rbrace$，$A_k \in \mathbb{C}^{m \times n}$，称 $\sum_{k=1}^{\infty} A_k$ 为 &lt;strong&gt;矩阵级数&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;令 $S_N = \sum_{k=1}^{N} A_k$，若矩阵序列 $\lbrace S_N \rbrace$ 收敛且有极限 $S$，即：
+\begin{equation}\nonumber
+\lim\limits_{N \to \infty} S_N = S
+\end{equation}
+则称级数 $\sum_{k=1}^{\infty} A_k$ &lt;strong&gt;收敛且和为 $S$&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;记为：
+\begin{equation}\nonumber
+S = \sum_{k=1}^{\infty} A_k = \lim\limits_{N \to \infty} \sum_{k=1}^{N} A_k
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：不收敛的级数我们称为 &lt;strong&gt;发散级数&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;矩阵级数收敛性&#34;&gt;矩阵级数收敛性
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：由定义知，
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} A_k \text{ 收敛} \iff mn \text{ 个数值级数 } \sum_{k=1}^{\infty} a_{ij}^{(k)} \text{ 收敛}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;而
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} A_k \text{ 发散} \iff mn \text{ 个数值级数中至少有一个发散}
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;定义-2-1&#34;&gt;定义 2
+&lt;/h3&gt;&lt;p&gt;若 $\sum_{k=1}^{\infty} A_k$ 所对应的 $mn$ 个数值级数
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} a_{ij}^{(k)}, \quad (1 \leq i \leq m, 1 \leq j \leq n)
+\end{equation}
+&lt;strong&gt;都绝对收敛&lt;/strong&gt;，则称
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} A_k \text{ 绝对收敛}
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;矩阵级数的性质&#34;&gt;矩阵级数的性质
+&lt;/h3&gt;&lt;p&gt;显然有以下性质：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;若 $\sum_{k=1}^{\infty} A_k$ &lt;strong&gt;绝对收敛&lt;/strong&gt;，则 $\sum_{k=1}^{\infty} A_k$ &lt;strong&gt;收敛&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;若 $\sum_{k=1}^{\infty} A_k$ &lt;strong&gt;绝对收敛&lt;/strong&gt;，则对任一（向量）范数 $|\cdot|$，有：
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} |A_k| \text{ 收敛}
+\end{equation}&lt;/li&gt;
+&lt;li&gt;对于任取常矩阵 $P, Q$，$P \in \mathbb{C}^{p \times m}$，$Q \in \mathbb{C}^{n \times q}$，若 $\sum_{k=1}^{\infty} A_k$ &lt;strong&gt;收敛（绝对收敛）&lt;/strong&gt;，则矩阵级数 $\sum_{k=1}^{\infty} P A_k Q$ &lt;strong&gt;收敛（绝对收敛）&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;证明：
+（2）充分性 $\Leftarrow$&lt;/p&gt;
+&lt;p&gt;设 $\sum_{k=1}^{\infty} |A_k|&lt;em&gt;1$ 收敛，其中：
+\begin{equation}\nonumber
+|A_k|&lt;em&gt;1 = \sum&lt;/em&gt;{1 \leq i \leq m, 1 \leq j \leq n} |a&lt;/em&gt;{ij}^{(k)}|
+\end{equation}&lt;/p&gt;
+&lt;p&gt;而
+\begin{equation}\nonumber
+|a_{ij}^{(k)}| \leq |A_k|_1
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由 &lt;strong&gt;比较原理&lt;/strong&gt; 知，
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} |a_{ij}^{(k)}| \text{ 收敛}，\quad (1 \leq i \leq m, 1 \leq j \leq n)
+\end{equation}
+即 $\sum_{k=1}^{\infty} A_k$ &lt;strong&gt;绝对收敛&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;（2）必要性 $\Rightarrow$&lt;/p&gt;
+&lt;p&gt;由条件 $\sum_{k=1}^{\infty} |a_{ij}^{(k)}|$ （$1 \leq i \leq m, 1 \leq j \leq n$）&lt;strong&gt;收敛&lt;/strong&gt;，&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \sum_{1 \leq i \leq m, 1 \leq j \leq n} |a_{ij}^{(k)}| \text{ 收敛}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;即：
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} |A_k|_1 \text{ 收敛}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由于任意范数（矩阵的向量范数）是等价的，所以由 &lt;strong&gt;比较原理&lt;/strong&gt;，结论成立。&lt;/p&gt;
+&lt;p&gt;矩阵级数的性质 3
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} P A_k Q = \lim\limits_{N \to \infty} \sum_{k=1}^{N} P A_k Q
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= \lim\limits_{N \to \infty} P \left(\sum_{k=1}^{N} A_k\right) Q
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= P \left(\lim\limits_{N \to \infty} \sum_{k=1}^{N} A_k\right) Q \quad (\text{若 } \sum_{k=1}^{\infty} A_k \text{ 收敛})
+\end{equation}&lt;/p&gt;
+&lt;p&gt;若 $\sum_{k=1}^{\infty} A_k$ &lt;strong&gt;绝对收敛&lt;/strong&gt;，由 &lt;strong&gt;性质 2&lt;/strong&gt; 可知：
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} |A_k| \text{ 收敛}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;且
+\begin{equation}\nonumber
+| P A_k Q | \leq |P| |A_k| |Q| = k |A_k| \quad (\text{取相容的矩阵范数即可})
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由 &lt;strong&gt;比较原理&lt;/strong&gt; 知：
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} |P A_k Q| \text{ 收敛}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;再由 &lt;strong&gt;性质 2&lt;/strong&gt;，可得：
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} P A_k Q \text{ 绝对收敛}
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;定义-3幂级数&#34;&gt;定义 3（幂级数）
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，称 $\sum_{m=0}^{\infty} c_m A^m$ 为 &lt;strong&gt;幂级数&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;收敛性定义&#34;&gt;&lt;strong&gt;收敛性定义&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;设 &lt;strong&gt;复变量幂级数&lt;/strong&gt; $\sum_{m=0}^{\infty} c_m z^m$ 的收敛半径为 $R$，且 $A \in \mathbb{C}^{n \times n}$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;若 $A$ 的谱半径为 $\rho(A)$&lt;/strong&gt;，则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;当 $\rho(A) &amp;lt; R$ 时，$\sum_{m=0}^{\infty} c_m A^m$ &lt;strong&gt;绝对收敛&lt;/strong&gt;（&lt;strong&gt;Abel 型定理&lt;/strong&gt;）。&lt;/li&gt;
+&lt;li&gt;当 $\rho(A) &amp;gt; R$ 时，$\sum_{m=0}^{\infty} c_m A^m$ &lt;strong&gt;发散&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;证明 1)&lt;/p&gt;
+&lt;p&gt;由于 $\rho(A) &amp;lt; R$，存在 $\varepsilon &amp;gt; 0$ 使得 $\rho(A) + \varepsilon &amp;lt; R$。&lt;/p&gt;
+&lt;p&gt;由 &lt;strong&gt;Abel 定理&lt;/strong&gt; 知：
+\begin{equation}\nonumber
+\sum_{m=0}^{\infty} |c_m| (\rho(A) + \varepsilon)^m \text{ 收敛}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由 &lt;strong&gt;定理 10&lt;/strong&gt; 可知，存在矩阵范数 $|\cdot|$ 使得 $|A| \leq \rho(A) + \varepsilon$，因此：
+\begin{equation}\nonumber
+|c_m| |A^m| = |c_m| |A^m| \leq |c_m| |A|^m
+\end{equation}
+\begin{equation}\nonumber
+\leq |c_m| (\rho(A) + \varepsilon)^m
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由 &lt;strong&gt;比较原理&lt;/strong&gt; 知：
+\begin{equation}\nonumber
+\sum_{m=0}^{\infty} |c_m| |A^m| \text{ 收敛}
+\end{equation}
+从而
+\begin{equation}\nonumber
+\sum_{m=0}^{\infty} c_m A^m \text{ 绝对收敛}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;证明 2)&lt;/p&gt;
+&lt;p&gt;若 $\rho(A) &amp;gt; R$，设 $\rho(A) = |\lambda_k|$，令 $Ax = \lambda_k x$。&lt;/p&gt;
+&lt;p&gt;则：
+\begin{equation}\nonumber
+A \frac{x}{|x|} = \lambda_k \frac{x}{|x|}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;令：
+\begin{equation}\nonumber
+y = \frac{x}{|x|}，\quad \text{则} \quad |y| = 1，\quad 且 Ay = \lambda_k y
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;（反证法）&lt;/strong&gt; 假设 $\sum_{m=0}^{\infty} c_m A^m$ &lt;strong&gt;收敛&lt;/strong&gt;，则由 &lt;strong&gt;性质 3&lt;/strong&gt; 知：
+\begin{equation}\nonumber
+y^H \left(\sum_{m=0}^{\infty} c_m A^m\right) y = \sum_{m=0}^{\infty} c_m y^H A^m y
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= \sum_{m=0}^{\infty} c_m \lambda_k^m y^H y = \sum_{m=0}^{\infty} c_m \lambda_k^m
+\end{equation}&lt;/p&gt;
+&lt;p&gt;亦收敛，与 &lt;strong&gt;Abel 定理&lt;/strong&gt; 矛盾。因此，当 $\rho(A) &amp;gt; R$ 时：
+\begin{equation}\nonumber
+\sum_{m=0}^{\infty} c_m A^m \text{ 发散}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;推论&lt;/strong&gt;
+\begin{equation}\nonumber
+\sum_{m=0}^{\infty} A^m \text{ 收敛} \iff \rho(A) &amp;lt; 1
+\end{equation}
+（&lt;strong&gt;Neumann 定理&lt;/strong&gt;，此时其和为 $(I - A)^{-1}$）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：
+&lt;strong&gt;定理 1&lt;/strong&gt; 实际上定义了一种 &lt;strong&gt;映射&lt;/strong&gt; $f(z)$：
+\begin{equation}\nonumber
+f(z) = \sum_{m=0}^{\infty} c_m z^m, \quad |z| &amp;lt; R \text{（收敛半径）}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;对于任意 $A \in \mathbb{C}^{n \times n}$，若满足 $\rho(A) &amp;lt; R$，则：
+\begin{equation}\nonumber
+f(A) = \sum_{m=0}^{\infty} c_m A^m \text{ 收敛}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因此，对应一个矩阵，称 $f(A)$ 为 &lt;strong&gt;矩阵函数&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定理-2-1&#34;&gt;定理 2：
+&lt;/h3&gt;&lt;p&gt;若对矩阵 $A$ 的某一种范数 $|A| &amp;lt; 1$，则：
+\begin{equation}\nonumber
+\lim\limits_{k \to \infty} A^k = 0
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：由 $|A^k| \leq |A|^k$，即可证明。&lt;/p&gt;
+&lt;h3 id=&#34;定理-3-1&#34;&gt;定理 3：
+&lt;/h3&gt;&lt;p&gt;已知矩阵序列 $A, A^2, \ldots, A^k, \ldots$，则：
+\begin{equation}\nonumber
+\lim\limits_{k \to \infty} A^k = 0
+\end{equation}
+的&lt;strong&gt;充要条件&lt;/strong&gt;是 $\rho(A) &amp;lt; 1$。&lt;/p&gt;
+&lt;p&gt;证明：&lt;/p&gt;
+&lt;p&gt;证明过程中需要用到下面的公式。设 Jordan 块为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+J =
+\begin{bmatrix}
+\lambda_k &amp; 1 &amp; &amp; \\
+&amp; \lambda_k &amp; 1 &amp; \\
+&amp; &amp; \lambda_k &amp; \ddots \\
+&amp; &amp; &amp; \ddots
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;则：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+J^k =
+\begin{bmatrix}
+\lambda_k^k &amp; k \lambda_k^{k-1} &amp; C_2^k \lambda_k^{k-2} &amp; \cdots \\
+&amp; \lambda_k^k &amp; k \lambda_k^{k-1} &amp; \cdots \\
+&amp; &amp; \lambda_k^k &amp; \cdots \\
+&amp; &amp; &amp; \ddots
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;例 1：判断矩阵序列 $A^k$ 的敛散性&lt;/p&gt;
+&lt;p&gt;(1)&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = 
+\begin{bmatrix}
+1 &amp; 1 \\
+0 &amp; 1
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;(2)&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = 
+\begin{bmatrix}
+0.9 &amp; 1 \\
+0 &amp; 0.9
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;(3)&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = 
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0.9 &amp; 1 \\
+0 &amp; 0 &amp; 0.9
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;(4)&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = 
+\begin{bmatrix}
+0.3 &amp; 0.8 \\
+0.6 &amp; 0.1
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;解：&lt;/p&gt;
+&lt;p&gt;(1)&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^k = 
+\begin{bmatrix}
+1 &amp; k \\
+0 &amp; 1
+\end{bmatrix}, \quad \text{故 } \lim\limits_{k \to \infty} A^k \text{ 发散}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;(2) $\rho(A) = 0.9 &amp;lt; 1$，故 $\lim\limits_{k \to \infty} A^k = 0$。&lt;/p&gt;
+&lt;p&gt;(3)&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A^k =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0.9^k &amp; k \cdot 0.9^{k-1} \\
+0 &amp; 0 &amp; 0.9^k
+\end{bmatrix}, \quad
+\lim\limits_{k \to \infty} A^k =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;(4) $|A|&lt;em&gt;1 = 0.9 &amp;lt; 1$，故 $A^k$ 收敛，且：
+\begin{equation}\nonumber
+\lim\limits&lt;/em&gt;{k \to \infty} A^k = 0
+\end{equation}&lt;/p&gt;
+&lt;p&gt;例 2：判断矩阵序列 $A^k$ 的敛散性&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = 
+\begin{bmatrix}
+1 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; -1
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;解：&lt;/p&gt;
+&lt;p&gt;$A$ 的特征值为 $\lambda_1 = \lambda_2 = 1, \lambda_3 = -1$，因此：
+\begin{equation}\nonumber
+\rho(A) = 1
+\end{equation}&lt;/p&gt;
+&lt;p&gt;设 $J$ 是 $A$ 的 Jordan 标准型。由于：
+\begin{equation}\nonumber
+A^k = P J^k P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;所以只需判断 $J^k$ 的敛散性即可。&lt;/p&gt;
+&lt;p&gt;通过计算得出：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+J = 
+\begin{bmatrix}
+1 &amp; 1 \\
+0 &amp; 1
+\end{bmatrix}
+\Rightarrow J^k = 
+\begin{bmatrix}
+1 &amp; k \\
+0 &amp; 1
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;故 $A^k$ 发散。&lt;/p&gt;
+&lt;p&gt;例 4：判断矩阵幂级数的敛散性&lt;/p&gt;
+&lt;p&gt;(1)
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+1 &amp;amp; 1 \
+0 &amp;amp; 1
+\end{bmatrix}^k
+\end{equation}&lt;/p&gt;
+&lt;p&gt;(2)
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+-1 &amp;amp; 1 \
+0 &amp;amp; -1
+\end{bmatrix}^k
+\end{equation}&lt;/p&gt;
+&lt;p&gt;(3)
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+-1 &amp;amp; 1 &amp;amp; 0 \
+0 &amp;amp; -1 &amp;amp; 1 \
+0 &amp;amp; 0 &amp;amp; -1
+\end{bmatrix}^k
+\end{equation}&lt;/p&gt;
+&lt;p&gt;(4)
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+1 &amp;amp; 0 &amp;amp; 0 \
+0 &amp;amp; -1 &amp;amp; 1 \
+0 &amp;amp; 0 &amp;amp; -1
+\end{bmatrix}^k
+\end{equation}&lt;/p&gt;
+&lt;p&gt;解：(1)&lt;/p&gt;
+&lt;h1 id=&#34;endbmatrixk&#34;&gt;\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+1 &amp;amp; 1 \
+0 &amp;amp; 1
+\end{bmatrix}^k
+&lt;/h1&gt;&lt;h1 id=&#34;endbmatrix&#34;&gt;\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+1 &amp;amp; k \
+0 &amp;amp; 1
+\end{bmatrix}
+&lt;/h1&gt;&lt;p&gt;\begin{bmatrix}
+\sum \frac{1}{k^2} &amp;amp; \sum \frac{k}{k^2} \
+0 &amp;amp; \sum \frac{1}{k^2}
+\end{bmatrix}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因为 $\sum \frac{k}{k^2} = \sum \frac{1}{k}$ 发散，故级数发散。&lt;/p&gt;
+&lt;p&gt;解：(2)&lt;/p&gt;
+&lt;h1 id=&#34;endbmatrixk-1&#34;&gt;\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+-1 &amp;amp; 1 \
+0 &amp;amp; -1
+\end{bmatrix}^k
+&lt;/h1&gt;&lt;p&gt;\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+(-1)^k &amp;amp; k(-1)^{k-1} \
+0 &amp;amp; (-1)^k
+\end{bmatrix}
+\end{equation}&lt;/p&gt;
+&lt;h1 id=&#34;beginequationnonumber&#34;&gt;\begin{equation}\nonumber
+&lt;/h1&gt;&lt;p&gt;\begin{bmatrix}
+\sum \frac{(-1)^k}{k^2} &amp;amp; \sum \frac{k(-1)^{k-1}}{k^2} \
+0 &amp;amp; \sum \frac{(-1)^k}{k^2}
+\end{bmatrix}
+\Rightarrow \text{收敛}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;解：(3)&lt;/p&gt;
+&lt;p&gt;原式：
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+(-1)^k &amp;amp; k(-1)^{k-1} &amp;amp; \frac{k(k-1)}{2}(-1)^{k-2} \
+0 &amp;amp; (-1)^k &amp;amp; k(-1)^{k-1} \
+0 &amp;amp; 0 &amp;amp; (-1)^k
+\end{bmatrix}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;展开为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+=
+\begin{bmatrix}
+\sum \frac{(-1)^k}{k^2} &amp; \sum \frac{(-1)^{k}}{k} &amp; \sum \frac{(k-1)(-1)^{k}}{2k} \\
+0 &amp; \sum \frac{(-1)^k}{k^2} &amp; \sum \frac{(-1)^k}{k} \\
+0 &amp; 0 &amp; \sum \frac{(-1)^k}{k^2}
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;由于含有 $\sum \frac{(-1)^k}{k}$ 发散项，&lt;strong&gt;所以级数发散&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;解：(4)&lt;/p&gt;
+&lt;h1 id=&#34;endbmatrixk-2&#34;&gt;\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+1 &amp;amp; 0 &amp;amp; 0 \
+0 &amp;amp; -1 &amp;amp; 1 \
+0 &amp;amp; 0 &amp;amp; -1
+\end{bmatrix}^k
+&lt;/h1&gt;&lt;p&gt;\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+1 &amp;amp; 0 &amp;amp; 0 \
+0 &amp;amp; (-1)^k &amp;amp; k(-1)^{k-1} \
+0 &amp;amp; 0 &amp;amp; (-1)^k
+\end{bmatrix}
+\end{equation}&lt;/p&gt;
+&lt;h1 id=&#34;beginequationnonumber-1&#34;&gt;\begin{equation}\nonumber
+&lt;/h1&gt;&lt;p&gt;\begin{bmatrix}
+\sum \frac{1}{k^2} &amp;amp; 0 &amp;amp; 0 \
+0 &amp;amp; \sum \frac{(-1)^k}{k^2} &amp;amp; \sum \frac{(-1)^k}{k} \
+0 &amp;amp; 0 &amp;amp; \sum \frac{(-1)^k}{k^2}
+\end{bmatrix}
+\Rightarrow \text{条件收敛}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;例 5：设 $A \in \mathbb{C}^{n \times n}$，且 $\rho(A) &amp;lt; 1$，求：
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} k^2 A^k
+\end{equation}&lt;/p&gt;
+&lt;p&gt;解：&lt;/p&gt;
+&lt;p&gt;考虑复变幂级数 $\sum_{k=1}^{\infty} k^2 z^k$，因为：
+\begin{equation}\nonumber
+\lim\limits_{k \to \infty} \left( \frac{k^2 z^k}{z^{k+1}} \right) = \frac{k^2}{z}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;故收敛半径为 $1$，因此当 $\rho(A) &amp;lt; 1$ 时，$\sum_{k=1}^{\infty} k^2 A^k$ 收敛。&lt;/p&gt;
+&lt;p&gt;设 $f(z) = \sum_{k=1}^{\infty} k^2 z^k, |z| &amp;lt; 1$，则令：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f_1(z) = \sum_{k=1}^{\infty} k z^{k-1}, \quad \Rightarrow f(z) = z f_1(z)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;当 $|z| &amp;lt; 1$ 时：
+\begin{equation}\nonumber
+\int_0^z f_1(z), dz = \sum_{k=1}^{\infty} \int_0^z k z^{k-1} , dz = \sum_{k=1}^{\infty} z^k
+= \frac{z}{1 - z}, \quad |z| &amp;lt; 1
+\end{equation}&lt;/p&gt;
+&lt;p&gt;再对 $\sum_{k=1}^{\infty} k z^{k-1}$ 积分：
+\begin{equation}\nonumber
+\int_0^z \sum_{k=1}^{\infty} k z^{k-1} , dz = \sum_{k=1}^{\infty} \int_0^z k z^{k-1} dz = \sum_{k=1}^{\infty} z^k = \frac{z}{1 - z}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;再对 $\frac{z}{1 - z}$ 求导得：
+\begin{equation}\nonumber
+f(z) = \frac{z(z+1)}{(1 - z)^3}, \quad |z| &amp;lt; 1
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因此：
+\begin{equation}\nonumber
+f(A) = A (I + A)(I - A)^{-3}, \quad \rho(A) &amp;lt; 1
+\end{equation}&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>矩阵理论系列笔记5：</title>

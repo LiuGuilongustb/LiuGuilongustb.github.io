@@ -450,7 +450,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 18 分钟
+                    阅读时长: 19 分钟
                 </time>
             </div>
         
@@ -2423,6 +2423,51 @@ X = A^{(1)} D B^{(1)} + Y - A^{(1)} A Y B B^{(1)}
 \end{equation}
 其中 $Y \in \mathbb{C}^{n \times q}$ 为任意。</p>
 <p>同理可证 (2)。</p>
+<p>例 9：
+若值域 $R(A) = R(B)$，则存在 $P, Q$ 使得：
+\begin{equation}\nonumber
+B = AP, \quad A = BQ
+\end{equation}</p>
+<p>证明：</p>
+<p><strong>法一</strong>：由条件知 $B$ 中各列都可由 $A$ 中的列表出，$\Rightarrow B = AP$，同理 $A = BQ$。</p>
+<p><strong>法二</strong>：
+\begin{equation}\nonumber
+R(A) = \lbrace AX | X \in \mathbb{C}^n \rbrace, \quad R(B) = \lbrace BX | X \in \mathbb{C}^n \rbrace
+\end{equation}</p>
+<p>因为 $R(A) = R(B)$，所以 $\forall x \in \mathbb{C}^n$，存在 $y \in \mathbb{C}^n$ 使得 $AX = By$。</p>
+<p>取 $\mathbb{C}^n$ 中的标准正交基 $e_1, \ldots, e_n$，存在 $y_1, \ldots, y_n$ 使得：
+\begin{equation}\nonumber
+Ae_k = B y_k \Rightarrow A(e_1, \ldots, e_n) = B(y_1, \ldots, y_n) \Rightarrow A I = B Q
+\end{equation}</p>
+<p>注：
+若核空间 $N(A) = N(B)$，则存在 $P, Q$ 使得：
+\begin{equation}\nonumber
+B = P A, \quad A = Q B
+\end{equation}</p>
+<p>注：
+(1) $r(A^+) = r(A) = r(A^+ A) = r(A A^+)$</p>
+<p><strong>证明</strong>：因为 $A = AA^+ A$，所以：
+\begin{equation}\nonumber
+r(A) = r(AA^+) \leq r(A^+ A) \leq r(A)
+\end{equation}</p>
+<p>故相等成立。</p>
+<p>注：
+(2) $R(A) = R(AA^+)$，$R(A^+) = R(A^+ A)$</p>
+<hr>
+<p>例 10：
+若：
+\begin{equation}\nonumber
+A^+ = A \iff (A^2)^H = A^2, \quad (A^2)^2 = A^2, \quad \text{且 } r(A^2) = r(A)
+\end{equation}</p>
+<p>证明：
+只需证明充分性，我们只需证明四个 Penrose 方程成立。</p>
+<p>由 $A^2 x = A (A x) \in R(A) \Rightarrow R(A^2) \subseteq R(A)$；</p>
+<p>又因为 $r(A^2) = r(A) = r(R(A)) = R(A) \Rightarrow R(A^2) = R(A)$</p>
+<p>由 $A^2 = A^4$ 得：
+\begin{equation}\nonumber
+A^2 Q = A^2 (A^2 Q) = A^3 = A A^2
+\end{equation}</p>
+<p>由 $(A^2)^H = A^2$，则第三、四个方程成立。</p>
 
 </section>
 

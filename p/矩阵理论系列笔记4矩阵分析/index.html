@@ -364,7 +364,18 @@
         <li><a href="#定理-12盖尔圆盘定理">定理 12（盖尔圆盘定理）</a></li>
       </ol>
     </li>
-    <li><a href="#矩阵级数">矩阵级数</a></li>
+    <li><a href="#矩阵级数">矩阵级数</a>
+      <ol>
+        <li><a href="#定义-1-1">定义 1</a></li>
+        <li><a href="#矩阵级数收敛性">矩阵级数收敛性</a></li>
+        <li><a href="#定义-2-1">定义 2</a></li>
+        <li><a href="#矩阵级数的性质">矩阵级数的性质</a></li>
+        <li><a href="#定义-3幂级数">定义 3（幂级数）</a></li>
+        <li><a href="#收敛性定义"><strong>收敛性定义</strong></a></li>
+        <li><a href="#定理-2-1">定理 2：</a></li>
+        <li><a href="#定理-3-1">定理 3：</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -421,7 +432,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 12 分钟
+                    阅读时长: 17 分钟
                 </time>
             </div>
         
@@ -1220,7 +1231,467 @@ G_1&rsquo;: |z - 9| \leq 4, \quad G_2&rsquo;: |z - i| \leq 1.5, \quad G_3&rsquo;
 \end{equation}</p>
 <hr>
 <h2 id="矩阵级数">矩阵级数
-</h2>
+</h2><p>在数学分析中，我们以数列极限来讨论级数理论，现在我们以矩阵序列理论为基础来引入矩阵级数。在 4.1 节中我们知道：</p>
+<p>\begin{equation}\nonumber
+\lim\limits_{k \to \infty} A_k = A_0 \iff \lim\limits_{k \to \infty} a_{ij}^{(k)} = a_{ij}^{(0)}, \quad \forall 1 \leq j \leq n, 1 \leq i \leq m
+\end{equation}</p>
+<h3 id="定义-1-1">定义 1
+</h3><p>设 $\lbrace A_k \rbrace$，$A_k \in \mathbb{C}^{m \times n}$，称 $\sum_{k=1}^{\infty} A_k$ 为 <strong>矩阵级数</strong>。</p>
+<p>令 $S_N = \sum_{k=1}^{N} A_k$，若矩阵序列 $\lbrace S_N \rbrace$ 收敛且有极限 $S$，即：
+\begin{equation}\nonumber
+\lim\limits_{N \to \infty} S_N = S
+\end{equation}
+则称级数 $\sum_{k=1}^{\infty} A_k$ <strong>收敛且和为 $S$</strong>。</p>
+<p>记为：
+\begin{equation}\nonumber
+S = \sum_{k=1}^{\infty} A_k = \lim\limits_{N \to \infty} \sum_{k=1}^{N} A_k
+\end{equation}</p>
+<p><strong>注</strong>：不收敛的级数我们称为 <strong>发散级数</strong>。</p>
+<h3 id="矩阵级数收敛性">矩阵级数收敛性
+</h3><p><strong>注意</strong>：由定义知，
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} A_k \text{ 收敛} \iff mn \text{ 个数值级数 } \sum_{k=1}^{\infty} a_{ij}^{(k)} \text{ 收敛}
+\end{equation}</p>
+<p>而
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} A_k \text{ 发散} \iff mn \text{ 个数值级数中至少有一个发散}
+\end{equation}</p>
+<h3 id="定义-2-1">定义 2
+</h3><p>若 $\sum_{k=1}^{\infty} A_k$ 所对应的 $mn$ 个数值级数
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} a_{ij}^{(k)}, \quad (1 \leq i \leq m, 1 \leq j \leq n)
+\end{equation}
+<strong>都绝对收敛</strong>，则称
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} A_k \text{ 绝对收敛}
+\end{equation}</p>
+<h3 id="矩阵级数的性质">矩阵级数的性质
+</h3><p>显然有以下性质：</p>
+<ol>
+<li>若 $\sum_{k=1}^{\infty} A_k$ <strong>绝对收敛</strong>，则 $\sum_{k=1}^{\infty} A_k$ <strong>收敛</strong>。</li>
+<li>若 $\sum_{k=1}^{\infty} A_k$ <strong>绝对收敛</strong>，则对任一（向量）范数 $|\cdot|$，有：
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} |A_k| \text{ 收敛}
+\end{equation}</li>
+<li>对于任取常矩阵 $P, Q$，$P \in \mathbb{C}^{p \times m}$，$Q \in \mathbb{C}^{n \times q}$，若 $\sum_{k=1}^{\infty} A_k$ <strong>收敛（绝对收敛）</strong>，则矩阵级数 $\sum_{k=1}^{\infty} P A_k Q$ <strong>收敛（绝对收敛）</strong>。</li>
+</ol>
+<p>证明：
+（2）充分性 $\Leftarrow$</p>
+<p>设 $\sum_{k=1}^{\infty} |A_k|<em>1$ 收敛，其中：
+\begin{equation}\nonumber
+|A_k|<em>1 = \sum</em>{1 \leq i \leq m, 1 \leq j \leq n} |a</em>{ij}^{(k)}|
+\end{equation}</p>
+<p>而
+\begin{equation}\nonumber
+|a_{ij}^{(k)}| \leq |A_k|_1
+\end{equation}</p>
+<p>由 <strong>比较原理</strong> 知，
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} |a_{ij}^{(k)}| \text{ 收敛}，\quad (1 \leq i \leq m, 1 \leq j \leq n)
+\end{equation}
+即 $\sum_{k=1}^{\infty} A_k$ <strong>绝对收敛</strong>。</p>
+<p>（2）必要性 $\Rightarrow$</p>
+<p>由条件 $\sum_{k=1}^{\infty} |a_{ij}^{(k)}|$ （$1 \leq i \leq m, 1 \leq j \leq n$）<strong>收敛</strong>，</p>
+<p>\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \sum_{1 \leq i \leq m, 1 \leq j \leq n} |a_{ij}^{(k)}| \text{ 收敛}
+\end{equation}</p>
+<p>即：
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} |A_k|_1 \text{ 收敛}
+\end{equation}</p>
+<p>由于任意范数（矩阵的向量范数）是等价的，所以由 <strong>比较原理</strong>，结论成立。</p>
+<p>矩阵级数的性质 3
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} P A_k Q = \lim\limits_{N \to \infty} \sum_{k=1}^{N} P A_k Q
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+= \lim\limits_{N \to \infty} P \left(\sum_{k=1}^{N} A_k\right) Q
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+= P \left(\lim\limits_{N \to \infty} \sum_{k=1}^{N} A_k\right) Q \quad (\text{若 } \sum_{k=1}^{\infty} A_k \text{ 收敛})
+\end{equation}</p>
+<p>若 $\sum_{k=1}^{\infty} A_k$ <strong>绝对收敛</strong>，由 <strong>性质 2</strong> 可知：
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} |A_k| \text{ 收敛}
+\end{equation}</p>
+<p>且
+\begin{equation}\nonumber
+| P A_k Q | \leq |P| |A_k| |Q| = k |A_k| \quad (\text{取相容的矩阵范数即可})
+\end{equation}</p>
+<p>由 <strong>比较原理</strong> 知：
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} |P A_k Q| \text{ 收敛}
+\end{equation}</p>
+<p>再由 <strong>性质 2</strong>，可得：
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} P A_k Q \text{ 绝对收敛}
+\end{equation}</p>
+<h3 id="定义-3幂级数">定义 3（幂级数）
+</h3><p>设 $A \in \mathbb{C}^{n \times n}$，称 $\sum_{m=0}^{\infty} c_m A^m$ 为 <strong>幂级数</strong>。</p>
+<h3 id="收敛性定义"><strong>收敛性定义</strong>
+</h3><p>设 <strong>复变量幂级数</strong> $\sum_{m=0}^{\infty} c_m z^m$ 的收敛半径为 $R$，且 $A \in \mathbb{C}^{n \times n}$。</p>
+<p><strong>若 $A$ 的谱半径为 $\rho(A)$</strong>，则：</p>
+<ol>
+<li>当 $\rho(A) &lt; R$ 时，$\sum_{m=0}^{\infty} c_m A^m$ <strong>绝对收敛</strong>（<strong>Abel 型定理</strong>）。</li>
+<li>当 $\rho(A) &gt; R$ 时，$\sum_{m=0}^{\infty} c_m A^m$ <strong>发散</strong>。</li>
+</ol>
+<p>证明 1)</p>
+<p>由于 $\rho(A) &lt; R$，存在 $\varepsilon &gt; 0$ 使得 $\rho(A) + \varepsilon &lt; R$。</p>
+<p>由 <strong>Abel 定理</strong> 知：
+\begin{equation}\nonumber
+\sum_{m=0}^{\infty} |c_m| (\rho(A) + \varepsilon)^m \text{ 收敛}
+\end{equation}</p>
+<p>由 <strong>定理 10</strong> 可知，存在矩阵范数 $|\cdot|$ 使得 $|A| \leq \rho(A) + \varepsilon$，因此：
+\begin{equation}\nonumber
+|c_m| |A^m| = |c_m| |A^m| \leq |c_m| |A|^m
+\end{equation}
+\begin{equation}\nonumber
+\leq |c_m| (\rho(A) + \varepsilon)^m
+\end{equation}</p>
+<p>由 <strong>比较原理</strong> 知：
+\begin{equation}\nonumber
+\sum_{m=0}^{\infty} |c_m| |A^m| \text{ 收敛}
+\end{equation}
+从而
+\begin{equation}\nonumber
+\sum_{m=0}^{\infty} c_m A^m \text{ 绝对收敛}
+\end{equation}</p>
+<p>证明 2)</p>
+<p>若 $\rho(A) &gt; R$，设 $\rho(A) = |\lambda_k|$，令 $Ax = \lambda_k x$。</p>
+<p>则：
+\begin{equation}\nonumber
+A \frac{x}{|x|} = \lambda_k \frac{x}{|x|}
+\end{equation}</p>
+<p>令：
+\begin{equation}\nonumber
+y = \frac{x}{|x|}，\quad \text{则} \quad |y| = 1，\quad 且 Ay = \lambda_k y
+\end{equation}</p>
+<p><strong>（反证法）</strong> 假设 $\sum_{m=0}^{\infty} c_m A^m$ <strong>收敛</strong>，则由 <strong>性质 3</strong> 知：
+\begin{equation}\nonumber
+y^H \left(\sum_{m=0}^{\infty} c_m A^m\right) y = \sum_{m=0}^{\infty} c_m y^H A^m y
+\end{equation}</p>
+<p>\begin{equation}\nonumber
+= \sum_{m=0}^{\infty} c_m \lambda_k^m y^H y = \sum_{m=0}^{\infty} c_m \lambda_k^m
+\end{equation}</p>
+<p>亦收敛，与 <strong>Abel 定理</strong> 矛盾。因此，当 $\rho(A) &gt; R$ 时：
+\begin{equation}\nonumber
+\sum_{m=0}^{\infty} c_m A^m \text{ 发散}
+\end{equation}</p>
+<p><strong>推论</strong>
+\begin{equation}\nonumber
+\sum_{m=0}^{\infty} A^m \text{ 收敛} \iff \rho(A) &lt; 1
+\end{equation}
+（<strong>Neumann 定理</strong>，此时其和为 $(I - A)^{-1}$）。</p>
+<p><strong>注</strong>：
+<strong>定理 1</strong> 实际上定义了一种 <strong>映射</strong> $f(z)$：
+\begin{equation}\nonumber
+f(z) = \sum_{m=0}^{\infty} c_m z^m, \quad |z| &lt; R \text{（收敛半径）}
+\end{equation}</p>
+<p>对于任意 $A \in \mathbb{C}^{n \times n}$，若满足 $\rho(A) &lt; R$，则：
+\begin{equation}\nonumber
+f(A) = \sum_{m=0}^{\infty} c_m A^m \text{ 收敛}
+\end{equation}</p>
+<p>因此，对应一个矩阵，称 $f(A)$ 为 <strong>矩阵函数</strong>。</p>
+<hr>
+<h3 id="定理-2-1">定理 2：
+</h3><p>若对矩阵 $A$ 的某一种范数 $|A| &lt; 1$，则：
+\begin{equation}\nonumber
+\lim\limits_{k \to \infty} A^k = 0
+\end{equation}</p>
+<p><strong>证明</strong>：由 $|A^k| \leq |A|^k$，即可证明。</p>
+<h3 id="定理-3-1">定理 3：
+</h3><p>已知矩阵序列 $A, A^2, \ldots, A^k, \ldots$，则：
+\begin{equation}\nonumber
+\lim\limits_{k \to \infty} A^k = 0
+\end{equation}
+的<strong>充要条件</strong>是 $\rho(A) &lt; 1$。</p>
+<p>证明：</p>
+<p>证明过程中需要用到下面的公式。设 Jordan 块为：</p>
+<div>
+\begin{equation}\nonumber
+J =
+\begin{bmatrix}
+\lambda_k & 1 & & \\
+& \lambda_k & 1 & \\
+& & \lambda_k & \ddots \\
+& & & \ddots
+\end{bmatrix}
+\end{equation}
+</div>
+<p>则：</p>
+<div>
+\begin{equation}\nonumber
+J^k =
+\begin{bmatrix}
+\lambda_k^k & k \lambda_k^{k-1} & C_2^k \lambda_k^{k-2} & \cdots \\
+& \lambda_k^k & k \lambda_k^{k-1} & \cdots \\
+& & \lambda_k^k & \cdots \\
+& & & \ddots
+\end{bmatrix}
+\end{equation}
+</div>
+<p>例 1：判断矩阵序列 $A^k$ 的敛散性</p>
+<p>(1)</p>
+<div>
+\begin{equation}\nonumber
+A = 
+\begin{bmatrix}
+1 & 1 \\
+0 & 1
+\end{bmatrix}
+\end{equation}
+</div>
+<p>(2)</p>
+<div>
+\begin{equation}\nonumber
+A = 
+\begin{bmatrix}
+0.9 & 1 \\
+0 & 0.9
+\end{bmatrix}
+\end{equation}
+</div>
+<p>(3)</p>
+<div>
+\begin{equation}\nonumber
+A = 
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0.9 & 1 \\
+0 & 0 & 0.9
+\end{bmatrix}
+\end{equation}
+</div>
+<p>(4)</p>
+<div>
+\begin{equation}\nonumber
+A = 
+\begin{bmatrix}
+0.3 & 0.8 \\
+0.6 & 0.1
+\end{bmatrix}
+\end{equation}
+</div>
+<p>解：</p>
+<p>(1)</p>
+<div>
+\begin{equation}\nonumber
+A^k = 
+\begin{bmatrix}
+1 & k \\
+0 & 1
+\end{bmatrix}, \quad \text{故 } \lim\limits_{k \to \infty} A^k \text{ 发散}
+\end{equation}
+</div>
+<p>(2) $\rho(A) = 0.9 &lt; 1$，故 $\lim\limits_{k \to \infty} A^k = 0$。</p>
+<p>(3)</p>
+<div>
+\begin{equation}\nonumber
+A^k =
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0.9^k & k \cdot 0.9^{k-1} \\
+0 & 0 & 0.9^k
+\end{bmatrix}, \quad
+\lim\limits_{k \to \infty} A^k =
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+\end{equation}
+</div>
+<p>(4) $|A|<em>1 = 0.9 &lt; 1$，故 $A^k$ 收敛，且：
+\begin{equation}\nonumber
+\lim\limits</em>{k \to \infty} A^k = 0
+\end{equation}</p>
+<p>例 2：判断矩阵序列 $A^k$ 的敛散性</p>
+<div>
+\begin{equation}\nonumber
+A = 
+\begin{bmatrix}
+1 & 1 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & -1
+\end{bmatrix}
+\end{equation}
+</div>
+<p>解：</p>
+<p>$A$ 的特征值为 $\lambda_1 = \lambda_2 = 1, \lambda_3 = -1$，因此：
+\begin{equation}\nonumber
+\rho(A) = 1
+\end{equation}</p>
+<p>设 $J$ 是 $A$ 的 Jordan 标准型。由于：
+\begin{equation}\nonumber
+A^k = P J^k P^{-1}
+\end{equation}</p>
+<p>所以只需判断 $J^k$ 的敛散性即可。</p>
+<p>通过计算得出：</p>
+<div>
+\begin{equation}\nonumber
+J = 
+\begin{bmatrix}
+1 & 1 \\
+0 & 1
+\end{bmatrix}
+\Rightarrow J^k = 
+\begin{bmatrix}
+1 & k \\
+0 & 1
+\end{bmatrix}
+\end{equation}
+</div>
+<p>故 $A^k$ 发散。</p>
+<p>例 4：判断矩阵幂级数的敛散性</p>
+<p>(1)
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+1 &amp; 1 \
+0 &amp; 1
+\end{bmatrix}^k
+\end{equation}</p>
+<p>(2)
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+-1 &amp; 1 \
+0 &amp; -1
+\end{bmatrix}^k
+\end{equation}</p>
+<p>(3)
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+-1 &amp; 1 &amp; 0 \
+0 &amp; -1 &amp; 1 \
+0 &amp; 0 &amp; -1
+\end{bmatrix}^k
+\end{equation}</p>
+<p>(4)
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \
+0 &amp; -1 &amp; 1 \
+0 &amp; 0 &amp; -1
+\end{bmatrix}^k
+\end{equation}</p>
+<p>解：(1)</p>
+<h1 id="endbmatrixk">\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+1 &amp; 1 \
+0 &amp; 1
+\end{bmatrix}^k
+</h1><h1 id="endbmatrix">\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+1 &amp; k \
+0 &amp; 1
+\end{bmatrix}
+</h1><p>\begin{bmatrix}
+\sum \frac{1}{k^2} &amp; \sum \frac{k}{k^2} \
+0 &amp; \sum \frac{1}{k^2}
+\end{bmatrix}
+\end{equation}</p>
+<p>因为 $\sum \frac{k}{k^2} = \sum \frac{1}{k}$ 发散，故级数发散。</p>
+<p>解：(2)</p>
+<h1 id="endbmatrixk-1">\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+-1 &amp; 1 \
+0 &amp; -1
+\end{bmatrix}^k
+</h1><p>\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+(-1)^k &amp; k(-1)^{k-1} \
+0 &amp; (-1)^k
+\end{bmatrix}
+\end{equation}</p>
+<h1 id="beginequationnonumber">\begin{equation}\nonumber
+</h1><p>\begin{bmatrix}
+\sum \frac{(-1)^k}{k^2} &amp; \sum \frac{k(-1)^{k-1}}{k^2} \
+0 &amp; \sum \frac{(-1)^k}{k^2}
+\end{bmatrix}
+\Rightarrow \text{收敛}
+\end{equation}</p>
+<p>解：(3)</p>
+<p>原式：
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+(-1)^k &amp; k(-1)^{k-1} &amp; \frac{k(k-1)}{2}(-1)^{k-2} \
+0 &amp; (-1)^k &amp; k(-1)^{k-1} \
+0 &amp; 0 &amp; (-1)^k
+\end{bmatrix}
+\end{equation}</p>
+<p>展开为：</p>
+<div>
+\begin{equation}\nonumber
+=
+\begin{bmatrix}
+\sum \frac{(-1)^k}{k^2} & \sum \frac{(-1)^{k}}{k} & \sum \frac{(k-1)(-1)^{k}}{2k} \\
+0 & \sum \frac{(-1)^k}{k^2} & \sum \frac{(-1)^k}{k} \\
+0 & 0 & \sum \frac{(-1)^k}{k^2}
+\end{bmatrix}
+\end{equation}
+</div>
+<p>由于含有 $\sum \frac{(-1)^k}{k}$ 发散项，<strong>所以级数发散</strong>。</p>
+<p>解：(4)</p>
+<h1 id="endbmatrixk-2">\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \
+0 &amp; -1 &amp; 1 \
+0 &amp; 0 &amp; -1
+\end{bmatrix}^k
+</h1><p>\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \
+0 &amp; (-1)^k &amp; k(-1)^{k-1} \
+0 &amp; 0 &amp; (-1)^k
+\end{bmatrix}
+\end{equation}</p>
+<h1 id="beginequationnonumber-1">\begin{equation}\nonumber
+</h1><p>\begin{bmatrix}
+\sum \frac{1}{k^2} &amp; 0 &amp; 0 \
+0 &amp; \sum \frac{(-1)^k}{k^2} &amp; \sum \frac{(-1)^k}{k} \
+0 &amp; 0 &amp; \sum \frac{(-1)^k}{k^2}
+\end{bmatrix}
+\Rightarrow \text{条件收敛}
+\end{equation}</p>
+<p>例 5：设 $A \in \mathbb{C}^{n \times n}$，且 $\rho(A) &lt; 1$，求：
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} k^2 A^k
+\end{equation}</p>
+<p>解：</p>
+<p>考虑复变幂级数 $\sum_{k=1}^{\infty} k^2 z^k$，因为：
+\begin{equation}\nonumber
+\lim\limits_{k \to \infty} \left( \frac{k^2 z^k}{z^{k+1}} \right) = \frac{k^2}{z}
+\end{equation}</p>
+<p>故收敛半径为 $1$，因此当 $\rho(A) &lt; 1$ 时，$\sum_{k=1}^{\infty} k^2 A^k$ 收敛。</p>
+<p>设 $f(z) = \sum_{k=1}^{\infty} k^2 z^k, |z| &lt; 1$，则令：</p>
+<p>\begin{equation}\nonumber
+f_1(z) = \sum_{k=1}^{\infty} k z^{k-1}, \quad \Rightarrow f(z) = z f_1(z)
+\end{equation}</p>
+<p>当 $|z| &lt; 1$ 时：
+\begin{equation}\nonumber
+\int_0^z f_1(z), dz = \sum_{k=1}^{\infty} \int_0^z k z^{k-1} , dz = \sum_{k=1}^{\infty} z^k
+= \frac{z}{1 - z}, \quad |z| &lt; 1
+\end{equation}</p>
+<p>再对 $\sum_{k=1}^{\infty} k z^{k-1}$ 积分：
+\begin{equation}\nonumber
+\int_0^z \sum_{k=1}^{\infty} k z^{k-1} , dz = \sum_{k=1}^{\infty} \int_0^z k z^{k-1} dz = \sum_{k=1}^{\infty} z^k = \frac{z}{1 - z}
+\end{equation}</p>
+<p>再对 $\frac{z}{1 - z}$ 求导得：
+\begin{equation}\nonumber
+f(z) = \frac{z(z+1)}{(1 - z)^3}, \quad |z| &lt; 1
+\end{equation}</p>
+<p>因此：
+\begin{equation}\nonumber
+f(A) = A (I + A)(I - A)^{-3}, \quad \rho(A) &lt; 1
+\end{equation}</p>
+
 </section>
 
 
