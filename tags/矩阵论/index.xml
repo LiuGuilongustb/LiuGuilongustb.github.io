@@ -9776,6 +9776,479 @@ f(z) = \frac{z(z+1)}{(1 - z)^3}, \quad |z| &amp;lt; 1
 \begin{equation}\nonumber
 f(A) = A (I + A)(I - A)^{-3}, \quad \rho(A) &amp;lt; 1
 \end{equation}&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;矩阵函数及其计算一&#34;&gt;矩阵函数及其计算一
+&lt;/h2&gt;&lt;h3 id=&#34;定义-1矩阵函数&#34;&gt;定义 1（&lt;strong&gt;矩阵函数&lt;/strong&gt;）
+&lt;/h3&gt;&lt;p&gt;设幂级数 $\sum_{m=0}^{\infty} c_m z^m$ 的收敛半径为 $R$，且当 $|z| &amp;lt; R$ 时，幂级数收敛于函数 $f(z)$，即：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f(z) = \sum_{m=0}^{\infty} c_m z^m, \quad |z| &amp;lt; R
+\end{equation}&lt;/p&gt;
+&lt;p&gt;若 $\forall A \in \mathbb{C}^{n \times n}$，满足 $\rho(A) &amp;lt; R$，称收敛的矩阵幂级数 $\sum_{m=0}^{\infty} c_m A^m$ 的和为&lt;strong&gt;矩阵函数&lt;/strong&gt;，记为 $f(A)$。&lt;/p&gt;
+&lt;p&gt;即：
+\begin{equation}\nonumber
+f(A) = \sum_{m=0}^{\infty} c_m A^m
+\end{equation}&lt;/p&gt;
+&lt;p&gt;特别地，当 $R = +\infty$ 时，$\forall A \in \mathbb{C}^{n \times n}$，有：
+\begin{equation}\nonumber
+f(A) = \sum_{m=0}^{\infty} c_m A^m
+\end{equation}&lt;/p&gt;
+&lt;p&gt;我们熟悉的一些函数数有：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+e^z = \sum_{m=0}^{\infty} \frac{1}{m!} z^m, \quad R = +\infty
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\sin z = \sum_{m=0}^{\infty} \frac{(-1)^m}{(2m + 1)!} z^{2m + 1}, \quad R = +\infty
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\cos z = \sum_{m=0}^{\infty} \frac{(-1)^m}{(2m)!} z^{2m}, \quad R = +\infty
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\frac{1}{1 - z} = \sum_{m=0}^{\infty} z^m, \quad R = 1
+\end{equation}&lt;/p&gt;
+&lt;p&gt;对应的&lt;strong&gt;矩阵函数&lt;/strong&gt;为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+e^A = \sum_{m=0}^{\infty} \frac{1}{m!} A^m, \quad \forall A \in \mathbb{C}^{n \times n}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\sin A = \sum_{m=0}^{\infty} \frac{(-1)^m}{(2m + 1)!} A^{2m + 1}, \quad \forall A \in \mathbb{C}^{n \times n}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\cos A = \sum_{m=0}^{\infty} \frac{(-1)^m}{(2m)!} A^{2m}, \quad \forall A \in \mathbb{C}^{n \times n}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+(I - A)^{-1} = \sum_{m=0}^{\infty} A^m, \quad \rho(A) &amp;lt; 1
+\end{equation}&lt;/p&gt;
+&lt;p&gt;称 $e^A$ 为&lt;strong&gt;矩阵指数函数&lt;/strong&gt;，$\sin A$ 为&lt;strong&gt;矩阵正弦函数&lt;/strong&gt;，$\cos A$ 为&lt;strong&gt;矩阵余弦函数&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;若 $f(A)$ 的变量换成 $At$，$t$ 为参数，则有：
+\begin{equation}\nonumber
+f(At) = \sum_{m=0}^{\infty} c_m (At)^m, \quad |t| \rho(A) &amp;lt; R
+\end{equation}&lt;/p&gt;
+&lt;p&gt;在实际应用中会经常遇到含参数的矩阵函数。&lt;/p&gt;
+&lt;h3 id=&#34;矩阵函数的性质&#34;&gt;矩阵函数的性质
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$e^{iA} = \cos A + i \sin A$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$\cos A = \frac{1}{2} \left( e^{iA} + e^{-iA} \right)$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$\sin A = \frac{1}{2i} \left( e^{iA} - e^{-iA} \right)$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$\sin^2 A + \cos^2 A = I$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;若 $AB = BA$，则 $e^A e^B = e^B e^A = e^{A + B}$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一般的，$e^A e^B, e^B e^A, e^{A + B}$ 互不相等&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$e^A e^{-A} = e^{-A} e^A = I$，即 $(e^A)^{-1} = e^{-A}$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：$\forall A$，$e^A$ 总是可逆的。&lt;/p&gt;
+&lt;h3 id=&#34;证明&#34;&gt;证明：
+&lt;/h3&gt;&lt;p&gt;1)–4) 可直接验证；6) 可见书上反例；7) 为 5) 的推论。&lt;/p&gt;
+&lt;p&gt;下证 5)，只需验证当 $AB = BA$ 时，有：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+e^A e^B = e^{A + B}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;根据定义：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+e^A e^B = \left( \sum_{m=0}^{\infty} \frac{1}{m!} A^m \right)
+\left( \sum_{n=0}^{\infty} \frac{1}{n!} B^n \right)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;展开得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= I + (A + B) + \frac{1}{2!}(A^2 + AB + BA + B^2) + \cdots
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因为 $AB = BA$，可整理为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= I + (A + B) + \frac{1}{2!}(A + B)^2 + \cdots
+\end{equation}&lt;/p&gt;
+&lt;p&gt;即：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= \sum_{m=0}^{\infty} \frac{1}{m!} (A + B)^m = e^{A + B}
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;例-1&#34;&gt;例 1：
+&lt;/h3&gt;&lt;p&gt;设&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = 
+\begin{bmatrix}
+0 &amp; 1 \\
+-1 &amp; 0
+\end{bmatrix}, \quad \text{求 } e^{At}
+\end{equation}
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;解&#34;&gt;解：
+&lt;/h3&gt;&lt;p&gt;$|\lambda I - A| = \lambda^2 + 1$，由 &lt;strong&gt;Cayley 定理&lt;/strong&gt; 知，$A^2 + I = 0$，&lt;br&gt;
+故 $A^2 = -I$，$A^3 = -A$，$A^4 = I$，$A^5 = A$，…… 有：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A^{2k} = (-1)^k I, \quad A^{2k + 1} = (-1)^k A, \quad k = 1,2,\ldots
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因此：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+e^{At} = \sum_{k=0}^{\infty} \frac{1}{k!} (At)^k =
+\left(1 - \frac{1}{2!} t^2 + \frac{1}{4!} t^4 - \cdots \right) I +
+\left(t - \frac{t^3}{3!} + \frac{t^5}{5!} - \cdots \right) A
+\end{equation}&lt;/p&gt;
+&lt;p&gt;注意到：
+\begin{equation}\nonumber
+\cos t = 1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \cdots, \quad
+\sin t = t - \frac{t^3}{3!} + \frac{t^5}{5!} - \cdots
+\end{equation}&lt;/p&gt;
+&lt;p&gt;所以：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+e^{At} = (\cos t) I + (\sin t) A
+\end{equation}&lt;/p&gt;
+&lt;p&gt;即：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+e^{At} = 
+\begin{bmatrix}
+\cos t &amp; \sin t \\
+-\sin t &amp; \cos t
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;h3 id=&#34;例-2&#34;&gt;例 2：
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{4 \times 4}$，特征值为 $\pi, -\pi, 0, 0$，求 $e^A, \cos A, \sin A$。&lt;/p&gt;
+&lt;p&gt;解：&lt;/p&gt;
+&lt;p&gt;由条件知：
+\begin{equation}\nonumber
+|\lambda I - A| = \lambda^2 (\lambda - \pi)(\lambda + \pi) = \lambda^4 - \pi^2 \lambda^2
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由 Cayley 定理知：
+\begin{equation}\nonumber
+A^4 = \pi^2 A^2
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因此：
+\begin{equation}\nonumber
+\sin A = A - \frac{1}{3!} A^3 + \frac{1}{5!} A^5 - \frac{1}{7!} A^7 + \cdots
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由于 $A^5 = A \cdot A^4 = A \cdot \pi^2 A^2 = \pi^2 A^3$，且 $A^7 = \pi^4 A^3$，可得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\sin A = A + \left( -\frac{1}{3!} + \frac{\pi^2}{5!} - \frac{\pi^4}{7!} + \cdots \right) A^3
+\end{equation}&lt;/p&gt;
+&lt;p&gt;令：
+\begin{equation}\nonumber
+\sin A = A + \frac{\sin(\pi) - \pi}{\pi^3} A^3 = A - \pi^{-2} A^3
+\end{equation}&lt;/p&gt;
+&lt;p&gt;同理可得：
+\begin{equation}\nonumber
+\cos A = I - \frac{1}{2} A^2 = I - \frac{2}{\pi^2} A^2
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+e^A = I + A + \frac{p}{\pi^2} A^2 + \frac{e^{\pi} + e^{-\pi} - 2 - 2p}{2 \pi^3} A^3
+\end{equation}&lt;/p&gt;
+&lt;p&gt;其中：
+\begin{equation}\nonumber
+p = \frac{e^{\pi} + e^{-\pi}}{2} - 1
+\end{equation}&lt;/p&gt;
+&lt;p&gt;注 1：&lt;/p&gt;
+&lt;p&gt;由特征多项式的零化特性，可将矩阵函数计算简化，但一般仍显繁琐。&lt;/p&gt;
+&lt;p&gt;注 2：&lt;/p&gt;
+&lt;p&gt;由上面两个例子可以看到，矩阵指数函数和三角函数可表示为一个次数不超过特征多项式次数的矩阵多项式。&lt;/p&gt;
+&lt;p&gt;对一般矩阵函数，这个结论也是成立的。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;矩阵函数的计算法一&#34;&gt;矩阵函数的计算法（一）
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;若 $A$ 为&lt;strong&gt;单纯矩阵&lt;/strong&gt;，则存在可逆矩阵 $P$ 使：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A = P , \mathrm{diag} \lbrace \lambda_1, \ldots, \lambda_n \rbrace P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;设 $f(z) = \sum_{m=0}^{\infty} c_m z^m$，$|z| &amp;lt; R$，则当 $\rho(A) &amp;lt; R$ 时，有：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f(A) = \sum_{m=0}^{\infty} c_m A^m
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因此：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f(A) = \sum_{m=0}^{\infty} c_m A^m
+= \sum_{m=0}^{\infty} c_m \left( P , \mathrm{diag} \lbrace \lambda_1, \ldots, \lambda_n \rbrace P^{-1} \right)^m
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= P \left( \sum_{m=0}^{\infty} c_m , \mathrm{diag} \lbrace \lambda_1^m, \ldots, \lambda_n^m \rbrace \right) P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f(A) = P \left( \mathrm{diag} \left\lbrace \sum_{m=0}^{\infty} c_m \lambda_1^m, \ldots, \sum_{m=0}^{\infty} c_m \lambda_n^m \right\rbrace \right) P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= P \left( \mathrm{diag} \left\lbrace f(\lambda_1), \ldots, f(\lambda_n) \right\rbrace \right) P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;故 $A$ 为单纯矩阵，$f(A)$ 仍为单纯矩阵。&lt;/p&gt;
+&lt;h3 id=&#34;a-为单纯矩阵求-fa-的步骤如下&#34;&gt;$A$ 为单纯矩阵，求 $f(A)$ 的步骤如下：
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;求 $A$ 的特征值 $\lambda_1, \ldots, \lambda_n$，以及可逆矩阵 $P$ 使得：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+P^{-1} A P = \mathrm{diag} \lbrace \lambda_1, \ldots, \lambda_n \rbrace
+\end{equation}&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;若 $\rho(A) &amp;lt; R$，则：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f(A) = P \left( \mathrm{diag} \lbrace f(\lambda_1), \ldots, f(\lambda_n) \rbrace \right) P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;特别地有&#34;&gt;特别地，有：
+&lt;/h3&gt;&lt;p&gt;\begin{equation}\nonumber
+e^A = P \left( \mathrm{diag} \lbrace e^{\lambda_1}, \ldots, e^{\lambda_n} \rbrace \right) P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\sin A = P \left( \mathrm{diag} \lbrace \sin \lambda_1, \ldots, \sin \lambda_n \rbrace \right) P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\cos A = P \left( \mathrm{diag} \lbrace \cos \lambda_1, \ldots, \cos \lambda_n \rbrace \right) P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+e^{At} = P \left( \mathrm{diag} \lbrace e^{\lambda_1 t}, \ldots, e^{\lambda_n t} \rbrace \right) P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\sin(At) = P \left( \mathrm{diag} \lbrace \sin (\lambda_1 t), \ldots, \sin (\lambda_n t) \rbrace \right) P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\cos(At) = P \left( \mathrm{diag} \lbrace \cos (\lambda_1 t), \ldots, \cos (\lambda_n t) \rbrace \right) P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;注 1：&lt;/p&gt;
+&lt;p&gt;同理有：
+\begin{equation}\nonumber
+f(At) = P \left( \mathrm{diag} \lbrace f(\lambda_1 t), \ldots, f(\lambda_n t) \rbrace \right) P^{-1}, \quad |t| \rho(A) &amp;lt; R
+\end{equation}&lt;/p&gt;
+&lt;p&gt;注 2：&lt;/p&gt;
+&lt;p&gt;若 $A$ 为单纯矩阵，有谱分解：
+\begin{equation}\nonumber
+A = \sum_{i=1}^{k} \lambda_i E_i
+\end{equation}&lt;/p&gt;
+&lt;p&gt;其中 $\lambda_1, \ldots, \lambda_k$ 为 $A$ 的&lt;strong&gt;互异特征值&lt;/strong&gt;。若 $\rho(A) &amp;lt; R$，则：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f(A) = \sum_{m=0}^{\infty} c_m A^m
+= \sum_{m=0}^{\infty} c_m \left( \sum_{i=1}^{k} \lambda_i E_i \right)^m
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+= \sum_{i=1}^{k} \left( \sum_{m=0}^{\infty} c_m \lambda_i^m \right) E_i
+= \sum_{i=1}^{k} f(\lambda_i) E_i
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;2-若-a-为一般矩阵则存在可逆矩阵-p-使&#34;&gt;2. 若 $A$ 为一般矩阵，则存在可逆矩阵 $P$ 使：
+&lt;/h3&gt;&lt;p&gt;\begin{equation}\nonumber
+P^{-1} A P = J =
+\begin{pmatrix}
+J_1(\lambda_1) &amp;amp; 0 &amp;amp; \cdots &amp;amp; 0 \
+0 &amp;amp; \ddots &amp;amp; &amp;amp; \vdots \
+\vdots &amp;amp; &amp;amp; \ddots &amp;amp; 0 \
+0 &amp;amp; \cdots &amp;amp; 0 &amp;amp; J_s(\lambda_s)
+\end{pmatrix}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;其中 $J_i(\lambda_i)$ 为 Jordan 块，形式如下：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+J_i(\lambda_i) =
+\begin{bmatrix}
+\lambda_i &amp; 1 &amp; &amp; \\
+&amp; \lambda_i &amp; 1 &amp; \\
+&amp; &amp; \ddots &amp; 1 \\
+&amp; &amp; &amp; \lambda_i
+\end{bmatrix}, \quad 1 \leq i \leq s
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;设 $f(z) = \sum_{m=0}^{\infty} c_m z^m,\ |z| &amp;lt; R$，则当 $\rho(A) &amp;lt; R$ 时，&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f(A) = \sum_{m=0}^{\infty} c_m A^m
+= \sum_{m=0}^{\infty} c_m (PJP^{-1})^m
+= P \left( \sum_{m=0}^{\infty} c_m J^m \right) P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Jordan 块的幂：&lt;/strong&gt;&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+J_i^m(\lambda_i) =
+\begin{bmatrix}
+\lambda_i^m &amp; \binom{m}{1} \lambda_i^{m-1} &amp; \cdots &amp; \binom{m}{n_i - 1} \lambda_i^{m - n_i + 1} \\
+0 &amp; \lambda_i^m &amp; \cdots &amp; \binom{m}{n_i - 2} \lambda_i^{m - n_i + 2} \\
+\vdots &amp; \ddots &amp; \ddots &amp; \vdots \\
+0 &amp; \cdots &amp; 0 &amp; \lambda_i^m
+\end{bmatrix}, \quad n_i \times n_i
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;上三角元的和：&lt;/strong&gt;
+\begin{equation}\nonumber
+\sum_{m=1}^{\infty} c_m \binom{m}{l} \lambda_i^{m - l}
+= \frac{1}{l!} \sum_{m=1}^{\infty} c_m m (m-1) \cdots (m - l + 1) \lambda_i^{m - l}
+= \frac{1}{l!} f^{(l)}(\lambda_i), \quad 0 \leq l \leq n_i - 1
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;最终结论：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f(A) = P
+\begin{pmatrix}
+f(J_1(\lambda_1)) &amp;amp; &amp;amp; \
+&amp;amp; \ddots &amp;amp; \
+&amp;amp; &amp;amp; f(J_s(\lambda_s))
+\end{pmatrix} P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;其中每个 Jordan 块函数形式为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+f(J_i(\lambda_i)) =
+\begin{bmatrix}
+f(\lambda_i) &amp; f&#39;(\lambda_i) &amp; \cdots &amp; \frac{1}{(n_i - 1)!} f^{(n_i - 1)}(\lambda_i) \\
+0 &amp; f(\lambda_i) &amp; \cdots &amp; \frac{1}{(n_i - 2)!} f^{(n_i - 2)}(\lambda_i) \\
+\vdots &amp; \ddots &amp; \ddots &amp; \vdots \\
+0 &amp; \cdots &amp; 0 &amp; f(\lambda_i)
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;该展开形式称为 &lt;strong&gt;Sylvester 公式&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;例 4：&lt;/p&gt;
+&lt;p&gt;设&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+-1 &amp; 0 &amp; 1 \\
+1 &amp; 2 &amp; 0 \\
+-4 &amp; 0 &amp; 3
+\end{bmatrix}, \quad \text{求 } e^A, \sin(At)
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;解：&lt;/p&gt;
+&lt;p&gt;先计算 $A$ 的初等因子为 $(\lambda - 1)^2 (\lambda - 2)$，故有 Jordan 形式：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+J =
+\begin{bmatrix}
+1 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 2
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;求出变换矩阵：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+P =
+\begin{bmatrix}
+-1 &amp; 0 &amp; 0 \\
+-1 &amp; -1 &amp; 1 \\
+2 &amp; 1 &amp; 0
+\end{bmatrix}, \quad \text{使得 } P^{-1} A P = J
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算 $e^A$：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+e^A = P
+\begin{bmatrix}
+e &amp;amp; e &amp;amp; 0 \
+0 &amp;amp; e &amp;amp; 0 \
+0 &amp;amp; 0 &amp;amp; e^2
+\end{bmatrix}
+P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;化简结果为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+e^A =
+\begin{bmatrix}
+-e &amp; 0 &amp; e \\
+3e - e^2 &amp; e^2 &amp; -2e + e^2 \\
+-4e &amp; 0 &amp; 3e
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;计算 $\sin(At)$：&lt;/p&gt;
+&lt;p&gt;设 $f(\lambda) = \sin \lambda$，根据 Sylvester 公式：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\sin(At) = P
+\begin{bmatrix}
+\sin t &amp;amp; t \cos t &amp;amp; 0 \
+0 &amp;amp; \sin t &amp;amp; 0 \
+0 &amp;amp; 0 &amp;amp; \sin(2t)
+\end{bmatrix}
+P^{-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;（图中未写出 $P^{-1}$ 展开，保留为一般表达）&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;矩阵函数及其计算二&#34;&gt;矩阵函数及其计算二
+&lt;/h2&gt;&lt;p&gt;我们看到，尽管 Sylvester 公式非常漂亮，但当 $A$ 是非单纯矩阵时，计算非常繁琐，&lt;br&gt;
+所以我们引入下面的谱上的一致多项式。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定理-1-2&#34;&gt;定理 1：
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，$m_A(\lambda)$ 为 $A$ 的最小多项式，&lt;br&gt;
+记 $\deg m_A(\lambda) = l$。若复函数 $f(z) = \sum_{m=0}^{\infty} c_m z^m$ 的收敛半径为 $R$，&lt;br&gt;
+且 $\rho(A) &amp;lt; R$，则 $f(A) = \sum_{m=0}^{\infty} c_m A^m$ 可表示为 $A$ 的 $l-1$ 次多项式 $p(A)$：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+p(\lambda) = \beta_0 + \beta_1 \lambda + \cdots + \beta_{l-1} \lambda^{l-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;使得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f(A) = \beta_0 I + \beta_1 A + \cdots + \beta_{l-1} A^{l-1} = p(A)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;且 $p(\lambda)$ 是&lt;strong&gt;唯一的&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;证明：&lt;/p&gt;
+&lt;p&gt;设 $m_A(\lambda)$ 为 $A$ 的最小多项式，$\deg m_A(\lambda) = l$，&lt;br&gt;
+当 $m \geq l$ 时，有：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\lambda^m = q_m(\lambda) m_A(\lambda) + r_m(\lambda), \quad \deg r_m(\lambda) \leq l - 1
+\end{equation}&lt;/p&gt;
+&lt;p&gt;代入 $A$ 得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+A^m = q_m(A) m_A(A) + r_m(A) = r_m(A)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;因此，&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f(A) = \sum_{m=0}^{\infty} c_m A^m = \sum_{m=0}^{l-1} c_m A^m + \sum_{m \geq l} c_m A^m
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由于 $\sum_{m=0}^{\infty} c_m A^m$ &lt;strong&gt;绝对收敛&lt;/strong&gt;，任意调整次数仍绝对收敛，&lt;br&gt;
+故可写为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f(A) = \beta_0 I + \beta_1 A + \cdots + \beta_{l-1} A^{l-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;其中 $\beta_0, \ldots, \beta_{l-1}$ 均为绝对收敛的数值级数之和。&lt;/p&gt;
+&lt;p&gt;唯一性说明：&lt;/p&gt;
+&lt;p&gt;设还有另一多项式：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+p_1(\lambda) = \beta&amp;rsquo;_0 + \beta&amp;rsquo;&lt;em&gt;1 \lambda + \cdots + \beta&amp;rsquo;&lt;/em&gt;{l-1} \lambda^{l-1} \neq p(\lambda)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;若&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f(A) = \beta&amp;rsquo;_0 I + \beta&amp;rsquo;&lt;em&gt;1 A + \cdots + \beta&amp;rsquo;&lt;/em&gt;{l-1} A^{l-1} = p_1(A)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;则有：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+p(\lambda) - p_1(\lambda) = 0,\quad \deg \left( p(\lambda) - p_1(\lambda) \right) \leq l - 1
+\end{equation}&lt;/p&gt;
+&lt;p&gt;这与 $m_A(\lambda)$ 是最小多项式矛盾，因此唯一性成立。&lt;/p&gt;
+&lt;p&gt;总结：将 $f(A)$ 表示为矩阵多项式的步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;求 $A$ 的互异特征值 $\lambda_1, \ldots, \lambda_s$，以及最小多项式：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+m_A(\lambda) = \prod_{i=1}^{s} (\lambda - \lambda_i)^{m_i},\quad \deg m_A(\lambda) = l = m_1 + \cdots + m_s
+\end{equation}&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;设 $p(\lambda) = \beta_0 + \beta_1 \lambda + \cdots + \beta_{l-1} \lambda^{l-1}$，&lt;br&gt;
+令 $\beta_0, \ldots, \beta_{l-1}$ 满足插值条件：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+p^{(j)}(\lambda_i) = f^{(j)}(\lambda_i), \quad j = 0, \ldots, m_i - 1;\quad i = 1, \ldots, s
+\end{equation}&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f(A) = p(A) = \beta_0 I + \beta_1 A + \cdots + \beta_{l-1} A^{l-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;称 $p(\lambda)$ 为 $A$ 的&lt;strong&gt;谱上一致多项式&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注 1：&lt;/strong&gt;&lt;br&gt;
+无论 $A$ 是否为单纯矩阵，方法二均适用。&lt;br&gt;
+当 $A$ 的非单纯矩阵成分较多时，方法二相对更简单。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注 2：&lt;/strong&gt;&lt;br&gt;
+以上步骤可视为对矩阵函数 $f(A)$ 的一种&lt;strong&gt;重新定义方式&lt;/strong&gt;。&lt;/p&gt;&lt;/blockquote&gt;
 </description>
         </item>
         <item>
