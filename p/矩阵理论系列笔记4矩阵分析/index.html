@@ -1543,88 +1543,107 @@ J =
 </div>
 <p>故 $A^k$ 发散。</p>
 <p>例 4：判断矩阵幂级数的敛散性</p>
-<p>(1)
+<p>(1)</p>
+<div>
 \begin{equation}\nonumber
-\sum_{k=1}^{\infty} \frac{1}{k^2}
+\sum_{k=1}^{\infty} \frac{1}{k^2} 
 \begin{bmatrix}
-1 &amp; 1 \
-0 &amp; 1
+1 & 1 \\
+0 & 1
 \end{bmatrix}^k
-\end{equation}</p>
-<p>(2)
+\end{equation}
+</div>
+<p>(2)</p>
+<div>
 \begin{equation}\nonumber
-\sum_{k=1}^{\infty} \frac{1}{k^2}
+\sum_{k=1}^{\infty} \frac{1}{k^2} 
 \begin{bmatrix}
--1 &amp; 1 \
-0 &amp; -1
+-1 & 1 \\
+0 & -1
 \end{bmatrix}^k
-\end{equation}</p>
-<p>(3)
+\end{equation}
+</div>
+<p>(3)</p>
+<div>
 \begin{equation}\nonumber
-\sum_{k=1}^{\infty} \frac{1}{k^2}
+\sum_{k=1}^{\infty} \frac{1}{k^2} 
 \begin{bmatrix}
--1 &amp; 1 &amp; 0 \
-0 &amp; -1 &amp; 1 \
-0 &amp; 0 &amp; -1
+-1 & 1 & 0 \\
+0 & -1 & 1 \\
+0 & 0 & -1
 \end{bmatrix}^k
-\end{equation}</p>
-<p>(4)
+\end{equation}
+<p>(4)</p>
+<div>
 \begin{equation}\nonumber
-\sum_{k=1}^{\infty} \frac{1}{k^2}
+\sum_{k=1}^{\infty} \frac{1}{k^2} 
 \begin{bmatrix}
-1 &amp; 0 &amp; 0 \
-0 &amp; -1 &amp; 1 \
-0 &amp; 0 &amp; -1
+1 & 0 & 0 \\
+0 & -1 & 1 \\
+0 & 0 & -1
 \end{bmatrix}^k
-\end{equation}</p>
+\end{equation}
+</div>
 <p>解：(1)</p>
-<h1 id="endbmatrixk">\begin{equation}\nonumber
+<div>
+\begin{equation}\nonumber
 \sum_{k=1}^{\infty} \frac{1}{k^2}
 \begin{bmatrix}
-1 &amp; 1 \
-0 &amp; 1
+1 & 1 \\
+0 & 1
 \end{bmatrix}^k
-</h1><h1 id="endbmatrix">\sum_{k=1}^{\infty} \frac{1}{k^2}
+=
+\sum_{k=1}^{\infty} \frac{1}{k^2}
 \begin{bmatrix}
-1 &amp; k \
-0 &amp; 1
+1 & k \\
+0 & 1
 \end{bmatrix}
-</h1><p>\begin{bmatrix}
-\sum \frac{1}{k^2} &amp; \sum \frac{k}{k^2} \
-0 &amp; \sum \frac{1}{k^2}
+=
+\begin{bmatrix}
+\sum \frac{1}{k^2} & \sum \frac{k}{k^2} \\
+0 & \sum \frac{1}{k^2}
 \end{bmatrix}
-\end{equation}</p>
+\end{equation}
+</div>
 <p>因为 $\sum \frac{k}{k^2} = \sum \frac{1}{k}$ 发散，故级数发散。</p>
 <p>解：(2)</p>
-<h1 id="endbmatrixk-1">\begin{equation}\nonumber
-\sum_{k=1}^{\infty} \frac{1}{k^2}
-\begin{bmatrix}
--1 &amp; 1 \
-0 &amp; -1
-\end{bmatrix}^k
-</h1><p>\sum_{k=1}^{\infty} \frac{1}{k^2}
-\begin{bmatrix}
-(-1)^k &amp; k(-1)^{k-1} \
-0 &amp; (-1)^k
-\end{bmatrix}
-\end{equation}</p>
-<h1 id="beginequationnonumber">\begin{equation}\nonumber
-</h1><p>\begin{bmatrix}
-\sum \frac{(-1)^k}{k^2} &amp; \sum \frac{k(-1)^{k-1}}{k^2} \
-0 &amp; \sum \frac{(-1)^k}{k^2}
-\end{bmatrix}
-\Rightarrow \text{收敛}
-\end{equation}</p>
-<p>解：(3)</p>
-<p>原式：
+<div>
 \begin{equation}\nonumber
 \sum_{k=1}^{\infty} \frac{1}{k^2}
 \begin{bmatrix}
-(-1)^k &amp; k(-1)^{k-1} &amp; \frac{k(k-1)}{2}(-1)^{k-2} \
-0 &amp; (-1)^k &amp; k(-1)^{k-1} \
-0 &amp; 0 &amp; (-1)^k
+-1 & 1 \\
+0 & -1
+\end{bmatrix}^k
+=
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+(-1)^k & k(-1)^{k-1} \\
+0 & (-1)^k
 \end{bmatrix}
-\end{equation}</p>
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+=
+\begin{bmatrix}
+\sum \frac{(-1)^k}{k^2} & \sum \frac{k(-1)^{k-1}}{k^2} \\
+0 & \sum \frac{(-1)^k}{k^2}
+\end{bmatrix}
+\Rightarrow \text{收敛}
+\end{equation}
+</div>
+<p>解：(3)</p>
+<p>原式：</p>
+<div>
+\begin{equation}\nonumber
+\sum_{k=1}^{\infty} \frac{1}{k^2}
+\begin{bmatrix}
+(-1)^k & k(-1)^{k-1} & \frac{k(k-1)}{2}(-1)^{k-2} \\
+0 & (-1)^k & k(-1)^{k-1} \\
+0 & 0 & (-1)^k
+\end{bmatrix}
+\end{equation}
+</div>
 <p>展开为：</p>
 <div>
 \begin{equation}\nonumber
@@ -1638,32 +1657,38 @@ J =
 </div>
 <p>由于含有 $\sum \frac{(-1)^k}{k}$ 发散项，<strong>所以级数发散</strong>。</p>
 <p>解：(4)</p>
-<h1 id="endbmatrixk-2">\begin{equation}\nonumber
+<div>
+\begin{equation}\nonumber
 \sum_{k=1}^{\infty} \frac{1}{k^2}
 \begin{bmatrix}
-1 &amp; 0 &amp; 0 \
-0 &amp; -1 &amp; 1 \
-0 &amp; 0 &amp; -1
+1 & 0 & 0 \\
+0 & -1 & 1 \\
+0 & 0 & -1
 \end{bmatrix}^k
-</h1><p>\sum_{k=1}^{\infty} \frac{1}{k^2}
+=
+\sum_{k=1}^{\infty} \frac{1}{k^2}
 \begin{bmatrix}
-1 &amp; 0 &amp; 0 \
-0 &amp; (-1)^k &amp; k(-1)^{k-1} \
-0 &amp; 0 &amp; (-1)^k
+1 & 0 & 0 \\
+0 & (-1)^k & k(-1)^{k-1} \\
+0 & 0 & (-1)^k
 \end{bmatrix}
-\end{equation}</p>
-<h1 id="beginequationnonumber-1">\begin{equation}\nonumber
-</h1><p>\begin{bmatrix}
-\sum \frac{1}{k^2} &amp; 0 &amp; 0 \
-0 &amp; \sum \frac{(-1)^k}{k^2} &amp; \sum \frac{(-1)^k}{k} \
-0 &amp; 0 &amp; \sum \frac{(-1)^k}{k^2}
+\end{equation}
+</div>
+<div>
+\begin{equation}\nonumber
+=
+\begin{bmatrix}
+\sum \frac{1}{k^2} & 0 & 0 \\
+0 & \sum \frac{(-1)^k}{k^2} & \sum \frac{(-1)^k}{k} \\
+0 & 0 & \sum \frac{(-1)^k}{k^2}
 \end{bmatrix}
 \Rightarrow \text{条件收敛}
-\end{equation}</p>
-<p>例 5：设 $A \in \mathbb{C}^{n \times n}$，且 $\rho(A) &lt; 1$，求：
+\end{equation}
+</div>
+例 5：设 $A \in \mathbb{C}^{n \times n}$，且 $\rho(A) < 1$，求：
 \begin{equation}\nonumber
 \sum_{k=1}^{\infty} k^2 A^k
-\end{equation}</p>
+\end{equation}
 <p>解：</p>
 <p>考虑复变幂级数 $\sum_{k=1}^{\infty} k^2 z^k$，因为：
 \begin{equation}\nonumber
