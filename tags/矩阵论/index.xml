@@ -10249,15 +10249,1066 @@ f(A) = p(A) = \beta_0 I + \beta_1 A + \cdots + \beta_{l-1} A^{l-1}
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;注 2：&lt;/strong&gt;&lt;br&gt;
 以上步骤可视为对矩阵函数 $f(A)$ 的一种&lt;strong&gt;重新定义方式&lt;/strong&gt;。&lt;/p&gt;&lt;/blockquote&gt;
-</description>
+&lt;p&gt;例 5：&lt;/p&gt;
+&lt;p&gt;设&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+1 &amp; 4 \\
+3 &amp; 2
+\end{bmatrix}, \quad \text{求 } e^A
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;解：&lt;/p&gt;
+&lt;p&gt;由
+\begin{equation}\nonumber
+| \lambda I - A | = (\lambda - 5)(\lambda + 2)
+\Rightarrow m_A(\lambda) = (\lambda - 5)(\lambda + 2)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;设 $p(\lambda) = \beta_0 + \beta_1 \lambda$，令 $f(\lambda) = e^{\lambda}$，则有插值条件：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{cases}
+p(5) = f(5) = e^5 \\
+p(-2) = f(-2) = e^{-2}
+\end{cases}
+\Rightarrow
+\begin{cases}
+\beta_0 + 5 \beta_1 = e^5 \\
+\beta_0 - 2 \beta_1 = e^{-2}
+\end{cases}
+\Rightarrow
+\begin{cases}
+\beta_0 = \frac{1}{7} (2 e^5 + 5 e^{-2}) \\
+\beta_1 = \frac{1}{7} (e^5 - e^{-2})
+\end{cases}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;故：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f(A) = e^A = p(A) = \beta_0 I + \beta_1 A
+\end{equation}&lt;/p&gt;
+&lt;p&gt;展开得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+e^A =
+\frac{1}{7}
+\begin{bmatrix}
+3 e^5 + 4 e^{-2} &amp; 4 e^5 - 4 e^{-2} \\
+3 e^5 - 3 e^{-2} &amp; 4 e^5 + 3 e^{-2}
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;例 6：&lt;/p&gt;
+&lt;p&gt;设&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+2 &amp; 1 &amp; 4 \\
+0 &amp; 2 &amp; 0 \\
+0 &amp; 3 &amp; 1
+\end{bmatrix}, \quad \text{求 } \sin A
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;解：&lt;/p&gt;
+&lt;p&gt;计算可得 $A \sim \mathrm{diag} \lbrace 1,1, (\lambda - 2)^2, (\lambda - 1) \rbrace$，&lt;br&gt;
+故最小多项式为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+m_A(\lambda) = (\lambda - 2)^2 (\lambda - 1)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;设插值多项式：
+\begin{equation}\nonumber
+p(\lambda) = \beta_0 + \beta_1 \lambda + \beta_2 \lambda^2, \quad f(\lambda) = \sin \lambda
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由插值条件得到方程组：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{cases}
+p(1) = f(1) \Rightarrow \beta_0 + \beta_1 + \beta_2 = \sin 1 \\
+p(2) = f(2) \Rightarrow \beta_0 + 2\beta_1 + 4\beta_2 = \sin 2 \\
+p&#39;(2) = f&#39;(2) \Rightarrow \beta_1 + 4\beta_2 = \cos 2
+\end{cases}
+\Rightarrow
+\begin{cases}
+\beta_0 = 4 \sin 1 - 3 \sin 2 + 2 \cos 2 \\
+\beta_1 = -4 \sin 1 + 4 \sin 2 - 3 \cos 2 \\
+\beta_2 = \sin 1 - \sin 2 + \cos 2
+\end{cases}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;因此：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\sin A = p(A) = \beta_0 I + \beta_1 A + \beta_2 A^2
+\end{equation}&lt;/p&gt;
+&lt;p&gt;展开后：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\sin A =
+\begin{bmatrix}
+\sin 2 &amp; 12 \sin 1 - 12 \sin 2 + 13 \cos 2 &amp; -4 \sin 1 + 4 \sin 2 \\
+0 &amp; \sin 2 &amp; 0 \\
+0 &amp; -3 \sin 1 + 3 \sin 2 &amp; \sin 1
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;关于谱上一致多项式的进一步说明&#34;&gt;关于谱上一致多项式的进一步说明：
+&lt;/h3&gt;&lt;p&gt;设
+\begin{equation}\nonumber
+p(\lambda) = \beta_0 + \beta_1 \lambda + \cdots + \beta_{l-1} \lambda^{l-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;共 $l$ 个系数 $\beta_0, \beta_1, \ldots, \beta_{l-1}$。&lt;/p&gt;
+&lt;p&gt;由以下 $l$ 个独立条件唯一确定这些系数：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+p^{(j)}(\lambda_i) = f^{(j)}(\lambda_i),\quad j = 0, \ldots, m_i - 1;\quad i = 1, \ldots, s
+\end{equation}&lt;/p&gt;
+&lt;p&gt;则矩阵函数为：
+\begin{equation}\nonumber
+f(A) = p(A) = \beta_0 I + \beta_1 A + \cdots + \beta_{l-1} A^{l-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;若考虑 $At$ 情形，即函数带参数 $t$：&lt;/p&gt;
+&lt;p&gt;令
+\begin{equation}\nonumber
+p_t(\lambda) = \alpha_0(t) + \alpha_1(t) \lambda + \cdots + \alpha_{l-1}(t) \lambda^{l-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;共 $l$ 个系数，$\alpha_0(t), \alpha_1(t), \ldots, \alpha_{l-1}(t)$ 均为 $t$ 的函数。&lt;br&gt;
+这些函数由以下 $l$ 个独立条件唯一确定：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+p_t^{(j)}(\lambda_i) = t^j f^{(j)}(\lambda_i),\quad j = 0, \ldots, m_i - 1;\quad i = 1, \ldots, s
+\end{equation}&lt;/p&gt;
+&lt;p&gt;于是：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+f(At) = \alpha_0(t) I + \alpha_1(t) A + \cdots + \alpha_{l-1}(t) A^{l-1}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;例 7：&lt;/p&gt;
+&lt;p&gt;设&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+2 &amp; 1 &amp; 0 \\
+0 &amp; 2 &amp; 1 \\
+0 &amp; 0 &amp; 2
+\end{bmatrix}, \quad \text{求 } e^{At}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;解：&lt;/p&gt;
+&lt;p&gt;由 $A \sim \mathrm{diag} \lbrace 1,1, (\lambda - 2)^3 \rbrace$ 可知：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+m_A(\lambda) = (\lambda - 2)^3
+\end{equation}&lt;/p&gt;
+&lt;p&gt;设插值多项式为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+p_t(\lambda) = \alpha_0(t) + \alpha_1(t) \lambda + \alpha_2(t) \lambda^2, \quad f(\lambda) = e^{\lambda}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由以下条件确定：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{cases}
+p_t(2) = f(2t) = e^{2t} \\
+p_t&#39;(2) = t f&#39;(2t) = t e^{2t} \\
+p_t&#39;&#39;(2) = t^2 f&#39;&#39;(2t) = 4 t^2 e^{2t}
+\end{cases}
+\Rightarrow
+\begin{cases}
+\alpha_0(t) + 2 \alpha_1(t) + 4 \alpha_2(t) = e^{2t} \\
+\alpha_1(t) + 4 \alpha_2(t) = t e^{2t} \\
+2 \alpha_2(t) = t^2 e^{2t}
+\end{cases}
+\Rightarrow
+\begin{cases}
+\alpha_2(t) = \frac{t^2 e^{2t}}{2} \\
+\alpha_1(t) = e^{2t}(t - t^2) \\
+\alpha_0(t) = e^{2t}(1 - 2t + 2t^2)
+\end{cases}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;因此，&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+e^{At} = p_t(A) = \alpha_0(t) I + \alpha_1(t) A + \alpha_2(t) A^2
+\end{equation}&lt;/p&gt;
+&lt;p&gt;展开表达为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+e^{At} = e^{2t} \left( (1 - 2t + 2t^2) I + (t - t^2) A + \frac{t^2}{2} A^2 \right)
+\end{equation}&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;矩阵函数的应用&#34;&gt;矩阵函数的应用
+&lt;/h2&gt;&lt;h3 id=&#34;定义-1函数矩阵&#34;&gt;定义 1：函数矩阵
+&lt;/h3&gt;&lt;p&gt;以变量 $t$ 的函数为元素的矩阵
+\begin{equation}\nonumber
+A(t) = (a_{ij}(t))_{m \times n}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;称为&lt;strong&gt;函数矩阵&lt;/strong&gt;，若每个 $a_{ij}(t)$ 在区间 $[a, b]$ 上是连续、可微或可积的，&lt;br&gt;
+则称 $A(t)$ 在 $[a, b]$ 上连续、可微、可积。定义如下：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;导数定义：&lt;/strong&gt;
+\begin{equation}\nonumber
+A&amp;rsquo;(t) = \frac{d}{dt} A(t) = \left( \frac{d}{dt} a_{ij}(t) \right)_{m \times n}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;积分定义：&lt;/strong&gt;
+\begin{equation}\nonumber
+\int_a^b A(t),dt = \left( \int_a^b a_{ij}(t),dt \right)_{m \times n}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;例 1：&lt;/p&gt;
+&lt;p&gt;求矩阵函数&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A(t) =
+\begin{bmatrix}
+\sin t &amp; \cos t &amp; t \\
+e^t &amp; e^{2t} &amp; e^{3t} \\
+0 &amp; 1 &amp; t^2
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;p&gt;的导数。&lt;/p&gt;
+&lt;p&gt;解：&lt;/p&gt;
+&lt;p&gt;对 $A(t)$ 按元素求导，得到：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\frac{d}{dt} A(t) =
+\begin{bmatrix}
+\cos t &amp; -\sin t &amp; 1 \\
+e^t &amp; 2e^{2t} &amp; 3e^{3t} \\
+0 &amp; 0 &amp; 2t
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+&lt;h3 id=&#34;命题-1&#34;&gt;命题 1
+&lt;/h3&gt;&lt;p&gt;设 $A(t), B(t)$ 为适当阶的可微矩阵，则：&lt;/p&gt;
+&lt;p&gt;1）加法法则：
+\begin{equation}\nonumber
+\frac{d}{dt}(A(t) + B(t)) = \frac{d}{dt} A(t) + \frac{d}{dt} B(t)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;2）数乘法则（$\lambda(t)$ 为可微函数）：
+\begin{equation}\nonumber
+\frac{d}{dt}(\lambda(t) A(t)) = \frac{d\lambda(t)}{dt} A(t) + \lambda(t) \frac{d}{dt} A(t)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;3）乘积法则：
+\begin{equation}\nonumber
+\frac{d}{dt}(A(t) B(t)) = \left( \frac{d}{dt} A(t) \right) B(t) + A(t) \left( \frac{d}{dt} B(t) \right)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;4）链式法则：若 $u = f(t)$ 可微，则
+\begin{equation}\nonumber
+\frac{d}{dt} A(u) = f&amp;rsquo;(t) \frac{d}{du} A(u)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;5）逆矩阵导数公式：若 $A^{-1}(t)$ 是可微矩阵，则
+\begin{equation}\nonumber
+\frac{d}{dt} A^{-1}(t) = -A^{-1}(t) \frac{d}{dt} A(t) A^{-1}(t)
+\end{equation}&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;命题-2&#34;&gt;命题 2
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{n \times n}$，则：&lt;/p&gt;
+&lt;p&gt;1）
+\begin{equation}\nonumber
+\frac{d}{dt} e^{At} = A e^{At} = e^{At} A
+\end{equation}&lt;/p&gt;
+&lt;p&gt;2）
+\begin{equation}\nonumber
+\frac{d}{dt} \sin(At) = A \cos(At) = (\cos(At)) A
+\end{equation}&lt;/p&gt;
+&lt;p&gt;3）
+\begin{equation}\nonumber
+\frac{d}{dt} \cos(At) = -A \sin(At) = -(\sin(At)) A
+\end{equation}&lt;/p&gt;
+&lt;p&gt;证明（仅证 1）：&lt;/p&gt;
+&lt;p&gt;由于
+\begin{equation}\nonumber
+e^{At} = \sum_{k=0}^{\infty} \frac{t^k}{k!} A^k
+\end{equation}&lt;/p&gt;
+&lt;p&gt;可得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\frac{d}{dt} e^{At} = \frac{d}{dt} \left( \sum_{k=0}^{\infty} \frac{t^k}{k!} A^k \right)
+= \sum_{k=1}^{\infty} \frac{t^{k-1}}{(k-1)!} A^k = A \sum_{k=0}^{\infty} \frac{t^k}{k!} A^k = A e^{At}
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;命题-3&#34;&gt;命题 3
+&lt;/h3&gt;&lt;p&gt;设 $A(t), B(t)$ 是 $[a, b]$ 上适当阶的可积矩阵，$\lambda \in \mathbb{C}$，则：&lt;/p&gt;
+&lt;p&gt;1）
+\begin{equation}\nonumber
+\int_a^b (A(t) + B(t)),dt = \int_a^b A(t),dt + \int_a^b B(t),dt
+\end{equation}&lt;/p&gt;
+&lt;p&gt;2）
+\begin{equation}\nonumber
+\int_a^b \lambda A(t),dt = \lambda \int_a^b A(t),dt
+\end{equation}&lt;/p&gt;
+&lt;p&gt;3）若 $A(t)$ 在 $[a, b]$ 连续，则对任意 $t \in (a, b)$ 有：
+\begin{equation}\nonumber
+\frac{d}{dt} \left( \int_a^t A(\tau),d\tau \right) = A(t)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;4）若 $A(t)$ 在 $[a, b]$ 可微，则有（Newton-Leibniz公式）：
+\begin{equation}\nonumber
+\int_a^b A&amp;rsquo;(t),dt = A(b) - A(a)
+\end{equation}&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;求解一阶线性常系数微分方程&#34;&gt;求解一阶线性常系数微分方程
+&lt;/h2&gt;&lt;h3 id=&#34;一求解一阶线性常系数微分方程组&#34;&gt;一、求解一阶线性常系数微分方程组
+&lt;/h3&gt;&lt;p&gt;设微分方程组如下：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\left\lbrace
+\begin{aligned}
+\frac{dx_1(t)}{dt} &amp;amp;= a_{11}x_1(t) + \cdots + a_{1n}x_n(t) + f_1(t) \
+&amp;amp;\quad \vdots \
+\frac{dx_n(t)}{dt} &amp;amp;= a_{n1}x_1(t) + \cdots + a_{nn}x_n(t) + f_n(t)
+\end{aligned}
+\right.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;满足初始条件 $x_i(t_0) = c_i,\ i = 1, \cdots, n$&lt;/p&gt;
+&lt;p&gt;由微分方程的理论知：上述方程的解是存在的、稳定的，且满足初始条件的解是唯一的。&lt;/p&gt;
+&lt;p&gt;令 $A = (a_{ij})_{n \times n},\ c = (c_1, \cdots, c_n)^T,\ x(t) = (x_1(t), \cdots, x_n(t))^T,\ f(t) = (f_1(t), \cdots, f_n(t))^T$&lt;/p&gt;
+&lt;p&gt;则上述方程可写为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\left\lbrace
+\begin{aligned}
+\frac{dx(t)}{dt} &amp;amp;= Ax(t) + f(t) \
+x(t_0) &amp;amp;= c
+\end{aligned}
+\right.
+\end{equation}&lt;/p&gt;
+&lt;p&gt;由下式计算：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\frac{d}{dt}\left(e^{-At}x(t)\right)
+= -Ae^{-At}x(t) + e^{-At} \frac{dx(t)}{dt}
+= e^{-At} \left( \frac{dx(t)}{dt} - Ax(t) \right)
+= e^{-At} f(t)
+\end{equation}
+由上式两边积分可得：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+e^{-At}x(t) - e^{-At_0}x(t_0) = \int_{t_0}^{t} e^{-A\tau} f(\tau) d\tau
+\end{equation}&lt;/p&gt;
+&lt;p&gt;于是方程组的解为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+x(t) = e^{A(t - t_0)}c + e^{At} \int_{t_0}^{t} e^{-A\tau} f(\tau) d\tau
+\end{equation}&lt;/p&gt;
+&lt;p&gt;特别地，当 $f(x) = 0$ 时，即齐次线性方程组的解为：&lt;/p&gt;
+&lt;p&gt;\begin{equation}\nonumber
+x(t) = e^{A(t - t_0)}c
+\end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;结论：要求方程组的解，主要是求 $e^{At}$。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;例2&#34;&gt;例2
+&lt;/h3&gt;&lt;p&gt;设&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = 
+\begin{bmatrix}
+2 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 1 \\
+1 &amp; -1 &amp; 3
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+求解 
+\begin{equation}\nonumber
+\frac{d x(t)}{dt} = A x(t) + f(t), \quad x(t_0) = x_0
+\end{equation}
+其中 $x(t) = (x_1(t), x_2(t), x_3(t))^T,\ x_0 = (1, 0, -1)^T = x(0),\ f(t) = (1, -t, t)^T$
+&lt;hr&gt;
+&lt;h3 id=&#34;解-1&#34;&gt;解：
+&lt;/h3&gt;&lt;p&gt;先计算 $e^{At}$，由 $\lvert \lambda I - A \rvert \cong$&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{bmatrix}
+1 &amp; \lambda - 2 &amp; 0 \\
+0 &amp; &amp; \\
+&amp; &amp; (\lambda - 2)^2
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+得最小多项式 $m_A(\lambda) = (\lambda - 2)^2$
+&lt;hr&gt;
+&lt;p&gt;设 $p_t(\lambda) = \alpha_0(t) + \alpha_1(t)\lambda,\quad g(\lambda) = e^{\lambda t}$，则&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\left\{
+\begin{aligned}
+p_t(2) &amp;= g(2t) = \alpha_0(t) + 2\alpha_1(t) = e^{2t} \\
+p_t&#39;(2) &amp;= t g&#39;(2t) = \alpha_1(t) = t e^{2t}
+\end{aligned}
+\right.
+\end{equation}
+&lt;/div&gt;
+解得 
+&lt;div&gt;
+\begin{equation}\nonumber
+\alpha_0(t) = (1 - 2t) e^{2t},\quad \alpha_1(t) = t e^{2t}
+\end{equation}
+&lt;/div&gt;
+从而得 
+&lt;div&gt;
+\begin{equation}\nonumber
+e^{At} = p_t(A) = \alpha_0(t) I + \alpha_1(t) A = e^{2t}
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+t &amp; 1 - t &amp; t \\
+- t &amp; t &amp; 1 + t
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;
+所以定解为：
+&lt;p&gt;\begin{equation}\nonumber
+x(t) = e^{At} x_0 + \int_{0}^{t} e^{A(t - \tau)} f(\tau) d\tau
+\end{equation}&lt;/p&gt;
+&lt;p&gt;继续求：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\int_0^t e^{A(t - \tau)} f(\tau) d\tau 
+= e^{2t}
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+t &amp; 1 - t &amp; t \\
+- t &amp; t &amp; 1 + t
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+0 \\
+-1
+\end{bmatrix}
++ \int_0^t e^{2(t - \tau)} 
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+t - \tau &amp; 1 - t + \tau &amp; t \\
+- t + \tau &amp; t - \tau &amp; 1 + t
+\end{bmatrix}
+\begin{bmatrix}
+0 \\
+- \tau \\
+\tau
+\end{bmatrix}
+d\tau
+\end{equation}
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+=e^{2t}
+\begin{bmatrix}
+3/2 - 1/2 e^{-2t}\\
+\frac{1}{2}(2t + 1 ) + (-2t^2 - 2t - 1/2)e^{-2t} \\
+(-2t^2 -3t -1)e^{-2t} - t
+\end{bmatrix}
+\end{equation}
+&lt;/div&gt;</description>
         </item>
         <item>
-        <title>矩阵理论系列笔记5：</title>
-        <link>https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B05/</link>
+        <title>矩阵理论系列笔记5：矩阵的直积</title>
+        <link>https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B05%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B4%E7%A7%AF/</link>
         <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B05/</guid>
-        <description></description>
+        <guid>https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B05%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B4%E7%A7%AF/</guid>
+        <description>&lt;h2 id=&#34;直积的定义与性质&#34;&gt;直积的定义与性质
+&lt;/h2&gt;&lt;h3 id=&#34;定义kronecker-积&#34;&gt;定义（Kronecker 积）
+&lt;/h3&gt;&lt;p&gt;设 $A = (a_{ij}) \in \mathbb{C}^{m \times n}$，$B = (b_{ij}) \in \mathbb{C}^{p \times q}$，称如下分块矩阵：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A \otimes B =
+\begin{bmatrix}
+a_{11}B &amp; a_{12}B &amp; \cdots &amp; a_{1n}B \\
+a_{21}B &amp; a_{22}B &amp; \cdots &amp; a_{2n}B \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{m1}B &amp; a_{m2}B &amp; \cdots &amp; a_{mn}B
+\end{bmatrix} \in \mathbb{C}^{mp \times nq}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;为 $A$ 与 $B$ 的 &lt;strong&gt;Kronecker 积&lt;/strong&gt;（或直积、张量积），简记为 $A \otimes B = (a_{ij}B)$。&lt;/p&gt;
+&lt;p&gt;例1&lt;/p&gt;
+&lt;p&gt;计算 $A \otimes B$ 和 $B \otimes A$，其中：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A = 
+\begin{bmatrix}
+a &amp; b \\
+c &amp; d
+\end{bmatrix}, \quad
+B =
+\begin{bmatrix}
+2 \\
+3
+\end{bmatrix}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;解：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A \otimes B =
+\begin{bmatrix}
+2a &amp; 2b \\
+3a &amp; 3b \\
+2c &amp; 2d \\
+3c &amp; 3d
+\end{bmatrix}, \quad
+B \otimes A =
+\begin{bmatrix}
+2a &amp; 2b \\
+2c &amp; 2d \\
+3a &amp; 3b \\
+3c &amp; 3d
+\end{bmatrix}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;由此例看出，尽管 $A \otimes B$ 和 $B \otimes A$ 是同阶矩阵，但一般来说 $A \otimes B \ne B \otimes A$，即 &lt;strong&gt;Kronecker 积不满足交换律&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;定理-1&#34;&gt;定理 1
+&lt;/h3&gt;&lt;p&gt;由 Kronecker 积定义可证：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;两个上三角矩阵的直积也是上三角矩阵；&lt;/li&gt;
+&lt;li&gt;两个对角矩阵的直积也是对角矩阵；&lt;/li&gt;
+&lt;li&gt;
+&lt;div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+I_n \otimes I_m = I_m \otimes I_n = I_{mn}
+\end{equation}\nonumber&lt;/p&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;命题-1矩阵直积分块运算规律&#34;&gt;命题 1：矩阵直积分块运算规律
+&lt;/h3&gt;&lt;p&gt;（1）&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{bmatrix}
+A &amp; B \\
+C &amp; D
+\end{bmatrix}
+\otimes F =
+\begin{bmatrix}
+A \otimes F &amp; B \otimes F \\
+C \otimes F &amp; D \otimes F
+\end{bmatrix}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;（2）设 $\alpha$ 是列向量，且 $B = (\beta_1, \beta_2, \cdots, \beta_5)$，则&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\alpha \otimes B = (\alpha \otimes \beta_1, \alpha \otimes \beta_2, \cdots, \alpha \otimes \beta_5)
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;（3）设 $A = (\alpha_1, \alpha_2, \cdots, \alpha_t)&lt;em&gt;{n \times t}$，$B = (\beta_1, \beta_2, \cdots, \beta_s)&lt;/em&gt;{p \times s}$，则&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A \otimes B = 
+(\alpha_1 \otimes \beta_1, \cdots, \alpha_1 \otimes \beta_s, \cdots, \alpha_t \otimes \beta_1, \cdots, \alpha_t \otimes \beta_s)
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;h3 id=&#34;命题-2直积的性质&#34;&gt;命题 2（直积的性质）
+&lt;/h3&gt;&lt;p&gt;矩阵的直积具有以下性质：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;对任意复数 $k$，$(kA) \otimes B = A \otimes (kB) = k(A \otimes B)$；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$(A \otimes B)(C \otimes D) = (AC) \otimes (BD)$；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$A \otimes (B + C) = A \otimes B + A \otimes C$；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$(A \otimes B)^{H} = A^{H} \otimes B^{H}$；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;若矩阵 $A$ 和 $C$、矩阵 $B$ 和 $D$ 均可相乘，则&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+(A \otimes B)(C \otimes D) = (AC) \otimes (BD)
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$\text{rank}(A \otimes B) = \text{rank}(A) \text{rank}(B)$；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$(A \otimes B)^{T} = A^{T} \otimes B^{T}$；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;设 $A$、$B$ 分别是 $m$、$n$ 阶可逆矩阵，则&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+(A \otimes B)^{-1} = A^{-1} \otimes B^{-1}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;设 $A = (a_{ij})&lt;em&gt;{m \times m}$，$B = B&lt;/em&gt;{n \times n}$，则：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\text{tr}(A \otimes B) = \text{tr}(A) \cdot \text{tr}(B)
+\end{equation}\nonumber&lt;/p&gt;
+  &lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\begin{equation}\nonumber
+\det(A \otimes B) = \det(A)^n \cdot \det(B)^m
+\end{equation}\nonumber&lt;/p&gt;
+  &lt;/div&gt;
+&lt;p&gt;补充性质与吸收率推广&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：设 $A$ 是 $m$ 阶方阵，$B$ 是 $n$ 阶方阵，则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$(A \otimes B)^k = A^k \otimes B^k, \quad k = 1,2,\ldots$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+(A \otimes B)(I_n \otimes I_m B) = (I_m \otimes B)(A \otimes I_n) = A \otimes B
+\end{equation}\nonumber&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;即 $(A \otimes I_n)$ 与 $(I_m \otimes B)$ 可交换。&lt;/p&gt;
+&lt;p&gt;吸收率可推广为：&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+(A_1 \otimes B_1)(A_2 \otimes B_2) \cdots (A_k \otimes B_k) =
+(A_1 A_2 \cdots A_k) \otimes (B_1 B_2 \cdots B_k)
+\end{equation}\nonumber&lt;/p&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;
+&lt;div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;\begin{equation}\nonumber
+(A_1 \otimes A_2 \otimes \cdots \otimes A_k)(B_1 \otimes B_2 \otimes \cdots \otimes B_k) =
+(A_1 B_1 \otimes A_2 B_2 \otimes \cdots \otimes A_k B_k)
+\end{equation}\nonumber&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;证明（命题 2 中性质 6）&lt;/p&gt;
+&lt;p&gt;设 $A = A_{m \times n},\ B = B_{p \times q}$，$\text{rank}(A) = r$，$\text{rank}(B) = s$。&lt;/p&gt;
+&lt;p&gt;则存在可逆矩阵 $P_i,\ Q_i\ (i = 1,2)$ 使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+P_1 A Q_1 = A_1 = 
+\begin{bmatrix}
+I_r &amp; 0 \\
+0 &amp; 0
+\end{bmatrix}, \quad
+P_2 B Q_2 = B_1 =
+\begin{bmatrix}
+I_s &amp; 0 \\
+0 &amp; 0
+\end{bmatrix}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;而 $A_1 \otimes B_1 =
+\left(
+\begin{bmatrix}
+I_r &amp;amp; 0 \
+0 &amp;amp; 0
+\end{bmatrix}
+\otimes B_1 \right) =
+\begin{bmatrix}
+I_r \otimes B_1 &amp;amp; 0 \
+0 &amp;amp; 0
+\end{bmatrix}$&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A_1 \otimes B_1 =
+\begin{bmatrix}
+I_r \otimes B_1 &amp; 0 \\
+0 &amp; 0
+\end{bmatrix}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;易得 $\text{rank}(A_1 \otimes B_1) = rs$。&lt;/p&gt;
+&lt;p&gt;由吸收率的注（3）得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+(P_1 \otimes P_2)(A \otimes B)(Q_1 \otimes Q_2)
+= (P_1 A Q_1) \otimes (P_2 B Q_2)
+= A_1 \otimes B_1
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;所以&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\text{rank}(A \otimes B) = \text{rank}(A_1 \otimes B_1) = rs
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;结论得证。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;例 2&lt;/p&gt;
+&lt;p&gt;设 $A$ 是 $m$ 阶方阵，$B$ 是 $n$ 阶方阵，证明：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+e^{A \otimes I_n} = e^A \otimes I_n, \quad
+e^{I_m \otimes B} = I_m \otimes e^B
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：由注（1）得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+e^{A \otimes I_n} = \sum_{k=0}^{\infty} \frac{1}{k!}(A \otimes I_n)^k
+= \sum_{k=0}^{\infty} \frac{1}{k!}(A^k \otimes I_n)
+= \left( \sum_{k=0}^{\infty} \frac{1}{k!} A^k \right) \otimes I_n = e^A \otimes I_n
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：同理可证&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+e^{(A \otimes I_n)(I_m \otimes B)} = e^A \otimes e^B
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;定理-2&#34;&gt;定理 2
+&lt;/h3&gt;&lt;p&gt;设 $f(x, y) = \sum_{i,j=0}^{k} c_{ij} x^i y^j$ 是变量 $x, y$ 的复二元多项式，对任意矩阵 $A \in \mathbb{C}^{m \times m}$ 和 $B \in \mathbb{C}^{n \times n}$，定义矩阵：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+f(A, B) = \sum_{i,j} c_{ij} \left( A^i \otimes B^j \right) \in \mathbb{C}^{mn \times mn}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;式中，$A^0 = I_m$，$B^0 = I_n$。&lt;/p&gt;
+&lt;p&gt;若 $A$ 和 $B$ 的特征值分别为 $\lambda_1, \ldots, \lambda_m$ 和 $\mu_1, \ldots, \mu_n$，则 $f(A, B)$ 的特征值为 $f(\lambda_i, \mu_j)$，其中 $i = 1, \ldots, m$，$j = 1, \ldots, n$。&lt;/p&gt;
+&lt;p&gt;设&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+f(x, y) = \sum_{i,j=0}^{k} c_{ij} x^i y^j
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;定义矩阵函数：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+f(A, B) = \sum_{i,j=0}^{k} c_{ij} \left( A^i \otimes B^j \right) \in \mathbb{C}^{mn \times mn}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;若 $f(x, y) = xy$，则 $f(A, B) = A \otimes B$；&lt;/li&gt;
+&lt;li&gt;若 $f(x, y) = x y^0 + x^0 y$，则
+&lt;div&gt;
+\begin{equation}\nonumber
+f(A, B) = A \otimes I_n + I_m \otimes B
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;推论 2&lt;/p&gt;
+&lt;p&gt;设 $A \in \mathbb{C}^{m \times m}$，$B \in \mathbb{C}^{n \times n}$，其特征值分别为 $\lambda_1, \ldots, \lambda_m$ 和 $\mu_1, \ldots, \mu_n$，则有：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$A \otimes B$ 的特征值为 $\lambda_i \mu_j,\ i = 1, \ldots, m,\ j = 1, \ldots, n$；&lt;/li&gt;
+&lt;li&gt;$A \otimes I_n \pm I_m \otimes B$ 的特征值为 $\lambda_i \pm \mu_j,\ i = 1, \ldots, m,\ j = 1, \ldots, n$。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;由（1）也可得&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\det(A \otimes B) = \det(A)^n \cdot \det(B)^m
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$A \otimes I_n \pm I_m \otimes B$ 可逆 $\Leftrightarrow \lambda_i \pm \mu_j \ne 0$；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$A \otimes I_n \pm I_m \otimes B^T$ 可逆 $\Leftrightarrow \lambda_i \pm \mu_j \ne 0$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;直积的特征向量&#34;&gt;直积的特征向量
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times m}$，$B \in \mathbb{C}^{n \times n}$，$x \in \mathbb{C}^m$ 是 $A$ 关于特征值 $\lambda$ 的特征向量，$y \in \mathbb{C}^n$ 是 $B$ 关于特征值 $\mu$ 的特征向量，则有：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$x \otimes y$ 是 $A \otimes B$ 关于特征值 $\lambda \mu$ 的特征向量；&lt;/li&gt;
+&lt;li&gt;$x \otimes y$ 是 $A \otimes I_n + I_m \otimes B$ 关于特征值 $\lambda + \mu$ 的特征向量。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;证明：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（1）因为 $x \ne 0,\ y \ne 0$，所以 $x \otimes y \ne 0$，且：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+(A \otimes B)(x \otimes y) = (Ax \otimes By) = (\lambda x \otimes \mu y) = \lambda \mu (x \otimes y)
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;（2）
+因为：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+(A \otimes I_n)(x \otimes y) = (Ax \otimes I_n y) = \lambda (x \otimes y)
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+(I_m \otimes B)(x \otimes y) = (I_m x \otimes By) = \mu (x \otimes y)
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;所以：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+(A \otimes I_n + I_m \otimes B)(x \otimes y) 
+= (A \otimes I_n)(x \otimes y) + (I_m \otimes B)(x \otimes y) 
+= (\lambda + \mu)(x \otimes y)
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;例 4&lt;/p&gt;
+&lt;p&gt;设 $A \in \mathbb{C}^{m \times m}$，$B \in \mathbb{C}^{n \times n}$ 都可对角化，则 $A \otimes I_n + I_m \otimes B$ 也可对角化。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：由题设存在可逆矩阵 $P$ 与 $Q$ 使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+P^{-1} A P = A_1 = \text{diag}(\lambda_1, \ldots, \lambda_m), \quad
+Q^{-1} B Q = B_1 = \text{diag}(\mu_1, \ldots, \mu_n)
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;所以：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+(P \otimes Q)^{-1} (A \otimes I_n + I_m \otimes B)(P \otimes Q)
+= (A_1 \otimes I_n) + (I_m \otimes B_1)
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+= \text{diag}(\lambda_1 I_n + B_1, \lambda_2 I_n + B_1, \ldots, \lambda_m I_n + B_1)
+= \text{diag}(\lambda_1 + \mu_1, \ldots, \lambda_1 + \mu_n, \ldots, \lambda_m + \mu_1, \ldots, \lambda_m + \mu_n)
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;拉直与矩阵方程&#34;&gt;拉直与矩阵方程
+&lt;/h2&gt;&lt;h3 id=&#34;定义-1行拉直&#34;&gt;定义 1（行拉直）
+&lt;/h3&gt;&lt;p&gt;设 $A = (a_{ij}) \in \mathbb{C}^{m \times n}$，并记 $a_i = \lbrace a_{i1}, a_{i2}, \cdots, a_{in} \rbrace^T,\ i = 1, 2, \cdots, m$，令：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\vec{A} =
+\begin{bmatrix}
+a_1 \\
+a_2 \\
+\vdots \\
+a_m
+\end{bmatrix}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;则称 $\vec{A}$ 为矩阵 $A$ 的&lt;strong&gt;行拉直&lt;/strong&gt;（或按行展开成列向量）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;性质-1线性性质&#34;&gt;性质 1（线性性质）
+&lt;/h3&gt;&lt;p&gt;设 $A, B \in \mathbb{C}^{m \times n}$，$k$ 为常数，则：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\vec{A + B} = \vec{A} + \vec{B}, \quad
+\vec{kA} = k \vec{A}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;性质-2求导性质&#34;&gt;性质 2（求导性质）
+&lt;/h3&gt;&lt;p&gt;设 $A(t) = (a_{ij}(t)) \in \mathbb{C}^{m \times n}$，则：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\vec{\frac{d A(t)}{dt}} = \frac{d \vec{A}(t)}{dt}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;h3 id=&#34;定理-1拉直公式&#34;&gt;定理 1（拉直公式）
+&lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，$B \in \mathbb{C}^{n \times p}$，$C \in \mathbb{C}^{p \times q}$，则有：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\overrightarrow{ABC} = (A \otimes C^T) \vec{B}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;证明：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设 $A = (a_{ij})&lt;em&gt;{m \times n}$，$B = (b&lt;/em&gt;{ij})&lt;em&gt;{n \times p}$，$C = (c&lt;/em&gt;{ij})_{p \times q}$，则&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+B = (b_{ij}) = 
+\begin{bmatrix}
+B_1 \\
+\vdots \\
+B_n
+\end{bmatrix}, \quad
+\vec{B} =
+\begin{bmatrix}
+B_1^T \\
+\vdots \\
+B_n^T
+\end{bmatrix}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;计算：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+ABC =
+\begin{bmatrix}
+(a_{11}B_1 + \cdots + a_{1n}B_n)C \\
+\vdots \\
+(a_{m1}B_1 + \cdots + a_{mn}B_n)C
+\end{bmatrix}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;从而，&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\overrightarrow{ABC} =
+\begin{bmatrix}
+C^T (a_{11}B_1^T + \cdots + a_{1n}B_n^T) \\
+\vdots \\
+C^T (a_{m1}B_1^T + \cdots + a_{mn}B_n^T)
+\end{bmatrix}
+=
+\begin{bmatrix}
+a_{11} C^T &amp; \cdots &amp; a_{1n} C^T \\
+\vdots &amp; \ddots &amp; \vdots \\
+a_{m1} C^T &amp; \cdots &amp; a_{mn} C^T
+\end{bmatrix}
+\begin{bmatrix}
+B_1^T \\
+\vdots \\
+B_n^T
+\end{bmatrix}
+= (A \otimes C^T) \vec{B}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;推论-1&#34;&gt;推论 1
+&lt;/h3&gt;&lt;p&gt;设 $A = (a_{ij})&lt;em&gt;{m \times m}$，$X = (x&lt;/em&gt;{ij})&lt;em&gt;{m \times n}$，$B = (b&lt;/em&gt;{ij})_{n \times n}$，则有：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\overrightarrow{AX} = (A \otimes I_n) \vec{X}, \quad
+\overrightarrow{XB} = (I_m \otimes B^T) \vec{X}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\overrightarrow{AX + XB} = (A \otimes I_n + I_m \otimes B^T) \vec{X}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：由&lt;br&gt;
+$AX = AXI_n,\ XB = I_m XB$，再由拉直公式可得。&lt;/p&gt;
+&lt;p&gt;例 3&lt;/p&gt;
+&lt;p&gt;设&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+-2 &amp; 0 \\
+0 &amp; 3
+\end{bmatrix}, \quad
+B =
+\begin{bmatrix}
+1 &amp; -1 \\
+-1 &amp; 1
+\end{bmatrix}, \quad
+D =
+\begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{bmatrix}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;求解矩阵方程 $AX + XB = D$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解&lt;/strong&gt;：$A$ 的特征值为 $-2, 3$，$B$ 的特征值为 $1, 1$，所以方程有唯一解。&lt;/p&gt;
+&lt;p&gt;将方程拉直得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+(A \otimes I_n + I_m \otimes B^T)\vec{X} = \vec{D}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;即：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{bmatrix}
+-1 &amp; 0 &amp; 0 &amp; 0 \\
+-1 &amp; -4 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 4 \\
+0 &amp; 0 &amp; -1 &amp; -1
+\end{bmatrix}
+\vec{X} =
+\begin{bmatrix}
+0 \\
+1 \\
+1 \\
+0
+\end{bmatrix}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;解得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\vec{X} =
+\begin{bmatrix}
+0 \\
+-1 \\
+\frac{1}{4} \\
+\frac{1}{16}
+\end{bmatrix}, \quad
+X =
+\begin{bmatrix}
+0 &amp; -1 \\
+\frac{1}{4} &amp; \frac{1}{16}
+\end{bmatrix}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;例 4&lt;/p&gt;
+&lt;p&gt;设 $A \in \mathbb{C}^{m \times m}$，$B \in \mathbb{C}^{n \times n}$，$D \in \mathbb{C}^{m \times n}$，若 $A$ 与 $B$ 没有相同特征值，证明：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+\begin{bmatrix}
+A &amp; D \\
+0 &amp; B
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+A &amp; 0 \\
+0 &amp; B
+\end{bmatrix}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：令&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+P =
+\begin{bmatrix}
+I_m &amp; X \\
+0 &amp; I_n
+\end{bmatrix}, \quad
+P^{-1} =
+\begin{bmatrix}
+I_m &amp; -X \\
+0 &amp; I_n
+\end{bmatrix}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;则有：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+P
+\begin{bmatrix}
+A &amp; D \\
+0 &amp; B
+\end{bmatrix}
+P^{-1}
+=
+\begin{bmatrix}
+A &amp; D + XB - AX \\
+0 &amp; B
+\end{bmatrix}
+\end{equation}\nonumber
+&lt;/div&gt;
+&lt;p&gt;由定理 3，$D + XB - AX = 0$ 有唯一解，所以 $X$ 存在，使得：&lt;/p&gt;
+&lt;div&gt;
+\begin{equation}\nonumber
+P
+\begin{bmatrix}
+A &amp; D \\
+0 &amp; B
+\end{bmatrix}
+P^{-1}
+=
+\begin{bmatrix}
+A &amp; 0 \\
+0 &amp; B
+\end{bmatrix}
+\end{equation}\nonumber
+&lt;/div&gt;
+</description>
         </item>
         
     </channel>

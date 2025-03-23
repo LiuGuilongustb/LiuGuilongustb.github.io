@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="直积的定义与性质 定义（Kronecker 积） 设 $A = (a_{ij}) \\in \\mathbb{C}^{m \\times n}$，$B = (b_{ij}) \\in \\mathbb{C}^{p \\times q}$，称如下分块矩阵：\n\\begin{equation}\\nonumber A \\otimes B = \\begin{bmatrix} a_{11}B & a_{12}B & \\cdots & a_{1n}B \\\\ a_{21}B & a_{22}B & \\cdots & a_{2n}B \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ a_{m1}B & a_{m2}B & \\cdots & a_{mn}B \\end{bmatrix} \\in \\mathbb{C}^{mp \\times nq} \\end{equation}\\nonumber 为 $A$ 与 $B$ 的 Kronecker 积（或直积、张量积），简记为 $A \\otimes B = (a_{ij}B)$。\n">
+<title>矩阵理论系列笔记5：矩阵的直积</title>
+
+<link rel='canonical' href='https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B05%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B4%E7%A7%AF/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="矩阵理论系列笔记5：矩阵的直积">
+<meta property='og:description' content="直积的定义与性质 定义（Kronecker 积） 设 $A = (a_{ij}) \\in \\mathbb{C}^{m \\times n}$，$B = (b_{ij}) \\in \\mathbb{C}^{p \\times q}$，称如下分块矩阵：\n\\begin{equation}\\nonumber A \\otimes B = \\begin{bmatrix} a_{11}B & a_{12}B & \\cdots & a_{1n}B \\\\ a_{21}B & a_{22}B & \\cdots & a_{2n}B \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ a_{m1}B & a_{m2}B & \\cdots & a_{mn}B \\end{bmatrix} \\in \\mathbb{C}^{mp \\times nq} \\end{equation}\\nonumber 为 $A$ 与 $B$ 的 Kronecker 积（或直积、张量积），简记为 $A \\otimes B = (a_{ij}B)$。\n">
+<meta property='og:url' content='https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B05%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B4%E7%A7%AF/'>
+<meta property='og:site_name' content='刘贵泷的个人网页'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='矩阵论' /><meta property='article:published_time' content='2025-02-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-02-28T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="矩阵理论系列笔记5：矩阵的直积">
+<meta name="twitter:description" content="直积的定义与性质 定义（Kronecker 积） 设 $A = (a_{ij}) \\in \\mathbb{C}^{m \\times n}$，$B = (b_{ij}) \\in \\mathbb{C}^{p \\times q}$，称如下分块矩阵：\n\\begin{equation}\\nonumber A \\otimes B = \\begin{bmatrix} a_{11}B & a_{12}B & \\cdots & a_{1n}B \\\\ a_{21}B & a_{22}B & \\cdots & a_{2n}B \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ a_{m1}B & a_{m2}B & \\cdots & a_{mn}B \\end{bmatrix} \\in \\mathbb{C}^{mp \\times nq} \\end{equation}\\nonumber 为 $A$ 与 $B$ 的 Kronecker 积（或直积、张量积），简记为 $A \\otimes B = (a_{ij}B)$。\n">
+        
+
+
+
+<script>
+    window.MathJax = {
+      tex: {
+        tags: 'ams',  
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        packages: ['base', 'ams']
+        
+      },
+      options: {
+        
+        
+      }
+    };
+    </script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/image/avatar_hu_5fc70999b694beba.png" width="300"
+                            height="294" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">刘贵泷的个人网页</a></h1>
+            <h2 class="site-description">个人主页</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://bilibili.com'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://LiuGuilongustb.github.io/en/" >English</option>
+                                
+                                    <option value="https://LiuGuilongustb.github.io/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#直积的定义与性质">直积的定义与性质</a>
+      <ol>
+        <li><a href="#定义kronecker-积">定义（Kronecker 积）</a></li>
+        <li><a href="#定理-1">定理 1</a></li>
+        <li><a href="#命题-1矩阵直积分块运算规律">命题 1：矩阵直积分块运算规律</a></li>
+        <li><a href="#命题-2直积的性质">命题 2（直积的性质）</a></li>
+        <li><a href="#定理-2">定理 2</a></li>
+        <li><a href="#直积的特征向量">直积的特征向量</a></li>
+      </ol>
+    </li>
+    <li><a href="#拉直与矩阵方程">拉直与矩阵方程</a>
+      <ol>
+        <li><a href="#定义-1行拉直">定义 1（行拉直）</a></li>
+        <li><a href="#性质-1线性性质">性质 1（线性性质）</a></li>
+        <li><a href="#性质-2求导性质">性质 2（求导性质）</a></li>
+        <li><a href="#定理-1拉直公式">定理 1（拉直公式）</a></li>
+        <li><a href="#推论-1">推论 1</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B05%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B4%E7%A7%AF/">矩阵理论系列笔记5：矩阵的直积</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-02-28</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 6 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="直积的定义与性质">直积的定义与性质
+</h2><h3 id="定义kronecker-积">定义（Kronecker 积）
+</h3><p>设 $A = (a_{ij}) \in \mathbb{C}^{m \times n}$，$B = (b_{ij}) \in \mathbb{C}^{p \times q}$，称如下分块矩阵：</p>
+<div>
+\begin{equation}\nonumber
+A \otimes B =
+\begin{bmatrix}
+a_{11}B & a_{12}B & \cdots & a_{1n}B \\
+a_{21}B & a_{22}B & \cdots & a_{2n}B \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1}B & a_{m2}B & \cdots & a_{mn}B
+\end{bmatrix} \in \mathbb{C}^{mp \times nq}
+\end{equation}\nonumber
+</div>
+<p>为 $A$ 与 $B$ 的 <strong>Kronecker 积</strong>（或直积、张量积），简记为 $A \otimes B = (a_{ij}B)$。</p>
+<p>例1</p>
+<p>计算 $A \otimes B$ 和 $B \otimes A$，其中：</p>
+<div>
+\begin{equation}\nonumber
+A = 
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}, \quad
+B =
+\begin{bmatrix}
+2 \\
+3
+\end{bmatrix}
+\end{equation}\nonumber
+</div>
+<p>解：</p>
+<div>
+\begin{equation}\nonumber
+A \otimes B =
+\begin{bmatrix}
+2a & 2b \\
+3a & 3b \\
+2c & 2d \\
+3c & 3d
+\end{bmatrix}, \quad
+B \otimes A =
+\begin{bmatrix}
+2a & 2b \\
+2c & 2d \\
+3a & 3b \\
+3c & 3d
+\end{bmatrix}
+\end{equation}\nonumber
+</div>
+<p>由此例看出，尽管 $A \otimes B$ 和 $B \otimes A$ 是同阶矩阵，但一般来说 $A \otimes B \ne B \otimes A$，即 <strong>Kronecker 积不满足交换律</strong>。</p>
+<h3 id="定理-1">定理 1
+</h3><p>由 Kronecker 积定义可证：</p>
+<ol>
+<li>两个上三角矩阵的直积也是上三角矩阵；</li>
+<li>两个对角矩阵的直积也是对角矩阵；</li>
+<li>
+<div>
+</li>
+</ol>
+<p>\begin{equation}\nonumber
+I_n \otimes I_m = I_m \otimes I_n = I_{mn}
+\end{equation}\nonumber</p>
+</div>
+<h3 id="命题-1矩阵直积分块运算规律">命题 1：矩阵直积分块运算规律
+</h3><p>（1）</p>
+<div>
+\begin{equation}\nonumber
+\begin{bmatrix}
+A & B \\
+C & D
+\end{bmatrix}
+\otimes F =
+\begin{bmatrix}
+A \otimes F & B \otimes F \\
+C \otimes F & D \otimes F
+\end{bmatrix}
+\end{equation}\nonumber
+</div>
+<p>（2）设 $\alpha$ 是列向量，且 $B = (\beta_1, \beta_2, \cdots, \beta_5)$，则</p>
+<div>
+\begin{equation}\nonumber
+\alpha \otimes B = (\alpha \otimes \beta_1, \alpha \otimes \beta_2, \cdots, \alpha \otimes \beta_5)
+\end{equation}\nonumber
+</div>
+<p>（3）设 $A = (\alpha_1, \alpha_2, \cdots, \alpha_t)<em>{n \times t}$，$B = (\beta_1, \beta_2, \cdots, \beta_s)</em>{p \times s}$，则</p>
+<div>
+\begin{equation}\nonumber
+A \otimes B = 
+(\alpha_1 \otimes \beta_1, \cdots, \alpha_1 \otimes \beta_s, \cdots, \alpha_t \otimes \beta_1, \cdots, \alpha_t \otimes \beta_s)
+\end{equation}\nonumber
+</div>
+<h3 id="命题-2直积的性质">命题 2（直积的性质）
+</h3><p>矩阵的直积具有以下性质：</p>
+<ol>
+<li>
+<p>对任意复数 $k$，$(kA) \otimes B = A \otimes (kB) = k(A \otimes B)$；</p>
+</li>
+<li>
+<p>$(A \otimes B)(C \otimes D) = (AC) \otimes (BD)$；</p>
+</li>
+<li>
+<p>$A \otimes (B + C) = A \otimes B + A \otimes C$；</p>
+</li>
+<li>
+<p>$(A \otimes B)^{H} = A^{H} \otimes B^{H}$；</p>
+</li>
+<li>
+<p>若矩阵 $A$ 和 $C$、矩阵 $B$ 和 $D$ 均可相乘，则</p>
+<div>
+\begin{equation}\nonumber
+(A \otimes B)(C \otimes D) = (AC) \otimes (BD)
+\end{equation}\nonumber
+</div>
+</li>
+<li>
+<p>$\text{rank}(A \otimes B) = \text{rank}(A) \text{rank}(B)$；</p>
+</li>
+<li>
+<p>$(A \otimes B)^{T} = A^{T} \otimes B^{T}$；</p>
+</li>
+<li>
+<p>设 $A$、$B$ 分别是 $m$、$n$ 阶可逆矩阵，则</p>
+<div>
+\begin{equation}\nonumber
+(A \otimes B)^{-1} = A^{-1} \otimes B^{-1}
+\end{equation}\nonumber
+</div>
+</li>
+<li>
+<p>设 $A = (a_{ij})<em>{m \times m}$，$B = B</em>{n \times n}$，则：</p>
+</li>
+</ol>
+<ul>
+<li>
+<div>
+</li>
+</ul>
+<p>\begin{equation}\nonumber
+\text{tr}(A \otimes B) = \text{tr}(A) \cdot \text{tr}(B)
+\end{equation}\nonumber</p>
+  </div>
+<ul>
+<li>
+<div>
+</li>
+</ul>
+<p>\begin{equation}\nonumber
+\det(A \otimes B) = \det(A)^n \cdot \det(B)^m
+\end{equation}\nonumber</p>
+  </div>
+<p>补充性质与吸收率推广</p>
+<p><strong>注</strong>：设 $A$ 是 $m$ 阶方阵，$B$ 是 $n$ 阶方阵，则：</p>
+<ol>
+<li>
+<p>$(A \otimes B)^k = A^k \otimes B^k, \quad k = 1,2,\ldots$</p>
+</li>
+<li>
+<div>
+</li>
+</ol>
+<p>\begin{equation}\nonumber
+(A \otimes B)(I_n \otimes I_m B) = (I_m \otimes B)(A \otimes I_n) = A \otimes B
+\end{equation}\nonumber</p>
+</div>
+<p>即 $(A \otimes I_n)$ 与 $(I_m \otimes B)$ 可交换。</p>
+<p>吸收率可推广为：</p>
+<ol start="3">
+<li>
+<div>
+</li>
+</ol>
+<p>\begin{equation}\nonumber
+(A_1 \otimes B_1)(A_2 \otimes B_2) \cdots (A_k \otimes B_k) =
+(A_1 A_2 \cdots A_k) \otimes (B_1 B_2 \cdots B_k)
+\end{equation}\nonumber</p>
+</div>
+<ol start="4">
+<li>
+<div>
+</li>
+</ol>
+<p>\begin{equation}\nonumber
+(A_1 \otimes A_2 \otimes \cdots \otimes A_k)(B_1 \otimes B_2 \otimes \cdots \otimes B_k) =
+(A_1 B_1 \otimes A_2 B_2 \otimes \cdots \otimes A_k B_k)
+\end{equation}\nonumber</p>
+</div>
+<p>证明（命题 2 中性质 6）</p>
+<p>设 $A = A_{m \times n},\ B = B_{p \times q}$，$\text{rank}(A) = r$，$\text{rank}(B) = s$。</p>
+<p>则存在可逆矩阵 $P_i,\ Q_i\ (i = 1,2)$ 使得：</p>
+<div>
+\begin{equation}\nonumber
+P_1 A Q_1 = A_1 = 
+\begin{bmatrix}
+I_r & 0 \\
+0 & 0
+\end{bmatrix}, \quad
+P_2 B Q_2 = B_1 =
+\begin{bmatrix}
+I_s & 0 \\
+0 & 0
+\end{bmatrix}
+\end{equation}\nonumber
+</div>
+<p>而 $A_1 \otimes B_1 =
+\left(
+\begin{bmatrix}
+I_r &amp; 0 \
+0 &amp; 0
+\end{bmatrix}
+\otimes B_1 \right) =
+\begin{bmatrix}
+I_r \otimes B_1 &amp; 0 \
+0 &amp; 0
+\end{bmatrix}$</p>
+<div>
+\begin{equation}\nonumber
+A_1 \otimes B_1 =
+\begin{bmatrix}
+I_r \otimes B_1 & 0 \\
+0 & 0
+\end{bmatrix}
+\end{equation}\nonumber
+</div>
+<p>易得 $\text{rank}(A_1 \otimes B_1) = rs$。</p>
+<p>由吸收率的注（3）得：</p>
+<div>
+\begin{equation}\nonumber
+(P_1 \otimes P_2)(A \otimes B)(Q_1 \otimes Q_2)
+= (P_1 A Q_1) \otimes (P_2 B Q_2)
+= A_1 \otimes B_1
+\end{equation}\nonumber
+</div>
+<p>所以</p>
+<div>
+\begin{equation}\nonumber
+\text{rank}(A \otimes B) = \text{rank}(A_1 \otimes B_1) = rs
+\end{equation}\nonumber
+</div>
+<p>结论得证。</p>
+<hr>
+<p>例 2</p>
+<p>设 $A$ 是 $m$ 阶方阵，$B$ 是 $n$ 阶方阵，证明：</p>
+<div>
+\begin{equation}\nonumber
+e^{A \otimes I_n} = e^A \otimes I_n, \quad
+e^{I_m \otimes B} = I_m \otimes e^B
+\end{equation}\nonumber
+</div>
+<p><strong>证明</strong>：由注（1）得：</p>
+<div>
+\begin{equation}\nonumber
+e^{A \otimes I_n} = \sum_{k=0}^{\infty} \frac{1}{k!}(A \otimes I_n)^k
+= \sum_{k=0}^{\infty} \frac{1}{k!}(A^k \otimes I_n)
+= \left( \sum_{k=0}^{\infty} \frac{1}{k!} A^k \right) \otimes I_n = e^A \otimes I_n
+\end{equation}\nonumber
+</div>
+<p><strong>注</strong>：同理可证</p>
+<div>
+\begin{equation}\nonumber
+e^{(A \otimes I_n)(I_m \otimes B)} = e^A \otimes e^B
+\end{equation}\nonumber
+</div>
+<hr>
+<h3 id="定理-2">定理 2
+</h3><p>设 $f(x, y) = \sum_{i,j=0}^{k} c_{ij} x^i y^j$ 是变量 $x, y$ 的复二元多项式，对任意矩阵 $A \in \mathbb{C}^{m \times m}$ 和 $B \in \mathbb{C}^{n \times n}$，定义矩阵：</p>
+<div>
+\begin{equation}\nonumber
+f(A, B) = \sum_{i,j} c_{ij} \left( A^i \otimes B^j \right) \in \mathbb{C}^{mn \times mn}
+\end{equation}\nonumber
+</div>
+<p>式中，$A^0 = I_m$，$B^0 = I_n$。</p>
+<p>若 $A$ 和 $B$ 的特征值分别为 $\lambda_1, \ldots, \lambda_m$ 和 $\mu_1, \ldots, \mu_n$，则 $f(A, B)$ 的特征值为 $f(\lambda_i, \mu_j)$，其中 $i = 1, \ldots, m$，$j = 1, \ldots, n$。</p>
+<p>设</p>
+<div>
+\begin{equation}\nonumber
+f(x, y) = \sum_{i,j=0}^{k} c_{ij} x^i y^j
+\end{equation}\nonumber
+</div>
+<p>定义矩阵函数：</p>
+<div>
+\begin{equation}\nonumber
+f(A, B) = \sum_{i,j=0}^{k} c_{ij} \left( A^i \otimes B^j \right) \in \mathbb{C}^{mn \times mn}
+\end{equation}\nonumber
+</div>
+<p><strong>注</strong>：</p>
+<ul>
+<li>若 $f(x, y) = xy$，则 $f(A, B) = A \otimes B$；</li>
+<li>若 $f(x, y) = x y^0 + x^0 y$，则
+<div>
+\begin{equation}\nonumber
+f(A, B) = A \otimes I_n + I_m \otimes B
+\end{equation}\nonumber
+</div>
+</li>
+</ul>
+<p>推论 2</p>
+<p>设 $A \in \mathbb{C}^{m \times m}$，$B \in \mathbb{C}^{n \times n}$，其特征值分别为 $\lambda_1, \ldots, \lambda_m$ 和 $\mu_1, \ldots, \mu_n$，则有：</p>
+<ol>
+<li>$A \otimes B$ 的特征值为 $\lambda_i \mu_j,\ i = 1, \ldots, m,\ j = 1, \ldots, n$；</li>
+<li>$A \otimes I_n \pm I_m \otimes B$ 的特征值为 $\lambda_i \pm \mu_j,\ i = 1, \ldots, m,\ j = 1, \ldots, n$。</li>
+</ol>
+<p><strong>注：</strong></p>
+<ul>
+<li>
+<p>由（1）也可得</p>
+<div>
+\begin{equation}\nonumber
+\det(A \otimes B) = \det(A)^n \cdot \det(B)^m
+\end{equation}\nonumber
+</div>
+</li>
+<li>
+<p>$A \otimes I_n \pm I_m \otimes B$ 可逆 $\Leftrightarrow \lambda_i \pm \mu_j \ne 0$；</p>
+</li>
+<li>
+<p>$A \otimes I_n \pm I_m \otimes B^T$ 可逆 $\Leftrightarrow \lambda_i \pm \mu_j \ne 0$。</p>
+</li>
+</ul>
+<h3 id="直积的特征向量">直积的特征向量
+</h3><p>设 $A \in \mathbb{C}^{m \times m}$，$B \in \mathbb{C}^{n \times n}$，$x \in \mathbb{C}^m$ 是 $A$ 关于特征值 $\lambda$ 的特征向量，$y \in \mathbb{C}^n$ 是 $B$ 关于特征值 $\mu$ 的特征向量，则有：</p>
+<ol>
+<li>$x \otimes y$ 是 $A \otimes B$ 关于特征值 $\lambda \mu$ 的特征向量；</li>
+<li>$x \otimes y$ 是 $A \otimes I_n + I_m \otimes B$ 关于特征值 $\lambda + \mu$ 的特征向量。</li>
+</ol>
+<p><strong>证明：</strong></p>
+<p>（1）因为 $x \ne 0,\ y \ne 0$，所以 $x \otimes y \ne 0$，且：</p>
+<div>
+\begin{equation}\nonumber
+(A \otimes B)(x \otimes y) = (Ax \otimes By) = (\lambda x \otimes \mu y) = \lambda \mu (x \otimes y)
+\end{equation}\nonumber
+</div>
+<p>（2）
+因为：</p>
+<div>
+\begin{equation}\nonumber
+(A \otimes I_n)(x \otimes y) = (Ax \otimes I_n y) = \lambda (x \otimes y)
+\end{equation}\nonumber
+</div>
+<div>
+\begin{equation}\nonumber
+(I_m \otimes B)(x \otimes y) = (I_m x \otimes By) = \mu (x \otimes y)
+\end{equation}\nonumber
+</div>
+<p>所以：</p>
+<div>
+\begin{equation}\nonumber
+(A \otimes I_n + I_m \otimes B)(x \otimes y) 
+= (A \otimes I_n)(x \otimes y) + (I_m \otimes B)(x \otimes y) 
+= (\lambda + \mu)(x \otimes y)
+\end{equation}\nonumber
+</div>
+<p>例 4</p>
+<p>设 $A \in \mathbb{C}^{m \times m}$，$B \in \mathbb{C}^{n \times n}$ 都可对角化，则 $A \otimes I_n + I_m \otimes B$ 也可对角化。</p>
+<p><strong>证明</strong>：由题设存在可逆矩阵 $P$ 与 $Q$ 使得：</p>
+<div>
+\begin{equation}\nonumber
+P^{-1} A P = A_1 = \text{diag}(\lambda_1, \ldots, \lambda_m), \quad
+Q^{-1} B Q = B_1 = \text{diag}(\mu_1, \ldots, \mu_n)
+\end{equation}\nonumber
+</div>
+<p>所以：</p>
+<div>
+\begin{equation}\nonumber
+(P \otimes Q)^{-1} (A \otimes I_n + I_m \otimes B)(P \otimes Q)
+= (A_1 \otimes I_n) + (I_m \otimes B_1)
+\end{equation}\nonumber
+</div>
+<div>
+\begin{equation}\nonumber
+= \text{diag}(\lambda_1 I_n + B_1, \lambda_2 I_n + B_1, \ldots, \lambda_m I_n + B_1)
+= \text{diag}(\lambda_1 + \mu_1, \ldots, \lambda_1 + \mu_n, \ldots, \lambda_m + \mu_1, \ldots, \lambda_m + \mu_n)
+\end{equation}\nonumber
+</div>
+<hr>
+<h2 id="拉直与矩阵方程">拉直与矩阵方程
+</h2><h3 id="定义-1行拉直">定义 1（行拉直）
+</h3><p>设 $A = (a_{ij}) \in \mathbb{C}^{m \times n}$，并记 $a_i = \lbrace a_{i1}, a_{i2}, \cdots, a_{in} \rbrace^T,\ i = 1, 2, \cdots, m$，令：</p>
+<div>
+\begin{equation}\nonumber
+\vec{A} =
+\begin{bmatrix}
+a_1 \\
+a_2 \\
+\vdots \\
+a_m
+\end{bmatrix}
+\end{equation}\nonumber
+</div>
+<p>则称 $\vec{A}$ 为矩阵 $A$ 的<strong>行拉直</strong>（或按行展开成列向量）。</p>
+<hr>
+<h3 id="性质-1线性性质">性质 1（线性性质）
+</h3><p>设 $A, B \in \mathbb{C}^{m \times n}$，$k$ 为常数，则：</p>
+<div>
+\begin{equation}\nonumber
+\vec{A + B} = \vec{A} + \vec{B}, \quad
+\vec{kA} = k \vec{A}
+\end{equation}\nonumber
+</div>
+<hr>
+<h3 id="性质-2求导性质">性质 2（求导性质）
+</h3><p>设 $A(t) = (a_{ij}(t)) \in \mathbb{C}^{m \times n}$，则：</p>
+<div>
+\begin{equation}\nonumber
+\vec{\frac{d A(t)}{dt}} = \frac{d \vec{A}(t)}{dt}
+\end{equation}\nonumber
+</div>
+<h3 id="定理-1拉直公式">定理 1（拉直公式）
+</h3><p>设 $A \in \mathbb{C}^{m \times n}$，$B \in \mathbb{C}^{n \times p}$，$C \in \mathbb{C}^{p \times q}$，则有：</p>
+<div>
+\begin{equation}\nonumber
+\overrightarrow{ABC} = (A \otimes C^T) \vec{B}
+\end{equation}\nonumber
+</div>
+<p><strong>证明：</strong></p>
+<p>设 $A = (a_{ij})<em>{m \times n}$，$B = (b</em>{ij})<em>{n \times p}$，$C = (c</em>{ij})_{p \times q}$，则</p>
+<div>
+\begin{equation}\nonumber
+B = (b_{ij}) = 
+\begin{bmatrix}
+B_1 \\
+\vdots \\
+B_n
+\end{bmatrix}, \quad
+\vec{B} =
+\begin{bmatrix}
+B_1^T \\
+\vdots \\
+B_n^T
+\end{bmatrix}
+\end{equation}\nonumber
+</div>
+<p>计算：</p>
+<div>
+\begin{equation}\nonumber
+ABC =
+\begin{bmatrix}
+(a_{11}B_1 + \cdots + a_{1n}B_n)C \\
+\vdots \\
+(a_{m1}B_1 + \cdots + a_{mn}B_n)C
+\end{bmatrix}
+\end{equation}\nonumber
+</div>
+<p>从而，</p>
+<div>
+\begin{equation}\nonumber
+\overrightarrow{ABC} =
+\begin{bmatrix}
+C^T (a_{11}B_1^T + \cdots + a_{1n}B_n^T) \\
+\vdots \\
+C^T (a_{m1}B_1^T + \cdots + a_{mn}B_n^T)
+\end{bmatrix}
+=
+\begin{bmatrix}
+a_{11} C^T & \cdots & a_{1n} C^T \\
+\vdots & \ddots & \vdots \\
+a_{m1} C^T & \cdots & a_{mn} C^T
+\end{bmatrix}
+\begin{bmatrix}
+B_1^T \\
+\vdots \\
+B_n^T
+\end{bmatrix}
+= (A \otimes C^T) \vec{B}
+\end{equation}\nonumber
+</div>
+<hr>
+<h3 id="推论-1">推论 1
+</h3><p>设 $A = (a_{ij})<em>{m \times m}$，$X = (x</em>{ij})<em>{m \times n}$，$B = (b</em>{ij})_{n \times n}$，则有：</p>
+<ol>
+<li>
+<div>
+\begin{equation}\nonumber
+\overrightarrow{AX} = (A \otimes I_n) \vec{X}, \quad
+\overrightarrow{XB} = (I_m \otimes B^T) \vec{X}
+\end{equation}\nonumber
+</div>
+</li>
+<li>
+<div>
+\begin{equation}\nonumber
+\overrightarrow{AX + XB} = (A \otimes I_n + I_m \otimes B^T) \vec{X}
+\end{equation}\nonumber
+</div>
+</li>
+</ol>
+<p><strong>证明</strong>：由<br>
+$AX = AXI_n,\ XB = I_m XB$，再由拉直公式可得。</p>
+<p>例 3</p>
+<p>设</p>
+<div>
+\begin{equation}\nonumber
+A =
+\begin{bmatrix}
+-2 & 0 \\
+0 & 3
+\end{bmatrix}, \quad
+B =
+\begin{bmatrix}
+1 & -1 \\
+-1 & 1
+\end{bmatrix}, \quad
+D =
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+\end{equation}\nonumber
+</div>
+<p>求解矩阵方程 $AX + XB = D$。</p>
+<p><strong>解</strong>：$A$ 的特征值为 $-2, 3$，$B$ 的特征值为 $1, 1$，所以方程有唯一解。</p>
+<p>将方程拉直得：</p>
+<div>
+\begin{equation}\nonumber
+(A \otimes I_n + I_m \otimes B^T)\vec{X} = \vec{D}
+\end{equation}\nonumber
+</div>
+<p>即：</p>
+<div>
+\begin{equation}\nonumber
+\begin{bmatrix}
+-1 & 0 & 0 & 0 \\
+-1 & -4 & 0 & 0 \\
+0 & 0 & 0 & 4 \\
+0 & 0 & -1 & -1
+\end{bmatrix}
+\vec{X} =
+\begin{bmatrix}
+0 \\
+1 \\
+1 \\
+0
+\end{bmatrix}
+\end{equation}\nonumber
+</div>
+<p>解得：</p>
+<div>
+\begin{equation}\nonumber
+\vec{X} =
+\begin{bmatrix}
+0 \\
+-1 \\
+\frac{1}{4} \\
+\frac{1}{16}
+\end{bmatrix}, \quad
+X =
+\begin{bmatrix}
+0 & -1 \\
+\frac{1}{4} & \frac{1}{16}
+\end{bmatrix}
+\end{equation}\nonumber
+</div>
+<p>例 4</p>
+<p>设 $A \in \mathbb{C}^{m \times m}$，$B \in \mathbb{C}^{n \times n}$，$D \in \mathbb{C}^{m \times n}$，若 $A$ 与 $B$ 没有相同特征值，证明：</p>
+<div>
+\begin{equation}\nonumber
+\begin{bmatrix}
+A & D \\
+0 & B
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+A & 0 \\
+0 & B
+\end{bmatrix}
+\end{equation}\nonumber
+</div>
+<p><strong>证明</strong>：令</p>
+<div>
+\begin{equation}\nonumber
+P =
+\begin{bmatrix}
+I_m & X \\
+0 & I_n
+\end{bmatrix}, \quad
+P^{-1} =
+\begin{bmatrix}
+I_m & -X \\
+0 & I_n
+\end{bmatrix}
+\end{equation}\nonumber
+</div>
+<p>则有：</p>
+<div>
+\begin{equation}\nonumber
+P
+\begin{bmatrix}
+A & D \\
+0 & B
+\end{bmatrix}
+P^{-1}
+=
+\begin{bmatrix}
+A & D + XB - AX \\
+0 & B
+\end{bmatrix}
+\end{equation}\nonumber
+</div>
+<p>由定理 3，$D + XB - AX = 0$ 有唯一解，所以 $X$ 存在，使得：</p>
+<div>
+\begin{equation}\nonumber
+P
+\begin{bmatrix}
+A & D \\
+0 & B
+\end{bmatrix}
+P^{-1}
+=
+\begin{bmatrix}
+A & 0 \\
+0 & B
+\end{bmatrix}
+\end{equation}\nonumber
+</div>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%9F%A9%E9%98%B5%E8%AE%BA/">矩阵论</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 Example Person
+    </section>
+    
+    <section class="powerby">
+        
+            guilonglgl@gmail.com <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<style>
+    body {
+      background: url(https://LiuGuilongustb.github.io/background/background.jpg) no-repeat center top;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  </style>
+  
+    </body>
+</html>
