@@ -10753,7 +10753,7 @@ a_{21}B &amp; a_{22}B &amp; \cdots &amp; a_{2n}B \\
 \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 a_{m1}B &amp; a_{m2}B &amp; \cdots &amp; a_{mn}B
 \end{bmatrix} \in \mathbb{C}^{mp \times nq}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;为 $A$ 与 $B$ 的 &lt;strong&gt;Kronecker 积&lt;/strong&gt;（或直积、张量积），简记为 $A \otimes B = (a_{ij}B)$。&lt;/p&gt;
 &lt;p&gt;例1&lt;/p&gt;
@@ -10770,7 +10770,7 @@ B =
 2 \\
 3
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;解：&lt;/p&gt;
 &lt;div&gt;
@@ -10789,7 +10789,7 @@ B \otimes A =
 3a &amp; 3b \\
 3c &amp; 3d
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;由此例看出，尽管 $A \otimes B$ 和 $B \otimes A$ 是同阶矩阵，但一般来说 $A \otimes B \ne B \otimes A$，即 &lt;strong&gt;Kronecker 积不满足交换律&lt;/strong&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;定理-1&#34;&gt;定理 1
@@ -10803,7 +10803,7 @@ B \otimes A =
 &lt;/ol&gt;
 &lt;p&gt;\begin{equation}\nonumber
 I_n \otimes I_m = I_m \otimes I_n = I_{mn}
-\end{equation}\nonumber&lt;/p&gt;
+\end{equation}&lt;/p&gt;
 &lt;/div&gt;
 &lt;h3 id=&#34;命题-1矩阵直积分块运算规律&#34;&gt;命题 1：矩阵直积分块运算规律
 &lt;/h3&gt;&lt;p&gt;（1）&lt;/p&gt;
@@ -10818,20 +10818,20 @@ C &amp; D
 A \otimes F &amp; B \otimes F \\
 C \otimes F &amp; D \otimes F
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;（2）设 $\alpha$ 是列向量，且 $B = (\beta_1, \beta_2, \cdots, \beta_5)$，则&lt;/p&gt;
 &lt;div&gt;
 \begin{equation}\nonumber
 \alpha \otimes B = (\alpha \otimes \beta_1, \alpha \otimes \beta_2, \cdots, \alpha \otimes \beta_5)
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;（3）设 $A = (\alpha_1, \alpha_2, \cdots, \alpha_t)&lt;em&gt;{n \times t}$，$B = (\beta_1, \beta_2, \cdots, \beta_s)&lt;/em&gt;{p \times s}$，则&lt;/p&gt;
 &lt;div&gt;
 \begin{equation}\nonumber
 A \otimes B = 
 (\alpha_1 \otimes \beta_1, \cdots, \alpha_1 \otimes \beta_s, \cdots, \alpha_t \otimes \beta_1, \cdots, \alpha_t \otimes \beta_s)
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;h3 id=&#34;命题-2直积的性质&#34;&gt;命题 2（直积的性质）
 &lt;/h3&gt;&lt;p&gt;矩阵的直积具有以下性质：&lt;/p&gt;
@@ -10853,7 +10853,7 @@ A \otimes B =
 &lt;div&gt;
 \begin{equation}\nonumber
 (A \otimes B)(C \otimes D) = (AC) \otimes (BD)
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -10867,7 +10867,7 @@ A \otimes B =
 &lt;div&gt;
 \begin{equation}\nonumber
 (A \otimes B)^{-1} = A^{-1} \otimes B^{-1}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -10881,7 +10881,7 @@ A \otimes B =
 &lt;/ul&gt;
 &lt;p&gt;\begin{equation}\nonumber
 \text{tr}(A \otimes B) = \text{tr}(A) \cdot \text{tr}(B)
-\end{equation}\nonumber&lt;/p&gt;
+\end{equation}&lt;/p&gt;
   &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -10890,7 +10890,7 @@ A \otimes B =
 &lt;/ul&gt;
 &lt;p&gt;\begin{equation}\nonumber
 \det(A \otimes B) = \det(A)^n \cdot \det(B)^m
-\end{equation}\nonumber&lt;/p&gt;
+\end{equation}&lt;/p&gt;
   &lt;/div&gt;
 &lt;p&gt;补充性质与吸收率推广&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：设 $A$ 是 $m$ 阶方阵，$B$ 是 $n$ 阶方阵，则：&lt;/p&gt;
@@ -10904,7 +10904,7 @@ A \otimes B =
 &lt;/ol&gt;
 &lt;p&gt;\begin{equation}\nonumber
 (A \otimes B)(I_n \otimes I_m B) = (I_m \otimes B)(A \otimes I_n) = A \otimes B
-\end{equation}\nonumber&lt;/p&gt;
+\end{equation}&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;即 $(A \otimes I_n)$ 与 $(I_m \otimes B)$ 可交换。&lt;/p&gt;
 &lt;p&gt;吸收率可推广为：&lt;/p&gt;
@@ -10916,7 +10916,7 @@ A \otimes B =
 &lt;p&gt;\begin{equation}\nonumber
 (A_1 \otimes B_1)(A_2 \otimes B_2) \cdots (A_k \otimes B_k) =
 (A_1 A_2 \cdots A_k) \otimes (B_1 B_2 \cdots B_k)
-\end{equation}\nonumber&lt;/p&gt;
+\end{equation}&lt;/p&gt;
 &lt;/div&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;
@@ -10926,7 +10926,7 @@ A \otimes B =
 &lt;p&gt;\begin{equation}\nonumber
 (A_1 \otimes A_2 \otimes \cdots \otimes A_k)(B_1 \otimes B_2 \otimes \cdots \otimes B_k) =
 (A_1 B_1 \otimes A_2 B_2 \otimes \cdots \otimes A_k B_k)
-\end{equation}\nonumber&lt;/p&gt;
+\end{equation}&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;证明（命题 2 中性质 6）&lt;/p&gt;
 &lt;p&gt;设 $A = A_{m \times n},\ B = B_{p \times q}$，$\text{rank}(A) = r$，$\text{rank}(B) = s$。&lt;/p&gt;
@@ -10943,7 +10943,7 @@ P_2 B Q_2 = B_1 =
 I_s &amp; 0 \\
 0 &amp; 0
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;而 $A_1 \otimes B_1 =
 \left(
@@ -10963,7 +10963,7 @@ A_1 \otimes B_1 =
 I_r \otimes B_1 &amp; 0 \\
 0 &amp; 0
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;易得 $\text{rank}(A_1 \otimes B_1) = rs$。&lt;/p&gt;
 &lt;p&gt;由吸收率的注（3）得：&lt;/p&gt;
@@ -10972,13 +10972,13 @@ I_r \otimes B_1 &amp; 0 \\
 (P_1 \otimes P_2)(A \otimes B)(Q_1 \otimes Q_2)
 = (P_1 A Q_1) \otimes (P_2 B Q_2)
 = A_1 \otimes B_1
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;所以&lt;/p&gt;
 &lt;div&gt;
 \begin{equation}\nonumber
 \text{rank}(A \otimes B) = \text{rank}(A_1 \otimes B_1) = rs
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;结论得证。&lt;/p&gt;
 &lt;hr&gt;
@@ -10988,7 +10988,7 @@ I_r \otimes B_1 &amp; 0 \\
 \begin{equation}\nonumber
 e^{A \otimes I_n} = e^A \otimes I_n, \quad
 e^{I_m \otimes B} = I_m \otimes e^B
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：由注（1）得：&lt;/p&gt;
 &lt;div&gt;
@@ -10996,13 +10996,13 @@ e^{I_m \otimes B} = I_m \otimes e^B
 e^{A \otimes I_n} = \sum_{k=0}^{\infty} \frac{1}{k!}(A \otimes I_n)^k
 = \sum_{k=0}^{\infty} \frac{1}{k!}(A^k \otimes I_n)
 = \left( \sum_{k=0}^{\infty} \frac{1}{k!} A^k \right) \otimes I_n = e^A \otimes I_n
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：同理可证&lt;/p&gt;
 &lt;div&gt;
 \begin{equation}\nonumber
 e^{(A \otimes I_n)(I_m \otimes B)} = e^A \otimes e^B
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;定理-2&#34;&gt;定理 2
@@ -11010,7 +11010,7 @@ e^{(A \otimes I_n)(I_m \otimes B)} = e^A \otimes e^B
 &lt;div&gt;
 \begin{equation}\nonumber
 f(A, B) = \sum_{i,j} c_{ij} \left( A^i \otimes B^j \right) \in \mathbb{C}^{mn \times mn}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;式中，$A^0 = I_m$，$B^0 = I_n$。&lt;/p&gt;
 &lt;p&gt;若 $A$ 和 $B$ 的特征值分别为 $\lambda_1, \ldots, \lambda_m$ 和 $\mu_1, \ldots, \mu_n$，则 $f(A, B)$ 的特征值为 $f(\lambda_i, \mu_j)$，其中 $i = 1, \ldots, m$，$j = 1, \ldots, n$。&lt;/p&gt;
@@ -11018,13 +11018,13 @@ f(A, B) = \sum_{i,j} c_{ij} \left( A^i \otimes B^j \right) \in \mathbb{C}^{mn \t
 &lt;div&gt;
 \begin{equation}\nonumber
 f(x, y) = \sum_{i,j=0}^{k} c_{ij} x^i y^j
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;定义矩阵函数：&lt;/p&gt;
 &lt;div&gt;
 \begin{equation}\nonumber
 f(A, B) = \sum_{i,j=0}^{k} c_{ij} \left( A^i \otimes B^j \right) \in \mathbb{C}^{mn \times mn}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
@@ -11033,7 +11033,7 @@ f(A, B) = \sum_{i,j=0}^{k} c_{ij} \left( A^i \otimes B^j \right) \in \mathbb{C}^
 &lt;div&gt;
 \begin{equation}\nonumber
 f(A, B) = A \otimes I_n + I_m \otimes B
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -11050,7 +11050,7 @@ f(A, B) = A \otimes I_n + I_m \otimes B
 &lt;div&gt;
 \begin{equation}\nonumber
 \det(A \otimes B) = \det(A)^n \cdot \det(B)^m
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -11071,19 +11071,19 @@ f(A, B) = A \otimes I_n + I_m \otimes B
 &lt;div&gt;
 \begin{equation}\nonumber
 (A \otimes B)(x \otimes y) = (Ax \otimes By) = (\lambda x \otimes \mu y) = \lambda \mu (x \otimes y)
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;（2）
 因为：&lt;/p&gt;
 &lt;div&gt;
 \begin{equation}\nonumber
 (A \otimes I_n)(x \otimes y) = (Ax \otimes I_n y) = \lambda (x \otimes y)
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;div&gt;
 \begin{equation}\nonumber
 (I_m \otimes B)(x \otimes y) = (I_m x \otimes By) = \mu (x \otimes y)
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;所以：&lt;/p&gt;
 &lt;div&gt;
@@ -11091,7 +11091,7 @@ f(A, B) = A \otimes I_n + I_m \otimes B
 (A \otimes I_n + I_m \otimes B)(x \otimes y) 
 = (A \otimes I_n)(x \otimes y) + (I_m \otimes B)(x \otimes y) 
 = (\lambda + \mu)(x \otimes y)
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;例 4&lt;/p&gt;
 &lt;p&gt;设 $A \in \mathbb{C}^{m \times m}$，$B \in \mathbb{C}^{n \times n}$ 都可对角化，则 $A \otimes I_n + I_m \otimes B$ 也可对角化。&lt;/p&gt;
@@ -11100,20 +11100,20 @@ f(A, B) = A \otimes I_n + I_m \otimes B
 \begin{equation}\nonumber
 P^{-1} A P = A_1 = \text{diag}(\lambda_1, \ldots, \lambda_m), \quad
 Q^{-1} B Q = B_1 = \text{diag}(\mu_1, \ldots, \mu_n)
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;所以：&lt;/p&gt;
 &lt;div&gt;
 \begin{equation}\nonumber
 (P \otimes Q)^{-1} (A \otimes I_n + I_m \otimes B)(P \otimes Q)
 = (A_1 \otimes I_n) + (I_m \otimes B_1)
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;div&gt;
 \begin{equation}\nonumber
 = \text{diag}(\lambda_1 I_n + B_1, \lambda_2 I_n + B_1, \ldots, \lambda_m I_n + B_1)
 = \text{diag}(\lambda_1 + \mu_1, \ldots, \lambda_1 + \mu_n, \ldots, \lambda_m + \mu_1, \ldots, \lambda_m + \mu_n)
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;拉直与矩阵方程&#34;&gt;拉直与矩阵方程
@@ -11128,7 +11128,7 @@ a_2 \\
 \vdots \\
 a_m
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;则称 $\vec{A}$ 为矩阵 $A$ 的&lt;strong&gt;行拉直&lt;/strong&gt;（或按行展开成列向量）。&lt;/p&gt;
 &lt;hr&gt;
@@ -11138,7 +11138,7 @@ a_m
 \begin{equation}\nonumber
 \vec{A + B} = \vec{A} + \vec{B}, \quad
 \vec{kA} = k \vec{A}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;性质-2求导性质&#34;&gt;性质 2（求导性质）
@@ -11146,14 +11146,14 @@ a_m
 &lt;div&gt;
 \begin{equation}\nonumber
 \vec{\frac{d A(t)}{dt}} = \frac{d \vec{A}(t)}{dt}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;h3 id=&#34;定理-1拉直公式&#34;&gt;定理 1（拉直公式）
 &lt;/h3&gt;&lt;p&gt;设 $A \in \mathbb{C}^{m \times n}$，$B \in \mathbb{C}^{n \times p}$，$C \in \mathbb{C}^{p \times q}$，则有：&lt;/p&gt;
 &lt;div&gt;
 \begin{equation}\nonumber
 \overrightarrow{ABC} = (A \otimes C^T) \vec{B}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;证明：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;设 $A = (a_{ij})&lt;em&gt;{m \times n}$，$B = (b&lt;/em&gt;{ij})&lt;em&gt;{n \times p}$，$C = (c&lt;/em&gt;{ij})_{p \times q}$，则&lt;/p&gt;
@@ -11171,7 +11171,7 @@ B_1^T \\
 \vdots \\
 B_n^T
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;计算：&lt;/p&gt;
 &lt;div&gt;
@@ -11182,7 +11182,7 @@ ABC =
 \vdots \\
 (a_{m1}B_1 + \cdots + a_{mn}B_n)C
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;从而，&lt;/p&gt;
 &lt;div&gt;
@@ -11205,7 +11205,7 @@ B_1^T \\
 B_n^T
 \end{bmatrix}
 = (A \otimes C^T) \vec{B}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;推论-1&#34;&gt;推论 1
@@ -11216,14 +11216,14 @@ B_n^T
 \begin{equation}\nonumber
 \overrightarrow{AX} = (A \otimes I_n) \vec{X}, \quad
 \overrightarrow{XB} = (I_m \otimes B^T) \vec{X}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;div&gt;
 \begin{equation}\nonumber
 \overrightarrow{AX + XB} = (A \otimes I_n + I_m \otimes B^T) \vec{X}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -11248,7 +11248,7 @@ D =
 0 &amp; 1 \\
 1 &amp; 0
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;求解矩阵方程 $AX + XB = D$。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;解&lt;/strong&gt;：$A$ 的特征值为 $-2, 3$，$B$ 的特征值为 $1, 1$，所以方程有唯一解。&lt;/p&gt;
@@ -11256,7 +11256,7 @@ D =
 &lt;div&gt;
 \begin{equation}\nonumber
 (A \otimes I_n + I_m \otimes B^T)\vec{X} = \vec{D}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;即：&lt;/p&gt;
 &lt;div&gt;
@@ -11274,7 +11274,7 @@ D =
 1 \\
 0
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;解得：&lt;/p&gt;
 &lt;div&gt;
@@ -11291,7 +11291,7 @@ X =
 0 &amp; -1 \\
 \frac{1}{4} &amp; \frac{1}{16}
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;例 4&lt;/p&gt;
 &lt;p&gt;设 $A \in \mathbb{C}^{m \times m}$，$B \in \mathbb{C}^{n \times n}$，$D \in \mathbb{C}^{m \times n}$，若 $A$ 与 $B$ 没有相同特征值，证明：&lt;/p&gt;
@@ -11306,7 +11306,7 @@ A &amp; D \\
 A &amp; 0 \\
 0 &amp; B
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：令&lt;/p&gt;
 &lt;div&gt;
@@ -11321,7 +11321,7 @@ P^{-1} =
 I_m &amp; -X \\
 0 &amp; I_n
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;则有：&lt;/p&gt;
 &lt;div&gt;
@@ -11337,7 +11337,7 @@ P^{-1}
 A &amp; D + XB - AX \\
 0 &amp; B
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 &lt;p&gt;由定理 3，$D + XB - AX = 0$ 有唯一解，所以 $X$ 存在，使得：&lt;/p&gt;
 &lt;div&gt;
@@ -11353,7 +11353,7 @@ P^{-1}
 A &amp; 0 \\
 0 &amp; B
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 &lt;/div&gt;
 </description>
         </item>

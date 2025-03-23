@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="直积的定义与性质 定义（Kronecker 积） 设 $A = (a_{ij}) \\in \\mathbb{C}^{m \\times n}$，$B = (b_{ij}) \\in \\mathbb{C}^{p \\times q}$，称如下分块矩阵：\n\\begin{equation}\\nonumber A \\otimes B = \\begin{bmatrix} a_{11}B & a_{12}B & \\cdots & a_{1n}B \\\\ a_{21}B & a_{22}B & \\cdots & a_{2n}B \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ a_{m1}B & a_{m2}B & \\cdots & a_{mn}B \\end{bmatrix} \\in \\mathbb{C}^{mp \\times nq} \\end{equation}\\nonumber 为 $A$ 与 $B$ 的 Kronecker 积（或直积、张量积），简记为 $A \\otimes B = (a_{ij}B)$。\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="直积的定义与性质 定义（Kronecker 积） 设 $A = (a_{ij}) \\in \\mathbb{C}^{m \\times n}$，$B = (b_{ij}) \\in \\mathbb{C}^{p \\times q}$，称如下分块矩阵：\n\\begin{equation}\\nonumber A \\otimes B = \\begin{bmatrix} a_{11}B & a_{12}B & \\cdots & a_{1n}B \\\\ a_{21}B & a_{22}B & \\cdots & a_{2n}B \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ a_{m1}B & a_{m2}B & \\cdots & a_{mn}B \\end{bmatrix} \\in \\mathbb{C}^{mp \\times nq} \\end{equation} 为 $A$ 与 $B$ 的 Kronecker 积（或直积、张量积），简记为 $A \\otimes B = (a_{ij}B)$。\n">
 <title>矩阵理论系列笔记5：矩阵的直积</title>
 
 <link rel='canonical' href='https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B05%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B4%E7%A7%AF/'>
 
 <link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="矩阵理论系列笔记5：矩阵的直积">
-<meta property='og:description' content="直积的定义与性质 定义（Kronecker 积） 设 $A = (a_{ij}) \\in \\mathbb{C}^{m \\times n}$，$B = (b_{ij}) \\in \\mathbb{C}^{p \\times q}$，称如下分块矩阵：\n\\begin{equation}\\nonumber A \\otimes B = \\begin{bmatrix} a_{11}B & a_{12}B & \\cdots & a_{1n}B \\\\ a_{21}B & a_{22}B & \\cdots & a_{2n}B \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ a_{m1}B & a_{m2}B & \\cdots & a_{mn}B \\end{bmatrix} \\in \\mathbb{C}^{mp \\times nq} \\end{equation}\\nonumber 为 $A$ 与 $B$ 的 Kronecker 积（或直积、张量积），简记为 $A \\otimes B = (a_{ij}B)$。\n">
+<meta property='og:description' content="直积的定义与性质 定义（Kronecker 积） 设 $A = (a_{ij}) \\in \\mathbb{C}^{m \\times n}$，$B = (b_{ij}) \\in \\mathbb{C}^{p \\times q}$，称如下分块矩阵：\n\\begin{equation}\\nonumber A \\otimes B = \\begin{bmatrix} a_{11}B & a_{12}B & \\cdots & a_{1n}B \\\\ a_{21}B & a_{22}B & \\cdots & a_{2n}B \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ a_{m1}B & a_{m2}B & \\cdots & a_{mn}B \\end{bmatrix} \\in \\mathbb{C}^{mp \\times nq} \\end{equation} 为 $A$ 与 $B$ 的 Kronecker 积（或直积、张量积），简记为 $A \\otimes B = (a_{ij}B)$。\n">
 <meta property='og:url' content='https://LiuGuilongustb.github.io/p/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B05%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B4%E7%A7%AF/'>
 <meta property='og:site_name' content='刘贵泷的个人网页'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='矩阵论' /><meta property='article:published_time' content='2025-02-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-02-28T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="矩阵理论系列笔记5：矩阵的直积">
-<meta name="twitter:description" content="直积的定义与性质 定义（Kronecker 积） 设 $A = (a_{ij}) \\in \\mathbb{C}^{m \\times n}$，$B = (b_{ij}) \\in \\mathbb{C}^{p \\times q}$，称如下分块矩阵：\n\\begin{equation}\\nonumber A \\otimes B = \\begin{bmatrix} a_{11}B & a_{12}B & \\cdots & a_{1n}B \\\\ a_{21}B & a_{22}B & \\cdots & a_{2n}B \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ a_{m1}B & a_{m2}B & \\cdots & a_{mn}B \\end{bmatrix} \\in \\mathbb{C}^{mp \\times nq} \\end{equation}\\nonumber 为 $A$ 与 $B$ 的 Kronecker 积（或直积、张量积），简记为 $A \\otimes B = (a_{ij}B)$。\n">
+<meta name="twitter:description" content="直积的定义与性质 定义（Kronecker 积） 设 $A = (a_{ij}) \\in \\mathbb{C}^{m \\times n}$，$B = (b_{ij}) \\in \\mathbb{C}^{p \\times q}$，称如下分块矩阵：\n\\begin{equation}\\nonumber A \\otimes B = \\begin{bmatrix} a_{11}B & a_{12}B & \\cdots & a_{1n}B \\\\ a_{21}B & a_{22}B & \\cdots & a_{2n}B \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ a_{m1}B & a_{m2}B & \\cdots & a_{mn}B \\end{bmatrix} \\in \\mathbb{C}^{mp \\times nq} \\end{equation} 为 $A$ 与 $B$ 的 Kronecker 积（或直积、张量积），简记为 $A \\otimes B = (a_{ij}B)$。\n">
         
 
 
@@ -432,7 +432,7 @@ a_{21}B & a_{22}B & \cdots & a_{2n}B \\
 \vdots & \vdots & \ddots & \vdots \\
 a_{m1}B & a_{m2}B & \cdots & a_{mn}B
 \end{bmatrix} \in \mathbb{C}^{mp \times nq}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>为 $A$ 与 $B$ 的 <strong>Kronecker 积</strong>（或直积、张量积），简记为 $A \otimes B = (a_{ij}B)$。</p>
 <p>例1</p>
@@ -449,7 +449,7 @@ B =
 2 \\
 3
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>解：</p>
 <div>
@@ -468,7 +468,7 @@ B \otimes A =
 3a & 3b \\
 3c & 3d
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>由此例看出，尽管 $A \otimes B$ 和 $B \otimes A$ 是同阶矩阵，但一般来说 $A \otimes B \ne B \otimes A$，即 <strong>Kronecker 积不满足交换律</strong>。</p>
 <h3 id="定理-1">定理 1
@@ -482,7 +482,7 @@ B \otimes A =
 </ol>
 <p>\begin{equation}\nonumber
 I_n \otimes I_m = I_m \otimes I_n = I_{mn}
-\end{equation}\nonumber</p>
+\end{equation}</p>
 </div>
 <h3 id="命题-1矩阵直积分块运算规律">命题 1：矩阵直积分块运算规律
 </h3><p>（1）</p>
@@ -497,20 +497,20 @@ C & D
 A \otimes F & B \otimes F \\
 C \otimes F & D \otimes F
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>（2）设 $\alpha$ 是列向量，且 $B = (\beta_1, \beta_2, \cdots, \beta_5)$，则</p>
 <div>
 \begin{equation}\nonumber
 \alpha \otimes B = (\alpha \otimes \beta_1, \alpha \otimes \beta_2, \cdots, \alpha \otimes \beta_5)
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>（3）设 $A = (\alpha_1, \alpha_2, \cdots, \alpha_t)<em>{n \times t}$，$B = (\beta_1, \beta_2, \cdots, \beta_s)</em>{p \times s}$，则</p>
 <div>
 \begin{equation}\nonumber
 A \otimes B = 
 (\alpha_1 \otimes \beta_1, \cdots, \alpha_1 \otimes \beta_s, \cdots, \alpha_t \otimes \beta_1, \cdots, \alpha_t \otimes \beta_s)
-\end{equation}\nonumber
+\end{equation}
 </div>
 <h3 id="命题-2直积的性质">命题 2（直积的性质）
 </h3><p>矩阵的直积具有以下性质：</p>
@@ -532,7 +532,7 @@ A \otimes B =
 <div>
 \begin{equation}\nonumber
 (A \otimes B)(C \otimes D) = (AC) \otimes (BD)
-\end{equation}\nonumber
+\end{equation}
 </div>
 </li>
 <li>
@@ -546,7 +546,7 @@ A \otimes B =
 <div>
 \begin{equation}\nonumber
 (A \otimes B)^{-1} = A^{-1} \otimes B^{-1}
-\end{equation}\nonumber
+\end{equation}
 </div>
 </li>
 <li>
@@ -560,7 +560,7 @@ A \otimes B =
 </ul>
 <p>\begin{equation}\nonumber
 \text{tr}(A \otimes B) = \text{tr}(A) \cdot \text{tr}(B)
-\end{equation}\nonumber</p>
+\end{equation}</p>
   </div>
 <ul>
 <li>
@@ -569,7 +569,7 @@ A \otimes B =
 </ul>
 <p>\begin{equation}\nonumber
 \det(A \otimes B) = \det(A)^n \cdot \det(B)^m
-\end{equation}\nonumber</p>
+\end{equation}</p>
   </div>
 <p>补充性质与吸收率推广</p>
 <p><strong>注</strong>：设 $A$ 是 $m$ 阶方阵，$B$ 是 $n$ 阶方阵，则：</p>
@@ -583,7 +583,7 @@ A \otimes B =
 </ol>
 <p>\begin{equation}\nonumber
 (A \otimes B)(I_n \otimes I_m B) = (I_m \otimes B)(A \otimes I_n) = A \otimes B
-\end{equation}\nonumber</p>
+\end{equation}</p>
 </div>
 <p>即 $(A \otimes I_n)$ 与 $(I_m \otimes B)$ 可交换。</p>
 <p>吸收率可推广为：</p>
@@ -595,7 +595,7 @@ A \otimes B =
 <p>\begin{equation}\nonumber
 (A_1 \otimes B_1)(A_2 \otimes B_2) \cdots (A_k \otimes B_k) =
 (A_1 A_2 \cdots A_k) \otimes (B_1 B_2 \cdots B_k)
-\end{equation}\nonumber</p>
+\end{equation}</p>
 </div>
 <ol start="4">
 <li>
@@ -605,7 +605,7 @@ A \otimes B =
 <p>\begin{equation}\nonumber
 (A_1 \otimes A_2 \otimes \cdots \otimes A_k)(B_1 \otimes B_2 \otimes \cdots \otimes B_k) =
 (A_1 B_1 \otimes A_2 B_2 \otimes \cdots \otimes A_k B_k)
-\end{equation}\nonumber</p>
+\end{equation}</p>
 </div>
 <p>证明（命题 2 中性质 6）</p>
 <p>设 $A = A_{m \times n},\ B = B_{p \times q}$，$\text{rank}(A) = r$，$\text{rank}(B) = s$。</p>
@@ -622,7 +622,7 @@ P_2 B Q_2 = B_1 =
 I_s & 0 \\
 0 & 0
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>而 $A_1 \otimes B_1 =
 \left(
@@ -642,7 +642,7 @@ A_1 \otimes B_1 =
 I_r \otimes B_1 & 0 \\
 0 & 0
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>易得 $\text{rank}(A_1 \otimes B_1) = rs$。</p>
 <p>由吸收率的注（3）得：</p>
@@ -651,13 +651,13 @@ I_r \otimes B_1 & 0 \\
 (P_1 \otimes P_2)(A \otimes B)(Q_1 \otimes Q_2)
 = (P_1 A Q_1) \otimes (P_2 B Q_2)
 = A_1 \otimes B_1
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>所以</p>
 <div>
 \begin{equation}\nonumber
 \text{rank}(A \otimes B) = \text{rank}(A_1 \otimes B_1) = rs
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>结论得证。</p>
 <hr>
@@ -667,7 +667,7 @@ I_r \otimes B_1 & 0 \\
 \begin{equation}\nonumber
 e^{A \otimes I_n} = e^A \otimes I_n, \quad
 e^{I_m \otimes B} = I_m \otimes e^B
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p><strong>证明</strong>：由注（1）得：</p>
 <div>
@@ -675,13 +675,13 @@ e^{I_m \otimes B} = I_m \otimes e^B
 e^{A \otimes I_n} = \sum_{k=0}^{\infty} \frac{1}{k!}(A \otimes I_n)^k
 = \sum_{k=0}^{\infty} \frac{1}{k!}(A^k \otimes I_n)
 = \left( \sum_{k=0}^{\infty} \frac{1}{k!} A^k \right) \otimes I_n = e^A \otimes I_n
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p><strong>注</strong>：同理可证</p>
 <div>
 \begin{equation}\nonumber
 e^{(A \otimes I_n)(I_m \otimes B)} = e^A \otimes e^B
-\end{equation}\nonumber
+\end{equation}
 </div>
 <hr>
 <h3 id="定理-2">定理 2
@@ -689,7 +689,7 @@ e^{(A \otimes I_n)(I_m \otimes B)} = e^A \otimes e^B
 <div>
 \begin{equation}\nonumber
 f(A, B) = \sum_{i,j} c_{ij} \left( A^i \otimes B^j \right) \in \mathbb{C}^{mn \times mn}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>式中，$A^0 = I_m$，$B^0 = I_n$。</p>
 <p>若 $A$ 和 $B$ 的特征值分别为 $\lambda_1, \ldots, \lambda_m$ 和 $\mu_1, \ldots, \mu_n$，则 $f(A, B)$ 的特征值为 $f(\lambda_i, \mu_j)$，其中 $i = 1, \ldots, m$，$j = 1, \ldots, n$。</p>
@@ -697,13 +697,13 @@ f(A, B) = \sum_{i,j} c_{ij} \left( A^i \otimes B^j \right) \in \mathbb{C}^{mn \t
 <div>
 \begin{equation}\nonumber
 f(x, y) = \sum_{i,j=0}^{k} c_{ij} x^i y^j
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>定义矩阵函数：</p>
 <div>
 \begin{equation}\nonumber
 f(A, B) = \sum_{i,j=0}^{k} c_{ij} \left( A^i \otimes B^j \right) \in \mathbb{C}^{mn \times mn}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p><strong>注</strong>：</p>
 <ul>
@@ -712,7 +712,7 @@ f(A, B) = \sum_{i,j=0}^{k} c_{ij} \left( A^i \otimes B^j \right) \in \mathbb{C}^
 <div>
 \begin{equation}\nonumber
 f(A, B) = A \otimes I_n + I_m \otimes B
-\end{equation}\nonumber
+\end{equation}
 </div>
 </li>
 </ul>
@@ -729,7 +729,7 @@ f(A, B) = A \otimes I_n + I_m \otimes B
 <div>
 \begin{equation}\nonumber
 \det(A \otimes B) = \det(A)^n \cdot \det(B)^m
-\end{equation}\nonumber
+\end{equation}
 </div>
 </li>
 <li>
@@ -750,19 +750,19 @@ f(A, B) = A \otimes I_n + I_m \otimes B
 <div>
 \begin{equation}\nonumber
 (A \otimes B)(x \otimes y) = (Ax \otimes By) = (\lambda x \otimes \mu y) = \lambda \mu (x \otimes y)
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>（2）
 因为：</p>
 <div>
 \begin{equation}\nonumber
 (A \otimes I_n)(x \otimes y) = (Ax \otimes I_n y) = \lambda (x \otimes y)
-\end{equation}\nonumber
+\end{equation}
 </div>
 <div>
 \begin{equation}\nonumber
 (I_m \otimes B)(x \otimes y) = (I_m x \otimes By) = \mu (x \otimes y)
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>所以：</p>
 <div>
@@ -770,7 +770,7 @@ f(A, B) = A \otimes I_n + I_m \otimes B
 (A \otimes I_n + I_m \otimes B)(x \otimes y) 
 = (A \otimes I_n)(x \otimes y) + (I_m \otimes B)(x \otimes y) 
 = (\lambda + \mu)(x \otimes y)
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>例 4</p>
 <p>设 $A \in \mathbb{C}^{m \times m}$，$B \in \mathbb{C}^{n \times n}$ 都可对角化，则 $A \otimes I_n + I_m \otimes B$ 也可对角化。</p>
@@ -779,20 +779,20 @@ f(A, B) = A \otimes I_n + I_m \otimes B
 \begin{equation}\nonumber
 P^{-1} A P = A_1 = \text{diag}(\lambda_1, \ldots, \lambda_m), \quad
 Q^{-1} B Q = B_1 = \text{diag}(\mu_1, \ldots, \mu_n)
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>所以：</p>
 <div>
 \begin{equation}\nonumber
 (P \otimes Q)^{-1} (A \otimes I_n + I_m \otimes B)(P \otimes Q)
 = (A_1 \otimes I_n) + (I_m \otimes B_1)
-\end{equation}\nonumber
+\end{equation}
 </div>
 <div>
 \begin{equation}\nonumber
 = \text{diag}(\lambda_1 I_n + B_1, \lambda_2 I_n + B_1, \ldots, \lambda_m I_n + B_1)
 = \text{diag}(\lambda_1 + \mu_1, \ldots, \lambda_1 + \mu_n, \ldots, \lambda_m + \mu_1, \ldots, \lambda_m + \mu_n)
-\end{equation}\nonumber
+\end{equation}
 </div>
 <hr>
 <h2 id="拉直与矩阵方程">拉直与矩阵方程
@@ -807,7 +807,7 @@ a_2 \\
 \vdots \\
 a_m
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>则称 $\vec{A}$ 为矩阵 $A$ 的<strong>行拉直</strong>（或按行展开成列向量）。</p>
 <hr>
@@ -817,7 +817,7 @@ a_m
 \begin{equation}\nonumber
 \vec{A + B} = \vec{A} + \vec{B}, \quad
 \vec{kA} = k \vec{A}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <hr>
 <h3 id="性质-2求导性质">性质 2（求导性质）
@@ -825,14 +825,14 @@ a_m
 <div>
 \begin{equation}\nonumber
 \vec{\frac{d A(t)}{dt}} = \frac{d \vec{A}(t)}{dt}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <h3 id="定理-1拉直公式">定理 1（拉直公式）
 </h3><p>设 $A \in \mathbb{C}^{m \times n}$，$B \in \mathbb{C}^{n \times p}$，$C \in \mathbb{C}^{p \times q}$，则有：</p>
 <div>
 \begin{equation}\nonumber
 \overrightarrow{ABC} = (A \otimes C^T) \vec{B}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p><strong>证明：</strong></p>
 <p>设 $A = (a_{ij})<em>{m \times n}$，$B = (b</em>{ij})<em>{n \times p}$，$C = (c</em>{ij})_{p \times q}$，则</p>
@@ -850,7 +850,7 @@ B_1^T \\
 \vdots \\
 B_n^T
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>计算：</p>
 <div>
@@ -861,7 +861,7 @@ ABC =
 \vdots \\
 (a_{m1}B_1 + \cdots + a_{mn}B_n)C
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>从而，</p>
 <div>
@@ -884,7 +884,7 @@ B_1^T \\
 B_n^T
 \end{bmatrix}
 = (A \otimes C^T) \vec{B}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <hr>
 <h3 id="推论-1">推论 1
@@ -895,14 +895,14 @@ B_n^T
 \begin{equation}\nonumber
 \overrightarrow{AX} = (A \otimes I_n) \vec{X}, \quad
 \overrightarrow{XB} = (I_m \otimes B^T) \vec{X}
-\end{equation}\nonumber
+\end{equation}
 </div>
 </li>
 <li>
 <div>
 \begin{equation}\nonumber
 \overrightarrow{AX + XB} = (A \otimes I_n + I_m \otimes B^T) \vec{X}
-\end{equation}\nonumber
+\end{equation}
 </div>
 </li>
 </ol>
@@ -927,7 +927,7 @@ D =
 0 & 1 \\
 1 & 0
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>求解矩阵方程 $AX + XB = D$。</p>
 <p><strong>解</strong>：$A$ 的特征值为 $-2, 3$，$B$ 的特征值为 $1, 1$，所以方程有唯一解。</p>
@@ -935,7 +935,7 @@ D =
 <div>
 \begin{equation}\nonumber
 (A \otimes I_n + I_m \otimes B^T)\vec{X} = \vec{D}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>即：</p>
 <div>
@@ -953,7 +953,7 @@ D =
 1 \\
 0
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>解得：</p>
 <div>
@@ -970,7 +970,7 @@ X =
 0 & -1 \\
 \frac{1}{4} & \frac{1}{16}
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>例 4</p>
 <p>设 $A \in \mathbb{C}^{m \times m}$，$B \in \mathbb{C}^{n \times n}$，$D \in \mathbb{C}^{m \times n}$，若 $A$ 与 $B$ 没有相同特征值，证明：</p>
@@ -985,7 +985,7 @@ A & D \\
 A & 0 \\
 0 & B
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p><strong>证明</strong>：令</p>
 <div>
@@ -1000,7 +1000,7 @@ P^{-1} =
 I_m & -X \\
 0 & I_n
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>则有：</p>
 <div>
@@ -1016,7 +1016,7 @@ P^{-1}
 A & D + XB - AX \\
 0 & B
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 </div>
 <p>由定理 3，$D + XB - AX = 0$ 有唯一解，所以 $X$ 存在，使得：</p>
 <div>
@@ -1032,7 +1032,7 @@ P^{-1}
 A & 0 \\
 0 & B
 \end{bmatrix}
-\end{equation}\nonumber
+\end{equation}
 </div>
 
 </section>
