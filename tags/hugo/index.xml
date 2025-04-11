@@ -453,17 +453,64 @@ Go 安装说明见官网: &lt;a class=&#34;link&#34; href=&#34;https://go.dev/do
 &lt;/h3&gt;&lt;p&gt;Github 项目页面 -&amp;gt; Settings -&amp;gt; Pages -&amp;gt; Build and deployment -&amp;gt; Source -&amp;gt; 改为 &lt;code&gt;GitHub Actions&lt;/code&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;step-33-查看-github-部署结果&#34;&gt;&lt;strong&gt;step 3.3 查看 GitHub 部署结果&lt;/strong&gt;
 &lt;/h3&gt;&lt;p&gt;Github 项目页面 -&amp;gt; Action 页面会看到 GitHub 的部署情况。部署正确后即可看到 &lt;code&gt;username.github.io&lt;/code&gt; 页面。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;这是一个详细的 Hugo 网站搭建及部署流程，涵盖了从环境配置到最终部署的每个步骤。
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+
+
+&lt;div class=&#34;goat svg-container &#34;&gt;
+  
+    &lt;svg
+      xmlns=&#34;http://www.w3.org/2000/svg&#34;
+      font-family=&#34;Menlo,Lucida Console,monospace&#34;
+      
+        viewBox=&#34;0 0 344 41&#34;
+      &gt;
+      &lt;g transform=&#39;translate(8,16)&#39;&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;0&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;这&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;8&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;是&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;16&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;一&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;24&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;个&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;32&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;详&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;40&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;细&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;48&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;的&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;64&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;H&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;72&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;u&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;80&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;g&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;88&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;o&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;104&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;网&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;112&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;站&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;120&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;搭&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;128&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;建&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;136&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;及&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;144&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;部&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;152&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;署&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;160&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;流&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;168&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;程&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;176&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;，&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;184&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;涵&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;192&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;盖&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;200&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;了&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;208&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;从&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;216&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;环&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;224&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;境&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;232&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;配&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;240&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;置&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;248&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;到&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;256&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;最&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;264&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;终&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;272&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;部&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;280&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;署&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;288&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;的&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;296&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;每&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;304&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;个&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;312&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;步&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;320&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;骤&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;328&#39; y=&#39;20&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;。&lt;/text&gt;
+&lt;/g&gt;
+
+    &lt;/svg&gt;
+  
 &lt;/div&gt;
-&lt;/div&gt;</description>
+</description>
         </item>
         <item>
         <title>Hugo 搭建网站系列教程2：Markdown 格式介绍</title>
@@ -880,15 +927,62 @@ Go 安装说明见官网: &lt;a class=&#34;link&#34; href=&#34;https://go.dev/do
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;然后在文字里写：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;我们可以看到公式 (\ref{eq:energy}) 给出了质量和能量之间的关系。
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+
+
+&lt;div class=&#34;goat svg-container &#34;&gt;
+  
+    &lt;svg
+      xmlns=&#34;http://www.w3.org/2000/svg&#34;
+      font-family=&#34;Menlo,Lucida Console,monospace&#34;
+      
+        viewBox=&#34;0 0 336 25&#34;
+      &gt;
+      &lt;g transform=&#39;translate(8,16)&#39;&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;0&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;我&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;8&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;们&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;16&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;可&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;24&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;以&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;32&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;看&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;40&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;到&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;48&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;公&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;56&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;式&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;80&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;\&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;88&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;r&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;96&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;e&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;104&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;f&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;112&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;{&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;120&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;e&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;128&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;q&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;136&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;:&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;144&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;e&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;152&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;n&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;160&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;e&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;168&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;r&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;176&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;g&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;184&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;y&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;192&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;}&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;200&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;)&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;216&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;给&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;224&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;出&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;232&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;了&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;240&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;质&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;248&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;量&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;256&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;和&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;264&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;能&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;272&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;量&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;280&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;之&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;288&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;间&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;296&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;的&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;304&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;关&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;312&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;系&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;320&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;。&lt;/text&gt;
+&lt;/g&gt;
+
+    &lt;/svg&gt;
+  
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;MathJax 会把 &lt;code&gt;(\ref{eq:energy})&lt;/code&gt; 渲染成对应公式编号，比如 “(1)”，并且会在公式处加相应的内部跳转（如果主题或浏览器支持的话）。&lt;/p&gt;
+&lt;p&gt;MathJax 会把 &lt;code&gt;(\ref{eq:energy})&lt;/code&gt; 渲染成对应公式编号，比如 “(1)”，并且会在公式处加相应的内部跳转（如果主题或浏览器支持的话）。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;也可以用 &lt;code&gt;\eqref{eq:energy}&lt;/code&gt; 的方式引用，它会直接带上括号并形成链接。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;hr&gt;
@@ -898,15 +992,70 @@ Go 安装说明见官网: &lt;a class=&#34;link&#34; href=&#34;https://go.dev/do
 &lt;p&gt;&lt;strong&gt;找到 &lt;code&gt;layouts/partials/head/head.html&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;进入你的 Hugo 项目目录：
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;themes/hugo-theme-stack/layouts/partials/head/
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+
+
+&lt;div class=&#34;goat svg-container &#34;&gt;
+  
+    &lt;svg
+      xmlns=&#34;http://www.w3.org/2000/svg&#34;
+      font-family=&#34;Menlo,Lucida Console,monospace&#34;
+      
+        viewBox=&#34;0 0 376 25&#34;
+      &gt;
+      &lt;g transform=&#39;translate(8,16)&#39;&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;0&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;t&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;8&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;h&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;16&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;e&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;24&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;m&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;32&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;e&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;40&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;s&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;48&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;/&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;56&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;h&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;64&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;u&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;72&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;g&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;80&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;o&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;88&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;-&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;96&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;t&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;104&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;h&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;112&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;e&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;120&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;m&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;128&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;e&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;136&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;-&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;144&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;s&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;152&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;t&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;160&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;a&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;168&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;c&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;176&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;k&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;184&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;/&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;192&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;l&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;200&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;a&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;208&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;y&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;216&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;o&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;224&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;u&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;232&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;t&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;240&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;s&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;248&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;/&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;256&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;p&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;264&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;a&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;272&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;r&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;280&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;t&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;288&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;i&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;296&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;a&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;304&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;l&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;312&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;s&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;320&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;/&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;328&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;h&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;336&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;e&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;344&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;a&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;352&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;d&lt;/text&gt;
+&lt;text text-anchor=&#39;middle&#39; x=&#39;360&#39; y=&#39;4&#39; fill=&#39;currentColor&#39; style=&#39;font-size:1em&#39;&gt;/&lt;/text&gt;
+&lt;/g&gt;
+
+    &lt;/svg&gt;
+  
 &lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
+&lt;/li&gt;
 &lt;li&gt;找到 &lt;code&gt;head.html&lt;/code&gt; 文件。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;

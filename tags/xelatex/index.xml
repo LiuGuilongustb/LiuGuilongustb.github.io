@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>重装系统 on 刘贵泷的个人网页</title>
-        <link>https://LiuGuilongustb.github.io/tags/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/</link>
-        <description>Recent content in 重装系统 on 刘贵泷的个人网页</description>
+        <title>Xelatex on 刘贵泷的个人网页</title>
+        <link>https://LiuGuilongustb.github.io/tags/xelatex/</link>
+        <description>Recent content in Xelatex on 刘贵泷的个人网页</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Thu, 10 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://LiuGuilongustb.github.io/tags/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 10 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://LiuGuilongustb.github.io/tags/xelatex/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>VsCode配置XeLatex</title>
         <link>https://LiuGuilongustb.github.io/p/vscode%E9%85%8D%E7%BD%AExelatex/</link>
         <pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate>
@@ -195,53 +195,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
-        </item>
-        <item>
-        <title>装机必备所有软件</title>
-        <link>https://LiuGuilongustb.github.io/p/%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87%E6%89%80%E6%9C%89%E8%BD%AF%E4%BB%B6/</link>
-        <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://LiuGuilongustb.github.io/p/%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87%E6%89%80%E6%9C%89%E8%BD%AF%E4%BB%B6/</guid>
-        <description>&lt;p&gt;由于我们在电脑的日常使用以及更换电脑等诸多问题上，不可避免的一定要做的事情就是要重装系统，因此本博客的目的是记录下我现有电脑中的全部软件及安装方法，以方便未来更换电脑或者重装系统时不会因为缺失某些文件而导致无法正常工作。&lt;/p&gt;
-&lt;p&gt;博客中的所有软件均为作者本人常用的软件及设置，有兴趣的可以保存以后自己装电脑的时候避免遗忘。&lt;/p&gt;
-&lt;h2 id=&#34;重装windows系统&#34;&gt;重装windows系统
-&lt;/h2&gt;&lt;h2 id=&#34;更改桌面文件存储路径&#34;&gt;更改桌面文件存储路径
-&lt;/h2&gt;&lt;p&gt;这一步其实算作必备操作，但是由于后续安装软件会导入大量的桌面快捷方式，建议先把这一步做了。&lt;/p&gt;
-&lt;h2 id=&#34;必备软件&#34;&gt;必备软件
-&lt;/h2&gt;&lt;h3 id=&#34;微信&#34;&gt;微信
-&lt;/h3&gt;&lt;h3 id=&#34;谷歌浏览器&#34;&gt;谷歌浏览器
-&lt;/h3&gt;&lt;h3 id=&#34;adobe-pdf阅读器&#34;&gt;Adobe PDF阅读器
-&lt;/h3&gt;&lt;h3 id=&#34;bandizip压缩软件&#34;&gt;bandizip压缩软件
-&lt;/h3&gt;&lt;h3 id=&#34;火绒安全&#34;&gt;火绒安全
-&lt;/h3&gt;&lt;h3 id=&#34;matlab&#34;&gt;matlab
-&lt;/h3&gt;&lt;h3 id=&#34;zotero&#34;&gt;zotero
-&lt;/h3&gt;&lt;h3 id=&#34;clash&#34;&gt;clash
-&lt;/h3&gt;&lt;h3 id=&#34;mathtype&#34;&gt;mathtype
-&lt;/h3&gt;&lt;h3 id=&#34;texlive--texstudio&#34;&gt;Texlive + Texstudio
-&lt;/h3&gt;&lt;h3 id=&#34;向日葵远程控制或todesk&#34;&gt;向日葵远程控制或ToDesk
-&lt;/h3&gt;&lt;h3 id=&#34;网易邮箱大师网易有道翻译&#34;&gt;网易邮箱大师、网易有道翻译
-&lt;/h3&gt;&lt;h3 id=&#34;pycharm-和-anaconda&#34;&gt;PYcharm 和 Anaconda
-&lt;/h3&gt;&lt;h3 id=&#34;vscode&#34;&gt;Vscode
-&lt;/h3&gt;&lt;h3 id=&#34;utorrent&#34;&gt;utorrent
-&lt;/h3&gt;&lt;h3 id=&#34;office-全家桶&#34;&gt;Office 全家桶
-&lt;/h3&gt;&lt;h3 id=&#34;wps&#34;&gt;WPS
-&lt;/h3&gt;&lt;h3 id=&#34;腾讯会议&#34;&gt;腾讯会议
-&lt;/h3&gt;&lt;h3 id=&#34;其他系列网盘&#34;&gt;其他系列网盘
-&lt;/h3&gt;&lt;h4 id=&#34;百度网盘&#34;&gt;百度网盘
-&lt;/h4&gt;&lt;h4 id=&#34;中国移动云盘&#34;&gt;中国移动云盘
-&lt;/h4&gt;&lt;h4 id=&#34;阿里云盘&#34;&gt;阿里云盘
-&lt;/h4&gt;&lt;h4 id=&#34;夸克网盘&#34;&gt;夸克网盘
-&lt;/h4&gt;&lt;h3 id=&#34;ev录屏&#34;&gt;EV录屏
-&lt;/h3&gt;&lt;h3 id=&#34;git--go&#34;&gt;GIt + GO
-&lt;/h3&gt;&lt;h2 id=&#34;必备设置&#34;&gt;必备设置
-&lt;/h2&gt;&lt;h3 id=&#34;右键选项添加通过vscode打开文件或文件夹&#34;&gt;右键选项添加通过VSCode打开文件或文件夹
-&lt;/h3&gt;&lt;h3 id=&#34;anaconda-添加常用环境&#34;&gt;Anaconda 添加常用环境
-&lt;/h3&gt;&lt;h3 id=&#34;更改微信文件存储位置要不c盘迟早有一天要炸&#34;&gt;更改微信文件存储位置（要不C盘迟早有一天要炸）
-&lt;/h3&gt;&lt;h3 id=&#34;github-配置电脑适配&#34;&gt;Github 配置电脑适配
-&lt;/h3&gt;&lt;h3 id=&#34;vscode-添加copilot&#34;&gt;VSCode 添加Copilot
-&lt;/h3&gt;&lt;h3 id=&#34;ie浏览器和google-浏览器登录账号同步账号内的所有内容&#34;&gt;IE浏览器和Google 浏览器登录账号，同步账号内的所有内容
-&lt;/h3&gt;&lt;h3 id=&#34;&#34;&gt;
-&lt;/h3&gt;</description>
         </item>
         
     </channel>
